@@ -1,0 +1,43 @@
+
+'!!! Assumes that the data source in the report is called the same as the shared data source
+
+'The following global variables need to be passed in through the rs command:
+
+'Dim reportName As String = "TheReport"
+'Dim folder As String = "/Test"
+'Dim dataSource As String = "tempdb"
+'Dim dataSourceLocation As String = "/Test/Data Sources"
+
+Dim dataSourceWithPath As String = dataSourceLocation + "/" + dataSource
+Dim reportWithPath As String = folder + "/" + reportName
+	
+Public Sub Main()
+	Console.WriteLine("Running script LinkReportToDataSource.rss")
+	
+	Try
+		'Set report DataSource references
+		Dim dataSources(0) As DataSource
+
+		Dim dsReference As New DataSourceReference
+		dsReference.Reference = dataSourceWithPath
+		Dim ds As New DataSource
+		ds.Item = CType(dsReference, DataSourceDefinitionOrReference)
+		
+		ds.Name = dataSource 'assumes that the data source in the report is called the same as the shared data source!
+		
+		dataSources(0) = ds
+
+		
+		'SetItemDataSources(string ItemPath, DataSource[] DataSources)
+		RS.SetItemDataSources(reportWithPath, dataSources)
+		
+		
+		Console.Writeline("Report DataSource {0} on report {1} set successfully", dataSourceWithPath, reportWithPath)
+
+	Catch e As IOException
+		Console.WriteLine(e.Message)
+	Catch e As SoapException
+		Console.WriteLine("Error : " + e.Detail.Item("ErrorCode").InnerText + " (" + e.Detail.Item("Message").InnerText + ")")
+	End Try
+	Console.Writeline()
+End Sub

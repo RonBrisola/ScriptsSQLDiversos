@@ -1,0 +1,29819 @@
+--EXEC spcc_MSforeachtable @command1 = "DROP TABLE ?"
+
+select * from tbgene009
+
+--Table dbo.SALDOFLCX
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[SALDOFLCX] (
+	[ORIGEM] [char](2) NULL,
+	[CCUSTO] [char](10) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[VALSALDO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBADIG001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG001] (
+	[CODESCRIT] [char](4) NOT NULL,
+	[CODVERLC] [char](4) NOT NULL,
+	[DATINIESCR] [datetime] NOT NULL,
+	[DATFINESCR] [datetime] NOT NULL,
+	[SITESPEC] [char](1) NULL,
+	[CODVERSAOPLANOREF] [char](3) NOT NULL CONSTRAINT [DF__TBADIG001__CODVE__55B662FE] DEFAULT ('001'),
+	[TIPOARQUIVO] [char](1) NULL,
+	[QUALIPJ] [char](2) NULL,
+	[TIPOESCRIT] [char](1) NULL,
+	[NRORECANT] [char](41) NULL,
+	[IDESCRPERANT] [char](40) NULL,
+	[SITSLDPERANT] [char](1) NULL,
+	[INDLCTOINISLD] [char](1) NULL,
+	[FORMAPUR] [char](1) NULL,
+	[FORMTRIBUT] [char](1) NULL,
+	[TRIMLUCARB1] [char](1) NULL,
+	[TRIMLUCARB2] [char](1) NULL,
+	[TRIMLUCARB3] [char](1) NULL,
+	[TRIMLUCARB4] [char](1) NULL,
+	[FORMTRIBTRI1] [char](1) NULL,
+	[FORMTRIBTRI2] [char](1) NULL,
+	[FORMTRIBTRI3] [char](1) NULL,
+	[FORMTRIBTRI4] [char](1) NULL);
+GO
+
+--Table dbo.TBADIG002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG002] (
+	[CODCTAREF] [char](30) NOT NULL,
+	[DESCRICAO] [char](100) NULL,
+	[ORIENTACOES] [text] NULL,
+	[TIPORIGEMCONTA] [char](1) NULL,
+	[CODVERSAOPLANOREF] [char](3) NOT NULL CONSTRAINT [DF__TBADIG002__CODVE__4B38D48B] DEFAULT ('001'),
+	[DATINIVALIDADE] [datetime] NULL,
+	[DATFINVALIDADE] [datetime] NULL,
+	[NIVELCONTA] [int] NULL,
+	[CODNATUCONTA] [char](1) NULL,
+	[CODUTILCONTA] [char](1) NULL);
+GO
+
+--Table dbo.TBADIG003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG003] (
+	[CODESCRIT] [char](4) NOT NULL,
+	[CODVERLC] [char](4) NOT NULL,
+	[NUMORD] [char](30) NOT NULL,
+	[CODFORMESCRIT] [char](1) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[DATGERACAO] [datetime] NULL,
+	[CODHASH] [char](50) NULL,
+	[NATLIVR] [char](80) NULL,
+	[DATARQCONV] [datetime] NULL,
+	[DATARQUIVAMENTO] [datetime] NULL);
+GO
+
+--Table dbo.TBADIG005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG005] (
+	[CODENTREF] [char](2) NOT NULL,
+	[DESCENTIDADE] [char](60) NULL);
+GO
+
+--Table dbo.TBADIG006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG006] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODENTREF] [char](2) NOT NULL,
+	[CODINSCR] [char](20) NULL);
+GO
+
+--Table dbo.TBADIG007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG007] (
+	[SEQSIT] [char](5) NOT NULL,
+	[CODSIT] [char](1) NULL,
+	[DATAEVENTO] [datetime] NULL);
+GO
+
+--Table dbo.TBADIG008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG008] (
+	[SEQSIT] [char](5) NOT NULL,
+	[SEQEMP] [char](3) NOT NULL,
+	[CODEMP] [char](2) NULL,
+	[RAZSOCEMP] [char](50) NULL,
+	[NUMCGCCPFEMP] [char](14) NULL);
+GO
+
+--Table dbo.TBADIG009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG009] (
+	[CODVERLC] [char](4) NOT NULL,
+	[DATINICIO] [datetime] NULL,
+	[DATFINAL] [datetime] NULL);
+GO
+
+--Table dbo.TBADIG010
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG010] (
+	[CODREL] [char](2) NOT NULL,
+	[DESCREL] [char](200) NULL);
+GO
+
+--Table dbo.TBADIG011
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG011] (
+	[ORIGEMPART] [char](1) NOT NULL,
+	[CODPART] [char](9) NOT NULL,
+	[CODREL] [char](2) NOT NULL,
+	[DATINIRELAC] [datetime] NOT NULL,
+	[IDPART] [char](20) NOT NULL,
+	[DATFINRELAC] [datetime] NULL,
+	[RAZSOCPARTICIP] [char](80) NULL,
+	[TIPFISJUR] [char](1) NULL,
+	[NUMCNPJCPF] [char](14) NULL,
+	[CODPAIS] [char](5) NULL,
+	[CODUF] [char](2) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[CODIDTRAB] [char](11) NULL,
+	[INSCRESTA] [char](20) NULL,
+	[INSCRESTAST] [char](20) NULL,
+	[INSCRMUNIC] [char](15) NULL,
+	[NUMINSCRSUFRAMA] [char](9) NULL);
+GO
+
+--Table dbo.TBADIG012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG012] (
+	[CODASSIN] [char](3) NOT NULL,
+	[DESCFUNC] [char](50) NULL);
+GO
+
+--Table dbo.TBADIG013
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG013] (
+	[CODSIGN] [char](3) NOT NULL,
+	[NOMESIGNAT] [char](80) NULL,
+	[CPFSIGNAT] [char](11) NULL,
+	[CODASSIN] [char](3) NOT NULL,
+	[NUMCRC] [char](15) NULL,
+	[STASIGNAT] [char](1) NULL);
+GO
+
+--Table dbo.TBADIG014
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG014] (
+	[CODSIGN] [char](3) NOT NULL,
+	[CODESCRIT] [char](4) NOT NULL,
+	[CODVERLC] [char](4) NOT NULL,
+	[NUMORD] [char](30) NOT NULL,
+	[CODFORMESCRIT] [char](1) NOT NULL,
+	[CODEMP] [char](2) NOT NULL);
+GO
+
+--Table dbo.TBADIG015
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG015] (
+	[NOMECAMPO] [char](20) NOT NULL,
+	[STAGERA] [char](1) NULL,
+	[DESCCAMPO] [char](40) NULL,
+	[TIPO] [char](1) NOT NULL,
+	[TAMANHO] [int] NOT NULL,
+	[CASASDEC] [int] NULL,
+	[LARGCAMPO] [int] NOT NULL,
+	[ORDEMEXIB] [int] NULL,
+	[STATOTALIZA] [char](1) NULL);
+GO
+
+--Table dbo.TBADIG016
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG016] (
+	[CODVERSAOLAYOUT] [char](3) NOT NULL,
+	[DATINICIO] [datetime] NULL,
+	[DATFINAL] [datetime] NULL,
+	[LAYOUTINSTITUIDO] [char](40) NULL);
+GO
+
+--Table dbo.TBADIG017
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG017] (
+	[CODEMP] [char](2) NOT NULL,
+	[DATAINV] [datetime] NOT NULL,
+	[DESCRICAO] [char](50) NULL,
+	[MOTINV] [char](2) NULL,
+	[TIPINV] [char](1) NULL,
+	[NUMSEQINV] [char](2) NULL);
+GO
+
+--Table dbo.TBADIG018
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG018] (
+	[CODVERSAOPLANOREF] [char](3) NOT NULL,
+	[DATINI] [datetime] NULL,
+	[DATFIM] [datetime] NULL,
+	[LEGISLACAO] [char](100) NULL);
+GO
+
+--Table dbo.TBADIG019
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG019] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODCONTA] [char](12) NOT NULL,
+	[CODCONTAREFSPED] [char](30) NOT NULL,
+	[CODVERSAOPLANOREF] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBADIG020
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG020] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODCONTASINTETICA] [char](30) NOT NULL,
+	[CODCONTAREFSPED] [char](30) NOT NULL,
+	[CODVERSAOPLANOREF] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBADIG021
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG021] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDFORMNF] [char](4) NOT NULL,
+	[DATAINIUTILIZA] [datetime] NULL,
+	[DATAFIMUTILIZA] [datetime] NULL,
+	[CODDISP] [char](2) NULL,
+	[CODMOD] [char](2) NULL,
+	[SER] [char](5) NULL,
+	[SUB] [char](4) NULL,
+	[NUMDOCINI] [char](12) NULL,
+	[NUMDOCFIN] [char](12) NULL,
+	[NUMAUT] [char](14) NULL);
+GO
+
+--Table dbo.TBADIG022
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG022] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDFORMNF] [char](4) NOT NULL,
+	[NUMDOCINI] [char](12) NOT NULL,
+	[NUMDOCFIN] [char](12) NOT NULL);
+GO
+
+--Table dbo.TBADIG023
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG023] (
+	[CODFILIALLOGON] [char](2) NOT NULL,
+	[CODFILIALMOVIMENTACAO] [char](2) NOT NULL);
+GO
+
+--Table dbo.TBADIG024
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG024] (
+	[TIPLANCTOFCONT] [char](2) NOT NULL,
+	[DESTIPLANCTOFCONT] [text] NULL);
+GO
+
+--Table dbo.TBADIG025
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG025] (
+	[CODEMP] [char](2) NOT NULL,
+	[DATAINV] [datetime] NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODSITUACAOTRIB] [char](3) NOT NULL,
+	[BASECALC] [decimal](28, 14) NULL,
+	[VALICMS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBADIG026
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG026] (
+	[IDESCRIT] [int] NOT NULL IDENTITY (1, 1),
+	[CODEMP] [char](2) NOT NULL,
+	[DATINI] [datetime] NOT NULL,
+	[DATFIN] [datetime] NOT NULL,
+	[REG] [char](4) NULL,
+	[CODMOD] [char](2) NULL,
+	[ECFMOD] [char](20) NULL,
+	[ECFFAB] [char](21) NULL,
+	[ECFCX] [char](3) NULL,
+	[DATIMPORT] [datetime] NULL);
+GO
+
+--Table dbo.TBADIG027
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG027] (
+	[IDESCRIT] [int] NOT NULL,
+	[IDREDZ] [int] NOT NULL IDENTITY (1, 1),
+	[REG] [char](4) NULL,
+	[DTDOC] [datetime] NULL,
+	[CRO] [char](3) NULL,
+	[CRZ] [char](6) NULL,
+	[NUMCOOFIN] [char](6) NULL,
+	[GTFIN] [decimal](28, 14) NULL,
+	[VLBRT] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBADIG028
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG028] (
+	[IDESCRIT] [int] NOT NULL,
+	[IDREDZ] [int] NOT NULL,
+	[IDTOTPISCOFINS] [int] NOT NULL IDENTITY (1, 1),
+	[REG] [char](4) NULL,
+	[VL_PIS] [decimal](28, 14) NULL,
+	[VL_COFINS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBADIG029
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG029] (
+	[IDESCRIT] [int] NOT NULL,
+	[IDREDZ] [int] NOT NULL,
+	[IDTOTPARCZ] [int] NOT NULL IDENTITY (1, 1),
+	[REG] [char](4) NULL,
+	[CODTOTPAR] [char](7) NULL,
+	[VLRACUMTOT] [decimal](28, 14) NULL,
+	[NRTOT] [decimal](28, 14) NULL,
+	[DESCRNRTOT] [text] NULL);
+GO
+
+--Table dbo.TBADIG030
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG030] (
+	[IDESCRIT] [int] NOT NULL,
+	[IDREDZ] [int] NOT NULL,
+	[IDTOTPARCZ] [int] NOT NULL,
+	[IDRESUMITENS] [int] NOT NULL IDENTITY (1, 1),
+	[REG] [char](4) NULL,
+	[CODMAT] [char](15) NULL,
+	[QTD] [decimal](28, 14) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[VLITEM] [decimal](28, 14) NULL,
+	[VLPIS] [decimal](28, 14) NULL,
+	[VLCOFINS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBADIG031
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG031] (
+	[IDESCRIT] [int] NOT NULL,
+	[IDREDZ] [int] NOT NULL,
+	[IDDOCUM] [int] NOT NULL IDENTITY (1, 1),
+	[REG] [char](4) NULL,
+	[CODMOD] [char](2) NULL,
+	[CODSIT] [char](2) NULL,
+	[NUMDOC] [char](6) NULL,
+	[DTDOC] [datetime] NULL,
+	[VLDOC] [decimal](28, 14) NULL,
+	[VLPIS] [decimal](28, 14) NULL,
+	[VLCOFINS] [decimal](28, 14) NULL,
+	[CPFCNPJ] [char](14) NULL,
+	[NOMADQ] [char](60) NULL);
+GO
+
+--Table dbo.TBADIG032
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG032] (
+	[IDESCRIT] [int] NOT NULL,
+	[IDREDZ] [int] NOT NULL,
+	[IDDOCUM] [int] NOT NULL,
+	[IDITEM] [int] NOT NULL IDENTITY (1, 1),
+	[REG] [char](4) NULL,
+	[CODITEM] [char](60) NULL,
+	[QTD] [decimal](28, 14) NULL,
+	[QTDCANC] [decimal](28, 14) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[VLITEM] [decimal](28, 14) NULL,
+	[CSTICMS] [char](3) NULL,
+	[CFOP] [char](4) NULL,
+	[ALIQICMS] [decimal](28, 14) NULL,
+	[VLPIS] [decimal](28, 14) NULL,
+	[VLCOFINS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBADIG033
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADIG033] (
+	[IDESCRIT] [int] NOT NULL,
+	[IDREDZ] [int] NOT NULL,
+	[IDREGANALIT] [int] NOT NULL IDENTITY (1, 1),
+	[REG] [char](4) NULL,
+	[CSTICMS] [char](3) NULL,
+	[CFOP] [char](4) NULL,
+	[ALIQICMS] [decimal](28, 14) NULL,
+	[VLOPR] [decimal](28, 14) NULL,
+	[VLBCICMS] [decimal](28, 14) NULL,
+	[VLICMS] [decimal](28, 14) NULL,
+	[OBS] [text] NULL);
+GO
+
+--Table dbo.TBADPR001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADPR001] (
+	[CODEMP] [char](2) NOT NULL,
+	[CATEGORIA] [char](1) NOT NULL,
+	[CODGRUPO] [char](6) NOT NULL,
+	[SUBGRUPO] [char](12) NOT NULL,
+	[ORIGEM] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](13) NOT NULL,
+	[SERIE] [char](5) NULL,
+	[NUMPARCELA] [char](2) NOT NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[VALDOCTO] [decimal](28, 14) NOT NULL,
+	[DATAPLICA] [datetime] NOT NULL,
+	[CCUSTO] [char](10) NULL,
+	[CODFILIALDOC] [char](2) NULL,
+	[SEQMOVTOCONB] [char](3) NULL);
+GO
+
+--Table dbo.TBADPRTP1
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBADPRTP1] (
+	[CODEMP] [char](2) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[TPEMITENTE] [char](1) NULL,
+	[CODEMITENTE] [char](9) NULL,
+	[DESEMITENTE] [char](50) NULL,
+	[ORIGEM] [char](2) NULL,
+	[SINAL] [int] NULL,
+	[VALOR00] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__070DC770] DEFAULT (0),
+	[VALOR01] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__0801EBA9] DEFAULT (0),
+	[VALOR02] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__08F60FE2] DEFAULT (0),
+	[VALOR03] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__09EA341B] DEFAULT (0),
+	[VALOR04] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__0ADE5854] DEFAULT (0),
+	[VALOR05] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__0BD27C8D] DEFAULT (0),
+	[VALOR06] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__0CC6A0C6] DEFAULT (0),
+	[VALOR07] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__0DBAC4FF] DEFAULT (0),
+	[VALOR08] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__0EAEE938] DEFAULT (0),
+	[VALOR09] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__0FA30D71] DEFAULT (0),
+	[VALOR10] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__109731AA] DEFAULT (0),
+	[VALOR11] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__118B55E3] DEFAULT (0),
+	[VALOR12] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__127F7A1C] DEFAULT (0),
+	[VALOR13] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__13739E55] DEFAULT (0),
+	[VALOR14] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__1467C28E] DEFAULT (0),
+	[VALOR15] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__155BE6C7] DEFAULT (0),
+	[VALOR16] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__16500B00] DEFAULT (0),
+	[VALOR17] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__17442F39] DEFAULT (0),
+	[VALOR18] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__18385372] DEFAULT (0),
+	[VALOR19] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__192C77AB] DEFAULT (0),
+	[VALOR20] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__1A209BE4] DEFAULT (0),
+	[VALOR21] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__1B14C01D] DEFAULT (0),
+	[VALOR22] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__1C08E456] DEFAULT (0),
+	[VALOR23] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__1CFD088F] DEFAULT (0),
+	[VALOR24] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__1DF12CC8] DEFAULT (0),
+	[VALOR25] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__1EE55101] DEFAULT (0),
+	[VALOR26] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__1FD9753A] DEFAULT (0),
+	[VALOR27] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__20CD9973] DEFAULT (0),
+	[VALOR28] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__21C1BDAC] DEFAULT (0),
+	[VALOR29] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__22B5E1E5] DEFAULT (0),
+	[VALOR30] [decimal](28, 14) NULL CONSTRAINT [DF__TBADPRTP1__VALOR__23AA061E] DEFAULT (0),
+	[CCUSTO] [char](10) NULL);
+GO
+
+--Table dbo.TBALTCODMAT
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBALTCODMAT] (
+	[CODMDE] [char](15) NULL,
+	[CODMPARA] [char](15) NULL);
+GO
+
+--Table dbo.TBATIV001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV001] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMBEM] [char](15) NOT NULL,
+	[NUMINCORPBEM] [char](6) NOT NULL,
+	[NUMSERBEM] [char](20) NULL,
+	[CODTIPAQUIS] [char](2) NULL,
+	[DESCBEM] [char](70) NULL,
+	[CODFORN] [char](6) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMITEMNF] [char](2) NULL,
+	[DATAQUIS] [datetime] NULL,
+	[MARCABEM] [char](40) NULL,
+	[MODELOBEM] [char](40) NULL,
+	[CCUSTO] [char](10) NULL,
+	[CODSETOR] [char](10) NULL,
+	[LOCALBEM] [char](40) NULL,
+	[VALORIGINAL] [decimal](28, 14) NULL,
+	[STACONTROLEFISICO] [char](1) NULL,
+	[DATLANCTO] [datetime] NULL,
+	[DATATU] [datetime] NULL,
+	[STAINTEGRACONT] [char](1) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[STABEMATIVO] [char](1) NULL,
+	[STAORIGEM] [char](1) NULL,
+	[OBSBEMATIVO] [text] NULL,
+	[USER_ID] [char](10) NULL,
+	[CCUSTOORIGINAL] [char](10) NULL,
+	[CODSETORORIGINAL] [char](10) NULL,
+	[LOCALORIGINAL] [char](40) NULL,
+	[CTAATIVO] [char](12) NULL,
+	[VIDAUTIL] [int] NULL,
+	[TXDEPRECANUAL] [decimal](28, 14) NULL,
+	[STADEPRECIANOMES] [char](1) NULL,
+	[VALDEPRECACUMULADA] [decimal](28, 14) NULL,
+	[VALRESIDUAL] [decimal](28, 14) NULL,
+	[STACOMPLETADO] [char](1) NULL CONSTRAINT [DF__TBATIV001__STACO__1B69C5D8] DEFAULT ('N'),
+	[STACREDITAICMS] [char](1) NULL,
+	[QTDEPARCCRED] [int] NULL,
+	[QTDEPARCJACREDITADAS] [int] NULL,
+	[TIPOBEM] [char](1) NULL,
+	[NUMBEMPRINCIPAL] [char](15) NULL,
+	[NUMINCORPBEMPRINCIPAL] [char](6) NULL,
+	[DATCONCLUSAOBEM] [datetime] NULL,
+	[FUNCBEM] [text] NULL,
+	[NUMLRE] [char](12) NULL,
+	[FOLHALRE] [char](6) NULL,
+	[VALICMSOP] [decimal](28, 14) NULL,
+	[VALICMSST] [decimal](28, 14) NULL,
+	[VALICMSFRT] [decimal](28, 14) NULL,
+	[VALICMSDIF] [decimal](28, 14) NULL,
+	[EMISSAO] [char](1) NULL,
+	[DATCONCLCRED] [datetime] NULL,
+	[STACREDITAPISCOFINS] [char](1) NULL,
+	[NATBCCRED] [char](2) NULL,
+	[IDENTBEMIMOB] [char](2) NULL,
+	[INDORIGCRED] [char](1) NULL,
+	[INDUTILBEMIMOB] [char](1) NULL,
+	[PARCOPERNAOBCCRED] [decimal](28, 14) NULL,
+	[CODSITTRIBPIS] [char](2) NULL,
+	[CODSITTRIBCOFINS] [char](2) NULL,
+	[INDNRPARC] [char](1) NULL,
+	[NUMPARCELAS] [int] NULL,
+	[ALIQPIS] [decimal](28, 14) NULL,
+	[ALIQCOFINS] [decimal](28, 14) NULL,
+	[TXDEPRECANUALFISCAL] [decimal](28, 14) NULL,
+	[VIDAUTILFISCAL] [int] NULL,
+	[VALDEPRECACUMULADAFISCAL] [decimal](28, 14) NULL,
+	[VALRESIDUALFISCAL] [decimal](28, 14) NULL,
+	[CODTIPCREDITODEFAULT] [char](3) NULL,
+	[VALBASECALCPISCOFINS] [decimal](28, 14) NULL,
+	[QTDEPARCCREDPISCOFINS] [int] NULL,
+	[VALBEMRECUPERAVEL] [decimal](28, 14) NULL,
+	[CODCONTAALTVALRECUP] [char](12) NULL,
+	[CODCONTAALTVALDEPRECACUM] [char](12) NULL);
+GO
+
+--Table dbo.TBATIV002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV002] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSETOR] [char](10) NOT NULL,
+	[DESCRSETOR] [char](40) NULL,
+	[DATACADST] [datetime] NULL,
+	[STASETOR] [char](1) NULL);
+GO
+
+--Table dbo.TBATIV003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV003] (
+	[CODTIPAQUIS] [char](2) NOT NULL,
+	[DESCRTIPAQUIS] [char](40) NULL,
+	[DATCADAST] [datetime] NULL,
+	[STATIPAQUIS] [char](1) NULL);
+GO
+
+--Table dbo.TBATIV004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV004] (
+	[CODTIPBAIXA] [char](2) NOT NULL,
+	[DESCRTIPBAIXA] [char](40) NULL,
+	[DATCADAST] [datetime] NULL,
+	[STATIPBAIXA] [char](1) NULL,
+	[CODEVENTOBAIXA] [char](5) NULL,
+	[TIPOMOVSPED] [char](2) NULL,
+	[CTABAIXA] [char](12) NULL);
+GO
+
+--Table dbo.TBATIV005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV005] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMBEM] [char](15) NOT NULL,
+	[NUMINCORPBEM] [char](6) NOT NULL,
+	[DATBAIXA] [datetime] NULL,
+	[TPBAIXA] [char](2) NULL,
+	[NUMDOCTOBAIXA] [char](6) NULL,
+	[SERDOCTOBAIXA] [char](5) NULL,
+	[NUMITEMDOCTOBAIXA] [char](3) NULL,
+	[CODCLI] [char](9) NULL,
+	[VALBAIXA] [decimal](28, 14) NULL,
+	[DATLANCTO] [datetime] NULL,
+	[STAINTEGRACONT] [char](1) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[OBSBAIXA] [text] NULL,
+	[USER_ID] [char](10) NULL,
+	[VALRESIDUAL] [decimal](28, 14) NULL,
+	[VALBAIXADEPREC] [decimal](28, 14) NULL,
+	[VALRESIDUALFISCAL] [decimal](28, 14) NULL,
+	[VALBAIXADEPRECFISCAL] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBATIV006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV006] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMBEM] [char](15) NOT NULL,
+	[NUMINCORPBEM] [char](6) NOT NULL,
+	[NUMSEQTRANSF] [char](2) NOT NULL,
+	[CCUSTOORIGEM] [char](10) NULL,
+	[CODSETORORIGEM] [char](10) NULL,
+	[LOCALORIGEM] [char](40) NULL,
+	[CCUSTODESTINO] [char](10) NULL,
+	[CODSETORDESTINO] [char](10) NULL,
+	[LOCALDESTINO] [char](40) NULL,
+	[DATTRANSF] [datetime] NULL,
+	[DATLANCTO] [datetime] NULL,
+	[STAINTEGRACONT] [char](1) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[OBSTRANS] [text] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBATIV007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV007] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMBEM] [char](15) NOT NULL,
+	[NUMINCORPBEM] [char](6) NOT NULL,
+	[NUMSEQMOVTO] [char](2) NOT NULL,
+	[NUMDOCTOSAIDA] [char](6) NULL,
+	[SERIEDOCTOSAIDA] [char](5) NULL,
+	[CODCLI] [char](9) NULL,
+	[NUMITEMDOCTOSAIDA] [char](3) NULL,
+	[DATASAIDA] [datetime] NULL,
+	[NUMDOCTOENTR] [char](6) NULL,
+	[SERIEDOCTOENTR] [char](5) NULL,
+	[CODFORN] [char](6) NULL,
+	[NUMITEMDOCTOENTR] [char](2) NULL,
+	[DATENTR] [datetime] NULL,
+	[STAINTEGRACONTSAI] [char](1) NULL,
+	[ANOLOTECONTABSAI] [char](4) NULL,
+	[MESLOTECONTABSAI] [char](2) NULL,
+	[NUMLOTECONTABSAI] [char](7) NULL,
+	[STAINTEGRACONTENT] [char](1) NULL,
+	[ANOLOTECONTABENT] [char](4) NULL,
+	[MESLOTECONTAENT] [char](2) NULL,
+	[NUMLOTECONTABENT] [char](7) NULL,
+	[OBSMOVTO] [text] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBATIV008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV008] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMBEM] [char](15) NOT NULL,
+	[NUMINCORPBEM] [char](6) NOT NULL,
+	[ANOCALCULO] [char](4) NOT NULL,
+	[MESCALCULO] [char](2) NOT NULL,
+	[VALDEPREC] [decimal](28, 14) NULL,
+	[VALRESIDUALPOSCALC] [decimal](28, 14) NULL,
+	[CCUSTO] [char](10) NULL,
+	[STAINTEGRACONT] [char](1) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[CTAATIVO] [char](12) NULL,
+	[VALRESIDUALFISCAL] [decimal](28, 14) NULL,
+	[VALDEPRECFISCAL] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBATIV009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV009] (
+	[CODEMP] [char](2) NOT NULL,
+	[CTAATIVO] [char](12) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[ANOSALDO] [char](4) NOT NULL,
+	[MESSALDO] [char](2) NOT NULL,
+	[VALENTRADAS] [decimal](28, 14) NULL,
+	[VALBAIXAS] [decimal](28, 14) NULL,
+	[VALDEPREC] [decimal](28, 14) NULL,
+	[SALDODEPRECANT] [decimal](28, 14) NULL,
+	[SALDODEPRECATU] [decimal](28, 14) NULL,
+	[VALTRANSFENTRADA] [decimal](28, 14) NULL,
+	[VALTRANSFSAIDA] [decimal](28, 14) NULL,
+	[SALDOORIGINALANT] [decimal](28, 14) NULL,
+	[SALDOORIGINALATU] [decimal](28, 14) NULL,
+	[STAINTEGRACONT] [char](1) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[VALBAIXADEPREC] [decimal](28, 14) NULL,
+	[VALDEPRECFISCAL] [decimal](28, 14) NULL,
+	[SALDODEPRECANTFISCAL] [decimal](28, 14) NULL,
+	[SALDODEPRECATUFISCAL] [decimal](28, 14) NULL,
+	[VALBAIXADEPRECFISCAL] [decimal](28, 14) NULL,
+	[SALDORECUPERAVELANT] [decimal](28, 14) NULL,
+	[SALDORECUPERAVELATU] [decimal](28, 14) NULL,
+	[SALDOAJUSTEVALRECUP] [decimal](28, 14) NULL,
+	[VALRECUPENTRADAS] [decimal](28, 14) NULL,
+	[VALRECUPBAIXAS] [decimal](28, 14) NULL,
+	[VALRECUPTRANSFENTRADA] [decimal](28, 14) NULL,
+	[VALRECUPTRANSFSAIDA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBATIV010
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV010] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMSEQITEMNF] [char](3) NOT NULL,
+	[NUMBEM] [char](15) NOT NULL,
+	[NUMINCORPBEM] [char](6) NOT NULL,
+	[TPBAIXA] [char](2) NULL,
+	[CODCLI] [char](9) NULL,
+	[VALBAIXA] [decimal](28, 14) NULL,
+	[OBSBAIXA] [text] NULL);
+GO
+
+--Table dbo.TBATIV011
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV011] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOCALCULO] [char](4) NOT NULL,
+	[MESCALCULO] [char](2) NOT NULL,
+	[QTDEPARCCIAP] [int] NOT NULL,
+	[SALDOINICICMS] [decimal](28, 14) NULL,
+	[SOMAPARCELAS] [decimal](28, 14) NULL,
+	[VALTOTSAIDASTRIB] [decimal](28, 14) NULL,
+	[VALTRIBEXP] [decimal](28, 14) NULL,
+	[VALTOTSAIDASISENTAS] [decimal](28, 14) NULL,
+	[TOTOUTROSCRED] [decimal](28, 14) NULL,
+	[LANCMANUAL] [char](1) NULL);
+GO
+
+--Table dbo.TBATIV012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV012] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOCALCULO] [char](4) NOT NULL,
+	[MESCALCULO] [char](2) NOT NULL,
+	[NUMBEM] [char](15) NOT NULL,
+	[NUMINCORPBEM] [char](6) NOT NULL,
+	[NUMPARC] [int] NULL,
+	[VLPARCPASS] [decimal](28, 14) NULL,
+	[CREDPASSAPR] [decimal](28, 14) NULL,
+	[DEDUCCRED] [decimal](28, 14) NULL,
+	[LANCMANUAL] [char](1) NULL);
+GO
+
+--Table dbo.TBATIV013
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV013] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOCALCULO] [char](4) NOT NULL,
+	[MESCALCULO] [char](2) NOT NULL,
+	[NUMBEM] [char](15) NOT NULL,
+	[NUMINCORPBEM] [char](6) NOT NULL,
+	[NUMPARCELA] [int] NULL,
+	[VALPARCPASS] [decimal](28, 14) NULL,
+	[VALTRIBOC] [decimal](28, 14) NULL,
+	[VLTOTAL] [decimal](28, 14) NULL,
+	[INDPERSAI] [decimal](28, 14) NULL,
+	[VLPARCAPROP] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBATIV014
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV014] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOCALCULO] [char](4) NOT NULL,
+	[MESCALCULO] [char](2) NOT NULL,
+	[NUMBEM] [char](15) NOT NULL,
+	[NUMINCORPBEM] [char](6) NOT NULL,
+	[NUMPARC] [int] NULL,
+	[NATBCCRED] [char](2) NULL,
+	[PARCOPERNAOBCCRED] [decimal](28, 14) NULL,
+	[VALBASECALCPISCOFINS] [decimal](28, 14) NULL,
+	[ALIQPIS] [decimal](28, 14) NULL,
+	[ALIQCOFINS] [decimal](28, 14) NULL,
+	[VALCREDPIS] [decimal](28, 14) NULL,
+	[VALCREDCOFINS] [decimal](28, 14) NULL,
+	[LANCMANUAL] [char](1) NULL,
+	[VALPARCPIS] [decimal](28, 14) NULL,
+	[VALPARCCOFINS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBATIV015
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV015] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMBEM] [char](15) NOT NULL,
+	[NUMINCORPBEM] [char](6) NOT NULL,
+	[NUMPROC] [char](20) NOT NULL,
+	[INDPROC] [char](1) NULL,
+	[TIPOPROC] [char](2) NULL,
+	[SECJUDIC] [char](30) NULL,
+	[VARA] [char](2) NULL,
+	[NATACAOJUDIC] [char](2) NULL,
+	[DESCDECJUDIC] [char](100) NULL,
+	[DATSENTECA] [datetime] NULL,
+	[NATPROCADM] [char](2) NULL,
+	[DATDECADM] [datetime] NULL);
+GO
+
+--Table dbo.TBATIV016
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV016] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMBEM] [char](15) NOT NULL,
+	[NUMINCORPBEM] [char](6) NOT NULL,
+	[SEQALT] [char](2) NOT NULL,
+	[VALBEMRECUPANT] [decimal](28, 14) NULL,
+	[VALBEMRECUPNOVO] [decimal](28, 14) NULL,
+	[MESANOUTIL] [char](6) NULL,
+	[DATALTERACAO] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[MOTIVOAJUSTE] [text] NULL,
+	[VALRESIDUALANT] [decimal](28, 14) NULL,
+	[VALRESIDUALNOVO] [decimal](28, 14) NULL,
+	[VALDEPRECACUMULADAANT] [decimal](28, 14) NULL,
+	[VALDEPRECACUMULADANOVO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBATIV999
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBATIV999] (
+	[CODEMP] [char](2) NOT NULL,
+	[GERASEQBEM] [char](1) NULL CONSTRAINT [DF__TBATIV999__GERAS__676011ED] DEFAULT ('S'),
+	[NUMSEQBEM] [char](15) NULL,
+	[CODTIPAQUISPADRAO] [char](2) NULL,
+	[CODTIPBAIXAPADRAO] [char](2) NULL,
+	[STACONTABILIZA] [char](1) NULL CONSTRAINT [DF__TBATIV999__STACO__68543626] DEFAULT ('N'),
+	[ULTANOFECH] [char](4) NULL,
+	[ULTMESFECH] [char](2) NULL,
+	[STACONTROLEFISICOPADRAO] [char](1) NULL CONSTRAINT [DF__TBATIV999__STACO__69485A5F] DEFAULT ('S'),
+	[STADEPRECIANOMES] [char](1) NULL CONSTRAINT [DF__TBATIV999__STADE__1C5DEA11] DEFAULT ('S'),
+	[CODEVENTODEPREC] [char](5) NULL,
+	[QTDEPARCCIAPDEFAULT] [int] NULL,
+	[CODEVENTOALTVALRECUP] [char](5) NULL,
+	[CODEVENTOALTDEPRECACUM] [char](5) NULL,
+	[CODEVENTOBAIXA] [char](5) NULL,
+	[CODCONTAALTVALRECUP] [char](12) NULL,
+	[CODCONTAALTDEPRECACUM] [char](12) NULL);
+GO
+
+--Table dbo.TBBALANCETE
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBBALANCETE] (
+	[USER_ID] [char](10) NOT NULL,
+	[NUMREG] [char](7) NOT NULL,
+	[CODCONTA] [char](12) NULL,
+	[DESCCONTA] [char](40) NULL,
+	[CODORDEMNO] [char](20) NULL,
+	[CODORDEMEX] [char](30) NULL,
+	[TIPMOVTO] [char](1) NULL,
+	[VALMOVTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBBALANCE__VALMO__298CFCA6] DEFAULT (0),
+	[DATCOMPET] [datetime] NULL,
+	[TIPCONT] [char](1) NULL);
+GO
+
+--Table dbo.TBCAMPOS
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCAMPOS] (
+	[NOMCAMPO] [char](30) NOT NULL,
+	[DESCAMPO] [char](100) NOT NULL,
+	[TIPOCAMPO] [char](15) NOT NULL,
+	[TAMANHOCAMPO] [char](10) NOT NULL,
+	[MASCARACAMPO] [char](30) NULL,
+	[COMENTARIOSCAMPO] [text] NULL,
+	[DESALINHAMENTO] [char](1) NULL CONSTRAINT [DF__TBCAMPOS__DESALI__08EA5793] DEFAULT ('E'),
+	[DESEXEMPLOLAYOUT] [char](50) NULL);
+GO
+
+--Table dbo.TBCOMP001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP001] (
+	[CODFORN] [char](6) NOT NULL,
+	[TIPFISJUR] [char](1) NOT NULL,
+	[NUMCGCCPF] [char](14) NOT NULL,
+	[ENDFORN] [char](40) NOT NULL,
+	[COMPLFORN] [char](20) NULL,
+	[BAIRROFORN] [char](20) NULL,
+	[CIDADEFORN] [char](20) NULL,
+	[CODUF] [char](2) NOT NULL,
+	[CEPFORN] [char](8) NULL,
+	[DATULTCOMP] [datetime] NULL,
+	[DATATU] [datetime] NULL,
+	[DATCADAST] [datetime] NULL,
+	[TELFORN] [char](12) NULL,
+	[FAXFORN] [char](12) NULL,
+	[CONTATOFORN] [char](20) NULL,
+	[STAFORN] [char](1) NULL,
+	[CODRAMO] [char](3) NOT NULL,
+	[RAZSOCFORN] [char](50) NOT NULL,
+	[NOMFANTAS] [char](40) NULL,
+	[NUMENDFORN] [char](6) NOT NULL,
+	[INSCRESTA] [char](15) NULL,
+	[EXTRA] [char](1) NULL,
+	[INSCRMUNIC] [char](10) NULL,
+	[FORNMES] [decimal](28, 14) NULL,
+	[FORNANO] [decimal](28, 14) NULL,
+	[FORNANOANT] [decimal](28, 14) NULL,
+	[EMAIL] [char](70) NULL,
+	[CONTACONTABIL] [char](14) NOT NULL CONSTRAINT [DF__TBCOMP001__CONTA__0BC6C43E] DEFAULT ('0'),
+	[CODCLASSIFICABCCOMP] [char](1) NULL,
+	[NUMBANCO] [char](3) NULL,
+	[CONTACORRENTE] [char](15) NULL,
+	[NUMAGENCIA] [char](5) NULL,
+	[NOMAGENCIA] [char](15) NULL,
+	[POSICAOPLANOCONTA] [char](12) NULL,
+	[STAEXPORT] [char](1) NULL CONSTRAINT [DF__TBCOMP001__STAEX__0CBAE877] DEFAULT ('N'),
+	[CTADEBITO] [char](12) NULL,
+	[STAPADRAOJUROS] [char](1) NULL CONSTRAINT [DF__TBCOMP001__STAPA__0DAF0CB0] DEFAULT ('S'),
+	[CALCTPJUROS] [char](1) NULL,
+	[BASEJUROS] [char](1) NULL,
+	[DIGTOCONTACORRENTEFORN] [char](3) NULL,
+	[STAFORNCONTRIBISS] [char](1) NULL,
+	[STAEXPORTARQBANC] [char](1) NULL CONSTRAINT [DF__TBCOMP001__STAEX__0EA330E9] DEFAULT ('N'),
+	[SUBGRUPOFORN] [char](12) NULL,
+	[CTAADIANTFORN] [char](12) NULL,
+	[STACOMPLETADO] [char](1) NULL CONSTRAINT [DF__TBCOMP001__STACO__326C5B6A] DEFAULT ('S'),
+	[DIGAGENCIA] [char](3) NULL,
+	[STAACEITABAIXAOUTROSFORN] [char](1) NULL,
+	[STABAIXADEVOUTROSFORN] [char](1) NULL CONSTRAINT [DF__TBCOMP001__STABA__54575F1A] DEFAULT ('N'),
+	[TIPFORNECEDOR] [char](1) NULL CONSTRAINT [DF__TBCOMP001__TIPFO__6399A2AA] DEFAULT ('O'),
+	[CODNATUOPER] [char](6) NULL,
+	[STAATACADISTA] [char](1) NULL,
+	[CODGRUPOFORN] [char](6) NULL,
+	[CATEGORIAFORN] [char](1) NULL,
+	[NUMINSCRINSS] [char](12) NULL,
+	[NUMINSCRPISPASEP] [char](11) NULL,
+	[NUMINSCRSUFRAMA] [char](9) NULL,
+	[CEPCXPOSTAL] [char](8) NULL,
+	[CXPOSTAL] [char](8) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[CODPAIS] [char](5) NULL,
+	[CELCONTATOFORN] [char](12) NULL,
+	[INSCRESTA_ST] [char](15) NULL,
+	[STAPRODUTORRURAL] [char](1) NULL CONSTRAINT [DF__TBCOMP001__STAPR__02DE0F30] DEFAULT ('N'),
+	[CODSTDMAT] [char](5) NULL,
+	[CODCPAGTO] [char](3) NULL);
+GO
+
+--Table dbo.TBCOMP002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP002] (
+	[CODMAT] [char](15) NOT NULL,
+	[TIPPECA] [char](1) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[STAMAT] [char](1) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[DESDETMAT] [text] NULL,
+	[TIPDEST] [char](1) NOT NULL,
+	[CODCLASSFISCAL] [char](10) NULL,
+	[TIPITEM] [char](1) NOT NULL,
+	[STAVENDA] [char](1) NOT NULL,
+	[STAORIGEM] [char](1) NOT NULL,
+	[STACADCOMPLETADO] [char](1) NOT NULL,
+	[CODDIVMAT1] [char](5) NULL,
+	[CODDIVMAT2] [char](5) NULL,
+	[CODDIVMAT3] [char](5) NULL,
+	[REAPROVISIONAMENTO] [int] NULL CONSTRAINT [DF__TBCOMP002__REAPR__117F9D94] DEFAULT (0),
+	[VALUNPROP] [decimal](28, 14) NULL,
+	[VALUNCONT] [decimal](28, 14) NULL,
+	[PESOBRUTOUNIT] [decimal](28, 14) NULL,
+	[PESOLIQUNIT] [decimal](28, 14) NULL,
+	[VALCOMPRA] [decimal](28, 14) NOT NULL,
+	[BASECALCIPI] [char](1) NULL,
+	[PORCIPI] [decimal](28, 14) NULL,
+	[CONTESTO] [char](12) NULL,
+	[CODCLASSIFICABCCOMP] [char](1) NULL,
+	[CODCLASSIFICABCVEND] [char](1) NULL,
+	[CODCLASSIFICABCCONSU] [char](1) NULL,
+	[DESMAT] [char](70) NULL,
+	[STARETINSS] [char](1) NULL CONSTRAINT [DF__TBCOMP002__STARE__1273C1CD] DEFAULT ('N'),
+	[TIPOESTOQMINIMO] [char](1) NULL,
+	[LOTEDECOMPRA] [decimal](28, 14) NULL,
+	[CODGRCOMPRA] [char](2) NULL,
+	[STACONTROLE] [char](1) NULL CONSTRAINT [DF__TBCOMP002__STACO__1367E606] DEFAULT ('N'),
+	[NUMDIASVALIDADE] [int] NULL CONSTRAINT [DF__TBCOMP002__NUMDI__145C0A3F] DEFAULT (9999),
+	[CONTPROC] [char](12) NULL,
+	[CODCLIESP] [char](9) NULL,
+	[CODMATCLI] [char](20) NULL,
+	[CODDESENHO] [char](25) NULL,
+	[CONTREC] [char](12) NULL,
+	[STAEXPPROD] [char](1) NULL CONSTRAINT [DF__TBCOMP002__STAEX__15502E78] DEFAULT ('N'),
+	[STAGERARSC] [char](1) NULL CONSTRAINT [DF__TBCOMP002__STAGE__164452B1] DEFAULT ('S'),
+	[CODTRIBSERVDEFAULT] [char](3) NULL,
+	[HORASPADRAO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP002__HORAS__173876EA] DEFAULT (0),
+	[VALSUCATA] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP002__VALSU__34BEB830] DEFAULT (0),
+	[QTDLOTEMAXIMO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP002__QTDLO__2B0043CC] DEFAULT (0),
+	[QTDLOTEMINIMO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP002__QTDLO__2BF46805] DEFAULT (0),
+	[STAHORASPADRAO] [char](1) NULL CONSTRAINT [DF__TBCOMP002__STAHO__2CE88C3E] DEFAULT ('S'),
+	[PERCIMPIMPORT] [decimal](28, 14) NULL,
+	[LOTEDEVENDA] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP002__LOTED__3454A3DC] DEFAULT (0),
+	[PERCENCORDEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP002__PERCE__3ACC9741] DEFAULT (100),
+	[CODMATREDUZIDO] [char](40) NULL,
+	[PERCEFICIENCIAMO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP002__PERCE__77D5A581] DEFAULT (100),
+	[CONTDESP] [char](12) NULL,
+	[TIPAPLICACAO] [char](1) NULL CONSTRAINT [DF__TBCOMP002__TIPAP__6E17311D] DEFAULT ('O'),
+	[TEMPOPARADISPONIBILIDADE] [char](3) NULL,
+	[OBSMATPRODUCAO] [text] NULL,
+	[CODLAUDO] [char](6) NULL,
+	[STAMOVCOMPONENTEEST] [char](1) NULL,
+	[SEQUENCIAL] [int] NULL,
+	[CODTIPEMBALAGEM] [char](2) NULL,
+	[QTDPOREMBALAGEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP002__QTDPO__11B57315] DEFAULT (0),
+	[CODORIGEMMAT] [char](1) NULL,
+	[CODOBSMOVFISC1] [char](2) NULL,
+	[CODOBSMOVFISC2] [char](2) NULL,
+	[CODOBSMOVFISC3] [char](2) NULL,
+	[CODOBSMOVFISC4] [char](2) NULL,
+	[CODOBSMOVFISC5] [char](2) NULL,
+	[CUSTOCOMPRA] [decimal](28, 14) NULL,
+	[DATREVISAO] [datetime] NULL,
+	[DATULTCOMP] [datetime] NULL,
+	[NUMNF] [char](6) NULL,
+	[CODFORN] [char](6) NULL,
+	[RECAPENASPOSSIFORN] [char](1) NULL CONSTRAINT [DF__TBCOMP002__RECAP__17043817] DEFAULT ('N'),
+	[CODBARRASMAT] [char](50) NULL,
+	[QTDUNIDEMBALAGEM] [int] NULL,
+	[STAMATPPB] [char](1) NULL,
+	[DATINIVIGENCIAPPB] [datetime] NULL,
+	[DATFIMVIGENCIAPPB] [datetime] NULL,
+	[DATPUBLIDOU] [datetime] NULL,
+	[NUMPORTARIAPPB] [char](10) NULL,
+	[STALOTEAPENASENTRADAS] [char](1) NULL CONSTRAINT [DF__TBCOMP002__STALO__3C75B3E8] DEFAULT ('N'),
+	[CODTABCOMIS] [char](6) NULL,
+	[TIPTRATESPECIAL] [char](1) NULL,
+	[CODGENERO] [char](2) NULL,
+	[CODCLASSIFICSERV] [char](4) NULL,
+	[REVLISTAPECAPADRAO] [char](3) NULL,
+	[REVPROCFABPADRAO] [char](3) NULL,
+	[PEDIDOWEB] [char](1) NULL,
+	[PERCTEORMINIMO] [decimal](28, 14) NULL,
+	[PERCTEORPADRAO] [decimal](28, 14) NULL,
+	[PERCTEORMAXIMO] [decimal](28, 14) NULL,
+	[CODCOMBSEFAZ] [char](4) NULL,
+	[PERCEFICMATERIAL] [decimal](28, 14) NULL,
+	[TIPOITEMSPEDFISC] [char](2) NULL,
+	[CODNCM] [char](8) NULL,
+	[EXIPI] [char](3) NULL,
+	[NUMFISPQ] [char](20) NULL,
+	[STAOBRIGARNC] [char](1) NULL,
+	[CEANTRIB] [char](14) NULL,
+	[TIPMONITORLOTES] [char](1) NULL CONSTRAINT [DF__TBCOMP002__TIPMO__037D2DAE] DEFAULT ('N'),
+	[DATLIMITEMONITOROP] [datetime] NULL,
+	[QTDELIMITEMONITOROP] [int] NULL,
+	[NUMOPSMONITOR] [int] NULL,
+	[VALPREMIOPRODUNIT] [decimal](28, 14) NULL,
+	[HORASPADRAOSTR] [char](8) NULL,
+	[PERCRENTAB] [decimal](28, 14) NULL,
+	[STACALCULADEMANDA] [char](1) NULL,
+	[DATFATURAMPPB] [datetime] NULL,
+	[CODIGOANT] [char](15) NULL,
+	[INFORMQTDESERP] [char](1) NULL,
+	[STACALCPAUTAIPI] [char](1) NULL,
+	[CODCLASSMAT] [char](3) NULL,
+	[VALPARCIMP] [decimal](28, 14) NULL,
+	[STAFCI] [char](1) NULL,
+	[FATORTOTIMP] [decimal](28, 14) NULL,
+	[REVISAOCOMBO] [char](3) NULL);
+GO
+
+--Table dbo.TBCOMP003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP003] (
+	[CODMAT] [char](15) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[CODMATCLI] [char](30) NOT NULL,
+	[DESMATCLI] [char](70) NULL,
+	[STACLIASSUMEPPB] [char](1) NULL,
+	[DATINICLIASSUMEPPB] [datetime] NULL,
+	[DATFIMCLIASSUMEPPB] [datetime] NULL,
+	[STAIMPRIMECODMATCLINF] [char](1) NULL CONSTRAINT [DF__TBCOMP003__STAIM__79E8D67C] DEFAULT ('N'),
+	[DATPPAP] [datetime] NULL);
+GO
+
+--Table dbo.TBCOMP004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP004] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP004__CODEM__1A14E395] DEFAULT ('01'),
+	[NUMSC] [char](10) NOT NULL,
+	[APLICACAO] [char](25) NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STASC] [char](1) NOT NULL,
+	[STAPED] [char](1) NOT NULL,
+	[STACOMPSP] [char](1) NOT NULL,
+	[OBS] [text] NULL,
+	[STACOL] [char](1) NOT NULL,
+	[TIPOSC] [char](1) NULL CONSTRAINT [DF__TBCOMP004__TIPOS__1B0907CE] DEFAULT ('N'),
+	[STALIB] [char](1) NULL,
+	[STAINIAPROV] [char](1) NULL,
+	[CODFORN] [char](6) NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL);
+GO
+
+--Table dbo.TBCOMP005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP005] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP005__CODEM__1DE57479] DEFAULT ('01'),
+	[NUMSC] [char](10) NOT NULL,
+	[NUMITEM] [char](2) NOT NULL,
+	[DATNEC] [datetime] NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[NUMCOLETA] [char](9) NULL,
+	[STAITEM] [char](1) NOT NULL,
+	[STACOMPSP] [char](1) NOT NULL,
+	[STAPEDIDO] [char](1) NOT NULL,
+	[EXTRA] [char](1) NULL,
+	[NUMITEMCOL] [char](2) NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[QTDEPEDIDA] [decimal](28, 14) NULL,
+	[QTDEAPEDIR] [decimal](28, 14) NULL,
+	[QTDESOLIC] [decimal](28, 14) NOT NULL,
+	[PRIORIDADE] [char](1) NOT NULL,
+	[DATLIMITECOMPRA] [datetime] NULL,
+	[CODMAT] [char](15) NULL,
+	[DESMATSC] [char](70) NULL,
+	[CODUNIMEDSC] [char](2) NULL,
+	[TIPPECASC] [char](1) NULL,
+	[NUMCONTRATOFORN] [char](9) NULL,
+	[NUMITEMCONTRATOFORN] [char](2) NULL,
+	[PORCIPICONTRATO] [decimal](28, 14) NULL,
+	[VALUNIT] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP006] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP006__CODEM__20C1E124] DEFAULT ('01'),
+	[NUMSC] [char](10) NOT NULL,
+	[NUMITEM] [char](2) NOT NULL,
+	[DESDETMAT] [text] NULL);
+GO
+
+--Table dbo.TBCOMP007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP007] (
+	[CODFORN] [char](6) NOT NULL,
+	[DATCADAST] [datetime] NULL,
+	[DATATU] [datetime] NULL,
+	[ENDCOB] [char](40) NULL,
+	[NUMCOB] [char](6) NULL,
+	[COMPLCOB] [char](20) NULL,
+	[BAIRROCOB] [char](20) NULL,
+	[MUNICOB] [char](40) NULL,
+	[NACIONCOB] [char](20) NULL,
+	[CODUF] [char](2) NULL,
+	[CEPCOB] [char](8) NULL,
+	[TELCOB] [char](12) NULL,
+	[FAXCOB] [char](12) NULL,
+	[OBSCOB] [text] NULL,
+	[CEPCXPOSTAL] [char](8) NULL,
+	[CXPOSTAL] [char](8) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[CODPAIS] [char](5) NULL);
+GO
+
+--Table dbo.TBCOMP008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP008] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP008__CODEM__25869641] DEFAULT ('01'),
+	[CCUSTO] [char](10) NOT NULL,
+	[DESCCUSTO] [char](30) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STACCUSTO] [char](1) NOT NULL,
+	[TIPCCUSTO] [char](1) NOT NULL,
+	[CODALMOX] [char](3) NULL,
+	[CONTLABOUR] [char](12) NULL,
+	[STAOBRIGAPLANO] [char](1) NULL,
+	[STAPERMITENOVORATEIO] [char](1) NULL CONSTRAINT [DF__TBCOMP008__STAPE__34D49220] DEFAULT ('N'),
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL);
+GO
+
+--Table dbo.TBCOMP009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP009] (
+	[CODCPAGTO] [char](3) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DESCPAGTO] [char](30) NOT NULL,
+	[STACODCPAGTO] [char](1) NOT NULL,
+	[CODCLASSIFIC] [char](3) NOT NULL,
+	[STAEMITEDUPLICATA] [char](1) NOT NULL,
+	[PERCDESCONTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP009__PERCD__286302EC] DEFAULT (0),
+	[STAPERMITEALTERAR] [char](1) NULL CONSTRAINT [DF__TBCOMP009__STAPE__29572725] DEFAULT ('N'),
+	[CAMPOVENCIMENTO] [char](1) NULL CONSTRAINT [DF__TBCOMP009__CAMPO__0E79DF0E] DEFAULT ('E'),
+	[ENCFINANCEIRO] [decimal](28, 14) NULL,
+	[STAANTECIPADO] [char](1) NULL);
+GO
+
+--Table dbo.TBCOMP012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP012] (
+	[CODTIPIMP] [char](2) NOT NULL,
+	[CODALIQ] [char](2) NOT NULL,
+	[STACODALIQ] [char](1) NOT NULL,
+	[PERCALIQ] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBCOMP013
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP013] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP013__CODEM__754E3E91] DEFAULT ('01'),
+	[NUMPEDIDO] [char](9) NOT NULL,
+	[SERPEDIDO] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[DATENCER] [datetime] NULL,
+	[STAPEDIDO] [char](1) NOT NULL,
+	[DATIMPPED] [datetime] NULL,
+	[STARECEB] [char](1) NOT NULL,
+	[DATPEDIDO] [datetime] NOT NULL,
+	[CODCPAGTO] [char](3) NOT NULL,
+	[OBRA] [char](45) NULL,
+	[NUMNIVELLIBERACAO] [int] NULL,
+	[STACOMPRALIBERADA] [char](1) NULL CONSTRAINT [DF__TBCOMP013__STACO__764262CA] DEFAULT ('N'),
+	[SUBGRUPO] [char](12) NULL,
+	[NUMNIVELPEDIDO] [int] NULL,
+	[DATREFERIND] [datetime] NULL,
+	[CODTRANSP] [char](3) NULL,
+	[CODAREA] [char](10) NULL,
+	[COMPRADOR_ID] [char](10) NULL,
+	[ENDENTPEDIDO] [char](150) NULL,
+	[TPPEDIDO] [char](3) NULL CONSTRAINT [DF__TBCOMP013__TPPED__74AF2013] DEFAULT ('C'),
+	[CODGRUPO] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CONDGERALPEDIDO] [text] NULL,
+	[CONTATOFORN] [char](20) NULL,
+	[CELCONTATOFORN] [char](12) NULL,
+	[EMAILCONTATO] [char](70) NULL,
+	[PAGFRETE] [char](1) NULL,
+	[NUMCONTRATOFORN] [char](9) NULL,
+	[CONTRATOFORNECEDOR] [char](20) NULL,
+	[NUMCARREGAMENTO] [char](9) NULL);
+GO
+
+--Table dbo.TBCOMP014
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP014] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP014__CODEM__791ECF75] DEFAULT ('01'),
+	[NUMPEDIDO] [char](9) NOT NULL,
+	[SERPEDIDO] [char](2) NOT NULL,
+	[NUMITEM] [char](2) NOT NULL,
+	[NUMCOLETA] [char](9) NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DATPRO] [datetime] NULL,
+	[STAITEM] [char](1) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[NUMITEMCOL] [char](2) NULL,
+	[NUMSC] [char](10) NULL,
+	[NUMITEMSC] [char](2) NULL,
+	[DATENCER] [datetime] NULL,
+	[EXTRA] [char](1) NULL,
+	[CODTIPIMPIPI] [char](2) NULL,
+	[CODALIQIPI] [char](2) NULL,
+	[STARECEB] [char](1) NOT NULL,
+	[QTDEPED] [decimal](28, 14) NOT NULL,
+	[PORCIPI] [decimal](28, 14) NULL,
+	[QTDERECEB] [decimal](28, 14) NULL,
+	[QTDESALDO] [decimal](28, 14) NULL,
+	[PORCDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP014__PORCD__7A12F3AE] DEFAULT (0),
+	[VALUNITSEMIPI] [decimal](28, 14) NOT NULL,
+	[VALTOTSEMIPI] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP014__VALTO__7B0717E7] DEFAULT (0),
+	[VALTOTSEMIPICOMDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP014__VALTO__7BFB3C20] DEFAULT (0),
+	[VALTOTCOMIPICOMDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP014__VALTO__7CEF6059] DEFAULT (0),
+	[VALUNITCOMIPICOMDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP014__VALUN__7DE38492] DEFAULT (0),
+	[VALDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP014__VALDE__7ED7A8CB] DEFAULT (0),
+	[CODUNIMEDCADMAT] [char](2) NOT NULL,
+	[QTDUNIMEDCADMAT] [decimal](28, 14) NOT NULL,
+	[FATORCONV] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP014__FATOR__7FCBCD04] DEFAULT (1),
+	[PERCRECEB] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP014__PERCR__00BFF13D] DEFAULT (0),
+	[PERCENCER] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP014__PERCE__01B41576] DEFAULT (0),
+	[CODINDICE] [char](3) NULL,
+	[VALUNITINDFORN] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP014__VALUN__02A839AF] DEFAULT (0),
+	[VALTOTINDFORN] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP014__VALTO__039C5DE8] DEFAULT (0),
+	[DATNEC] [datetime] NULL,
+	[PERCICM] [decimal](28, 14) NULL,
+	[VALPAUTAIPIVIGENTE] [decimal](28, 14) NULL,
+	[QTDENAUMTRIBUTADA] [decimal](28, 14) NULL,
+	[FATORPAUTAIPI] [decimal](28, 14) NULL,
+	[NUMCONTRATOFORN] [char](9) NULL,
+	[NUMITEMCONTRATOFORN] [char](2) NULL);
+GO
+
+--Table dbo.TBCOMP015
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP015] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP015__CODEM__3F466844] DEFAULT ('01'),
+	[NUMSC] [char](10) NOT NULL,
+	[NUMITEMSC] [char](2) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[QTDESOLIC] [decimal](28, 14) NOT NULL,
+	[QTDERECEB] [decimal](28, 14) NOT NULL,
+	[QTDESALDO] [decimal](28, 14) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL CONSTRAINT [DF__TBCOMP015__CODOR__403A8C7D] DEFAULT (' '),
+	[SEQORDEM] [char](3) NOT NULL CONSTRAINT [DF__TBCOMP015__SEQOR__412EB0B6] DEFAULT (' '),
+	[CODLOCAL] [char](5) NULL);
+GO
+
+--Table dbo.TBCOMP016
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP016] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP016__CODEM__440B1D61] DEFAULT ('01'),
+	[NUMSEQCOMSEMPED] [char](9) NOT NULL,
+	[NUMSC] [char](10) NOT NULL,
+	[NUMITEM] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[DATCOMPSEMPED] [datetime] NOT NULL,
+	[DATPROCOMSEMPED] [datetime] NOT NULL,
+	[DATENCER] [datetime] NULL,
+	[STAPED] [char](1) NOT NULL,
+	[EXTRA] [char](1) NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[CODTIPIMPIPI] [char](2) NULL,
+	[CODALIQIPI] [char](2) NULL,
+	[STARECEB] [char](1) NOT NULL,
+	[OBS] [text] NULL,
+	[QTDCOMSEMPED] [decimal](28, 14) NOT NULL,
+	[QTDERECEB] [decimal](28, 14) NULL,
+	[QTDESALDO] [decimal](28, 14) NULL,
+	[PORCDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP016__PORCD__44FF419A] DEFAULT (0),
+	[VALUNITSEMIPI] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP016__VALUN__45F365D3] DEFAULT (0),
+	[VALTOTSEMIPI] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP016__VALTO__46E78A0C] DEFAULT (0),
+	[VALDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP016__VALDE__47DBAE45] DEFAULT (0),
+	[VALTOTSEMIPICOMDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP016__VALTO__48CFD27E] DEFAULT (0),
+	[VALTOTCOMIPICOMDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP016__VALTO__49C3F6B7] DEFAULT (0),
+	[VALUNITCOMIPICOMDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP016__VALUN__4AB81AF0] DEFAULT (0),
+	[PORCIPI] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP016__PORCI__4BAC3F29] DEFAULT (0),
+	[CODUNIMEDCADMAT] [char](2) NOT NULL,
+	[QTDUNIMEDCADMAT] [decimal](28, 14) NOT NULL,
+	[FATORCONV] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP016__FATOR__4CA06362] DEFAULT (1),
+	[SUBGRUPO] [char](12) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL);
+GO
+
+--Table dbo.TBCOMP017
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP017] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP017__CODEM__0678CA93] DEFAULT ('01'),
+	[NUMPEDIDO] [char](9) NOT NULL,
+	[SERPEDIDO] [char](2) NOT NULL,
+	[NUMITEMPED] [char](2) NOT NULL,
+	[NUMSC] [char](10) NOT NULL,
+	[NUMITEM] [char](2) NOT NULL,
+	[NUMCOLETA] [char](9) NULL,
+	[NUMITEMCOL] [char](2) NULL,
+	[STATUS] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBCOMP018
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP018] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP018__CODEM__52593CB8] DEFAULT ('01'),
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[INSCESTSUBSTRIB] [char](12) NULL,
+	[TIPO] [char](1) NOT NULL,
+	[DATCADAST] [datetime] NULL,
+	[CONSOLIDADO] [char](1) NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[DADADICIONAIS] [text] NULL,
+	[VALTOTMERC] [decimal](28, 14) NOT NULL,
+	[VALTOTICM] [decimal](28, 14) NULL,
+	[VALTOTIPI] [decimal](28, 14) NULL,
+	[VALDESPESAS] [decimal](28, 14) NULL,
+	[VALFRETE] [decimal](28, 14) NULL,
+	[VALTOTNF] [decimal](28, 14) NOT NULL,
+	[BASECALCICMS] [decimal](28, 14) NULL,
+	[BASECALCICMSSUBST] [decimal](28, 14) NULL,
+	[VALICMSSUBST] [decimal](28, 14) NULL,
+	[VALSEGURO] [decimal](28, 14) NULL,
+	[VALTOTSERVICO] [decimal](28, 14) NOT NULL,
+	[VALTOTISS] [decimal](28, 14) NOT NULL,
+	[VALTOTIR] [decimal](28, 14) NOT NULL,
+	[DATCOMPET] [datetime] NOT NULL,
+	[DATCONSOLID] [datetime] NULL,
+	[STAEXPLF] [char](1) NULL CONSTRAINT [DF__TBCOMP018__STAEX__534D60F1] DEFAULT ('N'),
+	[STAEXCONT] [char](1) NULL CONSTRAINT [DF__TBCOMP018__STAEX__5441852A] DEFAULT ('N'),
+	[VALTOTINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP018__VALTO__5535A963] DEFAULT (0),
+	[CODNATUOPER2] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[DATREFERIND] [datetime] NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[TIPONF] [char](1) NULL,
+	[CODCFOPSEG] [char](6) NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBCOMP018__STAIN__74F938D6] DEFAULT ('N'),
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[NUMNOTARECEB] [char](6) NULL,
+	[VALTOTCSLLRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP018__VALTO__7207BD92] DEFAULT (0),
+	[VALTOTPISRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP018__VALTO__72FBE1CB] DEFAULT (0),
+	[VALTOTCOFINSRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP018__VALTO__73F00604] DEFAULT (0),
+	[CODFORNORIGEM] [char](6) NULL,
+	[NUMNFORIGEM] [char](6) NULL,
+	[SERNFORIGEM] [char](5) NULL,
+	[STASUJVARCAMB] [char](1) NULL,
+	[VALTOTPIS] [decimal](28, 14) NULL,
+	[VALTOTCOFINS] [decimal](28, 14) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[STARATEIODAALTERADO] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODDOCUMSERV] [char](3) NULL,
+	[CODSITDOCTO] [char](2) NULL,
+	[CODCFPS] [char](4) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[TIPPAGTO] [char](1) NULL,
+	[TIPTITULO] [char](2) NULL,
+	[DESCOMPLTIT] [char](250) NULL,
+	[NUMDI] [char](20) NULL,
+	[DATREGSISCOMEX] [datetime] NULL,
+	[DATDESEMBMERC] [datetime] NULL,
+	[VALDESPFORABCICMS] [decimal](28, 14) NULL,
+	[VALORIOF] [decimal](28, 14) NULL,
+	[VALTOTDESCISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP018__VALTO__39EE4CF8] DEFAULT (0),
+	[EXTRA] [char](1) NULL CONSTRAINT [DF__TBCOMP018__EXTRA__5D378935] DEFAULT ('N'),
+	[CODFORNRECEBFISICO] [char](6) NULL,
+	[NUMNFRECEBFISICO] [char](6) NULL,
+	[SERNFRECEBFISICO] [char](5) NULL,
+	[CODNATUOPER] [char](3) NULL,
+	[CODDI] [char](1) NULL,
+	[CHAVENFE] [char](44) NULL,
+	[VALPISSUBST] [decimal](28, 14) NULL,
+	[VALNAOTRIB] [decimal](28, 14) NULL,
+	[VALCOFINSSUBST] [decimal](28, 14) NULL,
+	[BASECALCICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP018__BASEC__5D5784C6] DEFAULT (0),
+	[VALTOTICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP018__VALTO__5E4BA8FF] DEFAULT (0),
+	[CODCFOPTERC] [char](6) NULL,
+	[CODCFOPQUAR] [char](6) NULL,
+	[INDOPERICMSSTUFDIVERSA] [char](1) NULL,
+	[UFDIVERSAICMSST] [char](2) NULL,
+	[NUMDRAWBACK] [char](20) NULL,
+	[NUMNFCOMPLETO] [char](9) NULL,
+	[CHAVENFESERV] [char](60) NULL,
+	[DATCONCLUSAOSERV] [datetime] NULL,
+	[CERTIFICADO] [char](20) NULL,
+	[CODDOCUMPREVDESP] [char](3) NULL,
+	[NUMDOCTOPREVDESP] [char](8) NULL,
+	[SERIEPREVDESP] [char](5) NULL,
+	[TPEMITENTEPREVDESP] [char](1) NULL,
+	[CTAEMITENTEPREVDESP] [char](12) NULL,
+	[ARQXML] [varchar](250) NULL);
+GO
+
+--Table dbo.TBCOMP019
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP019] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP019__CODEM__5812160E] DEFAULT ('01'),
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[CODSITUACAOTRIB] [char](2) NULL,
+	[CODCLASSFISCAL] [char](12) NULL,
+	[BASECALCIPI] [char](1) NULL,
+	[BASECALCICMS] [char](1) NULL,
+	[BASECALCICMSSUBST] [char](1) NULL,
+	[ITEMSERVICO] [char](1) NOT NULL,
+	[CODTIPIMPISS] [char](2) NULL,
+	[CODALIQISS] [char](2) NULL,
+	[CODTIPIMPIR] [char](2) NULL,
+	[CODALIQIR] [char](2) NULL,
+	[ID_OPER] [char](1) NOT NULL,
+	[QTDERECEB] [decimal](28, 14) NOT NULL,
+	[VALUNITITEM] [decimal](28, 14) NOT NULL,
+	[VALTOTITEM] [decimal](28, 14) NULL,
+	[PERCIPI] [decimal](28, 14) NOT NULL,
+	[PERCICM] [decimal](28, 14) NOT NULL,
+	[PERCREDICMS] [decimal](28, 14) NOT NULL,
+	[VALBASECALCIPI] [decimal](28, 14) NOT NULL,
+	[VALBASECALCICMS] [decimal](28, 14) NOT NULL,
+	[VALIPIDESTACADO] [decimal](28, 14) NOT NULL,
+	[VALICMSDESTACADO] [decimal](28, 14) NOT NULL,
+	[VALIPIRECUPERADO] [decimal](28, 14) NOT NULL,
+	[VALICMSRECUPERADO] [decimal](28, 14) NOT NULL,
+	[VALFRETE] [decimal](28, 14) NOT NULL,
+	[VALSEGURO] [decimal](28, 14) NOT NULL,
+	[VALDESPESAS] [decimal](28, 14) NOT NULL,
+	[VALCONTABIL] [decimal](28, 14) NOT NULL,
+	[VALMERCSEMICM] [decimal](28, 14) NOT NULL,
+	[VALTOTITEMDIG] [decimal](28, 14) NOT NULL,
+	[PERCRECUPIPI] [decimal](28, 14) NOT NULL,
+	[PERCRECUPICMS] [decimal](28, 14) NOT NULL,
+	[VALBASECALCICMSSUBST] [decimal](28, 14) NOT NULL,
+	[VALICMSSUBST] [decimal](28, 14) NOT NULL,
+	[VALREDUCAOBASEICMS] [decimal](28, 14) NOT NULL,
+	[PORCSUBSTRIB] [decimal](28, 14) NOT NULL,
+	[PORCICMSEMISSOR] [decimal](28, 14) NOT NULL,
+	[PERCISS] [decimal](28, 14) NOT NULL,
+	[PERCIR] [decimal](28, 14) NOT NULL,
+	[VALISS] [decimal](28, 14) NOT NULL,
+	[VALIR] [decimal](28, 14) NOT NULL,
+	[CODUNIMEDCADMAT] [char](2) NOT NULL,
+	[QTDUNIMEDCADMAT] [decimal](28, 14) NOT NULL,
+	[FATORCONV] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP019__FATOR__59063A47] DEFAULT (1),
+	[VALTOTBRUTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALTO__59FA5E80] DEFAULT (0),
+	[VALDESCONTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALDE__5AEE82B9] DEFAULT (0),
+	[VALBASEISS] [decimal](28, 14) NULL,
+	[VALBASEIR] [decimal](28, 14) NULL,
+	[VALINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALIN__5BE2A6F2] DEFAULT (0),
+	[CODLOTE] [char](15) NULL,
+	[DATVALIDADE] [datetime] NULL,
+	[CODLOTEFORN] [char](15) NULL,
+	[CODINDICE] [char](3) NULL,
+	[VALUNITINDFORN] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALUN__5CD6CB2B] DEFAULT (0),
+	[VALTOTINDFORN] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALTO__5DCAEF64] DEFAULT (0),
+	[QTDERETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__QTDER__5EBF139D] DEFAULT (0),
+	[CODSITUACAOTRIB2] [char](5) NULL,
+	[QTDESALDORETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__QTDES__5FB337D6] DEFAULT (0),
+	[CODNATUOPER2] [char](6) NULL,
+	[VALIMPIMPORT] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALIM__3BC0BB7A] DEFAULT (0),
+	[PERCPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__PERCP__4E9E85C4] DEFAULT (0),
+	[PERCRECUPPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__PERCR__4F92A9FD] DEFAULT (0),
+	[VALPISRECUPERADO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALPI__5086CE36] DEFAULT (0),
+	[TIPUSOMATERIAL] [char](1) NULL,
+	[NUMINSPECAOQUALID] [char](6) NULL,
+	[QTDIQ] [decimal](28, 14) NULL,
+	[CCUSTOIQ] [char](10) NULL,
+	[STABAIXADOIQ] [char](1) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__PERCC__5847EB8F] DEFAULT (0),
+	[PERCRECUPCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__PERCR__593C0FC8] DEFAULT (0),
+	[VALCOFINSRECUPERADO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALCO__5A303401] DEFAULT (0),
+	[VALCSLLRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALCS__77C096E8] DEFAULT (0),
+	[VALPISRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALPI__78B4BB21] DEFAULT (0),
+	[VALCOFINSRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALCO__79A8DF5A] DEFAULT (0),
+	[DESMATGEN] [char](50) NULL,
+	[VALBASECALCPISCOFINSIMPORT] [decimal](28, 14) NULL,
+	[VALPISDESTACADO] [decimal](28, 14) NULL,
+	[VALCOFINSDESTACADO] [decimal](28, 14) NULL,
+	[OBSIQ] [text] NULL,
+	[VALSUBCONTRATO] [decimal](28, 14) NULL,
+	[VALMERCPROPRIA] [decimal](28, 14) NULL,
+	[VALMERCTERC] [decimal](28, 14) NULL,
+	[CODGENERO] [char](2) NULL,
+	[CODCLASSIFICENERG] [char](2) NULL,
+	[CODCLASSIFICTELECOM] [char](3) NULL,
+	[CODCFPS] [char](4) NULL,
+	[CODCTISS] [char](2) NULL,
+	[CODCTIPI] [char](2) NULL,
+	[TIPRECEITA] [char](1) NULL,
+	[TIPRECEITATELECOM] [char](1) NULL,
+	[TIPFISJURRECEPTOR] [char](1) NULL,
+	[NUMCNPJCPFRECEPTOR] [char](14) NULL,
+	[CODUFRECEPTOR] [char](2) NULL,
+	[INSCRESTARECEPTOR] [char](20) NULL,
+	[CODCIDADE] [char](3) NULL,
+	[CODSERVICO] [char](3) NULL,
+	[QTDREALIQ] [decimal](28, 14) NULL CONSTRAINT [DF_TBCOMP019_QTDREALIQ] DEFAULT (0),
+	[VALDESCISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALDE__3AE27131] DEFAULT (0),
+	[EXTRA] [char](1) NULL CONSTRAINT [DF__TBCOMP019__EXTRA__5E2BAD6E] DEFAULT ('N'),
+	[CODMOVFISC] [char](3) NULL,
+	[VALICMSSUBSTCOMPLEM] [decimal](28, 14) NULL,
+	[VALBASECALCICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALBA__5F3FCD38] DEFAULT (0),
+	[PERCICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__PERCI__6033F171] DEFAULT (0),
+	[VALICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__VALIC__612815AA] DEFAULT (0),
+	[CODMODULTENT] [char](2) NULL,
+	[NUMDOCULTENT] [char](10) NULL,
+	[SERDOCULTENT] [char](5) NULL,
+	[DTULTENT] [datetime] NULL,
+	[CODFORNULTENT] [char](6) NULL,
+	[QUANTULTENT] [decimal](28, 14) NULL,
+	[VALULTENT] [decimal](28, 14) NULL,
+	[VALUNITBCST] [decimal](28, 14) NULL,
+	[CODDI] [char](1) NULL,
+	[NUMDRAWBACK] [char](20) NULL,
+	[NUMDI] [char](20) NULL,
+	[DATPAGPISIMPORT] [datetime] NULL,
+	[DATPAGCOFINSIMPORT] [datetime] NULL,
+	[LOCEXESERV] [char](1) NULL,
+	[QTDETARAEMB] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP019__QTDET__17C41D7D] DEFAULT ((0)),
+	[CODUNIMEDTARAEMB] [char](2) NULL,
+	[VALPAUTAIPIVIGENTE] [decimal](28, 14) NULL,
+	[QTDENAUMTRIBUTADA] [decimal](28, 14) NULL,
+	[CODFCI] [char](36) NULL,
+	[CONTEUDOIMP] [decimal](28, 14) NULL,
+	[VALPARCIMP] [decimal](28, 14) NULL,
+	[VALBASECALCICMDIF] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP019__VALBA__1DD1FC8E] DEFAULT ((0)),
+	[VALPERCICMDIF] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP019__VALPE__1EC620C7] DEFAULT ((0)),
+	[VALICMDIF] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP019__VALIC__1FBA4500] DEFAULT ((0)));
+GO
+
+--Table dbo.TBCOMP020
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP020] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP020__CODEM__628FA481] DEFAULT ('01'),
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMDUP] [char](6) NOT NULL,
+	[NUMPARCDUP] [char](2) NOT NULL,
+	[DATVENCDUP] [datetime] NOT NULL,
+	[VALDUP] [decimal](28, 14) NOT NULL,
+	[STAEXPORT] [char](1) NULL CONSTRAINT [DF__TBCOMP020__STAEX__6383C8BA] DEFAULT ('N'),
+	[STAEXCONT] [char](1) NULL CONSTRAINT [DF__TBCOMP020__STAEX__6477ECF3] DEFAULT ('N'));
+GO
+
+--Table dbo.TBCOMP021
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP021] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP021__CODEM__6754599E] DEFAULT ('01'),
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[PAGFRETE] [char](1) NOT NULL,
+	[PLACA] [char](10) NOT NULL,
+	[RAZSOCIAL] [char](50) NOT NULL,
+	[NUMCGCCPF] [char](14) NOT NULL,
+	[ENDERECO] [char](40) NULL,
+	[CIDADE] [char](20) NULL,
+	[CODUFTRANSP] [char](2) NULL,
+	[INSCRESTA] [char](12) NULL,
+	[ESPECIE] [char](15) NULL,
+	[MARCA] [char](15) NULL,
+	[NUMERO] [char](10) NULL,
+	[PESOBRUTO] [char](10) NULL,
+	[PESOLIQUIDO] [char](10) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL,
+	[CODTRANSP] [char](3) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[INDNATFRT] [char](1) NULL);
+GO
+
+--Table dbo.TBCOMP022
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP022] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP022__CODEM__6A30C649] DEFAULT ('01'),
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[INSCESTSUBSTRIB] [char](12) NULL,
+	[TIPO] [char](1) NOT NULL,
+	[DATCADAST] [datetime] NULL,
+	[CONSOLIDADO] [char](1) NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[DADADICIONAIS] [text] NULL,
+	[VALTOTMERC] [decimal](28, 14) NOT NULL,
+	[VALTOTICM] [decimal](28, 14) NULL,
+	[VALTOTIPI] [decimal](28, 14) NULL,
+	[VALDESPESAS] [decimal](28, 14) NULL,
+	[VALFRETE] [decimal](28, 14) NULL,
+	[VALTOTNF] [decimal](28, 14) NOT NULL,
+	[BASECALCICMS] [decimal](28, 14) NULL,
+	[BASECALCICMSSUBST] [decimal](28, 14) NULL,
+	[VALICMSSUBST] [decimal](28, 14) NULL,
+	[VALSEGURO] [decimal](28, 14) NULL,
+	[VALTOTSERVICO] [decimal](28, 14) NOT NULL,
+	[VALTOTISS] [decimal](28, 14) NOT NULL,
+	[VALTOTIR] [decimal](28, 14) NOT NULL,
+	[DATCONSOLID] [datetime] NULL,
+	[STAEXPLF] [char](1) NULL CONSTRAINT [DF__TBCOMP022__STAEX__6B24EA82] DEFAULT ('N'),
+	[STAEXCONT] [char](1) NULL CONSTRAINT [DF__TBCOMP022__STAEX__6C190EBB] DEFAULT ('N'),
+	[VALTOTINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP022__VALTO__6D0D32F4] DEFAULT (0),
+	[CODNATUOPER2] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[DATREFERIND] [datetime] NULL,
+	[TIPONF] [char](1) NULL,
+	[NUMNFRELAC] [char](6) NULL,
+	[SERNFRELAC] [char](5) NULL,
+	[CODCLIRELAC] [char](9) NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[CODCFOPSEG] [char](6) NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBCOMP022__STAIN__75ED5D0F] DEFAULT ('N'),
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[NUMNOTARECEB] [char](6) NULL,
+	[DATCOMPET] [datetime] NULL,
+	[CODAV] [char](8) NULL,
+	[VALTOTCSLLRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP022__VALTO__74E42A3D] DEFAULT (0),
+	[VALTOTPISRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP022__VALTO__75D84E76] DEFAULT (0),
+	[VALTOTCOFINSRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP022__VALTO__76CC72AF] DEFAULT (0),
+	[CODFORNORIGEM] [char](6) NULL,
+	[NUMNFORIGEM] [char](6) NULL,
+	[SERNFORIGEM] [char](5) NULL,
+	[NUMPEDIDOINDUSTR] [char](9) NULL,
+	[SERPEDIDOINDUSTR] [char](2) NULL,
+	[STASUJVARCAMB] [char](1) NULL,
+	[VALTOTPIS] [decimal](28, 14) NULL,
+	[VALTOTCOFINS] [decimal](28, 14) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[STARATEIODAALTERADO] [char](1) NULL,
+	[REGFRETE] [char](5) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODDOCUMSERV] [char](3) NULL,
+	[CODSITDOCTO] [char](2) NULL,
+	[CODCFPS] [char](4) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[TIPPAGTO] [char](1) NULL,
+	[TIPTITULO] [char](2) NULL,
+	[DESCOMPLTIT] [char](250) NULL,
+	[NUMDI] [char](20) NULL,
+	[DATREGSISCOMEX] [datetime] NULL,
+	[DATDESEMBMERC] [datetime] NULL,
+	[VALDESPFORABCICMS] [decimal](28, 14) NULL,
+	[VALORIOF] [decimal](28, 14) NULL,
+	[VALTOTDESCISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP022__VALTO__3BD6956A] DEFAULT (0),
+	[EXTRA] [char](1) NULL CONSTRAINT [DF__TBCOMP022__EXTRA__5F1FD1A7] DEFAULT ('N'),
+	[CODFORNRECEBFISICO] [char](6) NULL,
+	[NUMNFRECEBFISICO] [char](6) NULL,
+	[SERNFRECEBFISICO] [char](5) NULL,
+	[CODNATUOPER] [char](3) NULL,
+	[CODDI] [char](1) NULL,
+	[CHAVENFE] [char](44) NULL,
+	[VALPISSUBST] [decimal](28, 14) NULL,
+	[VALNAOTRIB] [decimal](28, 14) NULL,
+	[VALCOFINSSUBST] [decimal](28, 14) NULL,
+	[BASECALCICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP022__BASEC__621C39E3] DEFAULT (0),
+	[VALTOTICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP022__VALTO__63105E1C] DEFAULT (0),
+	[NUMCONTINDUSTR] [char](9) NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NULL,
+	[STATRIANGULAR] [char](1) NULL,
+	[PRAZODIAS] [int] NULL,
+	[CODMATPRODUZIDO] [char](15) NULL,
+	[QTDEPRODUZIDA] [decimal](28, 14) NULL,
+	[CODCPAGTOPROD] [char](3) NULL,
+	[CODCFOPTERC] [char](6) NULL,
+	[CODCFOPQUAR] [char](6) NULL,
+	[INDOPERICMSSTUFDIVERSA] [char](1) NULL,
+	[UFDIVERSAICMSST] [char](2) NULL,
+	[NUMDRAWBACK] [char](20) NULL,
+	[NUMNFCOMPLETO] [char](9) NULL,
+	[CHAVENFESERV] [char](60) NULL,
+	[DATCONCLUSAOSERV] [datetime] NULL,
+	[CERTIFICADO] [char](20) NULL,
+	[CODDOCUMPREVDESP] [char](3) NULL,
+	[NUMDOCTOPREVDESP] [char](8) NULL,
+	[SERIEPREVDESP] [char](5) NULL,
+	[TPEMITENTEPREVDESP] [char](1) NULL,
+	[CTAEMITENTEPREVDESP] [char](12) NULL,
+	[ARQXML] [varchar](250) NULL);
+GO
+
+--Table dbo.TBCOMP023
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP023] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP023__CODEM__6FE99F9F] DEFAULT ('01'),
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[CODSITUACAOTRIB] [char](2) NULL,
+	[CODCLASSFISCAL] [char](12) NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[BASECALCIPI] [char](1) NULL,
+	[BASECALCICMS] [char](1) NULL,
+	[BASECALCICMSSUBST] [char](1) NULL,
+	[ITEMSERVICO] [char](1) NOT NULL,
+	[CODTIPIMPISS] [char](2) NULL,
+	[CODALIQISS] [char](2) NULL,
+	[CODTIPIMPIR] [char](2) NULL,
+	[CODALIQIR] [char](2) NULL,
+	[ID_OPER] [char](1) NOT NULL,
+	[QTDERECEB] [decimal](28, 14) NOT NULL,
+	[VALUNITITEM] [decimal](28, 14) NOT NULL,
+	[VALTOTITEM] [decimal](28, 14) NULL,
+	[PERCIPI] [decimal](28, 14) NOT NULL,
+	[PERCICM] [decimal](28, 14) NOT NULL,
+	[PERCREDICMS] [decimal](28, 14) NOT NULL,
+	[VALBASECALCIPI] [decimal](28, 14) NOT NULL,
+	[VALBASECALCICMS] [decimal](28, 14) NOT NULL,
+	[VALIPIDESTACADO] [decimal](28, 14) NOT NULL,
+	[VALICMSDESTACADO] [decimal](28, 14) NOT NULL,
+	[VALIPIRECUPERADO] [decimal](28, 14) NOT NULL,
+	[VALICMSRECUPERADO] [decimal](28, 14) NOT NULL,
+	[VALFRETE] [decimal](28, 14) NOT NULL,
+	[VALSEGURO] [decimal](28, 14) NOT NULL,
+	[VALDESPESAS] [decimal](28, 14) NOT NULL,
+	[VALCONTABIL] [decimal](28, 14) NOT NULL,
+	[VALMERCSEMICM] [decimal](28, 14) NOT NULL,
+	[VALTOTITEMDIG] [decimal](28, 14) NOT NULL,
+	[PERCRECUPIPI] [decimal](28, 14) NOT NULL,
+	[PERCRECUPICMS] [decimal](28, 14) NOT NULL,
+	[VALBASECALCICMSSUBST] [decimal](28, 14) NOT NULL,
+	[VALICMSSUBST] [decimal](28, 14) NOT NULL,
+	[VALREDUCAOBASEICMS] [decimal](28, 14) NOT NULL,
+	[PORCSUBSTRIB] [decimal](28, 14) NOT NULL,
+	[PORCICMSEMISSOR] [decimal](28, 14) NOT NULL,
+	[PERCISS] [decimal](28, 14) NOT NULL,
+	[PERCIR] [decimal](28, 14) NOT NULL,
+	[VALISS] [decimal](28, 14) NOT NULL,
+	[VALIR] [decimal](28, 14) NOT NULL,
+	[CODUNIMEDCADMAT] [char](2) NOT NULL,
+	[QTDUNIMEDCADMAT] [decimal](28, 14) NOT NULL,
+	[FATORCONV] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP023__FATOR__70DDC3D8] DEFAULT (1),
+	[VALTOTBRUTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALTO__71D1E811] DEFAULT (0),
+	[VALDESCONTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALDE__72C60C4A] DEFAULT (0),
+	[VALBASEISS] [decimal](28, 14) NULL,
+	[VALBASEIR] [decimal](28, 14) NULL,
+	[VALINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALIN__73BA3083] DEFAULT (0),
+	[CODLOTE] [char](15) NULL,
+	[DATVALIDADE] [datetime] NULL,
+	[CODLOTEFORN] [char](15) NULL,
+	[CODINDICE] [char](3) NULL,
+	[VALUNITINDFORN] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALUN__74AE54BC] DEFAULT (0),
+	[VALTOTINDFORN] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALTO__75A278F5] DEFAULT (0),
+	[QTDERETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__QTDER__76969D2E] DEFAULT (0),
+	[CODSITUACAOTRIB2] [char](5) NULL,
+	[QTDESALDORETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__QTDES__778AC167] DEFAULT (0),
+	[VALMAOOBRA] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALMA__160526E6] DEFAULT (0),
+	[VALINSUMOS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALIN__16F94B1F] DEFAULT (0),
+	[CODNATUOPER2] [char](6) NULL,
+	[VALIMPIMPORT] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALIM__3CB4DFB3] DEFAULT (0),
+	[PERCPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__PERCP__517AF26F] DEFAULT (0),
+	[PERCRECUPPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__PERCR__526F16A8] DEFAULT (0),
+	[VALPISRECUPERADO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALPI__53633AE1] DEFAULT (0),
+	[TIPUSOMATERIAL] [char](1) NULL,
+	[NUMINSPECAOQUALID] [char](6) NULL,
+	[QTDIQ] [decimal](28, 14) NULL,
+	[CCUSTOIQ] [char](10) NULL,
+	[STABAIXADOIQ] [char](1) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__PERCC__5B24583A] DEFAULT (0),
+	[PERCRECUPCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__PERCR__5C187C73] DEFAULT (0),
+	[VALCOFINSRECUPERADO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALCO__5D0CA0AC] DEFAULT (0),
+	[VALCSLLRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALCS__7A9D0393] DEFAULT (0),
+	[VALPISRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALPI__7B9127CC] DEFAULT (0),
+	[VALCOFINSRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALCO__7C854C05] DEFAULT (0),
+	[DESMATGEN] [char](50) NULL,
+	[STAVALMOINCIDEIPI] [char](1) NULL,
+	[STAVALINSUMOINCIDEIPI] [char](1) NULL,
+	[VALBASECALCPISCOFINSIMPORT] [decimal](28, 14) NULL,
+	[VALPISDESTACADO] [decimal](28, 14) NULL,
+	[VALCOFINSDESTACADO] [decimal](28, 14) NULL,
+	[CODMATACABADO] [char](15) NULL,
+	[OBSIQ] [text] NULL,
+	[VALSUBCONTRATO] [decimal](28, 14) NULL,
+	[VALMERCPROPRIA] [decimal](28, 14) NULL,
+	[VALMERCTERC] [decimal](28, 14) NULL,
+	[CODGENERO] [char](2) NULL,
+	[CODCLASSIFICENERG] [char](2) NULL,
+	[CODCLASSIFICTELECOM] [char](3) NULL,
+	[CODCFPS] [char](4) NULL,
+	[CODCTISS] [char](2) NULL,
+	[CODCTIPI] [char](2) NULL,
+	[TIPRECEITA] [char](1) NULL,
+	[TIPRECEITATELECOM] [char](1) NULL,
+	[TIPFISJURRECEPTOR] [char](1) NULL,
+	[NUMCNPJCPFRECEPTOR] [char](14) NULL,
+	[CODUFRECEPTOR] [char](2) NULL,
+	[INSCRESTARECEPTOR] [char](20) NULL,
+	[CODCIDADE] [char](3) NULL,
+	[CODSERVICO] [char](3) NULL,
+	[QTDREALIQ] [decimal](28, 14) NULL CONSTRAINT [DF_TBCOMP023_QTDREALIQ] DEFAULT (0),
+	[VALDESCISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALDE__3CCAB9A3] DEFAULT (0),
+	[EXTRA] [char](1) NULL CONSTRAINT [DF__TBCOMP023__EXTRA__6013F5E0] DEFAULT ('N'),
+	[CODMOVFISC] [char](3) NULL,
+	[VALICMSSUBSTCOMPLEM] [decimal](28, 14) NULL,
+	[NUMRNC] [char](20) NULL,
+	[VALBASECALCICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALBA__64048255] DEFAULT (0),
+	[PERCICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__PERCI__64F8A68E] DEFAULT (0),
+	[VALICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__VALIC__65ECCAC7] DEFAULT (0),
+	[CODMODULTENT] [char](2) NULL,
+	[NUMDOCULTENT] [char](10) NULL,
+	[SERDOCULTENT] [char](5) NULL,
+	[DTULTENT] [datetime] NULL,
+	[CODFORNULTENT] [char](6) NULL,
+	[QUANTULTENT] [decimal](28, 14) NULL,
+	[VALULTENT] [decimal](28, 14) NULL,
+	[VALUNITBCST] [decimal](28, 14) NULL,
+	[NUMCONTINDUSTR] [char](9) NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NULL,
+	[QTDEITEMCONTINDUSTR] [decimal](28, 14) NULL,
+	[CODDI] [char](1) NULL,
+	[NUMDRAWBACK] [char](20) NULL,
+	[NUMDI] [char](20) NULL,
+	[DATPAGPISIMPORT] [datetime] NULL,
+	[DATPAGCOFINSIMPORT] [datetime] NULL,
+	[LOCEXESERV] [char](1) NULL,
+	[QTDEVOLUMESRECEB] [decimal](28, 14) NULL,
+	[CODUNIMEDVOLRECEB] [char](2) NULL,
+	[STANFDEVOLUCAO] [char](1) NULL,
+	[MOTIVODEVOLUC] [char](150) NULL,
+	[QTDETARAEMB] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP023__QTDET__19AC65EF] DEFAULT ((0)),
+	[CODUNIMEDTARAEMB] [char](2) NULL,
+	[VALPAUTAIPIVIGENTE] [decimal](28, 14) NULL,
+	[QTDENAUMTRIBUTADA] [decimal](28, 14) NULL,
+	[CODFCI] [char](36) NULL,
+	[CONTEUDOIMP] [decimal](28, 14) NULL,
+	[VALPARCIMP] [decimal](28, 14) NULL,
+	[VALBASECALCICMDIF] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP023__VALBA__20AE6939] DEFAULT ((0)),
+	[VALPERCICMDIF] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP023__VALPE__21A28D72] DEFAULT ((0)),
+	[VALICMDIF] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP023__VALIC__2296B1AB] DEFAULT ((0)));
+GO
+
+--Table dbo.TBCOMP024
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP024] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP024__CODEM__7A672E12] DEFAULT ('01'),
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMDUP] [char](6) NOT NULL,
+	[NUMPARCDUP] [char](2) NOT NULL,
+	[DATVENCDUP] [datetime] NOT NULL,
+	[VALDUP] [decimal](28, 14) NOT NULL,
+	[STAEXPORT] [char](1) NULL CONSTRAINT [DF__TBCOMP024__STAEX__7B5B524B] DEFAULT ('N'),
+	[STAEXCONT] [char](1) NULL CONSTRAINT [DF__TBCOMP024__STAEX__7C4F7684] DEFAULT ('N'));
+GO
+
+--Table dbo.TBCOMP025
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP025] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP025__CODEM__7F2BE32F] DEFAULT ('01'),
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[PAGFRETE] [char](1) NOT NULL,
+	[PLACA] [char](10) NOT NULL,
+	[RAZSOCIAL] [char](50) NOT NULL,
+	[NUMCGCCPF] [char](14) NOT NULL,
+	[ENDERECO] [char](40) NULL,
+	[CIDADE] [char](20) NULL,
+	[CODUFTRANSP] [char](2) NULL,
+	[INSCRESTA] [char](12) NULL,
+	[ESPECIE] [char](15) NULL,
+	[MARCA] [char](15) NULL,
+	[NUMERO] [char](10) NULL,
+	[PESOBRUTO] [char](10) NULL,
+	[PESOLIQUIDO] [char](10) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL,
+	[CODTRANSP] [char](3) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[INDNATFRT] [char](1) NULL);
+GO
+
+--Table dbo.TBCOMP026
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP026] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP026__CODEM__02084FDA] DEFAULT ('01'),
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[QTDERECEB] [decimal](28, 14) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL CONSTRAINT [DF__TBCOMP026__CODOR__02FC7413] DEFAULT (' '),
+	[SEQORDEM] [char](3) NOT NULL CONSTRAINT [DF__TBCOMP026__SEQOR__03F0984C] DEFAULT (' '),
+	[CODALMOXPODERTERCEIROS] [char](3) NULL,
+	[CODLOCAL] [char](5) NULL,
+	[CCUSTOSAIDA] [char](10) NULL,
+	[CODALMOXSAIDA] [char](3) NULL,
+	[CODLOCALSAIDA] [char](5) NULL);
+GO
+
+--Table dbo.TBCOMP027
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP027] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP027__CODEM__06CD04F7] DEFAULT ('01'),
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[DATRECEB] [datetime] NULL,
+	[DATCADAST] [datetime] NULL,
+	[QTDERECEB] [decimal](28, 14) NOT NULL,
+	[VALUNITITEM] [decimal](28, 14) NOT NULL,
+	[CODINDICE] [char](3) NULL,
+	[VALUNITINDFORN] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP027__VALUN__07C12930] DEFAULT (0),
+	[FATORCONV] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP027__FATOR__08B54D69] DEFAULT (1),
+	[CODUNIMEDFORN] [char](2) NULL);
+GO
+
+--Table dbo.TBCOMP028
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP028] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP028__CODEM__0B91BA14] DEFAULT ('01'),
+	[NUMCOLETA] [char](9) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[STACOLETA] [char](1) NOT NULL,
+	[STAPED] [char](1) NOT NULL,
+	[TIPOSC] [char](1) NULL CONSTRAINT [DF__TBCOMP028__TIPOS__0C85DE4D] DEFAULT ('N'),
+	[CODCPAGTO] [char](3) NULL);
+GO
+
+--Table dbo.TBCOMP029
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP029] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP029__CODEM__0F624AF8] DEFAULT ('01'),
+	[NUMCOLETA] [char](9) NOT NULL,
+	[OBS] [text] NOT NULL);
+GO
+
+--Table dbo.TBCOMP030
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP030] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP030__CODEM__123EB7A3] DEFAULT ('01'),
+	[NUMCOLETA] [char](9) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[DATVALID] [datetime] NULL,
+	[DATCOLETA] [datetime] NULL,
+	[DATREFERIND] [datetime] NULL);
+GO
+
+--Table dbo.TBCOMP031
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP031] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP031__CODEM__151B244E] DEFAULT ('01'),
+	[NUMCOLETA] [char](9) NOT NULL,
+	[NUMITEMCOL] [char](2) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[STAITEM] [char](1) NOT NULL,
+	[STAPED] [char](1) NOT NULL,
+	[DATNEC] [datetime] NOT NULL,
+	[EXTRA] [char](1) NULL,
+	[QTDETOTAL] [decimal](28, 14) NULL,
+	[QTDEPEDIDA] [decimal](28, 14) NULL,
+	[QTDEAPEDIR] [decimal](28, 14) NULL,
+	[STACLASSIFICITEMCOL] [char](1) NOT NULL,
+	[PRIORIDADE] [char](1) NOT NULL,
+	[DESMATCOL] [char](70) NULL,
+	[CODUNIMEDCOL] [char](2) NULL,
+	[CODMAT] [char](15) NULL,
+	[TIPPECACOL] [char](1) NULL);
+GO
+
+--Table dbo.TBCOMP032
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP032] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP032__CODEM__17F790F9] DEFAULT ('01'),
+	[NUMCOLETA] [char](9) NOT NULL,
+	[NUMITEMCOL] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[PRAZO] [char](3) NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[STAITEM] [char](1) NOT NULL,
+	[EXTRA] [char](1) NULL,
+	[CODTIPIMPIPI] [char](2) NULL,
+	[CODALIQIPI] [char](2) NULL,
+	[PORCIPI] [decimal](28, 14) NULL,
+	[DATENTREGA] [datetime] NULL,
+	[PORCDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP032__PORCD__18EBB532] DEFAULT (0),
+	[VALDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP032__VALDE__19DFD96B] DEFAULT (0),
+	[CODCLASSIFIC] [char](3) NULL,
+	[VALUNITSEMIPI] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP032__VALUN__1AD3FDA4] DEFAULT (0),
+	[VALTOTSEMIPI] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP032__VALTO__1BC821DD] DEFAULT (0),
+	[QTDECOTADA] [decimal](28, 14) NULL,
+	[VALTOTSEMIPICOMDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP032__VALTO__1CBC4616] DEFAULT (0),
+	[VALTOTCOMIPICOMDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP032__VALTO__1DB06A4F] DEFAULT (0),
+	[VALUNITCOMIPICOMDESC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP032__VALUN__1EA48E88] DEFAULT (0),
+	[CODUNIMEDCADMAT] [char](2) NOT NULL,
+	[QTDUNIMEDCADMAT] [decimal](28, 14) NOT NULL,
+	[FATORCONV] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP032__FATOR__1F98B2C1] DEFAULT (1),
+	[STAVALOR] [int] NULL CONSTRAINT [DF__TBCOMP032__STAVA__208CD6FA] DEFAULT (1),
+	[VALUNITUMCADMAT] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP032__VALUN__2180FB33] DEFAULT (0),
+	[CODINDICE] [char](3) NULL,
+	[VALUNITINDFORN] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP032__VALUN__22751F6C] DEFAULT (0),
+	[VALTOTINDFORN] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP032__VALTO__236943A5] DEFAULT (0),
+	[STAFAZERPEDIDO] [char](1) NULL);
+GO
+
+--Table dbo.TBCOMP033
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP033] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP033__CODEM__0955373E] DEFAULT ('01'),
+	[NUMPEDIDO] [char](9) NOT NULL,
+	[SERPEDIDO] [char](2) NOT NULL,
+	[OBSPEDCOMP] [text] NOT NULL);
+GO
+
+--Table dbo.TBCOMP034
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP034] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP034__CODEM__0C31A3E9] DEFAULT ('01'),
+	[NUMPEDIDO] [char](9) NOT NULL,
+	[SERPEDIDO] [char](2) NOT NULL,
+	[NUMITEM] [char](2) NOT NULL,
+	[DESDETMAT] [text] NOT NULL);
+GO
+
+--Table dbo.TBCOMP035
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP035] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP035__CODEM__2BFE89A6] DEFAULT ('01'),
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[NUMPEDIDO] [char](9) NULL,
+	[NUMITEMPED] [char](2) NULL,
+	[NUMSC] [char](10) NULL,
+	[NUMITEMSC] [char](2) NULL,
+	[NUMCOLETA] [char](9) NULL,
+	[NUMITEMCOL] [char](2) NULL,
+	[CODMAT] [char](15) NULL,
+	[QTDERECEB] [decimal](28, 14) NOT NULL,
+	[VALUNIT] [decimal](28, 14) NULL,
+	[PORCIPI] [decimal](28, 14) NULL,
+	[CODUNIMEDCADMAT] [char](2) NOT NULL,
+	[QTDUNIMEDCADMAT] [decimal](28, 14) NOT NULL,
+	[FATORCONV] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP035__FATOR__2CF2ADDF] DEFAULT (1),
+	[CODUNIMED] [char](2) NULL,
+	[SERPEDIDO] [char](2) NULL);
+GO
+
+--Table dbo.TBCOMP036
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP036] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP036__CODEM__2FCF1A8A] DEFAULT ('01'),
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[NUMSC] [char](10) NOT NULL,
+	[NUMITEMSC] [char](2) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[NUMCOLETA] [char](9) NULL,
+	[NUMITEMCOL] [char](2) NULL,
+	[QTDERECEB] [decimal](28, 14) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL CONSTRAINT [DF__TBCOMP036__CODOR__30C33EC3] DEFAULT (' '),
+	[SEQORDEM] [char](3) NOT NULL CONSTRAINT [DF__TBCOMP036__SEQOR__31B762FC] DEFAULT (' '),
+	[CODALMOXPODERTERCEIROS] [char](3) NULL,
+	[CODLOCAL] [char](5) NULL);
+GO
+
+--Table dbo.TBCOMP037
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP037] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP037__CODEM__0F0E1094] DEFAULT ('01'),
+	[NUMPEDIDO] [char](9) NOT NULL,
+	[SERPEDIDO] [char](2) NOT NULL,
+	[NUMITEM] [char](2) NOT NULL,
+	[OBSITEMPED] [text] NOT NULL);
+GO
+
+--Table dbo.TBCOMP038
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP038] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP038__CODEM__37703C52] DEFAULT ('01'),
+	[NUMSEQCOMSEMPED] [char](9) NOT NULL,
+	[OBSCSP] [text] NOT NULL);
+GO
+
+--Table dbo.TBCOMP039
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP039] (
+	[CODCPAGTO] [char](3) NOT NULL,
+	[NUMDIAS] [int] NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[PERCSOBRETOTAL] [decimal](28, 14) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP039__NUMSE__63AF7C9A] DEFAULT ('01'),
+	[TIPOVENCTO] [char](1) NULL,
+	[NUMSEMANASMESES] [int] NULL,
+	[DIAUTILFIXO] [char](1) NULL,
+	[DIAPROXIMOANTERIOR] [char](1) NULL,
+	[NUMSEMANASMESES2] [int] NULL,
+	[NUMSEMANASMESES3] [int] NULL);
+GO
+
+--Table dbo.TBCOMP040
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP040] (
+	[CODGRCOMPRA] [char](2) NOT NULL,
+	[DESGRCOMPRA] [char](30) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STAGRCOMPRA] [char](1) NOT NULL CONSTRAINT [DF__TBCOMP040__STAGR__3C34F16F] DEFAULT ('S'));
+GO
+
+--Table dbo.TBCOMP045
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP045] (
+	[NUMNIVELCOMPRA] [int] NOT NULL CONSTRAINT [DF__TBCOMP045__NUMNI__3F115E1A] DEFAULT (1),
+	[DESNIVELCOMPRA] [char](40) NOT NULL,
+	[VALINICIOFAIXA] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP045__VALIN__40058253] DEFAULT (0),
+	[VALFINALFAIXA] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP045__VALFI__40F9A68C] DEFAULT (0));
+GO
+
+--Table dbo.TBCOMP046
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP046] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP046__CODEM__359DCDD0] DEFAULT ('01'),
+	[CODAREA] [char](10) NOT NULL,
+	[DESAREA] [char](30) NOT NULL,
+	[STAAREA] [char](1) NOT NULL CONSTRAINT [DF__TBCOMP046__STAAR__3691F209] DEFAULT ('S'),
+	[STAINCLUISMSEMQTDEDISP] [char](1) NULL CONSTRAINT [DF__TBCOMP046__STAIN__37861642] DEFAULT ('S'),
+	[STALIBERASMSEMQTDEDISP] [char](1) NULL CONSTRAINT [DF__TBCOMP046__STALI__387A3A7B] DEFAULT ('S'));
+GO
+
+--Table dbo.TBCOMP047
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP047] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP047__CODEM__11EA7D3F] DEFAULT ('01'),
+	[NUMPEDIDO] [char](9) NOT NULL,
+	[SERPEDIDO] [char](2) NOT NULL,
+	[NUMNIVELCOMPRA] [int] NOT NULL CONSTRAINT [DF__TBCOMP047__NUMNI__12DEA178] DEFAULT (0),
+	[USER_ID] [char](10) NULL,
+	[DATACAO] [datetime] NOT NULL,
+	[ACAO] [char](1) NOT NULL,
+	[OBSMOTIVORETENCAO] [text] NULL,
+	[DESCNIVEL] [char](40) NULL,
+	[SEQ] [int] NOT NULL);
+GO
+
+--Table dbo.TBCOMP048
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP048] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP048__CODEM__3B56A726] DEFAULT ('01'),
+	[USER_ID] [char](10) NOT NULL,
+	[CODAREA] [char](10) NOT NULL);
+GO
+
+--Table dbo.TBCOMP049
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP049] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP049__CODEM__19D5B7CA] DEFAULT ('01'),
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[NUMNFSAIDA] [char](6) NOT NULL,
+	[SERNFSAIDA] [char](5) NOT NULL,
+	[NUMITEMNFSAIDA] [char](3) NOT NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[QTDERETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP049__QTDER__1AC9DC03] DEFAULT (0),
+	[VALRETORNONF] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP049__VALRE__1BBE003C] DEFAULT (0),
+	[VALRETORNOESTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP049__VALRE__1CB22475] DEFAULT (0));
+GO
+
+--Table dbo.TBCOMP050
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP050] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP050__CODEM__235F2204] DEFAULT ('01'),
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[NUMNFSAIDA] [char](6) NOT NULL,
+	[SERNFSAIDA] [char](5) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[SEQOPER] [char](3) NOT NULL,
+	[CODMATPROD] [char](15) NOT NULL,
+	[QTDERETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP050__QTDER__2453463D] DEFAULT (0),
+	[STACOMPLEMENTO] [char](1) NULL CONSTRAINT [DF__TBCOMP050__STACO__25476A76] DEFAULT ('N'),
+	[CERTIFICADO] [char](15) NULL);
+GO
+
+--Table dbo.TBCOMP051
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP051] (
+	[CODMAT] [char](15) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[STAFORN] [char](1) NULL,
+	[DATATIVACAO] [datetime] NULL,
+	[DATFIMRELAC] [datetime] NULL,
+	[CODMATFORN] [char](60) NULL);
+GO
+
+--Table dbo.TBCOMP052
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP052] (
+	[CODEMPNFDEV] [char](2) NOT NULL,
+	[NUMNFDEV] [char](9) NOT NULL,
+	[SERNFDEV] [char](5) NOT NULL,
+	[CODFORNNFDEV] [char](6) NOT NULL,
+	[CODEMPTITULO] [char](2) NOT NULL,
+	[CODDOCUMTITULO] [char](3) NOT NULL,
+	[NUMTITULO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL,
+	[CODCLITITULO] [char](6) NOT NULL,
+	[DESDOBROTITULO] [char](2) NOT NULL,
+	[NUMSEQRECEBTITULO] [char](2) NOT NULL,
+	[VALORABAIXAR] [decimal](28, 14) NULL,
+	[DATVENCTOTITULO] [datetime] NULL,
+	[CODCLIRELACNFDEV] [char](9) NULL);
+GO
+
+--Table dbo.TBCOMP053
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP053] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP053__CODEM__3E3313D1] DEFAULT ('01'),
+	[CODAREA] [char](10) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[QTDECONSUMO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP053__QTDEC__3F27380A] DEFAULT (0));
+GO
+
+--Table dbo.TBCOMP054
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP054] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP054__CODEM__4203A4B5] DEFAULT ('01'),
+	[CODAREA] [char](10) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[ANOCONSUMO] [char](4) NOT NULL,
+	[MESCONSUMO] [char](2) NOT NULL,
+	[QTDECONSUMO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCOMP054__QTDEC__42F7C8EE] DEFAULT (0));
+GO
+
+--Table dbo.TBCOMP055
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP055] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP055__CODEM__29C206D0] DEFAULT ('01'),
+	[NUMPEDIDO] [char](9) NOT NULL,
+	[SERPEDIDO] [char](2) NOT NULL,
+	[NUMITEM] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[DATNEC] [datetime] NULL,
+	[DATPRO] [datetime] NULL,
+	[QTDEPED] [decimal](28, 14) NULL,
+	[QTDERECEB] [decimal](28, 14) NULL,
+	[CODINVOICE] [char](10) NULL,
+	[DATLIBALFAND] [datetime] NULL);
+GO
+
+--Table dbo.TBCOMP056
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP056] (
+	[CODTPPEDIDO] [char](3) NOT NULL,
+	[DESTPPEDIDO] [char](20) NOT NULL,
+	[OBSTPPEDIDO] [char](30) NULL,
+	[STAUSOSISTEMA] [char](1) NOT NULL,
+	[STAIMPORTDIRETA] [char](1) NULL CONSTRAINT [DF__TBCOMP056__STAIM__1DB135A6] DEFAULT ('N'));
+GO
+
+--Table dbo.TBCOMP057
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP057] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[CONTACONTABIL] [char](14) NULL,
+	[CTADEBITO] [char](12) NULL,
+	[CTAADIANTFORN] [char](12) NULL,
+	[STACOMPLETADO] [char](1) NULL);
+GO
+
+--Table dbo.TBCOMP058
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP058] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CONTESTO] [char](12) NULL,
+	[CONTPROC] [char](12) NULL,
+	[CONTDESP] [char](12) NULL,
+	[CONTREC] [char](12) NULL,
+	[STACOMPLETADO] [char](1) NULL,
+	[CONTCUSTOESTO] [char](12) NULL);
+GO
+
+--Table dbo.TBCOMP059
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP059] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[NUMINSPECAOQUALID] [char](6) NOT NULL,
+	[NUMSEQIQ] [char](2) NOT NULL,
+	[NFCOMPEDIDO] [char](1) NOT NULL,
+	[TIPACAO] [char](1) NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[DATACAO] [datetime] NULL,
+	[QTDEACAO] [decimal](28, 14) NULL,
+	[QTDELIBERADALOTE] [decimal](28, 14) NULL,
+	[OBSAPROVREPROV] [text] NULL,
+	[CODMOTIVO] [char](6) NULL);
+GO
+
+--Table dbo.TBCOMP060
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP060] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSC] [char](10) NOT NULL,
+	[NUMITEM] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[NOMEARQUIVO] [text] NOT NULL,
+	[DATINCLUSAO] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[NOVONOME] [char](255) NULL);
+GO
+
+--Table dbo.TBCOMP061
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP061] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCOLETA] [char](9) NOT NULL,
+	[NUMITEMCOL] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[NOMEARQUIVO] [text] NOT NULL,
+	[DATINCLUSAO] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[NOVONOME] [char](255) NULL);
+GO
+
+--Table dbo.TBCOMP062
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP062] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMPEDIDO] [char](9) NOT NULL,
+	[SERPEDIDO] [char](2) NOT NULL,
+	[NUMITEM] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[NOMEARQUIVO] [text] NOT NULL,
+	[DATINCLUSAO] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[NOVONOME] [char](255) NULL);
+GO
+
+--Table dbo.TBCOMP063
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP063] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[NUMSEQSUB] [char](2) NOT NULL,
+	[TIPFISJURSUBCONT] [char](1) NULL,
+	[NUMCNPJCPFSUBCONT] [char](14) NULL,
+	[CODMUNICIPIOSUBCONT] [char](7) NOT NULL,
+	[INSCRMUNICSUBCONT] [char](15) NULL,
+	[VALSUBCONT] [decimal](28, 14) NULL,
+	[VALBASECALCISSSUBCONT] [decimal](28, 14) NULL,
+	[PERCISSSUBCONT] [decimal](28, 14) NULL,
+	[VALISSSUBCONT] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP064
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP064] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[TIPCARGA] [char](1) NULL,
+	[NUMCNPJCOLETA] [char](14) NULL,
+	[CODUFCOLETA] [char](2) NULL,
+	[INSCRESTACOLETA] [char](20) NULL,
+	[CODMUNICIPIOCOLETA] [char](7) NULL,
+	[INSCRMUNICCOLETA] [char](15) NULL,
+	[NUMCNPJENTREGA] [char](14) NULL,
+	[CODUFENTREGA] [char](2) NULL,
+	[INSCRESTAENTREGA] [char](20) NULL,
+	[CODMUNICIPIOENTREGA] [char](7) NULL,
+	[INSCRMUNICENTREGA] [char](15) NULL);
+GO
+
+--Table dbo.TBCOMP065
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP065] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[NUMSEQVEIC] [char](2) NOT NULL,
+	[PLACA] [char](10) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[NUMERO] [char](10) NULL,
+	[PESOBRUTO] [decimal](28, 14) NULL,
+	[PESOLIQUIDO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP066
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP066] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[CODCLASSEAGUA] [char](2) NULL,
+	[VALTOTCONSUMO] [decimal](28, 14) NULL,
+	[VALSERVNAOTRIBICMS] [decimal](28, 14) NULL,
+	[VALTERCEIROS] [decimal](28, 14) NULL,
+	[TIPLIGACAO] [char](1) NULL,
+	[TIPGRUPOTENSAO] [char](2) NULL,
+	[VALTOTCONSUMOKW] [int] NULL,
+	[CODCLASSE] [char](2) NULL);
+GO
+
+--Table dbo.TBCOMP067
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP067] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[CODUFORIG] [char](2) NULL,
+	[CODMUNICIPIOORIG] [char](7) NULL,
+	[CODUFDEST] [char](2) NULL,
+	[CODMUNICIPIODEST] [char](7) NULL,
+	[PLACAVEIC] [char](10) NULL,
+	[UFVEIC] [char](2) NULL,
+	[MARCAVEIC] [char](40) NULL,
+	[MODELOVEIC] [char](40) NULL,
+	[ANOVEIC] [char](4) NULL,
+	[CERTPROPVEIC] [char](20) NULL,
+	[UFCERTPROPVEIC] [char](2) NULL,
+	[CODFORNCONSIG] [char](6) NULL,
+	[CODFORNREDESP] [char](6) NULL,
+	[TIPFRETEREDESP] [char](1) NULL,
+	[VALFRETEPORPESO] [decimal](28, 14) NULL,
+	[VALTOTSECCAT] [decimal](28, 14) NULL,
+	[VALTOTDESPACHO] [decimal](28, 14) NULL,
+	[VALTOTPEDAGIO] [decimal](28, 14) NULL,
+	[VALOUTROS] [decimal](28, 14) NULL,
+	[VALTOTFRETELIQ] [decimal](28, 14) NULL,
+	[TIPVEICTRANSP] [char](1) NULL,
+	[IDENTEMBARCACAO] [char](20) NULL,
+	[DESVEICTRANSP] [char](250) NULL,
+	[TIPNAVEG] [char](1) NULL,
+	[NUMVIAGEM] [char](20) NULL,
+	[VALDESPPORT] [decimal](28, 14) NULL,
+	[VALDESPCARGA] [decimal](28, 14) NULL,
+	[VALTOTFRETEBRUTO] [decimal](28, 14) NULL,
+	[VALADICFRETEMAR] [decimal](28, 14) NULL,
+	[IDENTAERONAVE] [char](20) NULL,
+	[TIPTARIFA] [char](1) NULL,
+	[VALPESOTAXADO] [decimal](28, 14) NULL,
+	[VALTAXATERRESTRE] [decimal](28, 14) NULL,
+	[VALTAXAREDESP] [decimal](28, 14) NULL,
+	[VALTAXAADV] [decimal](28, 14) NULL,
+	[INDNATUFRETE] [char](1) NULL,
+	[REGOPERMULT] [char](20) NULL,
+	[VALGRIS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP068
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP068] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[CODLOTEMED] [char](15) NULL,
+	[DATVENCMED] [datetime] NULL,
+	[TIPREFERBASECALC] [char](1) NULL,
+	[VALPRECOTABELA] [decimal](28, 14) NULL,
+	[QTDEPORLOTE] [decimal](28, 14) NULL,
+	[TPPROD] [char](1) NULL,
+	[DATFABR] [datetime] NULL);
+GO
+
+--Table dbo.TBCOMP069
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP069] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[TIPOPERVEIC] [char](1) NULL,
+	[TIPFISJURPART] [char](1) NULL,
+	[NUMCNPJCPFPART] [char](14) NULL,
+	[CODUFPART] [char](2) NULL,
+	[INSCRESTAPART] [char](20) NULL,
+	[CHASSIVEICULO] [char](40) NULL);
+GO
+
+--Table dbo.TBCOMP070
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP070] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[NUMSEQMODAL] [char](2) NOT NULL,
+	[TIPEMITENTEDOC] [char](1) NULL,
+	[CNPJEMITENTE] [char](14) NULL,
+	[CODUFEMITENTE] [char](2) NULL,
+	[INSCRESTAEMITENTE] [char](20) NULL,
+	[CODUFORIG] [char](2) NULL,
+	[CODMUNICIPIOORIG] [char](7) NULL,
+	[TIPFISJURTOMADOR] [char](1) NULL,
+	[CNPJCPFTOMADOR] [char](14) NULL,
+	[CODUFTOMADOR] [char](2) NULL,
+	[INSCRESTATOMADOR] [char](20) NULL,
+	[CODUFDEST] [char](2) NULL,
+	[CODMUNICIPIODEST] [char](7) NULL,
+	[NUMNF2] [char](6) NULL,
+	[SERNF2] [char](5) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[VALTOTAL] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP071
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP071] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[CODCLASSCONSMOD21] [char](2) NULL,
+	[CODCLASSCONSMOD22] [char](2) NULL,
+	[VALSERVNAOTRIBICMS] [decimal](28, 14) NULL,
+	[VALTERCEIROS] [decimal](28, 14) NULL,
+	[TERMINAL] [char](30) NULL,
+	[CODAREATERMINAL] [char](20) NULL,
+	[TIPOSERVCOMUNIC] [char](1) NULL,
+	[MESANOSERV] [char](6) NULL,
+	[DATINISERV] [datetime] NULL,
+	[DATFIMSERV] [datetime] NULL,
+	[TIPASSINANTE] [char](1) NULL);
+GO
+
+--Table dbo.TBCOMP072
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP072] (
+	[CODFORN] [char](6) NOT NULL,
+	[SEQ] [char](2) NOT NULL,
+	[CONTATO] [char](20) NULL,
+	[CELCONTATO] [char](12) NULL,
+	[EMAILCONTATO] [char](70) NULL);
+GO
+
+--Table dbo.TBCOMP073
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP073] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[CODLOTE] [char](15) NULL,
+	[DATVALIDADE] [datetime] NULL,
+	[CODLOTEFORN] [char](15) NULL,
+	[QTDELOTE] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP074
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP074] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[CODLOTE] [char](15) NULL,
+	[DATVALIDADE] [datetime] NULL,
+	[CODLOTEFORN] [char](15) NULL,
+	[QTDELOTE] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP076
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP076] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODDOCUM] [char](3) NULL,
+	[DATCADAST] [datetime] NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[DATCOMPET] [datetime] NULL,
+	[CONSOLIDADO] [char](1) NULL,
+	[DATCONSOLID] [datetime] NULL,
+	[NFCOMPEDIDO] [char](1) NULL,
+	[CODNATUOPER] [char](6) NULL,
+	[CODNATUOPER2] [char](6) NULL,
+	[VALTOTMERC] [decimal](28, 14) NULL,
+	[BASECALCICMS] [decimal](28, 14) NULL,
+	[VALTOTICM] [decimal](28, 14) NULL,
+	[VALTOTIPI] [decimal](28, 14) NULL,
+	[VALDESPESAS] [decimal](28, 14) NULL,
+	[VALFRETE] [decimal](28, 14) NULL,
+	[VALSEGURO] [decimal](28, 14) NULL,
+	[BASECALCICMSSUBST] [decimal](28, 14) NULL,
+	[VALICMSSUBST] [decimal](28, 14) NULL,
+	[VALTOTNF] [decimal](28, 14) NULL,
+	[CODTRANSP] [char](3) NULL,
+	[PAGFRETE] [char](1) NULL,
+	[PLACA] [char](10) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[NUMCGCCPF] [char](14) NULL,
+	[ENDERECO] [char](40) NULL,
+	[CIDADE] [char](20) NULL,
+	[CODUFTRANSP] [char](2) NULL,
+	[INSCRESTA] [char](12) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL,
+	[ESPECIE] [char](15) NULL,
+	[MARCA] [char](15) NULL,
+	[NUMERO] [char](10) NULL,
+	[PESOBRUTO] [decimal](28, 14) NULL,
+	[PESOLIQUIDO] [decimal](28, 14) NULL,
+	[CODMOVESTOQ] [char](3) NULL,
+	[DADADICIONAIS] [text] NULL,
+	[CODCFOPTERC] [char](6) NULL,
+	[CODCFOPQUAR] [char](6) NULL,
+	[ARQXML] [varchar](250) NULL,
+	[CHAVENFE] [varchar](44) NULL);
+GO
+
+--Table dbo.TBCOMP077
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP077] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMDUP] [char](6) NOT NULL,
+	[NUMPARCDUP] [char](6) NOT NULL,
+	[DATVENCDUP] [datetime] NULL,
+	[VALDUP] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP078
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP078] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[CODCLASSFISCAL] [char](12) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[CODUNIMEDCADMAT] [char](2) NULL,
+	[QTDERECEB] [decimal](28, 14) NULL,
+	[VALUNITITEM] [decimal](28, 14) NULL,
+	[VALTOTITEM] [decimal](28, 14) NULL,
+	[QTDUNIMEDCADMAT] [decimal](28, 14) NULL,
+	[FATORCONV] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP079
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP079] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[NUMPEDIDO] [char](9) NULL,
+	[SERPEDIDO] [char](2) NULL,
+	[NUMITEMPED] [char](2) NULL,
+	[NUMSC] [char](10) NULL,
+	[NUMITEMSC] [char](2) NULL,
+	[NUMCOLETA] [char](9) NULL,
+	[NUMITEMCOL] [char](2) NULL,
+	[CCUSTO] [char](10) NULL,
+	[QTDERECEB] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP080
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP080] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[CODLOTE] [char](15) NULL,
+	[DATVALIDADE] [datetime] NULL,
+	[CODLOTEFORN] [char](15) NULL,
+	[QTDELOTE] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP094
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP094] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[NUMPROC] [char](20) NOT NULL,
+	[INDPROC] [char](1) NULL,
+	[TIPOPROC] [char](2) NULL,
+	[SECJUDIC] [char](30) NULL,
+	[VARA] [char](2) NULL,
+	[NATACAOJUDIC] [char](2) NULL,
+	[DESCDECJUDIC] [char](100) NULL,
+	[DATSENTECA] [datetime] NULL,
+	[NATPROCADM] [char](2) NULL,
+	[DATDECADM] [datetime] NULL);
+GO
+
+--Table dbo.TBCOMP095
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP095] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[SEQDOCARREC] [char](2) NOT NULL,
+	[CODDA] [char](1) NOT NULL,
+	[CODUFBENEF] [char](2) NOT NULL,
+	[NUMDA] [char](20) NULL,
+	[CODAUT] [char](20) NULL,
+	[VALDA] [decimal](28, 14) NOT NULL,
+	[DATVENCTO] [datetime] NOT NULL,
+	[DATPAGTO] [datetime] NOT NULL);
+GO
+
+--Table dbo.TBCOMP096
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP096] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATOFORN] [char](9) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[COMPRADOR_ID] [char](10) NULL,
+	[USER_ID] [char](10) NULL,
+	[STACONTRATOFORN] [char](1) NOT NULL,
+	[DATCONTRATO] [datetime] NOT NULL,
+	[DATREFERIND] [datetime] NULL,
+	[DATENCER] [datetime] NULL,
+	[DATVALIDADE] [datetime] NULL,
+	[NUMNIVELCONTRATO] [int] NULL,
+	[NUMNIVELLIBERACAO] [int] NULL,
+	[STACOMPRALIBERADA] [char](1) NULL,
+	[CODAREA] [char](10) NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[CONDGERALCONTRATO] [text] NULL,
+	[CONTATOFORN] [char](20) NULL,
+	[CELCONTATOFORN] [char](12) NULL,
+	[EMAILCONTATO] [char](70) NULL,
+	[TIPCONTRATO] [char](1) NULL CONSTRAINT [DF_TBCOMP096_TIPCONTRATO] DEFAULT ('N'));
+GO
+
+--Table dbo.TBCOMP097
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP097] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATOFORN] [char](9) NOT NULL,
+	[NUMITEMCONTRATOFORN] [char](2) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[QTDEITEMCONTRATO] [decimal](28, 14) NOT NULL,
+	[STAITEM] [char](1) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[CODUNIMEDCADMAT] [char](2) NOT NULL,
+	[QTDUNIMEDCADMAT] [decimal](28, 14) NOT NULL,
+	[FATORCONV] [decimal](28, 14) NULL,
+	[CODINDICE] [char](3) NULL,
+	[VALUNITINDFORN] [decimal](28, 14) NULL,
+	[VALUNITITEM] [decimal](28, 14) NULL,
+	[DATCADASTITEM] [datetime] NULL,
+	[DATATUITEM] [datetime] NULL,
+	[TOTINDUST] [decimal](28, 14) NULL,
+	[PERCIPI] [decimal](28, 14) NULL,
+	[CODOPER] [char](6) NULL);
+GO
+
+--Table dbo.TBCOMP098
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP098] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATOFORN] [char](9) NOT NULL,
+	[NUMITEMCONTRATOFORN] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[DATNEC] [datetime] NULL,
+	[DATPRO] [datetime] NULL,
+	[QTDEITEM] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP099
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP099] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATOFORN] [char](9) NOT NULL,
+	[NUMITEMCONTRATOFORN] [char](2) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[QTDECCUSTO] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBCOMP100
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP100] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATOFORN] [char](9) NOT NULL,
+	[NUMITEMCONTRATOFORN] [char](2) NOT NULL,
+	[DESDETMAT] [text] NULL);
+GO
+
+--Table dbo.TBCOMP101
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP101] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATOFORN] [char](9) NOT NULL,
+	[OBSCONTRATOFORN] [text] NULL);
+GO
+
+--Table dbo.TBCOMP102
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP102] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATOFORN] [char](9) NOT NULL,
+	[NUMNIVELCOMPRA] [int] NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[DATACAO] [datetime] NOT NULL,
+	[ACAO] [char](1) NOT NULL,
+	[OBSMOTIVORETENCAO] [text] NULL);
+GO
+
+--Table dbo.TBCOMP103
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP103] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[TIPO] [char](1) NOT NULL,
+	[USERID] [char](10) NOT NULL,
+	[XMLNFE] [text] NULL,
+	[XMLCON] [text] NULL,
+	[XMLSIT] [text] NULL,
+	[DATA] [datetime] NOT NULL,
+	[HORA] [char](5) NOT NULL);
+GO
+
+--Table dbo.TBCOMP104
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP104] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[ITEM] [char](3) NOT NULL,
+	[DESITEM] [char](250) NULL,
+	[STAITEM] [char](1) NULL CONSTRAINT [DF__TBCOMP104__STAIT__062F7D27] DEFAULT ('S'),
+	[DATCADAST] [datetime] NULL,
+	[DATALTERACAO] [datetime] NULL);
+GO
+
+--Table dbo.TBCOMP105
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP105] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[NUMITEMNF] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[ITEM] [char](3) NOT NULL,
+	[ENCONTRADO] [char](250) NULL);
+GO
+
+--Table dbo.TBCOMP106
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP106] (
+	[CODEMP] [char](2) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[ID] [int] NOT NULL IDENTITY (1, 1),
+	[NIVEL] [int] NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[RECEBEEMAIL] [char](1) NULL);
+GO
+
+--Table dbo.TBCOMP107
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP107] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSC] [char](10) NOT NULL,
+	[ID] [int] NOT NULL IDENTITY (1, 1),
+	[USER_ID] [char](10) NOT NULL,
+	[NIVEL] [int] NOT NULL,
+	[STATUS] [char](1) NULL,
+	[DATHORAAPROV] [datetime] NULL,
+	[RECEBEEMAIL] [char](1) NULL,
+	[INCLMANUAL] [char](1) NULL,
+	[OBSERV] [varchar](8000) NULL CONSTRAINT [OBSERV_DEFAULT] DEFAULT ('.'));
+GO
+
+
+--Table dbo.TBCOMP108
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP108] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSC] [char](10) NOT NULL,
+	[IDOCORR] [int] NOT NULL IDENTITY (1, 1),
+	[TEXTOOCORRENCIA] [varchar](8000) NULL,
+	[USER_ID] [char](10) NULL,
+	[DATOCORR] [datetime] NULL);
+GO
+
+--Table dbo.TBCOMP109
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP109] (
+	[CODEMP] [char](2) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[CODGRCOMPRA] [char](2) NOT NULL,
+	[DATCADASTO] [datetime] NULL,
+	[DATATIV] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[STANIVEL] [char](1) NULL);
+GO
+
+--Table dbo.TBCOMP110
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP110] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODGRCOMPRA] [char](2) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQ] [char](2) NOT NULL,
+	[DESCRICAO] [char](40) NULL,
+	[VALLIMCOMP] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP111
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP111] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODGRCOMPRA] [char](2) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQ] [char](2) NOT NULL,
+	[SEQNIVEL] [int] NOT NULL,
+	[NIVEL] [char](2) NULL,
+	[DESCNIVEL] [char](40) NULL,
+	[TIPRESP] [char](1) NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBCOMP996
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP996] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP996__CODEM__4E53A1AA] DEFAULT ('01'),
+	[NOMPARAM] [char](30) NOT NULL,
+	[DESPARAM] [char](50) NOT NULL,
+	[DATATUPARAM] [datetime] NOT NULL,
+	[VALMAXPARAM] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBCOMP997
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP997] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCOMP997__CODEM__51300E55] DEFAULT ('01'),
+	[CABECALHO] [char](50) NOT NULL,
+	[TAMPAPEL] [char](30) NOT NULL,
+	[LARGURA] [decimal](28, 14) NULL,
+	[ALTURA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCOMP998
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP998] (
+	[CODFORN] [char](6) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[DATIMPLANTSIST] [datetime] NOT NULL,
+	[DATCONTROLEVENC] [datetime] NOT NULL,
+	[DATLIMITESIST] [datetime] NOT NULL,
+	[NUMDIASLIMITESIST] [char](3) NOT NULL,
+	[CODMOVENTRADAINICIAL] [char](3) NOT NULL,
+	[CODMOVENTRADAFINAL] [char](3) NOT NULL,
+	[CODMOVSAIDAINICIAL] [char](3) NOT NULL,
+	[CODMOVSAIDAFINAL] [char](3) NOT NULL,
+	[CODCFOPSERVICO] [char](3) NOT NULL,
+	[CODDOCUMNFENTCOMSC] [char](3) NOT NULL,
+	[CODDOCUMNFENTSEMSC] [char](3) NOT NULL,
+	[CODDOCUMNFSAICOMPED] [char](3) NOT NULL,
+	[CODDOCUMNFSAISEMPED] [char](3) NOT NULL,
+	[CODMOVESTOQUEINICIAL] [char](3) NOT NULL,
+	[CODMOVESTOQUEFINAL] [char](3) NOT NULL,
+	[CLIENTESISTEMA] [char](30) NOT NULL,
+	[SERVIDORBD] [char](30) NOT NULL,
+	[CODCPAGTOINIFATU] [char](3) NOT NULL,
+	[CODCPAGTOFIMFATU] [char](3) NOT NULL,
+	[CODCPAGTOINICOMP] [char](3) NOT NULL,
+	[CODCPAGTOFIMCOMP] [char](3) NOT NULL,
+	[STAGERARSC] [char](1) NOT NULL,
+	[VALTOLERDIF] [decimal](28, 14) NOT NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[STAUTILIZACODPAGTO] [char](1) NOT NULL,
+	[TIPOVALORIZACAO] [char](1) NOT NULL,
+	[QTDELINITENSNFVENDAPROD] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEL__540C7B00] DEFAULT (30),
+	[QTDELINITENSNFVENDASERV] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEL__55009F39] DEFAULT (30),
+	[QTDECARACLINITENSNFVENDAPROD] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEC__55F4C372] DEFAULT (60),
+	[QTDECARACLINITENSNFVENDASERV] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEC__56E8E7AB] DEFAULT (60),
+	[QTDELINOBSNFVENDAPROD] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEL__57DD0BE4] DEFAULT (10),
+	[QTDELINOBSNFVENDASERV] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEL__58D1301D] DEFAULT (10),
+	[QTDECARACLINOBSNFVENDAPROD] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEC__59C55456] DEFAULT (60),
+	[QTDECARACLINOBSNFVENDASERV] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEC__5AB9788F] DEFAULT (60),
+	[STANUMNFUNIFIC] [char](1) NULL CONSTRAINT [DF__TBCOMP998__STANU__5BAD9CC8] DEFAULT ('N'),
+	[PERCRETINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP998__PERCR__5CA1C101] DEFAULT (0),
+	[STAUSOCODCNO] [char](1) NULL CONSTRAINT [DF__TBCOMP998__STAUS__5D95E53A] DEFAULT ('N'),
+	[STAUSOCONTACONTABIL] [char](1) NULL CONSTRAINT [DF__TBCOMP998__STAUS__5E8A0973] DEFAULT ('N'),
+	[TIPOCALCIMPNFSERV] [char](2) NULL CONSTRAINT [DF__TBCOMP998__TIPOC__5F7E2DAC] DEFAULT ('01'),
+	[CODTRIBSERV] [char](3) NULL,
+	[PERCPISCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP998__PERCP__607251E5] DEFAULT (0),
+	[TIPOCALCACRESDESC] [char](1) NULL CONSTRAINT [DF__TBCOMP998__TIPOC__6166761E] DEFAULT ('L'),
+	[PERCIRRFSOBRESERVICOS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCOMP998__PERCI__625A9A57] DEFAULT (0),
+	[STAUSOCICLO] [char](1) NULL CONSTRAINT [DF__TBCOMP998__STAUS__634EBE90] DEFAULT ('N'),
+	[OBSCONDPEDCOMP] [text] NULL,
+	[TIPOCALCACRESDESCSERV] [char](1) NULL CONSTRAINT [DF__TBCOMP998__TIPOC__6442E2C9] DEFAULT ('L'),
+	[USOCCUSTOEXP] [char](1) NULL CONSTRAINT [DF__TBCOMP998__USOCC__65370702] DEFAULT ('S'),
+	[TIPOEQUIPAMENTO] [char](17) NULL,
+	[QTDECARACLINOBSNFCONHEC] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEC__662B2B3B] DEFAULT (60),
+	[QTDECARACLINOBSDUPCONHEC] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEC__671F4F74] DEFAULT (60),
+	[QTDELINOBSNFCONHEC] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEL__681373AD] DEFAULT (10),
+	[QTDELINOBSDUPCONHEC] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEL__690797E6] DEFAULT (10),
+	[STANUMDUPUNICA] [char](1) NULL CONSTRAINT [DF__TBCOMP998__STANU__69FBBC1F] DEFAULT ('N'),
+	[QTDEVENCPORDOC] [int] NULL CONSTRAINT [DF__TBCOMP998__QTDEV__6AEFE058] DEFAULT (1),
+	[CODCFOPSERVICO2] [char](6) NULL,
+	[STAOBRIGADUPLRECEB] [char](1) NULL CONSTRAINT [DF__TBCOMP998__STAOB__6BE40491] DEFAULT ('N'),
+	[STAGERACODMAT] [char](1) NULL CONSTRAINT [DF__TBCOMP998__STAGE__6CD828CA] DEFAULT ('N'),
+	[STAPERMITELANCREPETIDO] [char](1) NULL CONSTRAINT [DF__TBCOMP998__STAPE__6DCC4D03] DEFAULT ('S'),
+	[TIPOCALCINSS] [char](1) NULL,
+	[TIPOCALCIR] [char](1) NULL,
+	[CODORIGVENDA] [char](1) NULL,
+	[STAREPETECONTACONTABIL] [char](1) NULL CONSTRAINT [DF__TBCOMP998__STARE__6EC0713C] DEFAULT ('N'),
+	[STAREPETECONTACONTABILFORN] [char](1) NULL CONSTRAINT [DF__TBCOMP998__STARE__6FB49575] DEFAULT ('N'),
+	[CODCNPJ] [char](14) NULL,
+	[HELPPATH] [char](150) NULL,
+	[STAVALIDARIE] [char](1) NULL CONSTRAINT [DF__TBCOMP998__STAVA__41248F15] DEFAULT ('N'),
+	[CODCLISEQ] [char](1) NULL,
+	[CODFORNSEQ] [char](1) NULL,
+	[STATESTAPARAMSQLSERVER] [char](1) NULL,
+	[STAEMATUALIZACAO] [char](1) NULL CONSTRAINT [DF__TBCOMP998__STAEM__0FAD2F12] DEFAULT ('N'),
+	[DATREFERENCIACALCPIS] [datetime] NULL,
+	[COMPLMAQUINA] [char](9) NULL,
+	[VALMAXIMOINSS] [decimal](28, 14) NULL,
+	[TIPOCALCRETPISCOFINSCSLL] [char](1) NULL,
+	[CODVEND] [char](6) NULL,
+	[CAMINHOARQSISTEMA] [char](150) NULL,
+	[CAMINHORELATRPT] [char](100) NULL,
+	[ALTURALOGO] [decimal](28, 14) NULL,
+	[LARGURALOGO] [decimal](28, 14) NULL,
+	[STACLIENTECOMOALUNO] [char](1) NULL,
+	[ATUCAMPOOBSCONDPED] [char](1) NULL,
+	[STAALIMENTATEMPCID] [char](1) NULL,
+	[STACONVCID] [char](1) NULL,
+	[VALMAXIMODOC] [decimal](28, 14) NULL,
+	[STAVALIDACNPJIE] [char](1) NULL,
+	[LINCONDPEDCOMP] [int] NULL,
+	[CONVERTHORFLOSTR] [char](1) NULL,
+	[CAMINHOEXESERVIDOR] [char](250) NULL,
+	[CAMINHOEXELOCAL] [char](250) NULL,
+	[PEDCOMPTIPSERV] [char](1) NULL,
+	[USUARIOFTP] [varchar](25) NULL,
+	[SENHAFTP] [varchar](50) NULL,
+	[ENDERECOFTP] [varchar](250) NULL,
+	[PORTAFTP] [int] NULL,
+	[PASTAFTP] [varchar](250) NULL,
+	[PORTAWBS] [int] NULL,
+	[SEPARASCESS] [char](1) NULL,
+	[CAMINHODOCSC] [varchar](250) NULL);
+GO
+
+--Table dbo.TBCOMP999
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCOMP999] (
+	[NOMCAMPO] [char](30) NOT NULL,
+	[DESCAMPO] [char](50) NOT NULL,
+	[TAMANHO] [char](2) NOT NULL,
+	[MASCARA] [char](100) NOT NULL,
+	[TAMANHOFISICO] [char](4) NULL);
+GO
+
+--Table dbo.TBCONB001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONB001] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCONB001_SERIE] DEFAULT (' '),
+	[CODEMITENTE] [char](6) NOT NULL,
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQPAGTO] [char](2) NOT NULL,
+	[DATMOVTO] [datetime] NOT NULL,
+	[DATBAIXA] [datetime] NULL,
+	[DATSALDO] [datetime] NULL,
+	[HISTMOVTO] [char](60) NULL,
+	[TIPOMOVTO] [char](1) NOT NULL,
+	[VALMOVTO] [decimal](28, 14) NOT NULL,
+	[ORIGEMMOVTO] [char](1) NOT NULL,
+	[CODBANCO] [char](6) NOT NULL,
+	[CODAGENCIA] [char](10) NOT NULL,
+	[NUMCTACORRENTE] [char](15) NOT NULL,
+	[SALDO] [decimal](28, 14) NULL,
+	[NUMCHEQUE] [char](10) NULL,
+	[OBSERVACAO] [char](100) NULL,
+	[CTACONTRAPARTIDA] [char](12) NULL,
+	[CCUSTO] [char](10) NULL,
+	[DTLANCTO] [datetime] NULL,
+	[CODFILIALBANCO] [char](2) NULL,
+	[STAINTEGRACONT] [char](1) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[STAGERARTITREC] [char](1) NULL CONSTRAINT [DF__TBCONB001__STAGE__1D671CE3] DEFAULT ('N'),
+	[STAMOVTO] [char](1) NULL,
+	[NUMSEQCONC] [char](6) NULL,
+	[TPEMITENTECHEQUE] [char](1) NULL,
+	[EMITENTECHEQUE] [char](50) NULL,
+	[BANCOCHEQUE] [char](3) NULL,
+	[AGENCIACHEQUE] [char](10) NULL,
+	[CONTACHEQUE] [char](20) NULL,
+	[SEQMOVTOCONB] [char](3) NOT NULL CONSTRAINT [DF__TBCONB001__SEQMO__7F428876] DEFAULT ('001'),
+	[SEQMOVTOCONBRELAC] [char](3) NULL,
+	[SINAL] integer);
+GO
+
+--Table dbo.TBCONB002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONB002] (
+	[CODEMP] [char](2) NOT NULL,
+	[ULTMESFECHCONC] [char](2) NOT NULL,
+	[ULTANOFECHCONC] [char](4) NOT NULL,
+	[STACONTCONB] [char](10) NULL CONSTRAINT [DF__TBCONB002__STACO__76619304] DEFAULT ('N'),
+	[STAATUDATBAIXA] [char](1) NULL CONSTRAINT [DF__TBCONB002__STAAT__0DE4E231] DEFAULT ('S'),
+	[STAOBRIGACONCILIACAO] [char](1) NULL,
+	[CODDOCTRANSDEVCHEQUE] [char](3) NULL,
+	[CODDOCTRANSDEVDUPL] [char](3) NULL,
+	[CODDOCTITULOCHEQUE] [char](3) NULL,
+	[CODDOCTITULOTAXA] [char](3) NULL,
+	[CODDOCREAPRESENTACAO] [char](3) NULL);
+GO
+
+--Table dbo.TBCONB003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONB003] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF__TBCONB003__SERIE__742FFD26] DEFAULT (' '),
+	[CODEMITENTE] [char](6) NOT NULL,
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQPAGTO] [char](2) NOT NULL,
+	[CODORDEM] [char](6) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[SEQCCUSTO] [char](6) NOT NULL CONSTRAINT [DF__TBCONB003__SEQCC__7524215F] DEFAULT ('000001'),
+	[CCUSTO] [char](10) NULL,
+	[VALMOVTOCCUSTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONB003__VALMO__76184598] DEFAULT (0),
+	[CCUSTOORIGEM] [char](10) NULL,
+	[SEQMOVTOCONB] [char](3) NOT NULL CONSTRAINT [DF__TBCONB003__SEQMO__0036ACAF] DEFAULT ('001'));
+GO
+
+--Table dbo.TBCONB004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONB004] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL,
+	[CODEMITENTE] [char](6) NOT NULL,
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQPAGTO] [char](2) NOT NULL,
+	[CODEMPTIT] [char](2) NOT NULL,
+	[CODDOCUMTIT] [char](3) NOT NULL,
+	[NUMDOCTOTIT] [char](8) NOT NULL,
+	[SERIETIT] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[DATGERACAO] [datetime] NOT NULL,
+	[SEQMOVTOCONB] [char](3) NOT NULL CONSTRAINT [DF__TBCONB004__SEQMO__012AD0E8] DEFAULT ('001'));
+GO
+
+--Table dbo.TBCONB005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONB005] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODBANCO] [char](6) NOT NULL,
+	[SEQCAMPO] [char](2) NOT NULL,
+	[DESCRICAO] [char](40) NULL,
+	[POSINI] [int] NULL,
+	[TAMANHO] [int] NULL);
+GO
+
+--Table dbo.TBCONB006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONB006] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODBANCO] [char](6) NOT NULL,
+	[CODAGENCIA] [char](10) NOT NULL,
+	[NUMSEQMOVTO] [char](12) NOT NULL,
+	[CODCTACORRENTE] [char](15) NOT NULL,
+	[DATMOVTO] [datetime] NULL,
+	[HISTMOVTO] [char](60) NULL,
+	[VALMOVTO] [decimal](28, 14) NULL,
+	[STAMOVTO] [char](1) NULL,
+	[DATIMPORTACAO] [datetime] NULL,
+	[DATATU] [datetime] NULL,
+	[TIPOMOVTO] [char](1) NULL,
+	[NUMSEQCONC] [char](6) NULL,
+	[DOCUMENTO] [char](8) NULL,
+	[HISTMOVTOEXIBE] [char](60) NULL,
+	[NOMEARQUIVO] [char](30) NULL,
+	[NUMREGISTRO] [int] NULL);
+GO
+
+--Table dbo.TBCONB007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONB007] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODBANCO] [char](6) NOT NULL,
+	[PALAVRACHAVE] [char](30) NOT NULL,
+	[CODDOCUM] [char](3) NULL,
+	[CTACONTRAPARTIDA] [char](12) NULL,
+	[CCUSTO] [char](10) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL);
+GO
+
+--Table dbo.TBCONT001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT001] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODEVENTO] [char](5) NOT NULL,
+	[DESCREVENTO] [char](50) NOT NULL,
+	[MODULOORIGEM] [char](2) NOT NULL,
+	[LOTEINTEGRA] [char](3) NULL,
+	[CODRATEIOCONT] [char](3) NULL);
+GO
+
+--Table dbo.TBCONT002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT002] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODMOVTO] [char](20) NOT NULL,
+	[DESCRMOVTO] [char](50) NOT NULL,
+	[CTADEBITO] [char](12) NULL,
+	[CTACREDITO] [char](12) NULL,
+	[CODDOCUM1] [char](3) NOT NULL,
+	[NUMDOCUM1TAB] [char](15) NOT NULL,
+	[NUMDOCUM1CPO] [char](30) NOT NULL,
+	[COMPLNUMDOCUM1] [char](30) NULL,
+	[CODDOCUM2] [char](3) NULL,
+	[NUMDOCUM2TAB] [char](15) NULL,
+	[NUMDOCUM2CPO] [char](30) NULL,
+	[COMPLNUMDOCUM2] [char](30) NULL,
+	[CODHIST1] [char](5) NOT NULL,
+	[CODHIST2] [char](5) NULL,
+	[DATCOMPETTAB] [char](15) NOT NULL,
+	[DATCOMPETCPO] [char](30) NOT NULL,
+	[HISTFIXO] [char](60) NULL,
+	[HISTCOMPLTAB] [char](15) NULL,
+	[HISTCOMPLCPO] [char](30) NULL,
+	[VALORTAB] [char](15) NULL,
+	[VALORCPO] [char](30) NULL,
+	[CODHISTTAB] [char](15) NULL,
+	[CCUSTOCPO] [char](30) NULL,
+	[CCUSTOTAB] [char](15) NULL,
+	[CODHIST3] [char](5) NULL,
+	[CODDOCUM3] [char](3) NULL,
+	[NUMDOCUM3TAB] [char](15) NULL,
+	[NUMDOCUM3CPO] [char](30) NULL,
+	[COMPLNUMDOCUM3] [char](30) NULL,
+	[HISTCOMPLTAB1] [char](15) NULL,
+	[HISTCOMPLCPO1] [char](30) NULL,
+	[CODDOCUMTAB] [char](15) NULL,
+	[CODDOCUMCPO] [char](30) NULL);
+GO
+
+--Table dbo.TBCONT003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT003] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODEVENTO] [char](5) NOT NULL,
+	[CODMOVTO] [char](20) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL);
+GO
+
+--Table dbo.TBCONT004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT004] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODPLANO] [char](3) NOT NULL,
+	[DESPLANO] [char](60) NOT NULL,
+	[CODMASCPLANO] [char](30) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STAPLANO] [char](1) NOT NULL,
+	[STACADCOMPLETADO] [char](1) NULL,
+	[STACONSOLIDADOR] [char](1) NULL CONSTRAINT [DF__TBCONT004__STACO__31390B66] DEFAULT ('N'),
+	[STAAGRUPAR] [char](1) NULL CONSTRAINT [DF__TBCONT004__STAAG__322D2F9F] DEFAULT ('N'));
+GO
+
+--Table dbo.TBCONT005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT005] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODCONTASINTETICA] [char](30) NOT NULL,
+	[DESCONTASINTETICA] [char](60) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STAACEITAANALITICA] [char](1) NOT NULL,
+	[STACONTA] [char](1) NOT NULL,
+	[INDNATUREZACONTA] [char](1) NULL,
+	[INDNATUCONTASPED] [char](2) NULL,
+	[CODCONTAREFSPED] [char](30) NULL);
+GO
+
+--Table dbo.TBCONT006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT006] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODPLANO] [char](3) NOT NULL,
+	[CODCONTA] [char](30) NOT NULL,
+	[CODFILIALCTA] [char](2) NOT NULL,
+	[TIPORIGEMCONTA] [char](1) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STAACEITAANALITICA] [char](1) NOT NULL,
+	[CODORDEMNOPLANO] [char](20) NOT NULL,
+	[CODORDEMNOPLANOEXIB] [char](30) NULL);
+GO
+
+--Table dbo.TBCONT007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT007] (
+	[CODORIGEM] [char](2) NOT NULL,
+	[DESORIGEM] [char](50) NOT NULL,
+	[STAORIGEM] [char](1) NOT NULL,
+	[STAUSOSISTEMA] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBCONT008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT008] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[STALOTE] [char](1) NOT NULL,
+	[CODORIGEM] [char](2) NOT NULL,
+	[DESLOTE] [char](50) NOT NULL);
+GO
+
+--Table dbo.TBCONT009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT009] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[NUMLANC] [char](4) NOT NULL,
+	[NUMMOVTO] [char](3) NOT NULL,
+	[NUMSEQMOV] [char](1) NOT NULL,
+	[DATLANC] [datetime] NOT NULL,
+	[DATCOMPET] [datetime] NULL,
+	[CODCONTA] [char](12) NOT NULL,
+	[TIPMOVTO] [char](1) NOT NULL,
+	[VALMOVTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT009__VALMO__7C30464A] DEFAULT (0),
+	[CODHIST1] [char](3) NULL,
+	[CODHIST2] [char](3) NULL,
+	[CODHIST3] [char](3) NULL,
+	[CODDOCTO1] [char](3) NULL,
+	[CODDOCTO2] [char](3) NULL,
+	[CODDOCTO3] [char](3) NULL,
+	[NUMDOCTO1] [char](20) NULL,
+	[NUMDOCTO2] [char](20) NULL,
+	[NUMDOCTO3] [char](20) NULL,
+	[DESHISTCOMPLEMEN] [char](200) NULL,
+	[DATATUMOV] [datetime] NULL,
+	[USUARIOATUMOV] [char](10) NULL);
+GO
+
+--Table dbo.TBCONT010
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT010] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[NUMLANC] [char](4) NOT NULL,
+	[NUMMOVTO] [char](3) NOT NULL,
+	[NUMSEQMOV] [char](1) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[VALMOVTOCCUSTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT010__VALMO__7F0CB2F5] DEFAULT (0));
+GO
+
+--Table dbo.TBCONT011
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT011] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[CODCONTA] [char](12) NOT NULL,
+	[VALSALDO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT011__VALSA__1B53EBE8] DEFAULT (0),
+	[TOTVALDEBITO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCONT011__TOTVA__1E305893] DEFAULT (0),
+	[TOTVALCREDITO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCONT011__TOTVA__1F247CCC] DEFAULT (0),
+	[VALSALDOANT] [decimal](28, 14) NULL CONSTRAINT [DF__TBCONT011__VALSA__2018A105] DEFAULT (0));
+GO
+
+--Table dbo.TBCONT012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT012] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[CODORIGEM] [char](2) NOT NULL,
+	[DESLOTE] [char](50) NOT NULL,
+	[DATATULOTE] [datetime] NOT NULL,
+	[STALOTE] [char](1) NOT NULL,
+	[VALTOTDEBITO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT012__VALTO__50F0E28A] DEFAULT (0),
+	[VALTOTCREDITO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT012__VALTO__51E506C3] DEFAULT (0));
+GO
+
+--Table dbo.TBCONT013
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT013] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[NUMLANC] [char](4) NOT NULL,
+	[NUMMOVTO] [char](3) NOT NULL,
+	[NUMSEQMOV] [char](1) NOT NULL,
+	[DATLANC] [datetime] NOT NULL,
+	[DATCOMPET] [datetime] NULL,
+	[CODCONTA] [char](12) NOT NULL,
+	[TIPMOVTO] [char](1) NOT NULL,
+	[VALMOVTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT013__VALMO__0D5AD24C] DEFAULT (0),
+	[CODHIST1] [char](3) NULL,
+	[CODHIST2] [char](3) NULL,
+	[CODHIST3] [char](3) NULL,
+	[CODDOCTO1] [char](3) NULL,
+	[CODDOCTO2] [char](3) NULL,
+	[CODDOCTO3] [char](3) NULL,
+	[NUMDOCTO1] [char](20) NULL,
+	[NUMDOCTO2] [char](20) NULL,
+	[NUMDOCTO3] [char](20) NULL,
+	[DESHISTCOMPLEMEN] [char](200) NULL,
+	[DATATUMOV] [datetime] NULL,
+	[USUARIOATUMOV] [char](10) NULL,
+	[CODEVENTO] [char](5) NULL,
+	[IDPARTCRED] [char](20) NULL,
+	[IDPARTDEB] [char](20) NULL,
+	[TIPLANCTOFCONT] [char](2) NULL);
+GO
+
+--Table dbo.TBCONT014
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT014] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[NUMLANC] [char](4) NOT NULL,
+	[NUMMOVTO] [char](3) NOT NULL,
+	[NUMSEQMOV] [char](1) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[VALMOVTOCCUSTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT014__VALMO__10373EF7] DEFAULT (0));
+GO
+
+--Table dbo.TBCONT015
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT015] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[CODORIGEM] [char](2) NOT NULL,
+	[DESLOTE] [char](50) NOT NULL,
+	[DATATULOTE] [datetime] NOT NULL,
+	[STALOTE] [char](1) NOT NULL,
+	[VALTOTDEBITO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT015__VALTO__67D447E2] DEFAULT (0),
+	[VALTOTCREDITO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT015__VALTO__68C86C1B] DEFAULT (0));
+GO
+
+--Table dbo.TBCONT016
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT016] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[NUMLANC] [char](4) NOT NULL,
+	[NUMMOVTO] [char](3) NOT NULL,
+	[NUMSEQMOV] [char](1) NOT NULL,
+	[DATLANC] [datetime] NOT NULL,
+	[DATCOMPET] [datetime] NULL,
+	[CODCONTA] [char](12) NOT NULL,
+	[TIPMOVTO] [char](1) NOT NULL,
+	[VALMOVTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT016__VALMO__1E855E4E] DEFAULT (0),
+	[CODHIST1] [char](3) NULL,
+	[CODHIST2] [char](3) NULL,
+	[CODHIST3] [char](3) NULL,
+	[CODDOCTO1] [char](3) NULL,
+	[CODDOCTO2] [char](3) NULL,
+	[CODDOCTO3] [char](3) NULL,
+	[NUMDOCTO1] [char](20) NULL,
+	[NUMDOCTO2] [char](20) NULL,
+	[NUMDOCTO3] [char](20) NULL,
+	[DESHISTCOMPLEMEN] [char](200) NULL,
+	[DATATUMOV] [datetime] NULL,
+	[USUARIOATUMOV] [char](10) NULL);
+GO
+
+--Table dbo.TBCONT017
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT017] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[NUMLANC] [char](4) NOT NULL,
+	[NUMMOVTO] [char](3) NOT NULL,
+	[NUMSEQMOV] [char](1) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[VALMOVTOCCUSTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT017__VALMO__2161CAF9] DEFAULT (0));
+GO
+
+--Table dbo.TBCONT018
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT018] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[CODCONTA] [char](12) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[VALSALDO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT018__VALSA__22F50DB0] DEFAULT (0),
+	[TOTVALDEBITO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT018__TOTVA__23E931E9] DEFAULT (0),
+	[TOTVALCREDITO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT018__TOTVA__24DD5622] DEFAULT (0),
+	[VALSALDOANT] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT018__VALSA__25D17A5B] DEFAULT (0));
+GO
+
+--Table dbo.TBCONT019
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT019] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODPLANOCC] [char](4) NOT NULL,
+	[DESPLANOCC] [char](50) NOT NULL,
+	[CODMASCPLANOCC] [char](20) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STAPLANOCC] [char](1) NOT NULL,
+	[STACONSOLIDADOR] [char](1) NULL CONSTRAINT [DF__TBCONT019__STACO__3E930684] DEFAULT ('N'),
+	[STAAGRUPAR] [char](1) NULL CONSTRAINT [DF__TBCONT019__STAAG__3F872ABD] DEFAULT ('N'));
+GO
+
+--Table dbo.TBCONT020
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT020] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODGRUPOCC] [char](10) NOT NULL,
+	[DESGRUPOCC] [char](50) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STAACEITACC] [char](1) NOT NULL,
+	[STACC] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBCONT021
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT021] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODPLANOCC] [char](4) NOT NULL,
+	[CODGRCC] [char](10) NOT NULL,
+	[CODFILIALCTA] [char](2) NOT NULL,
+	[TIPORIGEMCODGRCC] [char](1) NOT NULL,
+	[CODORDEMCC] [char](20) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STAACEITACC] [char](1) NOT NULL,
+	[CODORDEMCCEXIB] [char](20) NULL);
+GO
+
+--Table dbo.TBCONT022
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT022] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODCONTASINTETICA] [char](30) NOT NULL,
+	[DESCONTASINTETICA] [char](60) NOT NULL,
+	[CALCULOSINTETICA] [char](2) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STACONTA] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBCONT023
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT023] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODPLANO] [char](3) NOT NULL,
+	[DESCRPLANO] [char](50) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STACONSOLIDADOR] [char](1) NULL,
+	[STAAGRUPAR] [char](1) NULL);
+GO
+
+--Table dbo.TBCONT024
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT024] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODPLANO] [char](3) NOT NULL,
+	[CODCONTA] [char](30) NOT NULL,
+	[CODFILIALCTA] [char](2) NOT NULL,
+	[TIPORIGEMCONTA] [char](1) NOT NULL,
+	[STAACEITAANALITICA] [char](1) NOT NULL,
+	[CODORDEMPLANO] [char](20) NOT NULL,
+	[CALCULOSINTETICA] [char](2) NOT NULL);
+GO
+
+--Table dbo.TBCONT025
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT025] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODRATEIOCONT] [char](3) NOT NULL,
+	[DESCRATEIOCONT] [char](40) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL);
+GO
+
+--Table dbo.TBCONT026
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT026] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODRATEIOCONT] [char](3) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[PERCRATEIOCONT] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBCONT027
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT027] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOCOMPET] [char](4) NOT NULL,
+	[MESCOMPET] [char](2) NOT NULL,
+	[DTINICIOCOMPET] [datetime] NULL,
+	[DTFIMCOMPET] [datetime] NULL);
+GO
+
+--Table dbo.TBCONT028
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT028] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCONT028_SERIE] DEFAULT (' '),
+	[CODFORN] [char](6) NOT NULL,
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQPAGTO] [char](2) NOT NULL,
+	[ANOLOTECONTAB] [char](4) NOT NULL,
+	[MESLOTECONTAB] [char](2) NOT NULL,
+	[NUMLOTECONTAB] [char](7) NOT NULL,
+	[DATCONTAB] [datetime] NOT NULL,
+	[VALCONTAB] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT028__VALCO__44AB0736] DEFAULT (0));
+GO
+
+--Table dbo.TBCONT029
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT029] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[USER_ID] [char](10) NULL,
+	[DATENTRADA] [datetime] NULL,
+	[HORENTRADA] [char](5) NULL);
+GO
+
+--Table dbo.TBCONT030
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT030] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCONT030_SERIE] DEFAULT (' '),
+	[CODCLI] [char](9) NOT NULL,
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQRECEB] [char](2) NOT NULL,
+	[ANOLOTECONTAB] [char](4) NOT NULL,
+	[MESLOTECONTAB] [char](2) NOT NULL,
+	[NUMLOTECONTAB] [char](7) NOT NULL,
+	[DATCONTAB] [datetime] NOT NULL,
+	[VALCONTAB] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT030__VALCO__14E6E57B] DEFAULT (0));
+GO
+
+--Table dbo.TBCONT031
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT031] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODPLANO] [char](3) NOT NULL,
+	[ANOORCADO] [char](4) NOT NULL,
+	[MESORCADO] [char](2) NOT NULL,
+	[CODCONTA] [char](30) NOT NULL,
+	[CODFILIALCTA] [char](2) NOT NULL,
+	[TIPORIGEMCONTA] [char](1) NOT NULL,
+	[VALORCADO] [decimal](28, 14) NOT NULL,
+	[DATAATUORCADO] [datetime] NOT NULL,
+	[USUARIOATUORC] [char](10) NOT NULL,
+	[STAACEITACC] [char](1) NULL,
+	[STAINFORUSU] [char](1) NULL,
+	[CODORDEMNOPLANOEXIB] [char](30) NULL);
+GO
+
+--Table dbo.TBCONT032
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT032] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODPLANO] [char](3) NOT NULL,
+	[ANOORCADO] [char](4) NOT NULL,
+	[MESORCADO] [char](2) NOT NULL,
+	[CODCONTA] [char](30) NOT NULL,
+	[CODFILIALCTA] [char](2) NOT NULL,
+	[TIPORIGEMCONTA] [char](1) NOT NULL,
+	[CCUSTOORCADO] [char](10) NOT NULL,
+	[VALORCADOCC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCONT033
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT033] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[CODORIGEM] [char](2) NOT NULL,
+	[DESLOTE] [char](50) NOT NULL,
+	[DATATULOTE] [datetime] NOT NULL,
+	[STALOTE] [char](1) NOT NULL,
+	[VALTOTDEBITO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT033__VALTO__68150A5B] DEFAULT (0),
+	[VALTOTCREDITO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT033__VALTO__69092E94] DEFAULT (0));
+GO
+
+--Table dbo.TBCONT034
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT034] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[NUMLANC] [char](4) NOT NULL,
+	[NUMMOVTO] [char](3) NOT NULL,
+	[NUMSEQMOV] [char](1) NOT NULL,
+	[DATLANC] [datetime] NOT NULL,
+	[DATCOMPET] [datetime] NULL,
+	[CODCONTA] [char](12) NOT NULL,
+	[TIPMOVTO] [char](1) NOT NULL,
+	[VALMOVTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT034__VALMO__747AE140] DEFAULT (0),
+	[CODHIST1] [char](3) NULL,
+	[CODHIST2] [char](3) NULL,
+	[CODHIST3] [char](3) NULL,
+	[CODDOCTO1] [char](3) NULL,
+	[CODDOCTO2] [char](3) NULL,
+	[CODDOCTO3] [char](3) NULL,
+	[NUMDOCTO1] [char](20) NULL,
+	[NUMDOCTO2] [char](20) NULL,
+	[NUMDOCTO3] [char](20) NULL,
+	[DESHISTCOMPLEMEN] [char](200) NULL,
+	[DATATUMOV] [datetime] NULL,
+	[USUARIOATUMOV] [char](10) NULL,
+	[CODEVENTO] [char](5) NULL,
+	[IDPARTCRED] [char](20) NULL,
+	[IDPARTDEB] [char](20) NULL,
+	[TIPLANCTOFCONT] [char](2) NULL);
+GO
+
+--Table dbo.TBCONT035
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT035] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[NUMLOTE] [char](7) NOT NULL,
+	[NUMLANC] [char](4) NOT NULL,
+	[NUMMOVTO] [char](3) NOT NULL,
+	[NUMSEQMOV] [char](1) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[VALMOVTOCCUSTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCONT035__VALMO__7A33BA96] DEFAULT (0));
+GO
+
+--Table dbo.TBCONT036
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT036] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[CODCONTA] [char](12) NOT NULL,
+	[VALSALDO] [decimal](28, 14) NULL,
+	[VALSALDODEB_X] [decimal](28, 14) NULL,
+	[VALSALDODEB_F] [decimal](28, 14) NULL,
+	[VALSALDODEB_IF] [decimal](28, 14) NULL,
+	[VALSALDODEB_TR] [decimal](28, 14) NULL,
+	[VALSALDODEB_TF] [decimal](28, 14) NULL,
+	[VALSALDODEB_EF] [decimal](28, 14) NULL,
+	[VALSALDODEB_TS] [decimal](28, 14) NULL,
+	[VALSALDOCRED_X] [decimal](28, 14) NULL,
+	[VALSALDOCRED_F] [decimal](28, 14) NULL,
+	[VALSALDOCRED_IF] [decimal](28, 14) NULL,
+	[VALSALDOCRED_TR] [decimal](28, 14) NULL,
+	[VALSALDOCRED_TF] [decimal](28, 14) NULL,
+	[VALSALDOCRED_EF] [decimal](28, 14) NULL,
+	[VALSALDOCRED_TS] [decimal](28, 14) NULL,
+	[VALSALDOANT] [decimal](28, 14) NULL,
+	[VALSALDODEB_IS] [decimal](28, 14) NULL,
+	[VALSALDOCRED_IS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCONT037
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT037] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOLOTE] [char](4) NOT NULL,
+	[MESLOTE] [char](2) NOT NULL,
+	[CODCONTA] [char](12) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[VALSALDO] [decimal](28, 14) NULL,
+	[VALSALDODEB_X] [decimal](28, 14) NULL,
+	[VALSALDODEB_F] [decimal](28, 14) NULL,
+	[VALSALDODEB_IF] [decimal](28, 14) NULL,
+	[VALSALDODEB_TR] [decimal](28, 14) NULL,
+	[VALSALDODEB_TF] [decimal](28, 14) NULL,
+	[VALSALDODEB_EF] [decimal](28, 14) NULL,
+	[VALSALDODEB_TS] [decimal](28, 14) NULL,
+	[VALSALDOCRED_X] [decimal](28, 14) NULL,
+	[VALSALDOCRED_F] [decimal](28, 14) NULL,
+	[VALSALDOCRED_IF] [decimal](28, 14) NULL,
+	[VALSALDOCRED_TR] [decimal](28, 14) NULL,
+	[VALSALDOCRED_TF] [decimal](28, 14) NULL,
+	[VALSALDOCRED_EF] [decimal](28, 14) NULL,
+	[VALSALDOCRED_TS] [decimal](28, 14) NULL,
+	[VALSALDOANT] [decimal](28, 14) NULL,
+	[VALSALDODEB_IS] [decimal](28, 14) NULL,
+	[VALSALDOCRED_IS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCONT997
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT997] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODRESPONSAVEL] [char](3) NOT NULL,
+	[NOMERESPONSAVEL] [char](80) NOT NULL,
+	[CARGORESP] [char](40) NULL,
+	[ENDRESP] [char](60) NULL,
+	[NUMENDRESP] [char](8) NULL,
+	[COMPLENDRESP] [char](20) NULL,
+	[BAIRRORESP] [char](40) NULL,
+	[CIDADERESP] [char](40) NULL,
+	[CEPRESP] [char](10) NULL,
+	[UFRESP] [char](2) NULL,
+	[TELRESP] [char](15) NULL,
+	[FAXRESP] [char](15) NULL,
+	[EMAILRESP] [char](70) NULL,
+	[HOMEPAGERESP] [char](70) NULL,
+	[DATINISERVICO] [datetime] NULL,
+	[DATFIMSERVICO] [datetime] NULL,
+	[NUMCNPJRESP] [char](14) NULL,
+	[NUMCPFRESP] [char](11) NULL,
+	[CEPCXPOSTAL] [char](8) NULL,
+	[CXPOSTAL] [char](8) NULL,
+	[CODPAIS] [char](5) NULL,
+	[CODMUNICIPIO] [char](7) NULL);
+GO
+
+--Table dbo.TBCONT998
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT998] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODCONTAB] [char](3) NOT NULL,
+	[NOMCONTAB] [char](80) NOT NULL,
+	[NUMCRC] [char](15) NULL,
+	[ENDCONTAB] [char](60) NULL,
+	[NUMENDCONTAB] [char](8) NULL,
+	[COMPLENDCONTAB] [char](20) NULL,
+	[BAIRROCONTAB] [char](40) NULL,
+	[CIDADECONTAB] [char](40) NULL,
+	[CEPCONTAB] [char](10) NULL,
+	[UFCONTAB] [char](2) NULL,
+	[TELCONTAB] [char](15) NULL,
+	[FAXCONTAB] [char](15) NULL,
+	[EMAILCONTAB] [char](70) NULL,
+	[HOMEPAGECONTAB] [char](70) NULL,
+	[DATINISERVICO] [datetime] NULL,
+	[DATFIMSERVICO] [datetime] NULL,
+	[NUMCNPJCONTAB] [char](14) NULL,
+	[NUMCPFCONTAB] [char](11) NULL,
+	[CEPCXPOSTAL] [char](8) NULL,
+	[CXPOSTAL] [char](8) NULL,
+	[CODPAIS] [char](5) NULL,
+	[CODMUNICIPIO] [char](7) NULL);
+GO
+
+--Table dbo.TBCONT999
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONT999] (
+	[CODEMP] [char](2) NOT NULL,
+	[ULTANOFECH] [char](4) NULL,
+	[ULTMESFECH] [char](2) NULL,
+	[ULTANOENC] [char](4) NULL,
+	[ULTMESENC] [char](2) NULL,
+	[STABLOQUEIOFECHA] [char](1) NULL,
+	[CODLIVROINSCR] [char](15) NULL,
+	[NUMLIVROINSCR] [char](15) NULL,
+	[MESLIVROINSCR] [char](2) NULL,
+	[ANOLIVROINSCR] [char](4) NULL,
+	[LOCALLIVROINSCR] [char](60) NULL,
+	[NOMERESP1] [char](40) NULL,
+	[CARGORESP1] [char](35) NULL,
+	[NOMERESP2] [char](40) NULL,
+	[CARGORESP2] [char](35) NULL,
+	[NOMETECNICO] [char](40) NULL,
+	[CARGOTECNICO] [char](35) NULL,
+	[REGTECNICO] [char](15) NULL,
+	[STAREGIMECOMPET] [char](1) NULL,
+	[ANOINICIMPLANTCONTAB] [char](4) NULL,
+	[MESINICIMPLANTCONTAB] [char](2) NULL,
+	[CONTAAUX] [char](12) NULL,
+	[CONTABILIZABORD] [char](1) NULL,
+	[CODEMPCONTAB] [char](2) NULL,
+	[TIPIMPCONT] [char](2) NULL,
+	[HISTORICOSLANC] [int] NULL,
+	[STAINCLUINOVOLANCTO] [char](1) NULL,
+	[VALMAXACERTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCONT999__VALMA__02C83540] DEFAULT (0),
+	[TEXTOPARECER] [text] NULL,
+	[FOLHAOUPAGINA] [char](1) NULL,
+	[TEXTOPARECERBALANCO] [text] NULL,
+	[ULTANOFECHFCONT] [char](4) NULL,
+	[ULTMESFECHFCONT] [char](2) NULL);
+GO
+
+--Table dbo.TBCONTIMPFOLHA
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCONTIMPFOLHA] (
+	[NUMLINHA] [int] NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[DATLANC] [datetime] NOT NULL,
+	[CODCONTA] [char](12) NOT NULL,
+	[TIPMOVTO] [char](1) NOT NULL,
+	[CCUSTO] [char](10) NULL,
+	[VALMOVTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCONTIMP__VALMO__37BB206C] DEFAULT (0),
+	[CODHIST1] [char](3) NOT NULL,
+	[CODHIST2] [char](3) NULL,
+	[HISTCOMPLEMEN] [char](100) NULL,
+	[USUARIO] [char](10) NOT NULL,
+	[CODDOCTO1] [char](3) NULL,
+	[CODDOCTO2] [char](3) NULL,
+	[NUMDOCTO1] [char](20) NULL,
+	[NUMDOCTO2] [char](20) NULL,
+	[NUMLOTE] [char](7) NULL,
+	[NUMLANC] [char](4) NULL,
+	[NUMMOVTO] [char](3) NULL,
+	[HISTCOMPLEMEN200] [char](200) NULL,
+	[CODDOCTO3] [char](3) NULL,
+	[NUMDOCTO3] [char](20) NULL,
+	[DATATUMOV] [datetime] NULL,
+	[USUARIOATUMOV] [char](10) NULL,
+	[IDPART] [char](20) NULL,
+	[RAZSOCPARTICIP] [char](80) NULL,
+	[TIPFISJUR] [char](1) NULL,
+	[NUMCNPJCPF] [numeric](14, 0) NULL,
+	[CODPAIS] [numeric](5, 0) NULL,
+	[DATINIRELAC] [datetime] NULL,
+	[CODREL] [numeric](2, 0) NULL);
+GO
+
+--Table dbo.TBCTALU001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTALU001] (
+	[CODEMP] [char](2) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[MODELOCONTRATO] [text] NULL);
+GO
+
+--Table dbo.TBCTALU002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTALU002] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMMATRICULA] [char](6) NOT NULL,
+	[CCUSTO] [char](10) NULL,
+	[CODCLI] [char](9) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[DATMATRCULA] [datetime] NULL,
+	[DATFIMCONTRATO] [datetime] NULL,
+	[VALORMENSAL] [decimal](28, 14) NULL,
+	[NOMASSISTSOCIAL] [char](40) NULL,
+	[NUMDOCTO] [char](8) NULL,
+	[SERIE] [char](5) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[TPEMITENTE] [char](1) NULL,
+	[CTAEMITENTE] [char](12) NULL,
+	[STATUS] [char](1) NULL,
+	[CODEMPRENOV] [char](2) NULL,
+	[NUMMATRICULARENOV] [char](6) NULL,
+	[DESCMATRICULA] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTALU00__DESCM__6B7099F3] DEFAULT (0),
+	[CONVENIO] [char](100) NULL,
+	[VALCUSTO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCTALU003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTALU003] (
+	[CODCLI] [char](9) NOT NULL,
+	[ANO] [char](4) NOT NULL,
+	[NOMRESPONSAVEL] [char](40) NULL,
+	[PORCAJUSTERENDA] [decimal](28, 14) NULL,
+	[VALOUTRRENDAS] [decimal](28, 14) NULL,
+	[VALAJUSTERENDA] [decimal](28, 14) NULL,
+	[DATAESTUDO] [datetime] NULL,
+	[CODEMP] [char](2) NULL,
+	[NUMMATRICULA] [char](6) NULL,
+	[CCUSTO] [char](10) NULL,
+	[CODEMPCCUSTO] [char](2) NULL,
+	[CODFAIXA] [char](2) NULL,
+	[VALPAGAR] [decimal](28, 14) NULL,
+	[DESCONTO] [decimal](28, 14) NULL,
+	[CONVENIO] [char](100) NULL,
+	[PERIODO] [char](1) NULL,
+	[OUTROSDESC] [decimal](28, 14) NULL,
+	[VALORMENSAL] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCTALU004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTALU004] (
+	[CODCLI] [char](9) NOT NULL,
+	[ANO] [char](4) NOT NULL,
+	[SEQCOMPFAMILIAR] [char](2) NOT NULL,
+	[NOMCOMPFAMILIAR] [char](40) NULL,
+	[GRAUCOMPFAMILIAR] [char](20) NULL,
+	[IDADE] [int] NULL,
+	[ESTCIVIL] [char](1) NULL,
+	[GRAUINSTRUCAO] [char](20) NULL,
+	[PROFISSAO] [char](30) NULL,
+	[VALRENDABRUTA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCTALU005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTALU005] (
+	[CODEMP] [char](2) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[CODFAIXA] [char](2) NOT NULL,
+	[VALINIFAIXA] [decimal](28, 14) NOT NULL,
+	[VALFIMFAIXA] [decimal](28, 14) NOT NULL,
+	[VALMEIOPERIOD] [decimal](28, 14) NOT NULL,
+	[VALINTPERIOD] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBCTPG001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG001] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTPG001_SERIE] DEFAULT (' '),
+	[CODFORN] [char](6) NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[DATLANCTO] [datetime] NOT NULL,
+	[DATULTPAGTO] [datetime] NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[STATITULO] [char](1) NULL,
+	[OBSERVACAO] [text] NULL,
+	[VALTITULO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG001__VALTI__50A5FE70] DEFAULT (0),
+	[ORIGEMTITULO] [char](1) NULL CONSTRAINT [DF__TBCTPG001__ORIGE__519A22A9] DEFAULT ('P'),
+	[DATCOMPET] [datetime] NULL,
+	[STAEXPCONTINC] [char](1) NULL CONSTRAINT [DF__TBCTPG001__STAEX__528E46E2] DEFAULT ('N'),
+	[STANOTADEBCRED] [char](1) NULL CONSTRAINT [DF__TBCTPG001__STANO__53826B1B] DEFAULT ('N'),
+	[CODCLIORIG] [char](9) NULL,
+	[CODDOCUMSEMAPROP] [char](3) NULL,
+	[NUMDOCTOSEMAPROP] [char](8) NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBCTPG001__STAIN__3ACC9741] DEFAULT ('N'),
+	[CODCPAGTO] [char](3) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[DATREFERIND] [datetime] NULL,
+	[CODINDICE] [char](3) NULL,
+	[VALTITULOIND] [decimal](28, 14) NULL,
+	[TIPTITULO] [char](2) NULL,
+	[DESCOMPLTIT] [char](250) NULL,
+	[STAINTERFACE] [char](1) NULL CONSTRAINT [DF__TBCTPG001__STAIN__3FA7264E] DEFAULT ('N'));
+GO
+
+--Table dbo.TBCTPG002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG002] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTPG002_SERIE] DEFAULT (' '),
+	[CODFORN] [char](6) NOT NULL,
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQPAGTO] [char](2) NOT NULL,
+	[DATVENCTO] [datetime] NOT NULL,
+	[VALDESDOBRO] [decimal](28, 14) NOT NULL,
+	[VALSDAPAGAR] [decimal](28, 14) NOT NULL,
+	[VALPAGO] [decimal](28, 14) NULL,
+	[VALJUROS] [decimal](28, 14) NULL,
+	[VALDESCTO] [decimal](28, 14) NULL,
+	[DATPAGTO] [datetime] NULL,
+	[NUMBORDERO] [char](6) NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[NUMCHEQUE] [char](10) NULL,
+	[CTAJUROS] [char](12) NULL,
+	[CTADESCTO] [char](12) NULL,
+	[CODDOCCRED] [char](10) NULL,
+	[OBSPARCELA] [text] NULL,
+	[CHEQUENOMINAL] [char](50) NULL,
+	[CODTPBAIXA] [char](2) NULL,
+	[PERCJUROSDIA] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG002__PERCJ__565ED7C6] DEFAULT (0),
+	[VALMULTA] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG002__VALMU__5752FBFF] DEFAULT (0),
+	[PERCMULTA] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG002__PERCM__58472038] DEFAULT (0),
+	[CALCTPJUROS] [char](1) NULL,
+	[BASEJUROS] [char](1) NULL,
+	[STAEXPCONTPAG] [char](1) NULL CONSTRAINT [DF__TBCTPG002__STAEX__593B4471] DEFAULT ('N'),
+	[DATPRORROGA] [datetime] NULL,
+	[NOSSONUM] [char](20) NULL,
+	[NUMCARTEIRA] [char](5) NULL,
+	[NUMINSTRUCAO1] [char](5) NULL,
+	[NUMINSTRUCAO2] [char](5) NULL,
+	[CODOCORREM] [char](5) NULL,
+	[CODOCORRET1] [char](5) NULL,
+	[CODOCORRET2] [char](5) NULL,
+	[CODOCORRET3] [char](5) NULL,
+	[CODOCORRET4] [char](5) NULL,
+	[CODOCORRET5] [char](5) NULL,
+	[CHAVERET] [char](10) NULL,
+	[DTCHEQUECOMPENSA] [datetime] NULL,
+	[CCJUROS] [char](10) NULL,
+	[CCDESCONTOS] [char](10) NULL,
+	[NUMDOCADIANTA] [char](8) NULL,
+	[NUMSEQADIANTA] [char](8) NULL,
+	[CONTACANC] [char](12) NULL,
+	[DATARQRET] [datetime] NULL,
+	[MULTAATRASO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG002__MULTA__5A2F68AA] DEFAULT (0),
+	[CTAMULTA] [char](12) NULL,
+	[CCMULTA] [char](10) NULL,
+	[DATEMITCHEQUE] [datetime] NULL,
+	[NUMCONTRATO] [char](15) NULL,
+	[TPEMITENTE] [char](1) NULL,
+	[CODEMITENTE] [char](9) NULL,
+	[STATROCATITULO] [char](1) NULL,
+	[CODTPCONTRATO] [char](2) NULL,
+	[CODEMPORIGEM] [char](2) NULL,
+	[CODFORNBAIXA] [char](6) NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBCTPG002__STAIN__3BC0BB7A] DEFAULT ('N'),
+	[CODFILIALBANCO] [char](2) NULL,
+	[CODFILIALBORDERO] [char](2) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[FILIALDOCTODEV] [char](2) NULL,
+	[CODDOCUMDEV] [char](3) NULL,
+	[NUMDOCTODEV] [char](8) NULL,
+	[CODFORNDEV] [char](6) NULL,
+	[ORIGEMDOCTODEV] [char](1) NULL,
+	[DESDOBRODEV] [char](2) NULL,
+	[NUMSEQDEV] [char](2) NULL,
+	[NUMCODBARRAS] [char](50) NULL,
+	[VALDESDOBROIND] [decimal](28, 14) NULL,
+	[VALVARIACAOCAMBIAL] [decimal](28, 14) NULL,
+	[CTAVARIACAOCAMBIAL] [char](12) NULL,
+	[CCVARIACAOCAMBIAL] [char](10) NULL,
+	[VALATUMONETARIA] [decimal](28, 14) NULL,
+	[CTAATUMONETARIA] [char](12) NULL,
+	[CCATUMONETARIA] [char](10) NULL,
+	[SERIEDEV] [char](5) NULL,
+	[TIPPAGTO] [char](1) NULL,
+	[DESCOMPLPAGTO] [char](250) NULL,
+	[CODCLIBAIXA] [char](9) NULL,
+	[SEQMOVTOCONB] [char](3) NULL);
+GO
+
+--Table dbo.TBCTPG003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG003] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTPG003_SERIE] DEFAULT (' '),
+	[CODFORN] [char](6) NOT NULL,
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQPAGTO] [char](2) NOT NULL,
+	[SEQCCUSTO] [char](6) NOT NULL,
+	[CONTESTO] [char](12) NOT NULL,
+	[CCUSTO] [char](10) NULL,
+	[VALDESPESA] [decimal](28, 14) NOT NULL,
+	[CODHIST] [char](3) NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[CCUSTOORIGEM] [char](10) NULL);
+GO
+
+--Table dbo.TBCTPG004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG004] (
+	[CODMODCHEQUE] [char](2) NOT NULL,
+	[NOMCAMPO] [char](15) NOT NULL,
+	[STACOMPRIME] [char](1) NULL,
+	[NUMCOLUNA] [int] NULL,
+	[NUMLINHA] [int] NULL,
+	[STAIMPRIMIR] [char](1) NULL,
+	[TAMCAMPO] [char](4) NULL,
+	[MASCARA] [char](50) NULL,
+	[TRATESP] [char](1) NULL,
+	[STAMEMO] [char](1) NULL,
+	[LARGURAMEMO] [int] NULL,
+	[ALTURAMEMO] [int] NULL,
+	[SECAOFORM] [char](2) NULL,
+	[STATRUNCAR] [char](1) NULL,
+	[STAIMPRIMIRNANFCOMPIMP] [char](1) NULL CONSTRAINT [DF__TBCTPG004__STAIM__078C1F06] DEFAULT ('N'),
+	[DESMODCHEQUE] [char](30) NOT NULL,
+	[TAMCHEQUE] [int] NULL);
+GO
+
+--Table dbo.TBCTPG005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG005] (
+	[CODMODDOC] [char](2) NOT NULL,
+	[DESMODDOC] [char](30) NOT NULL,
+	[QTDECARACLINHADOC] [int] NULL,
+	[QTDELINHASDOC] [int] NULL);
+GO
+
+--Table dbo.TBCTPG006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG006] (
+	[CODMODDOC] [char](2) NOT NULL,
+	[NOMCAMPO] [char](30) NOT NULL,
+	[STACOMPRIME] [char](1) NULL,
+	[NUMCOLUNA] [int] NULL,
+	[NUMLINHA] [int] NULL,
+	[STAIMPRIMIR] [char](1) NULL,
+	[TAMCAMPO] [char](4) NULL,
+	[MASCARA] [char](50) NULL,
+	[TRATESP] [char](1) NULL,
+	[STAMEMO] [char](1) NULL,
+	[LARGURAMEMO] [int] NULL,
+	[ALTURAMEMO] [int] NULL,
+	[SECAOFORM] [char](2) NULL,
+	[STATRUNCAR] [char](1) NULL,
+	[STAIMPRIMIRNANFCOMPIMP] [char](1) NULL CONSTRAINT [DF__TBCTPG006__STAIM__0C50D423] DEFAULT ('N'));
+GO
+
+--Table dbo.TBCTPG007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG007] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMBORDERO] [char](6) NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[TPBORDERO] [char](1) NOT NULL,
+	[CODBANCO] [char](6) NOT NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[NUMCTACORR] [char](15) NULL,
+	[DATPAGTO] [datetime] NULL,
+	[STABORDERO] [char](1) NULL,
+	[CANCELADO] [char](1) NULL,
+	[OBSERVACAO] [text] NULL,
+	[DIGCTACORRENTE] [char](2) NULL,
+	[STAARQTRANSM] [char](1) NULL,
+	[CODTPBAIXA] [char](2) NULL,
+	[LOCALEMISSAODOC] [char](1) NULL,
+	[NOMARQREMESSA] [char](20) NULL,
+	[DATGERACAOARQBANC] [datetime] NULL,
+	[STAADMINISTRATIVO] [char](1) NULL CONSTRAINT [DF__TBCTPG007__STAAD__3064E2BE] DEFAULT ('N'),
+	[LIBERACAO] [char](1) NULL);
+GO
+
+--Table dbo.TBCTPG008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG008] (
+	[CODEMP] [char](2) NOT NULL,
+	[MODULO] [char](1) NOT NULL,
+	[CODTPBAIXA] [char](2) NOT NULL,
+	[DESCTPBAIXA] [char](20) NOT NULL,
+	[CODHIST] [char](3) NULL,
+	[STAUSODOSISTEMA] [char](1) NULL CONSTRAINT [DF__TBCTPG008__STAUS__11158940] DEFAULT ('N'),
+	[BAIXANORMAL] [char](1) NOT NULL CONSTRAINT [DF__TBCTPG008__BAIXA__1209AD79] DEFAULT ('S'),
+	[CODEVENTO] [char](5) NULL);
+GO
+
+--Table dbo.TBCTPG009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG009] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTPG009_SERIE] DEFAULT (' '),
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CTAEMITENTE] [char](12) NOT NULL,
+	[CODFORN] [char](6) NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[DATPREVISAO] [datetime] NULL,
+	[DATLANCTO] [datetime] NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[OBSERVACAO] [text] NULL,
+	[VALTITULO] [decimal](28, 14) NULL,
+	[STATITULO] [char](1) NULL,
+	[STAEXPCONT] [char](1) NULL,
+	[CANCELADO] [char](1) NULL CONSTRAINT [DF__TBCTPG009__CANCE__6B59F4AC] DEFAULT ('N'),
+	[TIPOLANCTO] [char](1) NULL,
+	[DATLANCINI] [datetime] NULL,
+	[DATLANCFIM] [datetime] NULL,
+	[DIALANCTO] [int] NULL,
+	[DIAUTILFIXO] [char](1) NULL,
+	[DIAPROXIMOANTERIOR] [char](1) NULL,
+	[DATULTLANCTO] [datetime] NULL,
+	[NUMSEQDOCTO] [char](8) NULL,
+	[PERCIRRF] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG009__PERCI__394E6323] DEFAULT (0),
+	[PERCINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG009__PERCI__3A42875C] DEFAULT (0),
+	[STAAUTOMATICO] [char](1) NULL,
+	[ULTDIADOMES] [char](1) NULL,
+	[DATCANCELA] [datetime] NULL,
+	[USER_ID_CAD] [char](10) NULL,
+	[STALIBERADO] [char](1) NULL CONSTRAINT [DF__TBCTPG009__STALI__314EE556] DEFAULT ('N'),
+	[USER_ID_LIBREJ] [char](10) NULL,
+	[DTLIBREJ] [datetime] NULL,
+	[CODAREA] [char](10) NULL,
+	[CAMINHOARQCOMPROVANTE] [char](250) NULL);
+GO
+
+--Table dbo.TBCTPG010
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG010] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTPG010_SERIE] DEFAULT (' '),
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CTAEMITENTE] [char](12) NOT NULL,
+	[SEQCCUSTO] [char](6) NOT NULL,
+	[CONTESTO] [char](12) NULL,
+	[CCUSTO] [char](10) NULL,
+	[VALDESPESA] [decimal](28, 14) NULL,
+	[HISTESPECIAL] [char](36) NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL);
+GO
+
+--Table dbo.TBCTPG011
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG011] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMDOCADIANTA] [char](8) NOT NULL,
+	[DATADIANTAMENTO] [datetime] NULL,
+	[DATLANCTO] [datetime] NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[VALADIANTAMENTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG011__VALAD__19AACF41] DEFAULT (0),
+	[STAADIANTAMENTO] [char](1) NULL CONSTRAINT [DF__TBCTPG011__STAAD__1A9EF37A] DEFAULT ('A'),
+	[OBSERVACAO] [text] NULL,
+	[NUMCHEQUE] [char](10) NULL,
+	[CHEQUENOMINAL] [char](50) NULL,
+	[CCUSTO] [char](10) NULL,
+	[VISTAPRAZO] [char](1) NULL CONSTRAINT [DF__TBCTPG011__VISTA__4F72AE6C] DEFAULT ('V'),
+	[DATEFETIVAADIANTA] [datetime] NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[NUMBORDERO] [char](6) NULL,
+	[DATEMITCHEQUE] [datetime] NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBCTPG011__STAIN__6A7BAA63] DEFAULT ('N'),
+	[CODFILIALBORDERO] [char](2) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[SEQMOVTOCONB] [char](3) NULL,
+	[NUMNF] [char](9) NULL,
+	[SERNF] [char](5) NULL);
+GO
+
+--Table dbo.TBCTPG012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG012] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMDOCADIANTA] [char](8) NOT NULL,
+	[NUMSEQBAIXA] [char](2) NOT NULL,
+	[VALSDADIANTAMENTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG012__VALSD__1D7B6025] DEFAULT (0),
+	[VALBAIXA] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG012__VALBA__1E6F845E] DEFAULT (0),
+	[DATBAIXA] [datetime] NULL,
+	[STABAIXA] [char](1) NULL CONSTRAINT [DF__TBCTPG012__STABA__1F63A897] DEFAULT ('A'),
+	[NUMCHEQUE] [char](10) NULL,
+	[CHEQUENOMINAL] [char](50) NULL,
+	[CODBANCODEV] [char](6) NULL,
+	[CODAGENCIADEV] [char](10) NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBCTPG012__STAIN__6B6FCE9C] DEFAULT ('N'),
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[SEQMOVTOCONB] [char](3) NULL);
+GO
+
+--Table dbo.TBCTPG013
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG013] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMDOCADIANTA] [char](8) NOT NULL,
+	[NUMSEQBAIXA] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTPG013_SERIE] DEFAULT (' '),
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQPAGTO] [char](2) NOT NULL,
+	[VALBAIXATITULO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG013__VALBA__78B3EFCA] DEFAULT (0),
+	[VALPARCELA] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG013__VALPA__79A81403] DEFAULT (0),
+	[CODEMPORIGEM] [char](2) NULL,
+	[CODFORNBAIXA] [char](6) NULL);
+GO
+
+--Table dbo.TBCTPG014
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG014] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATO] [char](15) NOT NULL,
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[CODTPCONTRATO] [char](2) NOT NULL,
+	[VALCONTRATO] [decimal](28, 14) NOT NULL,
+	[VALSDAPAGAR] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG014__VALSD__2610A626] DEFAULT (0),
+	[STACONTRATO] [char](1) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[DATENCERRA] [datetime] NULL,
+	[OBSCONTRATO] [text] NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL);
+GO
+
+--Table dbo.TBCTPG015
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG015] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATO] [char](15) NOT NULL,
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[NUMDOCTO] [char](15) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTPG015_SERIE] DEFAULT (' '),
+	[VALDOCTO] [decimal](28, 14) NOT NULL,
+	[DATVENCTO] [datetime] NULL,
+	[DATBAIXA] [datetime] NULL,
+	[OBSDOCNEGOCIO] [text] NULL,
+	[CODFILIALTITULO] [char](2) NULL);
+GO
+
+--Table dbo.TBCTPG016
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG016] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATO] [char](15) NOT NULL,
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTPG016_SERIE] DEFAULT (' '),
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQPAGTO] [char](2) NOT NULL,
+	[DATBAIXA] [datetime] NULL,
+	[CODFORN] [char](6) NULL,
+	[CODFILIALTITULO] [char](2) NULL);
+GO
+
+--Table dbo.TBCTPG017
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG017] (
+	[CODTPCONTRATO] [char](2) NOT NULL,
+	[DESTPCONTRATO] [char](30) NOT NULL,
+	[STATROCATITULO] [char](1) NOT NULL,
+	[CODTPBAIXA] [char](2) NULL,
+	[CODDOCUMNOVO] [char](3) NULL,
+	[CTACREDITO] [char](12) NULL);
+GO
+
+--Table dbo.TBCTPG018
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG018] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESFECH] [char](2) NOT NULL,
+	[ANOFECH] [char](4) NOT NULL,
+	[CCUSTOORIGEM] [char](10) NOT NULL,
+	[CCUSTORATEADO] [char](10) NOT NULL,
+	[PERCRATEIO] [decimal](28, 14) NULL,
+	[VALORIGINAL] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG018__VALOR__37B0FECB] DEFAULT (0),
+	[VALRATEIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG018__VALRA__38A52304] DEFAULT (0),
+	[VALAPOSRATEIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTPG018__VALAP__3999473D] DEFAULT (0));
+GO
+
+--Table dbo.TBCTPG020
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG020] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMBORDERO] [char](6) NOT NULL,
+	[NUMHISTORICO] [int] NOT NULL,
+	[DATHISTORICO] [datetime] NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[OBSERVACAO] [text] NULL);
+GO
+
+--Table dbo.TBCTPG990
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG990] (
+	[DATATROCA] [datetime] NOT NULL,
+	[TROCADOR] [char](10) NOT NULL,
+	[MATERIAL] [char](255) NULL);
+GO
+
+--Table dbo.TBCTPG991
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG991] (
+	[TPARQUIVO] [char](1) NOT NULL,
+	[CODREGISTRO] [char](1) NOT NULL,
+	[DESCRREGISTRO] [char](30) NOT NULL,
+	[REGDETALHE] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBCTPG992
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG992] (
+	[TPARQUIVO] [char](1) NOT NULL,
+	[CODREGISTRO] [char](1) NOT NULL,
+	[NOMECAMPO] [char](15) NOT NULL,
+	[DESCRCAMPO] [char](40) NOT NULL);
+GO
+
+--Table dbo.TBCTPG993
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG993] (
+	[CODBANCO] [char](6) NOT NULL,
+	[TPARQUIVO] [char](1) NOT NULL,
+	[CODREGISTRO] [char](1) NOT NULL,
+	[SEQREGISTRO] [int] NOT NULL,
+	[SEQTOTALIZADOR] [int] NULL,
+	[CPOCHAVELOTE] [char](15) NULL,
+	[CONTCHAVELOTE] [char](20) NULL);
+GO
+
+--Table dbo.TBCTPG994
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG994] (
+	[CODBANCO] [char](6) NOT NULL,
+	[TPARQUIVO] [char](1) NOT NULL,
+	[CODREGISTRO] [char](1) NOT NULL,
+	[NOMECAMPO] [char](15) NOT NULL,
+	[SEQREGISTRO] [int] NOT NULL,
+	[SEQCAMPO] [int] NOT NULL,
+	[STAIMPRCAMPO] [char](1) NOT NULL,
+	[TAMCAMPO] [int] NOT NULL,
+	[STATRATESPECIAL] [char](1) NOT NULL,
+	[NOMTABELA] [char](15) NULL,
+	[CAMPOTABELA] [char](25) NULL,
+	[CONTFIXO] [char](60) NULL,
+	[POSINICAMPO] [int] NULL,
+	[TAMCAMPOTAB] [int] NULL,
+	[TIPOCAMPO] [char](1) NOT NULL,
+	[STACPOOCORRENCIA] [char](1) NULL);
+GO
+
+--Table dbo.TBCTPG995
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG995] (
+	[CODBANCO] [char](6) NOT NULL,
+	[NUMCARTEIRA] [char](5) NOT NULL,
+	[DESCCARTEIRA] [char](40) NOT NULL);
+GO
+
+--Table dbo.TBCTPG996
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG996] (
+	[CODBANCO] [char](6) NOT NULL,
+	[INSTRUBANC] [char](5) NOT NULL,
+	[DESCINSTRUCAO] [char](40) NOT NULL);
+GO
+
+--Table dbo.TBCTPG997
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG997] (
+	[CODBANCO] [char](6) NOT NULL,
+	[CODOCORREM] [char](5) NOT NULL,
+	[DESCOCORRENCIA] [char](40) NOT NULL);
+GO
+
+--Table dbo.TBCTPG998
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG998] (
+	[CODBANCO] [char](6) NOT NULL,
+	[CODOCORRET] [char](5) NOT NULL,
+	[DESCOCORRENCIA] [char](40) NOT NULL,
+	[STABAIXATITULO] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBCTPG999
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTPG999] (
+	[CODEMP] [char](2) NOT NULL,
+	[TIPIMPOSTO] [char](10) NOT NULL,
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[DIAVENCTO] [int] NULL,
+	[STADIAUTILFIXO] [char](1) NULL,
+	[STADIAPROXANT] [char](1) NULL,
+	[CODFORN] [char](6) NULL,
+	[CODCIDADE] [char](3) NULL,
+	[CODSERVICO] [char](3) NULL,
+	[NOMECAMPO] [char](20) NOT NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[CONTARECOLHER] [char](12) NULL,
+	[CODEMPTITULO] [char](2) NULL,
+	[CODDOCUMIMP] [char](3) NULL,
+	[NUMDOCTO] [char](8) NULL);
+GO
+
+--Table dbo.TBCTRC001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC001] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTRC001_SERIE] DEFAULT (' '),
+	[CODCLI] [char](9) NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[DATLANCTO] [datetime] NULL,
+	[DATULTRECEB] [datetime] NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[STATITULO] [char](1) NULL,
+	[OBSERVACAO] [text] NULL,
+	[VALTITULO] [decimal](28, 14) NOT NULL,
+	[ORIGEMTITULO] [char](1) NOT NULL,
+	[DATCOMPET] [datetime] NOT NULL,
+	[STAEXPCONTINC] [char](1) NULL,
+	[STANOTADEBCRED] [char](1) NULL CONSTRAINT [DF__TBCTRC001__STANO__15502E78] DEFAULT ('N'),
+	[CODDOCUMSEMAPROP] [char](3) NULL,
+	[NUMDOCTOSEMAPROP] [char](8) NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBCTRC001__STAIN__585CFA28] DEFAULT ('N'),
+	[CODCPAGTO] [char](3) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[TIPOCOBRANCA] [char](1) NULL,
+	[DATREFERIND] [datetime] NULL,
+	[CODINDICE] [char](3) NULL,
+	[VALTITULOIND] [decimal](28, 14) NULL,
+	[TIPTITULO] [char](2) NULL,
+	[DESCOMPLTIT] [char](250) NULL,
+	[STAINTERFACE] [char](1) NULL CONSTRAINT [DF__TBCTRC001__STAIN__409B4A87] DEFAULT ('N'),
+	[NUMTRANSELETRONICA] [char](30) NULL);
+GO
+
+--Table dbo.TBCTRC002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC002] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTRC002_SERIE] DEFAULT (' '),
+	[CODCLI] [char](9) NOT NULL,
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQRECEB] [char](2) NOT NULL,
+	[DATVENCTO] [datetime] NOT NULL,
+	[VALDESDOBRO] [decimal](28, 14) NOT NULL,
+	[VALSDARECEBER] [decimal](28, 14) NOT NULL,
+	[VALRECEBI] [decimal](28, 14) NULL,
+	[VALJUROS] [decimal](28, 14) NULL,
+	[VALDESCTO] [decimal](28, 14) NULL,
+	[DTRECEBI] [datetime] NULL,
+	[NUMBORDERO] [char](6) NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[NUMCHEQUE] [char](10) NULL,
+	[CODDOCCRED] [char](10) NULL,
+	[CTAJUROS] [char](12) NULL,
+	[CTADESCTO] [char](12) NULL,
+	[OBSPARCELA] [text] NULL,
+	[CODTPBAIXA] [char](2) NULL,
+	[PERCJUROSDIA] [decimal](28, 14) NULL,
+	[VALMULTA] [decimal](28, 14) NULL,
+	[PERCMULTA] [decimal](28, 14) NULL,
+	[CALCTPJUROS] [char](1) NULL,
+	[BASEJUROS] [char](1) NULL,
+	[STAEXPCONTREC] [char](1) NULL,
+	[DATPRORROGA] [datetime] NULL,
+	[NOSSONUM] [char](20) NULL,
+	[CODOCORRET1] [char](5) NULL,
+	[CODOCORRET2] [char](5) NULL,
+	[CODOCORRET3] [char](5) NULL,
+	[CODOCORRET4] [char](5) NULL,
+	[CODOCORRET5] [char](5) NULL,
+	[DATARQRET] [datetime] NULL,
+	[CONTACANC] [char](12) NULL,
+	[CODOCORRET] [char](5) NULL,
+	[NUMDOCADIANTA] [char](8) NULL,
+	[NUMSEQADIANTA] [char](8) NULL,
+	[MULTAATRASO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTRC002__MULTA__182C9B23] DEFAULT (0),
+	[CTAMULTA] [char](12) NULL,
+	[CCMULTA] [char](10) NULL,
+	[NUMCONTRATO] [char](15) NULL,
+	[TPEMITENTE] [char](1) NULL,
+	[CODEMITENTE] [char](9) NULL,
+	[STATROCATITULO] [char](1) NULL,
+	[CODTPCONTRATO] [char](2) NULL,
+	[CCJUROS] [char](10) NULL,
+	[CCDESCTO] [char](10) NULL,
+	[DIGNOSSONUM] [char](2) NULL,
+	[CODEMPORIGEM] [char](2) NULL,
+	[CODCLIBAIXA] [char](6) NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBCTRC002__STAIN__59511E61] DEFAULT ('N'),
+	[CODFILIALBANCO] [char](2) NULL,
+	[CODFILIALBORDERO] [char](2) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[FILIALDOCTODEV] [char](2) NULL,
+	[CODDOCUMDEV] [char](3) NULL,
+	[NUMDOCTODEV] [char](8) NULL,
+	[CODCLIDEV] [char](6) NULL,
+	[DESDOBRODEV] [char](2) NULL,
+	[NUMSEQDEV] [char](2) NULL,
+	[ORIGEMDOCTODEV] [char](1) NULL,
+	[DIGITOCODBARRAS] [char](1) NULL,
+	[CAMPOLIVRECODBARRAS] [char](30) NULL,
+	[NOMARQREMESSACOB] [char](12) NULL,
+	[DATARQREMESSACOB] [datetime] NULL,
+	[VALDESDOBROIND] [decimal](28, 14) NULL,
+	[VALVARIACAOCAMBIAL] [decimal](28, 14) NULL,
+	[CTAVARIACAOCAMBIAL] [char](12) NULL,
+	[CCVARIACAOCAMBIAL] [char](10) NULL,
+	[VALTARIFA] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTRC002__VALTA__2D288360] DEFAULT (0),
+	[STAENVIOBCO] [char](1) NULL,
+	[SERIEDEV] [char](5) NULL,
+	[TIPRECEB] [char](1) NULL,
+	[DESCOMPLRECEB] [char](250) NULL,
+	[TPEMITENTECHEQUE] [char](1) NULL,
+	[EMITENTECHEQUE] [char](50) NULL,
+	[BANCOCHEQUE] [char](3) NULL,
+	[AGENCIACHEQUE] [char](10) NULL,
+	[CONTACHEQUE] [char](20) NULL,
+	[SEQMOVTOCONB] [char](3) NULL,
+	[CODOPERADORA] [char](5) NULL,
+	[STACREDDEB] [char](1) NULL,
+	[CODDOCUMARQRET] [char](3) NULL,
+	[NUMDOCTOARQRET] [char](8) NULL,
+	[CODDOCUMBORDERO] [char](3) NULL,
+	[SERIEDOCBAIXA] [char](5) NULL,
+	[NOMARQRET] [char](12) NULL);
+GO
+
+--Table dbo.TBCTRC003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC003] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTRC003_SERIE] DEFAULT (' '),
+	[CODCLI] [char](9) NOT NULL,
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQRECEB] [char](2) NOT NULL,
+	[SEQCCUSTO] [char](6) NOT NULL,
+	[CONTESTO] [char](12) NOT NULL,
+	[CCUSTO] [char](10) NULL,
+	[VALRECEITA] [decimal](28, 14) NOT NULL,
+	[CODHIST] [char](3) NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL);
+GO
+
+--Table dbo.TBCTRC004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC004] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMBORDERO] [char](6) NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[TPBORDERO] [char](1) NOT NULL,
+	[CODBANCO] [char](6) NOT NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[NUMCTACORR] [char](15) NULL,
+	[DATRECEB] [datetime] NULL,
+	[STABORDERO] [char](1) NULL,
+	[CANCELADO] [char](1) NULL,
+	[OBSERVACAO] [text] NULL,
+	[DIGCTACORRENTE] [char](2) NULL,
+	[STAARQTRANSM] [char](1) NULL,
+	[CODTPBAIXA] [char](2) NULL,
+	[NUMSEQREMESSA] [int] NULL,
+	[DATGERACAOARQBANC] [datetime] NULL,
+	[NUMCARTEIRA] [char](5) NULL,
+	[NUMINSTRUCAO1] [char](5) NULL,
+	[NUMINSTRUCAO2] [char](5) NULL,
+	[ESPECIETITULO] [char](5) NULL,
+	[CODOCORREM] [char](5) NULL,
+	[NOMARQREMESSA] [char](20) NULL);
+GO
+
+--Table dbo.TBCTRC009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC009] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTRC009_SERIE] DEFAULT (' '),
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CTAEMITENTE] [char](12) NOT NULL,
+	[CODCLI] [char](9) NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[DATPREVISAO] [datetime] NULL,
+	[DATLANCTO] [datetime] NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[OBSERVACAO] [text] NULL,
+	[VALTITULO] [decimal](28, 14) NULL,
+	[STATITULO] [char](1) NULL,
+	[STAEXPCONT] [char](1) NULL,
+	[CANCELADO] [char](1) NULL CONSTRAINT [DF__TBCTRC009__CANCE__1ED998B2] DEFAULT ('N'),
+	[TIPOLANCTO] [char](1) NULL,
+	[DATLANCINI] [datetime] NULL,
+	[DATLANCFIM] [datetime] NULL,
+	[DIALANCTO] [int] NULL,
+	[DIAUTILFIXO] [char](1) NULL,
+	[DIAPROXIMOANTERIOR] [char](1) NULL,
+	[DATULTLANCTO] [datetime] NULL,
+	[NUMSEQDOCTO] [char](8) NULL,
+	[STAAUTOMATICO] [char](1) NULL,
+	[ULTDIADOMES] [char](1) NULL,
+	[DATCANCELA] [datetime] NULL,
+	[VALDESCTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTRC009__VALDE__3019FEA4] DEFAULT (0),
+	[DATENCER] [datetime] NULL,
+	[DATREATIVACAO] [datetime] NULL,
+	[VALTITULOANT] [decimal](28, 14) NULL,
+	[DATULTREAJUSTE] [datetime] NULL);
+GO
+
+--Table dbo.TBCTRC010
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC010] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTRC010_SERIE] DEFAULT (' '),
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CTAEMITENTE] [char](12) NOT NULL,
+	[SEQCCUSTO] [char](6) NOT NULL,
+	[CONTESTO] [char](12) NULL,
+	[CCUSTO] [char](10) NULL,
+	[VALCREDITO] [decimal](28, 14) NULL,
+	[HISTESPECIAL] [char](36) NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL);
+GO
+
+--Table dbo.TBCTRC011
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC011] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[NUMDOCADIANTA] [char](8) NOT NULL,
+	[DATADIANTAMENTO] [datetime] NULL,
+	[DATLANCTO] [datetime] NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[VALADIANTAMENTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTRC011__VALAD__4D2A7347] DEFAULT (0),
+	[STAADIANTAMENTO] [char](1) NULL CONSTRAINT [DF__TBCTRC011__STAAD__4E1E9780] DEFAULT ('A'),
+	[OBSERVACAO] [text] NULL,
+	[NUMCHEQUE] [char](10) NULL,
+	[CHEQUENOMINAL] [char](50) NULL,
+	[CCUSTO] [char](10) NULL,
+	[VISTAPRAZO] [char](1) NULL CONSTRAINT [DF__TBCTRC011__VISTA__4218B34E] DEFAULT ('V'),
+	[DATEFETIVAADIANTA] [datetime] NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[NUMBORDERO] [char](6) NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBCTRC011__STAIN__7128A7F2] DEFAULT ('N'),
+	[CODFILIALBORDERO] [char](2) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[STAINTERFACE] [char](1) NULL CONSTRAINT [DF__TBCTRC011__STAIN__3DBEDDDC] DEFAULT ('N'),
+	[SEQMOVTOCONB] [char](3) NULL);
+GO
+
+--Table dbo.TBCTRC012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC012] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[NUMDOCADIANTA] [char](8) NOT NULL,
+	[NUMSEQBAIXA] [char](2) NOT NULL,
+	[VALSDADIANTAMENTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTRC012__VALSD__50FB042B] DEFAULT (0),
+	[VALBAIXA] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTRC012__VALBA__51EF2864] DEFAULT (0),
+	[DATBAIXA] [datetime] NULL,
+	[STABAIXA] [char](1) NULL CONSTRAINT [DF__TBCTRC012__STABA__52E34C9D] DEFAULT ('A'),
+	[CODBANCODEV] [char](6) NULL,
+	[CODAGENCIADEV] [char](10) NULL,
+	[NUMCHEQUE] [char](10) NULL,
+	[NUMNF] [char](9) NULL,
+	[NUMNFSERV] [char](9) NULL,
+	[SERNF] [char](5) NULL,
+	[VALAQUITAR] [decimal](28, 14) NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBCTRC012__STAIN__721CCC2B] DEFAULT ('N'),
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[STAINTERFACE] [char](1) NULL CONSTRAINT [DF__TBCTRC012__STAIN__3EB30215] DEFAULT ('N'),
+	[SEQMOVTOCONB] [char](3) NULL);
+GO
+
+--Table dbo.TBCTRC013
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC013] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[NUMDOCADIANTA] [char](8) NOT NULL,
+	[NUMSEQBAIXA] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTRC013_SERIE] DEFAULT (' '),
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQRECEB] [char](2) NOT NULL,
+	[VALBAIXATITULO] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTRC013__VALBA__2C3393D0] DEFAULT (0),
+	[VALPARCELA] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTRC013__VALPA__2D27B809] DEFAULT (0),
+	[CODEMPORIGEM] [char](2) NULL,
+	[CODCLIBAIXA] [char](6) NULL,
+	[CODFORNBAIXA] [char](6) NULL);
+GO
+
+--Table dbo.TBCTRC014
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC014] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATO] [char](15) NOT NULL,
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[CODTPCONTRATO] [char](2) NOT NULL,
+	[VALCONTRATO] [decimal](28, 14) NOT NULL,
+	[VALSDARECEBER] [decimal](28, 14) NULL CONSTRAINT [DF__TBCTRC014__VALSD__59904A2C] DEFAULT (0),
+	[STACONTRATO] [char](1) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[DATENCERRA] [datetime] NULL,
+	[OBSCONTRATO] [text] NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL);
+GO
+
+--Table dbo.TBCTRC015
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC015] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATO] [char](15) NOT NULL,
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[NUMDOCTO] [char](15) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTRC015_SERIE] DEFAULT (' '),
+	[VALDOCTO] [decimal](28, 14) NOT NULL,
+	[DATVENCTO] [datetime] NULL,
+	[DATBAIXA] [datetime] NULL,
+	[OBSDOCNEGOCIO] [text] NULL,
+	[CODFILIALTITULO] [char](2) NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBCTRC015__STAIN__687431B7] DEFAULT ('N'),
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[TPEMITENTECHEQUE] [char](1) NULL,
+	[EMITENTECHEQUE] [char](50) NULL,
+	[BANCOCHEQUE] [char](3) NULL,
+	[AGENCIACHEQUE] [char](10) NULL,
+	[CONTACHEQUE] [char](20) NULL,
+	[SEQMOVTOCONB] [char](3) NULL);
+GO
+
+--Table dbo.TBCTRC016
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC016] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTRATO] [char](15) NOT NULL,
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTRC016_SERIE] DEFAULT (' '),
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQRECEB] [char](2) NOT NULL,
+	[DATBAIXA] [datetime] NULL,
+	[CODCLI] [char](9) NULL,
+	[CODFILIALTITULO] [char](2) NULL,
+	[VALBAIXATITULO] [numeric](28, 14) NULL);
+GO
+
+--Table dbo.TBCTRC017
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC017] (
+	[CODTPCONTRATO] [char](2) NOT NULL,
+	[DESTPCONTRATO] [char](30) NOT NULL,
+	[STATROCATITULO] [char](1) NOT NULL,
+	[CODTPBAIXA] [char](2) NULL,
+	[CODDOCUMNOVO] [char](3) NULL,
+	[CTADEBITO] [char](12) NULL,
+	[CODEVENTO] [char](5) NULL,
+	[CODEVENTOBAIXA] [char](5) NULL);
+GO
+
+--Table dbo.TBCTRC018
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC018] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBCTRC018__CODEM__3DFE09A7] DEFAULT ('01'),
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBCTRC018_SERIE] DEFAULT (' '),
+	[CODCLI] [char](9) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[NUMDUP] [char](10) NOT NULL,
+	[VALDUP] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCTRC018__VALDU__3EF22DE0] DEFAULT (0),
+	[VALDUPAGRUPADA] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBCTRC018__VALDU__3FE65219] DEFAULT (0));
+GO
+
+--Table dbo.TBCTRC019
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC019] (
+	[CODOPERADORA] [char](5) NOT NULL,
+	[RAZSOCOPERADORA] [char](150) NULL,
+	[CODPAIS] [char](5) NULL,
+	[NUMCNPJ] [char](14) NULL,
+	[INSCREST] [char](15) NULL,
+	[CODUF] [char](2) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[ENDERECO] [char](40) NULL,
+	[NUMEND] [char](6) NULL,
+	[COMPLEND] [char](20) NULL,
+	[BAIRROEND] [char](20) NULL);
+GO
+
+--Table dbo.TBCTRC987
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC987] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQRECEB] [char](2) NOT NULL,
+	[NUMSEQOCORR] [char](2) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF__TBCTRC987__SERIE__795EC697] DEFAULT (' '),
+	[NUMBORDERO] [char](6) NULL,
+	[DTGERAARQ] [datetime] NULL,
+	[NOMARQTRANSM] [char](12) NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[NOSSONUM] [char](20) NULL,
+	[CODOCORR1] [char](5) NULL,
+	[CODOCORR2] [char](5) NULL,
+	[CODOCORR3] [char](5) NULL,
+	[CODOCORR4] [char](5) NULL,
+	[CODOCORR5] [char](5) NULL,
+	[NUMDIASPROTESTO] [int] NULL);
+GO
+
+--Table dbo.TBCTRC988
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC988] (
+	[TAMHISTSENHA] [int] NULL,
+	[TEMPMAXSENHA] [int] NULL,
+	[TEMPMINSENHA] [int] NULL,
+	[TAMMINSENHA] [int] NULL,
+	[TAMMAXSENHA] [int] NULL,
+	[QTDMINMAIUS] [int] NULL,
+	[QTDMINMINUS] [int] NULL,
+	[QTDMINNUMS] [int] NULL,
+	[NUMTENTBLOQ] [int] NULL);
+GO
+
+--Table dbo.TBCTRC989
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC989] (
+	[CODBANCO] [char](6) NOT NULL,
+	[NUMESPECIETITULO] [char](5) NOT NULL,
+	[DESESPECIETITULO] [char](150) NOT NULL);
+GO
+
+--Table dbo.TBCTRC990
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC990] (
+	[CODBANCO] [char](6) NOT NULL,
+	[NUMSEQREMESSA] [int] NULL CONSTRAINT [DF__TBCTRC990__NUMSE__640DD89F] DEFAULT (0),
+	[DATGERACAOREMESSA] [datetime] NULL,
+	[INSTRUCAO1] [char](5) NULL,
+	[INSTRUCAO2] [char](5) NULL,
+	[NUMCARTEIRA] [char](5) NULL,
+	[CODOCORREM] [char](5) NULL,
+	[NUMESPECIETITULO] [char](5) NULL,
+	[CONTRATOBANCO] [char](15) NULL,
+	[AGENCIACOBRADORA] [char](10) NULL,
+	[EMPRESABANCO] [char](15) NULL,
+	[VARIACAOOP] [char](5) NULL,
+	[MENSAGEM] [char](5) NULL,
+	[PAPELETACOBRANCA] [char](5) NULL,
+	[NUMDIASPROTESTO] [int] NULL,
+	[DATLIMITE] [datetime] NULL,
+	[SEQNOSSONUMERO] [char](20) NULL,
+	[EMPRESABANCO2] [char](50) NULL,
+	[PERCJUROSDIA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBCTRC991
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC991] (
+	[TPARQUIVO] [char](1) NOT NULL,
+	[CODREGISTRO] [char](1) NOT NULL,
+	[DESCRREGISTRO] [char](30) NOT NULL,
+	[REGDETALHE] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBCTRC992
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC992] (
+	[TPARQUIVO] [char](1) NOT NULL,
+	[CODREGISTRO] [char](1) NOT NULL,
+	[NOMECAMPO] [char](15) NOT NULL,
+	[DESCRCAMPO] [char](40) NOT NULL);
+GO
+
+--Table dbo.TBCTRC993
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC993] (
+	[CODBANCO] [char](6) NOT NULL,
+	[TPARQUIVO] [char](1) NOT NULL,
+	[CODREGISTRO] [char](1) NOT NULL,
+	[SEQREGISTRO] [int] NOT NULL,
+	[SEQTOTALIZADOR] [int] NULL,
+	[CPOCHAVELOTE] [char](15) NULL,
+	[CONTCHAVELOTE] [char](20) NULL);
+GO
+
+--Table dbo.TBCTRC994
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC994] (
+	[CODBANCO] [char](6) NOT NULL,
+	[TPARQUIVO] [char](1) NOT NULL,
+	[CODREGISTRO] [char](1) NOT NULL,
+	[NOMECAMPO] [char](15) NOT NULL,
+	[SEQREGISTRO] [int] NOT NULL,
+	[SEQCAMPO] [int] NOT NULL,
+	[STAIMPRCAMPO] [char](1) NOT NULL,
+	[TAMCAMPO] [int] NOT NULL,
+	[STATRATESPECIAL] [char](1) NOT NULL,
+	[NOMTABELA] [char](15) NULL,
+	[CAMPOTABELA] [char](25) NULL,
+	[CONTFIXO] [char](60) NULL,
+	[POSINICAMPO] [int] NULL,
+	[TAMCAMPOTAB] [int] NULL,
+	[TIPOCAMPO] [char](1) NOT NULL,
+	[STACPOOCORRENCIA] [char](1) NULL);
+GO
+
+--Table dbo.TBCTRC995
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC995] (
+	[CODBANCO] [char](6) NOT NULL,
+	[NUMCARTEIRA] [char](5) NOT NULL,
+	[DESCCARTEIRA] [char](40) NOT NULL);
+GO
+
+--Table dbo.TBCTRC996
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC996] (
+	[CODBANCO] [char](6) NOT NULL,
+	[INSTRUBANC] [char](5) NOT NULL,
+	[DESCINSTRUCAO] [char](40) NOT NULL);
+GO
+
+--Table dbo.TBCTRC997
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC997] (
+	[CODBANCO] [char](6) NOT NULL,
+	[CODOCORREM] [char](5) NOT NULL,
+	[DESCOCORRENCIA] [char](40) NOT NULL);
+GO
+
+--Table dbo.TBCTRC998
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBCTRC998] (
+	[CODBANCO] [char](6) NOT NULL,
+	[CODOCORRET] [char](5) NOT NULL,
+	[DESCOCORRENCIA] [char](40) NOT NULL,
+	[STABAIXAR] [char](1) NULL,
+	[STARECUSAR] [char](1) NULL,
+	[STARETIRARCOB] [char](1) NULL);
+GO
+
+--Table dbo.TBDIMP003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBDIMP003] (
+	[CODEMP] [char](2) NOT NULL,
+	[SEQIMPORT] [int] NOT NULL,
+	[NUMFATURA] [char](20) NULL,
+	[ARQUIVO] [char](60) NULL,
+	[NUMSEQNF] [char](9) NULL,
+	[DATIMPORT] [datetime] NULL);
+GO
+
+--Table dbo.TBDIMP004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBDIMP004] (
+	[CODEMP] [char](2) NOT NULL,
+	[SEQIMPORT] [int] NOT NULL,
+	[NUMSEQITEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[CODCLASSFISCAL] [char](10) NULL,
+	[QTDE] [decimal](28, 14) NULL,
+	[VALUNIT] [decimal](28, 14) NULL,
+	[VALSISCOMEX] [decimal](28, 14) NULL,
+	[VALCIF] [decimal](28, 14) NULL,
+	[PORCIPI] [decimal](28, 14) NULL,
+	[VALIPI] [decimal](28, 14) NULL,
+	[VALII] [decimal](28, 14) NULL,
+	[VALBASECALCICMS] [decimal](28, 14) NULL,
+	[VALBASECALCPISCOFINS] [decimal](28, 14) NULL,
+	[VALPIS] [decimal](28, 14) NULL,
+	[VALCOFINS] [decimal](28, 14) NULL,
+	[PESOLIQ] [decimal](28, 14) NULL,
+	[PORCICMS] [decimal](28, 14) NULL,
+	[VALICMS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBDIMP005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBDIMP005] (
+	[CODEMP] [char](2) NOT NULL,
+	[SEQIMPORT] [int] NOT NULL,
+	[NUMSEQITEM] [char](3) NOT NULL,
+	[NUMDI] [char](20) NOT NULL,
+	[DATADI] [datetime] NULL,
+	[DATTAXA] [datetime] NULL,
+	[LOCDESEMB] [char](60) NULL,
+	[UFDESEMB] [char](2) NULL,
+	[DATDESEMBADU] [datetime] NULL,
+	[CODEXPORT] [char](60) NULL);
+GO
+
+--Table dbo.TBDIMP006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBDIMP006] (
+	[CODEMP] [char](2) NOT NULL,
+	[SEQIMPORT] [int] NOT NULL,
+	[NUMSEQITEM] [char](3) NOT NULL,
+	[NUMDI] [char](20) NOT NULL,
+	[NUMAD] [char](3) NOT NULL,
+	[NUMSEQAD] [char](3) NOT NULL,
+	[CODFABRICANTE] [char](60) NULL,
+	[VALDESCITEM] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBESPE001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESPE001] (
+	[INVOICE] [char](10) NOT NULL,
+	[PARTNUMBER] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[ANO] [char](2) NULL,
+	[AV] [char](6) NULL,
+	[QTDE] [decimal](28, 14) NULL,
+	[VALDOLAR] [decimal](28, 14) NULL,
+	[DATINCLUSAO] [datetime] NULL,
+	[NUMNFRECEB] [char](6) NULL,
+	[DATNFRECEB] [datetime] NULL,
+	[VALNFRECEB] [decimal](28, 14) NULL,
+	[NUMNFCOMPL] [char](6) NULL,
+	[DATNFCOMPL] [datetime] NULL,
+	[VALNFCOMPL] [decimal](28, 14) NULL,
+	[STAEXPNFRECEB] [char](1) NULL,
+	[STAEXPNFCOMPL] [char](1) NULL,
+	[CODMOVFISCRECEB] [char](3) NULL,
+	[CODMOVFISCCOMPL] [char](3) NULL,
+	[CCUSTO] [char](10) NULL,
+	[PERCIMPIMPORT] [decimal](28, 14) NULL,
+	[VALIMPIMPORT] [decimal](28, 14) NULL,
+	[VALFRETEAEREO] [decimal](28, 14) NULL,
+	[VALTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBESPE001__VALTO__4826925F] DEFAULT (0),
+	[VALCOTACAODOLAR] [decimal](28, 14) NULL CONSTRAINT [DF__TBESPE001__VALCO__491AB698] DEFAULT (0),
+	[VALTOTFRETE] [decimal](28, 14) NULL CONSTRAINT [DF__TBESPE001__VALTO__4A0EDAD1] DEFAULT (0),
+	[PESOLIQITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBESPE001__PESOL__4B02FF0A] DEFAULT (0),
+	[PESOLIQTOTAL] [decimal](28, 14) NULL CONSTRAINT [DF__TBESPE001__PESOL__4BF72343] DEFAULT (0),
+	[EXTRA] [char](1) NULL CONSTRAINT [DF__TBESPE001__EXTRA__4CEB477C] DEFAULT ('N'));
+GO
+
+--Table dbo.TBESTO001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO001] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBESTO001__CODEM__762C88DA] DEFAULT ('01'),
+	[CODALMOX] [char](3) NOT NULL,
+	[DESALMOX] [char](20) NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[STATUSALMOX] [char](1) NOT NULL,
+	[STAVALORIZ] [char](1) NULL CONSTRAINT [DF__TBESTO001__STAVA__7720AD13] DEFAULT ('S'),
+	[STAPODERTERCEIROS] [char](1) NULL,
+	[CCUSTO] [char](10) NULL,
+	[STADISPPRODUCAO] [char](1) NULL,
+	[CODPART] [char](9) NULL,
+	[ALMOXDISPWEB] [char](1) NULL,
+	[NATUREZAALMOX] [char](1) NULL);
+GO
+
+--Table dbo.TBESTO002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO002] (
+	[CODMOVESTOQ] [char](3) NOT NULL,
+	[DESMOVESTOQUE] [char](40) NOT NULL,
+	[TIPOEMITENTE] [char](3) NOT NULL,
+	[ID_OPER] [char](1) NOT NULL,
+	[INFORMARVALOR] [char](2) NOT NULL,
+	[INFORMARQTDE] [char](1) NOT NULL,
+	[ATUDATULTMOV] [char](1) NOT NULL,
+	[ATUDATULTCOMP] [char](1) NOT NULL,
+	[SEQCLASSIFICBANCARIA] [char](2) NOT NULL,
+	[TIPMOVVALORIZACAO] [char](2) NOT NULL,
+	[STATUS] [char](1) NOT NULL,
+	[STAUSODOSISTEMA] [char](1) NOT NULL,
+	[CMESTOQCANC] [char](3) NULL,
+	[TIPMOVTO] [char](1) NULL CONSTRAINT [DF__TBESTO002__TIPMO__79FD19BE] DEFAULT ('C'),
+	[CODEVENTO] [char](5) NULL,
+	[CMESTOQRELAC] [char](3) NULL);
+GO
+
+--Table dbo.TBESTO003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO003] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBESTO003__CODEM__7CD98669] DEFAULT ('01'),
+	[CODALMOX] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DATULTMOV] [datetime] NULL,
+	[DATULTINV] [datetime] NULL,
+	[DATATU] [datetime] NOT NULL,
+	[CODDOCUM] [char](3) NULL,
+	[QTDESTOQ] [decimal](28, 14) NOT NULL,
+	[VALESTOQ] [decimal](28, 14) NOT NULL,
+	[DATULTCOMP] [datetime] NULL,
+	[QTDESTOQMIN] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO003__QTDES__7DCDAAA2] DEFAULT (0),
+	[QTDESTOQMAX] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO003__QTDES__7EC1CEDB] DEFAULT (0),
+	[DATULTVALORIZ] [datetime] NULL,
+	[QTDULTVALORIZ] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO003__QTDUL__7FB5F314] DEFAULT (0),
+	[VALULTVALORIZ] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO003__VALUL__00AA174D] DEFAULT (0),
+	[QTDESTOQSEGURANCA] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO003__QTDES__019E3B86] DEFAULT (0),
+	[LOCALIZACAO] [char](20) NULL,
+	[QTDERESERVADA] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO003__QTDER__7192BC46] DEFAULT (0),
+	[STABLOQUEIORESERVA] [char](1) NULL CONSTRAINT [DF__TBESTO003__STABL__03BC5979] DEFAULT ('N'));
+GO
+
+--Table dbo.TBESTO004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO004] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBESTO004__CODEM__047AA831] DEFAULT ('01'),
+	[NUMLANC] [char](9) NOT NULL,
+	[DATCOMPETEN] [datetime] NOT NULL,
+	[HORALANC] [char](6) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[NUMDOCUM] [char](9) NOT NULL,
+	[SERIEDOCUM] [char](5) NULL,
+	[DATDOCUMEN] [datetime] NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[QTDMOVTO] [decimal](28, 14) NOT NULL,
+	[VALMOVTO] [decimal](28, 14) NOT NULL,
+	[CODEMITENTE] [char](10) NOT NULL,
+	[DATMOVTO] [datetime] NOT NULL,
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[ID_OPER] [char](1) NOT NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[NUMLANCRELAC] [char](9) NULL,
+	[TIPOEMITENTE] [char](3) NOT NULL,
+	[SEQCLASSIFICBANCARIA] [char](2) NOT NULL,
+	[TIPMOVVALORIZACAO] [char](2) NOT NULL,
+	[CODMOVESTOQ] [char](3) NOT NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[VALUNITMOVTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBESTO004__VALUN__056ECC6A] DEFAULT (0),
+	[DIACOMPETEN] [int] NULL,
+	[MESCOMPETEN] [int] NULL,
+	[ANOCOMPETEN] [int] NULL,
+	[ORDEMSERVICO] [char](10) NULL,
+	[CODORDEM] [char](12) NOT NULL CONSTRAINT [DF__TBESTO004__CODOR__0662F0A3] DEFAULT (' '),
+	[SEQORDEM] [char](3) NOT NULL CONSTRAINT [DF__TBESTO004__SEQOR__075714DC] DEFAULT (' '),
+	[STAEXCONT] [char](1) NULL CONSTRAINT [DF__TBESTO004__STAEX__084B3915] DEFAULT ('N'),
+	[NUMLANCTRANSF] [char](9) NULL CONSTRAINT [DF__TBESTO004__NUMLA__093F5D4E] DEFAULT ('000000000'),
+	[CODAREA] [char](10) NULL,
+	[HISTORICO] [char](200) NULL,
+	[STAINTEGRACONT] [char](1) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[NUMLOTECONTAB] [char](8) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[ORD_OPER] [int] NULL);
+GO
+
+--Table dbo.TBESTO005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO005] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBESTO005__CODEM__0C1BC9F9] DEFAULT ('01'),
+	[NUMSEQDOCESTOQUE] [char](9) NOT NULL,
+	[NUMDOCUM] [char](9) NOT NULL,
+	[SERIEDOCUM] [char](5) NOT NULL,
+	[CODEMITENTE] [char](10) NOT NULL,
+	[DATDOCUMEN] [datetime] NOT NULL,
+	[STACONSOLIDADO] [char](1) NOT NULL,
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DATCOMPETEN] [datetime] NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[CODMOVESTOQ] [char](3) NOT NULL,
+	[CODALMOXENT] [char](3) NULL,
+	[CODALMOXSAI] [char](3) NULL,
+	[ORDEMSERVICO] [char](10) NULL,
+	[CODORDEM] [char](12) NOT NULL CONSTRAINT [DF__TBESTO005__CODOR__0D0FEE32] DEFAULT (' '),
+	[SEQORDEM] [char](3) NOT NULL CONSTRAINT [DF__TBESTO005__SEQOR__0E04126B] DEFAULT (' '),
+	[QTDTOTAL] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO005__QTDTO__4D2051A6] DEFAULT (0),
+	[VALTOTAL] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO005__VALTO__4E1475DF] DEFAULT (0),
+	[CODLOCALENT] [char](5) NULL,
+	[CODLOCALSAI] [char](5) NULL);
+GO
+
+--Table dbo.TBESTO006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO006] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBESTO006__CODEM__137DBFF6] DEFAULT ('01'),
+	[USER_ID] [char](10) NOT NULL,
+	[NUMSEQDOCESTOQUE] [char](9) NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[QTDMOVTO] [decimal](28, 14) NOT NULL,
+	[VALUNIT] [decimal](28, 14) NOT NULL,
+	[VALTOTMOVTO] [decimal](28, 14) NOT NULL,
+	[VALPREMEDIO] [decimal](28, 14) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[QTDSALDO] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO006__QTDSA__1471E42F] DEFAULT (0),
+	[VALSALDO] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO006__VALSA__15660868] DEFAULT (0),
+	[CODLOTE] [char](15) NULL,
+	[CODLOCAL] [char](5) NULL,
+	[CODAREA] [char](10) NULL,
+	[HISTORICO] [char](200) NULL,
+	[NUMDOCUM] [char](9) NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL);
+GO
+
+--Table dbo.TBESTO007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO007] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBESTO007__CODEM__15A53433] DEFAULT ('01'),
+	[CODALMOX] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DATPOSIC] [datetime] NOT NULL,
+	[QTDCONSUMOMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO007__QTDCO__1699586C] DEFAULT (0),
+	[QTDVENDASMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO007__QTDVE__178D7CA5] DEFAULT (0),
+	[QTDCOMPRASMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO007__QTDCO__1881A0DE] DEFAULT (0),
+	[QTDOUTROSMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO007__QTDOU__1975C517] DEFAULT (0),
+	[QTDESTOQ] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO007__QTDES__1A69E950] DEFAULT (0),
+	[VALESTOQ] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO007__VALES__1B5E0D89] DEFAULT (0),
+	[QTDPRODUCAOMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO007__QTDPR__1C5231C2] DEFAULT (0),
+	[VALCONSUMOMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO007__VALCO__1D4655FB] DEFAULT (0),
+	[VALVENDASMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO007__VALVE__1E3A7A34] DEFAULT (0),
+	[VALCOMPRASMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO007__VALCO__1F2E9E6D] DEFAULT (0),
+	[VALOUTROSMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO007__VALOU__2022C2A6] DEFAULT (0),
+	[VALPRODUCAOMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO007__VALPR__2116E6DF] DEFAULT (0));
+GO
+
+--Table dbo.TBESTO008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO008] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBESTO008__CODEM__23F3538A] DEFAULT ('01'),
+	[NUMLANC] [char](9) NOT NULL,
+	[DATCOMPETEN] [datetime] NOT NULL,
+	[HORALANC] [char](6) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[NUMDOCUM] [char](9) NOT NULL,
+	[SERIEDOCUM] [char](5) NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[DATDOCUMEN] [datetime] NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[QTDMOVTO] [decimal](28, 14) NOT NULL,
+	[VALMOVTO] [decimal](28, 14) NOT NULL,
+	[CODEMITENTE] [char](10) NOT NULL,
+	[DATMOVTO] [datetime] NOT NULL,
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[ID_OPER] [char](1) NOT NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[NUMLANCRELAC] [char](9) NULL,
+	[TIPOEMITENTE] [char](3) NOT NULL,
+	[SEQCLASSIFICBANCARIA] [char](2) NOT NULL,
+	[TIPMOVVALORIZACAO] [char](2) NOT NULL,
+	[CODMOVESTOQ] [char](3) NOT NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[VALUNITMOVTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBESTO008__VALUN__24E777C3] DEFAULT (0),
+	[DIACOMPETEN] [int] NULL,
+	[MESCOMPETEN] [int] NULL,
+	[ANOCOMPETEN] [int] NULL,
+	[ORDEMSERVICO] [char](10) NULL,
+	[CODORDEM] [char](12) NOT NULL CONSTRAINT [DF__TBESTO008__CODOR__25DB9BFC] DEFAULT (' '),
+	[SEQORDEM] [char](3) NOT NULL CONSTRAINT [DF__TBESTO008__SEQOR__26CFC035] DEFAULT (' '),
+	[STAEXCONT] [char](1) NULL CONSTRAINT [DF__TBESTO008__STAEX__27C3E46E] DEFAULT ('N'),
+	[NUMLANCTRANSF] [char](9) NULL CONSTRAINT [DF__TBESTO008__NUMLA__28B808A7] DEFAULT ('000000000'),
+	[CODAREA] [char](10) NULL);
+GO
+
+--Table dbo.TBESTO009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO009] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBESTO009__CODEM__2B947552] DEFAULT ('01'),
+	[CODALMOX] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DATPOSIC] [datetime] NOT NULL,
+	[QTDCONSUMOMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO009__QTDCO__2C88998B] DEFAULT (0),
+	[QTDVENDASMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO009__QTDVE__2D7CBDC4] DEFAULT (0),
+	[QTDCOMPRASMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO009__QTDCO__2E70E1FD] DEFAULT (0),
+	[QTDOUTROSMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO009__QTDOU__2F650636] DEFAULT (0),
+	[QTDESTOQ] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO009__QTDES__30592A6F] DEFAULT (0),
+	[VALESTOQ] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO009__VALES__314D4EA8] DEFAULT (0),
+	[QTDPRODUCAOMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO009__QTDPR__324172E1] DEFAULT (0),
+	[VALCONSUMOMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO009__VALCO__3335971A] DEFAULT (0),
+	[VALVENDASMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO009__VALVE__3429BB53] DEFAULT (0),
+	[VALCOMPRASMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO009__VALCO__351DDF8C] DEFAULT (0),
+	[VALOUTROSMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO009__VALOU__361203C5] DEFAULT (0),
+	[VALPRODUCAOMES] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO009__VALPR__370627FE] DEFAULT (0));
+GO
+
+--Table dbo.TBESTO010
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO010] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBESTO010__CODEM__39E294A9] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[QTDMEDIACONSUMO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBESTO010__QTDME__3AD6B8E2] DEFAULT (0),
+	[QTDMEDIAVENDAS] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBESTO010__QTDME__3BCADD1B] DEFAULT (0),
+	[QTDMEDIACOMPRAS] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBESTO010__QTDME__3CBF0154] DEFAULT (0),
+	[QTDMEDIAOUTROSMOVTOS] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBESTO010__QTDME__3DB3258D] DEFAULT (0),
+	[QTDMEDIAPRODUCAO] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO010__QTDME__3EA749C6] DEFAULT (0),
+	[VALMEDIACONSUMO] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO010__VALME__3F9B6DFF] DEFAULT (0),
+	[VALMEDIAVENDAS] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO010__VALME__408F9238] DEFAULT (0),
+	[VALMEDIACOMPRAS] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO010__VALME__4183B671] DEFAULT (0),
+	[VALMEDIAOUTROSMOVTOS] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO010__VALME__4277DAAA] DEFAULT (0),
+	[VALMEDIAPRODUCAO] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO010__VALME__436BFEE3] DEFAULT (0));
+GO
+
+--Table dbo.TBESTO011
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO011] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBESTO011__CODEM__46486B8E] DEFAULT ('01'),
+	[NUMLANC] [char](9) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[NUMNF] [char](9) NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[CODLOTE] [char](15) NULL,
+	[CODLOTEFORN] [char](15) NULL,
+	[DATVALIDADE] [datetime] NULL,
+	[STALOTE] [char](1) NOT NULL CONSTRAINT [DF__TBESTO011__STALO__473C8FC7] DEFAULT ('A'),
+	[STAAVALIACAO] [char](1) NULL,
+	[LAUDOAVALIACAO] [text] NULL,
+	[CODMOTIVO] [char](6) NULL,
+	[QTDRECEBIDA] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO011__QTDRE__4830B400] DEFAULT (0),
+	[QTDREJEITADA] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO011__QTDRE__4924D839] DEFAULT (0),
+	[QTDLIBERADA] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO011__QTDLI__4A18FC72] DEFAULT (0),
+	[CODALMOXPRINCIPAL] [char](3) NOT NULL,
+	[ORDEMSERVICO] [char](10) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[CODORDEM] [char](12) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[STALOTEATIVO] [char](1) NULL CONSTRAINT [DF__TBESTO011__STALO__4B0D20AB] DEFAULT ('S'),
+	[NUMLANCORIGEM] [char](9) NULL,
+	[CODEMITENTE] [char](9) NULL,
+	[TIPOEMITENTE] [char](3) NULL,
+	[CODLOCALPRINCIPAL] [char](5) NULL,
+	[PERCTEOR] [decimal](28, 14) NULL,
+	[DATFABRICACAO] [datetime] NULL);
+GO
+
+--Table dbo.TBESTO012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO012] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBESTO012__CODEM__4DE98D56] DEFAULT ('01'),
+	[NUMLANC] [char](9) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODLOTE] [char](15) NOT NULL,
+	[QTDMOVTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBESTO012__QTDMO__4EDDB18F] DEFAULT (0),
+	[ID_OPER] [char](1) NOT NULL,
+	[DATCOMPETEN] [datetime] NULL,
+	[CODLOCAL] [char](5) NULL,
+	[NUMDOCUM] [char](9) NULL,
+	[SERIEDOCUM] [char](5) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[NUMITEM] [char](3) NULL,
+	[TIPOEMITENTE] [char](3) NULL,
+	[CODEMITENTE] [char](10) NULL,
+	[SISTEMA_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBESTO013
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO013] (
+	[CODEMP] [char](2) NOT NULL,
+	[DATCOMPETEN] [datetime] NOT NULL,
+	[TOTCONTAGEM] [char](1) NOT NULL,
+	[TIPINV] [char](1) NOT NULL,
+	[NUMSEQINV] [char](2) NOT NULL,
+	[INVUSER] [char](1) NOT NULL,
+	[CRONOINV] [char](1) NOT NULL,
+	[USER_ID] [char](10) NULL,
+	[DATMOVTO] [datetime] NULL,
+	[TIPCONTETIQUETA] [char](1) NULL);
+GO
+
+--Table dbo.TBESTO014
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO014] (
+	[CODEMP] [char](2) NOT NULL,
+	[DATCOMPETEN] [datetime] NOT NULL,
+	[TIPINV] [char](1) NOT NULL,
+	[NUMSEQINV] [char](2) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[TIPOEMITENTE] [char](3) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[CODLOTE] [char](15) NOT NULL CONSTRAINT [DF__TBESTO014__CODLO__711E8651] DEFAULT (' '),
+	[DATVALIDADE] [datetime] NULL,
+	[QTDESTOQ] [decimal](28, 14) NULL,
+	[VALESTOQ] [decimal](28, 14) NULL,
+	[QTDMOV_1] [decimal](28, 14) NULL,
+	[VALOR_1] [decimal](28, 14) NULL,
+	[USER_ID_1] [char](10) NULL,
+	[QTDMOV_2] [decimal](28, 14) NULL,
+	[VALOR_2] [decimal](28, 14) NULL,
+	[USER_ID_2] [char](10) NULL,
+	[QTDMOV_3] [decimal](28, 14) NULL,
+	[VALOR_3] [decimal](28, 14) NULL,
+	[USER_ID_3] [char](10) NULL,
+	[NUMETIQUETA] [char](7) NULL,
+	[STADIVERGENCIA] [char](1) NULL);
+GO
+
+--Table dbo.TBESTO015
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO015] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSM] [char](6) NOT NULL,
+	[CCUSTOORIGEM] [char](10) NOT NULL,
+	[CCUSTODESTINO] [char](10) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DATNEC] [datetime] NULL,
+	[DATLIBERACAO] [datetime] NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[CODLOCALORIGEM] [char](5) NULL,
+	[CODLOCALDESTINO] [char](5) NULL,
+	[CODAREA] [char](10) NULL,
+	[STAIMP] [char](1) NULL);
+GO
+
+--Table dbo.TBESTO016
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO016] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSM] [char](6) NOT NULL,
+	[NUMITEMSM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[CODLOTE] [char](15) NULL,
+	[QTDNEC] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBESTO016__QTDNE__71C7C670] DEFAULT (0),
+	[QTDDISPONIVEL] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBESTO016__QTDDI__72BBEAA9] DEFAULT (0),
+	[QTDENTREGUE] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBESTO016__QTDEN__73B00EE2] DEFAULT (0),
+	[QTDINFORMADA] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO016__QTDIN__74A4331B] DEFAULT (0),
+	[DATNEC] [datetime] NOT NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[OBSITEMSM] [text] NULL,
+	[STAITEMSM] [char](1) NOT NULL CONSTRAINT [DF__TBESTO016__STAIT__75985754] DEFAULT ('A'),
+	[STAMARCADO] [char](1) NOT NULL CONSTRAINT [DF__TBESTO016__STAMA__768C7B8D] DEFAULT ('N'),
+	[NUMSC] [char](10) NULL,
+	[NUMITEMSC] [char](2) NULL,
+	[CODGRPAGTO] [char](2) NULL,
+	[CODPAGTO] [char](3) NULL,
+	[CODMOTIVO] [char](6) NULL);
+GO
+
+--Table dbo.TBESTO018
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO018] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[TIPOEMITENTE] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DATPOSIC] [datetime] NOT NULL,
+	[QTDESTOQTERC] [decimal](28, 14) NULL,
+	[VALESTOQTERC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBESTO019
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO019] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[TIPOEMITENTE] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DATPOSIC] [datetime] NOT NULL,
+	[QTDESTOQTERC] [decimal](28, 14) NULL,
+	[VALESTOQTERC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBESTO020
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO020] (
+	[CODEMP] [char](2) NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[QTDINICIAL] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO020__QTDIN__20D7BB14] DEFAULT (0),
+	[VALINICIAL] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO020__VALIN__21CBDF4D] DEFAULT (0),
+	[QTDENTRADA] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO020__QTDEN__22C00386] DEFAULT (0),
+	[VALENTRADA] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO020__VALEN__23B427BF] DEFAULT (0),
+	[QTDSAIDA] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO020__QTDSA__24A84BF8] DEFAULT (0),
+	[VALSAIDA] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO020__VALSA__259C7031] DEFAULT (0),
+	[QTDSALDO] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO020__QTDSA__2690946A] DEFAULT (0),
+	[VALSALDO] [decimal](28, 14) NULL CONSTRAINT [DF__TBESTO020__VALSA__2784B8A3] DEFAULT (0),
+	[ORDIMPR] [char](254) NULL);
+GO
+
+--Table dbo.TBESTO021
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO021] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODLOCAL] [char](5) NOT NULL,
+	[DESLOCAL] [char](30) NOT NULL);
+GO
+
+--Table dbo.TBESTO023
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO023] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODLOCAL] [char](5) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQ] [char](6) NOT NULL,
+	[NUMLANC] [char](9) NOT NULL,
+	[QTDMOVTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBESTO023__QTDMO__16252277] DEFAULT (0),
+	[ID_OPER] [char](1) NOT NULL,
+	[NUMID_OPER] [int] NOT NULL,
+	[DATCOMPETEN] [datetime] NOT NULL,
+	[CODLOTE] [char](15) NULL);
+GO
+
+--Table dbo.TBESTO024
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO024] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[TIPALMOXLOCALPADRAO] [char](1) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODLOCAL] [char](5) NULL);
+GO
+
+--Table dbo.TBESTO025
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO025] (
+	[CODEMP] [char](2) NOT NULL,
+	[DATCOMPETEN] [datetime] NOT NULL,
+	[TIPINV] [char](1) NOT NULL,
+	[NUMSEQINV] [char](2) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[TIPOEMITENTE] [char](3) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[CODLOTE] [char](15) NOT NULL CONSTRAINT [DF__TBESTO025__CODLO__73FAF2FC] DEFAULT (' '),
+	[CODLOCAL] [char](5) NOT NULL,
+	[QTDESTOQ] [decimal](28, 14) NULL,
+	[QTDMOV_1] [decimal](28, 14) NULL,
+	[QTDMOV_2] [decimal](28, 14) NULL,
+	[QTDMOV_3] [decimal](28, 14) NULL,
+	[NUMETIQUETA] [char](7) NULL,
+	[STADIVERGENCIA] [char](1) NULL);
+GO
+
+--Table dbo.TBESTO026
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO026] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBESTO026__CODEM__4B22FA9B] DEFAULT ('01'),
+	[NUMLANC] [char](9) NOT NULL,
+	[DATCOMPETEN] [datetime] NOT NULL,
+	[HORALANC] [char](6) NOT NULL,
+	[CODALMOX] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[NUMDOCUM] [char](9) NOT NULL,
+	[SERIEDOCUM] [char](5) NULL,
+	[DATDOCUMEN] [datetime] NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[QTDMOVTO] [decimal](28, 14) NOT NULL,
+	[VALMOVTO] [decimal](28, 14) NOT NULL,
+	[CODEMITENTE] [char](10) NOT NULL,
+	[DATMOVTO] [datetime] NOT NULL,
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[ID_OPER] [char](1) NOT NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[NUMLANCRELAC] [char](9) NULL,
+	[TIPOEMITENTE] [char](3) NOT NULL,
+	[SEQCLASSIFICBANCARIA] [char](2) NOT NULL,
+	[TIPMOVVALORIZACAO] [char](2) NOT NULL,
+	[CODMOVESTOQ] [char](3) NOT NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[VALUNITMOVTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBESTO026__VALUN__4C171ED4] DEFAULT (0),
+	[DIACOMPETEN] [int] NULL,
+	[MESCOMPETEN] [int] NULL,
+	[ANOCOMPETEN] [int] NULL,
+	[ORDEMSERVICO] [char](10) NULL,
+	[CODORDEM] [char](12) NOT NULL CONSTRAINT [DF__TBESTO026__CODOR__4D0B430D] DEFAULT (' '),
+	[SEQORDEM] [char](3) NOT NULL CONSTRAINT [DF__TBESTO026__SEQOR__4DFF6746] DEFAULT (' '),
+	[STAEXCONT] [char](1) NULL CONSTRAINT [DF__TBESTO026__STAEX__4EF38B7F] DEFAULT ('N'),
+	[NUMLANCTRANSF] [char](9) NULL CONSTRAINT [DF__TBESTO026__NUMLA__4FE7AFB8] DEFAULT ('000000000'),
+	[CODAREA] [char](10) NULL,
+	[USER_IDCANC] [char](10) NOT NULL,
+	[DATCANC] [datetime] NOT NULL,
+	[HORCANC] [char](4) NOT NULL,
+	[CODDOCUM] [char](3) NULL);
+GO
+
+--Table dbo.TBESTO027
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO027] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSM] [char](6) NOT NULL,
+	[NUMITEMSM] [char](3) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[QTDEMAT] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBESTO028
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBESTO028] (
+	[CODEMP] [char](2) NOT NULL,
+	[DATCOMPETEN] [datetime] NOT NULL,
+	[TIPINV] [char](1) NOT NULL,
+	[NUMSEQINV] [char](2) NOT NULL,
+	[CODALMOX] [char](3) NULL,
+	[CODMAT] [char](15) NULL,
+	[CODLOTE] [char](15) NULL,
+	[QTDMOV_2] [decimal](28, 14) NULL,
+	[USER_ID_2] [char](10) NULL,
+	[NUMETIQUETA] [char](11) NULL);
+GO
+
+--Table dbo.TBFATU001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU001] (
+	[CODREGVENDA] [char](2) NOT NULL,
+	[DESREGVENDA] [char](30) NOT NULL,
+	[STAREGVENDA] [char](1) NOT NULL,
+	[CODCLASSIFICABCVEND] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU002] (
+	[CODREGCOB] [char](2) NOT NULL,
+	[DESREGCOB] [char](30) NOT NULL,
+	[STAREGCOB] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBFATU003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU003] (
+	[CODTIPCLI] [char](2) NOT NULL,
+	[DESTIPCLI] [char](30) NOT NULL,
+	[STATIPCLI] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBFATU004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU004] (
+	[CODLIMCRED] [char](2) NOT NULL,
+	[DESLIMCRED] [char](30) NOT NULL,
+	[STALIMCRED] [char](1) NOT NULL,
+	[VALLIMCRED] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU004__VALLI__5772F790] DEFAULT (0));
+GO
+
+--Table dbo.TBFATU005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU005] (
+	[CODMEIOTRANSP] [char](2) NOT NULL,
+	[DESMEIOTRANSP] [char](30) NOT NULL,
+	[STAMEIOTRANSP] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBFATU006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU006] (
+	[CODCLI] [char](9) NOT NULL,
+	[RAZSOCCLI] [char](80) NOT NULL,
+	[NOMFANTASCLI] [char](40) NULL,
+	[TIPFISJUR] [char](1) NOT NULL,
+	[NUMCGCCPFCLI] [char](14) NOT NULL,
+	[ENDCLI] [char](40) NOT NULL,
+	[NUMENDCLI] [char](6) NOT NULL,
+	[COMPLENDCLI] [char](20) NULL,
+	[BAIRROCLI] [char](30) NULL,
+	[CIDADECLI] [char](30) NOT NULL,
+	[CODUF] [char](2) NOT NULL,
+	[CEPCLI] [char](10) NOT NULL,
+	[DATULTCOMP] [datetime] NULL,
+	[DATATU] [datetime] NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[TELCLI] [char](12) NULL,
+	[FAXCLI] [char](12) NULL,
+	[RAMALCLI] [char](4) NULL,
+	[STACLI] [char](1) NULL,
+	[STASITUFIN] [char](1) NULL,
+	[CODREGVENDA] [char](2) NULL,
+	[CODREGCOB] [char](2) NULL,
+	[CODTIPCLI] [char](2) NULL,
+	[CODLIMCRED] [char](2) NULL,
+	[CODMEIOTRANSP] [char](2) NULL,
+	[INSCRMUNIC] [char](15) NULL,
+	[EMAIL] [char](35) NULL,
+	[CONTACONTABIL] [char](14) NOT NULL CONSTRAINT [DF__TBFATU006__CONTA__5C37ACAD] DEFAULT ('0'),
+	[CODCLASSIFICABCVEND] [char](1) NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[PERCCOMISSAO1] [decimal](28, 14) NULL,
+	[CODTABPRECO] [char](3) NULL,
+	[PAGFRETE] [char](1) NULL,
+	[POSICAOPLANOCONTA] [char](12) NULL,
+	[STAEXPORT] [char](1) NULL CONSTRAINT [DF__TBFATU006__STAEX__5D2BD0E6] DEFAULT ('N'),
+	[CONTACORRENTECLI] [char](15) NULL,
+	[DIGTOCONTACORRENTECLI] [char](3) NULL,
+	[CTACREDITO] [char](12) NULL,
+	[SUBGRUPOCLI] [char](12) NULL,
+	[CTAADIANTCLI] [char](12) NULL,
+	[EMAIL2] [char](70) NULL,
+	[HOMEPAGE] [char](70) NULL,
+	[STACOMPLETADO] [char](1) NULL CONSTRAINT [DF__TBFATU006__STACO__31783731] DEFAULT ('S'),
+	[STAACEITABAIXAOUTROSCLI] [char](1) NULL,
+	[CODTRANSP] [char](3) NULL,
+	[STABAIXADEVOUTROSCLI] [char](1) NULL CONSTRAINT [DF__TBFATU006__STABA__563FA78C] DEFAULT ('N'),
+	[STACONTRIBUINTEPIS] [char](1) NULL,
+	[STACONTRIBUINTECOFINS] [char](1) NULL,
+	[DATFUNDACAOCLI] [datetime] NULL,
+	[CODMOTIVOBLOQ] [char](2) NULL,
+	[CODMOTIVOBLOQMANUAL] [char](2) NULL,
+	[CODTIPGARANTIACLI] [char](2) NULL,
+	[VALGARANTIACLI] [decimal](28, 14) NULL,
+	[TIPUSOMATERIAL] [char](1) NULL,
+	[CODNATUOPER] [char](6) NULL,
+	[CODMUNICIPIODEST] [char](5) NULL,
+	[CODVEND] [char](6) NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[TIPCOBRANCA] [char](1) NULL,
+	[STAENVIOEQUIFAX] [char](1) NULL,
+	[CONTATOCLI] [char](40) NULL,
+	[INSCRESTA] [char](20) NULL,
+	[CELCONTATO] [char](15) NULL,
+	[PERCDESCDEFAULT] [decimal](28, 14) NULL,
+	[STAUTILDEVRELATPPB] [char](1) NULL,
+	[STAOPTANTESIMPLES] [char](1) NULL CONSTRAINT [DF__TBFATU006__STAOP__7D845D36] DEFAULT ('N'),
+	[CODGRUPOCLI] [char](6) NULL,
+	[CATEGORIACLI] [char](1) NULL,
+	[NUMINSCRINSS] [char](12) NULL,
+	[NUMINSCRPISPASEP] [char](11) NULL,
+	[NUMINSCRSUFRAMA] [char](9) NULL,
+	[CEPCXPOSTAL] [char](8) NULL,
+	[CXPOSTAL] [char](8) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[CODPAIS] [char](5) NULL,
+	[VALORKM] [decimal](28, 14) NULL,
+	[CODMOVFISCDEFAULT] [char](3) NULL,
+	[USER_IDCMDEFAULT] [char](10) NULL,
+	[DATCADASTCMDEFAULT] [datetime] NULL,
+	[INSCRESTA_ST] [char](15) NULL,
+	[STAORGAOPUBL] [char](1) NULL,
+	[EMAILENVIONFE] [char](250) NULL,
+	[SEXO] [char](1) NULL,
+	[CODTRANSPREDESPACHO] [char](3) NULL,
+	[PAGFRETEREDESPACHO] [char](1) NULL,
+	[CODCANALVENDA] [char](3) NULL,
+	[CODREGRADESC] [char](3) NULL,
+	[STAPRODUTORRURAL] [char](1) NULL CONSTRAINT [DF__TBFATU006__STAPR__01E9EAF7] DEFAULT ('N'),
+	[EMAILENVIOCOBRANCA] [char](250) NULL,
+	[SUBGRUPOENTRADA] [char](12) NULL,
+	[CODGRUPOENTRADA] [char](6) NULL,
+	[CATEGORIAENTRADA] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU007] (
+	[CODCLI] [char](9) NOT NULL,
+	[OBSCLI] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU008] (
+	[CODCLI] [char](9) NOT NULL,
+	[SEQENDCOBCLI] [char](2) NOT NULL,
+	[ENDCOBCLI] [char](40) NOT NULL,
+	[NUMENDCOBCLI] [char](6) NOT NULL,
+	[COMPLENDCOBCLI] [char](20) NULL,
+	[BAIRROENDCOBCLI] [char](30) NULL,
+	[CIDADEENDCOBCLI] [char](30) NOT NULL,
+	[CODUFENDCOBCLI] [char](2) NOT NULL,
+	[CEPENDCOBCLI] [char](10) NOT NULL,
+	[TELENDCOBCLI] [char](12) NULL,
+	[FAXENDCOBCLI] [char](12) NULL,
+	[CONTATOENDCOBCLI] [char](20) NULL,
+	[RAMALENDCOBCLI] [char](4) NULL,
+	[STAENDCOBCLI] [char](1) NULL,
+	[CEPCXPOSTAL] [char](8) NULL,
+	[CXPOSTAL] [char](8) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[CODPAIS] [char](5) NULL);
+GO
+
+--Table dbo.TBFATU009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU009] (
+	[CODCLI] [char](9) NOT NULL,
+	[SEQENDENTCLI] [char](2) NOT NULL,
+	[ENDENTCLI] [char](40) NOT NULL,
+	[NUMENDENTCLI] [char](6) NOT NULL,
+	[COMPLENDENTCLI] [char](20) NULL,
+	[BAIRROENDENTCLI] [char](30) NULL,
+	[CIDADEENDENTCLI] [char](30) NOT NULL,
+	[CODUFENDENTCLI] [char](2) NOT NULL,
+	[CEPENDENTCLI] [char](10) NOT NULL,
+	[TELENDENTCLI] [char](12) NULL,
+	[FAXENDENTCLI] [char](12) NULL,
+	[CONTATOENDENTCLI] [char](20) NULL,
+	[RAMALENDENTCLI] [char](4) NULL,
+	[STAENDENTCLI] [char](1) NULL,
+	[CEPCXPOSTAL] [char](8) NULL,
+	[CXPOSTAL] [char](8) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[CODPAIS] [char](5) NULL,
+	[NUMCNPJLOCENT] [char](14) NULL,
+	[TIPFISJURLOCENT] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU010
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU010] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU010__CODEM__65C116E7] DEFAULT ('01'),
+	[NUMPED] [char](9) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[SEQENDCOBCLI] [char](2) NOT NULL,
+	[SEQENDENTCLI] [char](2) NOT NULL,
+	[CODCPAGTO] [char](3) NOT NULL,
+	[CCUSTO] [char](10) NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[STAPED] [char](1) NOT NULL,
+	[TIPPED] [char](1) NOT NULL,
+	[CODTRANSP] [char](3) NULL,
+	[DATENCER] [datetime] NULL,
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[NUMCONTRATO] [char](9) NULL,
+	[NUMITEMCONTRATO] [char](3) NULL,
+	[TIPOCOBRANCA] [char](1) NULL,
+	[VALTOTAL] [decimal](28, 14) NOT NULL,
+	[VALACRESTOTPED] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__VALAC__66B53B20] DEFAULT (0),
+	[VALDESCTOTPED] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__VALDE__67A95F59] DEFAULT (0),
+	[CODNATUOPER] [char](3) NULL,
+	[CODCNO] [char](4) NULL,
+	[PAGFRETE] [char](1) NULL CONSTRAINT [DF__TBFATU010__PAGFR__689D8392] DEFAULT ('1'),
+	[QTDETRANSP] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__QTDET__6991A7CB] DEFAULT (0),
+	[ESPECIE] [char](15) NULL,
+	[MARCA] [char](15) NULL,
+	[PLACA] [char](10) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[PESOBRUTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__PESOB__6A85CC04] DEFAULT (0),
+	[PESOLIQUIDO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__PESOL__6B79F03D] DEFAULT (0),
+	[NUMERO] [char](10) NULL,
+	[NUMPEDCLI] [char](9) NULL,
+	[PERCCOMISSAO1] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__PERCC__6C6E1476] DEFAULT (0),
+	[PERCCOMISSAO1VEND2] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__PERCC__6D6238AF] DEFAULT (0),
+	[PERCACRESDESCPED] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__PERCA__6E565CE8] DEFAULT (0),
+	[VALFRETECONHEC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__VALFR__6F4A8121] DEFAULT (0),
+	[CODCPAGTOCONHEC] [char](3) NULL,
+	[CODTABPRECO] [char](3) NULL,
+	[CODNATUOPER2] [char](6) NULL,
+	[NUMORCAM] [char](9) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[STALIBFATU] [char](1) NULL CONSTRAINT [DF__TBFATU010__STALI__703EA55A] DEFAULT ('S'),
+	[NUMPEDCLI2] [char](30) NULL,
+	[DATPROGATEND] [datetime] NULL,
+	[PERCCOMISSFIXO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__PERCC__5AAF56EE] DEFAULT (0),
+	[DESCTOPERCCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__DESCT__5BA37B27] DEFAULT (0),
+	[DESCTOVALORCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__DESCT__5C979F60] DEFAULT (0),
+	[PERCCUSTOFINANCCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__PERCC__5D8BC399] DEFAULT (0),
+	[NUMPEDREP] [char](9) NULL,
+	[CODVEND] [char](6) NULL,
+	[CODVEND2] [char](6) NULL,
+	[STAALTVOLUMESTRANSP] [char](1) NULL CONSTRAINT [DF__TBFATU010__STAAL__57DDD73B] DEFAULT ('S'),
+	[CODINDICE] [char](3) NULL,
+	[DATREFERIND] [datetime] NULL,
+	[STAINDPREFIXADO] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[NUMPEDSPARTANET] [char](9) NULL,
+	[VALSEGURO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU010__VALSE__3890146B] DEFAULT (0),
+	[VALDESPESAS] [decimal](28, 14) NULL,
+	[VALFRETECOMISS] [decimal](28, 14) NULL,
+	[NUMTRANSELETRONICA] [char](30) NULL,
+	[CODTRANSPREDESPACHO] [char](3) NULL,
+	[PAGFRETEREDESPACHO] [char](1) NULL,
+	[CODCANALVENDA] [char](3) NULL,
+	[NUMVOLUMES] [int] NULL,
+	[DATNEC_PED] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU011
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU011] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU011__CODEM__731B1205] DEFAULT ('01'),
+	[NUMPED] [char](9) NOT NULL,
+	[OBSPEDIMP] [text] NULL);
+GO
+
+--Table dbo.TBFATU012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU012] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU012__CODEM__75F77EB0] DEFAULT ('01'),
+	[NUMPED] [char](9) NOT NULL,
+	[OBSPEDCON] [text] NULL);
+GO
+
+--Table dbo.TBFATU013
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU013] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU013__CODEM__78D3EB5B] DEFAULT ('01'),
+	[NUMPED] [char](9) NOT NULL,
+	[NUMITEMPED] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[DATULTATEND] [datetime] NULL,
+	[STAITEMPED] [char](1) NOT NULL,
+	[EXTRA] [char](1) NULL,
+	[DATNEC] [datetime] NOT NULL,
+	[QTDE] [decimal](28, 14) NOT NULL,
+	[VALUNIT] [decimal](28, 14) NOT NULL,
+	[VALIPI] [decimal](28, 14) NULL,
+	[VALICMS] [decimal](28, 14) NULL,
+	[VALISS] [decimal](28, 14) NULL,
+	[VALTOT] [decimal](28, 14) NOT NULL,
+	[QTDEFATU] [decimal](28, 14) NULL,
+	[QTDEAFATURAR] [decimal](28, 14) NOT NULL,
+	[VALBRUTOTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU013__VALBR__79C80F94] DEFAULT (0),
+	[PERCACRESDESCITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU013__PERCA__7ABC33CD] DEFAULT (0),
+	[VALACRESDESCTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU013__VALAC__7BB05806] DEFAULT (0),
+	[CODMOVFISC] [char](3) NULL,
+	[CODINDICE] [char](3) NULL,
+	[CODTABPRECO] [char](3) NULL,
+	[CODUNIMEDITEM] [char](2) NULL,
+	[CODLOTE] [char](15) NULL,
+	[STAIMPRESSO] [char](1) NULL CONSTRAINT [DF__TBFATU013__STAIM__7CA47C3F] DEFAULT ('N'),
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[PERCCOMISSFIXO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU013__PERCC__5E7FE7D2] DEFAULT (0),
+	[DESCTOPERCCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU013__DESCT__5F740C0B] DEFAULT (0),
+	[DESCTOVALORCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU013__DESCT__60683044] DEFAULT (0),
+	[CCUSTO] [char](10) NULL,
+	[QTDERESERVADA] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU013__QTDER__7286E07F] DEFAULT (0),
+	[CODMATREDUZIDO] [char](40) NULL,
+	[CODLOCAL] [char](5) NULL,
+	[TIPUSOMATERIAL] [char](1) NULL,
+	[VALUNITCOMIPI] [decimal](28, 14) NULL,
+	[VALUNITLIQ] [decimal](28, 14) NULL,
+	[VALUNITINDCLI] [decimal](28, 14) NULL,
+	[CODALMOXPODERTERCEIROS] [char](3) NULL,
+	[CODMOVFISCPED] [char](3) NULL,
+	[PERCCOMISSAO] [decimal](28, 14) NULL,
+	[STAUSADESCDIGITADO] [char](1) NULL,
+	[NUMITEMPEDCLI] [char](6) NULL,
+	[PESOBRUTO] [decimal](28, 14) NULL,
+	[PESOLIQUIDO] [decimal](28, 14) NULL,
+	[ITEMATRASADO] [char](1) NULL CONSTRAINT [DF_ITEMATRASADO] DEFAULT ('N'),
+	[DATPROGATEND] [datetime] NULL,
+	[VALCOMISSAO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU014
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU014] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU014__CODEM__7F80E8EA] DEFAULT ('01'),
+	[NUMPED] [char](9) NOT NULL,
+	[NUMITEMPED] [char](3) NOT NULL,
+	[OBSITEMPEDIMP] [text] NULL);
+GO
+
+--Table dbo.TBFATU015
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU015] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU015__CODEM__025D5595] DEFAULT ('01'),
+	[NUMPED] [char](9) NOT NULL,
+	[NUMITEMPED] [char](3) NOT NULL,
+	[OBSITEMPEDCON] [text] NULL);
+GO
+
+--Table dbo.TBFATU016
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU016] (
+	[CODTRANSP] [char](3) NOT NULL,
+	[TIPFISJUR] [char](1) NOT NULL,
+	[NUMCGCCPF] [char](14) NOT NULL,
+	[ENDTRANSP] [char](40) NOT NULL,
+	[COMPLTRANSP] [char](20) NULL,
+	[BAIRROTRANSP] [char](20) NULL,
+	[CODUF] [char](2) NOT NULL,
+	[INSCRESTA] [char](14) NULL,
+	[TELTRANSP] [char](12) NULL,
+	[FAXTRANSP] [char](12) NULL,
+	[CONTATOTRANSP] [char](20) NULL,
+	[RAZSOCTRANSP] [char](50) NOT NULL,
+	[NOMFANTAS] [char](40) NULL,
+	[NUMENDTRANSP] [char](6) NOT NULL,
+	[RAMAL] [char](4) NULL,
+	[CIDADETRANSP] [char](20) NOT NULL,
+	[CEPTRANSP] [char](8) NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATRANSP] [char](1) NOT NULL,
+	[CODEMPEMITCONHEC] [char](2) NULL,
+	[TELCONTATO] [char](12) NULL,
+	[SITE] [char](70) NULL,
+	[EMAIL] [char](70) NULL,
+	[NUMINSCRINSS] [char](12) NULL,
+	[NUMINSCRPISPASEP] [char](11) NULL,
+	[NUMINSCRSUFRAMA] [char](9) NULL,
+	[CEPCXPOSTAL] [char](8) NULL,
+	[CXPOSTAL] [char](8) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[CODPAIS] [char](5) NULL,
+	[NOMECXPOSTAL] [char](35) NULL,
+	[EMAILXMLTRANSP] [char](250) NULL);
+GO
+
+--Table dbo.TBFATU017
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU017] (
+	[CODVEND] [char](6) NOT NULL,
+	[NOMVEND] [char](50) NOT NULL,
+	[APELIDO] [char](20) NULL,
+	[STAVEND] [char](1) NOT NULL,
+	[PERCCOMISSAO2] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU017__PERCC__534E2C48] DEFAULT (0),
+	[PERCCOMISSAO1] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU017__PERCC__54425081] DEFAULT (0),
+	[OBS] [char](100) NULL,
+	[CODCLASSIFICABCVEND] [char](1) NULL,
+	[PERCIRRF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU017__PERCI__553674BA] DEFAULT (0),
+	[CODREGVENDA] [char](2) NULL,
+	[CODTIPOVENDA] [char](5) NULL,
+	[CODSUPERIOR] [char](6) NULL,
+	[NUMBANCOVEND] [char](3) NULL,
+	[NUMAGENCIAVEND] [char](5) NULL,
+	[NUMCTACORRENTEVEND] [char](15) NULL,
+	[DIGTOCTACORRENTEVEND] [char](3) NULL,
+	[NUMCGCCPFVEND] [char](14) NULL,
+	[TIPFISJUR] [char](1) NULL,
+	[CCUSTO] [char](10) NULL,
+	[NUMRGIE] [char](15) NULL,
+	[ENDVEND] [char](40) NULL,
+	[NUMENDVEND] [char](6) NULL,
+	[BAIRROVEND] [char](30) NULL,
+	[CIDADEVEND] [char](30) NULL,
+	[CODUFVEND] [char](2) NULL,
+	[PAISVEND] [char](30) NULL,
+	[CEPVEND] [char](10) NULL,
+	[TELVEND] [char](16) NULL,
+	[CELULARVEND] [char](16) NULL,
+	[FAXVEND] [char](16) NULL,
+	[EMAILVEND] [char](70) NULL,
+	[DATADMISSAO] [datetime] NULL,
+	[CONTATOVEND] [char](20) NULL,
+	[USER_ID] [char](10) NULL,
+	[STAOPTANTESIMPLES] [char](1) NULL CONSTRAINT [DF__TBFATU017__STAOP__7E78816F] DEFAULT ('N'),
+	[USER_IDWEB] [char](10) NULL);
+GO
+
+--Table dbo.TBFATU018
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU018] (
+	[CODMOVFISC] [char](3) NOT NULL,
+	[REDICMS] [char](1) NULL,
+	[BASECALCIPI] [char](1) NULL,
+	[CODOBSMOVFISC1] [char](2) NULL,
+	[CODOBSMOVFISC2] [char](2) NULL,
+	[CODOBSMOVFISC3] [char](2) NULL,
+	[CODOBSMOVFISC4] [char](2) NULL,
+	[CODOBSMOVFISC5] [char](2) NULL,
+	[DATATU] [datetime] NOT NULL,
+	[STACODMOVFISC] [char](1) NOT NULL,
+	[STASERVICO] [char](1) NOT NULL,
+	[PERCRECUPIPI] [decimal](28, 14) NOT NULL,
+	[PERCRECUPICMS] [decimal](28, 14) NOT NULL,
+	[PORCSUBSTRIB] [decimal](28, 14) NOT NULL,
+	[STAUSODOSISTEMA] [char](1) NOT NULL,
+	[PORCIPI] [decimal](28, 14) NULL,
+	[BASECALCICMEMITENTE] [char](1) NULL,
+	[BASECALCICMDESTINO] [char](1) NULL,
+	[STADEVOLUCAO] [char](1) NULL CONSTRAINT [DF__TBFATU018__STADE__0BE6BFCF] DEFAULT ('N'),
+	[FATORBASECALCICM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU018__FATOR__0CDAE408] DEFAULT (1),
+	[PERCDESCICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU018__PERCD__0DCF0841] DEFAULT (0),
+	[SUSPENSAOICMS] [char](1) NULL CONSTRAINT [DF__TBFATU018__SUSPE__0EC32C7A] DEFAULT ('0'),
+	[SUSPENSAOIPI] [char](1) NULL CONSTRAINT [DF__TBFATU018__SUSPE__0FB750B3] DEFAULT ('0'),
+	[CONTAICMS] [char](12) NULL,
+	[CONTAICMSRECOLHER] [char](12) NULL,
+	[CONTAIPI] [char](12) NULL,
+	[CONTAIPIRECOLHER] [char](12) NULL,
+	[GERAMOVTODERECEITA] [char](1) NULL CONSTRAINT [DF__TBFATU018__GERAM__10AB74EC] DEFAULT ('S'),
+	[CONTAISS] [char](12) NULL,
+	[CONTAISSRECOLHER] [char](12) NULL,
+	[CONTAPIS] [char](12) NULL,
+	[CONTAPISRECOLHER] [char](12) NULL,
+	[CONTACOFINS] [char](12) NULL,
+	[CONTACOFINSRECOLHER] [char](12) NULL,
+	[CONTAINSSRECOLHER] [char](12) NULL,
+	[CONTAIR] [char](12) NULL,
+	[CODCFOP2] [char](6) NULL,
+	[CONTAICMSSOBREDEV] [char](12) NULL,
+	[CONTAIPISOBREDEV] [char](12) NULL,
+	[CONTADEVOLVENDA] [char](12) NULL,
+	[TPCTADEVCOMPRA] [char](1) NULL,
+	[CONTADEVOLCOMPRA] [char](12) NULL,
+	[GERAIMPOSTOCTPAGAR] [char](1) NULL CONSTRAINT [DF__TBFATU018__GERAI__119F9925] DEFAULT ('N'),
+	[CONTACANC] [char](12) NULL,
+	[CONTACANCICM] [char](12) NULL,
+	[CONTACANCIPI] [char](12) NULL,
+	[CONTACANCCOFINS] [char](12) NULL,
+	[CONTACANCPIS] [char](12) NULL,
+	[CONTACANCISS] [char](12) NULL,
+	[STAIPIRECNDESTAC] [char](1) NULL CONSTRAINT [DF__TBFATU018__STAIP__1293BD5E] DEFAULT ('N'),
+	[BASECALIPIRECNDESTAC] [decimal](28, 14) NULL,
+	[CODCFOPSEG] [char](6) NULL,
+	[CODSITTRIB2] [char](5) NULL,
+	[CONTAIRRECOLHER] [char](12) NULL,
+	[CONTACANCIR] [char](12) NULL,
+	[CODEVENTO] [char](5) NULL,
+	[STAIMPRIMEVALICMS] [char](1) NULL CONSTRAINT [DF__TBFATU018__STAIM__2917FB5A] DEFAULT ('S'),
+	[STAIMPRIMEVALIPI] [char](1) NULL CONSTRAINT [DF__TBFATU018__STAIM__2A0C1F93] DEFAULT ('S'),
+	[STAGERARCUSTO] [char](1) NULL CONSTRAINT [DF__TBFATU018__STAGE__4F3DA442] DEFAULT ('S'),
+	[STAVENDA] [char](1) NULL CONSTRAINT [DF__TBFATU018__STAVE__7C104AB9] DEFAULT ('N'),
+	[STACOMPRA] [char](1) NULL CONSTRAINT [DF__TBFATU018__STACO__7D046EF2] DEFAULT ('N'),
+	[TIPONFENTREGAFUTURA] [char](1) NULL CONSTRAINT [DF__TBFATU018__TIPON__4DDF6BB5] DEFAULT ('N'),
+	[PORCICMS] [decimal](28, 14) NULL,
+	[STAICMSPORDENTRO] [char](1) NULL CONSTRAINT [DF__TBFATU018__STAIC__4ED38FEE] DEFAULT ('N'),
+	[CONTAREC] [char](12) NULL,
+	[STACONTROLEALMOXTERC] [char](1) NULL CONSTRAINT [DF__TBFATU018__STACO__33EA8F88] DEFAULT ('N'),
+	[PERCPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU018__PERCP__4CB63D52] DEFAULT (0),
+	[PERCRECUPPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU018__PERCR__4DAA618B] DEFAULT (0),
+	[PERCCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU018__PERCC__565FA31D] DEFAULT (0),
+	[PERCRECUPCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU018__PERCR__5753C756] DEFAULT (0),
+	[CONTACSLL] [char](12) NULL,
+	[DESMOVFISC] [char](70) NULL,
+	[STAICMSSOBRERETORNO] [char](1) NULL,
+	[PERCDESCPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU018__PERCD__2EA6B77E] DEFAULT (0),
+	[PERCDESCCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU018__PERCD__2F9ADBB7] DEFAULT (0),
+	[PERCRETPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU018__PERCR__62114CEB] DEFAULT (0),
+	[PERCRETCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU018__PERCR__63057124] DEFAULT (0),
+	[TESIPITRIBUT] [char](10) NULL,
+	[TESIPIISENTO] [char](10) NULL,
+	[TESIPIOUTROS] [char](10) NULL,
+	[CODCTISS] [char](2) NULL,
+	[CODCFPS] [char](4) NULL,
+	[CODCTIPI] [char](2) NULL,
+	[TIPCALCSUBSTTRIB] [char](1) NULL CONSTRAINT [DF__TBFATU018__TIPCA__5596676D] DEFAULT ('0'),
+	[PERCICMSINTERNOOUTRAUF] [decimal](28, 14) NULL,
+	[STAGERALIVROFISCAL] [char](1) NULL,
+	[SITTRIBPIS] [char](2) NULL,
+	[SITTRIBCOFINS] [char](2) NULL,
+	[REDICMSSUBST] [char](1) NULL,
+	[STAICMSCALCENAODESTAC] [char](1) NULL,
+	[STAIPICALCENAODESTAC] [char](1) NULL,
+	[STACALCFUNRURAL] [char](1) NULL CONSTRAINT [DF__TBFATU018__STACA__7B71F792] DEFAULT ('N'),
+	[CODENQUADRAMENTO] [char](4) NULL,
+	[CSOSN] [char](3) NULL,
+	[CODBASECALCREDITO] [char](2) NULL,
+	[CODBASECALCREDITOPIS] [char](2) NULL,
+	[CODCONTRIBAPURADAPIS] [char](2) NULL,
+	[CODTIPCREDITOPIS] [char](3) NULL,
+	[CODALIQCREDPRESUMAGROPIS] [char](3) NULL,
+	[CODPRODMONOFASALIQDIFPIS] [char](3) NULL,
+	[CODPRODMONOFASALIQUMPIS] [char](3) NULL,
+	[CODPRODSUBSTRIBCSPIS] [char](3) NULL,
+	[CODPRODALIQZEROCSPIS] [char](3) NULL,
+	[CODOPERISENCAOCSPIS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACSPIS] [char](3) NULL,
+	[CODOPERSUSPENSAOCSPIS] [char](3) NULL,
+	[CODOPEROUTRASALIQCSPIS] [char](3) NULL,
+	[CODBASECALCREDITOCOFINS] [char](2) NULL,
+	[CODCONTRIBAPURADACOFINS] [char](2) NULL,
+	[CODTIPCREDITOCOFINS] [char](3) NULL,
+	[CODALIQCREDPRESUMAGROCOFINS] [char](3) NULL,
+	[CODPRODMONOFASALIQDIFCOFINS] [char](3) NULL,
+	[CODPRODMONOFASALIQUMCOFINS] [char](3) NULL,
+	[CODPRODSUBSTRIBCSCOFINS] [char](3) NULL,
+	[CODPRODALIQZEROCSCOFINS] [char](3) NULL,
+	[CODOPERISENCAOCSCOFINS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACSCOFINS] [char](3) NULL,
+	[CODOPERSUSPENSAOCSCOFINS] [char](3) NULL,
+	[CODOPEROUTRASALIQCSCOFINS] [char](3) NULL,
+	[CODCMPISCOFINS] [char](3) NULL,
+	[STACMPEDIDOORCAM] [char](1) NULL,
+	[CODMOVESTOQ] [char](3) NULL,
+	[STAICMSSUBSTCALCENAODESTAC] [char](1) NULL,
+	[STACONSIDERANOCIAP] [char](1) NULL CONSTRAINT [DF__TBFATU018__STACO__28B99F55] DEFAULT ('S'),
+	[PERCDIFERIDOICMS] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU018__PERCD__13546E1B] DEFAULT ((0)),
+	[EXIBETOTIMPOST] [char](1) NOT NULL,
+	[EXIBETOTIMP] [char](1) NOT NULL CONSTRAINT [DF__TBFATU018__EXIBE__397A1703] DEFAULT ('N'));
+GO
+
+--Table dbo.TBFATU019
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU019] (
+	[CODOBSMOVFISC] [char](2) NOT NULL,
+	[OBSMOVFISC] [text] NOT NULL,
+	[TIPOOBS] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU020
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU020] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU020__CODEM__1758727B] DEFAULT ('01'),
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[SEQENDCOBCLI] [char](2) NOT NULL,
+	[SEQENDENTCLI] [char](2) NOT NULL,
+	[STAIMP] [char](1) NOT NULL,
+	[CODNATUOPER] [char](3) NULL,
+	[INSCESTSUBSTRIB] [char](12) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[TIPOES] [char](1) NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[OBSCLASSFISC] [text] NULL,
+	[CALCIMP] [char](1) NULL,
+	[CCUSTO] [char](10) NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[TIPOCOBRANCA] [char](1) NULL,
+	[VALTOTMERC] [decimal](28, 14) NOT NULL,
+	[VALTOTICM] [decimal](28, 14) NULL,
+	[VALTOTIPI] [decimal](28, 14) NULL,
+	[VALDESPESAS] [decimal](28, 14) NULL,
+	[VALFRETE] [decimal](28, 14) NULL,
+	[VALTOTNF] [decimal](28, 14) NOT NULL,
+	[BASECALCICMS] [decimal](28, 14) NULL,
+	[BASECALCICMSSUBST] [decimal](28, 14) NULL,
+	[VALICMSSUBST] [decimal](28, 14) NULL,
+	[VALSEGURO] [decimal](28, 14) NULL,
+	[VALOUTROS] [decimal](28, 14) NULL,
+	[BASECALCISS] [decimal](28, 14) NULL,
+	[VALPERCISS] [decimal](28, 14) NULL,
+	[VALTOTISS] [decimal](28, 14) NULL,
+	[PERCCOMISSAO1] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__PERCC__184C96B4] DEFAULT (0),
+	[PERCCOMISSAO2] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__PERCC__1940BAED] DEFAULT (0),
+	[DESNATUOPER] [char](60) NULL,
+	[NUMNFRELAC] [char](6) NULL,
+	[SERNFRELAC] [char](5) NULL,
+	[STADEVOLUCAO] [char](1) NULL CONSTRAINT [DF__TBFATU020__STADE__1A34DF26] DEFAULT ('N'),
+	[VALACRESTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__VALAC__1B29035F] DEFAULT (0),
+	[VALDESCTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__VALDE__1C1D2798] DEFAULT (0),
+	[VALDESCICMSTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__VALDE__1D114BD1] DEFAULT (0),
+	[NUMPEDCLI] [char](9) NULL,
+	[NUMPEDINTERNO] [char](20) NULL,
+	[STAALTERADUP] [char](1) NULL CONSTRAINT [DF__TBFATU020__STAAL__1E05700A] DEFAULT ('S'),
+	[CODNATUOPER2] [char](6) NULL,
+	[CODCFOPSEG] [char](6) NULL,
+	[DESCFOPSEG] [char](60) NULL,
+	[CODFORNRELAC] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[NUMPEDCLI2] [char](30) NULL,
+	[TIPOOBSRETIND] [char](1) NULL,
+	[PERCCOMISSFIXO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__PERCC__615C547D] DEFAULT (0),
+	[DESCTOPERCCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__DESCT__625078B6] DEFAULT (0),
+	[DESCTOVALORCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__DESCT__63449CEF] DEFAULT (0),
+	[PERCCUSTOFINANCCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__PERCC__6438C128] DEFAULT (0),
+	[USER_ID] [char](10) NULL,
+	[VALUFESPNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__VALUF__6D58170E] DEFAULT (0),
+	[CODEMPNFPRINCIPAL] [char](2) NULL,
+	[NUMNFPRINCIPAL] [char](6) NULL,
+	[SERNFPRINCIPAL] [char](5) NULL,
+	[VALTOTPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__VALTO__52050254] DEFAULT (0),
+	[VALTOTCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__VALTO__52F9268D] DEFAULT (0),
+	[STAALTVOLUMESTRANSP] [char](1) NULL CONSTRAINT [DF__TBFATU020__STAAL__20F7B6A5] DEFAULT ('S'),
+	[CODCFOPTERC] [char](6) NULL,
+	[DESCFOPTERC] [char](60) NULL,
+	[CODCFOPQUAR] [char](6) NULL,
+	[DESCFOPQUAR] [char](60) NULL,
+	[CODVEND] [char](6) NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[VALDESCPISTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__VALDE__308EFFF0] DEFAULT (0),
+	[VALDESCCOFINSTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__VALDE__31832429] DEFAULT (0),
+	[STARATEIODAALTERADO] [char](1) NULL,
+	[NUMPEDREP] [char](30) NULL,
+	[VALTOTRETPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__VALTO__6B9AB725] DEFAULT (0),
+	[VALTOTRETCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__VALTO__6C8EDB5E] DEFAULT (0),
+	[DATREFERIND] [datetime] NULL,
+	[CODGRUPO] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[TIPPAGTO] [char](1) NULL,
+	[TIPTITULO] [char](2) NULL,
+	[DESCOMPLTIT] [char](250) NULL,
+	[NUMDI] [char](20) NULL,
+	[DATREGSISCOMEX] [datetime] NULL,
+	[DATDESEMBMERC] [datetime] NULL,
+	[VALDESPFORABICMS] [decimal](28, 14) NULL,
+	[VALORIOF] [decimal](28, 14) NULL,
+	[CNPJRETIRADA] [char](14) NULL,
+	[ENDRETIRADA] [char](40) NULL,
+	[NUMENDRETIRADA] [char](6) NULL,
+	[COMPLENDRETIRADA] [char](20) NULL,
+	[BAIRRORETIRADA] [char](30) NULL,
+	[CODMUNIBGERETIRADA] [char](7) NULL,
+	[CIDADERETIRADA] [char](30) NULL,
+	[UFRETIRADA] [char](2) NULL,
+	[NOTAEMPENHOORGPUB] [char](22) NULL,
+	[PEDIDOORGPUB] [char](60) NULL,
+	[CONTRATOORGPUB] [char](60) NULL,
+	[UFEMBARQUE] [char](2) NULL,
+	[LOCALEMBARQUE] [char](60) NULL,
+	[CODFINALIDADENFE] [char](1) NULL,
+	[BASECALCICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__BASEC__41AF6A51] DEFAULT (0),
+	[VALTOTICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__VALTO__42A38E8A] DEFAULT (0),
+	[DATSAIDA] [datetime] NULL,
+	[BASECALCIPINAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__BASEC__79F3C374] DEFAULT (0),
+	[VALTOTIPINAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU020__VALTO__7AE7E7AD] DEFAULT (0),
+	[CODDI] [char](1) NULL,
+	[VALPISSUBST] [decimal](28, 14) NULL,
+	[VALCOFINSSUBST] [decimal](28, 14) NULL,
+	[CODSITDOCTO] [char](2) NULL,
+	[NUMNFIMPORTADA] [char](6) NULL,
+	[SERNFIMPORTADA] [char](5) NULL,
+	[STACLIENTERETIRAMERC] [char](1) NULL,
+	[TIPFISJURRETIRADA] [char](1) NULL,
+	[VLRCREDICMSSN] [decimal](28, 14) NULL,
+	[HORASAIDA] [char](5) NULL,
+	[NUMVOLUMES] [int] NULL,
+	[VALBASECALCICMSSUBSTNAODESTAC] [decimal](28, 14) NULL,
+	[VALICMSSUBSTNAODESTAC] [decimal](28, 14) NULL,
+	[CHAVENFE] [varchar](44) NULL,
+	[ARQXML] [varchar](250) NULL,
+	[VALTOTIMPNOTA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU021
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU021] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU021__CODEM__20E1DCB5] DEFAULT ('01'),
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMSEQITEMNF] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[NUMPED] [char](9) NULL,
+	[NUMITEMPED] [char](3) NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[CODREDCLASSFISC] [char](2) NULL,
+	[ID_OPER] [char](1) NULL,
+	[QTDETOTITEM] [decimal](28, 14) NOT NULL,
+	[VALUNITITEM] [decimal](28, 14) NOT NULL,
+	[VALPERCIPI] [decimal](28, 14) NULL,
+	[VALIPI] [decimal](28, 14) NULL,
+	[VALTOTITEM] [decimal](28, 14) NULL,
+	[VALPERCICM] [decimal](28, 14) NULL,
+	[VALICM] [decimal](28, 14) NULL,
+	[VALBASEREDUCAO] [decimal](28, 14) NULL,
+	[VALPERCRED] [decimal](28, 14) NULL,
+	[VALBASEREDUZIDA] [decimal](28, 14) NULL,
+	[VALMERCSEMIMP] [decimal](28, 14) NULL,
+	[VALBASECALCIPI] [decimal](28, 14) NULL,
+	[VALBASECALCICM] [decimal](28, 14) NULL,
+	[VALRATEIODA] [decimal](28, 14) NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[BASECALCIPI] [char](1) NULL,
+	[BASECALCICMS] [char](1) NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[BASECALCICMSSUBST] [char](1) NULL,
+	[VALBASECALCICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALBA__21D600EE] DEFAULT (0),
+	[VALICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALIC__22CA2527] DEFAULT (0),
+	[PORCSUBSTRIB] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__PORCS__23BE4960] DEFAULT (0),
+	[VALPERCICMSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALPE__24B26D99] DEFAULT (0),
+	[VALBRUTOTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALBR__25A691D2] DEFAULT (0),
+	[PERCACRESDESCITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__PERCA__269AB60B] DEFAULT (0),
+	[VALACRESDESCTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALAC__278EDA44] DEFAULT (0),
+	[PERCDESCICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__PERCD__2882FE7D] DEFAULT (0),
+	[VALDESCICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALDE__297722B6] DEFAULT (0),
+	[CODINDICE] [char](3) NULL,
+	[CODTABPRECO] [char](3) NULL,
+	[PESOLIQTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__PESOL__2A6B46EF] DEFAULT (0),
+	[CODUNIMEDITEM] [char](2) NULL,
+	[CODLOTE] [char](15) NULL,
+	[CODNATUOPER2] [char](6) NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[VALMAOOBRA] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALMA__2B5F6B28] DEFAULT (0),
+	[VALINSUMOS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALIN__2C538F61] DEFAULT (0),
+	[CCUSTOENT] [char](10) NULL,
+	[NUMPROTOCOLO] [char](9) NULL,
+	[SEQPROCESSO] [char](3) NULL,
+	[VALIMPIMPORT] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALIM__4D555BD0] DEFAULT (0),
+	[PERCCOMISSFIXO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__PERCC__652CE561] DEFAULT (0),
+	[DESCTOPERCCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__DESCT__6621099A] DEFAULT (0),
+	[DESCTOVALORCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__DESCT__67152DD3] DEFAULT (0),
+	[CODALMOXPODERTERCEIROS] [char](3) NULL,
+	[CODMATREDUZIDO] [char](40) NULL,
+	[CODLOTEFORN] [char](15) NULL,
+	[DATVALIDADE] [datetime] NULL,
+	[CODLOCAL] [char](5) NULL,
+	[CODLOCALENT] [char](5) NULL,
+	[TIPUSOMATERIAL] [char](1) NULL,
+	[VALPERCPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALPE__53ED4AC6] DEFAULT (0),
+	[VALPERCCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALPE__54E16EFF] DEFAULT (0),
+	[VALPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALPI__55D59338] DEFAULT (0),
+	[VALCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALCO__56C9B771] DEFAULT (0),
+	[VALUNITCOMIPI] [decimal](28, 14) NULL,
+	[STAVALMOINCIDEIPI] [char](1) NULL,
+	[STAVALINSUMOINCIDEIPI] [char](1) NULL,
+	[VALBASECALCPISCOFINSIMPORT] [decimal](28, 14) NULL,
+	[NUMPEDCLIITEMNF] [char](10) NULL,
+	[NUMITEMPEDCLIITEMNF] [char](4) NULL,
+	[PERCDESCPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__PERCD__32774862] DEFAULT (0),
+	[VALDESCPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALDE__336B6C9B] DEFAULT (0),
+	[PERCDESCCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__PERCD__345F90D4] DEFAULT (0),
+	[VALDESCCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALDE__3553B50D] DEFAULT (0),
+	[PERCRETPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__PERCR__63F9955D] DEFAULT (0),
+	[PERCRETCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__PERCR__64EDB996] DEFAULT (0),
+	[VALRETPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALRE__65E1DDCF] DEFAULT (0),
+	[VALRETCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALRE__66D60208] DEFAULT (0),
+	[NUMPEDCLI2] [char](30) NULL,
+	[NUMPEDREP] [char](9) NULL,
+	[NUMPEDINTERNO] [char](9) NULL,
+	[CODGENERO] [char](2) NULL,
+	[CODCTIPI] [char](2) NULL,
+	[TIPREFERBASECALC] [char](1) NULL,
+	[VALPRECOTABELA] [decimal](28, 14) NULL,
+	[CODCLASSFISCAL] [char](10) NULL,
+	[VALICMSSUBSTCOMPLEM] [decimal](28, 14) NULL,
+	[NUMRNC] [char](20) NULL,
+	[VALRATEIOFRETE] [decimal](28, 14) NULL,
+	[VALRATEIOSEG] [decimal](28, 14) NULL,
+	[VALIOFITEM] [decimal](28, 14) NULL,
+	[VALOUTROSITEM] [decimal](28, 14) NULL,
+	[VALBASECALCICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALBA__4397B2C3] DEFAULT (0),
+	[VALPERCICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALPE__448BD6FC] DEFAULT (0),
+	[VALICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALIC__457FFB35] DEFAULT (0),
+	[VALBASECALCIPINAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALBA__7BDC0BE6] DEFAULT (0),
+	[VALPERCIPINAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALPE__7CD0301F] DEFAULT (0),
+	[VALIPINAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU021__VALIP__7DC45458] DEFAULT (0),
+	[CODMODULTENT] [char](2) NULL,
+	[NUMDOCULTENT] [char](10) NULL,
+	[SERDOCULTENT] [char](5) NULL,
+	[DTULTENT] [datetime] NULL,
+	[CODCLIULTENT] [char](6) NULL,
+	[QUANTULTENT] [decimal](28, 14) NULL,
+	[VALULTENT] [decimal](28, 14) NULL,
+	[VALUNITBCST] [decimal](28, 14) NULL,
+	[VALBCALCSTORIGDEST] [decimal](28, 14) NULL,
+	[VALICMSSTREP] [decimal](28, 14) NULL,
+	[VALICMSSTCOMPL] [decimal](28, 14) NULL,
+	[VALBCRET] [decimal](28, 14) NULL,
+	[VALISMCRET] [decimal](28, 14) NULL,
+	[NUMCONTINDUSTR] [char](9) NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NULL,
+	[PORCSUBSTRIBSN] [decimal](28, 14) NULL,
+	[VALBASECALCICMSSUBSTSN] [decimal](28, 14) NULL,
+	[VALPERCICMSUBSTSN] [decimal](28, 14) NULL,
+	[VALICMSSUBSTSN] [decimal](28, 14) NULL,
+	[QTDEPORLOTE] [decimal](28, 14) NULL,
+	[TPPROD] [char](1) NULL,
+	[DATFABR] [datetime] NULL,
+	[NUMITEMPEDCLI] [char](6) NULL,
+	[VLRCREDICMSSN] [decimal](28, 14) NULL,
+	[MOTIVODEVOLUC] [char](150) NULL,
+	[VALBASECALCICMSSUBSTNAODESTAC] [decimal](28, 14) NULL,
+	[VALICMSSUBSTNAODESTAC] [decimal](28, 14) NULL,
+	[VALPERCICMSUBSTNAODESTAC] [decimal](28, 14) NULL,
+	[VALPAUTAIPIVIGENTE] [decimal](28, 14) NULL,
+	[QTDENAUMTRIBUTADA] [decimal](28, 14) NULL,
+	[CODFCI] [char](36) NULL,
+	[CONTEUDOIMP] [decimal](28, 14) NULL,
+	[VALPARCIMP] [decimal](28, 14) NULL,
+	[VALBASECALCICMDIF] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU021__VALBA__14489254] DEFAULT ((0)),
+	[VALPERCICMDIF] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU021__VALPE__153CB68D] DEFAULT ((0)),
+	[VALICMDIF] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU021__VALIC__1630DAC6] DEFAULT ((0)),
+	[VALTOTIMPITEM] [decimal](28, 14) NULL,
+	[STARECALCVALTOTIMPITEM] [char](1) NULL CONSTRAINT [DF__TBFATU021__STARE__2667428F] DEFAULT ('S'));
+GO
+
+--Table dbo.TBFATU022
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU022] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU022__CODEM__2F2FFC0C] DEFAULT ('01'),
+	[NUMDUP] [char](10) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[DATVENCDUP] [datetime] NOT NULL,
+	[VALDUP] [decimal](28, 14) NOT NULL,
+	[STAEXPORT] [char](1) NULL CONSTRAINT [DF__TBFATU022__STAEX__30242045] DEFAULT ('N'),
+	[STAEXCONT] [char](1) NULL CONSTRAINT [DF__TBFATU022__STAEX__3118447E] DEFAULT ('N'),
+	[PERCDESCONTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU022__PERCD__320C68B7] DEFAULT (0),
+	[STAAGRUPADO] [char](1) NULL CONSTRAINT [DF__TBFATU022__STAAG__33008CF0] DEFAULT ('N'),
+	[DATEMISSAODUP] [datetime] NULL,
+	[EXTRA] [char](1) NULL CONSTRAINT [DF__TBFATU022__EXTRA__33F4B129] DEFAULT ('N'),
+	[VALAGRUPADO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU022__VALAG__34E8D562] DEFAULT (0),
+	[STAQUITADO] [char](1) NULL,
+	[NOSSONUM] [char](20) NULL,
+	[DIGNOSSONUM] [char](2) NULL);
+GO
+
+--Table dbo.TBFATU023
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU023] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU023__CODEM__37C5420D] DEFAULT ('01'),
+	[NUMSEQNF] [char](9) NOT NULL,
+	[CODTRANSP] [char](3) NULL,
+	[PAGFRETE] [char](1) NOT NULL,
+	[PLACA] [char](10) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[ESPECIE] [char](15) NULL,
+	[MARCA] [char](15) NULL,
+	[NUMERO] [char](10) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL,
+	[PESOBRUTO] [decimal](28, 14) NULL,
+	[PESOLIQUIDO] [decimal](28, 14) NULL,
+	[CODRNTC] [char](20) NULL,
+	[CODTRANSPREDESPACHO] [char](3) NULL,
+	[PAGFRETEREDESPACHO] [char](1) NULL,
+	[PLACAREDESPACHO] [char](10) NULL,
+	[CODUFPLACAREDESPACHO] [char](2) NULL);
+GO
+
+--Table dbo.TBFATU024
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU024] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU024__CODEM__3AA1AEB8] DEFAULT ('01'),
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[SEQENDCOBCLI] [char](2) NOT NULL,
+	[SEQENDENTCLI] [char](2) NOT NULL,
+	[STANF] [char](1) NOT NULL,
+	[DATSAIDA] [datetime] NULL,
+	[INSCESTSUBSTRIB] [char](12) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[HORASAIDA] [char](5) NULL,
+	[TIPOES] [char](1) NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[OBSCLASSFISC] [text] NULL,
+	[EXTRA] [char](1) NULL,
+	[CCUSTO] [char](10) NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[CODCLIIMPRNF] [char](9) NULL,
+	[TIPOCOBRANCA] [char](1) NULL,
+	[VALTOTMERC] [decimal](28, 14) NOT NULL,
+	[VALTOTICM] [decimal](28, 14) NULL,
+	[VALTOTIPI] [decimal](28, 14) NULL,
+	[VALDESPESAS] [decimal](28, 14) NULL,
+	[VALFRETE] [decimal](28, 14) NULL,
+	[VALTOTNF] [decimal](28, 14) NOT NULL,
+	[BASECALCICMS] [decimal](28, 14) NULL,
+	[BASECALCICMSSUBST] [decimal](28, 14) NULL,
+	[VALICMSSUBST] [decimal](28, 14) NULL,
+	[VALSEGURO] [decimal](28, 14) NULL,
+	[VALOUTROS] [decimal](28, 14) NULL,
+	[BASECALCISS] [decimal](28, 14) NULL,
+	[VALPERCISS] [decimal](28, 14) NULL,
+	[VALTOTISS] [decimal](28, 14) NULL,
+	[DATCANC] [datetime] NULL,
+	[PERCCOMISSAO1] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__PERCC__3B95D2F1] DEFAULT (0),
+	[PERCCOMISSAO2] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__PERCC__3C89F72A] DEFAULT (0),
+	[DESNATUOPER] [char](60) NULL,
+	[NUMNFRELAC] [char](6) NULL,
+	[SERNFRELAC] [char](5) NULL,
+	[STADEVOLUCAO] [char](1) NULL CONSTRAINT [DF__TBFATU024__STADE__3D7E1B63] DEFAULT ('N'),
+	[STAEXCONT] [char](1) NULL CONSTRAINT [DF__TBFATU024__STAEX__3E723F9C] DEFAULT ('N'),
+	[VALACRESTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__VALAC__3F6663D5] DEFAULT (0),
+	[VALDESCTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__VALDE__405A880E] DEFAULT (0),
+	[VALDESCICMSTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__VALDE__414EAC47] DEFAULT (0),
+	[STAEXPORTMAX] [char](1) NULL CONSTRAINT [DF__TBFATU024__STAEX__4242D080] DEFAULT ('N'),
+	[NUMPEDCLI] [char](9) NULL,
+	[STAEXPLF] [char](1) NULL CONSTRAINT [DF__TBFATU024__STAEX__4336F4B9] DEFAULT ('N'),
+	[NUMPEDINTERNO] [char](20) NULL,
+	[CODNATUOPER2] [char](6) NULL,
+	[CODCFOPSEG] [char](6) NULL,
+	[DESCFOPSEG] [char](60) NULL,
+	[CODFORNRELAC] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[NUMPEDCLI2] [char](30) NULL,
+	[PERCCOMISSFIXO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__PERCC__6809520C] DEFAULT (0),
+	[DESCTOPERCCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__DESCT__68FD7645] DEFAULT (0),
+	[DESCTOVALORCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__DESCT__69F19A7E] DEFAULT (0),
+	[PERCCUSTOFINANCCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__PERCC__6AE5BEB7] DEFAULT (0),
+	[USER_ID] [char](10) NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBFATU024__STAIN__4FC7B427] DEFAULT ('N'),
+	[VALUFESPNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__VALUF__6E4C3B47] DEFAULT (0),
+	[CODEMPNFPRINCIPAL] [char](2) NULL,
+	[NUMNFPRINCIPAL] [char](6) NULL,
+	[SERNFPRINCIPAL] [char](5) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[VALTOTPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__VALTO__57BDDBAA] DEFAULT (0),
+	[VALTOTCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__VALTO__58B1FFE3] DEFAULT (0),
+	[CODCFOPTERC] [char](6) NULL,
+	[DESCFOPTERC] [char](60) NULL,
+	[CODCFOPQUAR] [char](6) NULL,
+	[DESCFOPQUAR] [char](60) NULL,
+	[CODVEND] [char](6) NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[VALDESCPISTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__VALDE__3647D946] DEFAULT (0),
+	[VALDESCCOFINSTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__VALDE__373BFD7F] DEFAULT (0),
+	[NUMPEDREP] [char](30) NULL,
+	[VALTOTRETPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__VALTO__6D82FF97] DEFAULT (0),
+	[VALTOTRETCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__VALTO__6E7723D0] DEFAULT (0),
+	[DATREFERIND] [datetime] NULL,
+	[CODGRUPO] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[TIPPAGTO] [char](1) NULL,
+	[TIPTITULO] [char](2) NULL,
+	[DESCOMPLTIT] [char](250) NULL,
+	[NUMDI] [char](20) NULL,
+	[DATREGSISCOMEX] [datetime] NULL,
+	[DATDESEMBMERC] [datetime] NULL,
+	[VALDESPFORABCICMS] [decimal](28, 14) NULL,
+	[VALORIOF] [decimal](28, 14) NULL,
+	[NUMLOTEENVIONFE] [char](15) NULL,
+	[NUMRECIBONFE] [char](15) NULL,
+	[CHAVENFE] [char](44) NULL,
+	[CODMOTIVO] [char](3) NULL,
+	[STANFE] [char](2) NULL,
+	[NPROTNFE] [char](15) NULL,
+	[JUSTCANC] [char](255) NULL,
+	[CNPJRETIRADA] [char](14) NULL,
+	[ENDRETIRADA] [char](40) NULL,
+	[NUMENDRETIRADA] [char](6) NULL,
+	[COMPLENDRETIRADA] [char](20) NULL,
+	[BAIRRORETIRADA] [char](30) NULL,
+	[CODMUNIBGERETIRADA] [char](7) NULL,
+	[CIDADERETIRADA] [char](30) NULL,
+	[UFRETIRADA] [char](2) NULL,
+	[NOTAEMPENHOORGPUB] [char](22) NULL,
+	[PEDIDOORGPUB] [char](60) NULL,
+	[CONTRATOORGPUB] [char](60) NULL,
+	[UFEMBARQUE] [char](2) NULL,
+	[LOCALEMBARQUE] [char](60) NULL,
+	[TIPEMISNFE] [char](1) NULL,
+	[CODFINALIDADENFE] [char](1) NULL,
+	[BASECALCICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__BASEC__46741F6E] DEFAULT (0),
+	[VALTOTICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__VALTO__476843A7] DEFAULT (0),
+	[BASECALCIPINAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__BASEC__7EB87891] DEFAULT (0),
+	[VALTOTIPINAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU024__VALTO__7FAC9CCA] DEFAULT (0),
+	[CODDI] [char](1) NULL,
+	[VALPISSUBST] [decimal](28, 14) NULL CONSTRAINT [DF_TBFATU024_VALPISSUBST] DEFAULT (0),
+	[VALCOFINSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF_TBFATU024_VALCOFINSSUBST] DEFAULT (0),
+	[CODSITDOCTO] [char](2) NULL,
+	[STACLIENTERETIRAMERC] [char](1) NULL,
+	[TIPFISJURRETIRADA] [char](1) NULL,
+	[VLRCREDICMSSN] [decimal](28, 14) NULL,
+	[NUMFORMULARIOCANC] [char](12) NULL,
+	[IDFORMNF] [char](4) NULL,
+	[NUMVOLUMES] [int] NULL,
+	[VALBASECALCICMSSUBSTNAODESTAC] [decimal](28, 14) NULL,
+	[VALICMSSUBSTNAODESTAC] [decimal](28, 14) NULL,
+	[STACUPOMFISCAL] [char](1) NULL,
+	[STAIMPETITORMEP] [char](1) NULL CONSTRAINT [DF__TBFATU024__STAIM__10E215C4] DEFAULT ('N'),
+	[STAIMPETITRW] [char](1) NULL CONSTRAINT [DF__TBFATU024__STAIM__12CA5E36] DEFAULT ('N'),
+	[NUMDOCCOO] [char](6) NULL,
+	[STAGERAAVISOEMB] [char](1) NULL,
+	[CHAVENFEDEV] [varchar](44) NULL,
+	[ARQXMLDEV] [varchar](250) NULL,
+	[VALTOTIMPNOTA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU025
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU025] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU025__CODEM__46136164] DEFAULT ('01'),
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[NUMPED] [char](9) NULL,
+	[NUMITEMPED] [char](3) NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[CODREDCLASSFISC] [char](2) NULL,
+	[ID_OPER] [char](1) NULL,
+	[QTDETOTITEM] [decimal](28, 14) NOT NULL,
+	[VALUNITITEM] [decimal](28, 14) NOT NULL,
+	[VALPERCIPI] [decimal](28, 14) NULL,
+	[VALIPI] [decimal](28, 14) NULL,
+	[VALTOTITEM] [decimal](28, 14) NULL,
+	[VALPERCICM] [decimal](28, 14) NULL,
+	[VALICM] [decimal](28, 14) NULL,
+	[VALBASEREDUCAO] [decimal](28, 14) NULL,
+	[VALPERCRED] [decimal](28, 14) NULL,
+	[VALBASEREDUZIDA] [decimal](28, 14) NULL,
+	[VALMERCSEMIMP] [decimal](28, 14) NULL,
+	[VALBASECALCIPI] [decimal](28, 14) NULL,
+	[VALBASECALCICM] [decimal](28, 14) NULL,
+	[VALRATEIODA] [decimal](28, 14) NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[BASECALCIPI] [char](1) NULL,
+	[BASECALCICMS] [char](1) NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[VALUNITESTOQ] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALUN__4707859D] DEFAULT (0),
+	[BASECALCICMSSUBST] [char](1) NULL,
+	[VALBASECALCICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALBA__47FBA9D6] DEFAULT (0),
+	[VALICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALIC__48EFCE0F] DEFAULT (0),
+	[PORCSUBSTRIB] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__PORCS__49E3F248] DEFAULT (0),
+	[VALPERCICMSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALPE__4AD81681] DEFAULT (0),
+	[VALBRUTOTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALBR__4BCC3ABA] DEFAULT (0),
+	[PERCACRESDESCITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__PERCA__4CC05EF3] DEFAULT (0),
+	[VALACRESDESCTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALAC__4DB4832C] DEFAULT (0),
+	[PERCDESCICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__PERCD__4EA8A765] DEFAULT (0),
+	[VALDESCICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALDE__4F9CCB9E] DEFAULT (0),
+	[CODINDICE] [char](3) NULL,
+	[CODTABPRECO] [char](3) NULL,
+	[PESOLIQTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__PESOL__5090EFD7] DEFAULT (0),
+	[CODUNIMEDITEM] [char](2) NULL,
+	[CODLOTE] [char](15) NULL,
+	[CODNATUOPER2] [char](6) NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[VALMAOOBRA] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALMA__51851410] DEFAULT (0),
+	[VALINSUMOS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALIN__52793849] DEFAULT (0),
+	[CCUSTOENT] [char](10) NULL,
+	[QTDERETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__QTDER__536D5C82] DEFAULT (0),
+	[QTDESALDORETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__QTDES__546180BB] DEFAULT (0),
+	[NUMPROTOCOLO] [char](9) NULL,
+	[SEQPROCESSO] [char](3) NULL,
+	[EXTRA] [char](1) NULL CONSTRAINT [DF__TBFATU025__EXTRA__272FB2E8] DEFAULT ('N'),
+	[QTDEEXTRA] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__QTDEE__2823D721] DEFAULT (0),
+	[VALIMPIMPORT] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALIM__4E498009] DEFAULT (0),
+	[PERCCOMISSFIXO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__PERCC__6BD9E2F0] DEFAULT (0),
+	[DESCTOPERCCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__DESCT__6CCE0729] DEFAULT (0),
+	[DESCTOVALORCOMIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__DESCT__6DC22B62] DEFAULT (0),
+	[CODALMOXPODERTERCEIROS] [char](3) NULL,
+	[CODMATREDUZIDO] [char](40) NULL,
+	[CODLOTEFORN] [char](15) NULL,
+	[DATVALIDADE] [datetime] NULL,
+	[CODLOCAL] [char](5) NULL,
+	[CODLOCALENT] [char](5) NULL,
+	[NUMLANC] [char](9) NULL,
+	[TIPUSOMATERIAL] [char](1) NULL,
+	[VALPERCPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALPE__59A6241C] DEFAULT (0),
+	[VALPERCCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALPE__5A9A4855] DEFAULT (0),
+	[VALPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALPI__5B8E6C8E] DEFAULT (0),
+	[VALCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALCO__5C8290C7] DEFAULT (0),
+	[VALBASECALCPISCOFINSIMPORT] [decimal](28, 14) NULL,
+	[NUMPEDCLIITEMNF] [char](10) NULL,
+	[NUMITEMPEDCLIITEMNF] [char](4) NULL,
+	[PERCDESCPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__PERCD__383021B8] DEFAULT (0),
+	[VALDESCPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALDE__392445F1] DEFAULT (0),
+	[PERCDESCCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__PERCD__3A186A2A] DEFAULT (0),
+	[VALDESCCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALDE__3B0C8E63] DEFAULT (0),
+	[PERCRETPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__PERCR__67CA2641] DEFAULT (0),
+	[PERCRETCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__PERCR__68BE4A7A] DEFAULT (0),
+	[VALRETPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALRE__69B26EB3] DEFAULT (0),
+	[VALRETCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALRE__6AA692EC] DEFAULT (0),
+	[NUMPEDCLI2] [char](30) NULL,
+	[NUMPEDREP] [char](9) NULL,
+	[NUMPEDINTERNO] [char](9) NULL,
+	[CODGENERO] [char](2) NULL,
+	[CODCTIPI] [char](2) NULL,
+	[TIPREFERBASECALC] [char](1) NULL,
+	[VALPRECOTABELA] [decimal](28, 14) NULL,
+	[CODCLASSFISCAL] [char](10) NULL,
+	[STACALCCOMIS] [char](1) NULL CONSTRAINT [DF__TBFATU025__STACA__455FFFA4] DEFAULT ('S'),
+	[VALICMSSUBSTCOMPLEM] [decimal](28, 14) NULL,
+	[QTDEPORLOTE] [decimal](28, 14) NULL,
+	[TPPROD] [char](1) NULL,
+	[DATFABR] [datetime] NULL,
+	[NUMRNC] [char](20) NULL,
+	[VALRATEIOFRETE] [decimal](28, 14) NULL,
+	[VALRATEIOSEG] [decimal](28, 14) NULL,
+	[VALIOFITEM] [decimal](28, 14) NULL,
+	[VALOUTROSITEM] [decimal](28, 14) NULL,
+	[VALBASECALCICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALBA__485C67E0] DEFAULT (0),
+	[VALPERCICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALPE__49508C19] DEFAULT (0),
+	[VALICMSNAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALIC__4A44B052] DEFAULT (0),
+	[PERCCOMISSAO] [decimal](28, 14) NULL,
+	[VALBASECALCIPINAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALBA__00A0C103] DEFAULT (0),
+	[VALPERCIPINAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALPE__0194E53C] DEFAULT (0),
+	[VALIPINAODESTAC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU025__VALIP__02890975] DEFAULT (0),
+	[CODMODULTENT] [char](2) NULL,
+	[NUMDOCULTENT] [char](10) NULL,
+	[SERDOCULTENT] [char](5) NULL,
+	[DTULTENT] [datetime] NULL,
+	[CODCLIULTENT] [char](6) NULL,
+	[QUANTULTENT] [decimal](28, 14) NULL,
+	[VALULTENT] [decimal](28, 14) NULL,
+	[VALUNITBCST] [decimal](28, 14) NULL,
+	[VALBCALCSTORIGDEST] [decimal](28, 14) NULL,
+	[VALICMSSTREP] [decimal](28, 14) NULL,
+	[VALICMSSTCOMPL] [decimal](28, 14) NULL,
+	[VALBCRET] [decimal](28, 14) NULL,
+	[VALISMCRET] [decimal](28, 14) NULL,
+	[NUMCONTINDUSTR] [char](9) NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NULL,
+	[PORCSUBSTRIBSN] [decimal](28, 14) NULL,
+	[VALBASECALCICMSSUBSTSN] [decimal](28, 14) NULL,
+	[VALPERCICMSUBSTSN] [decimal](28, 14) NULL,
+	[VALICMSSUBSTSN] [decimal](28, 14) NULL,
+	[NUMITEMPEDCLI] [char](6) NULL,
+	[VLRCREDICMSSN] [decimal](28, 14) NULL,
+	[MOTIVODEVOLUC] [char](150) NULL,
+	[VALBASECALCICMSSUBSTNAODESTAC] [decimal](28, 14) NULL,
+	[VALICMSSUBSTNAODESTAC] [decimal](28, 14) NULL,
+	[VALPERCICMSUBSTNAODESTAC] [decimal](28, 14) NULL,
+	[VALPAUTAIPIVIGENTE] [decimal](28, 14) NULL,
+	[QTDENAUMTRIBUTADA] [decimal](28, 14) NULL,
+	[CSTICMS] [char](4) NULL,
+	[CSTIPI] [char](4) NULL,
+	[CSTPIS] [char](4) NULL,
+	[CSTCOFINS] [char](4) NULL,
+	[CODFCI] [char](36) NULL,
+	[CONTEUDOIMP] [decimal](28, 14) NULL,
+	[VALPARCIMP] [decimal](28, 14) NULL,
+	[VALBASECALCICMDIF] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU025__VALBA__1724FEFF] DEFAULT ((0)),
+	[VALPERCICMDIF] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU025__VALPE__18192338] DEFAULT ((0)),
+	[VALICMDIF] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU025__VALIC__190D4771] DEFAULT ((0)),
+	[VALTOTIMPITEM] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU026
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU026] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU026__CODEM__573DED66] DEFAULT ('01'),
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODTRANSP] [char](3) NULL,
+	[PAGFRETE] [char](1) NOT NULL,
+	[PLACA] [char](10) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[ESPECIE] [char](15) NULL,
+	[MARCA] [char](15) NULL,
+	[NUMERO] [char](10) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL,
+	[PESOBRUTO] [decimal](28, 14) NULL,
+	[PESOLIQUIDO] [decimal](28, 14) NULL,
+	[CODREGFRETE] [char](5) NULL,
+	[NRCONHECIMENTO] [char](9) NULL,
+	[DTEMISSAOCONHEC] [datetime] NULL,
+	[DTVENCTOCONHEC] [datetime] NULL,
+	[VALCONHECIMENTO] [decimal](28, 14) NULL,
+	[NUMFATURATRANSP] [char](10) NULL,
+	[DTEMISSAOFATURA] [datetime] NULL,
+	[DTVENCTOFATURA] [datetime] NULL,
+	[VALTOTFATURA] [numeric](28, 14) NULL,
+	[CODOCORRENTREGA] [char](2) NULL,
+	[DTOCORRENCIA] [datetime] NULL,
+	[HORAOCORRENCIA] [char](4) NULL,
+	[CODRNTC] [char](20) NULL,
+	[CODTRANSPREDESPACHO] [char](3) NULL,
+	[PAGFRETEREDESPACHO] [char](1) NULL,
+	[PLACAREDESPACHO] [char](10) NULL,
+	[CODUFPLACAREDESPACHO] [char](2) NULL,
+	[SERCONHECIMENTO] [char](5) NULL,
+	[DATASSOCCONHEC] [datetime] NULL,
+	[VALICMSCONHEC] [decimal](28, 14) NULL,
+	[SERFATURATRANSP] [char](5) NULL,
+	[DATASSOCFATURA] [datetime] NULL,
+	[DATINTEGCONHEC] [datetime] NULL,
+	[HORINTEGCONHEC] [char](6) NULL,
+	[USER_IDINTEGCONHEC] [char](10) NULL,
+	[DATINTEGFATURA] [datetime] NULL,
+	[HORAINTEGFATURA] [char](6) NULL,
+	[USER_IDINTEGFATURA] [char](10) NULL,
+	[NRCONHECREDESP] [char](9) NULL,
+	[SERCONHECREDESP] [char](5) NULL,
+	[DTEMISSAOCONHECREDESP] [datetime] NULL,
+	[DTVENCTOCONHECREDESP] [datetime] NULL,
+	[VALCONHECREDESP] [decimal](28, 14) NULL,
+	[VALICMSCONHECREDESP] [decimal](28, 14) NULL,
+	[NUMFATURAREDESP] [char](10) NULL,
+	[SERFATURAREDESP] [char](5) NULL,
+	[DTEMISSAOFATURAREDESP] [datetime] NULL,
+	[DTVENCTOFATURAREDESP] [datetime] NULL,
+	[VALTOTFATURAREDESP] [decimal](28, 14) NULL,
+	[DATASSOCCONHECREDESP] [datetime] NULL,
+	[DATASSOCFATURAREDESP] [datetime] NULL,
+	[DATINTEGCONHECREDESP] [datetime] NULL,
+	[HORINTEGCONHECREDESP] [char](6) NULL,
+	[USER_IDINTEGCONHECREDESP] [char](10) NULL,
+	[DATINTEGFATURAREDESP] [datetime] NULL,
+	[HORAINTEGFATURAREDESP] [char](6) NULL,
+	[USER_IDINTEGFATURAREDESP] [char](10) NULL,
+	[DATCOMPET] [datetime] NULL,
+	[CODMOVFISC] [char](3) NULL);
+GO
+
+--Table dbo.TBFATU027
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU027] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU027__CODEM__5A1A5A11] DEFAULT ('01'),
+	[NUMSEQNF] [char](9) NOT NULL,
+	[OBSNF] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU028
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU028] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU028__CODEM__5CF6C6BC] DEFAULT ('01'),
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[OBSNF] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU029
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU029] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU029__CODEM__5FD33367] DEFAULT ('01'),
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMSEQITEMNF] [char](3) NOT NULL,
+	[OBSITEMNF] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU030
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU030] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU030__CODEM__62AFA012] DEFAULT ('01'),
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](3) NOT NULL,
+	[OBSITEMNF] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU031
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU031] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU031__CODEM__658C0CBD] DEFAULT ('01'),
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMSEQDUP] [char](2) NOT NULL,
+	[DATVENCDUP] [datetime] NOT NULL,
+	[VALDUP] [decimal](28, 14) NOT NULL,
+	[PERCDESCONTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU031__PERCD__668030F6] DEFAULT (0),
+	[NUMDIAS] [int] NULL CONSTRAINT [DF__TBFATU031__NUMDI__6774552F] DEFAULT (0),
+	[STAQUITADO] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU032
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU032] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU032__CODEM__6A50C1DA] DEFAULT ('01'),
+	[NUMCONTRATO] [char](9) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[SEQENDCOBCLI] [char](2) NOT NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[DESOBJCONTRATO] [text] NULL,
+	[CODENG] [char](3) NULL,
+	[STACONTRATO] [char](1) NOT NULL,
+	[TIPCONTRATO] [char](1) NOT NULL,
+	[DATENCER] [datetime] NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[CODTIPIMPIRRF] [char](2) NULL,
+	[CODALIQIRRF] [char](2) NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[TIPOCOBRANCA] [char](1) NULL,
+	[CCUSTODEST] [char](10) NULL,
+	[VALTOTAL] [decimal](28, 14) NOT NULL,
+	[VALBASEIRRF] [decimal](28, 14) NULL,
+	[VALPERCIRRF] [decimal](28, 14) NULL,
+	[VALIRRF] [decimal](28, 14) NULL,
+	[TIPCONTRFATPARCIAL] [char](1) NULL CONSTRAINT [DF__TBFATU032__TIPCO__6B44E613] DEFAULT ('V'),
+	[CODINDICE] [char](3) NULL,
+	[PERCACRESDESCCONTR] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU032__PERCA__6C390A4C] DEFAULT (0),
+	[PERCCUSTOFINANCEIRO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU032__PERCC__6D2D2E85] DEFAULT (0),
+	[NUMDIASCORRIDOS] [int] NULL CONSTRAINT [DF__TBFATU032__NUMDI__6E2152BE] DEFAULT (0),
+	[DATINICIOCICLO] [datetime] NULL,
+	[CICLOSFATURADOS] [int] NULL CONSTRAINT [DF__TBFATU032__CICLO__6F1576F7] DEFAULT (0),
+	[DATVENCCONTRATO] [datetime] NULL,
+	[TIPOCICLO] [char](1) NULL CONSTRAINT [DF__TBFATU032__TIPOC__70099B30] DEFAULT ('S'),
+	[NUMDIASCICLO] [int] NULL CONSTRAINT [DF__TBFATU032__NUMDI__70FDBF69] DEFAULT (0),
+	[VALACRESTOTCONTR] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU032__VALAC__71F1E3A2] DEFAULT (0),
+	[VALDESCTOTCONTR] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU032__VALDE__72E607DB] DEFAULT (0),
+	[SUBGRUPO] [char](12) NULL,
+	[CODVEND] [char](6) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU033
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU033] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU033__CODEM__75C27486] DEFAULT ('01'),
+	[NUMCONTRATO] [char](9) NOT NULL,
+	[OBSCONTRATO] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU034
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU034] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU034__CODEM__789EE131] DEFAULT ('01'),
+	[NUMCONTRATO] [char](9) NOT NULL,
+	[NUMITEMCONTRATO] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[STAITEMCONTRATO] [char](1) NOT NULL,
+	[EXTRA] [char](1) NULL,
+	[DATVENC] [datetime] NOT NULL,
+	[CODCIDADE] [char](3) NOT NULL,
+	[CODSERVICO] [char](3) NOT NULL,
+	[VALTOTITEM] [decimal](28, 14) NOT NULL,
+	[VALFATU] [decimal](28, 14) NULL,
+	[PERCALIQISS] [decimal](28, 14) NOT NULL,
+	[CODINDICE] [char](3) NULL,
+	[QTDEITEMCONTRATO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU034__QTDEI__7993056A] DEFAULT (0),
+	[QTDEFATURADA] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU034__QTDEF__7A8729A3] DEFAULT (0),
+	[VALUNITITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU034__VALUN__7B7B4DDC] DEFAULT (0),
+	[VALBRUTOTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU034__VALBR__7C6F7215] DEFAULT (0),
+	[PERCACRESDESCTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU034__PERCA__7D63964E] DEFAULT (0),
+	[VALACRESDESCTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU034__VALAC__7E57BA87] DEFAULT (0),
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[DATINICIOITEM] [datetime] NULL,
+	[NUMCICLOITEM] [int] NULL CONSTRAINT [DF__TBFATU034__NUMCI__7F4BDEC0] DEFAULT (0),
+	[CCUSTO] [char](10) NULL,
+	[CODTRIBSERV] [char](3) NULL,
+	[OPERNFSE] [char](1) NULL,
+	[TRIBNFSE] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU035
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU035] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU035__CODEM__02284B6B] DEFAULT ('01'),
+	[NUMCONTRATO] [char](9) NOT NULL,
+	[NUMITEMCONTRATO] [char](3) NOT NULL,
+	[OBSITEMCONTRATO] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU036
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU036] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU036__CODEM__0504B816] DEFAULT ('01'),
+	[NUMCONTRATO] [char](9) NOT NULL,
+	[OBSCONTRATOCON] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU037
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU037] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU037__CODEM__07E124C1] DEFAULT ('01'),
+	[NUMCONTRATO] [char](9) NOT NULL,
+	[NUMITEMCONTRATO] [char](3) NOT NULL,
+	[OBSITEMCONTRATOCON] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU038
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU038] (
+	[CODSERVICO] [char](3) NOT NULL,
+	[DESSERVICO] [char](30) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STASERVICO] [char](1) NOT NULL,
+	[CODCNAESERV] [char](7) NULL);
+GO
+
+--Table dbo.TBFATU039
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU039] (
+	[CODCIDADE] [char](3) NOT NULL,
+	[NOMECIDADE] [char](40) NOT NULL,
+	[CODUF] [char](2) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STACIDADE] [char](1) NOT NULL,
+	[CODMUNICIPIO] [char](7) NULL);
+GO
+
+--Table dbo.TBFATU040
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU040] (
+	[CODCIDADE] [char](3) NOT NULL,
+	[CODSERVICO] [char](3) NOT NULL,
+	[CODTIPIMPISS] [char](2) NOT NULL,
+	[CODALIQISS] [char](2) NOT NULL,
+	[PERCALIQISS] [decimal](28, 14) NOT NULL,
+	[CODSERVMUNICIPIO] [char](20) NULL CONSTRAINT [DF__TBFATU040__CODSE__0E8E2250] DEFAULT ('00000'));
+GO
+
+--Table dbo.TBFATU041
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU041] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU041__CODEM__116A8EFB] DEFAULT ('01'),
+	[NUMSEQNFSERV] [char](9) NOT NULL,
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[CODCPAGTO] [char](3) NOT NULL,
+	[SEQENDCOBCLI] [char](2) NOT NULL,
+	[SEQENDENTCLI] [char](2) NOT NULL,
+	[STAIMP] [char](1) NOT NULL,
+	[INSCESTSUBSTRIB] [char](12) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[TIPOES] [char](1) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[CALCIMP] [char](1) NOT NULL,
+	[CODCIDADE] [char](3) NULL,
+	[CODSERVICO] [char](3) NULL,
+	[NUMCONTRATO] [char](9) NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[TIPOCOBRANCA] [char](1) NULL,
+	[VALTOTMERC] [decimal](28, 14) NOT NULL,
+	[VALDESPESAS] [decimal](28, 14) NOT NULL,
+	[VALFRETE] [decimal](28, 14) NOT NULL,
+	[VALSEGURO] [decimal](28, 14) NOT NULL,
+	[VALOUTROS] [decimal](28, 14) NOT NULL,
+	[VALTOTNF] [decimal](28, 14) NOT NULL,
+	[VALSERVICO] [decimal](28, 14) NOT NULL,
+	[PERCALIQISS] [decimal](28, 14) NOT NULL,
+	[VALTOTISS] [decimal](28, 14) NOT NULL,
+	[VALTOTMERCTERC] [decimal](28, 14) NOT NULL,
+	[PERCALIQIRRF] [decimal](28, 14) NOT NULL,
+	[VALTOTIRRF] [decimal](28, 14) NOT NULL,
+	[PERCCOMISSAO1] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__PERCC__125EB334] DEFAULT (0),
+	[PERCCOMISSAO2] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__PERCC__1352D76D] DEFAULT (0),
+	[TIPONF] [char](1) NULL,
+	[PERCRETINSSNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__PERCR__1446FBA6] DEFAULT (0),
+	[VALRETINSSTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__VALRE__153B1FDF] DEFAULT (0),
+	[VALCOFINSTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__VALCO__162F4418] DEFAULT (0),
+	[VALPISTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__VALPI__17236851] DEFAULT (0),
+	[CODNATUOPER] [char](3) NULL,
+	[VALTOTNFANTESDOIRRF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__VALTO__18178C8A] DEFAULT (0),
+	[VALACRESTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__VALAC__190BB0C3] DEFAULT (0),
+	[VALDESCTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__VALDE__19FFD4FC] DEFAULT (0),
+	[VALFUNDAFTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__VALFU__1AF3F935] DEFAULT (0),
+	[VALCUSTOFINTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__VALCU__1BE81D6E] DEFAULT (0),
+	[PERCCUSTOFINANCEIRO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__PERCC__1CDC41A7] DEFAULT (0),
+	[NUMDIASCORRIDOS] [int] NULL CONSTRAINT [DF__TBFATU041__NUMDI__1DD065E0] DEFAULT (0),
+	[VALTOTBASERETINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__VALTO__1EC48A19] DEFAULT (0),
+	[STAALTERADUP] [char](1) NULL CONSTRAINT [DF__TBFATU041__STAAL__1FB8AE52] DEFAULT ('S'),
+	[OBSNFSERVCONSULTA] [text] NULL,
+	[CODNATUOPER2] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[NUMPEDCLI] [char](30) NULL,
+	[USER_ID] [char](10) NULL,
+	[VALTOTCSLLRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__VALTO__60DD3190] DEFAULT (0),
+	[VALTOTPISRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__VALTO__61D155C9] DEFAULT (0),
+	[VALTOTCOFINSRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU041__VALTO__62C57A02] DEFAULT (0),
+	[CODVEND] [char](6) NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[DATREFERIND] [datetime] NULL,
+	[NUMPEDINTERNO] [char](30) NULL,
+	[STAARQRPSGERADO] [char](1) NULL CONSTRAINT [DF__TBFATU041__STAAR__33E06DE7] DEFAULT ('N'),
+	[CODGRUPO] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODCFPS] [char](4) NULL,
+	[TIPPAGTO] [char](1) NULL,
+	[TIPTITULO] [char](2) NULL,
+	[DESCOMPLTIT] [char](250) NULL,
+	[VALTOTSUBCONTRATO] [decimal](28, 14) NULL,
+	[VALTOTMERCPROPRIA] [decimal](28, 14) NULL,
+	[CODOS] [char](12) NULL,
+	[OBSNFSRETENCAOCONTRIB] [text] NULL,
+	[VALDEDUCAOISSRET] [float] NULL,
+	[NUMRPS] [char](9) NULL,
+	[DATIMPRPS] [datetime] NULL,
+	[DATCONCLUSAOSERV] [datetime] NULL,
+	[LOCEXESERV] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU042
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU042] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU042__CODEM__22951AFD] DEFAULT ('01'),
+	[NUMSEQNFSERV] [char](9) NOT NULL,
+	[NUMSEQITEMNFSERV] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[NUMPED] [char](9) NULL,
+	[NUMITEMPED] [char](3) NULL,
+	[STACONTRNFR] [char](1) NOT NULL,
+	[NUMCONTRATO] [char](9) NULL,
+	[NUMITEMCONTRATO] [char](3) NULL,
+	[QTDETOTITEM] [decimal](28, 14) NOT NULL,
+	[VALUNITITEM] [decimal](28, 14) NOT NULL,
+	[VALTOTITEM] [decimal](28, 14) NOT NULL,
+	[VALMERCSEMIMP] [decimal](28, 14) NULL,
+	[VALMERCTERC] [decimal](28, 14) NOT NULL,
+	[VALEFETFAT] [decimal](28, 14) NOT NULL,
+	[VALSERVICO] [decimal](28, 14) NOT NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[VALRETINSSTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALRE__23893F36] DEFAULT (0),
+	[CODTRIBSERV] [char](3) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__PERCC__247D636F] DEFAULT (0),
+	[VALCOFINSTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALCO__257187A8] DEFAULT (0),
+	[PERCPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__PERCP__2665ABE1] DEFAULT (0),
+	[VALPISTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALPI__2759D01A] DEFAULT (0),
+	[PERCRETINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__PERCR__284DF453] DEFAULT (0),
+	[VALISSTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALIS__2942188C] DEFAULT (0),
+	[CODINDICE] [char](3) NULL,
+	[VALUNITITEMINDCONTR] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALUN__2A363CC5] DEFAULT (0),
+	[VALTOTITEMINDCONTR] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALTO__2B2A60FE] DEFAULT (0),
+	[VALBRUTOTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALBR__2C1E8537] DEFAULT (0),
+	[PERCACRESDESCITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__PERCA__2D12A970] DEFAULT (0),
+	[VALACRESDESCTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALAC__2E06CDA9] DEFAULT (0),
+	[PERCFUNDAF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__PERCF__2EFAF1E2] DEFAULT (0),
+	[VALFUNDAFTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALFU__2FEF161B] DEFAULT (0),
+	[VALCUSTOFINTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALCU__30E33A54] DEFAULT (0),
+	[VALBASERETINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALBA__31D75E8D] DEFAULT (0),
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[CODCIDADE] [char](3) NULL,
+	[CODSERVICO] [char](3) NULL,
+	[PERCALIQISS] [decimal](28, 14) NULL,
+	[PERCALIQIRRF] [decimal](28, 14) NULL,
+	[CCUSTO] [char](10) NULL,
+	[PERCCSLLRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__PERCC__66960AE6] DEFAULT (0),
+	[PERCPISRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__PERCP__678A2F1F] DEFAULT (0),
+	[PERCCOFINSRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__PERCC__687E5358] DEFAULT (0),
+	[VALCSLLRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALCS__69727791] DEFAULT (0),
+	[VALPISRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALPI__6A669BCA] DEFAULT (0),
+	[VALCOFINSRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU042__VALCO__6B5AC003] DEFAULT (0),
+	[CODGENERO] [char](2) NULL,
+	[CODCTISS] [char](2) NULL,
+	[VALSUBCONTRATO] [decimal](28, 14) NULL,
+	[VALMERCPROPRIA] [decimal](28, 14) NULL,
+	[VALDESPESAS] [decimal](28, 14) NULL,
+	[VALDEDUCAOISSRETITEM] [float] NULL,
+	[OPERNFSE] [char](1) NULL,
+	[TRIBNFSE] [char](1) NULL,
+	[VALRATEIODEDUC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU043
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU043] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU043__CODEM__34B3CB38] DEFAULT ('01'),
+	[NUMSEQNFSERV] [char](9) NOT NULL,
+	[NUMSEQDUP] [char](2) NOT NULL,
+	[DATVENCDUP] [datetime] NOT NULL,
+	[VALDUP] [decimal](28, 14) NOT NULL,
+	[PERCDESCONTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU043__PERCD__35A7EF71] DEFAULT (0),
+	[NUMDIAS] [int] NULL CONSTRAINT [DF__TBFATU043__NUMDI__369C13AA] DEFAULT (0),
+	[STAQUITADO] [char](1) NULL,
+	[PERCPARCELA] [decimal](28, 14) NULL,
+	[VALPISRETPARC] [decimal](28, 14) NULL,
+	[VALCOFINSRETPARC] [decimal](28, 14) NULL,
+	[VALCSLLRETPARC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU044
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU044] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU044__CODEM__39788055] DEFAULT ('01'),
+	[NUMSEQNFSERV] [char](9) NOT NULL,
+	[CODTRANSP] [char](3) NOT NULL,
+	[PAGFRETE] [char](1) NOT NULL,
+	[PLACA] [char](10) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[ESPECIE] [char](15) NULL,
+	[MARCA] [char](15) NULL,
+	[NUMERO] [char](10) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL,
+	[PESOBRUTO] [decimal](28, 14) NULL,
+	[PESOLIQUIDO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU045
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU045] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU045__CODEM__3C54ED00] DEFAULT ('01'),
+	[NUMSEQNFSERV] [char](9) NOT NULL,
+	[OBSNFSERV] [text] NOT NULL,
+	[OBSNFSERVCONSULTA] [text] NULL);
+GO
+
+--Table dbo.TBFATU046
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU046] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU046__CODEM__3F3159AB] DEFAULT ('01'),
+	[NUMSEQNFSERV] [char](9) NOT NULL,
+	[NUMSEQITEMNFSERV] [char](3) NOT NULL,
+	[OBSITEMNFSERV] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU047
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU047] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU047__CODEM__420DC656] DEFAULT ('01'),
+	[NUMSEQNFSERV] [char](9) NOT NULL,
+	[NUMSEQITEMNFSERV] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL);
+GO
+
+--Table dbo.TBFATU048
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU048] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU048__CODEM__44EA3301] DEFAULT ('01'),
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[CODCPAGTO] [char](3) NOT NULL,
+	[SEQENDCOBCLI] [char](2) NOT NULL,
+	[SEQENDENTCLI] [char](2) NOT NULL,
+	[STANF] [char](1) NOT NULL,
+	[INSCESTSUBSTRIB] [char](12) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[TIPOES] [char](1) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[CODCIDADE] [char](3) NULL,
+	[CODSERVICO] [char](3) NULL,
+	[NUMCONTRATO] [char](9) NULL,
+	[EXTRA] [char](1) NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[TIPOCOBRANCA] [char](1) NULL,
+	[VALTOTMERC] [decimal](28, 14) NOT NULL,
+	[VALDESPESAS] [decimal](28, 14) NOT NULL,
+	[VALFRETE] [decimal](28, 14) NOT NULL,
+	[VALSEGURO] [decimal](28, 14) NOT NULL,
+	[VALOUTROS] [decimal](28, 14) NOT NULL,
+	[VALTOTNF] [decimal](28, 14) NOT NULL,
+	[VALSERVICO] [decimal](28, 14) NOT NULL,
+	[PERCALIQISS] [decimal](28, 14) NOT NULL,
+	[VALTOTISS] [decimal](28, 14) NOT NULL,
+	[VALTOTMERCTERC] [decimal](28, 14) NOT NULL,
+	[PERCALIQIRRF] [decimal](28, 14) NOT NULL,
+	[VALTOTIRRF] [decimal](28, 14) NOT NULL,
+	[PERCCOMISSAO1] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__PERCC__45DE573A] DEFAULT (0),
+	[PERCCOMISSAO2] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__PERCC__46D27B73] DEFAULT (0),
+	[DATSAIDA] [datetime] NULL,
+	[HORASAIDA] [char](5) NULL,
+	[TIPONF] [char](1) NULL,
+	[STAEXPLF] [char](1) NULL CONSTRAINT [DF__TBFATU048__STAEX__47C69FAC] DEFAULT ('N'),
+	[STAEXCONT] [char](1) NULL CONSTRAINT [DF__TBFATU048__STAEX__48BAC3E5] DEFAULT ('N'),
+	[PERCRETINSSNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__PERCR__49AEE81E] DEFAULT (0),
+	[VALRETINSSTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__VALRE__4AA30C57] DEFAULT (0),
+	[VALCOFINSTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__VALCO__4B973090] DEFAULT (0),
+	[VALPISTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__VALPI__4C8B54C9] DEFAULT (0),
+	[CODNATUOPER] [char](3) NULL,
+	[VALTOTNFANTESDOIRRF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__VALTO__4D7F7902] DEFAULT (0),
+	[VALACRESTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__VALAC__4E739D3B] DEFAULT (0),
+	[VALDESCTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__VALDE__4F67C174] DEFAULT (0),
+	[VALFUNDAFTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__VALFU__505BE5AD] DEFAULT (0),
+	[VALCUSTOFINTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__VALCU__515009E6] DEFAULT (0),
+	[PERCCUSTOFINANCEIRO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__PERCC__52442E1F] DEFAULT (0),
+	[NUMDIASCORRIDOS] [int] NULL CONSTRAINT [DF__TBFATU048__NUMDI__53385258] DEFAULT (0),
+	[VALTOTBASERETINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__VALTO__542C7691] DEFAULT (0),
+	[CODNATUOPER2] [char](6) NULL,
+	[DATCANC] [datetime] NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[NUMPEDCLI] [char](30) NULL,
+	[USER_ID] [char](10) NULL,
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBFATU048__STAIN__50BBD860] DEFAULT ('N'),
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[NUMSEQCONTROLEFORM] [char](6) NULL,
+	[NUMCONTROLEFORMINICIAL] [char](6) NULL,
+	[NUMCONTROLEFORMFINAL] [char](6) NULL,
+	[AUTORIZACAOREGESPECIAL] [text] NULL,
+	[VALTOTCSLLRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__VALTO__63B99E3B] DEFAULT (0),
+	[VALTOTPISRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__VALTO__64ADC274] DEFAULT (0),
+	[VALTOTCOFINSRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU048__VALTO__65A1E6AD] DEFAULT (0),
+	[CODVEND] [char](6) NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL,
+	[DATREFERIND] [datetime] NULL,
+	[NUMPEDINTERNO] [char](30) NULL,
+	[NUMSEQNFSERV] [char](9) NULL,
+	[CODVERIFICACAONF] [char](8) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODCFPS] [char](4) NULL,
+	[TIPPAGTO] [char](1) NULL,
+	[TIPTITULO] [char](2) NULL,
+	[DESCOMPLTIT] [char](250) NULL,
+	[VALTOTSUBCONTRATO] [decimal](28, 14) NULL,
+	[VALTOTMERCPROPRIA] [decimal](28, 14) NULL,
+	[OBSNFSRETENCAOCONTRIB] [text] NULL,
+	[VALDEDUCAOISSRET] [float] NULL,
+	[STANFSE] [char](1) NULL,
+	[MOTIVOCANC] [char](80) NULL,
+	[CODVERIFICACAOCANC] [char](255) NULL,
+	[DATCONCLUSAOSERV] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU049
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU049] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU049__CODEM__5708E33C] DEFAULT ('01'),
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[NUMITEMNFSERV] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[NUMPED] [char](9) NULL,
+	[NUMITEMPED] [char](3) NULL,
+	[STACONTRNFR] [char](1) NOT NULL,
+	[NUMCONTRATO] [char](9) NULL,
+	[NUMITEMCONTRATO] [char](3) NULL,
+	[QTDETOTITEM] [decimal](28, 14) NOT NULL,
+	[VALUNITITEM] [decimal](28, 14) NOT NULL,
+	[VALTOTITEM] [decimal](28, 14) NOT NULL,
+	[VALMERCSEMIMP] [decimal](28, 14) NULL,
+	[VALMERCTERC] [decimal](28, 14) NOT NULL,
+	[VALEFETFAT] [decimal](28, 14) NOT NULL,
+	[VALSERVICO] [decimal](28, 14) NOT NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[VALRETINSSTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALRE__57FD0775] DEFAULT (0),
+	[CODTRIBSERV] [char](3) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__PERCC__58F12BAE] DEFAULT (0),
+	[VALCOFINSTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALCO__59E54FE7] DEFAULT (0),
+	[PERCPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__PERCP__5AD97420] DEFAULT (0),
+	[VALPISTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALPI__5BCD9859] DEFAULT (0),
+	[PERCRETINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__PERCR__5CC1BC92] DEFAULT (0),
+	[VALISSTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALIS__5DB5E0CB] DEFAULT (0),
+	[CODINDICE] [char](3) NULL,
+	[VALUNITITEMINDCONTR] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALUN__5EAA0504] DEFAULT (0),
+	[VALTOTITEMINDCONTR] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALTO__5F9E293D] DEFAULT (0),
+	[VALBRUTOTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALBR__60924D76] DEFAULT (0),
+	[PERCACRESDESCITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__PERCA__618671AF] DEFAULT (0),
+	[VALACRESDESCTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALAC__627A95E8] DEFAULT (0),
+	[PERCFUNDAF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__PERCF__636EBA21] DEFAULT (0),
+	[VALFUNDAFTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALFU__6462DE5A] DEFAULT (0),
+	[VALCUSTOFINTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALCU__65570293] DEFAULT (0),
+	[VALBASERETINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALBA__664B26CC] DEFAULT (0),
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[CODCIDADE] [char](3) NULL,
+	[CODSERVICO] [char](3) NULL,
+	[PERCALIQISS] [decimal](28, 14) NULL,
+	[PERCALIQIRRF] [decimal](28, 14) NULL,
+	[CCUSTO] [char](10) NULL,
+	[PERCCSLLRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__PERCC__6C4EE43C] DEFAULT (0),
+	[PERCPISRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__PERCP__6D430875] DEFAULT (0),
+	[PERCCOFINSRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__PERCC__6E372CAE] DEFAULT (0),
+	[VALCSLLRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALCS__6F2B50E7] DEFAULT (0),
+	[VALPISRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALPI__701F7520] DEFAULT (0),
+	[VALCOFINSRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU049__VALCO__71139959] DEFAULT (0),
+	[CODGENERO] [char](2) NULL,
+	[CODCTISS] [char](2) NULL,
+	[VALSUBCONTRATO] [decimal](28, 14) NULL,
+	[VALMERCPROPRIA] [decimal](28, 14) NULL,
+	[VALDESPESAS] [decimal](28, 14) NULL,
+	[VALDEDUCAOISSRETITEM] [float] NULL,
+	[OPERNFSE] [char](1) NULL,
+	[TRIBNFSE] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU050
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU050] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU050__CODEM__69279377] DEFAULT ('01'),
+	[NUMDUPSERV] [char](10) NOT NULL,
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[DATVENCDUP] [datetime] NOT NULL,
+	[VALDUP] [decimal](28, 14) NOT NULL,
+	[STAEXPORT] [char](1) NULL CONSTRAINT [DF__TBFATU050__STAEX__6A1BB7B0] DEFAULT ('N'),
+	[STAEXCONT] [char](1) NULL CONSTRAINT [DF__TBFATU050__STAEX__6B0FDBE9] DEFAULT ('N'),
+	[PERCDESCONTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU050__PERCD__6C040022] DEFAULT (0),
+	[STAAGRUPADO] [char](1) NULL CONSTRAINT [DF__TBFATU050__STAAG__6CF8245B] DEFAULT ('N'),
+	[DATEMISSAODUPSERV] [datetime] NULL,
+	[EXTRA] [char](1) NULL CONSTRAINT [DF__TBFATU050__EXTRA__6DEC4894] DEFAULT ('N'),
+	[VALAGRUPADO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU050__VALAG__6EE06CCD] DEFAULT (0),
+	[STAQUITADO] [char](1) NULL,
+	[NOSSONUM] [char](20) NULL,
+	[DIGNOSSONUM] [char](2) NULL,
+	[PERCPARCELA] [decimal](28, 14) NULL,
+	[VALPISRETPARC] [decimal](28, 14) NULL,
+	[VALCOFINSRETPARC] [decimal](28, 14) NULL,
+	[VALCSLLRETPARC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU051
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU051] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU051__CODEM__71BCD978] DEFAULT ('01'),
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[CODTRANSP] [char](3) NOT NULL,
+	[PAGFRETE] [char](1) NOT NULL,
+	[PLACA] [char](10) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[ESPECIE] [char](15) NULL,
+	[MARCA] [char](15) NULL,
+	[NUMERO] [char](10) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL,
+	[PESOBRUTO] [decimal](28, 14) NULL,
+	[PESOLIQUIDO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU052
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU052] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU052__CODEM__74994623] DEFAULT ('01'),
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[OBSNFSERV] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU053
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU053] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU053__CODEM__7775B2CE] DEFAULT ('01'),
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[NUMITEMNFSERV] [char](3) NOT NULL,
+	[OBSITEMNFSERV] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU054
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU054] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU054__CODEM__7A521F79] DEFAULT ('01'),
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[NUMITEMNFSERV] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL);
+GO
+
+--Table dbo.TBFATU055
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU055] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU055__CODEM__7D2E8C24] DEFAULT ('01'),
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[DATCANCTO] [datetime] NOT NULL,
+	[OBSNF] [text] NOT NULL,
+	[USERCANC] [char](10) NULL,
+	[DATCOMPETCANC] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU056
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU056] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU056__CODEM__000AF8CF] DEFAULT ('01'),
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[DATCANCTO] [datetime] NOT NULL,
+	[OBSNFSERV] [text] NOT NULL,
+	[USERCANC] [char](10) NULL,
+	[DATCOMPETCANC] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU057
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU057] (
+	[CODMAT] [char](15) NOT NULL,
+	[CODTABPRECO] [char](3) NOT NULL,
+	[CODFAIXATABPRECO] [char](2) NOT NULL,
+	[PRECO] [decimal](28, 14) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[PERCDESC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU057__PERCD__4A78EF25] DEFAULT (0),
+	[PERCCOMISSAO] [decimal](28, 14) NULL,
+	[CODOBSCOMERCIAL] [char](2) NULL,
+	[CODGRUPODESC] [char](3) NULL,
+	[PERCACRESC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU058
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU058] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU058__CODEM__05C3D225] DEFAULT ('01'),
+	[NUMCONTRATO] [char](9) NOT NULL,
+	[NUMITEMCONTRATO] [char](3) NOT NULL,
+	[NUMEVENTO] [char](3) NOT NULL,
+	[DESEVENTO] [char](40) NOT NULL,
+	[DATEVENTO] [datetime] NOT NULL,
+	[VALEVENTO] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBFATU059
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU059] (
+	[CODTRIBSERV] [char](3) NOT NULL,
+	[DESTRIBSERV] [char](30) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL,
+	[PERCPIS] [decimal](28, 14) NULL,
+	[PERCRETINSS] [decimal](28, 14) NULL,
+	[STACODTRIBSERV] [char](1) NULL CONSTRAINT [DF__TBFATU059__STACO__08A03ED0] DEFAULT ('S'),
+	[IMPRIMEISS] [char](1) NULL CONSTRAINT [DF__TBFATU059__IMPRI__09946309] DEFAULT ('S'),
+	[PERCFUNDAF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU059__PERCF__0A888742] DEFAULT (0),
+	[CONTAPIS] [char](12) NULL,
+	[CONTAPISRECOLHER] [char](12) NULL,
+	[CONTACOFINS] [char](12) NULL,
+	[CONTACOFINSRECOLHER] [char](12) NULL,
+	[CONTACOFINSADIC] [char](12) NULL,
+	[CONTAISS] [char](12) NULL,
+	[CONTAISSRECOLHER] [char](12) NULL,
+	[GERAMOVTODERECEITA] [char](1) NULL CONSTRAINT [DF__TBFATU059__GERAM__0B7CAB7B] DEFAULT ('S'),
+	[PERCCOFINSCONTAB] [decimal](28, 14) NULL,
+	[PERCCOFINSADIC] [decimal](28, 14) NULL,
+	[CONTAINSS] [char](12) NULL,
+	[GERAIMPOSTOCTPAGAR] [char](1) NULL CONSTRAINT [DF__TBFATU059__GERAI__0C70CFB4] DEFAULT ('N'),
+	[CONTACANC] [char](12) NULL,
+	[CONTACANCPIS] [char](12) NULL,
+	[CONTACANCCOFINS] [char](12) NULL,
+	[CONTACANCISS] [char](12) NULL,
+	[CODEVENTO] [char](5) NULL,
+	[STAVENDA] [char](1) NULL CONSTRAINT [DF__TBFATU059__STAVE__7B1C2680] DEFAULT ('S'),
+	[CONTAREC] [char](12) NULL,
+	[PERCCSLLRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU059__PERCC__5E00C4E5] DEFAULT (0),
+	[PERCPISRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU059__PERCP__5EF4E91E] DEFAULT (0),
+	[PERCCOFINSRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU059__PERCC__5FE90D57] DEFAULT (0),
+	[CODCTISS] [char](2) NULL,
+	[CODCFPS] [char](4) NULL,
+	[IMPRIMEIRRF] [char](1) NULL,
+	[CODBASECALCREDITO] [char](2) NULL,
+	[SITTRIBPIS] [char](2) NULL,
+	[SITTRIBCOFINS] [char](2) NULL,
+	[CODBASECALCREDITOPIS] [char](2) NULL,
+	[CODCONTRIBAPURADAPIS] [char](2) NULL,
+	[CODTIPCREDITOPIS] [char](3) NULL,
+	[CODALIQCREDPRESUMAGROPIS] [char](3) NULL,
+	[CODPRODMONOFASALIQDIFPIS] [char](3) NULL,
+	[CODPRODMONOFASALIQUMPIS] [char](3) NULL,
+	[CODPRODSUBSTRIBCSPIS] [char](3) NULL,
+	[CODPRODALIQZEROCSPIS] [char](3) NULL,
+	[CODOPERISENCAOCSPIS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACSPIS] [char](3) NULL,
+	[CODOPERSUSPENSAOCSPIS] [char](3) NULL,
+	[CODOPEROUTRASALIQCSPIS] [char](3) NULL,
+	[CODBASECALCREDITOCOFINS] [char](2) NULL,
+	[CODCONTRIBAPURADACOFINS] [char](2) NULL,
+	[CODTIPCREDITOCOFINS] [char](3) NULL,
+	[CODALIQCREDPRESUMAGROCOFINS] [char](3) NULL,
+	[CODPRODMONOFASALIQDIFCOFINS] [char](3) NULL,
+	[CODPRODMONOFASALIQUMCOFINS] [char](3) NULL,
+	[CODPRODSUBSTRIBCSCOFINS] [char](3) NULL,
+	[CODPRODALIQZEROCSCOFINS] [char](3) NULL,
+	[CODOPERISENCAOCSCOFINS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACSCOFINS] [char](3) NULL,
+	[CODOPERSUSPENSAOCSCOFINS] [char](3) NULL,
+	[CODOPEROUTRASALIQCSCOFINS] [char](3) NULL,
+	[CODCMPISCOFINS] [char](3) NULL);
+GO
+
+--Table dbo.TBFATU060
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU060] (
+	[CODTABPRECO] [char](3) NOT NULL,
+	[CODINDICE] [char](3) NOT NULL,
+	[DESTABPRECO] [char](20) NULL,
+	[STATABPRECO] [char](1) NULL,
+	[PERCDESC] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU060__PERCD__0F4D3C5F] DEFAULT (0),
+	[TPTABPRECO] [char](1) NULL,
+	[PERCMARGEMLUCRO] [decimal](28, 14) NULL,
+	[PERCDESCPROMO] [decimal](28, 14) NULL,
+	[PERCACRESC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU061
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU061] (
+	[CODEMITENTE] [char](9) NOT NULL,
+	[TIPCODIGO] [char](1) NOT NULL CONSTRAINT [DF__TBFATU061__TIPCO__1229A90A] DEFAULT ('V'),
+	[TIPCOTA] [char](1) NOT NULL CONSTRAINT [DF__TBFATU061__TIPCO__131DCD43] DEFAULT ('Q'),
+	[VALCOTA] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU061__VALCO__1411F17C] DEFAULT (0),
+	[ANO] [char](4) NOT NULL,
+	[MES] [char](2) NOT NULL);
+GO
+
+--Table dbo.TBFATU062
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU062] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU062__CODEM__16EE5E27] DEFAULT ('01'),
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[CODCIDADE] [char](3) NULL,
+	[CODSERVICO] [char](3) NULL,
+	[VALTOTNF] [decimal](28, 14) NOT NULL,
+	[PERCALIQISS] [decimal](28, 14) NOT NULL,
+	[VALTOTISS] [decimal](28, 14) NOT NULL,
+	[VALDEDUZMAT] [decimal](28, 14) NULL,
+	[VALDEDUZSUBEMP] [decimal](28, 14) NULL,
+	[VALBASEISSALTERADA] [decimal](28, 14) NULL,
+	[INFORMACOES] [char](50) NULL,
+	[STANF] [char](1) NOT NULL,
+	[OBSALTERACOES] [text] NULL);
+GO
+
+--Table dbo.TBFATU064
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU064] (
+	[CODTRANSP] [char](3) NOT NULL,
+	[PLACA] [char](10) NOT NULL,
+	[CIDADE] [char](30) NOT NULL,
+	[CODUFPLACA] [char](2) NOT NULL,
+	[MARCA] [char](15) NOT NULL,
+	[NOMEMOTORISTA] [char](40) NULL);
+GO
+
+--Table dbo.TBFATU065
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU065] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQCONHEC] [char](9) NOT NULL,
+	[CODEMPEMIT] [char](2) NOT NULL,
+	[CODNATUOPER] [char](3) NULL,
+	[DESNATUOP] [char](30) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[CODCPAGTO] [char](3) NOT NULL,
+	[TIPOCOBRANCA] [char](1) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[SEQENDENTCLI] [char](2) NOT NULL,
+	[RAZSOCDEST] [char](50) NULL,
+	[ENDDEST] [char](40) NULL,
+	[CIDADEDEST] [char](30) NULL,
+	[CODUFDEST] [char](2) NULL,
+	[INSCRESTADEST] [char](15) NULL,
+	[NUMCGCDEST] [char](14) NULL,
+	[RAZSOCCONSIG] [char](50) NULL,
+	[ENDCONSIG] [char](40) NULL,
+	[CIDADECONSIG] [char](30) NULL,
+	[CODUFCONSIG] [char](2) NULL,
+	[RAZSOCREDESP] [char](50) NULL,
+	[ENDREDESP] [char](40) NULL,
+	[CIDADEREDESP] [char](30) NULL,
+	[CODUFREDESP] [char](2) NULL,
+	[INSCRESTAREDESP] [char](15) NULL,
+	[NUMCGCREDESP] [char](14) NULL,
+	[NUMCONHECREDESP] [char](6) NULL,
+	[VALFRETEPESOVOLUME] [decimal](28, 14) NULL,
+	[VALFRETE] [decimal](28, 14) NULL,
+	[VALSECAT] [decimal](28, 14) NULL,
+	[VALDESPACHO] [decimal](28, 14) NULL,
+	[VALPEDAGIO] [decimal](28, 14) NULL,
+	[VALOUTROS] [decimal](28, 14) NULL,
+	[LOCALCOLETA] [char](40) NULL,
+	[LOCALENTREGA] [char](40) NULL,
+	[PAGFRETE] [char](1) NULL,
+	[VALTOTFRETE] [decimal](28, 14) NULL,
+	[VALBASECALCICMS] [decimal](28, 14) NULL,
+	[PERCICM] [decimal](28, 14) NULL,
+	[OBSNF] [text] NULL,
+	[STAEXCONT] [char](1) NOT NULL,
+	[PLACA] [char](10) NULL,
+	[CIDADEPLACA] [char](30) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[MARCAPLACA] [char](15) NULL,
+	[NOMEMOTORISTA] [char](40) NULL,
+	[PESOFRETE] [decimal](28, 14) NULL,
+	[STACOMPLETA] [char](1) NULL,
+	[STAIMPRESSAO] [char](1) NULL,
+	[STAALTERADUP] [char](1) NULL CONSTRAINT [DF__TBFATU065__STAAL__1BB31344] DEFAULT ('S'),
+	[NUMNFCONHEC] [char](6) NULL,
+	[SERNFCONHEC] [char](5) NULL,
+	[OBSDUP] [text] NULL,
+	[CODNATUOPER2] [char](6) NULL);
+GO
+
+--Table dbo.TBFATU066
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU066] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQCONHEC] [char](9) NOT NULL,
+	[CODEMPEMIT] [char](2) NOT NULL,
+	[NUMNFCARGA] [char](6) NOT NULL,
+	[SERNFCARGA] [char](5) NOT NULL,
+	[NATCARGA] [char](20) NULL,
+	[VALTOTMERC] [decimal](28, 14) NOT NULL,
+	[PESOBRUTO] [decimal](28, 14) NULL,
+	[PESOLIQUIDO] [decimal](28, 14) NULL,
+	[VOLUME] [decimal](28, 14) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL,
+	[ESPECIE] [char](15) NULL);
+GO
+
+--Table dbo.TBFATU067
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU067] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQCONHEC] [char](9) NOT NULL,
+	[NUMSEQDUPCONHEC] [char](2) NOT NULL,
+	[CODEMPEMIT] [char](2) NOT NULL,
+	[DATVENCDUP] [datetime] NOT NULL,
+	[VALDUP] [decimal](28, 14) NOT NULL,
+	[NUMDIAS] [int] NOT NULL,
+	[TIPDOC] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU068
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU068] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODEMPEMIT] [char](2) NOT NULL,
+	[NUMNFCONHEC] [char](6) NOT NULL,
+	[SERNFCONHEC] [char](5) NOT NULL,
+	[CODNATUOPER] [char](3) NULL,
+	[DESNATUOP] [char](30) NULL,
+	[STANF] [char](1) NOT NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[CODCPAGTO] [char](3) NOT NULL,
+	[TIPOCOBRANCA] [char](1) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[SEQENDENTCLI] [char](2) NOT NULL,
+	[RAZSOCDEST] [char](50) NULL,
+	[ENDDEST] [char](40) NULL,
+	[CIDADEDEST] [char](30) NULL,
+	[CODUFDEST] [char](2) NULL,
+	[INSCRESTADEST] [char](15) NULL,
+	[NUMCGCDEST] [char](14) NULL,
+	[RAZSOCCONSIG] [char](50) NULL,
+	[ENDCONSIG] [char](40) NULL,
+	[CIDADECONSIG] [char](30) NULL,
+	[CODUFCONSIG] [char](2) NULL,
+	[RAZSOCREDESP] [char](50) NULL,
+	[ENDREDESP] [char](40) NULL,
+	[CIDADEREDESP] [char](30) NULL,
+	[CODUFREDESP] [char](2) NULL,
+	[NUMCGCREDESP] [char](14) NULL,
+	[VALFRETE] [decimal](28, 14) NULL,
+	[VALDESPACHO] [decimal](28, 14) NULL,
+	[VALPEDAGIO] [decimal](28, 14) NULL,
+	[VALOUTROS] [decimal](28, 14) NULL,
+	[LOCALCOLETA] [char](40) NULL,
+	[LOCALENTREGA] [char](40) NULL,
+	[PAGFRETE] [char](1) NULL,
+	[VALTOTFRETE] [decimal](28, 14) NULL,
+	[VALBASECALCICMS] [decimal](28, 14) NULL,
+	[PERCICM] [decimal](28, 14) NULL,
+	[OBSNF] [text] NULL,
+	[STAEXCONT] [char](1) NOT NULL,
+	[PLACA] [char](10) NULL,
+	[CIDADEPLACA] [char](30) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[MARCAPLACA] [char](15) NULL,
+	[NOMEMOTORISTA] [char](40) NULL,
+	[PESOFRETE] [decimal](28, 14) NULL,
+	[NUMCONHECREDESP] [char](6) NULL,
+	[VALFRETEPESOVOLUME] [decimal](28, 14) NULL,
+	[VALSECAT] [decimal](28, 14) NULL,
+	[STACOMPLETA] [char](1) NOT NULL,
+	[STAIMPRESSAO] [char](1) NOT NULL,
+	[OBSDUP] [text] NULL,
+	[INSCRESTAREDESP] [char](15) NULL,
+	[CODNATUOPER2] [char](6) NULL);
+GO
+
+--Table dbo.TBFATU069
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU069] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODEMPEMIT] [char](2) NOT NULL,
+	[NUMNFCONHEC] [char](6) NOT NULL,
+	[SERNFCONHEC] [char](5) NOT NULL,
+	[NUMNFCARGA] [char](6) NOT NULL,
+	[SERNFCARGA] [char](5) NOT NULL,
+	[NATCARGA] [char](20) NULL,
+	[VALTOTMERC] [decimal](28, 14) NOT NULL,
+	[PESOBRUTO] [decimal](28, 14) NULL,
+	[PESOLIQUIDO] [decimal](28, 14) NULL,
+	[VOLUME] [decimal](28, 14) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL,
+	[ESPECIE] [char](15) NULL);
+GO
+
+--Table dbo.TBFATU070
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU070] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODEMPEMIT] [char](2) NOT NULL,
+	[NUMNFCONHEC] [char](6) NOT NULL,
+	[SERNFCONHEC] [char](5) NOT NULL,
+	[NUMDUPCONHEC] [char](10) NOT NULL,
+	[DATVENCDUP] [datetime] NOT NULL,
+	[VALDUP] [decimal](28, 14) NOT NULL,
+	[NUMDIAS] [int] NOT NULL,
+	[TIPDOC] [char](1) NULL,
+	[DATEMISSAODUPCONHEC] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU071
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU071] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU071__CODEM__2818EA29] DEFAULT ('01'),
+	[NUMORCAM] [char](9) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[CCUSTO] [char](10) NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[STAORCAM] [char](1) NOT NULL,
+	[TIPORCAM] [char](1) NULL,
+	[CODTRANSP] [char](3) NULL,
+	[DATENCER] [datetime] NULL,
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[TIPOCOBRANCA] [char](1) NULL,
+	[VALTOTALORCAM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU071__VALTO__290D0E62] DEFAULT (0),
+	[VALACRESTOTORCAM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU071__VALAC__2A01329B] DEFAULT (0),
+	[VALDESCTOTORCAM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU071__VALDE__2AF556D4] DEFAULT (0),
+	[PAGFRETE] [char](1) NULL CONSTRAINT [DF__TBFATU071__PAGFR__2BE97B0D] DEFAULT ('1'),
+	[NUMPEDCLI] [char](9) NULL,
+	[PERCCOMISSAO1] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU071__PERCC__2CDD9F46] DEFAULT (0),
+	[PERCCOMISSAO1VEND2] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU071__PERCC__2DD1C37F] DEFAULT (0),
+	[PERCACRESDESCORCAM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU071__PERCA__2EC5E7B8] DEFAULT (0),
+	[CODTABPRECO] [char](3) NULL,
+	[DATVALIDADE] [datetime] NULL,
+	[VALFRETE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU071__VALFR__2FBA0BF1] DEFAULT (0),
+	[NUMPEDCLI2] [char](30) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[CODVEND] [char](6) NULL,
+	[CODVEND2] [char](6) NULL,
+	[STACONVMOEDA] [char](1) NULL,
+	[CONTATOCLI] [char](20) NULL,
+	[VALPERCICM] [decimal](28, 14) NULL,
+	[OBSFRETE] [char](60) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[DESCVALIDADE] [char](30) NULL,
+	[FATURMINIMO] [decimal](28, 14) NULL,
+	[CODINDICE] [char](3) NULL,
+	[DATREFERIND] [datetime] NULL,
+	[STAINDPREFIXADO] [char](1) NULL,
+	[ANALISECRITICA] [char](10) NULL,
+	[DEPTOCONTATO] [char](30) NULL,
+	[EMAILCONTATO] [char](50) NULL,
+	[TELCONTATO] [char](12) NULL,
+	[USER_IDCOPIA] [char](10) NULL,
+	[RAZSOCCLIORCAM] [char](80) NULL,
+	[NOMFANTASCLIORCAM] [char](40) NULL,
+	[TIPFISJURORCAM] [char](1) NULL,
+	[NUMCGCCPFCLIORCAM] [char](14) NULL,
+	[INSCRESTAORCAM] [char](20) NULL,
+	[ENDCLIORCAM] [char](40) NULL,
+	[NUMENDCLIORCAM] [char](6) NULL,
+	[BAIRROCLIORCAM] [char](30) NULL,
+	[COMPLENDCLIORCAM] [char](20) NULL,
+	[CODPAISORCAM] [char](5) NULL,
+	[CODUFORCAM] [char](2) NULL,
+	[CODMUNICIPIOORCAM] [char](7) NULL,
+	[CIDADECLIORCAM] [char](30) NULL,
+	[CEPCLIORCAM] [char](8) NULL,
+	[TELCLIORCAM] [char](12) NULL,
+	[FAXCLIORCAM] [char](12) NULL,
+	[RAMALCLIORCAM] [char](4) NULL,
+	[EMAILORCAM] [char](70) NULL,
+	[HOMEPAGEORCAM] [char](70) NULL,
+	[ENDCOBCLIORCAM] [char](40) NULL,
+	[NUMENDCOBCLIORCAM] [char](6) NULL,
+	[COMPLENDCOBCLIORCAM] [char](20) NULL,
+	[BAIRROCOBCLIORCAM] [char](30) NULL,
+	[CIDADECOBCLIORCAM] [char](30) NULL,
+	[CODUFCOBCLIORCAM] [char](2) NULL,
+	[CEPCOBCLIORCAM] [char](10) NULL,
+	[TELCOBCLIORCAM] [char](12) NULL,
+	[FAXCOBCLIORCAM] [char](12) NULL,
+	[RAMALCOBCLIORCAM] [char](4) NULL,
+	[CODMUNICIPIOCOBORCAM] [char](7) NULL,
+	[CODPAISCOBORCAM] [char](5) NULL,
+	[ENDENTCLIORCAM] [char](40) NULL,
+	[NUMENDENTCLIORCAM] [char](6) NULL,
+	[COMPLENDENTCLIORCAM] [char](20) NULL,
+	[BAIRROENTCLIORCAM] [char](30) NULL,
+	[CIDADEENTCLIORCAM] [char](30) NULL,
+	[CODUFENTCLIORCAM] [char](2) NULL,
+	[CEPENTCLIORCAM] [char](10) NULL,
+	[TELENTCLIORCAM] [char](12) NULL,
+	[FAXENTCLIORCAM] [char](12) NULL,
+	[RAMALENTCLIORCAM] [char](4) NULL,
+	[CODMUNICIPIOENTORCAM] [char](7) NULL,
+	[CODPAISENTORCAM] [char](5) NULL,
+	[CODCLI] [char](9) NULL,
+	[SEQENDCOBCLI] [char](2) NULL,
+	[SEQENDENTCLI] [char](2) NULL,
+	[VALSEGURO] [decimal](28, 14) NULL,
+	[VALDESPESAS] [decimal](28, 14) NULL,
+	[DESPRAZOENTREGA] [char](30) NULL,
+	[DESPRAZOGARANTIA] [char](30) NULL,
+	[STAORCAMFECHADO] [char](1) NULL CONSTRAINT [DF__TBFATU071__STAOR__2D3E5D50] DEFAULT ('S'),
+	[CODCANALVENDA] [char](3) NULL);
+GO
+
+--Table dbo.TBFATU072
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU072] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU072__CODEM__3296789C] DEFAULT ('01'),
+	[NUMORCAM] [char](9) NOT NULL,
+	[NUMITEMORCAM] [char](3) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[STAITEMORCAM] [char](1) NOT NULL,
+	[EXTRA] [char](1) NULL,
+	[DATNEC] [datetime] NULL,
+	[QTDEITEMORCAM] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU072__QTDEI__338A9CD5] DEFAULT (0),
+	[VALUNIT] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU072__VALUN__347EC10E] DEFAULT (0),
+	[VALTOT] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU072__VALTO__3572E547] DEFAULT (0),
+	[QTDEPEDIDA] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU072__QTDEP__36670980] DEFAULT (0),
+	[QTDEAPEDIR] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU072__QTDEA__375B2DB9] DEFAULT (0),
+	[VALBRUTOTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU072__VALBR__384F51F2] DEFAULT (0),
+	[PERCACRESDESCITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU072__PERCA__3943762B] DEFAULT (0),
+	[VALACRESDESCTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU072__VALAC__3A379A64] DEFAULT (0),
+	[CODINDICE] [char](3) NULL,
+	[CODTABPRECO] [char](3) NULL,
+	[CODUNIMEDITEM] [char](2) NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[CODMATREDUZIDO] [char](40) NULL,
+	[TIPUSOMATERIAL] [char](1) NULL CONSTRAINT [DF__TBFATU072__TIPUS__6D18EB43] DEFAULT ('U'),
+	[VALUNITLIQ] [decimal](28, 14) NULL,
+	[VALUNITINDCLI] [decimal](28, 14) NULL,
+	[PERCMARGEMLUCRO] [decimal](28, 14) NULL,
+	[DESMATORCAM] [char](70) NULL,
+	[CODCLASSFISCORCAM] [char](10) NULL,
+	[CODMAT] [char](15) NULL,
+	[CODMOVFISCORCAM] [char](3) NULL,
+	[VALINSUMOS] [decimal](28, 14) NULL,
+	[VALMAODEOBRA] [decimal](28, 14) NULL,
+	[PRAZODEVOLUCAO] [int] NULL,
+	[STAUSADESCDIGITADO] [char](1) NULL,
+	[PORCSUBSTRIB] [decimal](28, 14) NULL,
+	[PORCIPI] [decimal](28, 14) NULL,
+	[PORCICMS] [decimal](28, 14) NULL,
+	[STAIPI] [char](2) NULL,
+	[STAICMS] [char](2) NULL,
+	[STASUBSTRIB] [char](2) NULL,
+	[PERCMAOOBRA] [decimal](28, 14) NULL,
+	[PERCCOMISSAO] [decimal](28, 14) NULL,
+	[VALCOMISSAO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU073
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU073] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU073__CODEM__3D14070F] DEFAULT ('01'),
+	[NUMORCAM] [char](9) NOT NULL,
+	[OBSORCAMIMP] [text] NULL);
+GO
+
+--Table dbo.TBFATU074
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU074] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU074__CODEM__3FF073BA] DEFAULT ('01'),
+	[NUMORCAM] [char](9) NOT NULL,
+	[OBSORCAMCON] [text] NULL);
+GO
+
+--Table dbo.TBFATU075
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU075] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU075__CODEM__42CCE065] DEFAULT ('01'),
+	[NUMORCAM] [char](9) NOT NULL,
+	[NUMITEMORCAM] [char](3) NOT NULL,
+	[OBSITEMORCAMIMP] [text] NULL);
+GO
+
+--Table dbo.TBFATU076
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU076] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU076__CODEM__45A94D10] DEFAULT ('01'),
+	[NUMORCAM] [char](9) NOT NULL,
+	[NUMITEMORCAM] [char](3) NOT NULL,
+	[OBSITEMORCAMCON] [text] NULL);
+GO
+
+--Table dbo.TBFATU077
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU077] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU077__CODEM__4885B9BB] DEFAULT ('01'),
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMSEQITEMNF] [char](3) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNFENT] [char](6) NOT NULL,
+	[SERNFENT] [char](5) NOT NULL,
+	[NUMITEMNFENT] [char](2) NOT NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[QTDERETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU077__QTDER__4979DDF4] DEFAULT (0),
+	[VALRETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU077__VALRE__4A6E022D] DEFAULT (0),
+	[ORDEMCODFORN] [char](1) NULL CONSTRAINT [DF__TBFATU077__ORDEM__5A3B20F9] DEFAULT ('0'),
+	[CODLOTE] [char](15) NOT NULL CONSTRAINT [DF__TBFATU077__CODLO__5EFFD616] DEFAULT (''));
+GO
+
+--Table dbo.TBFATU078
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU078] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU078__CODEM__4D4A6ED8] DEFAULT ('01'),
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](3) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNFENT] [char](6) NOT NULL,
+	[SERNFENT] [char](5) NOT NULL,
+	[NUMITEMNFENT] [char](2) NOT NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[QTDERETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU078__QTDER__4E3E9311] DEFAULT (0),
+	[VALRETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU078__VALRE__4F32B74A] DEFAULT (0),
+	[CODLOTE] [char](15) NOT NULL CONSTRAINT [DF__TBFATU078__CODLO__5B2F4532] DEFAULT (''));
+GO
+
+--Table dbo.TBFATU079
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU079] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU079__CODEM__010A0A00] DEFAULT ('01'),
+	[NUMPROTOCOLO] [char](9) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[NUMNFENT] [char](6) NOT NULL,
+	[SERNFENT] [char](5) NOT NULL,
+	[NUMITEMNFENT] [char](2) NOT NULL,
+	[CODMATENT] [char](15) NOT NULL,
+	[DATEMISSAOENT] [datetime] NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[QTDERETORNO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU079__QTDER__01FE2E39] DEFAULT (0),
+	[QTDERETPROD] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU079__QTDER__02F25272] DEFAULT (0),
+	[VALRETORNO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU079__VALRE__03E676AB] DEFAULT (0),
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[CODFORN] [char](6) NULL,
+	[CODLOTE] [char](15) NOT NULL CONSTRAINT [DF__TBFATU079__CODLO__5D178DA4] DEFAULT (''),
+	[NUMLANC] [char](9) NULL,
+	[DATHORINC] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU080
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU080] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU080__CODEM__53433F50] DEFAULT ('01'),
+	[NUMNFPRODSERV] [char](6) NOT NULL,
+	[SERNFPRODSERV] [char](5) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[CODESPECIFIC] [char](2) NOT NULL,
+	[TIPESPECIFIC] [char](40) NOT NULL,
+	[DESESPECIFIC] [char](1000) NULL,
+	[DATEMISSAOCARTA] [datetime] NOT NULL,
+	[STACCE] [char](2) NULL,
+	[IDLOTE] [int] NULL,
+	[SEQEVENTO] [char](2) NOT NULL,
+	[XMLENVIOCARTA] [text] NULL);
+GO
+
+--Table dbo.TBFATU081
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU081] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU081__CODEM__099F5001] DEFAULT ('01'),
+	[NUMSEQNF] [char](9) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[SEQOPER] [char](3) NOT NULL,
+	[CODMATPROD] [char](15) NOT NULL,
+	[QTDERETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU081__QTDER__0A93743A] DEFAULT (0),
+	[STACOMPLEMENTO] [char](1) NULL CONSTRAINT [DF__TBFATU081__STACO__0B879873] DEFAULT ('N'));
+GO
+
+--Table dbo.TBFATU082
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU082] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU082__CODEM__104C4D90] DEFAULT ('01'),
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[SEQOPER] [char](3) NOT NULL,
+	[CODMATPROD] [char](15) NOT NULL,
+	[QTDERETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU082__QTDER__114071C9] DEFAULT (0),
+	[STACOMPLEMENTO] [char](1) NULL CONSTRAINT [DF__TBFATU082__STACO__12349602] DEFAULT ('N'),
+	[EXTRA] [char](1) NULL CONSTRAINT [DF__TBFATU082__EXTRA__1E9A6CE7] DEFAULT ('N'),
+	[QTDERETNFATUAL] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU082__QTDER__1F8E9120] DEFAULT (0),
+	[QTDESALDORETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU082__QTDES__2082B559] DEFAULT (0),
+	[CERTIFICADO] [char](15) NULL);
+GO
+
+--Table dbo.TBFATU083
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU083] (
+	[CODTABPRECO] [char](3) NOT NULL,
+	[CODFAIXATABPRECO] [char](2) NOT NULL,
+	[DESCFAIXATABPRECO] [char](20) NULL,
+	[LIMITEQTDE] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU084
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU084] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMPED] [char](9) NOT NULL,
+	[NUMITEMPED] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[CCUSTO] [char](10) NULL,
+	[QTDERESERVADA] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU084__QTDER__76577163] DEFAULT (0),
+	[QTDENFS] [int] NULL CONSTRAINT [DF__TBFATU084__QTDEN__774B959C] DEFAULT (0),
+	[CODUNIMED] [char](2) NULL);
+GO
+
+--Table dbo.TBFATU085
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU085] (
+	[CODMAT] [char](15) NOT NULL,
+	[CODESCALA] [char](2) NOT NULL,
+	[QTDEFAIXAINICIAL] [decimal](28, 14) NULL,
+	[QTDEFAIXAFINAL] [decimal](28, 14) NULL,
+	[PERCCOMISSMAT] [decimal](28, 14) NULL,
+	[USAESCALA] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU086
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU086] (
+	[CODTIPOVENDA] [char](5) NOT NULL,
+	[DESCTIPOVENDA] [char](30) NULL,
+	[NUMNIVELTIPOVENDA] [char](2) NULL);
+GO
+
+--Table dbo.TBFATU087
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU087] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMPED] [char](9) NOT NULL,
+	[CODMOTIVOBLOQ] [char](2) NOT NULL,
+	[NUMITEMPED] [char](3) NOT NULL,
+	[STALIBERADO] [char](1) NULL,
+	[DATLIBERACAO] [datetime] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBFATU088
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU088] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCOMODATO] [char](10) NOT NULL,
+	[CODCLI] [char](9) NULL,
+	[DATEMISSCOMODATO] [datetime] NULL,
+	[DATVENCCOMODATO] [datetime] NULL,
+	[DATENCCOMODATO] [datetime] NULL,
+	[STACOMODATO] [char](1) NULL,
+	[OBSCOMODATO] [text] NULL,
+	[STADOCUMENT] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU089
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU089] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCOMODATO] [char](10) NOT NULL,
+	[NUMITEMCOMODATO] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[QTDEMATERIAL] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU089__QTDEM__41AE9EFA] DEFAULT (0),
+	[CODUNIMED] [char](2) NULL);
+GO
+
+--Table dbo.TBFATU090
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU090] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCOMODATO] [char](10) NOT NULL,
+	[NUMITEMCOMODATO] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[QTDEMATCONSUMO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU090__QTDEM__448B0BA5] DEFAULT (0),
+	[PRAZODIASCONSUMO] [int] NULL);
+GO
+
+--Table dbo.TBFATU091
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU091] (
+	[CODEMP] [char](2) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[CODSEQNUMERACAO] [char](2) NOT NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[USER_ID] [char](10) NULL,
+	[STAREGIMEESPECIAL] [char](1) NULL,
+	[NUMSEQCONTROLEFORM] [char](6) NULL,
+	[NUMCONTROLEFORMINICIAL] [char](6) NULL,
+	[NUMCONTROLEFORMFINAL] [char](6) NULL,
+	[AUTORIZACAOREGESPECIAL] [text] NULL,
+	[CAMINHOLOGONF] [char](100) NULL,
+	[STAIMPVERSO] [char](1) NULL,
+	[CAMINHOSELONF] [char](100) NULL,
+	[NOMDOCNF] [char](40) NULL,
+	[SEQNUMNFSCAN] [char](6) NULL,
+	[SEQSERNFSCAN] [char](5) NULL,
+	[STAEMITENFE] [char](1) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[STACUPOMFISCAL] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU092
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU092] (
+	[CODEMPNFDEV] [char](2) NOT NULL,
+	[NUMSEQNFDEV] [char](9) NOT NULL,
+	[CODCLINFDEV] [char](9) NOT NULL,
+	[ORIGEMTITULO] [char](1) NOT NULL,
+	[CODEMPTITULO] [char](2) NOT NULL,
+	[CODDOCUMTITULO] [char](3) NOT NULL,
+	[NUMTITULO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL,
+	[CODFORNTITULO] [char](6) NOT NULL,
+	[DESDOBROTITULO] [char](2) NOT NULL,
+	[NUMSEQPAGTOTITULO] [char](2) NOT NULL,
+	[VALORABAIXAR] [decimal](28, 14) NULL,
+	[DATVENCTOTITULO] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU093
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU093] (
+	[CODEMPNFDEV] [char](2) NOT NULL,
+	[NUMNFDEV] [char](6) NOT NULL,
+	[SERNFDEV] [char](5) NOT NULL,
+	[CODCLINFDEV] [char](9) NOT NULL,
+	[ORIGEMTITULO] [char](1) NOT NULL,
+	[CODEMPTITULO] [char](2) NOT NULL,
+	[CODDOCUMTITULO] [char](3) NOT NULL,
+	[NUMTITULO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL,
+	[CODFORNTITULO] [char](6) NOT NULL,
+	[DESDOBROTITULO] [char](2) NOT NULL,
+	[NUMSEQPAGTOTITULO] [char](2) NOT NULL,
+	[VALORABAIXAR] [decimal](28, 14) NULL,
+	[DATVENCTOTITULO] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU094
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU094] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMSEQITEMNF] [char](3) NOT NULL,
+	[CODMATCOMP] [char](15) NOT NULL,
+	[QTDECOMP] [decimal](28, 14) NULL,
+	[CODALMOXCOMP] [char](3) NULL,
+	[CODLOTE] [char](15) NOT NULL CONSTRAINT [DF__TBFATU094__CODLO__60E81E88] DEFAULT (''));
+GO
+
+--Table dbo.TBFATU095
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU095] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](3) NOT NULL,
+	[CODMATCOMP] [char](15) NOT NULL,
+	[QTDECOMP] [decimal](28, 14) NULL,
+	[VALUNITESTOQ] [decimal](28, 14) NULL,
+	[NUMLANC] [char](9) NULL,
+	[CODALMOXCOMP] [char](3) NULL,
+	[CODLOTE] [char](15) NOT NULL CONSTRAINT [DF__TBFATU095__CODLO__61DC42C1] DEFAULT (''));
+GO
+
+--Table dbo.TBFATU096
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU096] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNF] [char](9) NOT NULL,
+	[SEQ] [char](2) NOT NULL,
+	[CODTIPEMBALAGEM] [char](2) NULL,
+	[ESPECIE] [char](40) NULL,
+	[MARCA] [char](40) NULL,
+	[NUMERO] [char](10) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU096__QTDET__158603F9] DEFAULT (0),
+	[PESOBRUTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU096__PESOB__167A2832] DEFAULT (0),
+	[PESOLIQUIDO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU096__PESOL__176E4C6B] DEFAULT (0));
+GO
+
+--Table dbo.TBFATU097
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU097] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[SEQ] [char](2) NOT NULL,
+	[CODTIPEMBALAGEM] [char](2) NULL,
+	[ESPECIE] [char](40) NULL,
+	[MARCA] [char](40) NULL,
+	[NUMERO] [char](10) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU097__QTDET__1C330188] DEFAULT (0),
+	[PESOBRUTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU097__PESOB__1D2725C1] DEFAULT (0),
+	[PESOLIQUIDO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU097__PESOL__1E1B49FA] DEFAULT (0));
+GO
+
+--Table dbo.TBFATU098
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU098] (
+	[CODREGFRETE] [char](5) NOT NULL,
+	[DESREGFRETE] [char](40) NOT NULL);
+GO
+
+--Table dbo.TBFATU099
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU099] (
+	[CODTRANSP] [char](3) NOT NULL,
+	[NUMSEQTRANSP] [char](3) NOT NULL,
+	[CODREGFRETE] [char](5) NULL,
+	[VALMINIMO] [decimal](28, 14) NULL,
+	[PERCTOTNFVM] [decimal](28, 14) NULL,
+	[VALACIMA] [decimal](28, 14) NULL,
+	[PERCTOTNFVA] [decimal](28, 14) NULL,
+	[VALPESOPEDAGIO] [decimal](28, 14) NULL,
+	[PESOPEDAGIO] [decimal](28, 14) NULL,
+	[QTDEPESO] [decimal](28, 14) NULL,
+	[VALFRETE] [decimal](28, 14) NULL,
+	[PERCADICIONAL] [decimal](28, 14) NULL,
+	[VALCONHECIMENTO] [decimal](28, 14) NULL,
+	[VALPORKILO] [decimal](28, 14) NULL,
+	[VALFIXOPORNF] [decimal](28, 14) NULL,
+	[VALPEDAGIOPORQTDE] [decimal](28, 14) NULL,
+	[VALADVALOREM] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU100
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU100] (
+	[CODTRANSP] [char](3) NOT NULL,
+	[NUMSEQTRANSP] [char](3) NOT NULL,
+	[CODFAIXA] [char](3) NOT NULL,
+	[CODREGFRETE] [char](5) NULL,
+	[VALNFATE] [decimal](28, 14) NULL,
+	[VALFRETEFIXO] [decimal](28, 14) NULL,
+	[QTDEPESONFATE] [decimal](28, 14) NULL,
+	[VALPORKG] [decimal](28, 14) NULL,
+	[VALFIXOKG] [decimal](28, 14) NULL,
+	[PERCVALACIMA] [decimal](28, 14) NULL,
+	[CODUF] [char](2) NULL);
+GO
+
+--Table dbo.TBFATU101
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU101] (
+	[CODTRANSP] [char](3) NOT NULL,
+	[SEQEND] [char](2) NOT NULL,
+	[ENDFILIAL] [char](40) NOT NULL,
+	[NUMENDFILIAL] [char](6) NULL,
+	[COMPLFILIAL] [char](20) NULL,
+	[BAIRROFILIAL] [char](20) NULL,
+	[CIDADEFILIAL] [char](30) NOT NULL,
+	[CODUFFILIAL] [char](2) NOT NULL,
+	[CONTATOFILIAL] [char](20) NULL,
+	[TELFILIAL] [char](12) NULL,
+	[RAMALFILIAL] [char](4) NULL,
+	[FAXFILIAL] [char](12) NULL,
+	[CEPFILIAL] [char](8) NULL,
+	[DATCADAST] [datetime] NULL,
+	[CEPCXPOSTAL] [char](8) NULL,
+	[CXPOSTAL] [char](8) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[CODPAIS] [char](5) NULL);
+GO
+
+--Table dbo.TBFATU102
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU102] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMPED] [char](9) NOT NULL,
+	[SEQ] [char](2) NOT NULL,
+	[CODTIPEMBALAGEM] [char](2) NULL,
+	[ESPECIE] [char](40) NULL,
+	[MARCA] [char](40) NULL,
+	[NUMERO] [char](10) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU102__QTDET__5319221E] DEFAULT (0),
+	[PESOBRUTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU102__PESOB__540D4657] DEFAULT (0),
+	[PESOLIQUIDO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU102__PESOL__55016A90] DEFAULT (0));
+GO
+
+--Table dbo.TBFATU103
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU103] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMPED] [char](9) NOT NULL,
+	[OBSPEDEXP] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU104
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU104] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU104__CODEM__4A19C7C9] DEFAULT ('01'),
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMSEQITEMNF] [char](3) NOT NULL,
+	[NUMPEDIDO] [char](9) NOT NULL,
+	[SERPEDIDO] [char](2) NOT NULL,
+	[NUMITEMPED] [char](2) NOT NULL,
+	[NUMSEQ] [char](3) NOT NULL,
+	[NUMSC] [char](10) NULL,
+	[NUMITEMSC] [char](2) NULL,
+	[NUMCOLETA] [char](9) NULL,
+	[NUMITEMCOL] [char](2) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMITEMNF] [char](3) NULL,
+	[CODMAT] [char](15) NULL,
+	[CODFORN] [char](6) NULL,
+	[QTDERECEB] [decimal](28, 14) NOT NULL,
+	[VALUNIT] [decimal](28, 14) NULL,
+	[PORCIPI] [decimal](28, 14) NULL,
+	[CODUNIMEDCADMAT] [char](2) NOT NULL,
+	[QTDUNIMEDCADMAT] [decimal](28, 14) NOT NULL,
+	[FATORCONV] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBFATU104__FATOR__4B0DEC02] DEFAULT (1),
+	[CODUNIMED] [char](2) NULL);
+GO
+
+--Table dbo.TBFATU105
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU105] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBFATU105__CODEM__4DEA58AD] DEFAULT ('01'),
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMSEQITEMNF] [char](3) NOT NULL,
+	[NUMSEQ] [char](3) NOT NULL,
+	[NUMSC] [char](10) NOT NULL,
+	[NUMITEMSC] [char](2) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[NUMCOLETA] [char](9) NULL,
+	[NUMITEMCOL] [char](2) NULL,
+	[QTDERECEB] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBFATU106
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU106] (
+	[CODEMP] [char](2) NOT NULL,
+	[MODULO_ID] [char](10) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL);
+GO
+
+--Table dbo.TBFATU107
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU107] (
+	[CODEMP] [char](2) NOT NULL,
+	[MODULO_ID] [char](10) NOT NULL,
+	[NIVEL] [char](2) NOT NULL,
+	[DESCNIVEL] [char](30) NULL,
+	[USUARIO1] [char](10) NULL,
+	[USUARIO2] [char](10) NULL);
+GO
+
+--Table dbo.TBFATU108
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU108] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMERO] [char](10) NOT NULL,
+	[DTCADAST] [datetime] NULL,
+	[CODCLI] [char](9) NULL,
+	[STAPROPOSTA] [char](1) NULL,
+	[DTAPROVFINAL] [datetime] NULL,
+	[TIPOFRETE] [char](2) NULL,
+	[VALTOTAL] [decimal](28, 14) NULL,
+	[VALTOTFRETE] [decimal](28, 14) NULL,
+	[CODVEND] [char](6) NULL,
+	[STAESTUDO] [char](1) NULL,
+	[STAIPIAINCLUIR] [char](1) NULL CONSTRAINT [DF__TBFATU108__STAIP__6A8762B2] DEFAULT ('S'),
+	[OBSESTUDO] [text] NULL);
+GO
+
+--Table dbo.TBFATU109
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU109] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMERO] [char](10) NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[QTDE] [decimal](28, 14) NULL,
+	[LOTEMINIMO] [decimal](28, 14) NULL,
+	[STAITEM] [char](1) NOT NULL,
+	[VOLUMEANUAL] [decimal](28, 14) NULL,
+	[VOLUMEMENSAL] [decimal](28, 14) NULL,
+	[CUSTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU109__CUSTO__049B6F19] DEFAULT (0),
+	[MARGEM] [decimal](28, 14) NULL,
+	[VALCOMIMP] [decimal](28, 14) NULL,
+	[VALSEMIMP] [decimal](28, 14) NULL,
+	[ESPECIFICACAO] [char](15) NULL,
+	[CUSTOFIXO] [decimal](28, 14) NULL,
+	[VALFRETE] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU110
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU110] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMERO] [char](10) NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[MODULO_ID] [char](10) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[REVISAO] [char](2) NOT NULL,
+	[STAAPROVACAO] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBFATU111
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU111] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMERO] [char](10) NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[MODULO_ID] [char](10) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[REVISAO] [char](2) NOT NULL,
+	[NIVEL] [char](2) NOT NULL,
+	[USUARIO1] [char](10) NOT NULL,
+	[USUARIO2] [char](10) NULL,
+	[USUARIOAPROV] [char](10) NULL,
+	[STAAPROVACAO] [char](1) NOT NULL,
+	[MOTIVO] [char](255) NULL,
+	[DATAPROVACAO] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU112
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU112] (
+	[CODEMP] [char](2) NOT NULL,
+	[PERCMARGEM] [decimal](28, 14) NOT NULL,
+	[PERCPIS] [decimal](28, 14) NOT NULL,
+	[PERCCOFINS] [decimal](28, 14) NOT NULL,
+	[PERCICMS] [decimal](28, 14) NOT NULL,
+	[PERCTAXAFINANC] [decimal](28, 14) NOT NULL,
+	[PERCCOMISSAO] [decimal](28, 14) NOT NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[OUTRCUSTOS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU113
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU113] (
+	[USER_ID] [char](10) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[NUMERO] [char](10) NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[USUARIOAPROV] [char](10) NOT NULL,
+	[STAAPROVACAO] [char](1) NOT NULL,
+	[DATAPROVACAO] [datetime] NOT NULL,
+	[MODULO_ID] [char](10) NOT NULL);
+GO
+
+--Table dbo.TBFATU114
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU114] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMERO] [char](10) NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[MARGEM] [decimal](28, 14) NOT NULL,
+	[VALCOMIMP] [decimal](28, 14) NOT NULL,
+	[VALSEMIMP] [decimal](28, 14) NOT NULL,
+	[PERCICMS] [decimal](28, 14) NULL,
+	[PERCPIS] [decimal](28, 14) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL,
+	[PERCIPI] [decimal](28, 14) NULL,
+	[BASECALCICMS] [decimal](28, 14) NULL,
+	[VALAJUSTADO] [decimal](28, 14) NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[OUTRCUSTOS] [decimal](28, 14) NULL,
+	[PERCTAXAFINANC] [decimal](28, 14) NULL,
+	[PERCTAXACOMERC] [decimal](28, 14) NULL,
+	[PERCCOMISSAO] [decimal](28, 14) NULL,
+	[STAPRECOAUSTADO] [char](1) NULL CONSTRAINT [DF__TBFATU114__STAPR__016AC80A] DEFAULT ('N'),
+	[SEQ] [int] NOT NULL IDENTITY (1, 1));
+GO
+
+--Table dbo.TBFATU115
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU115] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[CONTACONTABIL] [char](14) NULL,
+	[CTACREDITO] [char](12) NULL,
+	[CTAADIANTCLI] [char](12) NULL,
+	[STACOMPLETADO] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU116
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU116] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQARQRPS] [char](8) NOT NULL,
+	[NOMARQRPS] [char](30) NULL,
+	[DATAGERACAO] [datetime] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBFATU117
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU117] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQARQRPS] [char](8) NOT NULL,
+	[NUMSEQNFSERV] [char](9) NOT NULL);
+GO
+
+--Table dbo.TBFATU118
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU118] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNF] [char](9) NOT NULL,
+	[TIPCARGA] [char](1) NOT NULL CONSTRAINT [DF__TBFATU118__TIPCA__68DE460B] DEFAULT ('0'),
+	[NUMCNPJCOLETA] [char](14) NULL,
+	[CODUFCOLETA] [char](2) NULL,
+	[INSCRESTACOLETA] [char](20) NULL,
+	[CODMUNICIPIOCOLETA] [char](7) NULL,
+	[INSCRMUNICCOLETA] [char](15) NULL,
+	[NUMCNPJENTREGA] [char](14) NULL,
+	[CODUFENTREGA] [char](2) NULL,
+	[INSCRESTAENTREGA] [char](20) NULL,
+	[CODMUNICIPIOENTREGA] [char](7) NULL,
+	[INSCRMUNICENTREGA] [char](15) NULL);
+GO
+
+--Table dbo.TBFATU119
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU119] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMSEQVEIC] [char](2) NOT NULL,
+	[PLACA] [char](10) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[NUMERO] [char](10) NULL,
+	[PESOBRUTO] [decimal](28, 14) NULL,
+	[PESOLIQUIDO] [decimal](28, 14) NULL,
+	[CODRNTCREBOQUE] [char](20) NULL);
+GO
+
+--Table dbo.TBFATU120
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU120] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPCARGA] [char](1) NOT NULL CONSTRAINT [DF__TBFATU120__TIPCA__7267B045] DEFAULT ('0'),
+	[NUMCNPJCOLETA] [char](14) NULL,
+	[CODUFCOLETA] [char](2) NULL,
+	[INSCRESTACOLETA] [char](20) NULL,
+	[CODMUNICIPIOCOLETA] [char](7) NULL,
+	[INSCRMUNICCOLETA] [char](15) NULL,
+	[NUMCNPJENTREGA] [char](14) NULL,
+	[CODUFENTREGA] [char](2) NULL,
+	[INSCRESTAENTREGA] [char](20) NULL,
+	[CODMUNICIPIOENTREGA] [char](7) NULL,
+	[INSCRMUNICENTREGA] [char](15) NULL);
+GO
+
+--Table dbo.TBFATU121
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU121] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMSEQVEIC] [char](2) NOT NULL,
+	[PLACA] [char](10) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[NUMERO] [char](10) NULL,
+	[PESOBRUTO] [decimal](28, 14) NULL,
+	[PESOLIQUIDO] [decimal](28, 14) NULL,
+	[CODRNTCREBOQUE] [char](20) NULL);
+GO
+
+--Table dbo.TBFATU122
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU122] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNFSERV] [char](9) NOT NULL,
+	[NUMSEQSUB] [char](2) NOT NULL,
+	[TIPFISJURSUBCONT] [char](1) NOT NULL,
+	[NUMCNPJCPFSUBCONT] [char](14) NOT NULL,
+	[CODMUNICIPIOSUBCONT] [char](7) NOT NULL,
+	[INSCRMUNICSUBCONT] [char](15) NULL,
+	[VALSUBCONT] [decimal](28, 14) NULL,
+	[VALBASECALCISSSUBCONT] [decimal](28, 14) NULL,
+	[PERCISSSUBCONT] [decimal](28, 14) NULL,
+	[VALISSSUBCONT] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU123
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU123] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNFSERV] [char](9) NOT NULL,
+	[TIPCARGA] [char](1) NOT NULL CONSTRAINT [DF__TBFATU123__TIPCA__7ECD872A] DEFAULT ('0'),
+	[NUMCNPJCOLETA] [char](14) NULL,
+	[CODUFCOLETA] [char](2) NULL,
+	[INSCRESTACOLETA] [char](20) NULL,
+	[CODMUNICIPIOCOLETA] [char](7) NULL,
+	[INSCRMUNICCOLETA] [char](15) NULL,
+	[NUMCNPJENTREGA] [char](14) NULL,
+	[CODUFENTREGA] [char](2) NULL,
+	[INSCRESTAENTREGA] [char](20) NULL,
+	[CODMUNICIPIOENTREGA] [char](7) NULL,
+	[INSCRMUNICENTREGA] [char](15) NULL);
+GO
+
+--Table dbo.TBFATU124
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU124] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[NUMSEQSUB] [char](2) NOT NULL,
+	[TIPFISJURSUBCONT] [char](1) NOT NULL,
+	[NUMCNPJCPFSUBCONT] [char](14) NOT NULL,
+	[CODMUNICIPIOSUBCONT] [char](7) NOT NULL,
+	[INSCRMUNICSUBCONT] [char](15) NULL,
+	[VALSUBCONT] [decimal](28, 14) NULL,
+	[VALBASECALCISSSUBCONT] [decimal](28, 14) NULL,
+	[PERCISSSUBCONT] [decimal](28, 14) NULL,
+	[VALISSSUBCONT] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU125
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU125] (
+	[CODTABCOMIS] [char](6) NOT NULL,
+	[DESCRITABCOMIS] [char](50) NOT NULL,
+	[STATUS] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBFATU126
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU126] (
+	[CODTABCOMIS] [char](6) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[PERCDESCATE] [decimal](28, 14) NULL,
+	[PERCDESCDE] [decimal](28, 14) NULL,
+	[PERCCOMISSAO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU127
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU127] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMSEQITEMNF] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[DATAEMISSAO] [datetime] NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DESDETMAT] [text] NULL,
+	[OBSITEMNF] [text] NULL,
+	[USER_ID] [char](10) NOT NULL);
+GO
+
+--Table dbo.TBFATU128
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU128] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[TIPCARGA] [char](1) NOT NULL CONSTRAINT [DF__TBFATU128__TIPCA__094B159D] DEFAULT ('0'),
+	[NUMCNPJCOLETA] [char](14) NULL,
+	[CODUFCOLETA] [char](2) NULL,
+	[INSCRESTACOLETA] [char](20) NULL,
+	[CODMUNICIPIOCOLETA] [char](7) NULL,
+	[INSCRMUNICCOLETA] [char](15) NULL,
+	[NUMCNPJENTREGA] [char](14) NULL,
+	[CODUFENTREGA] [char](2) NULL,
+	[INSCRESTAENTREGA] [char](20) NULL,
+	[CODMUNICIPIOENTREGA] [char](7) NULL,
+	[INSCRMUNICENTREGA] [char](15) NULL);
+GO
+
+--Table dbo.TBFATU129
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU129] (
+	[CODOBSCOMERC] [char](3) NOT NULL,
+	[OBSCOMERC] [text] NULL);
+GO
+
+--Table dbo.TBFATU130
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU130] (
+	[CODCLI] [char](9) NOT NULL,
+	[CODCLASSFISCAL] [char](10) NOT NULL,
+	[CODMOVFISCDEFAULT] [char](3) NOT NULL,
+	[DATCADASTCM] [datetime] NULL,
+	[USER_IDCM] [char](10) NULL);
+GO
+
+--Table dbo.TBFATU131
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU131] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMPROC] [char](20) NOT NULL,
+	[INDPROC] [char](1) NULL,
+	[TIPOPROC] [char](2) NULL,
+	[SECJUDIC] [char](30) NULL,
+	[VARA] [char](2) NULL,
+	[NATACAOJUDIC] [char](2) NULL,
+	[DESCDECJUDIC] [char](100) NULL,
+	[DATSENTECA] [datetime] NULL,
+	[NATPROCADM] [char](2) NULL,
+	[DATDECADM] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU132
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU132] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMPROC] [char](20) NOT NULL,
+	[INDPROC] [char](1) NULL,
+	[TIPOPROC] [char](2) NULL,
+	[SECJUDIC] [char](30) NULL,
+	[VARA] [char](2) NULL,
+	[NATACAOJUDIC] [char](2) NULL,
+	[DESCDECJUDIC] [char](100) NULL,
+	[DATSENTECA] [datetime] NULL,
+	[NATPROCADM] [char](2) NULL,
+	[DATDECADM] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU133
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU133] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNF] [char](9) NOT NULL,
+	[SEQDOCARREC] [char](2) NOT NULL,
+	[CODDA] [char](1) NOT NULL,
+	[CODUFBENEF] [char](2) NOT NULL,
+	[NUMDA] [char](20) NULL,
+	[CODAUT] [char](20) NULL,
+	[VALDA] [decimal](28, 14) NOT NULL,
+	[DATVENCTO] [datetime] NOT NULL,
+	[DATPAGTO] [datetime] NOT NULL);
+GO
+
+--Table dbo.TBFATU134
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU134] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[SEQDOCARREC] [char](2) NOT NULL,
+	[CODDA] [char](1) NOT NULL,
+	[CODUFBENEF] [char](2) NOT NULL,
+	[NUMDA] [char](20) NULL,
+	[CODAUT] [char](20) NULL,
+	[VALDA] [decimal](28, 14) NOT NULL,
+	[DATVENCTO] [datetime] NOT NULL,
+	[DATPAGTO] [datetime] NOT NULL);
+GO
+
+--Table dbo.TBFATU138
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU138] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREF] [char](6) NOT NULL,
+	[CODQUINZENA] [char](1) NOT NULL,
+	[CODVEND] [char](6) NOT NULL,
+	[VALRELCOMISSOES] [decimal](28, 14) NOT NULL,
+	[VALDEVOLUCOES] [decimal](28, 14) NULL,
+	[VALFRETE] [decimal](28, 14) NULL,
+	[VALREEMBOLSO] [decimal](28, 14) NULL,
+	[VALORRECEBIDO] [decimal](28, 14) NULL,
+	[VALORAVISTA] [decimal](28, 14) NULL,
+	[VALAVISTAQUINZANT] [decimal](28, 14) NULL,
+	[VALDESCONTO] [decimal](28, 14) NULL,
+	[VALORBRUTOPAGAR] [decimal](28, 14) NOT NULL,
+	[VALIRRF] [decimal](28, 14) NULL,
+	[VALINSS] [decimal](28, 14) NULL,
+	[VALLIQUIDO] [decimal](28, 14) NOT NULL,
+	[CODUNIMEDCONV] [char](2) NULL,
+	[DATFECH] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU139
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU139] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREF] [char](6) NOT NULL,
+	[CODQUINZENA] [char](1) NOT NULL,
+	[CODVEND] [char](6) NOT NULL,
+	[CODCOLUNA] [char](1) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[VALREFERENTE] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU140
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU140] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTINDUSTR] [char](9) NOT NULL,
+	[STACONTRATO] [char](1) NULL,
+	[STACONTFECHADO] [char](1) NULL,
+	[DATCADAST] [datetime] NULL,
+	[CODCLI] [char](9) NULL,
+	[SEQENDCOBCLI] [char](2) NULL,
+	[SEQENDENTCLI] [char](2) NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[CCUSTO] [char](10) NULL,
+	[USER_ID] [char](10) NULL,
+	[SISTEMA_ID] [char](10) NULL,
+	[DATENCER] [datetime] NULL,
+	[CODVEND] [char](6) NULL,
+	[PERCCOMISSAO1] [decimal](28, 14) NULL,
+	[CODVEND2] [char](6) NULL,
+	[PERCCOMISSAO1VEND2] [decimal](28, 14) NULL,
+	[NUMPEDCLI] [char](30) NULL,
+	[VALTOTAL] [decimal](28, 14) NULL,
+	[VALACRESTOT] [decimal](28, 14) NULL,
+	[VALDESCTOT] [decimal](28, 14) NULL,
+	[CODTABPRECO] [char](3) NULL,
+	[NUMORCAM] [char](9) NULL,
+	[CODINDICE] [char](3) NULL,
+	[DATREFERIND] [datetime] NULL,
+	[STAINDPREFIXADO] [char](1) NULL,
+	[STALIBFATU] [char](1) NULL,
+	[TIPOCOBRANCA] [char](1) NULL,
+	[NUMPEDREP] [char](9) NULL,
+	[PERCACRESDESCCONT] [decimal](28, 14) NULL,
+	[CODTRANSP] [char](3) NULL,
+	[PAGFRETE] [char](1) NULL,
+	[VALFRETE] [decimal](28, 14) NULL,
+	[VALSEGURO] [decimal](28, 14) NULL,
+	[VALDESPESAS] [decimal](28, 14) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU141
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU141] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTINDUSTR] [char](9) NOT NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[CODUNIMEDITEM] [char](2) NULL,
+	[STAITEMCONT] [char](1) NULL,
+	[PRAZODEVOLUCAO] [int] NULL,
+	[QTDEITEM] [decimal](28, 14) NULL,
+	[VALINSUMOS] [decimal](28, 14) NULL,
+	[VALMAODEOBRA] [decimal](28, 14) NULL,
+	[VALUNITITEM] [decimal](28, 14) NULL,
+	[VALTOTITEM] [decimal](28, 14) NULL,
+	[QTDEDEVOLVIDA] [decimal](28, 14) NULL,
+	[VALBRUTOTOTITEM] [decimal](28, 14) NULL,
+	[PERCACRESDESCITEM] [decimal](28, 14) NULL,
+	[VALACRESDESCITEM] [decimal](28, 14) NULL,
+	[CODMOVFISCCONT] [char](3) NULL,
+	[STAIMPRESSO] [char](1) NULL,
+	[CCUSTO] [char](10) NULL,
+	[CODMATREDUZIDO] [char](40) NULL,
+	[TIPUSOMATERIAL] [char](1) NULL,
+	[VALUNITCOMIPI] [decimal](28, 14) NULL,
+	[VALUNITLIQ] [decimal](28, 14) NULL,
+	[VALUNITINDCLI] [decimal](28, 14) NULL,
+	[VALIPI] [decimal](28, 14) NULL,
+	[CODTABPRECO] [char](3) NULL,
+	[PERCMAOOBRA] [float] NULL);
+GO
+
+--Table dbo.TBFATU142
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU142] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTINDUSTR] [char](9) NOT NULL,
+	[OBSCONTCON] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU143
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU143] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTINDUSTR] [char](9) NOT NULL,
+	[OBSCONTIMP] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU144
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU144] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTINDUSTR] [char](9) NOT NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NOT NULL,
+	[OBSITEMCONTIMP] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU145
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU145] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTINDUSTR] [char](9) NOT NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NOT NULL,
+	[OBSITEMCONTCON] [text] NOT NULL);
+GO
+
+--Table dbo.TBFATU146
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU146] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTINDUSTR] [char](9) NOT NULL,
+	[CODMOTIVOBLOQ] [char](2) NOT NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NOT NULL,
+	[STALIBERADO] [char](1) NULL,
+	[DATLIBERACAO] [datetime] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBFATU150
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU150] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREF] [char](6) NOT NULL,
+	[CODQUINZENA] [char](1) NOT NULL,
+	[CODVEND] [char](6) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[VALRELCOMISSOES] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU150__VALRE__6715F92A] DEFAULT (0),
+	[VALDEVOLUCOES] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU150__VALDE__680A1D63] DEFAULT (0),
+	[VALFRETE] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU150__VALFR__68FE419C] DEFAULT (0),
+	[VALREEMBOLSO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU150__VALRE__69F265D5] DEFAULT (0),
+	[VALORRECEBIDO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU150__VALOR__6AE68A0E] DEFAULT (0),
+	[VALORAVISTA] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU150__VALOR__6BDAAE47] DEFAULT (0),
+	[VALAVISTAQUINZANT] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU150__VALAV__6CCED280] DEFAULT (0),
+	[VALDESCONTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU150__VALDE__6DC2F6B9] DEFAULT (0),
+	[VALORBRUTOPAGAR] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU150__VALOR__6EB71AF2] DEFAULT (0),
+	[VALIRRF] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU150__VALIR__6FAB3F2B] DEFAULT (0),
+	[VALINSS] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU150__VALIN__709F6364] DEFAULT (0),
+	[VALLIQUIDO] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU150__VALLI__7193879D] DEFAULT (0));
+GO
+
+--Table dbo.TBFATU151
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU151] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREF] [char](6) NOT NULL,
+	[CODQUINZENA] [char](1) NOT NULL,
+	[CODVEND] [char](6) NOT NULL,
+	[CODCOLUNA] [char](1) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[VALREFERENTEITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBFATU151__VALRE__75641881] DEFAULT (0));
+GO
+
+--Table dbo.TBFATU152
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU152] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[XMLNFE] [text] NULL,
+	[XMLCANC] [text] NULL,
+	[XMLINUT] [text] NULL,
+	[XMLCONSULTANFE] [text] NULL,
+	[XMLCOMASSINATURA] [text] NULL,
+	[XMLDISTRIBUICAO] [text] NULL,
+	[DATAHORACONSULTA] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU153
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU153] (
+	[CODMOTIVO] [char](3) NOT NULL,
+	[DESCRMOTIVO] [char](100) NULL);
+GO
+
+--Table dbo.TBFATU154
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU154] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](9) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMNFREF] [char](6) NOT NULL,
+	[SERNFREF] [char](5) NOT NULL,
+	[CODEMIS] [char](9) NOT NULL,
+	[TIPEMIS] [char](1) NOT NULL,
+	[CHAVENFE] [char](44) NULL,
+	[CODUF] [char](2) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[CNPJEMIT] [char](14) NULL,
+	[MODDOCFISCAL] [char](2) NULL,
+	[CHAVECTE] [char](44) NULL,
+	[NROCOO] [char](6) NULL,
+	[ORDEMSEQECF] [char](3) NULL);
+GO
+
+--Table dbo.TBFATU155
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU155] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](9) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](3) NOT NULL,
+	[NUMDI] [char](12) NOT NULL,
+	[DATDI] [datetime] NOT NULL,
+	[CODDI] [char](1) NULL,
+	[LOCALDESEMB] [char](60) NOT NULL,
+	[UFDESEMB] [char](2) NOT NULL,
+	[DATDESEMBMERC] [datetime] NOT NULL,
+	[CODEXPORTADOR] [char](60) NOT NULL,
+	[NUMDRAWBACK] [char](20) NULL);
+GO
+
+--Table dbo.TBFATU156
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU156] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](9) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](3) NOT NULL,
+	[NUMDI] [char](12) NOT NULL,
+	[NUMADI] [char](3) NOT NULL,
+	[NUMSEQITEMADI] [char](3) NOT NULL,
+	[CODFABRIC] [char](60) NOT NULL,
+	[VALDESCITEMADI] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU157
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU157] (
+	[CODGRUPODESC] [char](3) NOT NULL,
+	[DESGRUPODESC] [char](50) NOT NULL,
+	[DATINIVIGENCIA] [datetime] NULL,
+	[DATFIMVIGENCIA] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU158
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU158] (
+	[CODGRUPODESC] [char](3) NOT NULL,
+	[VALLIMITEVENDA] [decimal](28, 14) NOT NULL,
+	[PERCMAXDESC] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBFATU159
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU159] (
+	[CODEMP] [char](2) NOT NULL,
+	[PERCCOMISMIX] [decimal](28, 14) NULL,
+	[LIMITECOMISMIX] [decimal](28, 14) NULL,
+	[VALMINIMOMIX] [decimal](28, 14) NULL,
+	[PERCBONUSCOMIS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU160
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU160] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMSEQITEMNF] [char](3) NOT NULL,
+	[NUMCONTINDUSTR] [char](9) NOT NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NOT NULL,
+	[QTDRETORNO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU161
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU161] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](3) NOT NULL,
+	[NUMCONTINDUSTR] [char](9) NOT NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NOT NULL,
+	[QTDRETORNO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU162
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU162] (
+	[CODEMP] [char](2) NOT NULL,
+	[TAGCONFIG] [char](30) NOT NULL,
+	[CAMPOAIMPRIMIR] [char](30) NOT NULL,
+	[DESCRCAMPO] [char](50) NULL,
+	[TAGPADRAO] [char](1) NULL,
+	[IMPRIMIR] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU163
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU163] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](9) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](3) NOT NULL,
+	[TIPOPERVEIC] [char](1) NULL,
+	[CHASSIVEIC] [char](17) NULL,
+	[CODCORVEIC] [char](4) NULL,
+	[DESCCORVEIC] [char](40) NULL,
+	[POTENCIAMOTOR] [char](4) NULL,
+	[CM3POTENCIA] [char](4) NULL,
+	[PESOLIQVEIC] [char](9) NULL,
+	[PESOBRUTOVEIC] [char](9) NULL,
+	[SERIEVEIC] [char](9) NULL,
+	[CODTIPCOMBUSTIVEL] [char](8) NULL,
+	[NUMMOTORVEIC] [char](21) NULL,
+	[CODCMKG] [char](9) NULL,
+	[DISTENTREEIXOS] [char](4) NULL,
+	[CODRENAVAM] [char](9) NULL,
+	[ANOMODELOFABRIC] [char](4) NULL,
+	[ANOFABRICACAO] [char](4) NULL,
+	[TIPPINTURA] [char](1) NULL,
+	[CODTIPVEIC] [char](2) NULL,
+	[CODESPECIVEIC] [char](1) NULL,
+	[CONDICAOVIN] [char](1) NULL,
+	[CONDICAOVEIC] [char](1) NULL,
+	[CODMARCAMODELO] [char](6) NULL,
+	[CAPMAXLOTACAO] [char](3) NULL,
+	[TIPORESTRICAO] [char](1) NULL,
+	[VLRICMS] [decimal](28, 14) NULL,
+	[MOTDESONICMS] [char](1) NULL,
+	[NUMCNPJCPFCONCES] [char](14) NULL,
+	[CODUFCONCES] [char](2) NULL);
+GO
+
+--Table dbo.TBFATU164
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU164] (
+	[CODDIVMAT] [char](5) NOT NULL,
+	[CODESCALA] [char](2) NOT NULL,
+	[QTDEFAIXAINICIAL] [decimal](28, 14) NULL,
+	[QTDEFAIXAFINAL] [decimal](28, 14) NULL,
+	[PERCCOMISSMAT] [decimal](28, 14) NULL,
+	[USAESCALA] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU165
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU165] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODTRANSP] [char](3) NULL,
+	[NUMSEQOCORR] [char](3) NOT NULL,
+	[CODOCORRENTREGA] [char](2) NOT NULL,
+	[DATOCORRENCIA] [datetime] NOT NULL,
+	[HOROCORRENCIA] [char](6) NULL,
+	[DATINCOCORRENCIA] [datetime] NULL,
+	[HORINCOCORRENCIA] [char](6) NULL);
+GO
+
+--Table dbo.TBFATU166
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU166] (
+	[CODCANALVENDA] [char](3) NOT NULL,
+	[DESCANALVENDA] [char](40) NULL,
+	[PERCDESCTO] [float] NULL,
+	[STATUS] [char](1) NULL,
+	[USER_ID] [char](10) NULL,
+	[DATCADAST] [datetime] NULL,
+	[DATULTALT] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU167
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU167] (
+	[CODREGRADESC] [char](3) NOT NULL,
+	[DESREGRADESC] [char](40) NULL,
+	[STATUS] [char](1) NULL,
+	[USER_ID] [char](10) NULL,
+	[DATCADAST] [datetime] NULL,
+	[DATULTALT] [datetime] NULL,
+	[STAGERAL] [char](1) NULL,
+	[CODMAT] [char](15) NULL,
+	[CODDIVMAT1] [char](5) NULL,
+	[CODDIVMAT2] [char](5) NULL,
+	[CODDIVMAT3] [char](5) NULL);
+GO
+
+--Table dbo.TBFATU168
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU168] (
+	[CODREGRADESC] [char](3) NOT NULL,
+	[SEQ] [char](2) NOT NULL,
+	[PERCDESCTO] [float] NULL,
+	[OBS] [char](100) NULL);
+GO
+
+--Table dbo.TBFATU169
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU169] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMORCAM] [char](9) NOT NULL,
+	[NUMITEMORCAM] [char](3) NOT NULL,
+	[SEQDESCONTO] [char](2) NOT NULL,
+	[TIPDESCONTO] [char](2) NOT NULL,
+	[VALUNITBASE] [float] NULL,
+	[PERCDESCTO] [float] NULL,
+	[VALUNITFINAL] [float] NULL);
+GO
+
+--Table dbo.TBFATU170
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU170] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMPED] [char](9) NOT NULL,
+	[NUMITEMPED] [char](3) NOT NULL,
+	[SEQDESCONTO] [char](2) NOT NULL,
+	[TIPDESCONTO] [char](2) NOT NULL,
+	[VALUNITBASE] [float] NULL,
+	[PERCDESCTO] [float] NULL,
+	[VALUNITFINAL] [float] NULL);
+GO
+
+--Table dbo.TBFATU171
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU171] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMPROC] [char](20) NOT NULL,
+	[INDPROC] [char](1) NULL,
+	[TIPOPROC] [char](2) NULL,
+	[SECJUDIC] [char](30) NULL,
+	[VARA] [char](2) NULL,
+	[NATACAOJUDIC] [char](2) NULL,
+	[DESCDECJUDIC] [char](100) NULL,
+	[DATSENTECA] [datetime] NULL,
+	[NATPROCADM] [char](2) NULL,
+	[DATDECADM] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU172
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU172] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMPROC] [char](20) NOT NULL,
+	[INDPROC] [char](1) NULL,
+	[TIPOPROC] [char](2) NULL,
+	[SECJUDIC] [char](30) NULL,
+	[VARA] [char](2) NULL,
+	[NATACAOJUDIC] [char](2) NULL,
+	[DESCDECJUDIC] [char](100) NULL,
+	[DATSENTECA] [datetime] NULL,
+	[NATPROCADM] [char](2) NULL,
+	[DATDECADM] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU173
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU173] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQNFSERV] [char](9) NOT NULL,
+	[SEQDEDUC] [char](3) NOT NULL,
+	[DEDUCAOPOR] [char](1) NULL,
+	[TIPODEDUCAO] [char](2) NULL,
+	[ORIGNFREF] [char](1) NULL,
+	[NUMCPFCNPJREF] [char](14) NULL,
+	[NUMNFREF] [char](6) NULL,
+	[VALTOTNFREF] [decimal](28, 14) NULL,
+	[PERCDEDUC] [decimal](28, 14) NULL,
+	[VALDEDUC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU174
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU174] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[SEQDEDUC] [char](3) NOT NULL,
+	[DEDUCAOPOR] [char](1) NULL,
+	[TIPODEDUCAO] [char](2) NULL,
+	[ORIGNFREF] [char](1) NULL,
+	[NUMCPFCNPJREF] [char](14) NULL,
+	[NUMNFREF] [char](6) NULL,
+	[VALTOTNFREF] [decimal](28, 14) NULL,
+	[PERCDEDUC] [decimal](28, 14) NULL,
+	[VALDEDUC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU175
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU175] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDLOTENFSE] [char](9) NOT NULL,
+	[NUMLOTENFSE] [char](15) NULL,
+	[STATUSLOTENFSE] [char](1) NULL,
+	[DATENVIOLOTE] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU176
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU176] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDLOTENFSE] [char](9) NOT NULL,
+	[NUMSEQNFSERV] [char](9) NOT NULL,
+	[NUMRPS] [char](9) NULL,
+	[NUMNOTARETORNO] [char](12) NULL,
+	[STATUSNFSE] [char](1) NULL,
+	[CODVERIFICACAO] [char](255) NULL,
+	[SERNFSERV] [char](6) NULL,
+	[MOTIVOCANC] [char](80) NULL);
+GO
+
+--Table dbo.TBFATU177
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU177] (
+	[NUMSEQ] [char](4) NOT NULL,
+	[RESULTADOINI] [decimal](28, 14) NOT NULL,
+	[RESULTADOFIM] [decimal](28, 14) NOT NULL,
+	[COMISSAO] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBFATU178
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU178] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](3) NOT NULL,
+	[CODPROD] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[CODMPRIMA] [char](15) NOT NULL,
+	[ID] [int] NOT NULL,
+	[ENCONTRADO] [text] NULL);
+GO
+
+--Table dbo.TBFATU179
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU179] (
+	[CODTRANSP] [char](3) NOT NULL,
+	[CODMUNICIPIO] [char](7) NOT NULL);
+GO
+
+--Table dbo.TBFATU180
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU180] (
+	[CODTRANSP] [char](3) NOT NULL,
+	[NUMSEQTRANSP] [char](3) NOT NULL,
+	[NUMSEQUF] [char](3) NOT NULL,
+	[CODUF] [char](2) NULL,
+	[PESOMINIMO] [decimal](28, 14) NULL,
+	[VALFRETEPESOMINIMO] [decimal](28, 14) NULL,
+	[PESOMAXIMO] [decimal](28, 14) NULL,
+	[VALPESOEXCEDENTE] [decimal](28, 14) NULL,
+	[NUMPEDAGIOS] [int] NULL,
+	[FRACAOPESOPEDAGIO] [decimal](28, 14) NULL,
+	[VALPEDAGIOFRACAOPESO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU181
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU181] (
+	[CODTRANSP] [char](3) NOT NULL,
+	[NUMSEQTRANSP] [char](3) NOT NULL,
+	[NUMSEQDESP] [char](3) NOT NULL,
+	[DESDESPESA] [char](100) NULL,
+	[VALDESPESA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU182
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU182] (
+	[CODREGENTREGA] [char](5) NOT NULL,
+	[DESREGENTREGA] [char](100) NULL,
+	[NUMDIASENTREGA] [int] NULL,
+	[CODREGFRETE] [char](5) NULL,
+	[USER_IDCADAST] [char](10) NULL,
+	[DATCADAST] [datetime] NULL,
+	[USER_IDALTER] [char](10) NULL,
+	[DATALTER] [datetime] NULL,
+	[STATUS] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU183
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU183] (
+	[CODREGENTREGA] [char](5) NOT NULL,
+	[CODMUNICIPIO] [char](7) NOT NULL);
+GO
+
+--Table dbo.TBFATU184
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU184] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCARREGAMENTO] [char](9) NOT NULL,
+	[CODTRANSP] [char](3) NOT NULL,
+	[DATPROGRAMADA] [datetime] NULL,
+	[VALFRETECALCULADO] [decimal](28, 14) NULL,
+	[VALFRETENEGOCIADO] [decimal](28, 14) NULL,
+	[PESOBRUTOTOTAL] [decimal](28, 14) NULL,
+	[PESOLIQUIDOTOTAL] [decimal](28, 14) NULL,
+	[QTDEPEDIDOS] [int] NULL,
+	[USER_IDCADAST] [char](10) NULL,
+	[DATCADAST] [datetime] NULL,
+	[OBSCARREGAMENTO] [text] NULL);
+GO
+
+--Table dbo.TBFATU185
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU185] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCARREGAMENTO] [char](9) NOT NULL,
+	[NUMPED] [char](9) NOT NULL,
+	[NUMITEMPED] [char](3) NOT NULL,
+	[QTDEITEM] [decimal](28, 14) NULL,
+	[PESOBRUTOITEM] [decimal](28, 14) NULL,
+	[PESOLIQUIDOITEM] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBFATU186
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU186] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCARREGAMENTO] [char](9) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[NUMSEQFRETE] [char](3) NOT NULL,
+	[DESCOMPFRETE] [char](150) NULL,
+	[VALCOMPFRETE] [decimal](28, 14) NULL,
+	[TIPCOMPFRETE] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU187
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU187] (
+	[CODEMP] [char](2) NOT NULL,
+	[GERAPEDCOMPRAFRETE] [char](1) NOT NULL,
+	[CODCFOPICMSFRETE] [char](6) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[CCUSTO] [char](10) NULL,
+	[CODMAT] [char](15) NULL,
+	[CTACONTABIL] [char](12) NULL);
+GO
+
+--Table dbo.TBFATU189
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU189] (
+	[CODVEND] [char](6) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[USER_ID] [char](10) NULL,
+	[DATCAD] [datetime] NULL);
+GO
+
+--Table dbo.TBFATU190
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU190] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODITEM] [char](3) NOT NULL,
+	[DESCITEM] [char](60) NULL,
+	[STAITEM] [char](1) NULL,
+	[TIPOCAMPO] [char](1) NULL);
+GO
+
+--Table dbo.TBFATU191
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU191] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODPESQ] [char](3) NOT NULL,
+	[DESCPESQ] [char](60) NULL,
+	[DATINIPESQ] [datetime] NULL,
+	[DATFIMPESQ] [datetime] NULL,
+	[FILTROSQL] [text] NULL);
+GO
+
+--Table dbo.TBFATU192
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU192] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODPESQ] [char](3) NOT NULL,
+	[CODITEM] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBFATU193
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFATU193] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODPESQ] [char](3) NOT NULL,
+	[CODITEM] [char](3) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[VLRENCONTRADO] [text] NULL,
+	[DATCAD] [datetime] NULL);
+GO
+
+--Table dbo.TBFLCX001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFLCX001] (
+	[CATEGORIA] [char](1) NOT NULL,
+	[CODGRUPO] [char](6) NOT NULL,
+	[DESGRUPO] [char](30) NOT NULL,
+	[STAGRUPO] [char](1) NOT NULL,
+	[CTAGRUPO] [char](2) NULL);
+GO
+
+--Table dbo.TBFLCX002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFLCX002] (
+	[CATEGORIA] [char](1) NOT NULL,
+	[CODGRUPO] [char](6) NOT NULL,
+	[SUBGRUPO] [char](12) NOT NULL,
+	[DESCSUBGRUPO] [char](30) NOT NULL,
+	[BASECALCSUBGRUPO] [char](1) NULL,
+	[PERCSUBGRUPO] [decimal](28, 14) NULL,
+	[CALCSUBGRUPO] [char](12) NULL,
+	[GERAFLUXO] [char](1) NULL CONSTRAINT [DF__TBFLCX002__GERAF__31D8F53B] DEFAULT ('S'));
+GO
+
+--Table dbo.TBFLCX003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFLCX003] (
+	[CODEMITENTE] [char](9) NOT NULL,
+	[DESEMITENTE] [char](40) NOT NULL,
+	[STAEMITENTE] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBFLCX004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFLCX004] (
+	[CODEMP] [char](2) NOT NULL,
+	[CATEGORIA] [char](1) NOT NULL,
+	[CODGRUPO] [char](6) NOT NULL,
+	[SUBGRUPO] [char](12) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL CONSTRAINT [DF_TBFLCX004_SERIE] DEFAULT (' '),
+	[NUMPARCELA] [char](2) NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[VALDOCTO] [decimal](28, 14) NOT NULL,
+	[TPAPLICA] [char](1) NOT NULL,
+	[DATAPLICAINI] [datetime] NOT NULL,
+	[DATAPLICAFIM] [datetime] NULL,
+	[DIAAPLICA] [char](2) NULL,
+	[DIAUTILFIXO] [char](1) NULL,
+	[STALANCTO] [char](1) NOT NULL,
+	[DIAPROXIMOANTERIOR] [char](1) NULL,
+	[OBSERVACAO] [text] NULL,
+	[CODINDICE] [char](3) NULL,
+	[CCUSTO] [char](10) NULL);
+GO
+
+--Table dbo.TBFLCX005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFLCX005] (
+	[CODEMP] [char](2) NOT NULL,
+	[CATEGORIA] [char](1) NOT NULL,
+	[CODGRUPO] [char](6) NOT NULL,
+	[SUBGRUPO] [char](12) NOT NULL,
+	[NUMSEQ] [char](4) NOT NULL,
+	[DESCRCONTA] [char](30) NOT NULL,
+	[CODEMPBANCO] [char](2) NULL,
+	[CODBANCO] [char](6) NULL,
+	[CODAGENCIA] [char](10) NULL);
+GO
+
+--Table dbo.TBFLCX006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFLCX006] (
+	[CODEMP] [char](2) NOT NULL,
+	[CATEGORIA] [char](1) NOT NULL,
+	[CODGRUPO] [char](6) NOT NULL,
+	[SUBGRUPO] [char](12) NOT NULL,
+	[NUMSEQ] [char](4) NOT NULL,
+	[DTSALDO] [datetime] NOT NULL,
+	[VALSALDO] [decimal](28, 14) NULL,
+	[CCUSTO] [char](10) NULL);
+GO
+
+--Table dbo.TBFLCX007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFLCX007] (
+	[CODEMP] [char](2) NOT NULL,
+	[CATEGORIA] [char](1) NOT NULL,
+	[CODGRUPO] [char](6) NOT NULL,
+	[SUBGRUPO] [char](12) NOT NULL,
+	[ORIGEM] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](13) NOT NULL,
+	[SERIE] [char](5) NULL,
+	[NUMPARCELA] [char](2) NOT NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[VALDOCTO] [decimal](28, 14) NOT NULL,
+	[DATAPLICA] [datetime] NOT NULL,
+	[CCUSTO] [char](10) NULL,
+	[CODFILIALDOC] [char](2) NULL);
+GO
+
+--Table dbo.TBFLCX008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFLCX008] (
+	[CODORIGEM] [char](3) NOT NULL,
+	[DESCORIGEM] [char](50) NOT NULL);
+GO
+
+--Table dbo.TBFLCX009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFLCX009] (
+	[CODEMP] [char](2) NOT NULL,
+	[CATEGORIA] [char](1) NOT NULL,
+	[CODGRUPO] [char](6) NOT NULL,
+	[SUBGRUPO] [char](12) NOT NULL,
+	[ORIGEM] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](13) NOT NULL,
+	[SERIE] [char](5) NULL,
+	[NUMPARCELA] [char](2) NOT NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[TPEMITENTE] [char](1) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[VALDOCTO] [decimal](28, 14) NOT NULL,
+	[DATAPLICA] [datetime] NOT NULL,
+	[CCUSTO] [char](10) NULL,
+	[CODFILIALDOC] [char](2) NULL,
+	[SEQMOVTOCONB] [char](3) NULL);
+GO
+
+--Table dbo.TBFLCX010
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFLCX010] (
+	[CODEMP] [char](2) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[CATEGORIA] [char](1) NOT NULL,
+	[CODGRUPO] [char](6) NOT NULL,
+	[SUBGRUPO] [char](12) NOT NULL,
+	[PERCAPURACAO] [decimal](28, 14) NULL,
+	[BASECALCAPURACAO] [char](1) NULL,
+	[SUBGRUPOBASE] [char](12) NULL);
+GO
+
+--Table dbo.TBFLCXTMP
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFLCXTMP] (
+	[CODEMP] [char](2) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[TPEMITENTE] [char](1) NULL,
+	[CODEMITENTE] [char](9) NULL,
+	[DESEMITENTE] [char](50) NULL,
+	[ORIGEM] [char](2) NULL,
+	[SINAL] [smallint] NULL,
+	[VALOR00] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__5F691F13] DEFAULT (0),
+	[VALOR01] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__605D434C] DEFAULT (0),
+	[VALOR02] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__61516785] DEFAULT (0),
+	[VALOR03] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__62458BBE] DEFAULT (0),
+	[VALOR04] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__6339AFF7] DEFAULT (0),
+	[VALOR05] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__642DD430] DEFAULT (0),
+	[VALOR06] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__6521F869] DEFAULT (0),
+	[VALOR07] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__66161CA2] DEFAULT (0),
+	[VALOR08] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__670A40DB] DEFAULT (0),
+	[VALOR09] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__67FE6514] DEFAULT (0),
+	[VALOR10] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__68F2894D] DEFAULT (0),
+	[VALOR11] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__69E6AD86] DEFAULT (0),
+	[VALOR12] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__6ADAD1BF] DEFAULT (0),
+	[VALOR13] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__6BCEF5F8] DEFAULT (0),
+	[VALOR14] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__6CC31A31] DEFAULT (0),
+	[VALOR15] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__6DB73E6A] DEFAULT (0),
+	[VALOR16] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__6EAB62A3] DEFAULT (0),
+	[VALOR17] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__6F9F86DC] DEFAULT (0),
+	[VALOR18] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__7093AB15] DEFAULT (0),
+	[VALOR19] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__7187CF4E] DEFAULT (0),
+	[VALOR20] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__727BF387] DEFAULT (0),
+	[VALOR21] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__737017C0] DEFAULT (0),
+	[VALOR22] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__74643BF9] DEFAULT (0),
+	[VALOR23] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__75586032] DEFAULT (0),
+	[VALOR24] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__764C846B] DEFAULT (0),
+	[VALOR25] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__7740A8A4] DEFAULT (0),
+	[VALOR26] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__7834CCDD] DEFAULT (0),
+	[VALOR27] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__7928F116] DEFAULT (0),
+	[VALOR28] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__7A1D154F] DEFAULT (0),
+	[VALOR29] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__7B113988] DEFAULT (0),
+	[VALOR30] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTMP__VALOR__7C055DC1] DEFAULT (0),
+	[CCUSTO] [char](10) NULL);
+GO
+
+--Table dbo.TBFLCXTP2
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBFLCXTP2] (
+	[CODEMP] [char](2) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[TPEMITENTE] [char](1) NULL,
+	[CODEMITENTE] [char](9) NULL,
+	[DESEMITENTE] [char](50) NULL,
+	[ORIGEM] [char](2) NULL,
+	[SINAL] [int] NULL,
+	[VALOR00] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__36D1E92B] DEFAULT (0),
+	[VALOR01] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__37C60D64] DEFAULT (0),
+	[VALOR02] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__38BA319D] DEFAULT (0),
+	[VALOR03] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__39AE55D6] DEFAULT (0),
+	[VALOR04] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__3AA27A0F] DEFAULT (0),
+	[VALOR05] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__3B969E48] DEFAULT (0),
+	[VALOR06] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__3C8AC281] DEFAULT (0),
+	[VALOR07] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__3D7EE6BA] DEFAULT (0),
+	[VALOR08] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__3E730AF3] DEFAULT (0),
+	[VALOR09] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__3F672F2C] DEFAULT (0),
+	[VALOR10] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__405B5365] DEFAULT (0),
+	[VALOR11] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__414F779E] DEFAULT (0),
+	[VALOR12] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__42439BD7] DEFAULT (0),
+	[VALOR13] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__4337C010] DEFAULT (0),
+	[VALOR14] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__442BE449] DEFAULT (0),
+	[VALOR15] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__45200882] DEFAULT (0),
+	[VALOR16] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__46142CBB] DEFAULT (0),
+	[VALOR17] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__470850F4] DEFAULT (0),
+	[VALOR18] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__47FC752D] DEFAULT (0),
+	[VALOR19] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__48F09966] DEFAULT (0),
+	[VALOR20] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__49E4BD9F] DEFAULT (0),
+	[VALOR21] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__4AD8E1D8] DEFAULT (0),
+	[VALOR22] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__4BCD0611] DEFAULT (0),
+	[VALOR23] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__4CC12A4A] DEFAULT (0),
+	[VALOR24] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__4DB54E83] DEFAULT (0),
+	[VALOR25] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__4EA972BC] DEFAULT (0),
+	[VALOR26] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__4F9D96F5] DEFAULT (0),
+	[VALOR27] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__5091BB2E] DEFAULT (0),
+	[VALOR28] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__5185DF67] DEFAULT (0),
+	[VALOR29] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__527A03A0] DEFAULT (0),
+	[VALOR30] [decimal](28, 14) NULL CONSTRAINT [DF__TBFLCXTP2__VALOR__536E27D9] DEFAULT (0),
+	[CCUSTO] [char](10) NULL);
+GO
+
+--Table dbo.TBGENE001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE001] (
+	[CODUNIMED] [char](2) NOT NULL,
+	[DESUNIMED] [char](20) NOT NULL,
+	[STAUNIMED] [char](1) NOT NULL,
+	[FATORCONVUNITARIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE001__FATOR__7EE1CA6C] DEFAULT (1),
+	[CODUNIMEDCONV] [char](2) NULL,
+	[CODUNIMEDFCI] [int] NULL);
+GO
+
+--Table dbo.TBGENE002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE002] (
+	[CODUF] [char](2) NOT NULL,
+	[NOMUF] [char](30) NOT NULL,
+	[CODSINIEF] [char](3) NULL,
+	[CODUFIBGE] [char](2) NULL);
+GO
+
+--Table dbo.TBGENE003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE003] (
+	[CODRAMO] [char](3) NOT NULL,
+	[DESRAMO] [char](25) NOT NULL,
+	[STARAMO] [char](1) NOT NULL,
+	[TIPRAMO] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE004] (
+	[CODNATUOPER] [char](3) NOT NULL,
+	[DESNATUOPER] [char](30) NOT NULL,
+	[STANATUOPER] [char](1) NOT NULL,
+	[CODNATUOPER2] [char](6) NOT NULL,
+	[STAVENDA] [char](1) NULL CONSTRAINT [DF__TBGENE004__STAVE__058EC7FB] DEFAULT ('N'),
+	[STACOMPRA] [char](1) NULL,
+	[DESNATUOPERCOMPLETA] [char](180) NULL,
+	[STACONSIDERANOCIAP] [char](1) NULL CONSTRAINT [DF__TBGENE004__STACO__298DC7FD] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE005] (
+	[DESSITUACAOTRIB] [char](30) NOT NULL,
+	[STASITUACAOTRIB] [char](1) NULL,
+	[CODSITESTADUAL] [char](5) NULL,
+	[CODSITFEDERAL] [char](5) NULL,
+	[CODSITUACAOTRIB2] [char](5) NOT NULL,
+	[TIPSITUACAOTRIB] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE006] (
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[DESGRPAGTO] [char](50) NOT NULL,
+	[STAUSOSC] [char](1) NULL,
+	[STAGRPAGTO] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE007] (
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[DESPAGTO] [char](50) NOT NULL,
+	[STACODPAGTO] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE008] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBGENE008__CODEM__0E240DFC] DEFAULT ('01'),
+	[NUMLANCCCUSTO] [char](9) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[DATCOMPET] [datetime] NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[ORIGEM] [char](2) NOT NULL,
+	[NUMDOCUM] [char](9) NOT NULL,
+	[SERIEDOCUM] [char](5) NULL,
+	[VALMOVTO] [decimal](28, 14) NOT NULL,
+	[CODEMITENTE] [char](10) NOT NULL,
+	[ID_OPER] [char](1) NOT NULL,
+	[CODALMOX] [char](3) NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[NUMLANC] [char](9) NULL,
+	[TIPOEMITENTE] [char](3) NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[CODMOVESTOQ] [char](3) NOT NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[VALUNITMOVTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBGENE008__VALUN__0F183235] DEFAULT (0),
+	[ORDEMSERVICO] [char](10) NULL,
+	[CODORDEM] [char](12) NOT NULL CONSTRAINT [DF__TBGENE008__CODOR__100C566E] DEFAULT (' '),
+	[SEQORDEM] [char](3) NOT NULL CONSTRAINT [DF__TBGENE008__SEQOR__11007AA7] DEFAULT (' '),
+	[QTDMOVTO] [decimal](28, 14) NOT NULL,
+	[CODDOCUM] [char](3) NULL);
+GO
+
+--Table dbo.TBGENE009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE009] (
+	[CODDOCUM] [char](3) NOT NULL,
+	[DESDOCUM] [char](50) NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[STADOCUM] [char](1) NOT NULL,
+	[STAUSODOSISTEMA] [char](1) NOT NULL,
+	[STANOTADEBCRED] [char](1) NULL CONSTRAINT [DF__TBGENE009__STANO__13DCE752] DEFAULT ('N'),
+	[CODGRUPODOCTO] [char](3) NULL,
+	[CODREGFISCAL] [char](5) NULL,
+	[CODDOCTOICMS] [char](2) NULL,
+	[CODDOCTOISS] [char](2) NULL,
+	[STAGERANUMERO] [char](1) NULL,
+	[DOCLANCAIPI] [char](1) NULL CONSTRAINT [DF__TBGENE009__DOCLA__09C016E9] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE010
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE010] (
+	[CODINDICE] [char](3) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DESINDICE] [char](30) NOT NULL,
+	[STAINDICE] [char](1) NULL CONSTRAINT [DF__TBGENE010__STAIN__16B953FD] DEFAULT ('S'),
+	[STACONVERTE] [char](1) NULL CONSTRAINT [DF__TBGENE010__STACO__17AD7836] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE011
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE011] (
+	[CODINDICE] [char](3) NOT NULL,
+	[DATCOTACAO] [datetime] NOT NULL,
+	[VALCOTACAO] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBGENE012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE012] (
+	[CODDIVMAT] [char](5) NOT NULL,
+	[DESDIVMAT] [char](40) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[STADIVMAT] [char](1) NOT NULL,
+	[STAPERMITESC] [char](1) NULL CONSTRAINT [DF__TBGENE012__STAPE__008BB26A] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE013
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE013] (
+	[CODDIVMAT] [char](5) NOT NULL,
+	[DESDIVMAT] [char](40) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[STADIVMAT] [char](1) NOT NULL,
+	[STAPERMITESC] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE014
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE014] (
+	[CODDIVMAT] [char](5) NOT NULL,
+	[DESDIVMAT] [char](40) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[STADIVMAT] [char](1) NOT NULL,
+	[STAPERMITESC] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE015
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE015] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODBANCO] [char](6) NOT NULL,
+	[NOMBANCO] [char](40) NOT NULL,
+	[NUMBANCO] [char](10) NOT NULL,
+	[OBSBANCO] [text] NULL,
+	[STABANCO] [char](1) NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[CODMODDOC] [char](2) NULL,
+	[CODMODCHEQUE] [char](2) NULL,
+	[LOTESEQSISPAG] [int] NULL,
+	[LOTESEQCNAB] [int] NULL,
+	[DIRETARQSISPAG] [char](40) NULL,
+	[DIRETARQCNAB] [char](40) NULL,
+	[SEQNOSSONUMREC] [char](20) NULL,
+	[EXTARQCNAB] [char](3) NULL CONSTRAINT [DF__TBGENE015__EXTAR__5031C87B] DEFAULT ('TXT'),
+	[CAMINHOLOGOBANCO] [char](100) NULL,
+	[MODELOBOLETO] [char](1) NULL,
+	[NOSSONUMINI] [char](20) NULL,
+	[NOSSONUMFIM] [char](20) NULL,
+	[CODCONVENIO] [char](20) NULL,
+	[STAUSAIMPRCHEQUE] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE016
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE016] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODBANCO] [char](6) NOT NULL,
+	[CODAGENCIA] [char](10) NOT NULL,
+	[NOMAGENCIA] [char](40) NOT NULL,
+	[ENDAGENCIA] [char](50) NOT NULL,
+	[NUMENDAGENCIA] [char](6) NOT NULL,
+	[COMPLENDAGENCIA] [char](30) NULL,
+	[BAIRROAGENCIA] [char](40) NOT NULL,
+	[CIDADEAGENCIA] [char](30) NOT NULL,
+	[CODUF] [char](2) NOT NULL,
+	[CEPAGENCIA] [char](10) NOT NULL,
+	[TELAGENCIA] [char](12) NOT NULL,
+	[FAXAGENCIA] [char](12) NULL,
+	[RAMALAGENCIA] [char](4) NULL,
+	[CONTATOAGENCIA] [char](20) NULL,
+	[NUMCTACORRENTE] [char](15) NOT NULL,
+	[STAGENCIA] [char](1) NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[NUMSEQCHEQUE] [char](10) NULL,
+	[NUMSEQDOC] [char](10) NULL,
+	[DIGCTACORRENTE] [char](2) NULL,
+	[CTACONTABIL] [char](12) NULL,
+	[SLDCTACORRENTE] [decimal](28, 14) NULL,
+	[STACOMPLETADO] [char](1) NULL CONSTRAINT [DF__TBGENE016__STACO__33607FA3] DEFAULT ('S'),
+	[ESPECIEDOCBOLETO] [char](8) NULL,
+	[ACEITEBOLETO] [char](5) NULL,
+	[USOBANCOBOLETO] [char](10) NULL,
+	[CARTEIRABOLETO] [char](8) NULL,
+	[ESPECIEMOEDABOLETO] [char](3) NULL,
+	[CODCEDENTEBOLETO] [char](20) NULL,
+	[CODBAIXABOLETO] [char](6) NULL,
+	[NUMLININSTRUCOESBOLETO] [int] NULL,
+	[NUMCOLINSTRUCOESBOLETO] [int] NULL,
+	[INSTRUCOESBOLETO] [text] NULL,
+	[DESCEDENTEBOLETO] [char](80) NULL,
+	[LOCALPAGAMENTO] [text] NULL,
+	[VALJUROSDIA] [decimal](28, 14) NULL,
+	[STAGERALIVROCAIXA] [char](1) NULL,
+	[VALTARIFA] [decimal](28, 14) NULL,
+	[CODCONVENIOCBR] [char](20) NULL,
+	[PERCMULTA] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE016__PERCM__7AC7EC1C] DEFAULT (0),
+	[CTADESCONTO] [char](12) NULL,
+	[STACONTADEVOLUCAO] [char](1) NULL CONSTRAINT [DF__TBGENE016__STACO__11CB4D05] DEFAULT ('N'),
+	[TIPNOSSONUM] [char](1) NULL,
+	[DATULTBLOQUEIO] [datetime] NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[DESCCARTEIRA] [char](40) NULL,
+	[SLDCTACORRENTEEMIS] [decimal](13, 0) NULL);
+GO
+
+--Table dbo.TBGENE018
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE018] (
+	[NOMDOC] [char](40) NOT NULL,
+	[DESDOC] [char](100) NULL,
+	[QTDCOLUNAS] [int] NULL,
+	[QTDLINHAS] [int] NULL,
+	[CLASSFISCPREIMPR] [char](1) NULL CONSTRAINT [DF__TBGENE018__CLASS__25FB978D] DEFAULT ('S'),
+	[STAOBSJUNTOCOMITENS] [char](1) NULL CONSTRAINT [DF__TBGENE018__STAOB__26EFBBC6] DEFAULT ('S'),
+	[DESACRESCIMONF] [char](50) NULL,
+	[DESDESCONTONF] [char](50) NULL,
+	[CODCOMPACTACAO] [char](5) NULL,
+	[CODLPP] [char](5) NULL CONSTRAINT [DF__TBGENE018__CODLP__6A26A4A8] DEFAULT ('LPI06'),
+	[NOMIMP] [char](30) NULL,
+	[DESCAMINHOIMP] [char](50) NULL,
+	[NOMPORTALOCAL] [char](5) NULL,
+	[STANFMAISDEUMFORM] [char](1) NULL CONSTRAINT [DF__TBGENE018__STANF__70DE8F2F] DEFAULT ('N'),
+	[STAUSARNOVAROTINAIMP] [char](1) NULL,
+	[QTDLINHASDOFORMULARIO] [int] NULL);
+GO
+
+--Table dbo.TBGENE019
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE019] (
+	[NOMDOC] [char](40) NOT NULL,
+	[NOMCAMPO] [char](30) NOT NULL,
+	[DESCAMPO] [char](100) NULL,
+	[STACOMPRIME] [char](1) NULL,
+	[STAIMPRIMIR] [char](1) NULL,
+	[TAMCAMPO] [char](4) NULL,
+	[MASCARA] [char](50) NULL,
+	[TRATESP] [char](1) NULL,
+	[STAMEMO] [char](1) NULL,
+	[LARGURAMEMO] [int] NULL,
+	[ALTURAMEMO] [int] NULL,
+	[SECAOFORM] [char](2) NULL,
+	[STATRUNCAR] [char](1) NULL,
+	[STAIMPRIMIRNANFCOMPIMP] [char](1) NULL CONSTRAINT [DF__TBGENE019__STAIM__29CC2871] DEFAULT ('N'),
+	[NUMLINHA] [int] NOT NULL,
+	[NUMCOLUNA] [int] NOT NULL);
+GO
+
+--Table dbo.TBGENE020
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE020] (
+	[DATFERIADO] [datetime] NOT NULL,
+	[DESFERIADO] [char](40) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STAATIVO] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBGENE021
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE021] (
+	[CODCFOP] [char](3) NOT NULL,
+	[CODUF] [char](2) NOT NULL,
+	[PORCICMS] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBGENE021__PORCI__2E90DD8E] DEFAULT (0),
+	[CODCFOP2] [char](6) NOT NULL);
+GO
+
+--Table dbo.TBGENE022
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE022] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBGENE022__CODEM__316D4A39] DEFAULT ('01'),
+	[NUMLANCCCUSTO] [char](9) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[CODGRPAGTO] [char](2) NOT NULL,
+	[CODPAGTO] [char](3) NOT NULL,
+	[DATCOMPET] [datetime] NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[ORIGEM] [char](2) NOT NULL,
+	[NUMDOCUM] [char](9) NOT NULL,
+	[SERIEDOCUM] [char](5) NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[VALMOVTO] [decimal](28, 14) NOT NULL,
+	[CODEMITENTE] [char](10) NOT NULL,
+	[ID_OPER] [char](1) NOT NULL,
+	[CODALMOX] [char](3) NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[NUMLANC] [char](9) NULL,
+	[TIPOEMITENTE] [char](3) NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[CODMOVESTOQ] [char](3) NOT NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[VALUNITMOVTO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBGENE022__VALUN__32616E72] DEFAULT (0),
+	[ORDEMSERVICO] [char](10) NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[QTDMOVTO] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBGENE023
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE023] (
+	[CODEMP] [char](2) NOT NULL,
+	[CONTESTO] [char](12) NOT NULL,
+	[CODDIGITOCONTA] [char](1) NULL,
+	[PRIORIDADE] [int] NULL,
+	[DESCCONTA] [char](40) NULL,
+	[CODPERCRAT] [char](5) NULL,
+	[TIPDESP] [char](1) NULL,
+	[ACEITACC] [char](1) NULL CONSTRAINT [DF__TBGENE023__ACEIT__241E3C13] DEFAULT ('S'),
+	[STACONTABILIZA] [char](1) NULL CONSTRAINT [DF__TBGENE023__STACO__2512604C] DEFAULT ('S'),
+	[CODHIST] [char](3) NULL,
+	[CODCATEGORIACONTA] [char](1) NULL,
+	[DATCADAST] [datetime] NULL,
+	[VALSALDODEVINI] [decimal](28, 14) NULL,
+	[VALSALDOCREINI] [decimal](28, 14) NULL,
+	[VALSALDODEVATU] [decimal](28, 14) NULL,
+	[VALSALDOCREATU] [decimal](28, 14) NULL,
+	[DATULTLANCTO] [datetime] NULL,
+	[STACONTA] [char](1) NULL,
+	[TIPCONT] [char](1) NULL,
+	[CODDOCUMEMISSAO] [char](3) NULL,
+	[NUMDOCUMCPOEMISSAO] [char](30) NULL,
+	[CODHISTBAIXA] [char](5) NULL,
+	[CODDOCUMBAIXA] [char](3) NULL,
+	[NUMDOCUMCPOBAIXA] [char](30) NULL,
+	[STAOBRIGAPLANO] [char](1) NULL,
+	[INDNATUREZACONTA] [char](1) NULL,
+	[STACTAATIVOIMOB] [char](1) NULL CONSTRAINT [DF__TBGENE023__STACT__1D520E4A] DEFAULT ('N'),
+	[PERCDEPREC] [decimal](28, 14) NULL,
+	[CTADEPRECATIVO] [char](12) NULL,
+	[CONTREDUZ] [int] NULL,
+	[INDNATUCONTASPED] [char](2) NULL,
+	[CODCONTAREFSPED] [char](30) NULL,
+	[CODFILIALRESUM] [char](2) NULL,
+	[CODCONTARESUM] [char](12) NULL,
+	[CTADESPDEPRECATIVO] [char](12) NULL,
+	[CODEVENTODEPREC] [char](5) NULL);
+GO
+
+--Table dbo.TBGENE024
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE024] (
+	[CODREDCLASSFISC] [char](2) NOT NULL,
+	[CODCLASSFISCAL] [char](10) NULL);
+GO
+
+--Table dbo.TBGENE025
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE025] (
+	[NOMTABELA] [char](20) NOT NULL,
+	[NOMCAMPO] [char](20) NOT NULL,
+	[NOMCAMPOCHAVE] [char](20) NOT NULL,
+	[DESTABELA] [char](30) NULL,
+	[TIPOCLASSIFIC] [char](1) NOT NULL,
+	[CLAUSULASQL] [text] NULL,
+	[EXTRA] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE026
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE026] (
+	[NOMTABELA] [char](20) NOT NULL,
+	[NOMCAMPO] [char](20) NOT NULL,
+	[CODCLASSIFIC] [char](1) NOT NULL,
+	[DESCLASSIFIC] [char](20) NULL,
+	[PERCMAXCLASSIFIC] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE026__PERCM__3BEAD8AC] DEFAULT (0));
+GO
+
+--Table dbo.TBGENE030
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE030] (
+	[CODCNO] [char](4) NOT NULL,
+	[DESCCNO] [char](50) NOT NULL,
+	[STACNO] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBGENE031
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE031] (
+	[CODCNO] [char](4) NOT NULL,
+	[CFOP] [char](3) NOT NULL,
+	[CFOP2] [char](6) NOT NULL);
+GO
+
+--Table dbo.TBGENE032
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE032] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBGENE032__CODEM__4297D63B] DEFAULT ('01'),
+	[RAZSOCEMP] [char](50) NOT NULL,
+	[NOMFANTASEMP] [char](40) NOT NULL,
+	[NOMEXIBEEMP] [char](15) NOT NULL,
+	[NUMCGCCPFEMP] [char](14) NOT NULL,
+	[ENDEMP] [char](40) NOT NULL,
+	[NUMENDEMP] [char](6) NOT NULL,
+	[COMPLENDEMP] [char](20) NULL,
+	[BAIRROEMP] [char](30) NULL,
+	[CIDADEEMP] [char](30) NOT NULL,
+	[CODUF] [char](2) NOT NULL,
+	[CEPEMP] [char](10) NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[TELEMP] [char](12) NULL,
+	[FAXEMP] [char](12) NULL,
+	[CONTATOEMP] [char](20) NULL,
+	[RAMALEMP] [char](4) NULL,
+	[STAEMP] [char](1) NULL,
+	[CODREGVENDA] [char](2) NULL,
+	[CODREGCOB] [char](2) NULL,
+	[INSCRESTA] [char](15) NULL,
+	[INSCRMUNIC] [char](15) NULL,
+	[EMAIL] [char](35) NULL,
+	[CONTACONTABIL] [char](14) NOT NULL CONSTRAINT [DF__TBGENE032__CONTA__438BFA74] DEFAULT ('0'),
+	[CODCLI] [char](9) NULL,
+	[CODCIDADE] [char](3) NULL,
+	[PERMITEMOVTOENTREFILIAIS] [char](1) NULL,
+	[PERCIRRFVEND] [decimal](28, 14) NULL,
+	[STACONTRIBIPI] [char](1) NULL,
+	[STACONTRIBICMS] [char](1) NULL,
+	[CODTPESTAB] [char](10) NULL,
+	[DESTPESTAB] [char](45) NULL,
+	[ATIVPRINCIPAL] [char](45) NULL,
+	[CODIPIATIV] [char](10) NULL,
+	[CODICMSATIV] [char](10) NULL,
+	[NOMJUNTACOMERC] [char](40) NULL,
+	[NUMREGJUNTA] [char](25) NULL,
+	[DATJUNTA] [datetime] NULL,
+	[CAMINHOARQDES] [char](150) NULL,
+	[REGJUNTACOMNFSEMIT] [char](30) NULL,
+	[DATREGJUNTANFSEMIT] [datetime] NULL,
+	[NUMREGIMEESPNFSEMIT] [char](30) NULL,
+	[NUMDECRETONFSEMIT] [char](50) NULL,
+	[REGJUNTACOMNFSRECEB] [char](30) NULL,
+	[DATREGJUNTANFSRECEB] [datetime] NULL,
+	[NUMREGIMEESPNFSRECEB] [char](30) NULL,
+	[NUMDECRETONFSRECEB] [char](50) NULL,
+	[ASSINATURA1LIVROISS] [text] NULL,
+	[ASSINATURA2LIVROISS] [text] NULL,
+	[NUMINSCRINSS] [char](12) NULL,
+	[NUMINSCRPISPASEP] [char](11) NULL,
+	[CODMUNICIPIO] [char](5) NULL,
+	[NUMINSCRSUFRAMA] [char](9) NULL,
+	[STAUSANFESERV] [char](1) NULL CONSTRAINT [DF__TBGENE032__STAUS__286EBB3B] DEFAULT ('N'),
+	[DATININFESERV] [datetime] NULL,
+	[CEPCXPOSTAL] [char](8) NULL,
+	[CXPOSTAL] [char](8) NULL,
+	[CODMUNICIPIOIBGE] [char](7) NULL,
+	[CODPAIS] [char](5) NULL,
+	[HOMEPAGE] [char](70) NULL,
+	[INSCRESTA_ST] [char](15) NULL,
+	[CODCNAE] [char](7) NULL,
+	[INSCRESTAINTIMA] [char](12) NULL,
+	[NATUREZAPJ] [char](2) NULL,
+	[NUMINSCIMOB] [char](20) NULL,
+	[CODALMOXREPO] [char](3) NULL,
+	[DATFECHMANUTIND] [datetime] NULL,
+	[DATINIPONTUA] [datetime] NULL,
+	[TIPOCALCCUSTO] [char](1) NULL,
+	[DATPRIMFECHMANUTIND] [datetime] NULL,
+	[MSGPROMOCUPOM] [text] NULL,
+	[STAUSADESFOLHA] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE033
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE033] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBGENE033__CODEM__4668671F] DEFAULT ('01'),
+	[SEQENDCOBEMP] [char](2) NOT NULL,
+	[ENDCOBEMP] [char](40) NOT NULL,
+	[NUMENDCOBEMP] [char](6) NOT NULL,
+	[COMPLENDCOBEMP] [char](20) NULL,
+	[BAIRROENDCOBEMP] [char](30) NULL,
+	[CIDADEENDCOBEMP] [char](30) NOT NULL,
+	[CODUFENDCOBEMP] [char](2) NOT NULL,
+	[CEPENDCOBEMP] [char](10) NOT NULL,
+	[TELENDCOBEMP] [char](12) NULL,
+	[FAXENDCOBEMP] [char](12) NULL,
+	[CONTATOENDCOBEMP] [char](20) NULL,
+	[RAMALENDCOBEMP] [char](4) NULL,
+	[STAENDCOBEMP] [char](1) NULL,
+	[CEPCXPOSTAL] [char](8) NULL,
+	[CXPOSTAL] [char](8) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[CODPAIS] [char](5) NULL);
+GO
+
+--Table dbo.TBGENE034
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE034] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBGENE034__CODEM__4944D3CA] DEFAULT ('01'),
+	[SEQENDENTEMP] [char](2) NOT NULL,
+	[ENDENTEMP] [char](40) NOT NULL,
+	[NUMENDENTEMP] [char](6) NOT NULL,
+	[COMPLENDENTEMP] [char](20) NULL,
+	[BAIRROENDENTEMP] [char](30) NULL,
+	[CIDADEENDENTEMP] [char](30) NOT NULL,
+	[CODUFENDENTEMP] [char](2) NOT NULL,
+	[CEPENDENTEMP] [char](10) NOT NULL,
+	[TELENDENTEMP] [char](12) NULL,
+	[FAXENDENTEMP] [char](12) NULL,
+	[CONTATOENDENTEMP] [char](20) NULL,
+	[RAMALENDENTEMP] [char](4) NULL,
+	[STAENDENTEMP] [char](1) NULL,
+	[CEPCXPOSTAL] [char](8) NULL,
+	[CXPOSTAL] [char](8) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[CODPAIS] [char](5) NULL);
+GO
+
+--Table dbo.TBGENE035
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE035] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBGENE035__CODEM__4C214075] DEFAULT ('01'),
+	[NUMCOLETA] [char](9) NOT NULL,
+	[NUMPEDIDO] [char](9) NOT NULL,
+	[NUMSEQCOMSEMPED] [char](9) NOT NULL,
+	[NUMPEDVENDA] [char](9) NOT NULL,
+	[NUMSEQNF] [char](9) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMCONTRATO] [char](9) NOT NULL,
+	[NUMORCAM] [char](7) NOT NULL,
+	[NUMSEQNFSERV] [char](9) NOT NULL,
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[CODCLIIMPRNF] [char](9) NOT NULL,
+	[NUMSEQDOCESTOQUE] [char](9) NOT NULL,
+	[NUMSC] [char](10) NOT NULL,
+	[ULTMESDISPCONS] [char](2) NOT NULL,
+	[ULTANODISPCONS] [char](4) NOT NULL,
+	[ULTMESVAL] [char](2) NOT NULL,
+	[ULTANOVAL] [char](4) NOT NULL,
+	[ULTMESFECH] [char](2) NOT NULL,
+	[ULTANOFECH] [char](4) NOT NULL,
+	[NUMLANC] [char](9) NOT NULL,
+	[CCUSTONFSAIDA] [char](10) NOT NULL,
+	[CODUFCLIENTESISTEMA] [char](2) NOT NULL,
+	[NUMLANCCCUSTO] [char](9) NOT NULL,
+	[CODALMOXESTOQUE] [char](3) NOT NULL,
+	[CCUSTOEMITCONTRATO] [char](10) NULL,
+	[CCUSTODESTCONTRATO] [char](10) NULL,
+	[CAMPODECALCCOMISSOES] [char](30) NULL CONSTRAINT [DF__TBGENE035__CAMPO__4D1564AE] DEFAULT ('VALTOTMERC'),
+	[CCUSTOEMITENTENFSAIDAPROD] [char](10) NULL,
+	[CCUSTOEMITENTENFSAIDASERV] [char](10) NULL,
+	[NUMSEQDUP] [char](9) NULL CONSTRAINT [DF__TBGENE035__NUMSE__4E0988E7] DEFAULT ('000000'),
+	[ULTNUMNFSERVLIVROISS] [char](6) NULL,
+	[QTDMESMEDIA] [int] NULL CONSTRAINT [DF__TBGENE035__QTDME__4EFDAD20] DEFAULT (0),
+	[CODALMOXINSPECAO] [char](3) NULL,
+	[STALOTEQUALIDADE] [char](1) NULL CONSTRAINT [DF__TBGENE035__STALO__4FF1D159] DEFAULT ('N'),
+	[NUMLOTEQUALIDADE] [char](15) NULL,
+	[NUMSEQCONHEC] [char](9) NULL,
+	[NUMNFCONHEC] [char](6) NULL,
+	[SERNFCONHEC] [char](5) NULL,
+	[TIPCONSIGCONHEC] [char](1) NULL,
+	[TIPDESTCONHEC] [char](1) NULL,
+	[CODEMPEMITCONHEC] [char](2) NULL,
+	[NUMSEQDUPCONHEC] [char](9) NULL,
+	[GRPMATCONHEC] [char](1) NULL,
+	[VALTOTNFCONHEC] [char](1) NULL,
+	[EXPORTACONHECCONTAB] [char](1) NULL,
+	[CODOBSCONHEC] [char](2) NULL,
+	[CODOBSCONHECDUP] [char](2) NULL,
+	[NOMDOCNFPROD] [char](40) NULL,
+	[NOMDOCNFSERV] [char](40) NULL,
+	[NOMDOCNFCONHEC] [char](40) NULL,
+	[NOMDOCBOLETO] [char](40) NULL,
+	[NOMDOCDUPLICATA] [char](40) NULL,
+	[QTDELINITENSNFVENDAPROD] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEL__50E5F592] DEFAULT (30),
+	[QTDELINITENSNFVENDASERV] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEL__51DA19CB] DEFAULT (30),
+	[QTDECARACLINITENSNFVENDAPROD] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEC__52CE3E04] DEFAULT (60),
+	[QTDECARACLINITENSNFVENDASERV] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEC__53C2623D] DEFAULT (60),
+	[QTDELINOBSNFVENDAPROD] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEL__54B68676] DEFAULT (10),
+	[QTDELINOBSNFVENDASERV] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEL__55AAAAAF] DEFAULT (10),
+	[QTDECARACLINOBSNFVENDAPROD] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEC__569ECEE8] DEFAULT (60),
+	[QTDECARACLINOBSNFVENDASERV] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEC__5792F321] DEFAULT (60),
+	[QTDECARACLINOBSNFCONHEC] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEC__5887175A] DEFAULT (60),
+	[QTDECARACLINOBSDUPCONHEC] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEC__597B3B93] DEFAULT (60),
+	[QTDELINOBSNFCONHEC] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEL__5A6F5FCC] DEFAULT (10),
+	[QTDELINOBSDUPCONHEC] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEL__5B638405] DEFAULT (10),
+	[COMPRIMENFPROD] [char](1) NULL,
+	[QTDELINITENSPEDCOMPRA] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEL__5C57A83E] DEFAULT (30),
+	[QTDECARACLINITENSPEDCOMPRA] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEC__5D4BCC77] DEFAULT (60),
+	[QTDELINOBSPEDCOMPRA] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEL__5E3FF0B0] DEFAULT (10),
+	[QTDECARACLINOBSPEDCOMPRA] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEC__5F3414E9] DEFAULT (60),
+	[STAVENCTOFERIADO] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAVE__60283922] DEFAULT ('S'),
+	[NUMORCAMPED] [char](9) NULL,
+	[STAUSOTABPRECO] [char](1) NULL,
+	[COMPRIMENFSERV] [char](1) NULL CONSTRAINT [DF__TBGENE035__COMPR__611C5D5B] DEFAULT ('S'),
+	[STAUSOCTPAGAR] [char](1) NULL,
+	[STAUSOCTRECEBER] [char](1) NULL,
+	[STAUSOFLCAIXA] [char](1) NULL,
+	[STAUSOCONTAB] [char](1) NULL,
+	[STAUSOESTOQUE] [char](1) NULL,
+	[NUMSEQCONTSALDFLCX] [char](4) NULL CONSTRAINT [DF__TBGENE035__NUMSE__62108194] DEFAULT ('0000'),
+	[DIAPROXIMOANTERIOR] [char](1) NULL CONSTRAINT [DF__TBGENE035__DIAPR__6304A5CD] DEFAULT ('P'),
+	[FLCXDATINIC] [datetime] NULL,
+	[FLCXDATFIM] [datetime] NULL,
+	[FLCXTIPTOTALIZACAO] [char](1) NULL CONSTRAINT [DF__TBGENE035__FLCXT__63F8CA06] DEFAULT ('D'),
+	[CAMINHOUNIVERCPCR] [char](50) NULL,
+	[CTAJUROS] [char](12) NULL,
+	[CTADESCTO] [char](12) NULL,
+	[GERASEQBORD] [char](1) NULL,
+	[NUMSEQBORD] [char](6) NULL,
+	[MODBORDERO] [char](1) NULL,
+	[SUBGRUPOPEDVENDA] [char](12) NULL,
+	[SUBGRUPOPEDCOMPRA] [char](12) NULL,
+	[SUBGRUPOCONTRATO] [char](12) NULL,
+	[UTILIZAINTERFACECONTABIL] [char](1) NULL CONSTRAINT [DF__TBGENE035__UTILI__64ECEE3F] DEFAULT ('N'),
+	[OPCRATEIODESP] [char](1) NULL CONSTRAINT [DF__TBGENE035__OPCRA__65E11278] DEFAULT ('1'),
+	[CONTADEBITODEFAULT] [char](12) NULL,
+	[TPBAIXADEFAULT] [char](2) NULL,
+	[CALCTPJUROSCTPAGAR] [char](1) NULL,
+	[BASEJUROSCTPAGAR] [char](1) NULL,
+	[HISTCONTRAPARTIDA] [char](3) NULL,
+	[DOCCONTRAPARTIDA] [char](2) NULL,
+	[HISTLANCJUROS] [char](3) NULL,
+	[HISTLANCDESCTO] [char](3) NULL,
+	[HISTPAGTOTITULO] [char](3) NULL,
+	[NOMDOCPEDVENDA] [char](40) NULL,
+	[QTDELINITENSPEDVENDAIMPR] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEL__66D536B1] DEFAULT (0),
+	[QTDELINOBSPEDVENDAIMPR] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEL__67C95AEA] DEFAULT (0),
+	[QTDECARACLINITENSPEDVENDAIMPR] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEC__68BD7F23] DEFAULT (0),
+	[QTDECARACLINOBSPEDVENDAIMPR] [int] NULL CONSTRAINT [DF__TBGENE035__QTDEC__69B1A35C] DEFAULT (0),
+	[COMPRIMEORCAMPEDVENDA] [char](1) NULL CONSTRAINT [DF__TBGENE035__COMPR__6AA5C795] DEFAULT ('S'),
+	[STATITULOSEMAPR] [char](1) NULL,
+	[NUMSEQCHAVERET] [char](10) NULL,
+	[TIPODEVOLUCAO] [char](1) NULL,
+	[CODTPBAIXADEV] [char](2) NULL,
+	[CTAJUROSREC] [char](12) NULL,
+	[CTADESCTOREC] [char](12) NULL,
+	[TPBXDEFAULTREC] [char](2) NULL,
+	[CALCTPJUROSCTRECEBER] [char](1) NULL,
+	[BASEJUROSCTRECEBER] [char](1) NULL,
+	[CONTACREDITODEFAULT] [char](12) NULL,
+	[OPCRATEIORECEITA] [char](1) NULL,
+	[NUMSEQBORDRECEBER] [char](6) NULL,
+	[ULTMESFECHPAG] [char](2) NULL,
+	[ULTANOFECHPAG] [char](4) NULL,
+	[TIPODEVOLUCAOCLI] [char](1) NULL,
+	[CODTPBAIXADEVCLI] [char](2) NULL,
+	[CCJUROS] [char](10) NULL,
+	[CCDESCONTOS] [char](10) NULL,
+	[TIPLANCTOIMPRECEBCTPAGAR] [char](1) NULL,
+	[DESATITBORD] [char](1) NULL CONSTRAINT [DF__TBGENE035__DESAT__6B99EBCE] DEFAULT ('N'),
+	[CODDOCUMDEFAULT] [char](3) NULL,
+	[ULTMESFECHREC] [char](2) NULL,
+	[ULTANOFECHREC] [char](4) NULL,
+	[TPBAIXACANC] [char](2) NULL,
+	[CODINDICECOMPRAS] [char](3) NULL,
+	[OBRIGACCUSTOPAGAR] [char](1) NULL,
+	[HISTCONTRAPARTIDAREC] [char](3) NULL,
+	[DOCCONTRAPARTIDAREC] [char](2) NULL,
+	[HISTLANCJUROSREC] [char](3) NULL,
+	[HISTLANCDESCTOREC] [char](3) NULL,
+	[HISTRECEBTITULO] [char](3) NULL,
+	[STATITULOSEMAPRREC] [char](1) NULL,
+	[CODDOCUMDEFAULTREC] [char](3) NULL,
+	[CCJUROSREC] [char](10) NULL,
+	[CCDESCONTOSREC] [char](10) NULL,
+	[OBRIGACCUSTOREC] [char](1) NULL,
+	[STAUSOPRODUCAO] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAUS__6C8E1007] DEFAULT ('N'),
+	[STARECEBEORDEM] [char](1) NULL CONSTRAINT [DF__TBGENE035__STARE__6D823440] DEFAULT ('N'),
+	[UTILIZACONCBANC] [char](1) NULL,
+	[CTAMULTAPAGAR] [char](12) NULL,
+	[CCMULTAPAGAR] [char](10) NULL,
+	[CTAMULTARECEBER] [char](12) NULL,
+	[CCMULTARECEBER] [char](10) NULL,
+	[TIPOCONTRATOREC] [char](1) NULL CONSTRAINT [DF__TBGENE035__TIPOC__6E765879] DEFAULT ('M'),
+	[NUMSEQCONTRATOREC] [char](6) NULL,
+	[TIPOCONTRATOPAG] [char](1) NULL CONSTRAINT [DF__TBGENE035__TIPOC__6F6A7CB2] DEFAULT ('M'),
+	[NUMSEQCONTRATOPAG] [char](6) NULL,
+	[STACOPIAOBSPEDCOMPRANANOTA] [char](1) NULL CONSTRAINT [DF__TBGENE035__STACO__705EA0EB] DEFAULT ('N'),
+	[STAALTPEDCOMPRA] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAAL__7152C524] DEFAULT ('S'),
+	[TPBAIXACANCREC] [char](2) NULL,
+	[STAUSOQUITNOTA] [char](1) NULL,
+	[DESPEDNAOLIBERADO] [char](70) NULL,
+	[NUMPROTRET] [char](9) NULL,
+	[TIPODEFAULTOBSRETIND] [char](1) NULL,
+	[ASSINATURA1] [char](60) NULL,
+	[ASSINATURA2] [char](60) NULL,
+	[ASSINATURA3] [char](60) NULL,
+	[BLOCPEDPRECOMENOR] [char](1) NULL,
+	[NUMSEQGERATR] [char](9) NULL,
+	[ASSINPEDIDO1] [char](60) NULL,
+	[ASSINPEDIDO2] [char](60) NULL,
+	[ASSINPEDIDO3] [char](60) NULL,
+	[TIPMPRPEDGRAFICO] [char](1) NULL CONSTRAINT [DF__TBGENE035__TIPMP__56DEC60A] DEFAULT (1),
+	[USARESERVAMATPED] [char](1) NULL,
+	[STAEMISNFUSUARIO] [char](1) NULL,
+	[STABLOQUEIONF] [char](1) NULL,
+	[STAUSATABCLASSFISCAL] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAUS__3DA903EC] DEFAULT ('N'),
+	[NUMSEQGERATP] [char](9) NULL,
+	[FLCXACUMSALDOANT] [char](1) NULL CONSTRAINT [DF__TBGENE035__FLCXA__5398450B] DEFAULT ('N'),
+	[FLCXORIGEM] [char](70) NULL,
+	[TIPDOCDEVADIANTFORN] [char](3) NULL,
+	[TIPDOCDEVADIANTCLI] [char](3) NULL,
+	[VALUFESP] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE035__VALUF__6C63F2D5] DEFAULT (0),
+	[TIPBAIXACOMPONENTESINDUSTR] [char](1) NULL CONSTRAINT [DF__TBGENE035__TIPBA__09003183] DEFAULT ('1'),
+	[STAUSAKANBAN] [char](1) NULL,
+	[FLCXPRAZOCOMPECR] [int] NULL CONSTRAINT [DF__TBGENE035__FLCXP__2C496DC0] DEFAULT (0),
+	[FLCXPRAZOUTIL] [char](1) NULL CONSTRAINT [DF__TBGENE035__FLCXP__3019FEA4] DEFAULT ('S'),
+	[STAUTILIZACONSUMOAREA] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAUT__46093FC3] DEFAULT ('N'),
+	[STAALTERADATSAIDANF] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAAL__4BC21919] DEFAULT ('N'),
+	[STAGERARETMATNAOUTILIZADO] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAGE__6D230CE4] DEFAULT ('N'),
+	[STAIMPRENDCOBBORDERO] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAIM__11606D5A] DEFAULT ('N'),
+	[DATFECHCOMISSOESVENDA] [datetime] NULL,
+	[STACONTROLALOCAIS] [char](1) NULL,
+	[NUMINSPECAOQUALID] [char](6) NULL,
+	[NUMNOTARECEB] [char](6) NULL,
+	[CTAVARIACAOCAMBIAL] [char](12) NULL,
+	[CCVARIACAOCAMBIAL] [char](10) NULL,
+	[CTAVARIACAOCAMBIALRECEITA] [char](12) NULL,
+	[CTAVARIACAOCAMBIALDESPESA] [char](12) NULL,
+	[STANUMPEDIDOSEQ] [char](1) NULL,
+	[STAUTILIZASERPEDIDO] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAUT__2BAA4F42] DEFAULT ('N'),
+	[SERPEDIDO] [char](2) NULL,
+	[STACOPIAOBSNFTITPAGAR] [char](1) NULL CONSTRAINT [DF__TBGENE035__STACO__5E35CF0F] DEFAULT ('N'),
+	[CAMINHOLOGONR] [char](100) NULL,
+	[STABAIXAAUTOMATICAIQ] [char](1) NULL,
+	[TIPBASECALCPIS] [char](1) NULL,
+	[TIPRATEIOFRETENF] [char](1) NULL,
+	[STAUSOLFISCAL] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAUS__5F29F348] DEFAULT ('N'),
+	[STAVALITEMCOMIPI] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAVA__21EBDADE] DEFAULT ('N'),
+	[STAALTERANFPRODCOMPED] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAAL__26B08FFB] DEFAULT ('N'),
+	[TIPBASECALCCOFINS] [char](1) NULL,
+	[STAGERARETMATNAOUTILENVIO] [char](1) NULL,
+	[LIMITEPERCRECEB] [decimal](28, 14) NULL,
+	[PERCRECEBDEFAULT] [decimal](28, 14) NULL,
+	[STAENCERRASMANALISE] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAEN__2C345F27] DEFAULT ('N'),
+	[STAICMSREDSOMERC] [char](1) NULL,
+	[STARECVOLTRANSP] [char](1) NULL,
+	[STAIMPRCODORDEMNUMDOCUM] [char](1) NULL,
+	[STACCPORUSUARIO] [char](1) NULL,
+	[ASSINORCAMENTO1] [char](60) NULL,
+	[ASSINORCAMENTO2] [char](60) NULL,
+	[ASSINORCAMENTO3] [char](60) NULL,
+	[MOEDAPADRAO] [char](3) NULL,
+	[CARTADECOBRANCA] [text] NULL,
+	[VALREDUTORIRRF] [decimal](28, 14) NULL,
+	[ASSINFATURAM1] [char](60) NULL,
+	[ASSINFATURAM2] [char](60) NULL,
+	[ASSINFATURAM3] [char](60) NULL,
+	[CTAVARIACAOCAMBIALCR] [char](12) NULL,
+	[CCVARIACAOCAMBIALCR] [char](10) NULL,
+	[STADOCTOLANCTO] [char](1) NULL,
+	[TERMOABRENCERR] [text] NULL,
+	[STAUSALOTEAPENASENTRADAS] [char](1) NULL,
+	[STAOBRIGAOBSCANCSC] [char](1) NULL,
+	[NUMSEQSM] [char](6) NULL,
+	[STATRANSFPEDFILIAL] [char](1) NULL,
+	[RODAPESM] [char](255) NULL,
+	[SUBGRUPOCONBENT] [char](12) NULL,
+	[SUBGRUPOCONBSAI] [char](12) NULL,
+	[GRUPOCONBENT] [char](6) NULL,
+	[GRUPOCONBSAI] [char](6) NULL,
+	[CODTABPRECODEFAULT] [char](4) NULL,
+	[RELCX007ORIGEM] [char](70) NULL,
+	[RELCX007DATINIC] [datetime] NULL,
+	[RELCX007DATFIM] [datetime] NULL,
+	[RELCX007TIPTOTALIZACAO] [char](1) NULL CONSTRAINT [DF__TBGENE035__RELCX__33F57C80] DEFAULT ('D'),
+	[CODLOCALESTOQUE] [char](3) NULL,
+	[TEXTONUMPEDCLI2OBS] [char](25) NULL,
+	[TEXTONUMPEDINTERNOOBS] [char](25) NULL,
+	[PROPOSTACOMERC] [text] NULL,
+	[CABECPROPOSTACOMERC] [text] NULL,
+	[STARETINDUSTRSEMSALDO] [char](1) NULL,
+	[TEXTONUMPEDREPOBS] [char](25) NULL,
+	[STAVALIDACONTAUNIVERSUS] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAVA__611D28B2] DEFAULT ('N'),
+	[STAUSOLIVROISS] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAUS__7ADCFAB5] DEFAULT ('N'),
+	[STAUSOADMPROJ] [char](1) NULL,
+	[RELAP001ORIGEM] [char](70) NULL,
+	[RELAP001DATINIC] [datetime] NULL,
+	[RELAP001DATFIM] [datetime] NULL,
+	[RELAP001TIPTOTALIZACAO] [char](1) NULL CONSTRAINT [DF__TBGENE035__RELAP__04315AC5] DEFAULT ('D'),
+	[APURARESULTACUMSALDOANT] [char](1) NULL,
+	[CAMINHOLOGO] [char](150) NULL,
+	[STAUTILLIBERACAOIQ] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAUT__2962DF74] DEFAULT ('N'),
+	[REGIMERELAPURRESULTADMPROJ] [char](1) NULL,
+	[STAALTINDICEAPROVPED] [char](1) NULL,
+	[SUBGRUPOESTOQUE] [char](12) NULL,
+	[TIPCALCREDICMSIMPORT] [char](1) NULL,
+	[RELAP001CCUSTOINI] [char](10) NULL,
+	[RELAP001CCUSTOFIM] [char](10) NULL,
+	[RELAP001DETALHARDOCTO] [char](1) NULL,
+	[STAUTILINDICEPEDVENDA] [char](1) NULL,
+	[CODINDICEFATURAMPROD] [char](3) NULL,
+	[CODGRUPOPEDVENDA] [char](6) NULL,
+	[CATEGORIAPEDVENDA] [char](1) NULL,
+	[CODGRUPOPEDCOMPRA] [char](6) NULL,
+	[CATEGORIAPEDCOMPRA] [char](1) NULL,
+	[CODGRUPOCONTRATO] [char](6) NULL,
+	[CATEGORIACONTRATO] [char](1) NULL,
+	[STAUSOATIVO] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAUS__6C24C70A] DEFAULT ('N'),
+	[TIPRECEITA] [char](1) NULL CONSTRAINT [DF__TBGENE035__TIPRE__002BBFB7] DEFAULT ('1'),
+	[TITORCAMENTOVENDA] [char](40) NULL,
+	[TITORCAMENTOSERVICO] [char](40) NULL,
+	[DESCVALIDADE] [char](30) NULL,
+	[FATURMINIMO] [decimal](28, 14) NULL,
+	[TITOBSERVACOES] [char](40) NULL,
+	[STAUSASUPERSINTEGRA] [char](1) NULL,
+	[CCUSTOPEDVENDAWEB] [char](10) NULL,
+	[TIPOCOBRANCAPEDVENDAWEB] [char](1) NULL,
+	[CATEGORIAPEDVENDAWEB] [char](1) NULL,
+	[CODGRUPOPEDVENDAWEB] [char](6) NULL,
+	[SUBGRUPOPEDVENDAWEB] [char](12) NULL,
+	[CCUSTOSAIDAPEDVENDAWEB] [char](10) NULL,
+	[STAEXIBEMSGDATANEC] [char](1) NULL,
+	[STAVALIDADESDETMAT] [char](1) NULL,
+	[STAGRAVADESDETORCVEND] [char](1) NULL,
+	[STAIMPRIMEVENCTONFE] [char](1) NULL,
+	[BUSCAPRECMEDESTNFIND] [char](1) NULL,
+	[STAIMPRIMERETECOESNFE] [char](1) NULL,
+	[ASSINPEDIDO4] [char](60) NULL,
+	[NUMMATRICULA] [char](6) NULL,
+	[ASSINPEDIDOINGLES1] [char](60) NULL,
+	[ASSINPEDIDOINGLES2] [char](60) NULL,
+	[ASSINPEDIDOINGLES3] [char](60) NULL,
+	[ASSINPEDIDOINGLES4] [char](60) NULL,
+	[NUMSEQCONC] [char](6) NULL,
+	[CAMINHOFIGURACABECALHO] [char](100) NULL,
+	[CAMINHOMARCADAGUA] [char](100) NULL,
+	[CAMINHOFIGURARODAPE] [char](100) NULL,
+	[STAUSAORDEMSERV] [char](1) NULL,
+	[VALBASEMINRETCONTR] [decimal](28, 14) NULL,
+	[ASSINPEDIDO5] [char](60) NULL,
+	[ASSINPEDIDOINGLES5] [char](60) NULL,
+	[ALTERAINDICE] [char](1) NULL,
+	[CODDIVMATPED] [char](1) NULL,
+	[STAMONTAKITSCOMPEDIDOS] [char](1) NULL,
+	[STAGERANFEMPEDIDOS] [char](1) NULL,
+	[CODMOVFISCPJDE] [char](3) NULL,
+	[CODMOVFISCPFDE] [char](3) NULL,
+	[CODMOVFISCPJFE] [char](3) NULL,
+	[CODMOVFISCPFFE] [char](3) NULL,
+	[STAREVALIDAFINANCPED] [char](1) NULL,
+	[STAEMISSAOSIMULTANEABOLETONF] [char](1) NULL,
+	[CODBANCOBOLETO] [char](6) NULL,
+	[CODAGENCIABOLETO] [char](10) NULL,
+	[STAPEDCOMIMPOSTOS] [char](1) NULL,
+	[STAALTERASMDEPOISDISP] [char](1) NULL,
+	[TEXTOCARTAAPRESORCAM] [text] NULL,
+	[TEXTOCONDGERAISORCAM] [text] NULL,
+	[TEXTOEMAILORCAM] [text] NULL,
+	[DESPRAZOENTREGA] [char](30) NULL,
+	[DESPRAZOGARANTIA] [char](30) NULL,
+	[CODENTRESREF] [char](2) NULL,
+	[TAMFONTERAZ] [int] NULL CONSTRAINT [DF__TBGENE035__TAMFO__50679DFC] DEFAULT (8),
+	[STAREPETENUMPEDCLIREP] [char](1) NULL CONSTRAINT [DF__TBGENE035__STARE__6DF800E3] DEFAULT ('S'),
+	[INDPERIODAPUR] [char](1) NULL CONSTRAINT [DF__TBGENE035__INDPE__16FA1676] DEFAULT ('0'),
+	[TIPTRATLIMITECOMPRA] [char](1) NULL,
+	[CAMINHOXMLENVIO] [char](100) NULL,
+	[CAMINHOXMLRETORNO] [char](100) NULL,
+	[CAMINHOLOGNFE] [char](100) NULL,
+	[CAMINHOUNIDANFE] [char](100) NULL,
+	[CAMINHOLOGONFE] [char](100) NULL,
+	[STAEMITENFE] [char](1) NULL,
+	[TIPAMBNFE] [char](1) NULL,
+	[TIPEMISNFE] [char](1) NULL,
+	[TIPOVENCTO] [char](1) NULL,
+	[NUMCONTRATOFORN] [char](9) NULL,
+	[STAAPROVAPEDCOMCONTRATO] [char](1) NULL,
+	[NUMCOPIASDANFE] [int] NULL,
+	[NUMCONTINDUSTR] [char](9) NULL,
+	[PERMITEMOVRETROAT] [char](1) NULL,
+	[STAESTOQUENEGATIVO] [char](1) NULL,
+	[TIPVALORITEMNFE] [char](1) NULL,
+	[SERVIDORSMTPXMLNFE] [char](50) NULL,
+	[SENHASMTPXMLNFE] [char](50) NULL,
+	[EMAILXMLNFE] [char](250) NULL,
+	[PORTASMTPXMLNFE] [int] NULL,
+	[STAIMPRIMEOBSITEMNFESERV] [char](1) NULL,
+	[TPIMPDANFE] [char](1) NULL,
+	[PERCFUNRURAL] [decimal](28, 14) NULL,
+	[STAALTERASMIMPRESSA] [char](1) NULL,
+	[STAINDICARETPARCIAL] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAIN__1A609306] DEFAULT ('N'),
+	[RELORCAMMOD1MODIFICADO] [char](1) NULL,
+	[TEXTOENVIOEMAIL] [text] NULL,
+	[CAMINHOXMLIMPORTACAONFE] [char](100) NULL,
+	[STAUTILIZADESCONTOCADEIA] [char](1) NULL,
+	[CODREGTRIBUTARIO] [char](1) NULL,
+	[STAREALIZARESERVA] [char](1) NULL CONSTRAINT [DF__TBGENE035__STARE__04C657A2] DEFAULT ('S'),
+	[STAIMPRIMEOUTRODOC] [char](1) NULL,
+	[CAMINHOOUTRODOC] [char](150) NULL,
+	[CIDADENFSERV] [char](20) NULL,
+	[TIPEMISNFSE] [char](1) NULL,
+	[LOGOMUNICIPIO] [char](150) NULL,
+	[STAUTILIZASPEDPISCOFINS] [char](1) NULL,
+	[QTDEMESOBRIGMEDIA] [int] NULL,
+	[QTDEMESRECENTESOBRIGMEDIA] [int] NULL,
+	[DIVMEDIAPORMESCOMMEDIA] [char](1) NULL,
+	[STAEMITEPEDCOMPRABLOQ] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAEM__5C4E51F4] DEFAULT ('S'),
+	[TEXTOENVIOEMAILDEMONST] [text] NULL,
+	[CODDOCUMBORDERO] [char](3) NULL,
+	[CODDOCUMRETARQ] [char](3) NULL,
+	[CAMINHOXMLVALIDA] [char](100) NULL,
+	[TERMOABRENCERRRAZAO] [text] NULL,
+	[CAMINHOLOGOETIQIDENT] [char](250) NULL,
+	[MODELOETIQIDENT] [char](2) NULL,
+	[STAUSACONTRQUALIDADE] [char](1) NULL,
+	[CAMINHOXMLBAK] [char](100) NULL,
+	[TEXTOENVIOEMAILPEDIDOSPEND] [text] NULL,
+	[STACONTROLARPERMISSAOACESSO] [char](1) NULL CONSTRAINT [DF__TBGENE035__STACO__53D90784] DEFAULT ('N'),
+	[STAMULTIFILIAL] [char](1) NULL,
+	[EMAILSC] [char](250) NULL,
+	[SENEMAILSC] [char](50) NULL,
+	[STASUBTRIBICMS] [char](1) NULL,
+	[STASOLMATDUP] [char](1) NULL,
+	[STAPERMITENFABAIXOCUSTO] [char](1) NULL,
+	[STASUGPREC] [char](1) NULL,
+	[STAVALIDADATPPAPDESVIO] [char](1) NULL,
+	[STALIBERACAOPREVDESP] [char](1) NULL,
+	[STAUSAAPROVPEDCOMPRA] [char](1) NULL,
+	[PERCTOLERANCIA] [decimal](28, 14) NULL,
+	[CAMINHONFENTRADA] [varchar](250) NULL,
+	[STAGERANOVOITEMRESERPARC] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAGE__0AF43244] DEFAULT ('N'),
+	[STAEMAILRESERVAPARCIAL] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAEM__0BE8567D] DEFAULT ('N'),
+	[STABUSCADESDETMAT] [char](1) NULL,
+	[NUMCARREGAMENTO] [char](9) NULL,
+	[CONTBORDERO] [char](1) NULL,
+	[CODTABPRECOPEDVENDAWEB] [char](3) NULL,
+	[STAOBRIGACHAVENFEENT] [char](1) NULL CONSTRAINT [DF__TBGENE035__STAOB__0CA7708C] DEFAULT ('N'),
+	[TIPCLIPEDVENDAWEB] [char](2) NULL,
+	[STAATUVALCONTLIVRO] [char](1) NULL,
+	[STAREALIZARESERVAAPONTPROD] [char](1) NULL CONSTRAINT [DF__TBGENE035__STARE__238AD5E4] DEFAULT ('N'),
+	[KIT_AUTOTROCASIMILAR] [char](1) NULL CONSTRAINT [DF__TBGENE035__KIT_A__25731E56] DEFAULT ('N'));
+GO
+
+--Table dbo.TBGENE036
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE036] (
+	[CODMAT] [char](15) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[FATORCONVUNIBASE] [decimal](28, 14) NOT NULL,
+	[EMBALAGEM] [char](1) NULL,
+	[CONVERTE] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE037
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE037] (
+	[NOMTABELA] [char](9) NOT NULL,
+	[DESTABELA] [char](50) NOT NULL,
+	[NOMCAMPOCHAVE01] [char](40) NOT NULL,
+	[NOMCAMPOCHAVE02] [char](40) NULL,
+	[NOMCAMPOCHAVE03] [char](40) NULL,
+	[NOMCAMPOCHAVE04] [char](40) NULL,
+	[NOMCAMPOCHAVE05] [char](40) NULL);
+GO
+
+--Table dbo.TBGENE038
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE038] (
+	[CODEMP] [char](2) NOT NULL,
+	[NOMTABELA] [char](9) NOT NULL,
+	[CODCAMPOVAR] [char](20) NOT NULL,
+	[DESCAMPOVAR] [char](50) NOT NULL,
+	[TIPCAMPOVAR] [char](1) NOT NULL,
+	[TAMCAMPOVAR] [char](3) NOT NULL,
+	[DECCAMPOVAR] [char](3) NULL,
+	[STACAMPOOBRIG] [char](1) NOT NULL,
+	[NUMLINHA] [int] NULL CONSTRAINT [DF__TBGENE038__NUMLI__77FFC2B3] DEFAULT (1),
+	[NUMCOLUNA] [int] NULL CONSTRAINT [DF__TBGENE038__NUMCO__78F3E6EC] DEFAULT (1));
+GO
+
+--Table dbo.TBGENE039
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE039] (
+	[CODEMP] [char](2) NOT NULL,
+	[NOMTABELA] [char](9) NOT NULL,
+	[CODCAMPOVAR] [char](20) NOT NULL,
+	[VALCAMPOCHAVE01] [char](20) NOT NULL,
+	[VALCAMPOCHAVE02] [char](20) NOT NULL,
+	[VALCAMPOCHAVE03] [char](20) NOT NULL,
+	[VALCAMPOCHAVE04] [char](20) NOT NULL,
+	[VALCAMPOCHAVE05] [char](20) NOT NULL,
+	[VALCAMPOVAR] [char](50) NULL);
+GO
+
+--Table dbo.TBGENE040
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE040] (
+	[CODHIST] [char](3) NOT NULL,
+	[DESCHIST] [char](50) NOT NULL);
+GO
+
+--Table dbo.TBGENE041
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE041] (
+	[CODGRUPODOCTO] [char](3) NOT NULL,
+	[DESCRGRUPODOCTO] [char](40) NOT NULL,
+	[DATATU] [datetime] NOT NULL);
+GO
+
+--Table dbo.TBGENE042
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE042] (
+	[CODEMP] [char](2) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[STARESPCC] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE043
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE043] (
+	[CODMOTIVOBLOQ] [char](2) NOT NULL,
+	[DESCRMOTIVOBLOQ] [char](60) NULL,
+	[STAUTILIZA] [char](1) NULL,
+	[TIPBLOQUEIO] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE044
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE044] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODCATEGORIACONTA] [char](1) NOT NULL,
+	[DESCATEGORIA] [char](30) NOT NULL,
+	[VALIDACATEGORIA] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBGENE045
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE045] (
+	[CODCLASSFISCAL] [char](10) NOT NULL,
+	[BASECALCIPI] [char](1) NULL,
+	[PORCIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE045__PORCI__494FC0C2] DEFAULT (0),
+	[DATINIVIGENCIAREDUCAO] [datetime] NULL,
+	[DATFIMVIGENCIAREDUCAO] [datetime] NULL,
+	[CODSITUACAOTRIB2] [char](5) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[STASUBSTRIB] [char](1) NULL,
+	[ALIQICMSOPINT] [decimal](28, 14) NULL,
+	[CODPRODMONOFASALIQDIF] [char](3) NULL,
+	[CODPRODMONOFASALIQUM] [char](3) NULL,
+	[CODPRODSUBSTRIBCS] [char](3) NULL,
+	[CODPRODALIQZEROCS] [char](3) NULL,
+	[CODATIVECON] [char](8) NULL,
+	[PERCCONTRIB] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE046
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE046] (
+	[CODCLASSFISCAL] [char](10) NOT NULL,
+	[PERCICMS] [decimal](28, 14) NOT NULL,
+	[PERCREDICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE046__PERCR__25676607] DEFAULT (0));
+GO
+
+--Table dbo.TBGENE047
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE047] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNFDOCTO] [char](8) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[CODDOCUMIMP] [char](3) NOT NULL,
+	[TABELAORIGEM] [char](15) NOT NULL,
+	[TIPIMPOSTO] [char](10) NOT NULL,
+	[CODEMPTIT] [char](2) NULL,
+	[NUMDOCTO] [char](8) NULL,
+	[SERIE] [char](5) NULL,
+	[CODFORN] [char](6) NULL);
+GO
+
+--Table dbo.TBGENE048
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE048] (
+	[CODFILIALLOGON] [char](2) NOT NULL,
+	[CODFILIALMOVIMENTACAO] [char](2) NOT NULL);
+GO
+
+--Table dbo.TBGENE049
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE049] (
+	[CODMOTIVOBLOQMANUAL] [char](2) NOT NULL,
+	[DESMOTIVOBLOQMANUAL] [char](60) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STAMOTIVOBLOQMANUAL] [char](1) NOT NULL CONSTRAINT [DF__TBGENE049__STAMO__73D00A73] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE050
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE050] (
+	[CODTIPGARANTIACLI] [char](2) NOT NULL,
+	[DESTIPGARANTIACLI] [char](60) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATIPGARANTIACLI] [char](1) NOT NULL CONSTRAINT [DF__TBGENE050__STATI__76AC771E] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE051
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE051] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODVEND] [char](6) NOT NULL,
+	[DATPAGTO] [datetime] NOT NULL,
+	[VALBRUTOCOMISSAO] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE051__VALBR__656CDC83] DEFAULT (0),
+	[DATVENCTOIRRF] [datetime] NULL,
+	[VALIRRF] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE051__VALIR__666100BC] DEFAULT (0),
+	[VALLIQUIDOCOMISSAO] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE051__VALLI__675524F5] DEFAULT (0),
+	[NOMARQREMESSA] [char](12) NULL,
+	[DATAGERACAOARQ] [datetime] NULL,
+	[VALINSSCOMISS] [decimal](28, 14) NULL,
+	[VALADIANTAMENTO] [decimal](28, 14) NULL,
+	[MESCOMPET] [char](2) NULL,
+	[ANOCOMPET] [char](4) NULL,
+	[STAADIANTA] [char](1) NULL,
+	[VALSALDODEVEDOR] [decimal](28, 14) NULL,
+	[VALAPAGAR] [decimal](28, 14) NULL,
+	[VALSALDODEVEDORFINAL] [decimal](28, 14) NULL,
+	[VALPISRETFONTECOMISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE051__VALPI__6849492E] DEFAULT (0),
+	[VALCOFINSRETFONTECOMISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE051__VALCO__693D6D67] DEFAULT (0),
+	[VALCSLLRETFONTECOMISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE051__VALCS__6A3191A0] DEFAULT (0));
+GO
+
+--Table dbo.TBGENE052
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE052] (
+	[VALFAIXAIRINI] [decimal](28, 14) NOT NULL,
+	[VALFAIXAIRFIM] [decimal](28, 14) NOT NULL,
+	[PERCIRRF] [decimal](28, 14) NOT NULL,
+	[VALDEDUCAOIR] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBGENE053
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE053] (
+	[CODTIPEMBALAGEM] [char](2) NOT NULL,
+	[DESTIPEMBALAGEM] [char](40) NOT NULL,
+	[MARCAEMBALAGEM] [char](40) NULL,
+	[STATIPEMBALAGEM] [char](1) NULL CONSTRAINT [DF__TBGENE053__STATI__10C14EDC] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE054
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE054] (
+	[CODDOCUM] [char](8) NOT NULL,
+	[DESCRICAO] [char](50) NOT NULL,
+	[ELABORADOPOR] [char](30) NULL,
+	[DTELABORACAO] [datetime] NULL,
+	[APROVADOPOR] [char](30) NULL,
+	[DTAPROVACAO] [datetime] NULL,
+	[NOMEFORM] [char](40) NULL);
+GO
+
+--Table dbo.TBGENE055
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE055] (
+	[CODEMPNFORIGEM] [char](2) NOT NULL,
+	[NUMNFORIGEM] [char](9) NOT NULL,
+	[SERNFORIGEM] [char](5) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[TIPEMITENTE] [char](3) NOT NULL,
+	[NUMITEMNFORIGEM] [char](3) NOT NULL,
+	[CODEMPNFDEV] [char](2) NOT NULL,
+	[NUMNFDEV] [char](9) NOT NULL,
+	[SERNFDEV] [char](5) NOT NULL,
+	[CODEMITENTEDEV] [char](9) NOT NULL,
+	[TIPEMITENTEDEV] [char](3) NOT NULL,
+	[NUMITEMNFDEV] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODUNIMED] [char](2) NOT NULL,
+	[QTDEDEV] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBGENE056
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE056] (
+	[CODTABRATEIOPPB] [char](3) NOT NULL,
+	[DESTABRATEIOPPB] [char](80) NOT NULL,
+	[STATABRATEIOPPB] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBGENE057
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE057] (
+	[CODTABRATEIOPPB] [char](3) NOT NULL,
+	[SEQRATEIOPPB] [char](3) NOT NULL,
+	[DESRATEIOPPB] [char](80) NOT NULL,
+	[VALRATEIOPPB] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE058
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE058] (
+	[CODMATACABADO] [char](15) NULL,
+	[CODMAT] [char](15) NULL,
+	[DESMAT] [char](70) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[QTDRECEBIDA] [decimal](28, 14) NULL,
+	[VALRECEBIDO] [decimal](28, 14) NULL,
+	[QTDRETORNADA] [decimal](28, 14) NULL,
+	[SALDOQTDE] [decimal](28, 14) NULL,
+	[SALDOVALOR] [decimal](28, 14) NULL,
+	[VALRETORNADO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE059
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE059] (
+	[CODMUNICIPIO] [char](7) NOT NULL,
+	[NOMEMUNICIPIO] [char](60) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STAMUNICIPIO] [char](1) NOT NULL CONSTRAINT [DF__TBGENE059__STAMU__0AA94E2A] DEFAULT ('S'),
+	[CODSIAFI] [char](4) NULL);
+GO
+
+--Table dbo.TBGENE060
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE060] (
+	[CODPAIS] [char](5) NOT NULL,
+	[NOMEPAIS] [char](40) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STAPAIS] [char](1) NOT NULL CONSTRAINT [DF__TBGENE060__STAPA__0D85BAD5] DEFAULT ('S'),
+	[SIGLA] [char](2) NULL);
+GO
+
+--Table dbo.TBGENE061
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE061] (
+	[CODFILIALLOGON] [char](2) NOT NULL,
+	[CODFILIALMOVIMENTACAO] [char](2) NOT NULL);
+GO
+
+--Table dbo.TBGENE062
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE062] (
+	[CODEMPNFREM] [char](2) NOT NULL,
+	[NUMNFREM] [char](9) NOT NULL,
+	[SERNFREM] [char](5) NOT NULL,
+	[CODEMITENTEREM] [char](9) NOT NULL,
+	[TIPEMITENTEREM] [char](3) NOT NULL,
+	[NUMITEMNFREM] [char](3) NOT NULL,
+	[CODEMPNFRET] [char](2) NOT NULL,
+	[NUMNFRET] [char](9) NOT NULL,
+	[SERNFRET] [char](5) NOT NULL,
+	[CODEMITENTERET] [char](9) NOT NULL,
+	[TIPEMITENTERET] [char](3) NOT NULL,
+	[NUMITEMNFRET] [char](3) NOT NULL,
+	[CODMATREM] [char](15) NULL,
+	[CODUNIMEDREM] [char](2) NULL,
+	[QTDEREMESSA] [decimal](28, 14) NULL,
+	[DATEMISSAOREM] [datetime] NULL,
+	[CODMATRET] [char](15) NULL,
+	[CODUNIMEDRET] [char](2) NULL,
+	[QTDERETORNO] [decimal](28, 14) NULL,
+	[DATEMISSAORET] [datetime] NULL,
+	[TIPOPERACAO] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE063
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE063] (
+	[CODCLI] [char](9) NOT NULL,
+	[SEQ] [char](2) NOT NULL,
+	[PARENTESCO] [char](30) NOT NULL,
+	[NOME] [char](40) NOT NULL,
+	[RG] [char](20) NOT NULL,
+	[ORGAOEMISSOR] [char](6) NULL,
+	[CPF] [char](14) NOT NULL,
+	[RESPONSAVEL] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBGENE064
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE064] (
+	[CODMAT] [char](15) NOT NULL,
+	[CODROTULO] [char](3) NOT NULL,
+	[NOME] [char](15) NULL,
+	[NOMEARQORIGINAL] [char](30) NULL,
+	[BASEROTULO] [char](40) NULL,
+	[STATUS] [char](1) NULL,
+	[USER_IDATIVA] [char](10) NULL,
+	[DATATIVA] [datetime] NULL,
+	[USER_IDDESATIVA] [char](10) NULL,
+	[DATDESATIVA] [datetime] NULL);
+GO
+
+--Table dbo.TBGENE065
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE065] (
+	[CODOCORRENCIA] [char](5) NOT NULL,
+	[DESOCORRENCIA] [char](200) NULL,
+	[STAOCORRENCIA] [char](1) NULL,
+	[TABOCORRENCIA] [char](15) NULL,
+	[TIPOCORRENCIA] [char](1) NULL,
+	[CAMPOCHAVE01] [char](30) NULL,
+	[DESCAMPOCHAVE01] [char](50) NULL,
+	[LARGEXIBCAMPO01] [int] NULL,
+	[CAMPOCHAVE02] [char](30) NULL,
+	[DESCAMPOCHAVE02] [char](50) NULL,
+	[LARGEXIBCAMPO02] [int] NULL,
+	[CAMPOCHAVE03] [char](30) NULL,
+	[DESCAMPOCHAVE03] [char](50) NULL,
+	[LARGEXIBCAMPO03] [int] NULL,
+	[CAMPOCHAVE04] [char](30) NULL,
+	[DESCAMPOCHAVE04] [char](50) NULL,
+	[LARGEXIBCAMPO04] [int] NULL,
+	[CAMPOCHAVE05] [char](30) NULL,
+	[DESCAMPOCHAVE05] [char](50) NULL,
+	[LARGEXIBCAMPO05] [int] NULL,
+	[CAMPOCHAVE06] [char](30) NULL,
+	[DESCAMPOCHAVE06] [char](50) NULL,
+	[LARGEXIBCAMPO06] [int] NULL,
+	[CAMPOCHAVE07] [char](30) NULL,
+	[DESCAMPOCHAVE07] [char](50) NULL,
+	[LARGEXIBCAMPO07] [int] NULL,
+	[CAMPOCHAVE08] [char](30) NULL,
+	[DESCAMPOCHAVE08] [char](50) NULL,
+	[LARGEXIBCAMPO08] [int] NULL,
+	[NOMCAMPOALT] [char](30) NULL,
+	[TIPCAMPOALT] [char](1) NULL,
+	[DESCAMPOALT] [char](50) NULL,
+	[LARGEXIBCAMPOALT] [int] NULL);
+GO
+
+--Table dbo.TBGENE066
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE066] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQOCORRENCIA] [char](9) NOT NULL,
+	[CODOCORRENCIA] [char](5) NOT NULL,
+	[DATOCORRENCIA] [datetime] NULL,
+	[HOROCORRENCIA] [char](6) NULL,
+	[SISTEMA_ID] [char](10) NULL,
+	[USER_ID] [char](10) NULL,
+	[VALCAMPOCHAVE001] [char](50) NULL,
+	[VALCAMPOCHAVE002] [char](50) NULL,
+	[VALCAMPOCHAVE003] [char](50) NULL,
+	[VALCAMPOCHAVE004] [char](50) NULL,
+	[VALCAMPOCHAVE005] [char](50) NULL,
+	[VALCAMPOCHAVE006] [char](50) NULL,
+	[VALCAMPOCHAVE007] [char](50) NULL,
+	[VALCAMPOCHAVE008] [char](50) NULL,
+	[VALORANTCAMPO] [char](200) NULL,
+	[VALORNOVOCAMPO] [char](200) NULL);
+GO
+
+--Table dbo.TBGENE067
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE067] (
+	[CODTABIRRF] [char](3) NOT NULL,
+	[DATINIVIGENCIA] [datetime] NULL,
+	[DATFINVIGENCIA] [datetime] NULL,
+	[STATABIRRF] [char](1) NULL,
+	[DATATIVTAB] [datetime] NULL);
+GO
+
+--Table dbo.TBGENE068
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE068] (
+	[CODTABIRRF] [char](3) NOT NULL,
+	[VALFAIXAIRRFINI] [decimal](28, 14) NOT NULL,
+	[VALFAIXAIRRFFIM] [decimal](28, 14) NULL,
+	[PERCIRRF] [decimal](28, 14) NULL,
+	[VALDEDUCAOIRRF] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE069
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE069] (
+	[CODEMP] [char](2) NOT NULL,
+	[NOMEARQ] [char](12) NOT NULL,
+	[DATGERACAOARQ] [datetime] NULL,
+	[CAMINHOARQ] [char](250) NULL,
+	[TIPOARQ] [char](1) NULL,
+	[PERIODICIDADEARQ] [char](1) NULL,
+	[DATCOMPETINI] [datetime] NULL,
+	[DATCOMPETFIM] [datetime] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBGENE070
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE070] (
+	[CODEMP] [char](2) NOT NULL,
+	[NOMEARQ] [char](12) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[DESDOBRO] [char](2) NOT NULL,
+	[NUMSEQRECEB] [char](2) NOT NULL,
+	[TIPOOPERACAO] [char](1) NULL,
+	[STATUS] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE071
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE071] (
+	[CODEMP] [char](2) NOT NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[CODCPAGTO] [char](3) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[TIPUTILIZAMAT] [char](1) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[CODMOVFISCDE] [char](3) NOT NULL,
+	[CODMOVFISCFE] [char](3) NOT NULL,
+	[CODDOCUMTP] [char](3) NULL,
+	[CATEGORIATP] [char](1) NULL,
+	[CODGRUPOTP] [char](6) NULL,
+	[SUBGRUPOTP] [char](12) NULL,
+	[CTADESPESA] [char](12) NULL,
+	[CCUSTOTP] [char](10) NULL,
+	[CODCONTAFORN] [char](12) NULL);
+GO
+
+--Table dbo.TBGENE072
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE072] (
+	[CODOCORRENCIA] [char](2) NOT NULL,
+	[DESOCORRENCIA] [char](60) NOT NULL);
+GO
+
+--Table dbo.TBGENE073
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE073] (
+	[SITTRIBPIS] [char](2) NOT NULL,
+	[DESSITTRIBPIS] [char](130) NOT NULL,
+	[STASITTRIBPIS] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE074
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE074] (
+	[SITTRIBCOFINS] [char](2) NOT NULL,
+	[DESSITTRIBCOFINS] [char](130) NOT NULL,
+	[STASITTRIBCOFINS] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE075
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE075] (
+	[SITTRIBIPI] [char](2) NOT NULL,
+	[DESSITTRIBIPI] [char](40) NOT NULL,
+	[STASITTRIBIPI] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE076
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE076] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODUF] [char](2) NOT NULL,
+	[IEST] [char](14) NULL);
+GO
+
+--Table dbo.TBGENE077
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE077] (
+	[CODMAT] [char](15) NOT NULL,
+	[CODMATSIMILAR] [char](15) NOT NULL,
+	[DATCADAST] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[STAUTILENTESTO] [char](1) NULL CONSTRAINT [DF__TBGENE077__STAUT__351F763A] DEFAULT ('N'));
+GO
+
+--Table dbo.TBGENE078
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE078] (
+	[CODLAYOUTCONV] [char](3) NOT NULL,
+	[NOMLAYOUTCONV] [char](50) NOT NULL,
+	[TIPLAYOUTCONV] [char](1) NOT NULL,
+	[STADEBCREDJUNTOS] [char](1) NULL,
+	[DATLAYOUTCONV] [datetime] NOT NULL);
+GO
+
+--Table dbo.TBGENE079
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE079] (
+	[CODLAYOUTCONV] [char](3) NOT NULL,
+	[NUMSEQCAMPO] [char](3) NOT NULL,
+	[DESCAMPO] [char](100) NULL,
+	[NUMCAMPOAGIW] [char](3) NULL,
+	[POSICAOCAMPO] [int] NULL,
+	[COLUNAINI] [int] NULL,
+	[TAMCAMPO] [int] NULL,
+	[CONTEUDOFIXO] [char](250) NULL,
+	[TIPOCAMPO] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE080
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE080] (
+	[CODEMP] [char](2) NOT NULL,
+	[TIPEMISNFE] [char](1) NOT NULL,
+	[DHCONT] [datetime] NOT NULL,
+	[JUSTIFICATIVA] [char](256) NULL);
+GO
+
+--Table dbo.TBGENE081
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE081] (
+	[CODTIPO] [char](2) NOT NULL,
+	[DESCETIQUETA] [char](40) NULL,
+	[NUMULTETIQGERADA] [char](9) NULL);
+GO
+
+--Table dbo.TBGENE082
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE082] (
+	[CODTIPO] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[CAMPO] [char](20) NULL,
+	[TAMANHO] [int] NULL,
+	[DECIMAIS] [int] NULL,
+	[DESCAMPO] [char](40) NULL);
+GO
+
+--Table dbo.TBGENE083
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE083] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMETIQUETA] [char](11) NOT NULL,
+	[CAMPO01] [char](20) NULL,
+	[CAMPO02] [char](20) NULL,
+	[CAMPO03] [char](20) NULL,
+	[CAMPO04] [char](20) NULL,
+	[CAMPO05] [char](20) NULL);
+GO
+
+--Table dbo.TBGENE084
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE084] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMPED] [char](9) NOT NULL,
+	[NUMITEMPED] [char](3) NOT NULL,
+	[NUMETIQUETA] [char](11) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[CODLOTE] [char](15) NULL,
+	[QTDE] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE085
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE085] (
+	[CODBASECALCREDITO] [char](2) NOT NULL,
+	[DESCBASECALCREDITO] [char](150) NOT NULL);
+GO
+
+--Table dbo.TBGENE090
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE090] (
+	[CODCONTRIBAPURADA] [char](2) NOT NULL,
+	[DESCONTRIBAPURADA] [char](250) NULL,
+	[STACONTRIBAPURADA] [char](1) NULL CONSTRAINT [DF_STACONTRIBAPURADA] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE091
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE091] (
+	[CODTIPCREDITO] [char](3) NOT NULL,
+	[DESTIPCREDITO] [char](250) NULL,
+	[STATIPCREDITO] [char](1) NULL CONSTRAINT [DF_STATIPCREDITO] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE092
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE092] (
+	[CODALIQCREDPRESUMAGRO] [char](3) NOT NULL,
+	[DESALIQCREDPRESUMAGRO] [char](250) NULL,
+	[STAALIQCREDPRESUMAGRO] [char](1) NULL CONSTRAINT [DF_STAALIQCREDPRESUMAGRO] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE093
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE093] (
+	[CODPRODMONOFASALIQDIF] [char](3) NOT NULL,
+	[DESPRODMONOFASALIQDIF] [char](250) NULL,
+	[VALALIQPIS] [decimal](28, 14) NULL,
+	[VALALIQCOFINS] [decimal](28, 14) NULL,
+	[MESANOINIESCRITURACAO] [char](6) NULL,
+	[MESANOFIMESCRITURACAO] [char](6) NULL,
+	[STAPRODMONOFASALIQDIF] [char](1) NULL CONSTRAINT [DF_STAPRODMONOFASALIQDIF] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE094
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE094] (
+	[CODPRODMONOFASALIQUM] [char](3) NOT NULL,
+	[DESPRODMONOFASALIQUM] [char](250) NULL,
+	[DESUNIDADEMEDIDA] [char](30) NULL,
+	[VALALIQPIS] [decimal](28, 14) NULL,
+	[VALALIQCOFINS] [decimal](28, 14) NULL,
+	[MESANOINIESCRITURACAO] [char](6) NULL,
+	[MESANOFIMESCRITURACAO] [char](6) NULL,
+	[STAPRODMONOFASALIQUM] [char](1) NULL CONSTRAINT [DF_STAPRODMONOFASALIQUM] DEFAULT ('S'),
+	[CODCLASSFISCAL] [char](10) NULL);
+GO
+
+--Table dbo.TBGENE095
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE095] (
+	[CODPRODSUBSTRIBCS] [char](3) NOT NULL,
+	[DESPRODSUBSTRIBCS] [char](250) NULL,
+	[MESANOINIESCRITURACAO] [char](6) NULL,
+	[MESANOFIMESCRITURACAO] [char](6) NULL,
+	[STAPRODSUBSTRIBCS] [char](1) NULL CONSTRAINT [DF_STAPRODSUBSTRIBCS] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE096
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE096] (
+	[CODPRODALIQZEROCS] [char](3) NOT NULL,
+	[DESPRODALIQZEROCS] [char](250) NULL,
+	[STAPRODALIQZEROCS] [char](1) NULL CONSTRAINT [DF_STAPRODALIQZEROCS] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE097
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE097] (
+	[CODOPERISENCAOCS] [char](3) NOT NULL,
+	[DESOPERISENCAOCS] [char](250) NULL,
+	[STAOPERISENCAOCS] [char](1) NULL CONSTRAINT [DF_STAOPERISENCAOCS] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE098
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE098] (
+	[CODOPERSEMINCIDENCIACS] [char](3) NOT NULL,
+	[DESOPERSEMINCIDENCIACS] [char](250) NULL,
+	[STAOPERSEMINCIDENCIACS] [char](1) NULL CONSTRAINT [DF_STAOPERSEMINCIDENCIACS] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE099
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE099] (
+	[CODOPERSUSPENSAOCS] [char](3) NOT NULL,
+	[DESOPERSUSPENSAOCS] [char](250) NULL,
+	[STAOPERSUSPENSAOCS] [char](1) NULL CONSTRAINT [DF_STAOPERSUSPENSAOCS] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE100
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE100] (
+	[CODOPEROUTRASALIQCS] [char](3) NOT NULL,
+	[DESOPEROUTRASALIQCS] [char](250) NULL,
+	[STAOPEROUTRASALIQCS] [char](1) NULL CONSTRAINT [DF_STAOPEROUTRASALIQCS] DEFAULT ('S'));
+GO
+
+--Table dbo.TBGENE101
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE101] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFERPISFOLHA] [char](6) NOT NULL,
+	[VALTOTFOLHA] [decimal](28, 14) NULL,
+	[VALTOTEXCBASECALC] [decimal](28, 14) NULL,
+	[VALTOTBASECALC] [decimal](28, 14) NULL,
+	[ALIQPISFOLHA] [decimal](28, 14) NULL,
+	[VALTOTCONTPISFOLHA] [decimal](28, 14) NULL,
+	[DATCADAST] [datetime] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBGENE102
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE102] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODTIPCONTRIB] [char](1) NOT NULL,
+	[MESANOREFERDIFANT] [char](6) NOT NULL,
+	[CODCONTRIBAPURADA] [char](2) NOT NULL,
+	[VALCONTRIBRECOLHER] [decimal](28, 14) NOT NULL,
+	[ALIQPIS] [decimal](28, 14) NOT NULL,
+	[ALIQCOFINS] [decimal](28, 14) NOT NULL,
+	[NATCREDDIFERIDO] [char](2) NULL,
+	[VALCREDADESCONTAR] [decimal](28, 14) NULL,
+	[MESANOAPURACAOCRED] [char](6) NULL,
+	[DATRECEBRECEITA] [datetime] NULL,
+	[DATCADAST] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[VALCONTAPURADA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE103
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE103] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[CODTIPCONTRIB] [char](1) NOT NULL,
+	[CODCONTRIBAPURADA] [char](2) NOT NULL,
+	[MESANOREFERVENDAS] [char](6) NOT NULL,
+	[CODCLIDIFERIMENTO] [char](9) NOT NULL,
+	[NUMSEQDIFER] [char](3) NOT NULL,
+	[ALIQPIS] [decimal](28, 14) NOT NULL,
+	[ALIQCOFINS] [decimal](28, 14) NOT NULL,
+	[VALTOTVENDAS] [decimal](28, 14) NULL,
+	[VALTOTNAORECEB] [decimal](28, 14) NULL,
+	[VALCONTRIBDIFER] [decimal](28, 14) NULL,
+	[CODTIPCREDITO] [char](3) NULL,
+	[VALCREDDIFER] [decimal](28, 14) NULL,
+	[DATCADAST] [datetime] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBGENE104
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE104] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODTIPCONTRIB] [char](1) NOT NULL,
+	[CODTIPAJUSTE] [char](1) NOT NULL,
+	[NUMSEQLANC] [char](3) NOT NULL,
+	[CODORIGEMAJUSTE] [char](2) NULL,
+	[INDICADORAJUSTE] [char](1) NOT NULL,
+	[VALAJUSTE] [decimal](28, 14) NULL,
+	[DATREFERAJUSTE] [datetime] NULL,
+	[NUMPROCESSOAJUSTE] [char](40) NULL,
+	[DESAJUSTE] [text] NULL,
+	[CODCONTRIBAPURADA] [char](2) NULL,
+	[CODTIPCREDITO] [char](3) NULL,
+	[DATCADAST] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[ALIQPIS] [decimal](28, 14) NOT NULL,
+	[ALIQCOFINS] [decimal](28, 14) NOT NULL,
+	[TIPOAJUSTE] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE105
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE105] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[STAMESANOFECH] [char](1) NULL,
+	[DATFECH] [datetime] NULL,
+	[USER_IDFECH] [char](10) NULL,
+	[VALTOTCONTRIBNC] [decimal](28, 14) NULL,
+	[VALTOTCREDDESC] [decimal](28, 14) NULL,
+	[VALTOTCREDDESCANT] [decimal](28, 14) NULL,
+	[VALTOTCONTRIBNCDEV] [decimal](28, 14) NULL,
+	[VALTOTRETNC] [decimal](28, 14) NULL,
+	[VALOUTROSDEDNC] [decimal](28, 14) NULL,
+	[VALTOTCONTRIBNCPAG] [decimal](28, 14) NULL,
+	[VALTOTCONTRIB] [decimal](28, 14) NULL,
+	[VALTOTRET] [decimal](28, 14) NULL,
+	[VALOUTROSDED] [decimal](28, 14) NULL,
+	[VALTOTCONTRIBPAG] [decimal](28, 14) NULL,
+	[VALTOTCONTRIBPAGAR] [decimal](28, 14) NULL,
+	[TIPOAPURACAO] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE106
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE106] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[CODCONTRIBAPURADA] [char](2) NOT NULL,
+	[VALPERCPIS] [decimal](28, 14) NOT NULL,
+	[VALRECEITABRUTA] [decimal](28, 14) NULL,
+	[VALBASECALCCONTRIB] [decimal](28, 14) NULL,
+	[VALTOTCONTRIBAPUR] [decimal](28, 14) NULL,
+	[VALAJUSTESACRESC] [decimal](28, 14) NULL,
+	[VALAJUSTESREDUC] [decimal](28, 14) NULL,
+	[VALDIFERPERIODO] [decimal](28, 14) NULL,
+	[VALDIFERPRIODOANT] [decimal](28, 14) NULL,
+	[VALTOTCONTRIBPERIODO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE107
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE107] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[CODTIPCREDITO] [char](3) NOT NULL,
+	[INDCREDORIUNDO] [char](1) NULL,
+	[VALBASECALCCRED] [decimal](28, 14) NULL,
+	[PERCPIS] [decimal](28, 14) NULL,
+	[VALCRED] [decimal](28, 14) NULL,
+	[VALAJUSTEACRES] [decimal](28, 14) NULL,
+	[VALAJUSTEREDUC] [decimal](28, 14) NULL,
+	[VALCREDDIFERIDO] [decimal](28, 14) NULL,
+	[VALCREDDISP] [decimal](28, 14) NULL,
+	[INDDESCCRED] [char](1) NULL,
+	[VALCREDDESC] [decimal](28, 14) NULL,
+	[VALSALDOCRED] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE108
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE108] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[CODBASECALCCREDITOPIS] [char](2) NOT NULL,
+	[SITTRIBPIS] [char](2) NOT NULL,
+	[PERCPIS] [decimal](28, 14) NOT NULL,
+	[VALTOTBASECALC] [decimal](28, 14) NULL,
+	[DESCRED] [char](60) NULL);
+GO
+
+--Table dbo.TBGENE109
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE109] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[SITTRIBPIS] [char](2) NOT NULL,
+	[VALTOTRECEITA] [decimal](28, 14) NULL,
+	[CTACONTABIL] [char](12) NULL,
+	[DESCOMPLEMENTAR] [char](250) NULL);
+GO
+
+--Table dbo.TBGENE110
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE110] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[SITTRIBPIS] [char](2) NOT NULL,
+	[CODNATUREZARECEITA] [char](3) NOT NULL,
+	[VALTOTRECEITA] [decimal](28, 14) NULL,
+	[CTACONTABIL] [char](12) NULL,
+	[DESCOMPLEMENTAR] [char](250) NULL);
+GO
+
+--Table dbo.TBGENE111
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE111] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[STAMESANOFECH] [char](1) NULL,
+	[DATFECH] [datetime] NULL,
+	[USER_IDFECH] [char](10) NULL,
+	[VALTOTCONTRIBNC] [decimal](28, 14) NULL,
+	[VALTOTCREDDESC] [decimal](28, 14) NULL,
+	[VALTOTCREDDESCANT] [decimal](28, 14) NULL,
+	[VALTOTCONTRIBNCDEV] [decimal](28, 14) NULL,
+	[VALTOTRETNC] [decimal](28, 14) NULL,
+	[VALOUTROSDEDNC] [decimal](28, 14) NULL,
+	[VALTOTCONTRIBNCPAG] [decimal](28, 14) NULL,
+	[VALTOTCONTRIB] [decimal](28, 14) NULL,
+	[VALTOTRET] [decimal](28, 14) NULL,
+	[VALOUTROSDED] [decimal](28, 14) NULL,
+	[VALTOTCONTRIBPAG] [decimal](28, 14) NULL,
+	[VALTOTCONTRIBPAGAR] [decimal](28, 14) NULL,
+	[TIPOAPURACAO] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE112
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE112] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[CODCONTRIBAPURADA] [char](2) NOT NULL,
+	[VALPERCCOFINS] [decimal](28, 14) NOT NULL,
+	[VALRECEITABRUTA] [decimal](28, 14) NULL,
+	[VALBASECALCCONTRIB] [decimal](28, 14) NULL,
+	[VALTOTCONTRIBAPUR] [decimal](28, 14) NULL,
+	[VALAJUSTESACRESC] [decimal](28, 14) NULL,
+	[VALAJUSTESREDUC] [decimal](28, 14) NULL,
+	[VALDIFERPERIODO] [decimal](28, 14) NULL,
+	[VALDIFERPRIODOANT] [decimal](28, 14) NULL,
+	[VALTOTCONTRIBPERIODO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE113
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE113] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[CODTIPCREDITO] [char](3) NOT NULL,
+	[INDCREDORIUNDO] [char](1) NULL,
+	[VALBASECALCCRED] [decimal](28, 14) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL,
+	[VALCRED] [decimal](28, 14) NULL,
+	[VALAJUSTEACRES] [decimal](28, 14) NULL,
+	[VALAJUSTEREDUC] [decimal](28, 14) NULL,
+	[VALCREDDIFERIDO] [decimal](28, 14) NULL,
+	[VALCREDDISP] [decimal](28, 14) NULL,
+	[INDDESCCRED] [char](1) NULL,
+	[VALCREDDESC] [decimal](28, 14) NULL,
+	[VALSALDOCRED] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE114
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE114] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[CODBASECALCCREDITOCOFINS] [char](2) NOT NULL,
+	[SITTRIBCOFINS] [char](2) NOT NULL,
+	[PERCCOFINS] [decimal](28, 14) NOT NULL,
+	[VALTOTBASECALC] [decimal](28, 14) NULL,
+	[DESCRED] [char](60) NULL);
+GO
+
+--Table dbo.TBGENE115
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE115] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[CODBASECALCCREDITOCOFINS] [char](2) NOT NULL,
+	[SITTRIBCOFINS] [char](2) NOT NULL,
+	[PERCCOFINS] [decimal](28, 14) NOT NULL,
+	[CODTIPCREDITO] [char](3) NOT NULL,
+	[VALRATEIO] [decimal](28, 14) NULL,
+	[VALBASECALCCUM] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE116
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE116] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[SITTRIBCOFINS] [char](2) NOT NULL,
+	[VALTOTRECEITA] [decimal](28, 14) NULL,
+	[CTACONTABIL] [char](12) NULL,
+	[DESCOMPLEMENTAR] [char](250) NULL);
+GO
+
+--Table dbo.TBGENE117
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE117] (
+	[CODCMPISCOFINS] [char](3) NOT NULL,
+	[DESCCMPISCOFINS] [char](70) NULL,
+	[CSTPIS] [char](2) NULL,
+	[CSTCOFINS] [char](2) NULL,
+	[CODCONTRIBAPURADA] [char](2) NULL,
+	[CODBASECALCCREDITO] [char](2) NULL,
+	[CODPRODMONOFASALIQDIF] [char](3) NULL,
+	[CODPRODMONOFASALIQUM] [char](3) NULL,
+	[CODPRODSUBSTRIBCS] [char](3) NULL,
+	[CODPRODALIQZEROCS] [char](3) NULL,
+	[CODOPERISENCAOCS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACS] [char](3) NULL,
+	[CODOPERSUSPENSAOCS] [char](3) NULL,
+	[CODTIPCREDITODEFAULT] [char](3) NULL,
+	[TIPODEV] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE118
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE118] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[CODBASECALCCREDITOPIS] [char](2) NOT NULL,
+	[SITTRIBPIS] [char](2) NOT NULL,
+	[PERCPIS] [decimal](28, 14) NOT NULL,
+	[CODTIPCREDITO] [char](3) NOT NULL,
+	[VALRATEIO] [decimal](28, 14) NULL,
+	[VALBASECALCCUM] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE119
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE119] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[SITTRIBCOFINS] [char](2) NOT NULL,
+	[CODNATUREZARECEITA] [char](3) NOT NULL,
+	[VALTOTRECEITA] [decimal](28, 14) NULL,
+	[CTACONTABIL] [char](12) NULL,
+	[DESCOMPLEMENTAR] [char](250) NULL);
+GO
+
+--Table dbo.TBGENE120
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE120] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREFER] [char](6) NOT NULL,
+	[RECBRUTNCUMTRIBMI] [decimal](28, 14) NULL,
+	[RECBRUTNCUMNTMI] [decimal](28, 14) NULL,
+	[RECBRUTNCUMEXP] [decimal](28, 14) NULL,
+	[RECBRUTCUM] [decimal](28, 14) NULL,
+	[RECBRUTTOTAL] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBGENE139
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE139] (
+	[CSOSN] [char](3) NOT NULL,
+	[DESCCSOSN] [char](50) NOT NULL);
+GO
+
+--Table dbo.TBGENE140
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE140] (
+	[CODEMP] [char](2) NOT NULL,
+	[TIPEMISNFE] [char](1) NOT NULL,
+	[DHCONT] [datetime] NOT NULL,
+	[JUSTIFICATIVA] [char](256) NULL);
+GO
+
+--Table dbo.TBGENE141
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE141] (
+	[CODBASECALCREDITO] [char](2) NOT NULL,
+	[DESCBASECALCREDITO] [char](150) NOT NULL);
+GO
+
+--Table dbo.TBGENE142
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE142] (
+	[CODCLASSFISCAL] [char](10) NOT NULL,
+	[SEQVIGENCIA] [char](3) NOT NULL,
+	[DATINIVIGENCIA] [datetime] NULL,
+	[DATFIMVIGENCIA] [datetime] NULL,
+	[VALPAUTAIPI] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBGENE143
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE143] (
+	[CODMAT] [char](15) NOT NULL,
+	[SEQVIGENCIA] [char](3) NOT NULL,
+	[DATINIVIGENCIA] [datetime] NULL,
+	[DATFIMVIGENCIA] [datetime] NULL,
+	[FATORPAUTAIPI] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBGENE144
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE144] (
+	[CODCLASSMAT] [char](3) NOT NULL,
+	[DESCLASSMAT] [char](150) NULL,
+	[NUMDIAS] [int] NULL);
+GO
+
+--Table dbo.TBGENE145
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE145] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODMOVFISC] [char](3) NOT NULL,
+	[OPERACAO] [char](1) NOT NULL,
+	[CODUF] [char](2) NULL,
+	[TIPO] [char](1) NOT NULL,
+	[CONTRIBICMS] [char](1) NOT NULL,
+	[SIMPLESNC] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBGENE146
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE146] (
+	[CODMAT] [char](15) NOT NULL,
+	[SEQ] [int] NOT NULL,
+	[VALSAIDA] [decimal](28, 14) NULL,
+	[VALPARCIMP] [decimal](28, 14) NULL,
+	[CONTEUDOIMP] [decimal](28, 14) NULL,
+	[CODFCI] [char](36) NULL,
+	[INDVALIDFICHA] [char](20) NULL,
+	[DATACAD] [datetime] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBGENE147
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE147] (
+	[CODUNIMEDFCI] [int] NOT NULL,
+	[CODUNIMEDARQ] [char](6) NOT NULL,
+	[DESUNIMEDFCI] [char](100) NOT NULL,
+	[STAUNIMEDFCI] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBGENE910
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE910] (
+	[NOMPESQUISA] [char](50) NOT NULL,
+	[DESPESQUISA] [char](100) NULL,
+	[GRIDHEIGHT] [int] NULL,
+	[GRIDLEFT] [int] NULL,
+	[GRIDTOP] [int] NULL,
+	[GRIDWIDTH] [int] NULL,
+	[FORMHEIGHT] [int] NULL,
+	[FORMWIDTH] [int] NULL,
+	[CAMPOPESQDEFAULT] [char](30) NULL,
+	[STAFILTRODATA] [char](1) NULL,
+	[NOMCAMPODATA] [char](30) NULL,
+	[STAPERMITEPESQUISAR] [char](1) NULL,
+	[TABELASDEPESQUISA] [text] NULL,
+	[FILTERCONDITION] [text] NULL,
+	[MODULOSQUEAUTILIZAM] [text] NULL,
+	[CAMPOSDELIGACAO] [text] NULL,
+	[STAEXIBDADOSABER] [char](1) NULL CONSTRAINT [DF__TBGENE910__STAEX__22DFFF17] DEFAULT ('S'),
+	[NOMSTAATIVO] [char](30) NULL,
+	[CAMINHOETIQUETA] [char](250) NULL,
+	[ET_DISTHORIZONTAL] [decimal](6, 3) NULL,
+	[ET_DISTVERTICAL] [decimal](6, 3) NULL,
+	[ET_MRGSUPERIOR] [decimal](6, 3) NULL,
+	[ET_MRGLATERAL] [decimal](6, 3) NULL,
+	[ET_LARGURA] [decimal](6, 3) NULL,
+	[ET_ALTURA] [decimal](6, 3) NULL,
+	[ET_PORLINHA] [int] NULL,
+	[ET_PORPAGINA] [int] NULL,
+	[ET_BORDA] [char](1) NULL,
+	[ET_FONTE] [varchar](30) NULL,
+	[ET_FONTETAM] [int] NULL);
+GO
+
+--Table dbo.TBGENE911
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE911] (
+	[NOMPESQUISA] [char](50) NOT NULL,
+	[NOMCAMPO] [char](60) NOT NULL,
+	[NOMCAMPOLOGICO] [char](60) NULL,
+	[STAEXIBIR] [char](1) NULL,
+	[STAPESQUISAR] [char](1) NULL,
+	[DISPLAYLABEL] [char](30) NULL,
+	[DISPLAYFORMAT] [char](30) NULL,
+	[EDITMASK] [char](30) NULL,
+	[DISPLAYWIDTH] [int] NULL,
+	[DESCRICAOCOMBOBOX] [char](50) NULL,
+	[TITLEALIGNMENT] [int] NULL CONSTRAINT [DF__TBGENE911__TITLE__7FA0E47B] DEFAULT (0),
+	[ALIGNMENT] [int] NULL CONSTRAINT [DF__TBGENE911__ALIGN__009508B4] DEFAULT (0),
+	[ORDEMEXIBICAO] [int] NULL,
+	[ORDENAR] [char](1) NULL,
+	[AGRUPAR] [int] NULL,
+	[ORDEMREL] [int] NULL,
+	[TOTALIZAR] [char](1) NULL,
+	[XPOS] [decimal](6, 3) NULL,
+	[YPOS] [decimal](6, 3) NULL,
+	[NEGRITO] [char](1) NULL,
+	[ITALICO] [char](1) NULL,
+	[SUBLINHADO] [char](1) NULL,
+	[FATORTAM] [decimal](6, 3) NULL);
+GO
+
+--Table dbo.TBGENE930
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE930] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODMOVFISC] [char](3) NOT NULL,
+	[NOMEARQ] [char](3) NOT NULL,
+	[CODORGANIZACAO] [char](5) NOT NULL,
+	[CODMATRUSUARIO] [char](25) NULL,
+	[COMENTARIOARQ] [char](250) NULL);
+GO
+
+--Table dbo.TBGENE931
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE931] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQARQ] [int] NOT NULL,
+	[NOMARQ] [char](25) NOT NULL,
+	[DATARQ] [datetime] NOT NULL,
+	[DATINICIAL] [datetime] NOT NULL,
+	[DATFINAL] [datetime] NOT NULL,
+	[TIPEXPORT] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE932
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE932] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQARQ] [int] NOT NULL,
+	[NUMSEQNF] [int] NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[DATNF] [datetime] NOT NULL,
+	[STANOVAEXPORT] [char](1) NULL,
+	[DATNOVAEXPORT] [datetime] NULL);
+GO
+
+--Table dbo.TBGENE970
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE970] (
+	[NOMARQUIVO] [char](30) NOT NULL,
+	[DESARQUIVO] [char](70) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[DATINIVIGENCIAARQ] [datetime] NULL,
+	[DATFIMVIGENCIAARQ] [datetime] NULL,
+	[FINALIDADEARQ] [char](10) NULL,
+	[CAMINHOARQ] [char](150) NULL,
+	[STATUSARQ] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE971
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE971] (
+	[NOMARQUIVO] [char](30) NOT NULL,
+	[NUMREGISTRO] [char](3) NOT NULL,
+	[CODREGISTRO] [char](6) NOT NULL,
+	[DESREGISTRO] [char](70) NOT NULL,
+	[SEQREGISTRO] [int] NOT NULL,
+	[NIVELREGISTRO] [int] NOT NULL,
+	[REGDETALHE] [char](1) NOT NULL CONSTRAINT [DF__TBGENE971__REGDE__548247A3] DEFAULT ('N'),
+	[TIPOINFORMACAO] [char](3) NULL,
+	[STAREGISTRO] [char](1) NULL);
+GO
+
+--Table dbo.TBGENE972
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE972] (
+	[NOMARQUIVO] [char](30) NOT NULL,
+	[NUMREGISTRO] [char](3) NOT NULL,
+	[NOMECAMPO] [char](30) NOT NULL,
+	[DESCAMPO] [char](70) NOT NULL,
+	[SEQCAMPO] [int] NOT NULL,
+	[NOMTABELA] [char](15) NULL,
+	[CAMPOTABELA] [char](40) NULL,
+	[TIPOCAMPO] [char](1) NOT NULL,
+	[TAMCAMPO] [int] NOT NULL,
+	[DECIMAISCAMPO] [int] NULL,
+	[STATAMFIXO] [char](1) NULL CONSTRAINT [DF__TBGENE972__STATA__5852D887] DEFAULT ('N'),
+	[CONTEUDOFIXO] [char](80) NULL,
+	[STATRATESPECIAL] [char](1) NULL,
+	[OBSCAMPO] [char](200) NULL);
+GO
+
+--Table dbo.TBGENE980
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE980] (
+	[NOMARQUIVO] [char](30) NOT NULL,
+	[DESARQUIVO] [char](70) NOT NULL,
+	[NOMARQACOMP] [char](30) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[DATATU] [datetime] NOT NULL,
+	[DATINIVIGENCIAARQ] [datetime] NULL,
+	[DATFIMVIGENCIAARQ] [datetime] NULL,
+	[FINALIDADEARQ] [char](15) NOT NULL,
+	[CLAUSULAJUNCAO] [text] NULL);
+GO
+
+--Table dbo.TBGENE981
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE981] (
+	[NOMARQUIVO] [char](30) NOT NULL,
+	[NOMCAMPO] [char](40) NOT NULL,
+	[NOMTABELA] [char](15) NULL,
+	[CAMPOTABELA] [char](40) NULL,
+	[DESCAMPO] [char](80) NOT NULL,
+	[SEQCAMPO] [int] NOT NULL,
+	[STAIMPRIMECAMPO] [char](1) NOT NULL,
+	[TAMCAMPO] [int] NOT NULL,
+	[POSINICAMPO] [int] NOT NULL,
+	[TIPCAMPO] [char](1) NOT NULL,
+	[STATRATESPECIAL] [char](1) NOT NULL,
+	[CONTFIXO] [char](80) NULL,
+	[OBSCAMPO] [char](150) NULL,
+	[NUMCASASDEC] [int] NULL CONSTRAINT [DF__TBGENE981__NUMCA__3C00B29C] DEFAULT (0));
+GO
+
+--Table dbo.TBGENE982
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE982] (
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[NOMARQUIVO] [char](30) NOT NULL,
+	[STAGERAR] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBGENE998
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE998] (
+	[USER_ID] [char](10) NOT NULL,
+	[NOMCOMPUTADOR] [char](30) NOT NULL,
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[DATLOGON] [datetime] NOT NULL,
+	[HORALOGON] [char](5) NOT NULL,
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBGENE998__CODEM__7A87F4FA] DEFAULT (' '));
+GO
+
+--Table dbo.TBGENE999
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBGENE999] (
+	[CRDIRETORIO] [char](100) NOT NULL,
+	[CPDIRETORIO] [char](100) NOT NULL,
+	[CRPORTADOR] [char](4) NULL,
+	[CRHISTORICO1] [char](3) NULL,
+	[CRCLFL] [char](4) NULL,
+	[CRCODTELACONTRAPARTIDA] [char](4) NULL,
+	[CRCODTELAINCTITULO] [char](4) NULL,
+	[CPCODTELACONTRAPARTIDA] [char](4) NULL,
+	[CPCODTELAINCTITULO] [char](4) NULL,
+	[CPPORTADOR] [char](4) NULL,
+	[CPHISTORICO1] [char](3) NULL,
+	[CPCODDOCUMENT] [char](2) NULL,
+	[CPCLFL] [char](4) NULL,
+	[CCDIRETORIO] [char](100) NULL,
+	[CCHISTORICO1] [char](3) NULL,
+	[CCCODDOCUMENT] [char](2) NULL,
+	[CCCLFL] [char](4) NULL,
+	[CCSEQUENCIAARQUIVO] [int] NULL CONSTRAINT [DF__TBGENE999__CCSEQ__0559BDD1] DEFAULT (0),
+	[CCNUMLOTE] [int] NULL CONSTRAINT [DF__TBGENE999__CCNUM__064DE20A] DEFAULT (0),
+	[CCDATVENCTONUMLOTE] [datetime] NULL,
+	[CLFSEQUENCIAARQUIVO] [int] NULL CONSTRAINT [DF__TBGENE999__CLFSE__07420643] DEFAULT (0),
+	[CLFDIRETORIO] [char](100) NULL,
+	[CONTAICMS] [char](12) NULL,
+	[CONTAICMSRECOLHER] [char](12) NULL,
+	[CONTAIPI] [char](12) NULL,
+	[CONTAIPIRECOLHER] [char](12) NULL,
+	[CONTAPIS] [char](12) NULL,
+	[CONTAPISRECOLHER] [char](12) NULL,
+	[CONTACOFINS] [char](12) NULL,
+	[CONTACOFINSRECOLHER] [char](12) NULL,
+	[CONTAISS] [char](12) NULL,
+	[CONTAISSRECOLHER] [char](12) NULL,
+	[PERCPIS] [decimal](28, 14) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL,
+	[HISTORICOIMPOSTO] [char](3) NULL,
+	[CODDOCNFVENDA] [char](3) NULL,
+	[CODDOCNFSERVICO] [char](3) NULL,
+	[LFADPCODESTAB] [char](5) NULL,
+	[CCFAIXALOTEINICIAL] [int] NULL,
+	[CCFAIXALOTEFINAL] [int] NULL,
+	[DIRETORIOMAX] [char](100) NULL,
+	[LFADPDIRETORIO] [char](100) NULL,
+	[CCHISTORICO2] [char](3) NULL,
+	[CCHISTORICO1COMPRAS] [char](3) NULL,
+	[CCHISTORICO2COMPRAS] [char](3) NULL,
+	[CCCODDOCUMENTCOMPRAS] [char](2) NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[LFADPESPECIENOTA] [char](3) NULL,
+	[LFADPSTAIPI] [char](1) NULL CONSTRAINT [DF__TBGENE999__LFADP__08362A7C] DEFAULT ('S'),
+	[CRCODTELABAIXA] [char](4) NULL,
+	[CPCODTELABAIXA] [char](4) NULL,
+	[CCCODDOCUMENTSERVCOMPRAS] [char](2) NULL,
+	[CCPORTADORCOMPRAS] [char](4) NULL,
+	[CCHISTORICOIR] [char](3) NULL,
+	[CCHISTORICOINSS] [char](3) NULL,
+	[DOCNOTACREDITO] [char](2) NULL,
+	[HISTDEVCLIENTE] [char](3) NULL,
+	[HISTDEVOLUCAO] [char](3) NULL,
+	[DOCNOTADEBITO] [char](2) NULL,
+	[HISTDEVFORNEC] [char](3) NULL,
+	[HISTDEVOLCOMPRA] [char](3) NULL,
+	[CPCODDOCUMENTDEV] [char](3) NULL,
+	[CRCODDOCUMENTDEVCLI] [char](3) NULL,
+	[STACODMATLF] [char](1) NULL CONSTRAINT [DF__TBGENE999__STACO__092A4EB5] DEFAULT ('M'),
+	[CODEMPLIVRO] [char](4) NULL,
+	[CRCODDOCUMENT] [char](3) NULL,
+	[CRCODDOCUMENTSERV] [char](3) NULL,
+	[CRCODTELABAIXABANCO] [char](4) NULL,
+	[CRCODTELABAIXAJUROS] [char](4) NULL,
+	[CRCODTELABAIXADESCTO] [char](4) NULL,
+	[CPCODTELABAIXABANCO] [char](4) NULL,
+	[CPCODTELABAIXAJUROS] [char](4) NULL,
+	[CPCODTELABAIXADESCTO] [char](4) NULL,
+	[HISTESPECIALVENDA] [char](36) NULL,
+	[HISTESPECIALBAIXACR] [char](36) NULL,
+	[HISTESPECIALBAIXACP] [char](36) NULL,
+	[STACODEMITLF] [char](1) NULL CONSTRAINT [DF__TBGENE999__STACO__32F66B4F] DEFAULT ('1'),
+	[ESPECIENFSERV] [char](5) NULL,
+	[PERCPISRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE999__PERCP__0702DA78] DEFAULT (0),
+	[PERCCOFINSRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE999__PERCC__07F6FEB1] DEFAULT (0),
+	[PERCCSLLRETFONTE] [decimal](28, 14) NULL CONSTRAINT [DF__TBGENE999__PERCC__08EB22EA] DEFAULT (0),
+	[CODDOCUMENTBORDERO] [char](3) NULL,
+	[CPCODDOCUMSERV] [char](3) NULL,
+	[CPCODDOCUMPROD] [char](3) NULL,
+	[STAEXPORTAMODULA] [char](1) NULL CONSTRAINT [DF__TBGENE999__STAEX__473D5B1E] DEFAULT ('N'),
+	[DIRETORIOMODULA] [char](100) NULL,
+	[OBSCUSTOSIMMARGEMLUCRO] [text] NULL);
+GO
+
+--Table dbo.TBHELPMODULO
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBHELPMODULO] (
+	[MODULO_ID] [char](10) NOT NULL,
+	[NUMTOPICOMODULO] [int] NOT NULL,
+	[NUMTOPICOCAMPOS] [int] NOT NULL);
+GO
+
+--Table dbo.TBICQ001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBICQ001] (
+	[CODFORN] [char](6) NOT NULL,
+	[IDDOCUMENTO] [int] NOT NULL,
+	[DESDOCUM] [char](150) NULL,
+	[PERVALIDADE] [char](1) NULL,
+	[DATENTREGA] [datetime] NULL,
+	[DATVALIDADE] [datetime] NULL,
+	[REFARQUIVO] [text] NULL,
+	[DATUPLOAD] [datetime] NULL,
+	[USRCODIGOUPLOAD] [char](10) NULL);
+GO
+
+--Table dbo.TBICQ002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBICQ002] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDIQF] [int] NOT NULL IDENTITY (1, 1),
+	[CODFORN] [char](6) NOT NULL,
+	[TIPO] [char](1) NOT NULL,
+	[CODCONTRATO] [char](20) NULL,
+	[DATINI] [datetime] NULL,
+	[DATFIN] [datetime] NULL,
+	[IQFFORN] [decimal](28, 14) NULL,
+	[IPE] [decimal](28, 14) NULL,
+	[IQC] [decimal](28, 14) NULL,
+	[IQR] [decimal](28, 14) NULL,
+	[ICQ] [decimal](28, 14) NULL,
+	[DATCALCULO] [datetime] NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[QTDEENTREGAS] [int] NULL,
+	[QTDEDATASPRO] [int] NULL,
+	[QTDENOTAS] [int] NULL);
+GO
+
+--Table dbo.TBICQ003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBICQ003] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODLOTE] [char](15) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[IDOCORR] [int] NOT NULL,
+	[NIVELCRITIC] [char](1) NOT NULL,
+	[DESCNAOCONFORM] [text] NOT NULL,
+	[USER_ID] [char](10) NULL,
+	[DATCADAST] [datetime] NULL);
+GO
+
+--Table dbo.TBICQ004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBICQ004] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[IDOCORR] [int] NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[TIPONAOCONFORM] [char](2) NOT NULL,
+	[NAOCONFORMIDADE] [char](1) NOT NULL,
+	[OBSNAOCONFORM] [text] NULL,
+	[USER_ID] [char](10) NULL,
+	[DATCADAST] [datetime] NULL);
+GO
+
+--Table dbo.TBICQ005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBICQ005] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDIQF] [int] NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[IDOCORR] [int] NOT NULL IDENTITY (1, 1),
+	[NUMPEDIDO] [char](9) NULL,
+	[SERPEDIDO] [char](2) NULL,
+	[NUMITEM] [char](2) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMITEMNF] [char](3) NULL,
+	[MAIORDATPRO] [datetime] NULL);
+GO
+
+--Table dbo.TBICQ006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBICQ006] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDIQF] [int] NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[IDOCORR] [int] NOT NULL IDENTITY (1, 1),
+	[NUMPEDIDO] [char](9) NULL,
+	[SERPEDIDO] [char](2) NULL,
+	[NUMITEM] [char](2) NULL,
+	[NUMSEQ] [char](2) NULL,
+	[DATAPROMETIDA] [datetime] NULL,
+	[QTDEPED] [decimal](28, 14) NULL,
+	[QTDEPEDACUM] [decimal](28, 14) NULL,
+	[QTD_RECEB_NOPRAZO] [decimal](28, 14) NULL,
+	[QTD_RECEB_3DIAS] [decimal](28, 14) NULL,
+	[QTD_RECEB_6DIAS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBICQ007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBICQ007] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDIQF] [int] NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[IDOCORR] [int] NOT NULL);
+GO
+
+--Table dbo.TBICQ008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBICQ008] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDIQF] [int] NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[CODLOTE] [char](15) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[IDOCORR] [int] NOT NULL);
+GO
+
+--Table dbo.TBICQ009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBICQ009] (
+	[TIPONAOCONFORM] [char](2) NOT NULL,
+	[DESNAOCONFORMIDADE] [char](70) NOT NULL,
+	[DESRESUMIDA] [char](15) NULL);
+GO
+
+--Table dbo.TBIMPFIN001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBIMPFIN001] (
+	[INVNBR] [char](12) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMDOCTO] [char](8) NOT NULL,
+	[SERIE] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[CAMINHOARQ] [char](60) NULL);
+GO
+
+--Table dbo.TBIMPRES1
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBIMPRES1] (
+	[NOMIMP] [char](30) NOT NULL,
+	[DESIMPRESSORA] [char](100) NOT NULL,
+	[STAACEITAACENTOS] [char](1) NOT NULL,
+	[CODPADRAO] [char](15) NOT NULL,
+	[DESCOMPATIVELCOM] [char](200) NULL,
+	[STAIMPTXTMODOGRAFICO] [char](1) NULL);
+GO
+
+--Table dbo.TBIMPRES2
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBIMPRES2] (
+	[NOMIMP] [char](30) NOT NULL,
+	[CODCOMANDO] [char](30) NOT NULL,
+	[DESCOMANDO] [char](50) NOT NULL,
+	[CODCONTROLE01] [char](3) NULL,
+	[CODCONTROLE02] [char](3) NULL,
+	[CODCONTROLE03] [char](3) NULL,
+	[CODCONTROLE04] [char](3) NULL,
+	[CODCONTROLE05] [char](3) NULL,
+	[CODCONTROLE06] [char](3) NULL,
+	[CODCONTROLE07] [char](3) NULL,
+	[CODCONTROLE08] [char](3) NULL,
+	[CODCONTROLE09] [char](3) NULL,
+	[CODCONTROLE10] [char](3) NULL,
+	[CODCONTROLE11] [char](3) NULL,
+	[CODCONTROLE12] [char](3) NULL,
+	[CODCONTROLE13] [char](3) NULL,
+	[CODCONTROLE14] [char](3) NULL,
+	[CODCONTROLE15] [char](3) NULL,
+	[CODCONTROLE16] [char](3) NULL,
+	[CODCONTROLE17] [char](3) NULL,
+	[CODCONTROLE18] [char](3) NULL,
+	[CODCONTROLE19] [char](3) NULL,
+	[CODCONTROLE20] [char](3) NULL);
+GO
+
+--Table dbo.TBINDICES
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBINDICES] (
+	[NOMTABELA] [char](15) NOT NULL,
+	[NOMINDICE] [char](30) NOT NULL,
+	[STAUNICO] [char](1) NOT NULL,
+	[COMENTARIOSINDICE] [text] NULL,
+	[DDLINDICE] [char](200) NULL,
+	[NOMCAMPO] [char](60) NOT NULL);
+GO
+
+--Table dbo.TBINFCOMPLEMEN
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBINFCOMPLEMEN] (
+	[CODEMP] [char](2) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[COD_INF] [char](10) NULL,
+	[DADADICIONAIS] [text] NULL,
+	[CODFORN] [char](6) NULL);
+GO
+
+--Table dbo.TBINTEGREF
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBINTEGREF] (
+	[NOMFOREIGNKEY] [char](60) NOT NULL,
+	[NOMTABELA] [char](15) NOT NULL,
+	[NOMCAMPOS] [char](50) NOT NULL,
+	[NOMTABELAREF] [char](15) NOT NULL,
+	[NOMCAMPOSREF] [char](50) NOT NULL,
+	[COMENTARIOSINTEGREF] [text] NULL,
+	[DDLINTEGREF] [char](200) NULL);
+GO
+
+--Table dbo.TBINTER997
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBINTER997] (
+	[CODOCORRENCIA] [char](4) NOT NULL,
+	[DESOCORRENCIA] [char](250) NULL,
+	[STAREGIGNORADO] [char](1) NULL);
+GO
+
+--Table dbo.TBINTER998
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBINTER998] (
+	[SEQOCORRENCIA] [char](9) NOT NULL,
+	[DATOCORRENCIA] [datetime] NOT NULL,
+	[HOROCORRENCIA] [char](6) NOT NULL,
+	[CODOCORRENCIA] [char](4) NOT NULL,
+	[NUMDADO] [char](50) NULL);
+GO
+
+--Table dbo.TBINTER999
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBINTER999] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBINTER99__CODEM__5D027F0B] DEFAULT ('01'),
+	[TEMPOEXEC] [int] NULL,
+	[DATULTVERIFIC] [datetime] NULL,
+	[HORULTVERIFIC] [char](6) NULL,
+	[DATULTVERIFICFIM] [datetime] NULL,
+	[HORULTVERIFICFIM] [char](6) NULL,
+	[SUBGRUPODEFAULT] [char](12) NULL,
+	[USER_ID] [char](10) NULL,
+	[CODTABPRECO] [char](3) NULL);
+GO
+
+--Table dbo.TBLFIS001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS001] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[OBSNF] [text] NULL,
+	[STACONSOLIDADO] [char](1) NULL,
+	[ORIGEMNF] [char](1) NULL,
+	[DATCADAST] [datetime] NULL,
+	[DATALTERACAO] [datetime] NULL,
+	[DATCOMPET] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[STACANCELADO] [char](1) NULL,
+	[STADEVOLUCAO] [char](1) NULL,
+	[VALTOTNF] [decimal](28, 14) NULL,
+	[TIPMODALIDADEFRETE] [char](1) NULL,
+	[STASINTEGRA] [char](1) NULL CONSTRAINT [DF__TBLFIS001__STASI__236A0EFC] DEFAULT ('N'),
+	[USER_IDATU] [char](10) NULL,
+	[DATATU] [datetime] NULL,
+	[SERIENFORIGEM] [char](5) NULL,
+	[CODEVENTO] [char](5) NULL,
+	[VALTOTPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS001__VALTO__74CF1BA4] DEFAULT (0),
+	[VALTOTCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS001__VALTO__75C33FDD] DEFAULT (0),
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBLFIS001__STAIN__76B76416] DEFAULT ('N'),
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[CODSITDOCTO] [char](2) NULL,
+	[NUMDE] [char](11) NULL,
+	[CHAVENFE] [char](44) NULL,
+	[CODEMITORIG] [char](9) NULL);
+GO
+
+--Table dbo.TBLFIS002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS002] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[CODNATUOPER] [char](6) NOT NULL,
+	[CODSITUACAOTRIB] [char](5) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[VALCONTAB] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALCO__6A9BA5F4] DEFAULT ('0'),
+	[VALPERICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALPE__6B8FCA2D] DEFAULT ('0'),
+	[VALBASECALCICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALBA__6C83EE66] DEFAULT ('0'),
+	[VALICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALIC__6D78129F] DEFAULT ('0'),
+	[VALOUTROSICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALOU__6E6C36D8] DEFAULT ('0'),
+	[VALISENTOICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALIS__6F605B11] DEFAULT ('0'),
+	[VALBASECALCIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALBA__70547F4A] DEFAULT ('0'),
+	[VALIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALIP__7148A383] DEFAULT ('0'),
+	[VALOUTROSIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALOU__723CC7BC] DEFAULT ('0'),
+	[VALISENTOIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALIS__7330EBF5] DEFAULT ('0'),
+	[VALBASECALCICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALBA__7425102E] DEFAULT ('0'),
+	[VALICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALIC__75193467] DEFAULT ('0'),
+	[VALPERCICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALPE__760D58A0] DEFAULT ('0'),
+	[TIPDIFERENCA] [char](1) NULL,
+	[VALDIFERENCA] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS002__VALDI__0CBBB3CE] DEFAULT ('0'),
+	[USER_IDATU] [char](10) NULL,
+	[DATATU] [datetime] NULL,
+	[VALTOTPIS] [decimal](28, 14) NULL,
+	[VALTOTCOFINS] [decimal](28, 14) NULL,
+	[STACONSIDERANOCIAP] [char](1) NULL);
+GO
+
+--Table dbo.TBLFIS003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS003] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[CODNATUOPER] [char](6) NOT NULL,
+	[CODSITUACAOTRIB] [char](5) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[QTDETOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS003__QTDET__6AF0ABAF] DEFAULT ('0'),
+	[VALBASECALCIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS003__VALBA__6BE4CFE8] DEFAULT ('0'),
+	[VALPERCIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS003__VALPE__6CD8F421] DEFAULT ('0'),
+	[VALIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS003__VALIP__6DCD185A] DEFAULT ('0'),
+	[SITUACAOIPI] [char](1) NULL,
+	[CODCLASSFISCAL] [char](10) NULL,
+	[USER_IDATU] [char](10) NULL,
+	[DATATU] [datetime] NULL,
+	[VALBASECALCICMSITEM] [decimal](28, 14) NULL,
+	[VALBASECALCICMSSUBSTITEM] [decimal](28, 14) NULL,
+	[CODCTIPI] [char](2) NULL,
+	[VALICMSSUBSTCOMPLEM] [decimal](28, 14) NULL,
+	[CODPARTNFEXPORT] [char](9) NULL,
+	[TIPPARTNFEXPORT] [char](1) NULL,
+	[CODMODNFEXPORT] [char](2) NULL,
+	[SERNFEXPORT] [char](5) NULL,
+	[NUMNFEXPORT] [char](6) NULL,
+	[DATEMISNFEXPORT] [datetime] NULL,
+	[CHAVENFEFEXPORT] [char](44) NULL,
+	[NUMMEMONFEXPORT] [char](8) NULL,
+	[CODENQUADRAMENTO] [char](4) NULL,
+	[VALICM] [decimal](28, 14) NULL,
+	[VALICMSSUBST] [decimal](28, 14) NULL,
+	[PERCPIS] [decimal](28, 14) NULL,
+	[VALBASECALCPISCOFINSIMPORT] [decimal](28, 14) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL,
+	[VALPISDESTACADO] [decimal](28, 14) NULL,
+	[VALCOFINSDESTACADO] [decimal](28, 14) NULL,
+	[VALCOFINSDESCONTO] [decimal](28, 14) NULL,
+	[VALPISDESCONTO] [decimal](28, 14) NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[CODBASECALCREDITOPIS] [char](2) NULL,
+	[CODCONTRIBAPURADAPIS] [char](2) NULL,
+	[CODTIPCREDITOPIS] [char](3) NULL,
+	[CODALIQCREDPRESUMAGROPIS] [char](3) NULL,
+	[CODPRODMONOFASALIQDIFPIS] [char](3) NULL,
+	[CODPRODMONOFASALIQUMPIS] [char](3) NULL,
+	[CODPRODSUBSTRIBCSPIS] [char](3) NULL,
+	[CODPRODALIQZEROCSPIS] [char](3) NULL,
+	[CODOPERISENCAOCSPIS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACSPIS] [char](3) NULL,
+	[CODOPERSUSPENSAOCSPIS] [char](3) NULL,
+	[CODOPEROUTRASALIQCSPIS] [char](3) NULL,
+	[CODBASECALCREDITOCOFINS] [char](2) NULL,
+	[CODCONTRIBAPURADACOFINS] [char](2) NULL,
+	[CODTIPCREDITOCOFINS] [char](3) NULL,
+	[CODALIQCREDPRESUMAGROCOFINS] [char](3) NULL,
+	[CODPRODMONOFASALIQDIFCOFINS] [char](3) NULL,
+	[CODPRODMONOFASALIQUMCOFINS] [char](3) NULL,
+	[CODPRODSUBSTRIBCSCOFINS] [char](3) NULL,
+	[CODPRODALIQZEROCSCOFINS] [char](3) NULL,
+	[CODOPERISENCAOCSCOFINS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACSCOFINS] [char](3) NULL,
+	[CODOPERSUSPENSAOCSCOFINS] [char](3) NULL,
+	[CODOPEROUTRASALIQCSCOFINS] [char](3) NULL,
+	[CSTPIS] [char](2) NULL,
+	[CSTCOFINS] [char](2) NULL,
+	[CODCONTRIBAPURADA] [char](2) NULL,
+	[CODBASECALCCREDITO] [char](2) NULL,
+	[CODPRODMONOFASALIQDIF] [char](3) NULL,
+	[CODPRODMONOFASALIQUM] [char](3) NULL,
+	[CODPRODSUBSTRIBCS] [char](3) NULL,
+	[CODPRODALIQZEROCS] [char](3) NULL,
+	[CODOPERISENCAOCS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACS] [char](3) NULL,
+	[CODOPERSUSPENSAOCS] [char](3) NULL,
+	[VALTOTITEM] [decimal](28, 14) NULL,
+	[VALCONTABITEM] [decimal](28, 14) NULL,
+	[CODUNIMEDITEM] [char](2) NULL);
+GO
+
+--Table dbo.TBLFIS004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS004] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[NUMSEQDUP] [char](2) NOT NULL,
+	[DATVENCDUP] [datetime] NULL,
+	[VALDUP] [decimal](28, 14) NULL,
+	[USER_IDATU] [char](10) NULL,
+	[DATATU] [datetime] NULL);
+GO
+
+--Table dbo.TBLFIS005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS005] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[DATCOMPET] [datetime] NULL,
+	[OBSNF] [text] NULL,
+	[STACONSOLIDADO] [char](1) NULL,
+	[ORIGEMNF] [char](1) NULL,
+	[DATCADAST] [datetime] NULL,
+	[DATALTERACAO] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[STACANCELADO] [char](1) NULL,
+	[STADEVOLUCAO] [char](1) NULL,
+	[VALTOTNF] [decimal](28, 14) NOT NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[TIPMODALIDADEFRETE] [char](1) NULL,
+	[STASINTEGRA] [char](1) NULL CONSTRAINT [DF__TBLFIS005__STASI__245E3335] DEFAULT ('N'),
+	[USER_IDATU] [char](10) NULL,
+	[DATATU] [datetime] NULL,
+	[SERIENFORIGEM] [char](5) NULL,
+	[VALTOTPIS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS005__VALTO__77AB884F] DEFAULT (0),
+	[VALTOTCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS005__VALTO__789FAC88] DEFAULT (0),
+	[STAINTEGRACONT] [char](1) NULL CONSTRAINT [DF__TBLFIS005__STAIN__7993D0C1] DEFAULT ('N'),
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[CODEVENTO] [char](5) NULL,
+	[CODCLASSEENERG] [char](2) NULL,
+	[CODCLASSEAGUA] [char](2) NULL,
+	[CODCLASSEGAS] [char](2) NULL,
+	[CODCLASSCONSMOD21] [char](2) NULL,
+	[CODCLASSCONSMOD22] [char](2) NULL,
+	[CODSITDOCTO] [char](2) NULL,
+	[CODEMITORIG] [char](9) NULL,
+	[CODCLASSE] [char](2) NULL,
+	[CHAVENFE] [char](44) NULL,
+	[NUMNFCOMPLETO] [char](9) NULL,
+	[ARQXML] [varchar](250) NULL,
+	[CHAVENFEDEV] [varchar](44) NULL,
+	[ARQXMLDEV] [varchar](250) NULL);
+GO
+
+--Table dbo.TBLFIS006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS006] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[CODNATUOPER] [char](6) NOT NULL,
+	[CODSITUACAOTRIB] [char](5) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[VALCONTAB] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALCO__312E1E6E] DEFAULT ('0'),
+	[VALPERICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALPE__322242A7] DEFAULT ('0'),
+	[VALBASECALCICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALBA__331666E0] DEFAULT ('0'),
+	[VALICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALIC__340A8B19] DEFAULT ('0'),
+	[VALOUTROSICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALOU__34FEAF52] DEFAULT ('0'),
+	[VALISENTOICMS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALIS__35F2D38B] DEFAULT ('0'),
+	[VALBASECALCIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALBA__36E6F7C4] DEFAULT ('0'),
+	[VALIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALIP__37DB1BFD] DEFAULT ('0'),
+	[VALOUTROSIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALOU__38CF4036] DEFAULT ('0'),
+	[VALISENTOIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALIS__39C3646F] DEFAULT ('0'),
+	[VALBASECALCICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALBA__3AB788A8] DEFAULT ('0'),
+	[VALICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALIC__3BABACE1] DEFAULT ('0'),
+	[VALPERCICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALPE__3C9FD11A] DEFAULT ('0'),
+	[TIPDIFERENCA] [char](1) NULL,
+	[VALDIFERENCA] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS006__VALDI__0DAFD807] DEFAULT ('0'),
+	[USER_IDATU] [char](10) NULL,
+	[DATATU] [datetime] NULL,
+	[VALTOTPIS] [decimal](28, 14) NULL,
+	[VALTOTCOFINS] [decimal](28, 14) NULL,
+	[STACONSIDERANOCIAP] [char](1) NULL);
+GO
+
+--Table dbo.TBLFIS007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS007] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[CODNATUOPER] [char](6) NOT NULL,
+	[CODSITUACAOTRIB] [char](5) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[NUMITEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[QTDETOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS007__QTDET__47A76F72] DEFAULT ('0'),
+	[VALBASECALCIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS007__VALBA__489B93AB] DEFAULT ('0'),
+	[VALPERCIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS007__VALPE__498FB7E4] DEFAULT ('0'),
+	[VALIPI] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS007__VALIP__4A83DC1D] DEFAULT ('0'),
+	[SITUACAOIPI] [char](1) NULL,
+	[CODCLASSFISCAL] [char](10) NULL,
+	[USER_IDATU] [char](10) NULL,
+	[DATATU] [datetime] NULL,
+	[VALBASECALCICMSITEM] [decimal](28, 14) NULL,
+	[VALBASECALCICMSSUBSTITEM] [decimal](28, 14) NULL,
+	[CODCTIPI] [char](2) NULL,
+	[VALICMSSUBSTCOMPLEM] [decimal](28, 14) NULL,
+	[CODENQUADRAMENTO] [char](4) NULL,
+	[VALICM] [decimal](28, 14) NULL,
+	[VALICMSSUBST] [decimal](28, 14) NULL,
+	[PERCPIS] [decimal](28, 14) NULL,
+	[VALPISRECUPERADO] [decimal](28, 14) NULL,
+	[VALBASECALCPISCOFINSIMPORT] [decimal](28, 14) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL,
+	[VALCOFINSRECUPERADO] [decimal](28, 14) NULL,
+	[VALPISRETFONTE] [decimal](28, 14) NULL,
+	[VALCOFINSRETFONTE] [decimal](28, 14) NULL,
+	[VALPISDESTACADO] [decimal](28, 14) NULL,
+	[VALCOFINSDESTACADO] [decimal](28, 14) NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[CODBASECALCREDITOPIS] [char](2) NULL,
+	[CODCONTRIBAPURADAPIS] [char](2) NULL,
+	[CODTIPCREDITOPIS] [char](3) NULL,
+	[CODALIQCREDPRESUMAGROPIS] [char](3) NULL,
+	[CODPRODMONOFASALIQDIFPIS] [char](3) NULL,
+	[CODPRODMONOFASALIQUMPIS] [char](3) NULL,
+	[CODPRODSUBSTRIBCSPIS] [char](3) NULL,
+	[CODPRODALIQZEROCSPIS] [char](3) NULL,
+	[CODOPERISENCAOCSPIS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACSPIS] [char](3) NULL,
+	[CODOPERSUSPENSAOCSPIS] [char](3) NULL,
+	[CODOPEROUTRASALIQCSPIS] [char](3) NULL,
+	[CODBASECALCREDITOCOFINS] [char](2) NULL,
+	[CODCONTRIBAPURADACOFINS] [char](2) NULL,
+	[CODTIPCREDITOCOFINS] [char](3) NULL,
+	[CODALIQCREDPRESUMAGROCOFINS] [char](3) NULL,
+	[CODPRODMONOFASALIQDIFCOFINS] [char](3) NULL,
+	[CODPRODMONOFASALIQUMCOFINS] [char](3) NULL,
+	[CODPRODSUBSTRIBCSCOFINS] [char](3) NULL,
+	[CODPRODALIQZEROCSCOFINS] [char](3) NULL,
+	[CODOPERISENCAOCSCOFINS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACSCOFINS] [char](3) NULL,
+	[CODOPERSUSPENSAOCSCOFINS] [char](3) NULL,
+	[CODOPEROUTRASALIQCSCOFINS] [char](3) NULL,
+	[VALTOTITEM] [decimal](28, 14) NULL,
+	[CSTPIS] [char](2) NULL,
+	[CSTCOFINS] [char](2) NULL,
+	[CODCONTRIBAPURADA] [char](2) NULL,
+	[CODBASECALCCREDITO] [char](2) NULL,
+	[CODPRODMONOFASALIQDIF] [char](3) NULL,
+	[CODPRODMONOFASALIQUM] [char](3) NULL,
+	[CODPRODSUBSTRIBCS] [char](3) NULL,
+	[CODPRODALIQZEROCS] [char](3) NULL,
+	[CODOPERISENCAOCS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACS] [char](3) NULL,
+	[CODOPERSUSPENSAOCS] [char](3) NULL,
+	[VALCONTABITEM] [decimal](28, 14) NULL,
+	[CODUNIMEDITEM] [char](2) NULL);
+GO
+
+--Table dbo.TBLFIS008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS008] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMSEQDUP] [char](2) NOT NULL,
+	[DATVENCDUP] [datetime] NULL,
+	[VALDUP] [decimal](28, 14) NULL,
+	[USER_IDATU] [char](10) NULL,
+	[DATATU] [datetime] NULL);
+GO
+
+--Table dbo.TBLFIS009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS009] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBLFIS009__CODEM__108C44B2] DEFAULT ('01'),
+	[TIPIMPOSTO] [char](1) NOT NULL,
+	[MESANOREF] [char](6) NOT NULL,
+	[TIPREF] [char](1) NOT NULL,
+	[PERIODOREF] [char](1) NOT NULL,
+	[TIPMOVTO] [char](1) NOT NULL,
+	[TIPVALOR] [char](1) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[INSCRESTAREMET] [char](15) NULL,
+	[VALLANCTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS009__VALLA__118068EB] DEFAULT ('0'),
+	[TIPOPERACAO] [char](1) NULL,
+	[DATLANCTO] [datetime] NULL,
+	[NUMNF] [char](6) NULL,
+	[FUNLEGALGIA] [char](100) NULL,
+	[OCORRENCIAGIA] [text] NULL,
+	[CODSUBITEM] [char](5) NULL,
+	[CODAJUSTE] [char](8) NULL,
+	[CODUF] [char](2) NULL,
+	[CODAJUSTEIPI] [char](3) NULL,
+	[NUMDOCAJUSTEIPI] [char](20) NULL,
+	[TIPORIGEMDOCIPI] [char](1) NULL,
+	[DESRESUMIDAIPI] [char](250) NULL,
+	[CODAUTORIZACAOCREDACUM] [char](12) NULL);
+GO
+
+--Table dbo.TBLFIS010
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS010] (
+	[CODMUNICIPIODEST] [char](5) NOT NULL,
+	[DESMUNICIPIODEST] [char](35) NULL,
+	[CODSINIEF] [char](3) NULL);
+GO
+
+--Table dbo.TBLFIS011
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS011] (
+	[CODSUBITEM] [char](5) NOT NULL,
+	[TIPOPERACAO] [char](1) NOT NULL,
+	[OCORRENCIA] [text] NULL,
+	[FUNDLEGAL] [char](100) NULL);
+GO
+
+--Table dbo.TBLFIS012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS012] (
+	[CODEMP] [char](2) NOT NULL,
+	[DATAINICIAL] [datetime] NOT NULL,
+	[DATAFINAL] [datetime] NOT NULL,
+	[FINALIDADE] [char](1) NOT NULL,
+	[NATUOPER] [char](1) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[CODUF] [char](2) NOT NULL,
+	[NOMARQ] [char](15) NULL,
+	[CAMINHOARQ] [char](50) NULL,
+	[DATAGERACAO] [datetime] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBLFIS013
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS013] (
+	[CODEMP] [char](2) NOT NULL,
+	[DATAINICIAL] [datetime] NOT NULL,
+	[DATAFINAL] [datetime] NOT NULL,
+	[FINALIDADE] [char](1) NOT NULL,
+	[NATUOPER] [char](1) NOT NULL,
+	[TIPONF] [char](1) NOT NULL,
+	[CODUF] [char](2) NOT NULL,
+	[SEQUENCIA] [char](6) NOT NULL,
+	[CODDOCUM] [char](3) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[CODEMITENTE] [char](9) NULL,
+	[TIPEMITENTE] [char](1) NULL);
+GO
+
+--Table dbo.TBLFIS014
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS014] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[SEQCCUSTO] [char](6) NOT NULL,
+	[CONTESTO] [char](12) NOT NULL,
+	[CCUSTO] [char](10) NULL,
+	[VALRATEIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS014__VALRA__7D6461A5] DEFAULT (0),
+	[USER_IDATU] [char](10) NULL,
+	[DATATU] [datetime] NULL);
+GO
+
+--Table dbo.TBLFIS015
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS015] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[SEQCCUSTO] [char](6) NOT NULL,
+	[CONTESTO] [char](12) NOT NULL,
+	[CCUSTO] [char](10) NULL,
+	[VALRATEIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBLFIS015__VALRA__031D3AFB] DEFAULT (0),
+	[USER_IDATU] [char](10) NULL,
+	[DATATU] [datetime] NULL);
+GO
+
+--Table dbo.TBLFIS016
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS016] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOMESAPURACAO] [char](6) NOT NULL,
+	[STAMESANOFECH] [char](1) NULL,
+	[DATFECH] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[VALDEBMES] [decimal](28, 14) NULL,
+	[VALOUTROSDEB] [decimal](28, 14) NULL,
+	[VALESTORNOCRED] [decimal](28, 14) NULL,
+	[VALTOTDEB] [decimal](28, 14) NULL,
+	[VALCREDMES] [decimal](28, 14) NULL,
+	[VALOUTROSCRED] [decimal](28, 14) NULL,
+	[VALESTORNODEB] [decimal](28, 14) NULL,
+	[VALSUBTOTCRED] [decimal](28, 14) NULL,
+	[VALSALDOCREDANT] [decimal](28, 14) NULL,
+	[VALTOTCRED] [decimal](28, 14) NULL,
+	[VALSALDODEV] [decimal](28, 14) NULL,
+	[VALDEDUCOES] [decimal](28, 14) NULL,
+	[VALICMSRECOLHER] [decimal](28, 14) NULL,
+	[VALSALDOCREDTRANSP] [decimal](28, 14) NULL,
+	[VALDEBDOCTOPFISCAL] [decimal](28, 14) NULL,
+	[VALCREDDOCTOFISCAL] [decimal](28, 14) NULL,
+	[VALEXTRAAPURACAO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS017
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS017] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOMESAPURACAO] [char](6) NOT NULL,
+	[STAMESANOFECH] [char](1) NULL,
+	[DATFECH] [datetime] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBLFIS018
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS018] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOMESAPURACAO] [char](6) NOT NULL,
+	[CODUFAPURACAO] [char](2) NOT NULL,
+	[INDMOVTO] [char](1) NULL,
+	[VALDEBMESST] [decimal](28, 14) NULL,
+	[VALOUTROSDEBST] [decimal](28, 14) NULL,
+	[VALESTORNOCREDST] [decimal](28, 14) NULL,
+	[VALTOTDEBST] [decimal](28, 14) NULL,
+	[VALCREDMESST] [decimal](28, 14) NULL,
+	[VALOUTROSCREDST] [decimal](28, 14) NULL,
+	[VALESTORNODEBST] [decimal](28, 14) NULL,
+	[VALSUBTOTCREDST] [decimal](28, 14) NULL,
+	[VALSALDOCREDANTST] [decimal](28, 14) NULL,
+	[VALTOTCREDST] [decimal](28, 14) NULL,
+	[VALSALDODEVST] [decimal](28, 14) NULL,
+	[VALDEDUCOESST] [decimal](28, 14) NULL,
+	[VALICMSRECOLHERST] [decimal](28, 14) NULL,
+	[VALSALDOCREDTRANSPST] [decimal](28, 14) NULL,
+	[VALDEBDOCTOFISCALST] [decimal](28, 14) NULL,
+	[VALCREDDOCTOFISCALST] [decimal](28, 14) NULL,
+	[VALRESSARCIMENTOST] [decimal](28, 14) NULL,
+	[VALDEVOLST] [decimal](28, 14) NULL,
+	[VALRETENCAOST] [decimal](28, 14) NULL,
+	[VALDEBESPST] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS019
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS019] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSEQ] [char](3) NOT NULL,
+	[TIPREFERAPURACAO] [char](1) NULL,
+	[DATINIAPURACAO] [datetime] NULL,
+	[DATFIMAPURACAO] [datetime] NULL,
+	[STAPERIODOFECH] [char](1) NULL,
+	[DATFECH] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[VALENTRADASNAC] [decimal](28, 14) NULL,
+	[VALENTRADASEXT] [decimal](28, 14) NULL,
+	[VALSAIDASEXT] [decimal](28, 14) NULL,
+	[VALOUTROSCRED] [decimal](28, 14) NULL,
+	[VALSUBTOTCRED] [decimal](28, 14) NULL,
+	[VALSALDOCREDANT] [decimal](28, 14) NULL,
+	[VALSAIDASNAC] [decimal](28, 14) NULL,
+	[VALESTORNOCRED] [decimal](28, 14) NULL,
+	[VALRESSARCCRED] [decimal](28, 14) NULL,
+	[VALOUTROSDEB] [decimal](28, 14) NULL,
+	[VALTOTDEB] [decimal](28, 14) NULL,
+	[VALTOTCRED] [decimal](28, 14) NULL,
+	[VALSALDODEVEDOR] [decimal](28, 14) NULL,
+	[VALSALDOCREDOR] [decimal](28, 14) NULL,
+	[VALESTORNODEB] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS020
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS020] (
+	[CODEMP] [char](2) NOT NULL,
+	[TIPIMPOSTO] [char](1) NOT NULL,
+	[MESANOREF] [char](6) NOT NULL,
+	[TIPREF] [char](1) NOT NULL,
+	[PERIODOREF] [char](1) NOT NULL,
+	[TIPMOVTO] [char](1) NOT NULL,
+	[TIPVALOR] [char](1) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[SEQINFADIC] [char](2) NOT NULL,
+	[NUMDOCARRECADACAO] [char](20) NULL,
+	[NUMPROCAJUSTE] [char](20) NULL,
+	[TIPORIGEMPROC] [char](1) NULL,
+	[DESRESUMIDAPROC] [char](250) NULL,
+	[OBSERVACAOPROC] [text] NULL);
+GO
+
+--Table dbo.TBLFIS021
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS021] (
+	[CODEMP] [char](2) NOT NULL,
+	[TIPIMPOSTO] [char](1) NOT NULL,
+	[MESANOREF] [char](6) NOT NULL,
+	[TIPREF] [char](1) NOT NULL,
+	[PERIODOREF] [char](1) NOT NULL,
+	[TIPMOVTO] [char](1) NOT NULL,
+	[TIPVALOR] [char](1) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[TIPEMITENTE] [char](3) NULL,
+	[CODEMITENTE] [char](10) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[CHAVENFE] [char](50) NULL,
+	[NUMITEMNF] [char](3) NULL,
+	[CODMAT] [char](15) NULL,
+	[VALAJUSTEITEM] [decimal](28, 14) NULL,
+	[NUMSEQDOCTO] [char](2) NOT NULL CONSTRAINT [DF__TBLFIS021__NUMSE__7F7792A0] DEFAULT ('01'));
+GO
+
+--Table dbo.TBLFIS022
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS022] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOMESAPURACAO] [char](6) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[CODVALDECL] [char](15) NULL,
+	[DESVALDCL] [char](250) NULL,
+	[VALDECL] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS023
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS023] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOAPURACAO] [char](6) NOT NULL,
+	[NUMSEQOBRIG] [char](3) NOT NULL,
+	[TIPOPERACAO] [char](1) NULL,
+	[CODOBRIGRECOLHERICMS] [char](3) NULL,
+	[VALOROBRIGRECOLHER] [decimal](28, 14) NULL,
+	[DATVENCOBRIG] [datetime] NULL,
+	[CODRECEITAOBRIG] [char](10) NULL,
+	[CODUFOBRIGST] [char](2) NULL,
+	[NUMPROCOBRIG] [char](15) NULL,
+	[TIPORIGEMPROC] [char](1) NULL,
+	[DESPROC] [char](250) NULL,
+	[OBSOBRIG] [char](250) NULL,
+	[STADEBEXTRAAPUR] [char](1) NULL);
+GO
+
+--Table dbo.TBLFIS024
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS024] (
+	[CODCOMBSEFAZ] [char](4) NOT NULL,
+	[DESCPROD] [char](100) NULL);
+GO
+
+--Table dbo.TBLFIS025
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS025] (
+	[CODEMP] [char](2) NOT NULL,
+	[INDDOC] [char](1) NOT NULL,
+	[NUMDE] [char](11) NOT NULL,
+	[DATDE] [datetime] NOT NULL,
+	[NATUEXP] [char](1) NOT NULL,
+	[NUMREGEXP] [char](12) NULL,
+	[DATREGEXP] [datetime] NULL,
+	[CHCEMB] [char](16) NULL,
+	[DATCHC] [datetime] NULL,
+	[DATAVB] [datetime] NOT NULL,
+	[TIPCHC] [char](2) NOT NULL,
+	[CODPAIS] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBLFIS026
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS026] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODUF] [char](2) NOT NULL,
+	[ANOMESAPUR] [char](6) NOT NULL,
+	[VALSALDOCREDANT] [decimal](28, 14) NULL,
+	[VALCREDAPROP] [decimal](28, 14) NULL,
+	[VALCREDRECEB] [decimal](28, 14) NULL,
+	[VALSALDOCREDFIM] [decimal](28, 14) NULL,
+	[VALCREDUTILIZADO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS027
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS027] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODUF] [char](2) NOT NULL,
+	[ANOMESAPUR] [char](6) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[TIPOUTIL] [char](1) NOT NULL,
+	[NUMDOC] [char](10) NULL,
+	[VALCREDUTIL] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS028
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS028] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOMESAPURACAO] [char](6) NOT NULL,
+	[NUMSEQ] [char](3) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[TIPONOTA] [char](1) NOT NULL,
+	[CODEMITENTE] [char](9) NOT NULL,
+	[CODUF] [char](2) NOT NULL,
+	[REFLAPURICMS] [char](1) NOT NULL,
+	[TIPOAPUR] [char](1) NOT NULL,
+	[RESPONSAB] [char](1) NOT NULL,
+	[INFRECOLHIMENTO] [char](1) NOT NULL,
+	[ORIGTRIBUT] [char](1) NOT NULL,
+	[CODAJUSTEICMS] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[VALBCICMS] [decimal](28, 14) NULL,
+	[ALIQICMS] [decimal](28, 14) NULL,
+	[VALICMS] [decimal](28, 14) NULL,
+	[VALOUTROS] [decimal](28, 14) NULL,
+	[OBS] [text] NULL);
+GO
+
+--Table dbo.TBLFIS029
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS029] (
+	[CODENQUADRAMENTO] [char](4) NOT NULL,
+	[DESENQUADRAMENTO] [char](70) NOT NULL,
+	[STAGERACREDACUMULADO] [char](1) NOT NULL,
+	[TIPENQUADRAMENTO] [char](2) NULL,
+	[ANEXOENQ] [char](50) NULL,
+	[ARTIGOENQ] [char](50) NULL,
+	[INCISOENQ] [char](50) NULL,
+	[ALINEAENQ] [char](50) NULL,
+	[PARAGRAFOENQ] [char](50) NULL,
+	[ITEMENQ] [char](50) NULL,
+	[LETRAENQ] [char](50) NULL,
+	[OBSENQ] [char](250) NULL,
+	[USER_ID] [char](10) NULL,
+	[DATCADAST] [datetime] NULL,
+	[DATATU] [datetime] NULL,
+	[STAENQ] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBLFIS030
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS030] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOREF] [char](4) NOT NULL,
+	[MESREF] [char](2) NOT NULL,
+	[IVAMEDIANA] [decimal](28, 14) NULL,
+	[IVAAPURADO] [decimal](28, 14) NULL,
+	[TIPTRATAMENTOIVA] [char](1) NOT NULL,
+	[IVAUTILIZADO] [decimal](28, 14) NULL,
+	[DATINICALCIVA] [datetime] NULL,
+	[DATFIMCALCIVA] [datetime] NULL,
+	[VALSAIDASPMC] [decimal](28, 14) NULL,
+	[VALENTRADASPMC] [decimal](28, 14) NULL,
+	[VALPMC] [decimal](28, 14) NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[DATEXEC] [datetime] NOT NULL,
+	[HORINIEXEC] [char](6) NOT NULL,
+	[HORFIMEXEC] [char](6) NOT NULL);
+GO
+
+--Table dbo.TBLFIS031
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS031] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOREF] [char](4) NOT NULL,
+	[MESREF] [char](2) NOT NULL,
+	[CODENQUADRAMENTO] [char](4) NOT NULL,
+	[STAGERACREDACUMULADO] [char](1) NOT NULL,
+	[NUMSEQREG] [char](4) NOT NULL,
+	[TIPENQUADRAMENTO] [char](2) NULL,
+	[ANEXOENQ] [char](50) NULL,
+	[ARTIGOENQ] [char](50) NULL,
+	[INCISOENQ] [char](50) NULL,
+	[ALINEAENQ] [char](50) NULL,
+	[PARAGRAFOENQ] [char](50) NULL,
+	[ITEMENQ] [char](50) NULL,
+	[LETRAENQ] [char](50) NULL,
+	[OBSENQ] [char](250) NULL);
+GO
+
+--Table dbo.TBLFIS032
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS032] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOREF] [char](4) NOT NULL,
+	[MESREF] [char](2) NOT NULL,
+	[CODPARTICIPANTE] [char](9) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[RAZAOSOCIAL] [char](70) NULL,
+	[CODPAIS] [char](5) NULL,
+	[TIPFISJUR] [char](1) NULL,
+	[CNPJCPF] [char](14) NULL,
+	[INSCRESTA] [char](20) NULL,
+	[UF] [char](2) NULL,
+	[CEP] [char](8) NULL,
+	[ENDERECO] [char](60) NULL,
+	[NUMEND] [char](6) NULL,
+	[COMPLEND] [char](20) NULL,
+	[BAIRRO] [char](30) NULL,
+	[CODMUNICIPIO] [char](7) NULL,
+	[TELEFONE] [char](15) NULL);
+GO
+
+--Table dbo.TBLFIS033
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS033] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOREF] [char](4) NOT NULL,
+	[MESREF] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[TIPDOCTO] [char](2) NOT NULL,
+	[CODPARTICIPANTE] [char](9) NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[VALSAIDA] [decimal](28, 14) NULL,
+	[PERCCREDOUTORGA] [decimal](28, 14) NULL,
+	[VALCREDOUTORGA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS034
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS034] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOREF] [char](4) NOT NULL,
+	[MESREF] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMSEQREG] [char](2) NOT NULL,
+	[CODENQUADRAMENTO] [char](4) NULL,
+	[STADEVOLUCAO] [char](1) NOT NULL,
+	[VALSAIDAOPER] [decimal](28, 14) NULL,
+	[VALBASECALCICMS] [decimal](28, 14) NULL,
+	[VALICMSDEBITADO] [decimal](28, 14) NULL,
+	[VALIVA] [decimal](28, 14) NULL,
+	[VALCUSTOESTIMADO] [decimal](28, 14) NULL,
+	[PERCMEDIOCREDIMP] [decimal](28, 14) NULL,
+	[CREDESTIMADOIMP] [decimal](28, 14) NULL,
+	[PERCCREDOUTORGA] [decimal](28, 14) NULL,
+	[VALCREDOUTORGADO] [decimal](28, 14) NULL,
+	[VALTOTICMS] [decimal](28, 14) NULL,
+	[VALCREDACUMULADO] [decimal](28, 14) NULL,
+	[STAEXPINDIRETA] [char](1) NULL,
+	[STAOPERCOMPROVADA] [char](1) NULL,
+	[DATCOMPETCOMPROVA] [datetime] NULL,
+	[NUMDECLAREXP] [char](20) NULL,
+	[OBSERVACAO] [text] NULL);
+GO
+
+--Table dbo.TBLFIS035
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS035] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOREF] [char](4) NOT NULL,
+	[MESREF] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMSEQREG] [char](2) NOT NULL,
+	[NUMSEQ] [char](2) NOT NULL,
+	[NUMDOCEXPIND] [char](9) NULL,
+	[SERDOCEXPIND] [char](5) NULL,
+	[DATEMISSAOEXPIND] [datetime] NULL,
+	[NUMDECLAREXPIND] [char](20) NULL);
+GO
+
+--Table dbo.TBLFIS036
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS036] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOREF] [char](4) NOT NULL,
+	[VLCARGA] [decimal](28, 14) NULL,
+	[VLPASS] [decimal](28, 14) NULL,
+	[VLFAT] [decimal](28, 14) NULL,
+	[INDRAT] [decimal](28, 14) NULL,
+	[VLICMSANT] [decimal](28, 14) NULL,
+	[VLBCICMS] [decimal](28, 14) NULL,
+	[VLICMSAPUR] [decimal](28, 14) NULL,
+	[VLBCICMSAPUR] [decimal](28, 14) NULL,
+	[VLDIF] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS037
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS037] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDOPER] [char](9) NOT NULL,
+	[DATOPER] [datetime] NULL,
+	[INDOPER] [char](1) NULL,
+	[TIPPART] [char](1) NULL,
+	[CODPART] [char](9) NULL,
+	[CODMAT] [char](15) NULL,
+	[VALOPER] [decimal](28, 14) NULL,
+	[SITTRIBPIS] [char](2) NULL,
+	[VALBCPIS] [decimal](28, 14) NULL,
+	[ALIQPIS] [decimal](28, 14) NULL,
+	[VALPIS] [decimal](28, 14) NULL,
+	[SITTRIBCOFINS] [char](2) NULL,
+	[VALBCCOFINS] [decimal](28, 14) NULL,
+	[ALIQCOFINS] [decimal](28, 14) NULL,
+	[VALCOFINS] [decimal](28, 14) NULL,
+	[NATBCCRED] [char](2) NULL,
+	[INDORIGCRED] [char](1) NULL,
+	[CODCTA] [char](30) NULL,
+	[CODCCUSTO] [char](10) NULL,
+	[DESCDOCOPER] [text] NULL,
+	[CODCMPISCOFINS] [char](3) NULL,
+	[CODRATEIOCONT] [char](3) NULL);
+GO
+
+--Table dbo.TBLFIS038
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS038] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDOPER] [char](3) NOT NULL,
+	[PERIODOOCOR] [char](6) NOT NULL,
+	[VALTOTEST] [decimal](28, 14) NULL,
+	[ESTIMP] [decimal](28, 14) NULL,
+	[VALBCEST] [decimal](28, 14) NULL,
+	[VALBCMENEST] [decimal](28, 14) NULL,
+	[SITTRIBPIS] [char](2) NULL,
+	[ALIQPIS] [decimal](28, 14) NULL,
+	[VALCREDPIS] [decimal](28, 14) NULL,
+	[SITTRIBCOFINS] [char](2) NULL,
+	[ALIQCOFINS] [decimal](28, 14) NULL,
+	[VALCREDCOFINS] [decimal](28, 14) NULL,
+	[DESCEST] [char](100) NULL,
+	[CODCTA] [char](30) NULL,
+	[CODTIPCREDITODEFAULT] [char](3) NULL);
+GO
+
+--Table dbo.TBLFIS039
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS039] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDOPER] [char](6) NOT NULL,
+	[INDOPER] [char](2) NULL,
+	[UNIDIMOB] [char](2) NULL,
+	[IDENTEMP] [text] NULL,
+	[DESCUNIDIMOB] [char](90) NULL,
+	[NUMCONT] [char](90) NULL,
+	[TIPFISJURADQU] [char](1) NULL,
+	[CPFCNPJADQU] [char](14) NULL,
+	[DATOPER] [datetime] NULL,
+	[VALTOTVEND] [decimal](28, 14) NULL,
+	[VALRECACUM] [decimal](28, 14) NULL,
+	[VALTOTREC] [decimal](28, 14) NULL,
+	[SITTRIBPIS] [char](2) NULL,
+	[VALBCPIS] [decimal](28, 14) NULL,
+	[ALIQPIS] [decimal](28, 14) NULL,
+	[VALPIS] [decimal](28, 14) NULL,
+	[SITTRIBCOFINS] [char](2) NULL,
+	[VALBCCOFINS] [decimal](28, 14) NULL,
+	[ALIQCOFINS] [decimal](28, 14) NULL,
+	[VALCOFINS] [decimal](28, 14) NULL,
+	[PERCRECRECEB] [decimal](28, 14) NULL,
+	[INDNATEMP] [char](1) NULL,
+	[INFCOMP] [char](90) NULL,
+	[CODCMPISCOFINS] [char](3) NULL);
+GO
+
+--Table dbo.TBLFIS040
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS040] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDOPER] [char](6) NOT NULL,
+	[PERIODOOPER] [char](6) NOT NULL,
+	[VALCUSINCACUMANT] [decimal](28, 14) NULL,
+	[VALCUSINCPERESC] [decimal](28, 14) NULL,
+	[VALCUSINCACUM] [decimal](28, 14) NULL,
+	[VALEXCBCCUSINCACUM] [decimal](28, 14) NULL,
+	[VALBCCUSINC] [decimal](28, 14) NULL,
+	[SITTRIBPIS] [char](2) NULL,
+	[ALIQPIS] [decimal](28, 14) NULL,
+	[VALCREDPISACUM] [decimal](28, 14) NULL,
+	[VALCREDPISDESCANT] [decimal](28, 14) NULL,
+	[VALCREDPISDESC] [decimal](28, 14) NULL,
+	[VALCREDPISDESCFUT] [decimal](28, 14) NULL,
+	[SITTRIBCOFINS] [char](2) NULL,
+	[ALIQCOFINS] [decimal](28, 14) NULL,
+	[VALCREDCOFINSACUM] [decimal](28, 14) NULL,
+	[VALCREDCOFINSDESCANT] [decimal](28, 14) NULL,
+	[VALCREDCOFINSDESC] [decimal](28, 14) NULL,
+	[VALCREDCOFINSDESCFUT] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS041
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS041] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDOPER] [char](6) NOT NULL,
+	[SEQCUSTOORC] [char](3) NOT NULL,
+	[PERIODOOPER] [char](6) NULL,
+	[VALCUSORC] [decimal](28, 14) NULL,
+	[VALEXC] [decimal](28, 14) NULL,
+	[VALCUSORCAJU] [decimal](28, 14) NULL,
+	[VALBCCRED] [decimal](28, 14) NULL,
+	[SITTRIBPIS] [char](2) NULL,
+	[ALIQPIS] [decimal](28, 14) NULL,
+	[VALCREDPISUTIL] [decimal](28, 14) NULL,
+	[SITTRIBCOFINS] [char](2) NULL,
+	[ALIQCOFINS] [decimal](28, 14) NULL,
+	[VALCREDCOFINSUTIL] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS042
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS042] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDOPER] [char](3) NOT NULL,
+	[PERIODOOPER] [char](6) NOT NULL,
+	[INDNATRET] [char](2) NULL,
+	[DATRET] [datetime] NULL,
+	[VALBCRET] [decimal](28, 14) NULL,
+	[VALRET] [decimal](28, 14) NULL,
+	[CODREC] [char](4) NULL,
+	[INDNATREC] [char](1) NULL,
+	[CNPJ] [char](14) NULL,
+	[VALRETPIS] [decimal](28, 14) NULL,
+	[VALRETCOFINS] [decimal](28, 14) NULL,
+	[INDDEC] [char](1) NULL,
+	[PERAPU] [char](6) NULL);
+GO
+
+--Table dbo.TBLFIS043
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS043] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDOPER] [char](3) NOT NULL,
+	[PERIODOOPER] [char](6) NOT NULL,
+	[INDORIDED] [char](2) NULL,
+	[INDNATDED] [char](1) NULL,
+	[VALDEDPIS] [decimal](28, 14) NULL,
+	[VALDEDCOFINS] [decimal](28, 14) NULL,
+	[VALBCOPER] [decimal](28, 14) NULL,
+	[CNPJ] [char](14) NULL,
+	[INFCOMP] [char](90) NULL);
+GO
+
+--Table dbo.TBLFIS044
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS044] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDOPER] [char](5) NOT NULL,
+	[INDNATEVEN] [char](2) NULL,
+	[DATEVEN] [datetime] NULL,
+	[CNPJSUCED] [char](14) NULL,
+	[PACONTCRED] [char](6) NULL,
+	[CODCRED] [char](3) NULL,
+	[VALCREDPIS] [decimal](28, 14) NULL,
+	[VALCREDCOFINS] [decimal](28, 14) NULL,
+	[PERCREDCIS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS045
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS045] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDOPER] [char](9) NOT NULL,
+	[NUMPROC] [char](20) NOT NULL,
+	[INDPROC] [char](1) NULL,
+	[TIPOPROC] [char](2) NULL,
+	[SECJUDIC] [char](30) NULL,
+	[VARA] [char](2) NULL,
+	[NATACAOJUDIC] [char](2) NULL,
+	[DESCDECJUDIC] [char](100) NULL,
+	[DATSENTECA] [datetime] NULL,
+	[NATPROCADM] [char](2) NULL,
+	[DATDECADM] [datetime] NULL);
+GO
+
+--Table dbo.TBLFIS046
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS046] (
+	[CODEMP] [char](2) NOT NULL,
+	[IDOPER] [char](6) NOT NULL,
+	[NUMPROC] [char](20) NOT NULL,
+	[INDPROC] [char](1) NULL,
+	[TIPOPROC] [char](2) NULL,
+	[SECJUDIC] [char](30) NULL,
+	[VARA] [char](2) NULL,
+	[NATACAOJUDIC] [char](2) NULL,
+	[DESCDECJUDIC] [char](100) NULL,
+	[DATSENTECA] [datetime] NULL,
+	[NATPROCADM] [char](2) NULL,
+	[DATDECADM] [datetime] NULL);
+GO
+
+--Table dbo.TBLFIS047
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS047] (
+	[CODEMP] [char](2) NOT NULL,
+	[PERAPUCRED] [char](6) NOT NULL,
+	[ORIGCREDPIS] [char](2) NULL,
+	[CNPJPIS] [char](14) NULL,
+	[CODCREDPIS] [char](3) NULL,
+	[VALCREDAPUPIS] [decimal](28, 14) NULL,
+	[VALCREDEXTAPUPIS] [decimal](28, 14) NULL,
+	[VALTOTCREDAPUPIS] [decimal](28, 14) NULL,
+	[VALCREDDESCPANTPIS] [decimal](28, 14) NULL,
+	[VALCREDPREPANTPIS] [decimal](28, 14) NULL,
+	[VALCREDDCOMPPANTPIS] [decimal](28, 14) NULL,
+	[VALSALDOCREDDISPPIS] [decimal](28, 14) NULL,
+	[VALCREDDESCPIS] [decimal](28, 14) NULL,
+	[VALCREDPERPIS] [decimal](28, 14) NULL,
+	[VALCREDDCOMPPIS] [decimal](28, 14) NULL,
+	[VALCREDTRANSPIS] [decimal](28, 14) NULL,
+	[VALCREDOUTPIS] [decimal](28, 14) NULL,
+	[VALSALDOCREDPIS] [decimal](28, 14) NULL,
+	[ORIGCREDCOFINS] [char](2) NULL,
+	[CNPJCOFINS] [char](14) NULL,
+	[CODCREDCOFINS] [char](3) NULL,
+	[VALCREDAPUCOFINS] [decimal](28, 14) NULL,
+	[VALCREDEXTAPUCOFINS] [decimal](28, 14) NULL,
+	[VALTOTCREDAPUCOFINS] [decimal](28, 14) NULL,
+	[VALCREDDESCPANTCOFINS] [decimal](28, 14) NULL,
+	[VALCREDPREPANTCOFINS] [decimal](28, 14) NULL,
+	[VALCREDDCOMPPANTCOFINS] [decimal](28, 14) NULL,
+	[VALSALDOCREDDISPCOFINS] [decimal](28, 14) NULL,
+	[VALCREDDESCCOFINS] [decimal](28, 14) NULL,
+	[VALCREDPERCOFINS] [decimal](28, 14) NULL,
+	[VALCREDDCOMPCOFINS] [decimal](28, 14) NULL,
+	[VALCREDTRANSCOFINS] [decimal](28, 14) NULL,
+	[VALCREDOUTCOFINS] [decimal](28, 14) NULL,
+	[VALSALDOCREDCOFINS] [decimal](28, 14) NULL,
+	[PERAPU] [char](6) NULL);
+GO
+
+--Table dbo.TBLFIS048
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS048] (
+	[CODEMP] [char](2) NOT NULL,
+	[SEQ] [int] NOT NULL,
+	[PERAPUCRED] [char](6) NOT NULL,
+	[CODPART] [char](9) NULL,
+	[CODMAT] [char](15) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[SERIE] [char](4) NULL,
+	[NUMNF] [char](9) NULL,
+	[DATOPER] [datetime] NULL,
+	[CHVNFE] [char](44) NULL,
+	[VALOPER] [decimal](28, 14) NULL,
+	[CFOP] [char](4) NULL,
+	[NATBCCRED] [char](2) NULL,
+	[INDORIGCRED] [char](1) NULL,
+	[CSTPIS] [char](2) NULL,
+	[VALBCPIS] [decimal](28, 14) NULL,
+	[ALIQPIS] [decimal](28, 14) NULL,
+	[VALPIS] [decimal](28, 14) NULL,
+	[CSTCOFINS] [char](2) NULL,
+	[VALBCCOFINS] [decimal](28, 14) NULL,
+	[ALIQCOFINS] [decimal](28, 14) NULL,
+	[VALCOFINS] [decimal](28, 14) NULL,
+	[CODCTA] [char](30) NULL,
+	[CODCCUSTO] [char](10) NULL,
+	[DESCCOMP] [text] NULL,
+	[TIPNF] [char](1) NULL,
+	[STATUS] [char](1) NULL,
+	[PERESCRIT] [char](6) NULL);
+GO
+
+--Table dbo.TBLFIS049
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS049] (
+	[CODEMP] [char](2) NOT NULL,
+	[PERAPUCRED] [char](6) NOT NULL,
+	[SEQ] [int] NOT NULL,
+	[VALCREDTRIBMIPIS] [decimal](28, 14) NULL,
+	[VALCREDNTMIPIS] [decimal](28, 14) NULL,
+	[VALCREDEXPPIS] [decimal](28, 14) NULL,
+	[VALCREDTRIBMICOFINS] [decimal](28, 14) NULL,
+	[VALCREDNTMICOFINS] [decimal](28, 14) NULL,
+	[VALCREDEXPCOFINS] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS050
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS050] (
+	[CODEMP] [char](2) NOT NULL,
+	[PERAPURANT] [char](6) NOT NULL,
+	[CODTIPCONTRIB] [char](1) NOT NULL,
+	[NATCONTREC] [char](2) NOT NULL,
+	[VALCONTAPUR] [decimal](28, 14) NULL,
+	[VALCREDPISDESC] [decimal](28, 14) NULL,
+	[VALCONTDEV] [decimal](28, 14) NULL,
+	[VALOUTDED] [decimal](28, 14) NULL,
+	[VALCONTEXT] [decimal](28, 14) NULL,
+	[VALMULTA] [decimal](28, 14) NULL,
+	[VALJUROS] [decimal](28, 14) NULL,
+	[DATRECOLHIMENTO] [datetime] NOT NULL,
+	[STATUS] [char](1) NULL,
+	[PERAPU] [char](6) NULL);
+GO
+
+--Table dbo.TBLFIS051
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS051] (
+	[CODEMP] [char](2) NOT NULL,
+	[CSTRIB] [char](2) NOT NULL,
+	[TIPPART] [char](1) NULL,
+	[CODPART] [char](9) NULL,
+	[DATOPER] [datetime] NULL,
+	[VALOPER] [decimal](28, 14) NULL,
+	[VALBASECALC] [decimal](28, 14) NULL,
+	[ALIQUOTA] [decimal](28, 14) NULL,
+	[VALOR] [decimal](28, 14) NULL,
+	[CODCTA] [char](30) NULL,
+	[DESCCOMP] [char](500) NULL,
+	[PERAPURANT] [char](6) NULL,
+	[NATCONTREC] [char](2) NULL,
+	[DATRECOLHIMENTO] [datetime] NULL,
+	[CODTIPCONTRIB] [char](1) NULL);
+GO
+
+--Table dbo.TBLFIS052
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS052] (
+	[CODEMP] [char](2) NOT NULL,
+	[PERAPURANT] [char](6) NULL,
+	[NATCONTREC] [char](2) NULL,
+	[DATRECOLHIMENTO] [datetime] NULL,
+	[CODTIPCONTRIB] [char](1) NULL,
+	[PERAPURCRED] [char](6) NULL,
+	[ORIGCRED] [char](2) NULL,
+	[CODCRED] [char](3) NULL,
+	[VALCRED] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS053
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS053] (
+	[CODEMP] [char](2) NOT NULL,
+	[PERRECRET] [char](6) NOT NULL,
+	[NATRETENCAOPIS] [char](2) NULL,
+	[VALRETAPUPIS] [decimal](28, 14) NULL,
+	[VALRETDEDPIS] [decimal](28, 14) NULL,
+	[VALRETPERPIS] [decimal](28, 14) NULL,
+	[VALRETDCOMPPIS] [decimal](28, 14) NULL,
+	[VALCREDPIS] [decimal](28, 14) NULL,
+	[NATRETENCAOCOFINS] [char](2) NULL,
+	[VALRETAPUCOFINS] [decimal](28, 14) NULL,
+	[VALRETDEDCOFINS] [decimal](28, 14) NULL,
+	[VALRETPERCOFINS] [decimal](28, 14) NULL,
+	[VALRETDCOMPCOFINS] [decimal](28, 14) NULL,
+	[VALCREDCOFINS] [decimal](28, 14) NULL,
+	[PERAPU] [char](6) NULL);
+GO
+
+--Table dbo.TBLFIS054
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS054] (
+	[CODEMP] [char](2) NOT NULL,
+	[SEQ] [int] NOT NULL,
+	[INCIMOB] [char](90) NULL,
+	[VALRECEITAREC] [decimal](28, 14) NULL,
+	[VALRECEITAFIN] [decimal](28, 14) NULL,
+	[VALBASECALC] [decimal](28, 14) NULL,
+	[ALIQRET] [decimal](28, 14) NULL,
+	[VALRECOLHIMENTO] [decimal](28, 14) NULL,
+	[DATRECOLHIMENTO] [datetime] NULL,
+	[CODRECEITA] [char](4) NULL,
+	[PERAPU] [char](6) NULL);
+GO
+
+--Table dbo.TBLFIS055
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS055] (
+	[CODEMP] [char](2) NOT NULL,
+	[SEQ] [int] NOT NULL,
+	[NUMPROC] [char](20) NOT NULL,
+	[INDPROC] [char](1) NULL,
+	[TIPOPROC] [char](2) NULL,
+	[SECJUDIC] [char](30) NULL,
+	[VARA] [char](2) NULL,
+	[NATACAOJUDIC] [char](2) NULL,
+	[DESDECJUDIC] [char](100) NULL,
+	[DATSENTECA] [datetime] NULL,
+	[NATPROCADM] [char](2) NULL,
+	[DATDECADM] [datetime] NULL);
+GO
+
+--Table dbo.TBLFIS056
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS056] (
+	[ANOMESREFER] [char](6) NOT NULL,
+	[STAMESANOFECH] [char](1) NULL,
+	[DATFECH] [datetime] NULL,
+	[USER_IDFECH] [char](10) NULL);
+GO
+
+--Table dbo.TBLFIS057
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS057] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOMESREFER] [char](6) NOT NULL,
+	[VALTOTRECBRUTA] [decimal](28, 14) NULL,
+	[VALTOTRECCONTRIB] [decimal](28, 14) NULL,
+	[VALTOTRECCONTRIBREM] [decimal](28, 14) NULL,
+	[INFOCOMPL] [text] NULL);
+GO
+
+--Table dbo.TBLFIS058
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS058] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOMESREFER] [char](6) NOT NULL,
+	[CODATIVECON] [char](8) NOT NULL,
+	[VALTOTRECBRUTA] [decimal](28, 14) NULL,
+	[VALTOTRECATIV] [decimal](28, 14) NULL,
+	[VALTOTEXCLUSAO] [decimal](28, 14) NULL,
+	[VALBASECALC] [decimal](28, 14) NULL,
+	[PERCCONTRIB] [decimal](28, 14) NULL,
+	[VALCONTRIB] [decimal](28, 14) NULL,
+	[CODCTA] [char](60) NULL,
+	[INFOCOMPL] [text] NULL,
+	[TIPOCONTRIB] [char](1) NULL);
+GO
+
+--Table dbo.TBLFIS059
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS059] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOMESREFER] [char](6) NOT NULL,
+	[CODATIVECON] [char](8) NOT NULL,
+	[SEQ] [int] NOT NULL,
+	[NUMPROC] [char](20) NULL,
+	[INDPROC] [char](1) NULL);
+GO
+
+--Table dbo.TBLFIS060
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS060] (
+	[ANOMESREFER] [char](6) NOT NULL,
+	[CODRECEITA] [char](6) NOT NULL,
+	[VALTOTCONTRIBAPU] [decimal](28, 14) NULL,
+	[VALTOTAJREDUC] [decimal](28, 14) NULL,
+	[VALTOTAJACRES] [decimal](28, 14) NULL,
+	[VALTOTCONTDEV] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLFIS999
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLFIS999] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBLFIS999__CODEM__62065FF3] DEFAULT ('01'),
+	[TIPCADPRODUTO] [char](1) NOT NULL,
+	[DOCNFSAIDA] [char](3) NULL,
+	[SERIENFSAIDA] [char](5) NULL,
+	[DOCNFENTRADA] [char](3) NULL,
+	[REGISTRO] [char](50) NULL,
+	[NUMREGISTRO] [char](20) NULL,
+	[NUMNIRE] [char](30) NULL,
+	[NOMRESPONSAVEL] [char](50) NULL,
+	[CARGRESPONSAVEL] [char](30) NULL,
+	[REGRESPONSAVEL] [char](30) NULL,
+	[STAVERIFCALCLFISCAL] [char](1) NULL,
+	[REGRAIPI] [char](1) NULL CONSTRAINT [DF__TBLFIS999__REGRA__756E3A22] DEFAULT ('1'),
+	[CODEVENTO_S] [char](5) NULL,
+	[CODEVENTO_E] [char](5) NULL,
+	[VERSAOGIA] [char](4) NULL,
+	[STACALCCREDACUMULADO] [char](1) NULL);
+GO
+
+--Table dbo.TBLISS001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLISS001] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBLISS001__CODEM__037240B6] DEFAULT ('01'),
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[DATCOMPET] [datetime] NOT NULL,
+	[ORIGEMNF] [char](1) NULL,
+	[DATALTERACAO] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[STACANCELADO] [char](1) NULL,
+	[VALTOTSERVICO] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS001__VALTO__046664EF] DEFAULT (0),
+	[VALTOTISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS001__VALTO__055A8928] DEFAULT (0),
+	[VALTOTRETENCAO] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS001__VALTO__064EAD61] DEFAULT (0),
+	[VALTOTDEDUZMAT] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS001__VALTO__0742D19A] DEFAULT (0),
+	[VALTOTDEDUZSUBEMP] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS001__VALTO__0836F5D3] DEFAULT (0),
+	[VALTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS001__VALTO__092B1A0C] DEFAULT (0),
+	[OBSNF] [text] NULL,
+	[CODSITDOCTO] [char](2) NULL,
+	[CODCFPS] [char](4) NULL,
+	[VALTOTMATPROP] [decimal](28, 14) NULL,
+	[VALTOTCONTABIL] [decimal](28, 14) NULL,
+	[VALTOTISENTOS] [decimal](28, 14) NULL,
+	[VALTOTBASECALCISSRET] [decimal](28, 14) NULL,
+	[VALPISTOTNF] [decimal](28, 14) NULL,
+	[VALTOTPISRETFONTE] [decimal](28, 14) NULL,
+	[VALCOFINSTOTNF] [decimal](28, 14) NULL,
+	[VALTOTCOFINSRETFONTE] [decimal](28, 14) NULL,
+	[VALTOTCSLLRETFONTE] [decimal](28, 14) NULL,
+	[VALTOTIRRF] [decimal](28, 14) NULL,
+	[VALRETINSSTOTNF] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLISS002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLISS002] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBLISS002__CODEM__0EE3F362] DEFAULT ('01'),
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[NUMITEMNFSERV] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[CODCIDADE] [char](3) NULL,
+	[CODSERVICO] [char](3) NULL,
+	[VALSERVICO] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS002__VALSE__0FD8179B] DEFAULT (0),
+	[PERCALIQISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS002__PERCA__10CC3BD4] DEFAULT (0),
+	[VALISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS002__VALIS__11C0600D] DEFAULT (0),
+	[VALRETENCAO] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS002__VALRE__12B48446] DEFAULT (0),
+	[VALDEDUZMAT] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS002__VALDE__13A8A87F] DEFAULT (0),
+	[VALDEDUZSUBEMP] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS002__VALDE__149CCCB8] DEFAULT (0),
+	[VALTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS002__VALTO__1590F0F1] DEFAULT (0),
+	[VALBASEISSALTERADA] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS002__VALBA__186D5D9C] DEFAULT (0),
+	[SITUACAO] [char](1) NULL,
+	[CODGENERO] [char](2) NULL,
+	[CODCTISS] [char](2) NULL,
+	[VALMATPROP] [decimal](28, 14) NULL,
+	[VALCONTABIL] [decimal](28, 14) NULL,
+	[VALISENTOS] [decimal](28, 14) NULL,
+	[VALBASECALCISSRET] [decimal](28, 14) NULL,
+	[PERCPIS] [decimal](28, 14) NULL,
+	[VALPISTOTITEM] [decimal](28, 14) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL,
+	[VALCOFINSTOTITEM] [decimal](28, 14) NULL,
+	[VALCSLLRETFONTE] [decimal](28, 14) NULL,
+	[VALRETINSSTOTITEM] [decimal](28, 14) NULL,
+	[VALISSTOTITEM] [decimal](28, 14) NULL,
+	[CODTRIBSERV] [char](3) NULL,
+	[CODBASECALCREDITOPIS] [char](2) NULL,
+	[CODCONTRIBAPURADAPIS] [char](2) NULL,
+	[CODTIPCREDITOPIS] [char](3) NULL,
+	[CODALIQCREDPRESUMAGROPIS] [char](3) NULL,
+	[CODPRODMONOFASALIQDIFPIS] [char](3) NULL,
+	[CODPRODMONOFASALIQUMPIS] [char](3) NULL,
+	[CODPRODSUBSTRIBCSPIS] [char](3) NULL,
+	[CODPRODALIQZEROCSPIS] [char](3) NULL,
+	[CODOPERISENCAOCSPIS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACSPIS] [char](3) NULL,
+	[CODOPERSUSPENSAOCSPIS] [char](3) NULL,
+	[CODOPEROUTRASALIQCSPIS] [char](3) NULL,
+	[CODBASECALCREDITOCOFINS] [char](2) NULL,
+	[CODCONTRIBAPURADACOFINS] [char](2) NULL,
+	[CODTIPCREDITOCOFINS] [char](3) NULL,
+	[CODALIQCREDPRESUMAGROCOFINS] [char](3) NULL,
+	[CODPRODMONOFASALIQDIFCOFINS] [char](3) NULL,
+	[CODPRODMONOFASALIQUMCOFINS] [char](3) NULL,
+	[CODPRODSUBSTRIBCSCOFINS] [char](3) NULL,
+	[CODPRODALIQZEROCSCOFINS] [char](3) NULL,
+	[CODOPERISENCAOCSCOFINS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACSCOFINS] [char](3) NULL,
+	[CODOPERSUSPENSAOCSCOFINS] [char](3) NULL,
+	[CODOPEROUTRASALIQCSCOFINS] [char](3) NULL,
+	[CSTPIS] [char](2) NULL,
+	[CSTCOFINS] [char](2) NULL,
+	[CODCONTRIBAPURADA] [char](2) NULL,
+	[CODBASECALCCREDITO] [char](2) NULL,
+	[CODPRODMONOFASALIQDIF] [char](3) NULL,
+	[CODPRODMONOFASALIQUM] [char](3) NULL,
+	[CODPRODSUBSTRIBCS] [char](3) NULL,
+	[CODPRODALIQZEROCS] [char](3) NULL,
+	[CODOPERISENCAOCS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACS] [char](3) NULL,
+	[CODOPERSUSPENSAOCS] [char](3) NULL);
+GO
+
+--Table dbo.TBLISS003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLISS003] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBLISS003__CODEM__1B49CA47] DEFAULT ('01'),
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[DATCOMPET] [datetime] NOT NULL,
+	[ORIGEMNF] [char](1) NULL,
+	[DATALTERACAO] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[STACANCELADO] [char](1) NULL,
+	[VALTOTSERVICO] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS003__VALTO__1C3DEE80] DEFAULT (0),
+	[VALTOTISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS003__VALTO__1D3212B9] DEFAULT (0),
+	[VALTOTRETENCAO] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS003__VALTO__1E2636F2] DEFAULT (0),
+	[VALTOTDEDUZMAT] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS003__VALTO__1F1A5B2B] DEFAULT (0),
+	[VALTOTDEDUZSUBEMP] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS003__VALTO__200E7F64] DEFAULT (0),
+	[VALTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS003__VALTO__2102A39D] DEFAULT (0),
+	[OBSNF] [text] NULL,
+	[CODSITDOCTO] [char](2) NULL,
+	[CODCFPS] [char](4) NULL,
+	[VALTOTMATPROP] [decimal](28, 14) NULL,
+	[VALTOTCONTABIL] [decimal](28, 14) NULL,
+	[VALTOTISENTOS] [decimal](28, 14) NULL,
+	[VALTOTBASECALCISSRET] [decimal](28, 14) NULL,
+	[VALPISTOTNF] [decimal](28, 14) NULL,
+	[VALCOFINSTOTNF] [decimal](28, 14) NULL,
+	[VALTOTIRRF] [decimal](28, 14) NULL,
+	[VALRETINSSTOTNF] [decimal](28, 14) NULL,
+	[VALTOTCOFINSRETFONTE] [decimal](28, 14) NULL,
+	[VALTOTPISRETFONTE] [decimal](28, 14) NULL,
+	[VALTOTCSLL] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBLISS004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLISS004] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBLISS004__CODEM__26BB7CF3] DEFAULT ('01'),
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMITEMNFSERV] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[CODCIDADE] [char](3) NULL,
+	[CODSERVICO] [char](3) NULL,
+	[VALSERVICO] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS004__VALSE__27AFA12C] DEFAULT (0),
+	[PERCALIQISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS004__PERCA__28A3C565] DEFAULT (0),
+	[VALISS] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS004__VALIS__2997E99E] DEFAULT (0),
+	[VALRETENCAO] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS004__VALRE__2A8C0DD7] DEFAULT (0),
+	[VALDEDUZMAT] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS004__VALDE__2B803210] DEFAULT (0),
+	[VALDEDUZSUBEMP] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS004__VALDE__2C745649] DEFAULT (0),
+	[VALTOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS004__VALTO__2D687A82] DEFAULT (0),
+	[VALBASEISSALTERADA] [decimal](28, 14) NULL CONSTRAINT [DF__TBLISS004__VALBA__2E5C9EBB] DEFAULT (0),
+	[SITUACAO] [char](1) NULL,
+	[CODGENERO] [char](2) NULL,
+	[CODCTISS] [char](2) NULL,
+	[VALMATPROP] [decimal](28, 14) NULL,
+	[VALCONTABIL] [decimal](28, 14) NULL,
+	[VALISENTOS] [decimal](28, 14) NULL,
+	[VALBASECALCISSRET] [decimal](28, 14) NULL,
+	[DATPAGPISIMPORT] [datetime] NULL,
+	[DATPAGCOFINSIMPORT] [datetime] NULL,
+	[LOCEXESERV] [char](1) NULL,
+	[PERCPIS] [decimal](28, 14) NULL,
+	[VALPISRECUPERADO] [decimal](28, 14) NULL,
+	[VALBASECALCPISCOFINSIMPORT] [decimal](28, 14) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL,
+	[VALCOFINSRECUPERADO] [decimal](28, 14) NULL,
+	[VALPISRETFONTE] [decimal](28, 14) NULL,
+	[VALCOFINSRETFONTE] [decimal](28, 14) NULL,
+	[VALPISDESTACADO] [decimal](28, 14) NULL,
+	[VALCOFINSDESTACADO] [decimal](28, 14) NULL,
+	[VALCSLLRETFONTE] [decimal](28, 14) NULL,
+	[VALRETINSSTOTITEM] [decimal](28, 14) NULL,
+	[VALRETIRRFTOTITEM] [decimal](28, 14) NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[CODBASECALCREDITOPIS] [char](2) NULL,
+	[CODCONTRIBAPURADAPIS] [char](2) NULL,
+	[CODTIPCREDITOPIS] [char](3) NULL,
+	[CODALIQCREDPRESUMAGROPIS] [char](3) NULL,
+	[CODPRODMONOFASALIQDIFPIS] [char](3) NULL,
+	[CODPRODMONOFASALIQUMPIS] [char](3) NULL,
+	[CODPRODSUBSTRIBCSPIS] [char](3) NULL,
+	[CODPRODALIQZEROCSPIS] [char](3) NULL,
+	[CODOPERISENCAOCSPIS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACSPIS] [char](3) NULL,
+	[CODOPERSUSPENSAOCSPIS] [char](3) NULL,
+	[CODOPEROUTRASALIQCSPIS] [char](3) NULL,
+	[CODBASECALCREDITOCOFINS] [char](2) NULL,
+	[CODCONTRIBAPURADACOFINS] [char](2) NULL,
+	[CODTIPCREDITOCOFINS] [char](3) NULL,
+	[CODALIQCREDPRESUMAGROCOFINS] [char](3) NULL,
+	[CODPRODMONOFASALIQDIFCOFINS] [char](3) NULL,
+	[CODPRODMONOFASALIQUMCOFINS] [char](3) NULL,
+	[CODPRODSUBSTRIBCSCOFINS] [char](3) NULL,
+	[CODPRODALIQZEROCSCOFINS] [char](3) NULL,
+	[CODOPERISENCAOCSCOFINS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACSCOFINS] [char](3) NULL,
+	[CODOPERSUSPENSAOCSCOFINS] [char](3) NULL,
+	[CODOPEROUTRASALIQCSCOFINS] [char](3) NULL,
+	[CSTPIS] [char](2) NULL,
+	[CSTCOFINS] [char](2) NULL,
+	[CODCONTRIBAPURADA] [char](2) NULL,
+	[CODBASECALCCREDITO] [char](2) NULL,
+	[CODPRODMONOFASALIQDIF] [char](3) NULL,
+	[CODPRODMONOFASALIQUM] [char](3) NULL,
+	[CODPRODSUBSTRIBCS] [char](3) NULL,
+	[CODPRODALIQZEROCS] [char](3) NULL,
+	[CODOPERISENCAOCS] [char](3) NULL,
+	[CODOPERSEMINCIDENCIACS] [char](3) NULL,
+	[CODOPERSUSPENSAOCS] [char](3) NULL);
+GO
+
+--Table dbo.TBLISS005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLISS005] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREF] [char](6) NOT NULL,
+	[NUMSEQDED] [char](3) NOT NULL,
+	[TIPDEDUCAO] [char](1) NULL,
+	[VALDEDUCAO] [decimal](28, 14) NULL,
+	[NUMPROCDED] [char](50) NULL,
+	[ORIGEMPROCDED] [char](1) NULL,
+	[DESPROCDED] [char](250) NULL);
+GO
+
+--Table dbo.TBLISS006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLISS006] (
+	[CODEMP] [char](2) NOT NULL,
+	[MESANOREF] [char](6) NOT NULL,
+	[NUMSEQDED] [char](3) NOT NULL,
+	[NUMSEQCOMPEN] [char](3) NOT NULL,
+	[TIPCOMPENSACAO] [char](1) NULL,
+	[VALCOMPENSACAO] [decimal](28, 14) NULL,
+	[VALCREDITOCOMPEN] [decimal](28, 14) NULL,
+	[MESANOCOMPEN] [char](6) NULL,
+	[VALRESULTCOMPEN] [decimal](28, 14) NULL,
+	[OBSERVACAO] [char](250) NULL);
+GO
+
+--Table dbo.TBLISS007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLISS007] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODDOCUM] [char](3) NOT NULL,
+	[NUMNFSERV] [char](6) NOT NULL,
+	[SERNFSERV] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMSEQOBRA] [char](3) NOT NULL,
+	[NATUOBRA] [char](100) NULL,
+	[CODUFOBRA] [char](2) NULL,
+	[CEPOBRA] [char](8) NULL,
+	[NUMENDOBRA] [char](6) NULL,
+	[COMPLENDOBRA] [char](20) NULL,
+	[BAIRROOBRA] [char](40) NULL,
+	[ESPECIECONTRATO] [char](40) NULL,
+	[DATCONTRATO] [datetime] NULL,
+	[REGOBRACARTORIO] [char](250) NULL,
+	[DATINIOBRA] [datetime] NULL,
+	[DATFIMOBRA] [datetime] NULL,
+	[VALTOTOBRA] [decimal](28, 14) NULL,
+	[OBSOBRA] [text] NULL,
+	[ENDOBRA] [char](40) NULL,
+	[CODMUNICIPIOOBRA] [char](7) NULL);
+GO
+
+--Table dbo.TBLISS008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLISS008] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODTRIBSERV] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBLISS999
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBLISS999] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBLISS999__CODEM__7DB96760] DEFAULT ('01'),
+	[CODDOCUMNFSEMITIDAS] [char](3) NULL,
+	[CODDOCUMNFSRECEBIDAS] [char](3) NULL,
+	[SERIENFSEMITIDAS] [char](5) NULL,
+	[TERMOABERTURAENCERRSAIDA] [text] NULL,
+	[TERMOABERTURAENCERRENTRADA] [text] NULL,
+	[PERCPIS] [decimal](28, 14) NULL,
+	[PERCCOFINS] [decimal](28, 14) NULL,
+	[CODCIDADE] [char](3) NULL,
+	[CODSERVICO] [char](3) NULL);
+GO
+
+--Table dbo.TBMATACABADO
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBMATACABADO] (
+	[NUMID] [int] NOT NULL IDENTITY (1, 1),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAOANT] [char](3) NULL,
+	[REVISAONOVA] [char](3) NULL,
+	[CODMATCOMPONENTEANT] [char](15) NULL,
+	[CODMATCOMPONENTENOVO] [char](15) NULL,
+	[DATTROCA] [datetime] NULL);
+GO
+
+--Table dbo.TBNFEE001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBNFEE001] (
+	[USER_ID] [char](10) NULL,
+	[CODEMP] [char](2) NULL,
+	[NUMCNPJ] [char](14) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[CODFORN] [char](6) NULL,
+	[CHAVENFE] [char](44) NULL,
+	[RAZSOCFORN] [char](50) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[DATCOMPET] [datetime] NULL,
+	[VALTOTNF] [decimal](28, 14) NULL,
+	[VALDESPESAS] [decimal](28, 14) NULL,
+	[VALFRETE] [decimal](28, 14) NULL,
+	[VALTOTICM] [decimal](28, 14) NULL,
+	[VALTOTIPI] [decimal](28, 14) NULL,
+	[VALTOTMERC] [decimal](28, 14) NULL,
+	[BASECALCICMS] [decimal](28, 14) NULL,
+	[BASECALCICMSSUBST] [decimal](28, 14) NULL,
+	[VALICMSSUBST] [decimal](28, 14) NULL,
+	[VALSEGURO] [decimal](28, 14) NULL,
+	[VALTOTPIS] [decimal](28, 14) NULL,
+	[VALTOTCOFINS] [decimal](28, 14) NULL,
+	[DADOSADICIONAIS] [text] NULL,
+	[PAGFRETE] [char](1) NULL,
+	[NUMCGCCPFTRANSP] [char](14) NULL,
+	[QTDETRANSP] [decimal](28, 14) NULL,
+	[PESOBRUTO] [char](10) NULL,
+	[PESOLIQUIDO] [char](10) NULL,
+	[PLACA] [char](10) NULL,
+	[CODUFPLACA] [char](2) NULL,
+	[ESPECIE] [char](40) NULL,
+	[MARCA] [char](40) NULL,
+	[NUMERO] [char](10) NULL,
+	[RAZAOSOCIAL] [char](50) NULL,
+	[ENDERECO] [char](40) NULL,
+	[MUNICIPIO] [char](20) NULL,
+	[UF] [char](2) NULL,
+	[INSCESTA] [char](12) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[VII] [decimal](28, 14) NULL,
+	[FINNFE] [char](1) NULL,
+	[REFNFE] [char](44) NULL);
+GO
+
+--Table dbo.TBNFEE002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBNFEE002] (
+	[USER_ID] [char](10) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCNPJ] [char](14) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[CODMATFORN] [char](40) NULL,
+	[CODMOVFISC] [char](3) NULL,
+	[DESMAT] [char](70) NULL,
+	[CODUNIMED] [char](6) NULL,
+	[QTDERECEB] [decimal](28, 14) NULL,
+	[VALUNITITEM] [decimal](28, 14) NULL,
+	[VALTOTBRUTO] [decimal](28, 14) NULL,
+	[VALDESCONTO] [decimal](28, 14) NULL,
+	[VALFRETE] [decimal](28, 14) NULL,
+	[VALSEGURO] [decimal](28, 14) NULL,
+	[VALTOTITEMDIG] [decimal](28, 14) NULL,
+	[STACONTROLE] [char](1) NULL,
+	[STAPEDIDO] [char](1) NULL,
+	[STACCUSTO] [char](1) NULL,
+	[STALOTE] [char](1) NULL,
+	[NUMCONTINDUSTR] [char](9) NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NULL,
+	[QTDEITEMCONTINDUSTR] [decimal](28, 14) NULL,
+	[RASTCLIENTE] [char](30) NULL,
+	[QTDEVOLUMESRECEB] [decimal](28, 14) NULL,
+	[CODUNIMEDVOLRECEB] [char](2) NULL,
+	[CODNCM] [char](8) NULL,
+	[PICMS] [decimal](28, 14) NULL,
+	[VICMS] [decimal](28, 14) NULL,
+	[PIPI] [decimal](28, 14) NULL,
+	[VIPI] [decimal](28, 14) NULL,
+	[PPIS] [decimal](28, 14) NULL,
+	[VPIS] [decimal](28, 14) NULL,
+	[PCOFINS] [decimal](28, 14) NULL,
+	[VCOFINS] [decimal](28, 14) NULL,
+	[CSTICMS] [char](2) NULL,
+	[CSTIPI] [char](2) NULL,
+	[CSTPIS] [char](2) NULL,
+	[CSTCOFINS] [char](2) NULL,
+	[CFOP] [char](4) NULL,
+	[PMVA] [decimal](28, 14) NULL,
+	[FATORCONV] [float] NULL,
+	[CODUNIMEDCAD] [char](6) NULL,
+	[QTDERECEBCAD] [float] NULL,
+	[CCUSTO] [char](10) NULL,
+	[CODLOTE] [char](15) NULL,
+	[CODLOTEFORN] [char](15) NULL,
+	[DATVALIDADE] [char](10) NULL,
+	[REDICMS] [decimal](28, 14) NULL,
+	[VALMAOOBRA] [decimal](28, 14) NULL,
+	[VALINSUMOS] [decimal](28, 14) NULL,
+	[PERCMAOOBRA] [decimal](28, 14) NULL,
+	[CODMATACABADO] [char](15) NULL,
+	[VII] [decimal](28, 14) NULL,
+	[VBCPISCOFINS] [decimal](28, 14) NULL,
+	[VALDESPESAS] [decimal](28, 14) NULL,
+	[VBCICMS] [decimal](28, 14) NULL,
+	[VBCIPI] [decimal](28, 14) NULL,
+	[VBCPIS] [decimal](28, 14) NULL,
+	[VBCCOFINS] [decimal](28, 14) NULL,
+	[VBCST] [decimal](28, 14) NULL,
+	[VICMSST] [decimal](28, 14) NULL,
+	[QUNID] [decimal](28, 14) NULL,
+	[VUNID] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBNFEE003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBNFEE003] (
+	[USER_ID] [char](10) NULL,
+	[CODEMP] [char](2) NULL,
+	[NUMCNPJ] [char](14) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMDUP] [char](6) NULL,
+	[NUMPARCDUP] [char](2) NULL,
+	[DATVENCDUP] [datetime] NULL,
+	[VALDUP] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBNFEE004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBNFEE004] (
+	[USER_ID] [char](10) NULL,
+	[CODEMP] [char](2) NULL,
+	[NUMCNPJ] [char](14) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMITEMNF] [char](2) NULL,
+	[NUMPEDIDO] [char](6) NULL,
+	[SERPEDIDO] [char](2) NULL,
+	[NUMITEMPED] [char](2) NULL,
+	[CODMAT] [char](15) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[CODUNIMEDCADMAT] [char](2) NULL,
+	[QTDESALDO] [decimal](28, 14) NULL,
+	[QTDEPED] [decimal](28, 14) NULL,
+	[QTDERECEBIDA] [decimal](28, 14) NULL,
+	[NUMSC] [char](10) NULL,
+	[NUMITEMSC] [char](2) NULL,
+	[NUMCOLETA] [char](9) NULL,
+	[NUMITEMCOL] [char](2) NULL,
+	[FATORCONV] [decimal](28, 14) NULL,
+	[PERCRECEB] [float] NULL,
+	[QTDERECEB] [float] NULL);
+GO
+
+--Table dbo.TBNFEE005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBNFEE005] (
+	[USER_ID] [char](10) NULL,
+	[CODEMP] [char](2) NULL,
+	[NUMCNPJ] [char](14) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMITEMNF] [char](2) NULL,
+	[NUMPEDIDO] [char](6) NULL,
+	[SERPEDIDO] [char](2) NULL,
+	[NUMITEMPED] [char](2) NULL,
+	[CCUSTO] [char](10) NULL,
+	[DESCCUSTO] [char](30) NULL,
+	[QTDERECEB] [decimal](28, 14) NULL,
+	[QTDESOLIC] [decimal](28, 14) NULL,
+	[QTDESALDO] [decimal](28, 14) NULL,
+	[NUMSC] [char](10) NULL,
+	[NUMITEMSC] [char](2) NULL,
+	[NUMCOLETA] [char](9) NULL,
+	[NUMITEMCOL] [char](2) NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[CODLOCAL] [char](5) NULL);
+GO
+
+--Table dbo.TBNFEE006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBNFEE006] (
+	[USER_ID] [char](10) NULL,
+	[CODEMP] [char](2) NULL,
+	[NUMCNPJ] [char](14) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMITEMNF] [char](2) NULL,
+	[CCUSTO] [char](10) NULL,
+	[DESCCUSTO] [char](30) NULL,
+	[QTDERECEB] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBNFEE007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBNFEE007] (
+	[USER_ID] [char](10) NULL,
+	[CODEMP] [char](2) NULL,
+	[NUMCNPJ] [char](14) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMITEMNF] [char](2) NULL,
+	[CODLOTE] [char](15) NULL,
+	[CODLOTEFORN] [char](15) NULL,
+	[DATVALIDADE] [datetime] NULL,
+	[QTDELOTE] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBNFEE008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBNFEE008] (
+	[USER_ID] [char](10) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[NUMNFSAIDA] [char](6) NOT NULL,
+	[SERNFSAIDA] [char](5) NOT NULL,
+	[NUMITEMNFSAIDA] [char](3) NOT NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[QTDERETORNO] [decimal](28, 14) NULL,
+	[VALRETORNONF] [decimal](28, 14) NULL,
+	[VALRETORNOESTO] [decimal](28, 14) NULL,
+	[ASSOCIAR] [char](1) NULL);
+GO
+
+--Table dbo.TBNFSEF001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBNFSEF001] (
+	[IDNF] [int] NOT NULL IDENTITY (1, 1),
+	[CHAVENF] [varchar](50) NOT NULL,
+	[CNPJEMIT] [varchar](20) NOT NULL,
+	[RAZSOCEMIT] [varchar](60) NOT NULL,
+	[VALNF] [numeric](8, 2) NOT NULL,
+	[TIPONF] [varchar](10) NOT NULL,
+	[MANIFESTACAO] [varchar](1) NOT NULL,
+	[SITSEFAZ] [int] NULL,
+	[DTEMISSAO] [datetime] NOT NULL,
+	[NSU] [varchar](20) NOT NULL);
+GO
+
+--Table dbo.TBNFSEF002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBNFSEF002] (
+	[IDCONF] [int] NOT NULL IDENTITY (1, 1),
+	[CODEMP] [char](2) NOT NULL,
+	[CHAVECERT] [varchar](20) NOT NULL,
+	[SENHACERT] [varchar](20) NOT NULL,
+	[ULTIMONSU] [varchar](20) NOT NULL,
+	[ENDERFTP] [varchar](50) NULL,
+	[PORTAFTP] [int] NULL,
+	[USUARIOFTP] [varchar](20) NULL,
+	[SENHAFTP] [varchar](20) NULL,
+	[PASTAFTP] [varchar](50) NULL,
+	[ASSUNTOEMAIL] [varchar](60) NULL,
+	[MSGEMAIL] [text] NULL,
+	[POP3] [varchar](25) NULL,
+	[PORTAPOP3] [int] NULL,
+	[USUEMAIL] [varchar](25) NULL,
+	[SENHAEMAIL] [varchar](25) NULL,
+	[SMTP] [varchar](25) NULL,
+	[PORTASMTP] [int] NULL,
+	[REMETENTENOME] [varchar](25) NULL,
+	[REMETENTEEMAIL] [varchar](25) NULL);
+GO
+
+--Table dbo.TBOBSNFTEMP
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBOBSNFTEMP] (
+	[CODEMP] [char](2) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[TIPONOTA] [char](1) NULL,
+	[CODEMITENTE] [char](9) NULL,
+	[COD_OBS] [char](10) NULL,
+	[TIPIMPOSTO] [char](1) NULL,
+	[MESANOREF] [char](6) NULL,
+	[TIPREF] [char](1) NULL,
+	[PERIODOREF] [char](1) NULL,
+	[TIPMOVTO] [char](1) NULL,
+	[TIPVALOR] [char](1) NULL,
+	[NUMSEQ] [char](2) NULL,
+	[SEQINFADIC] [char](2) NULL,
+	[OBS] [text] NULL,
+	[IDESCRIT] [int] NULL,
+	[IDREDZ] [int] NULL,
+	[IDREGANALIT] [int] NULL);
+GO
+
+--Table dbo.TBORCA001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORCA001] (
+	[CODENG] [char](2) NOT NULL,
+	[NOMENG] [char](30) NOT NULL);
+GO
+
+--Table dbo.TBORCA003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORCA003] (
+	[CODSERV] [char](6) NOT NULL,
+	[DESSERV] [char](60) NOT NULL,
+	[DATULTATU] [datetime] NULL,
+	[ITEMSERV] [char](1) NULL,
+	[DATCADAST] [datetime] NULL,
+	[STASERV] [char](1) NOT NULL,
+	[CODUNIMED] [char](2) NULL);
+GO
+
+--Table dbo.TBORCA004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORCA004] (
+	[NUMORCAM] [char](7) NOT NULL,
+	[DATPROP] [datetime] NOT NULL,
+	[NOMLOCAL] [char](30) NOT NULL,
+	[NUMPROP] [char](6) NOT NULL,
+	[NUMCOLBDI] [int] NULL,
+	[CCUSTO] [char](10) NULL,
+	[CODENG] [char](2) NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[TAMAREA] [decimal](28, 14) NOT NULL,
+	[PERLEISOC] [decimal](28, 14) NOT NULL,
+	[VALORCA] [decimal](28, 14) NULL,
+	[PERBDI] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBORCA005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORCA005] (
+	[NUMORCAM] [char](7) NOT NULL,
+	[CODSERV] [char](6) NOT NULL,
+	[DATATU] [datetime] NULL,
+	[QTDSERV] [decimal](28, 14) NOT NULL,
+	[VALSERV] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBORCA006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORCA006] (
+	[NUMORCAM] [char](7) NOT NULL,
+	[CODSERV] [char](6) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[PROPCONTR] [char](1) NULL,
+	[CODCOEFIC] [char](1) NULL,
+	[VALINSU] [decimal](28, 14) NULL,
+	[COEFIC] [decimal](28, 14) NULL,
+	[VALUNITINSU] [decimal](28, 14) NULL,
+	[VALUNITBDI] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBORCA007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORCA007] (
+	[CODSERV] [char](6) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DATATU] [datetime] NULL,
+	[COEFMIN] [decimal](28, 14) NULL,
+	[COEFMED] [decimal](28, 14) NOT NULL,
+	[COEFMAX] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBORCA008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORCA008] (
+	[NUMSEQ] [char](7) NOT NULL,
+	[CODSERV] [char](6) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DATATU] [datetime] NULL,
+	[COEFIC] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBORDS001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORDS001] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODTIPOHORA] [char](3) NOT NULL,
+	[DESTIPOHORA] [char](35) NULL,
+	[VALORHORA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBORDS002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORDS002] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODOS] [char](12) NOT NULL,
+	[USERIDRESP] [char](10) NULL,
+	[DATCADASTRO] [datetime] NULL,
+	[CODCLI] [char](9) NULL,
+	[QTDEKM] [decimal](28, 14) NULL,
+	[DATINIATENDIMENTO] [datetime] NULL,
+	[DATFIMATENDIMENTO] [datetime] NULL,
+	[STATUS] [char](1) NULL);
+GO
+
+--Table dbo.TBORDS003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORDS003] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODOS] [char](12) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[OBSERVACAO] [varchar](8000) NULL);
+GO
+
+--Table dbo.TBORDS004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORDS004] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODOS] [char](12) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODDESP] [char](3) NOT NULL,
+	[DESDESPESA] [char](100) NULL,
+	[QTDE] [decimal](28, 14) NULL,
+	[VALORUNIT] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBORDS005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORDS005] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODOS] [char](12) NOT NULL,
+	[CODEQUIPAMENTO] [char](3) NOT NULL,
+	[DESEQUIPAMENTO] [char](80) NULL,
+	[NUMSERIE] [char](30) NULL);
+GO
+
+--Table dbo.TBORDS006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORDS006] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODOS] [char](12) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODTIPOHORA] [char](3) NOT NULL,
+	[QTDEHORASAPLIC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBORDS999
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBORDS999] (
+	[CODEMP] [char](2) NOT NULL,
+	[CCUSTOEMITENTE] [char](10) NULL,
+	[CODTRIBSERV] [char](3) NULL,
+	[CODSERVICO] [char](3) NULL,
+	[CODCIDADE] [char](3) NULL,
+	[CCUSTOITEM] [char](10) NULL,
+	[VALORKM] [decimal](28, 14) NULL,
+	[CODOS] [char](12) NULL,
+	[CODCPAGTO] [char](3) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL);
+GO
+
+--Table dbo.TBPARIMPFIN
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPARIMPFIN] (
+	[CODEMP] [char](2) NULL,
+	[CATEGORIA] [char](1) NULL,
+	[CODGRUPO] [char](6) NULL,
+	[SUBGRUPO] [char](12) NULL,
+	[CONTCLIDUT] [char](12) NULL,
+	[CODDOCUMDUT] [char](3) NULL,
+	[CONTCONTRATITDUT] [char](12) NULL,
+	[CONTCONTRAADIANTDUT] [char](12) NULL,
+	[CONTCLIFREE] [char](12) NULL,
+	[CODDOCUMFREE] [char](3) NULL,
+	[CONTCONTRATITFREE] [char](12) NULL,
+	[CONTCLIFAT] [char](12) NULL,
+	[CODDOCUMFAT] [char](3) NULL,
+	[CONTCONTRATITFAT] [char](12) NULL,
+	[CONTCONTRAADIANTFAT] [char](12) NULL,
+	[CONTCONTRADESPFAT] [char](12) NULL,
+	[CODDOCUMREC] [char](3) NULL,
+	[CODDOCUMWRITE] [char](3) NULL,
+	[CODTPBAIXAWRITE] [char](2) NULL,
+	[CODTPBAIXACREDIT] [char](2) NULL);
+GO
+
+--Table dbo.TBPROD010
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD010] (
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[DESREVLIS] [char](30) NOT NULL,
+	[STAREV] [char](1) NULL CONSTRAINT [DF__TBPROD010__STARE__22EA20B8] DEFAULT ('N'),
+	[QTDEFAB] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD010__QTDEF__23DE44F1] DEFAULT (0),
+	[DATATIV] [datetime] NULL,
+	[STAORDAGRUP] [char](1) NULL CONSTRAINT [DF__TBPROD010__STAOR__24D2692A] DEFAULT ('N'),
+	[OBSREV] [text] NULL,
+	[DATREVCLI] [datetime] NULL,
+	[REVISAOENGCLI] [char](20) NULL);
+GO
+
+--Table dbo.TBPROD011
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD011] (
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[CODMATCOMP] [char](15) NOT NULL,
+	[QTDECOMP] [decimal](28, 14) NOT NULL,
+	[TIPCUST] [char](1) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[QTDECONSUMOFIXO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD011__QTDEC__79BDEDF3] DEFAULT (0),
+	[STAAPONTAAUTOMATICO] [char](1) NULL CONSTRAINT [DF__TBPROD011__STAAP__648DC6E3] DEFAULT ('N'),
+	[EXTRA] [char](1) NULL,
+	[VALUNITARIO] [decimal](28, 14) NULL,
+	[ARREDONDAMENTO] [int] NULL,
+	[TIPMATERIAL] [char](1) NULL,
+	[PERCTEORGARANTIA] [decimal](28, 14) NULL,
+	[OBSCOMP] [text] NULL,
+	[QTDECOMPNEC] [decimal](28, 14) NULL,
+	[COMPRIMENTO] [decimal](28, 14) NULL,
+	[QTDEPERDA] [decimal](28, 14) NULL,
+	[QTDECONSUMOMIN] [decimal](28, 14) NULL,
+	[QTDESOBRA] [decimal](28, 14) NULL,
+	[CODMATSOBRA] [char](15) NULL);
+GO
+
+--Table dbo.TBPROD012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD012] (
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[CODMATCOMP] [char](15) NOT NULL,
+	[QTDECOMP] [decimal](28, 14) NOT NULL,
+	[TIPCUST] [char](1) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[QTDECONSUMOFIXO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD012__QTDEC__7AB2122C] DEFAULT (0),
+	[STAAPONTAAUTOMATICO] [char](1) NULL CONSTRAINT [DF__TBPROD012__STAAP__6581EB1C] DEFAULT ('N'),
+	[EXTRA] [char](1) NULL,
+	[VALUNITARIO] [decimal](28, 14) NULL,
+	[ARREDONDAMENTO] [int] NULL,
+	[TIPMATERIAL] [char](1) NULL,
+	[PERCTEORGARANTIA] [decimal](28, 14) NULL,
+	[OBSCOMP] [text] NULL,
+	[QTDECOMPNEC] [decimal](28, 14) NULL,
+	[COMPRIMENTO] [decimal](28, 14) NULL,
+	[QTDEPERDA] [decimal](28, 14) NULL,
+	[QTDECONSUMOMIN] [decimal](28, 14) NULL,
+	[QTDESOBRA] [decimal](28, 14) NULL,
+	[CODMATSOBRA] [char](15) NULL);
+GO
+
+--Table dbo.TBPROD020
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD020] (
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[DESREVPROC] [char](30) NOT NULL,
+	[STAREV] [char](1) NULL CONSTRAINT [DF__TBPROD020__STARE__2B7F66B9] DEFAULT ('N'),
+	[QTDEFABR] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD020__QTDEF__2C738AF2] DEFAULT (0),
+	[DATATIV] [datetime] NULL,
+	[TEMPVAR] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD020__TEMPV__2D67AF2B] DEFAULT (0),
+	[TEMPFIX] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD020__TEMPF__2E5BD364] DEFAULT (0),
+	[TEMPDESC] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD020__TEMPD__2F4FF79D] DEFAULT (0),
+	[CAMINHODOCPOP1] [char](100) NULL,
+	[CAMINHODOCPOP2] [char](100) NULL,
+	[STAAMOSTRA] [char](1) NULL,
+	[TEMPVARSTR] [char](8) NULL,
+	[TEMPFIXSTR] [char](8) NULL,
+	[TEMPDESCSTR] [char](8) NULL,
+	[STAREGRESULT] [char](1) NULL,
+	[STAIMPRIMERESULT] [char](1) NULL,
+	[NUMLINHA] [char](3) NULL);
+GO
+
+--Table dbo.TBPROD021
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD021] (
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[CODOPER] [char](6) NOT NULL,
+	[QTDEOPER] [decimal](28, 14) NOT NULL,
+	[TEMPOHOR] [decimal](28, 14) NOT NULL,
+	[TEMPO] [decimal](28, 14) NOT NULL,
+	[CODEQUIP] [char](15) NULL,
+	[CODDISP] [char](15) NULL,
+	[SEQ] [char](3) NOT NULL,
+	[TIPCUST] [char](1) NOT NULL,
+	[STAFIM] [char](1) NOT NULL,
+	[TEMPOSETUPHOR] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD021__TEMPO__01C9240F] DEFAULT (0),
+	[TEMPOSETUP] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD021__TEMPO__02BD4848] DEFAULT (0),
+	[CODUNIMED] [char](2) NULL,
+	[TEMPOSTR] [char](8) NULL,
+	[TEMPOSETUPSTR] [char](8) NULL,
+	[STAREGRESULT] [char](1) NULL,
+	[IMPOPSOBRA] [char](1) NULL,
+	[OBSPROC] [text] NULL);
+GO
+
+--Table dbo.TBPROD022
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD022] (
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[CODOPER] [char](6) NOT NULL,
+	[QTDEOPER] [decimal](28, 14) NOT NULL,
+	[TEMPOHOR] [decimal](28, 14) NOT NULL,
+	[TEMPO] [decimal](28, 14) NOT NULL,
+	[CODEQUIP] [char](15) NULL,
+	[CODDISP] [char](15) NULL,
+	[SEQ] [char](3) NOT NULL,
+	[TIPCUST] [char](1) NOT NULL,
+	[STAFIM] [char](1) NOT NULL,
+	[TEMPOSETUPHOR] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD022__TEMPO__03B16C81] DEFAULT (0),
+	[TEMPOSETUP] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD022__TEMPO__04A590BA] DEFAULT (0),
+	[CODUNIMED] [char](2) NULL,
+	[TEMPOSTR] [char](8) NULL,
+	[TEMPOSETUPSTR] [char](8) NULL,
+	[STAREGRESULT] [char](1) NULL,
+	[IMPOPSOBRA] [char](1) NULL,
+	[OBSPROC] [text] NULL);
+GO
+
+--Table dbo.TBPROD023
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD023] (
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQ] [char](4) NOT NULL,
+	[CODDIM] [char](3) NOT NULL,
+	[DIMENSAO] [char](50) NOT NULL,
+	[CODDIMPROC] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBPROD024
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD024] (
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQ] [char](4) NOT NULL,
+	[CODDIM] [char](3) NOT NULL,
+	[DIMENSAO] [char](50) NOT NULL,
+	[CODDIMPROC] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBPROD025
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD025] (
+	[CODMAQ] [char](15) NOT NULL,
+	[DESCRICAO] [char](30) NOT NULL,
+	[STATIP] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBPROD026
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD026] (
+	[CODEPI] [char](3) NOT NULL,
+	[DESEPI] [char](100) NULL,
+	[OBSEPI] [text] NULL,
+	[STAEPI] [char](1) NULL CONSTRAINT [DF__TBPROD026__STAEP__70F39DC8] DEFAULT ('S'),
+	[TIPEPI] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD027
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD027] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD027__CODEM__60882BD5] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[DESREVISAO] [char](30) NULL,
+	[STAREV] [char](1) NULL,
+	[DATATIV] [datetime] NULL,
+	[OBSREVISAO] [text] NULL,
+	[QTDEFAB] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD027__QTDEF__459F2B6F] DEFAULT (0),
+	[REVPROD010] [char](3) NULL,
+	[FORMULARIOISO] [char](30) NULL,
+	[ELABORADOPOR] [char](30) NULL,
+	[USER_ID] [char](10) NULL,
+	[STAUTILLISTAPECAS] [char](1) NULL CONSTRAINT [DF__TBPROD027__STAUT__06A3B31C] DEFAULT ('S'),
+	[DATELABORACAO] [datetime] NULL,
+	[APROVADOPOR] [char](30) NULL,
+	[DATAPROVACAO] [datetime] NULL,
+	[DATPRIMEIRAREVISAO] [datetime] NULL);
+GO
+
+--Table dbo.TBPROD028
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD028] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD028__CODEM__63649880] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQOPERACAO] [char](3) NOT NULL,
+	[DESOPERACAO] [text] NOT NULL,
+	[TEMPOETAPAHOR] [decimal](28, 14) NULL,
+	[TEMPOETAPA] [decimal](28, 14) NULL,
+	[HORASTR] [char](8) NULL,
+	[PECASPORHORA] [decimal](28, 14) NULL,
+	[TEMPOSETUP] [char](8) NULL,
+	[CODOPER] [char](6) NULL);
+GO
+
+--Table dbo.TBPROD029
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD029] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD029__CODEM__6641052B] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQOPERACAO] [char](3) NOT NULL,
+	[DESOPERACAO] [text] NOT NULL,
+	[TEMPOETAPAHOR] [decimal](28, 14) NULL,
+	[TEMPOETAPA] [decimal](28, 14) NULL,
+	[HORASTR] [char](8) NULL,
+	[PECASPORHORA] [decimal](28, 14) NULL,
+	[TEMPOSETUP] [char](8) NULL,
+	[CODOPER] [char](6) NULL);
+GO
+
+--Table dbo.TBPROD030
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD030] (
+	[CODOPER] [char](6) NOT NULL,
+	[DESCRICAO] [char](30) NOT NULL,
+	[TIPAP] [char](1) NOT NULL,
+	[TIPVAR] [char](1) NOT NULL,
+	[STAEXT] [char](1) NULL CONSTRAINT [DF__TBPROD030__STAEX__3D9E16F4] DEFAULT ('N'),
+	[STAREGRESULT] [char](1) NULL CONSTRAINT [DF__TBPROD030__STARE__78FF9F3B] DEFAULT ('N'),
+	[TIPREGRESULTOPER] [char](1) NULL,
+	[VALINIRESULT] [decimal](28, 14) NULL,
+	[VALFIMRESULT] [decimal](28, 14) NULL,
+	[ESPECIFICOPER] [text] NULL);
+GO
+
+--Table dbo.TBPROD031
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD031] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODOPER] [char](6) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL);
+GO
+
+--Table dbo.TBPROD032
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD032] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD032__CODEM__691D71D6] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQOPERACAO] [char](3) NOT NULL,
+	[CODEPI] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBPROD033
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD033] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD033__CODEM__6BF9DE81] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQOPERACAO] [char](3) NOT NULL,
+	[CODEPI] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBPROD035
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD035] (
+	[CODMOTIVO] [char](6) NOT NULL,
+	[DESMOTIVO] [char](30) NOT NULL,
+	[PRODUTIVO] [char](1) NULL CONSTRAINT [DF__TBPROD035__PRODU__123F82FA] DEFAULT ('S'));
+GO
+
+--Table dbo.TBPROD036
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD036] (
+	[CODLAUDO] [char](6) NOT NULL,
+	[LAUDO] [text] NOT NULL);
+GO
+
+--Table dbo.TBPROD037
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD037] (
+	[CODDIM] [char](3) NOT NULL,
+	[DESDIM] [char](50) NOT NULL);
+GO
+
+--Table dbo.TBPROD038
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD038] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD038__CODEM__328C56FB] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQOPERACAO] [char](3) NOT NULL,
+	[CODDIM] [char](3) NOT NULL,
+	[DESDIM] [text] NOT NULL,
+	[TIPDIM] [char](1) NOT NULL,
+	[QTDAMOSTRAGEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD038__QTDAM__33807B34] DEFAULT (0),
+	[STACICLICO] [char](1) NULL,
+	[QTDENTRECICLOS] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD038__QTDEN__34749F6D] DEFAULT (0),
+	[VALACEITOINICIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD038__VALAC__3568C3A6] DEFAULT (0),
+	[VALIDEAL] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD038__VALID__365CE7DF] DEFAULT (0),
+	[VALACEITOFIM] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD038__VALAC__37510C18] DEFAULT (0),
+	[RESPOSTA1] [text] NULL,
+	[RESPOSTA2] [text] NULL,
+	[RESPOSTA3] [text] NULL,
+	[RESPOSTA4] [text] NULL,
+	[RESPOSTA5] [text] NULL,
+	[TEMPOENTRECICLOSHOR] [decimal](28, 14) NULL,
+	[TEMPOENTRECICLOS] [decimal](28, 14) NULL,
+	[INSTRUMENTOMEDICAO] [char](40) NULL,
+	[NUMCARACTERISTICA] [char](10) NULL,
+	[DESFREQUENCIA] [char](30) NULL);
+GO
+
+--Table dbo.TBPROD039
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD039] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD039__CODEM__3C15C135] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQOPERACAO] [char](3) NOT NULL,
+	[CODDIM] [char](3) NOT NULL,
+	[DESDIM] [text] NOT NULL,
+	[TIPDIM] [char](1) NOT NULL,
+	[QTDAMOSTRAGEM] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD039__QTDAM__3D09E56E] DEFAULT (0),
+	[STACICLICO] [char](1) NULL,
+	[QTDENTRECICLOS] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD039__QTDEN__3DFE09A7] DEFAULT (0),
+	[VALACEITOINICIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD039__VALAC__3EF22DE0] DEFAULT (0),
+	[VALIDEAL] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD039__VALID__3FE65219] DEFAULT (0),
+	[VALACEITOFIM] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD039__VALAC__40DA7652] DEFAULT (0),
+	[RESPOSTA1] [text] NULL,
+	[RESPOSTA2] [text] NULL,
+	[RESPOSTA3] [text] NULL,
+	[RESPOSTA4] [text] NULL,
+	[RESPOSTA5] [text] NULL,
+	[TEMPOENTRECICLOSHOR] [decimal](28, 14) NULL,
+	[TEMPOENTRECICLOS] [decimal](28, 14) NULL,
+	[INSTRUMENTOMEDICAO] [char](40) NULL,
+	[NUMCARACTERISTICA] [char](10) NULL,
+	[DESFREQUENCIA] [char](30) NULL);
+GO
+
+--Table dbo.TBPROD040
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD040] (
+	[CODEQUIP] [char](15) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[VIDAUTIL] [int] NOT NULL,
+	[DIASMANU] [int] NOT NULL,
+	[DATMAN] [datetime] NOT NULL,
+	[CAPACIDADE] [int] NULL CONSTRAINT [DF__TBPROD040__CAPAC__481BA567] DEFAULT (0),
+	[DATPROXIMAMANUT] [datetime] NULL,
+	[CCUSTO] [char](10) NULL,
+	[NUMBEM] [char](15) NULL,
+	[NUMINCORPBEM] [char](6) NULL,
+	[HSACUMMANUT] [decimal](28, 14) NULL,
+	[HSACUMMANUTANT] [decimal](28, 14) NULL,
+	[CODFAMILIA] [char](3) NULL,
+	[MARCAMODELO] [char](30) NULL,
+	[DATCADAST] [datetime] NULL);
+GO
+
+--Table dbo.TBPROD041
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD041] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD041__CODEM__36B1ED9A] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQOPERACAO] [char](3) NOT NULL,
+	[CODEQUIP] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBPROD042
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD042] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD042__CODEM__3B76A2B7] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQOPERACAO] [char](3) NOT NULL,
+	[CODEQUIP] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBPROD043
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD043] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD043__CODEM__403B57D4] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQOPERACAO] [char](3) NOT NULL,
+	[CODDISP] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBPROD044
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD044] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD044__CODEM__45000CF1] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQOPERACAO] [char](3) NOT NULL,
+	[CODDISP] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL);
+GO
+
+--Table dbo.TBPROD045
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD045] (
+	[CODDISP] [char](15) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[VIDAUTIL] [int] NOT NULL,
+	[DIASMANU] [int] NOT NULL,
+	[DATMAN] [datetime] NOT NULL,
+	[HORUTILI] [decimal](28, 14) NULL,
+	[STADISP] [char](1) NOT NULL,
+	[GAVETA] [char](10) NULL);
+GO
+
+--Table dbo.TBPROD046
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD046] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD046__CODEM__3BE0B70B] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQOPERACAO] [char](3) NOT NULL,
+	[CODMATCOMP] [char](15) NOT NULL,
+	[QTDECOMP] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBPROD046__QTDEC__3CD4DB44] DEFAULT (0),
+	[QTDECONSUMOFIXO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBPROD046__QTDEC__3DC8FF7D] DEFAULT (0));
+GO
+
+--Table dbo.TBPROD047
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD047] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD047__CODEM__4381D8D3] DEFAULT ('01'),
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[SEQOPERACAO] [char](3) NOT NULL,
+	[CODMATCOMP] [char](15) NOT NULL,
+	[QTDECOMP] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBPROD047__QTDEC__4475FD0C] DEFAULT (0),
+	[QTDECONSUMOFIXO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBPROD047__QTDEC__456A2145] DEFAULT (0));
+GO
+
+--Table dbo.TBPROD050
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD050] (
+	[CODEMP] [char](2) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[DESCRICAO] [char](30) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[TIPCTRAB] [char](1) NOT NULL,
+	[QTDETURNOS] [int] NULL,
+	[QTDEHORASHOMEMTURNO] [decimal](28, 14) NULL,
+	[QTDEHORASMAQUINATURNO] [decimal](28, 14) NULL,
+	[PERCEFICIENCIAMO] [decimal](28, 14) NULL,
+	[PERCEFICIENCIAMAQ] [decimal](28, 14) NULL,
+	[STAREGMAQUINA] [char](1) NULL CONSTRAINT [DF__TBPROD050__STARE__25DD32AA] DEFAULT ('N'));
+GO
+
+--Table dbo.TBPROD051
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD051] (
+	[CODEMP] [char](2) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[TIPCALENDARIO] [char](1) NOT NULL,
+	[DATCALENDARIO] [datetime] NOT NULL,
+	[QTDEHORAS] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD051__QTDEH__19D68321] DEFAULT (0));
+GO
+
+--Table dbo.TBPROD055
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD055] (
+	[CODHOR] [char](3) NOT NULL,
+	[DESCRICAO] [char](30) NOT NULL);
+GO
+
+--Table dbo.TBPROD057
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD057] (
+	[CODHOR] [char](3) NOT NULL,
+	[DATCALEN] [datetime] NOT NULL,
+	[HORTRAB] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD057__HORTR__50B0EB68] DEFAULT (0));
+GO
+
+--Table dbo.TBPROD059
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD059] (
+	[CODEMP] [char](2) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[CODHOR] [char](3) NOT NULL,
+	[NROFUNC] [int] NULL);
+GO
+
+--Table dbo.TBPROD060
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD060] (
+	[CODSTDMAT] [char](5) NOT NULL,
+	[DESCRICAO] [char](30) NOT NULL,
+	[CODINDICE] [char](3) NOT NULL,
+	[DATBASE] [datetime] NOT NULL);
+GO
+
+--Table dbo.TBPROD061
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD061] (
+	[CODSTDMAT] [char](5) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[PRECO] [decimal](28, 14) NOT NULL,
+	[OBS] [char](50) NULL,
+	[CODUNIMEDCONV] [char](2) NULL);
+GO
+
+--Table dbo.TBPROD070
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD070] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSTDMO] [char](5) NOT NULL,
+	[DESCRICAO] [char](30) NOT NULL,
+	[CODINDICE] [char](3) NOT NULL,
+	[DATBASE] [datetime] NULL);
+GO
+
+--Table dbo.TBPROD071
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD071] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSTDMO] [char](5) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[VALSTDHORA] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBPROD080
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD080] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSTDMAQ] [char](5) NOT NULL,
+	[DESCRICAO] [char](30) NOT NULL,
+	[CODINDICE] [char](3) NOT NULL,
+	[DATBASE] [datetime] NULL);
+GO
+
+--Table dbo.TBPROD081
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD081] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSTDMAQ] [char](5) NOT NULL,
+	[CODEQUIP] [char](15) NOT NULL,
+	[VALSTDHORASETUPMAQ] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBPROD081__VALST__096A45D7] DEFAULT (0),
+	[VALSTDHORAMAQ] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBPROD081__VALST__0A5E6A10] DEFAULT (0));
+GO
+
+--Table dbo.TBPROD082
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD082] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSTDMOEXT] [char](5) NOT NULL,
+	[DESCRICAO] [char](30) NOT NULL,
+	[CODINDICE] [char](3) NOT NULL,
+	[DATBASE] [datetime] NULL);
+GO
+
+--Table dbo.TBPROD083
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD083] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSTDMOEXT] [char](5) NOT NULL,
+	[CODOPER] [char](6) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[QTDEPADRAO] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBPROD083__QTDEP__12F3B011] DEFAULT (0),
+	[VALHORAMOEXT] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBPROD083__VALHO__13E7D44A] DEFAULT (0));
+GO
+
+--Table dbo.TBPROD090
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD090] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFUNC] [char](6) NOT NULL,
+	[NOMFUNC] [char](50) NOT NULL,
+	[QTDEHORASMES] [int] NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[STAFUNC] [char](1) NOT NULL CONSTRAINT [DF__TBPROD090__STAFU__0016B11E] DEFAULT ('S'),
+	[STAPAGAPREMIOPROD] [char](1) NULL,
+	[TIPCALCPREMIO] [char](1) NULL CONSTRAINT [DF__TBPROD090__TIPCA__03D23369] DEFAULT ('1'),
+	[CODAREA] [char](5) NULL,
+	[ENDERECOFUNC] [char](40) NULL,
+	[COMPLENDFUNC] [char](20) NULL,
+	[NUMENDFUNC] [char](6) NULL,
+	[CEPENDFUNC] [char](10) NULL,
+	[BAIRROFUNC] [char](30) NULL,
+	[CODUFFUNC] [char](10) NULL,
+	[CODMUNICFUNC] [char](7) NULL,
+	[TELFUNC] [char](12) NULL,
+	[CELFUNC] [char](12) NULL,
+	[EMAILFUNC] [char](70) NULL);
+GO
+
+--Table dbo.TBPROD091
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD091] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODEQUIPE] [char](25) NOT NULL,
+	[DESEQUIPE] [char](80) NULL,
+	[TURNO] [char](3) NULL,
+	[CENTRAB] [char](12) NULL,
+	[DATEQUIPE] [datetime] NULL,
+	[DATCADAST] [datetime] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBPROD092
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD092] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODEQUIPE] [char](25) NOT NULL,
+	[CODFUNC] [char](6) NOT NULL,
+	[TIPHORATRAB] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD093
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD093] (
+	[CODTIPNAOCONFORM] [char](3) NOT NULL,
+	[DESTIPNAOCONFORM] [char](60) NULL,
+	[STAEXIGERETRABALHO] [char](1) NULL,
+	[STATIPNAOCONFORM] [char](1) NULL,
+	[DATCADAST] [datetime] NULL,
+	[DATATU] [datetime] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBPROD094
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD094] (
+	[CODNAOCONFORM] [char](5) NOT NULL,
+	[DESNAOCONFORM] [char](60) NULL,
+	[CODTIPNAOCONFORM] [char](3) NULL,
+	[STANAOCONFORM] [char](1) NULL,
+	[DATCADAST] [datetime] NULL,
+	[DATATU] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[NUMRELEVANCIA] [int] NULL);
+GO
+
+--Table dbo.TBPROD095
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD095] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD095__CODEM__5D16C24D] DEFAULT ('01'),
+	[CODPERCRAT] [char](5) NOT NULL,
+	[DESCRICAO] [char](30) NOT NULL);
+GO
+
+--Table dbo.TBPROD096
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD096] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD096__CODEM__5FF32EF8] DEFAULT ('01'),
+	[CODPERCRAT] [char](5) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[PERCRAT] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBPROD096__PERCR__60E75331] DEFAULT (0));
+GO
+
+--Table dbo.TBPROD097
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD097] (
+	[TIPDESP] [char](1) NOT NULL,
+	[DESFAMILIA] [char](30) NOT NULL,
+	[TIPCUSTO] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD098
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD098] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODPERCRAT] [char](5) NOT NULL,
+	[CONTACONTABIL] [char](12) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[PERCRAT] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBPROD100
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD100] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[DATINICIO] [datetime] NULL,
+	[DATFIM] [datetime] NULL,
+	[DATABERT] [datetime] NOT NULL,
+	[QTDEPROG] [decimal](28, 14) NULL,
+	[QTDEPROD] [decimal](28, 14) NULL,
+	[QTDESCRAP] [decimal](28, 14) NULL,
+	[QTDERETRAB] [decimal](28, 14) NULL,
+	[QTDEOUTSAI] [decimal](28, 14) NULL,
+	[STAORD] [char](1) NOT NULL,
+	[REVPROD010] [char](3) NULL,
+	[REVPROD020] [char](3) NULL,
+	[STAVALORIZ] [char](1) NULL CONSTRAINT [DF__TBPROD100__STAVA__65AC084E] DEFAULT ('N'),
+	[VALMAT] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD100__VALMA__66A02C87] DEFAULT (0),
+	[VALMOD] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD100__VALMO__679450C0] DEFAULT (0),
+	[VALRECUP] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD100__VALRE__688874F9] DEFAULT (0),
+	[VALDESP] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD100__VALDE__697C9932] DEFAULT (0),
+	[VALCRED] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD100__VALCR__6A70BD6B] DEFAULT (0),
+	[VALPROD] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD100__VALPR__6B64E1A4] DEFAULT (0),
+	[CODORDEMPAI] [char](12) NULL,
+	[SEQORDEMPAI] [char](3) NULL,
+	[STAORDAGRUP] [char](1) NULL CONSTRAINT [DF__TBPROD100__STAOR__6C5905DD] DEFAULT ('N'),
+	[VALEXT] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD100__VALEX__6D4D2A16] DEFAULT (0),
+	[CODSTDMAT] [char](5) NULL,
+	[CODSTDMO] [char](5) NULL,
+	[DATNEC] [datetime] NULL,
+	[VALFATU] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD100__VALFA__6E414E4F] DEFAULT (0),
+	[TIPORDEM] [char](1) NULL CONSTRAINT [DF__TBPROD100__TIPOR__6F357288] DEFAULT ('P'),
+	[PERCCUSTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD100__PERCC__702996C1] DEFAULT (0),
+	[CONTPROC] [char](12) NULL,
+	[CONTREC] [char](12) NULL,
+	[CCUSTO] [char](10) NULL,
+	[QTDEINFORMADA] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD100__QTDEI__5066D2A5] DEFAULT (0),
+	[PERCENCORDEM] [decimal](28, 14) NULL,
+	[PERCEFICIENCIAMO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD100__PERCE__76E18148] DEFAULT (100),
+	[STALIBERADOCQ] [char](1) NULL CONSTRAINT [DF__TBPROD100__STALI__1348B5CC] DEFAULT ('N'),
+	[REVPROD027] [char](3) NULL,
+	[CODEQUIP] [char](15) NULL,
+	[SEQEQUIP] [char](3) NULL,
+	[CODDISP] [char](15) NULL,
+	[SEQDISP] [char](3) NULL,
+	[NUMLOTES] [int] NULL CONSTRAINT [DF__TBPROD100__NUMLO__4E89772B] DEFAULT (1),
+	[DATPREVISAOFIM] [datetime] NULL,
+	[HORAPREVISAOFIM] [char](4) NULL,
+	[NUMPARTIDA] [char](6) NULL,
+	[HORINICIO] [char](4) NULL,
+	[STAOPRETRABALHO] [char](1) NULL CONSTRAINT [DF__TBPROD100__STAOP__0FE30493] DEFAULT ('N'),
+	[STALIBIMPROPRETRAB] [char](1) NULL CONSTRAINT [DF__TBPROD100__STALI__10D728CC] DEFAULT ('N'),
+	[STAAMOSTRA] [char](1) NULL,
+	[STALOTEMONITOR] [char](1) NULL,
+	[TIPMONITORLOTES] [char](1) NULL,
+	[DATLIMITEMONITOROP] [datetime] NULL,
+	[QTDELIMITEMONITOROP] [int] NULL,
+	[NUMMONITOROP] [int] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBPROD101
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD101] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[NUMLANC] [char](9) NOT NULL,
+	[QTDEMOV] [decimal](28, 14) NULL,
+	[VALMOV] [decimal](28, 14) NULL,
+	[DATMOV] [datetime] NULL,
+	[TIPCUST] [char](1) NOT NULL,
+	[QTDEMOVSTD] [decimal](28, 14) NULL,
+	[ID_OPER] [char](1) NOT NULL,
+	[CODLOTE] [char](15) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[STARECEB] [char](1) NULL CONSTRAINT [DF__TBPROD101__STARE__7306036C] DEFAULT ('N'),
+	[NUMNF] [char](6) NULL,
+	[NUMITEMNF] [char](3) NULL,
+	[SERNF] [char](5) NULL,
+	[USER_ID] [char](10) NULL,
+	[SISTEMA_ID] [char](10) NULL,
+	[CODFORN] [char](6) NULL,
+	[QTDADEVOLVER] [decimal](28, 14) NULL,
+	[TIPMATERIAL] [char](1) NULL,
+	[NUMSEQRETRAB] [int] NULL);
+GO
+
+--Table dbo.TBPROD101B
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD101B] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[NUMLANC] [char](9) NOT NULL,
+	[QTDEMOV] [decimal](28, 14) NULL,
+	[VALMOV] [decimal](28, 14) NULL,
+	[DATMOV] [datetime] NULL,
+	[TIPCUST] [char](1) NULL,
+	[QTDEMOVSTD] [decimal](28, 14) NULL,
+	[ID_OPER] [char](1) NULL,
+	[CODLOTE] [char](15) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[USER_ID] [char](10) NULL,
+	[SISTEMA_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBPROD102
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD102] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODOPE] [char](6) NOT NULL,
+	[DATHORINC] [char](19) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[QTDEOPER] [decimal](28, 14) NOT NULL,
+	[DATINICIO] [datetime] NOT NULL,
+	[DATFIM] [datetime] NOT NULL,
+	[HORINICIO] [decimal](28, 14) NULL,
+	[HORFIM] [decimal](28, 14) NULL,
+	[TEMPO] [decimal](28, 14) NOT NULL,
+	[TIPORDEM] [char](1) NOT NULL,
+	[STAEXT] [char](1) NULL,
+	[STAFIM] [char](1) NULL,
+	[TEMPOSTD] [decimal](28, 14) NOT NULL,
+	[VALMOVAP] [decimal](28, 14) NULL,
+	[VALMOVSTD] [decimal](28, 14) NULL,
+	[QTDEMOV] [decimal](28, 14) NOT NULL,
+	[TIPCUST] [char](1) NOT NULL,
+	[CODMOTIVO] [char](6) NULL,
+	[SEQ] [char](3) NULL,
+	[USER_ID] [char](10) NULL,
+	[STAINTEGRACONT] [char](1) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[QTDEOPERSTD] [decimal](28, 14) NULL,
+	[QTDEHORASHOMEMSTD] [decimal](28, 14) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[QTDORIGINAL] [decimal](28, 14) NULL,
+	[TIPAPONTAMENTO] [char](1) NULL CONSTRAINT [DF__TBPROD102__TIPAP__04DB663B] DEFAULT ('P'),
+	[CODEQUIPE] [char](25) NULL,
+	[TEMPOINFORMADOSTR] [char](8) NULL,
+	[HORINICIOSTR] [char](8) NULL,
+	[HORFIMSTR] [char](8) NULL,
+	[CICLOPROD] [decimal](28, 14) NULL,
+	[PESOUNIDADEPROD] [decimal](28, 14) NULL,
+	[TURNO] [char](1) NULL,
+	[NUMSEQRETRAB] [int] NULL,
+	[SEQRETRAB] [int] NULL,
+	[CODEQUIP] [char](15) NULL,
+	[SEQEQUIP] [char](3) NULL,
+	[PERCEFIC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD102B
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD102B] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODOPE] [char](6) NOT NULL,
+	[DATHORINC] [char](19) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[QTDEOPER] [decimal](28, 14) NULL,
+	[DATINICIO] [datetime] NULL,
+	[DATFIM] [datetime] NULL,
+	[HORINICIO] [decimal](28, 14) NULL,
+	[HORFIM] [decimal](28, 14) NULL,
+	[TEMPO] [decimal](28, 14) NULL,
+	[TIPORDEM] [char](1) NULL,
+	[STAEXT] [char](1) NULL,
+	[STAFIM] [char](1) NULL,
+	[TEMPOSTD] [decimal](28, 14) NULL,
+	[VALMOVAP] [decimal](28, 14) NULL,
+	[VALMOVSTD] [decimal](28, 14) NULL,
+	[QTDEMOV] [decimal](28, 14) NULL,
+	[TIPCUST] [char](1) NULL,
+	[CODMOTIVO] [char](6) NULL,
+	[SEQ] [char](3) NULL,
+	[USER_ID] [char](10) NULL,
+	[QTDEOPERSTD] [decimal](28, 14) NULL,
+	[QTDEHORASHOMEMSTD] [decimal](28, 14) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[QTDORIGINAL] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD103
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD103] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[CODOPE] [char](6) NOT NULL,
+	[DATHORINC] [char](19) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[TIPREC] [char](1) NOT NULL,
+	[DATMOV] [datetime] NULL,
+	[QTDEMOV] [decimal](28, 14) NULL,
+	[VALMOV] [decimal](28, 14) NULL,
+	[CODMOTIVO] [char](6) NOT NULL,
+	[STAMATERIAPRIMA] [char](1) NULL CONSTRAINT [DF__TBPROD103__STAMA__77CAB889] DEFAULT ('S'),
+	[NUMLANC] [char](9) NULL,
+	[CODLOTE] [char](15) NULL);
+GO
+
+--Table dbo.TBPROD104
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD104] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[ANOMES] [char](6) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[CCONTABIL] [char](12) NOT NULL,
+	[DATHORINC] [char](20) NOT NULL,
+	[VALDESAP] [decimal](28, 14) NULL,
+	[VALDESSTD] [decimal](28, 14) NULL,
+	[STARATEIO] [char](1) NULL CONSTRAINT [DF__TBPROD104__STARA__5AE46118] DEFAULT ('N'),
+	[NUMNF] [char](8) NULL,
+	[NUMITEMNF] [char](3) NULL,
+	[SERNF] [char](5) NULL,
+	[SISTEMA_ID] [char](10) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[CODFORN] [char](6) NULL,
+	[DATMOV] [datetime] NULL,
+	[STAVARIACAOCAMBIAL] [char](1) NULL CONSTRAINT [DF__TBPROD104__STAVA__2EBBC617] DEFAULT ('N'),
+	[STAINTEGRACONT] [char](1) NULL,
+	[ANOLOTECONTAB] [char](4) NULL,
+	[MESLOTECONTAB] [char](2) NULL,
+	[NUMLOTECONTAB] [char](7) NULL,
+	[STAORIGEM] [char](1) NULL,
+	[HISTORICO] [char](100) NULL);
+GO
+
+--Table dbo.TBPROD105
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD105] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[NUMLANC] [char](9) NOT NULL,
+	[DATHORINC] [datetime] NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[QTDEMOV] [decimal](28, 14) NOT NULL,
+	[VALMOV] [decimal](28, 14) NOT NULL,
+	[DATMOV] [datetime] NOT NULL,
+	[TIPVAL] [char](1) NOT NULL,
+	[CODEQUIPE] [char](25) NULL,
+	[NUMDOCTO] [char](9) NULL,
+	[PESOUNIDADEPROD] [decimal](28, 14) NULL,
+	[DATCERTIFICADO] [datetime] NULL,
+	[USER_CERTIFICADO] [char](10) NULL,
+	[STACERTIFICADO] [char](1) NULL,
+	[OBSCERTIFICADO] [text] NULL,
+	[SEQRETRAB] [int] NULL,
+	[SOBRA] [char](1) NOT NULL CONSTRAINT [DF_TBPROD105_SOBRA] DEFAULT ('N'));
+GO
+
+--Table dbo.TBPROD105A
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD105A] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[DATHORINC] [datetime] NOT NULL,
+	[ID_OPER] [char](1) NOT NULL,
+	[DATMOV] [datetime] NOT NULL,
+	[VALMOV] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD105__VALMO__7F6BDA51] DEFAULT (0),
+	[HISTORICO] [char](100) NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[SISTEMA_ID] [char](10) NULL,
+	[CONTRAPARTIDA] [char](10) NULL);
+GO
+
+--Table dbo.TBPROD105B
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD105B] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[NUMLANC] [char](9) NOT NULL,
+	[DATHORINC] [datetime] NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[QTDEMOV] [decimal](28, 14) NULL,
+	[VALMOV] [decimal](28, 14) NULL,
+	[DATMOV] [datetime] NULL);
+GO
+
+--Table dbo.TBPROD106
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD106] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CCONTABIL] [char](12) NOT NULL,
+	[LANCCONTABIL] [char](1) NOT NULL,
+	[VALMOV] [decimal](28, 14) NOT NULL,
+	[ANOMES] [char](6) NOT NULL,
+	[DATINTER] [datetime] NOT NULL,
+	[OBSMOVTO] [char](100) NULL);
+GO
+
+--Table dbo.TBPROD107
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD107] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[VALMOV] [decimal](28, 14) NOT NULL,
+	[ANOMES] [char](6) NOT NULL,
+	[DATINTER] [datetime] NULL,
+	[CCONTABIL] [char](12) NULL,
+	[VALCREDITOS] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD107__VALCR__04308F6E] DEFAULT (0),
+	[VALDEBITOS] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD107__VALDE__0524B3A7] DEFAULT (0));
+GO
+
+--Table dbo.TBPROD108
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD108] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD108__CODEM__08012052] DEFAULT ('01'),
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[SEQENVIO] [char](3) NOT NULL,
+	[CODOPER] [char](6) NOT NULL,
+	[CODFORN] [char](6) NULL,
+	[DATENVIO] [datetime] NULL,
+	[QTDEENVIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD108__QTDEE__08F5448B] DEFAULT (0),
+	[VALMOVENVIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD108__VALMO__09E968C4] DEFAULT (0),
+	[NUMNFENVIO] [char](6) NULL,
+	[SERNFENVIO] [char](5) NULL,
+	[DATRETORNO] [datetime] NULL,
+	[QTDERETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD108__QTDER__0ADD8CFD] DEFAULT (0),
+	[VALMOVRETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD108__VALMO__0BD1B136] DEFAULT (0),
+	[NUMNFRETORNO] [char](6) NULL,
+	[SERNFRETORNO] [char](5) NULL,
+	[STAFIM] [char](1) NULL CONSTRAINT [DF__TBPROD108__STAFI__0CC5D56F] DEFAULT ('S'),
+	[CERTIFICADO] [char](15) NULL,
+	[SISTEMA_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBPROD109
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD109] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[QTDMOV] [decimal](28, 14) NOT NULL,
+	[DATMOV] [datetime] NOT NULL,
+	[CODLAUDO] [char](6) NULL,
+	[LAUDO] [text] NULL);
+GO
+
+--Table dbo.TBPROD110
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD110] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANO] [char](4) NOT NULL,
+	[MES] [char](2) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[HORAS] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD110__HORAS__118A8A8C] DEFAULT (0),
+	[HORSTD] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD110__HORST__127EAEC5] DEFAULT (0),
+	[PERCCT] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD110__PERCC__1372D2FE] DEFAULT (0),
+	[VALTOTCT] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD110__VALTO__1466F737] DEFAULT (0),
+	[VALHORCT] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD110__VALHO__155B1B70] DEFAULT (0),
+	[HORASOCIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD110__HORAS__164F3FA9] DEFAULT (0),
+	[HORASTRAB] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD110__HORAS__174363E2] DEFAULT (0));
+GO
+
+--Table dbo.TBPROD111
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD111] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](3) NOT NULL,
+	[DATHORINC] [datetime] NOT NULL,
+	[DATEMISSAO] [datetime] NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[VALTOTITEM] [decimal](28, 14) NOT NULL,
+	[ID_OPER] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBPROD112
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD112] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOMES] [char](6) NOT NULL,
+	[CCONTABIL] [char](12) NOT NULL,
+	[SEQ] [char](2) NOT NULL,
+	[CENTRAB] [char](12) NULL,
+	[VALOR] [decimal](28, 14) NOT NULL CONSTRAINT [DF__TBPROD112__VALOR__1C0818FF] DEFAULT (0),
+	[CCUSTO] [char](10) NULL,
+	[TIPRATEIODESP] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD113
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD113] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQOPER] [char](3) NOT NULL,
+	[CODDIM] [char](3) NOT NULL,
+	[SEQCICLO] [char](3) NOT NULL,
+	[SEQAMOSTRA] [char](3) NOT NULL,
+	[TIPDIM] [char](1) NULL,
+	[QTDEAMOSTRAGEM] [decimal](28, 14) NULL,
+	[QTDEAMOSTRAGEMSTD] [decimal](28, 14) NULL,
+	[QTDENTRECICLOS] [decimal](28, 14) NULL,
+	[VALACEITOINICIO] [decimal](28, 14) NULL,
+	[VALIDEAL] [decimal](28, 14) NULL,
+	[VALACEITOFIM] [decimal](28, 14) NULL,
+	[TEMPOENTRECICLOSHOR] [decimal](28, 14) NULL,
+	[INSTRUMENTOMEDICAO] [char](40) NULL,
+	[NUMCARACTERISTICA] [char](10) NULL,
+	[DATREGISTRO] [datetime] NULL,
+	[HORREGISTRO] [char](4) NULL,
+	[USER_IDREGISTRO] [char](10) NULL,
+	[RESPOSTA1] [text] NULL,
+	[RESPOSTA2] [text] NULL,
+	[RESPOSTA3] [text] NULL,
+	[RESPOSTA4] [text] NULL,
+	[RESPOSTA5] [text] NULL,
+	[RESPOSTAINFORMADA1] [text] NULL,
+	[RESPOSTAINFORMADA2] [text] NULL,
+	[RESPOSTAINFORMADA3] [text] NULL,
+	[RESPOSTAINFORMADA4] [text] NULL,
+	[RESPOSTAINFORMADA5] [text] NULL);
+GO
+
+--Table dbo.TBPROD115
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD115] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD115__CODEM__1EE485AA] DEFAULT ('01'),
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[CODLOTE] [char](15) NULL,
+	[QTDEMAT] [decimal](28, 14) NULL,
+	[CODALMOX] [char](15) NOT NULL,
+	[QTDESTD] [decimal](28, 14) NOT NULL,
+	[TIPCUST] [char](1) NOT NULL,
+	[QTDEINFORMADA] [decimal](28, 14) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[VALUNITARIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD115__VALUN__40306ADC] DEFAULT (0),
+	[STAAPONTAAUTOMATICO] [char](1) NULL CONSTRAINT [DF__TBPROD115__STAAP__66760F55] DEFAULT ('N'),
+	[CODLOCAL] [char](5) NULL,
+	[TIPMATERIAL] [char](1) NULL,
+	[SEQLISTA] [char](3) NULL,
+	[NUMSEQRETRAB] [int] NULL);
+GO
+
+--Table dbo.TBPROD116
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD116] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD116__CODEM__21C0F255] DEFAULT ('01'),
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](12) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[CODOPER] [char](6) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[QTDEMOV] [decimal](28, 14) NULL,
+	[QTDEOPER] [decimal](28, 14) NULL,
+	[TEMPO] [decimal](28, 14) NULL,
+	[TIPORDEM] [char](1) NOT NULL,
+	[STAEXT] [char](1) NOT NULL,
+	[STAFIM] [char](1) NOT NULL,
+	[TIPCUST] [char](1) NOT NULL,
+	[HORINICIO] [decimal](28, 14) NULL,
+	[HORFIM] [decimal](28, 14) NULL,
+	[TEMPOSTD] [decimal](28, 14) NULL,
+	[DATINICIO] [datetime] NULL,
+	[DATFIM] [datetime] NULL,
+	[QTDESTD] [decimal](28, 14) NULL,
+	[CODMOTIVO] [char](6) NULL,
+	[QTDEINFORMADA] [decimal](28, 14) NULL,
+	[TEMPOINFORMADO] [decimal](28, 14) NULL,
+	[QTDEOPERSTD] [decimal](28, 14) NULL,
+	[QTDEHORASHOMEMSTD] [decimal](28, 14) NULL,
+	[QTDEHORASHOMEMPENDENTE] [decimal](28, 14) NULL,
+	[TEMPOPENDENTE] [decimal](28, 14) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[TIPAPONTAMENTO] [char](1) NULL CONSTRAINT [DF__TBPROD116__TIPAP__02F31DC9] DEFAULT ('P'),
+	[CODEQUIPE] [char](25) NULL,
+	[TEMPOINFORMADOSTR] [char](8) NULL,
+	[HORINICIOSTR] [char](8) NULL,
+	[HORFIMSTR] [char](8) NULL,
+	[NUMSEQRETRAB] [int] NULL,
+	[TURNO] [char](1) NULL,
+	[CODEQUIP] [char](15) NULL,
+	[SEQEQUIP] [char](3) NULL,
+	[PERCEFIC] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD117
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD117] (
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBPROD117__CODEM__249D5F00] DEFAULT ('01'),
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[SEQENVIO] [char](3) NOT NULL,
+	[CODOPER] [char](6) NOT NULL,
+	[QTDEENVIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD117__QTDEE__25918339] DEFAULT (0),
+	[CODFORN] [char](6) NULL,
+	[DATENVIO] [datetime] NULL,
+	[NUMNFENVIO] [char](6) NULL,
+	[SERNFENVIO] [char](5) NULL,
+	[VALMOVENVIO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD117__VALMO__2685A772] DEFAULT (0),
+	[NUMNFRETORNO] [char](6) NULL,
+	[SERNFRETORNO] [char](5) NULL,
+	[VALMOVRETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD117__VALMO__2779CBAB] DEFAULT (0),
+	[DATRETORNO] [datetime] NULL,
+	[STAFIM] [char](1) NULL CONSTRAINT [DF__TBPROD117__STAFI__286DEFE4] DEFAULT ('S'),
+	[QTDEPROG] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD117__QTDEP__2962141D] DEFAULT (0),
+	[QTDERETORNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD117__QTDER__2A563856] DEFAULT (0),
+	[SISTEMA_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBPROD118
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD118] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANO] [char](4) NOT NULL,
+	[MES] [char](2) NOT NULL,
+	[CCUSTO] [char](10) NOT NULL,
+	[CCONTABIL] [char](12) NOT NULL,
+	[CENTRAB] [char](12) NULL,
+	[VALORMO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD118__VALOR__0623C4D8] DEFAULT (0));
+GO
+
+--Table dbo.TBPROD119
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD119] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQOPER] [char](3) NOT NULL,
+	[CODDIM] [char](3) NOT NULL,
+	[SEQCICLO] [char](3) NOT NULL,
+	[SEQAMOSTRA] [char](3) NOT NULL,
+	[TIPDIM] [char](1) NULL,
+	[QTDEAMOSTRAGEM] [decimal](28, 14) NULL,
+	[QTDEAMOSTRAGEMSTD] [decimal](28, 14) NULL,
+	[QTDENTRECICLOS] [decimal](28, 14) NULL,
+	[VALACEITOINICIO] [decimal](28, 14) NULL,
+	[VALIDEAL] [decimal](28, 14) NULL,
+	[VALACEITOFIM] [decimal](28, 14) NULL,
+	[TEMPOENTRECICLOSHOR] [decimal](28, 14) NULL,
+	[INSTRUMENTOMEDICAO] [char](40) NULL,
+	[NUMCARACTERISTICA] [char](10) NULL,
+	[DATREGISTRO] [datetime] NULL,
+	[HORREGISTRO] [char](4) NULL,
+	[USER_IDREGISTRO] [char](10) NULL,
+	[RESPOSTA1] [text] NULL,
+	[RESPOSTA2] [text] NULL,
+	[RESPOSTA3] [text] NULL,
+	[RESPOSTA4] [text] NULL,
+	[RESPOSTA5] [text] NULL,
+	[RESPOSTAINFORMADA1] [text] NULL,
+	[RESPOSTAINFORMADA2] [text] NULL,
+	[RESPOSTAINFORMADA3] [text] NULL,
+	[RESPOSTAINFORMADA4] [text] NULL,
+	[RESPOSTAINFORMADA5] [text] NULL);
+GO
+
+--Table dbo.TBPROD120
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD120] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODROTULO] [char](3) NOT NULL,
+	[QUANTIDADE] [decimal](28, 14) NULL,
+	[OBSERVACAO] [text] NULL,
+	[USER_ID] [char](10) NULL,
+	[IMPRIMIR] [char](1) NULL,
+	[STAEXIBE] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD121
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD121] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODROTULO] [char](3) NOT NULL,
+	[CODSEQ] [char](3) NOT NULL,
+	[QTDEFETIVAIMPRESSA] [decimal](28, 14) NULL,
+	[NUMSEQINICIAL] [char](4) NULL,
+	[NUMSEQFINAL] [char](4) NULL,
+	[USER_ID] [char](10) NULL,
+	[DATAHORA] [datetime] NULL);
+GO
+
+--Table dbo.TBPROD122
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD122] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](12) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[CODFUNC] [char](6) NOT NULL,
+	[TURNO] [char](3) NULL);
+GO
+
+--Table dbo.TBPROD123
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD123] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[QTDERESERVADA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD124
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD124] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[NUMLANC] [char](9) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[QTDEAPONTADA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD130
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD130] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOMES] [char](6) NOT NULL,
+	[NUMPED] [char](9) NOT NULL,
+	[ITEMPED] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DATNEC] [datetime] NOT NULL,
+	[QTDNEC] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD130__QTDNE__2D32A501] DEFAULT (0),
+	[TIPPLAN] [char](1) NOT NULL,
+	[TEMPOFAB] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD130__TEMPO__2E26C93A] DEFAULT (0),
+	[DATINICIO] [datetime] NOT NULL,
+	[TEMPOFABSTR] [char](8) NULL);
+GO
+
+--Table dbo.TBPROD135
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD135] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSIMULA] [char](6) NOT NULL,
+	[SEQ] [char](6) NOT NULL,
+	[NUMPED] [char](9) NOT NULL,
+	[ITEMPED] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DATNEC] [datetime] NOT NULL,
+	[QTDNEC] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD135__QTDNE__2AA11C70] DEFAULT (0),
+	[TIPPLAN] [char](1) NOT NULL,
+	[TEMPOFAB] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD135__TEMPO__2B9540A9] DEFAULT (0),
+	[DATINICIO] [datetime] NOT NULL,
+	[STAEXP] [char](1) NOT NULL,
+	[TIPAGRUPAMENTO] [char](1) NULL,
+	[STACONSDISP] [char](1) NULL,
+	[DATCONSDISPINI] [datetime] NULL,
+	[DATCONSDISPFIN] [datetime] NULL,
+	[TEMPOFABSTR] [char](8) NULL);
+GO
+
+--Table dbo.TBPROD140
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD140] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSIMULA] [char](6) NOT NULL,
+	[SEQ] [char](6) NOT NULL,
+	[NUMPED] [char](9) NOT NULL,
+	[ITEMPED] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DATNEC] [datetime] NOT NULL,
+	[QTDNEC] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD140__QTDNE__314E19FF] DEFAULT (0),
+	[TEMPOFAB] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD140__TEMPO__32423E38] DEFAULT (0),
+	[DATINICIO] [datetime] NOT NULL,
+	[CODMATPAI] [char](15) NULL,
+	[CODSEQPAI] [char](6) NULL,
+	[ORIGEM] [char](1) NOT NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[STAORD] [char](1) NULL,
+	[REVPROD010] [char](3) NULL,
+	[REVPROD020] [char](3) NULL,
+	[STAORDAGRUP] [char](1) NULL,
+	[TIPORDEM] [char](1) NULL CONSTRAINT [DF__TBPROD140__TIPOR__33366271] DEFAULT ('P'),
+	[CONTPROC] [char](12) NULL,
+	[PERCCUSTO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD140__PERCC__342A86AA] DEFAULT (0),
+	[CONTREC] [char](12) NULL,
+	[PERCENCORDEM] [decimal](28, 14) NULL,
+	[PERCEFICIENCIAMO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD140__PERCE__351EAAE3] DEFAULT (100),
+	[STAMATACABADO] [char](1) NULL,
+	[DATPREVISAOFIM] [datetime] NULL,
+	[HORAPREVISAOFIM] [char](4) NULL,
+	[HORINICIO] [char](4) NULL,
+	[TEMPOFABSTR] [char](8) NULL);
+GO
+
+--Table dbo.TBPROD143
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD143] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSIMULA] [char](6) NOT NULL,
+	[SEQ] [char](6) NOT NULL,
+	[NUMPED] [char](9) NOT NULL,
+	[ITEMPED] [char](3) NOT NULL,
+	[QTDMAT] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD145
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD145] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSIMULA] [char](6) NOT NULL,
+	[SEQ] [char](6) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[QTDNEC] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD145__QTDNE__3BCBA872] DEFAULT (0),
+	[DATNEC] [datetime] NOT NULL,
+	[STASC] [char](1) NULL,
+	[NUMSC] [char](10) NULL,
+	[CODMATPAI] [char](15) NULL,
+	[CODSEQPAI] [char](6) NULL,
+	[STAORD] [char](1) NULL,
+	[NUMPED] [char](9) NULL,
+	[ITEMPED] [char](3) NULL,
+	[CODMATPED] [char](15) NULL,
+	[QTDEMATPED] [decimal](28, 14) NULL,
+	[OBSCOMP] [text] NULL);
+GO
+
+--Table dbo.TBPROD146
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD146] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSIMULA] [char](6) NOT NULL,
+	[SEQ] [char](6) NOT NULL,
+	[OBSORDEM] [text] NOT NULL);
+GO
+
+--Table dbo.TBPROD150
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD150] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMPED] [char](9) NOT NULL,
+	[NUMITEMPED] [char](3) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[STARELA] [char](1) NOT NULL CONSTRAINT [DF__TBPROD150__STARE__3D690CCA] DEFAULT ('S'),
+	[STAMATPED] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD151
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD151] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](12) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQHORARIO] [char](3) NOT NULL,
+	[SEQPROD116] [char](3) NOT NULL,
+	[CODOPEPROD102] [char](6) NULL,
+	[DATHORINCPROD102] [char](19) NULL,
+	[DATINICIO] [datetime] NOT NULL,
+	[HORINICIO] [char](6) NOT NULL,
+	[DATFIM] [datetime] NOT NULL,
+	[HORFIM] [char](6) NOT NULL,
+	[TOTHORAS] [decimal](28, 14) NOT NULL,
+	[HORINICIOSTR] [char](8) NULL,
+	[HORFIMSTR] [char](8) NULL,
+	[TOTHORASSTR] [char](8) NULL);
+GO
+
+--Table dbo.TBPROD152
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD152] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[REVPROD010] [char](3) NULL,
+	[REVPROD020] [char](3) NULL);
+GO
+
+--Table dbo.TBPROD153
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD153] (
+	[CODMAT] [char](15) NOT NULL,
+	[ANOPARTIDA] [char](4) NOT NULL,
+	[NUMSEQPARTIDA] [char](6) NULL);
+GO
+
+--Table dbo.TBPROD154
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD154] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[NUMPARTIDA] [char](6) NOT NULL,
+	[SEQUENCIA] [char](4) NOT NULL,
+	[DATVENC] [char](10) NULL,
+	[MESVENC] [char](6) NULL,
+	[DATFABR] [char](10) NULL,
+	[MESFABR] [char](6) NULL,
+	[CODBARRASMAT] [char](50) NULL);
+GO
+
+--Table dbo.TBPROD155
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD155] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[OBSORDEM] [text] NOT NULL);
+GO
+
+--Table dbo.TBPROD156
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD156] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODOPE] [char](6) NOT NULL,
+	[DATHORINC] [char](19) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[CODFUNC] [char](6) NOT NULL,
+	[TURNO] [char](3) NULL);
+GO
+
+--Table dbo.TBPROD157
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD157] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTINDUSTR] [char](9) NOT NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[QTDEPRODUZIDA] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBPROD170
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD170] (
+	[CODEMP] [char](2) NOT NULL,
+	[SEQ] [char](6) NOT NULL,
+	[CODORDEM] [char](12) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[NUMPED] [char](9) NULL,
+	[NUMITEMPED] [char](9) NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[QTDEMAT] [decimal](28, 14) NOT NULL,
+	[HORINICIO] [char](4) NULL,
+	[DATNEC] [datetime] NULL,
+	[STAMARCADO] [char](1) NULL CONSTRAINT [DF__TBPROD170__STAMA__1DA71405] DEFAULT ('S'),
+	[STACALCULADO] [char](1) NULL CONSTRAINT [DF__TBPROD170__STACA__1E9B383E] DEFAULT ('N'),
+	[DATPREVISAOFIM] [datetime] NULL,
+	[HORAPREVISAOFIM] [char](4) NULL);
+GO
+
+--Table dbo.TBPROD171
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD171] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](20) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[SEQOPER] [char](3) NOT NULL,
+	[CODOPER] [char](6) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[CODORDEMPAI] [char](12) NULL,
+	[SEQORDEMPAI] [char](3) NULL,
+	[CODMAT] [char](15) NULL,
+	[QTDEPROG] [decimal](28, 14) NULL,
+	[HORINICIO] [char](4) NULL,
+	[DATINICIO] [datetime] NULL,
+	[QTDHORASCENTRAB] [decimal](28, 14) NULL,
+	[NUMCOR] [int] NULL);
+GO
+
+--Table dbo.TBPROD172
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD172] (
+	[CODEMP] [char](2) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[NUMCOR] [int] NULL,
+	[QTDHORASMOCENTRAB] [decimal](28, 14) NULL,
+	[QTDDIASMOCENTRAB] [decimal](28, 14) NULL,
+	[QTDHORASMAQCENTRAB] [decimal](28, 14) NULL,
+	[QTDDIASMAQCENTRAB] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD173
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD173] (
+	[CODEMP] [char](2) NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[DATTRABALHO] [datetime] NOT NULL,
+	[QTDHORASDISPONIVEISMO] [decimal](28, 14) NOT NULL,
+	[QTDHORASOCUPADASMO] [decimal](28, 14) NOT NULL,
+	[QTDHORASDISPONIVEISMAQ] [decimal](28, 14) NOT NULL,
+	[QTDHORASOCUPADASMAQ] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBPROD174
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD174] (
+	[CODEMP] [char](2) NOT NULL,
+	[TIPCALENDARIO] [char](1) NOT NULL,
+	[DATTRABALHO] [datetime] NOT NULL,
+	[CENTRAB] [char](12) NOT NULL,
+	[HORA0] [int] NULL CONSTRAINT [DF__TBPROD174__HORA0__30B9E879] DEFAULT (16777215),
+	[HORA1] [int] NULL CONSTRAINT [DF__TBPROD174__HORA1__31AE0CB2] DEFAULT (16777215),
+	[HORA2] [int] NULL CONSTRAINT [DF__TBPROD174__HORA2__32A230EB] DEFAULT (16777215),
+	[HORA3] [int] NULL CONSTRAINT [DF__TBPROD174__HORA3__33965524] DEFAULT (16777215),
+	[HORA4] [int] NULL CONSTRAINT [DF__TBPROD174__HORA4__348A795D] DEFAULT (16777215),
+	[HORA5] [int] NULL CONSTRAINT [DF__TBPROD174__HORA5__357E9D96] DEFAULT (16777215),
+	[HORA6] [int] NULL CONSTRAINT [DF__TBPROD174__HORA6__3672C1CF] DEFAULT (16777215),
+	[HORA7] [int] NULL CONSTRAINT [DF__TBPROD174__HORA7__3766E608] DEFAULT (16777215),
+	[HORA8] [int] NULL CONSTRAINT [DF__TBPROD174__HORA8__385B0A41] DEFAULT (16777215),
+	[HORA9] [int] NULL CONSTRAINT [DF__TBPROD174__HORA9__394F2E7A] DEFAULT (16777215),
+	[HORA10] [int] NULL CONSTRAINT [DF__TBPROD174__HORA1__3A4352B3] DEFAULT (16777215),
+	[HORA11] [int] NULL CONSTRAINT [DF__TBPROD174__HORA1__3B3776EC] DEFAULT (16777215),
+	[HORA12] [int] NULL CONSTRAINT [DF__TBPROD174__HORA1__3C2B9B25] DEFAULT (16777215),
+	[HORA13] [int] NULL CONSTRAINT [DF__TBPROD174__HORA1__3D1FBF5E] DEFAULT (16777215),
+	[HORA14] [int] NULL CONSTRAINT [DF__TBPROD174__HORA1__3E13E397] DEFAULT (16777215),
+	[HORA15] [int] NULL CONSTRAINT [DF__TBPROD174__HORA1__3F0807D0] DEFAULT (16777215),
+	[HORA16] [int] NULL CONSTRAINT [DF__TBPROD174__HORA1__3FFC2C09] DEFAULT (16777215),
+	[HORA17] [int] NULL CONSTRAINT [DF__TBPROD174__HORA1__40F05042] DEFAULT (16777215),
+	[HORA18] [int] NULL CONSTRAINT [DF__TBPROD174__HORA1__41E4747B] DEFAULT (16777215),
+	[HORA19] [int] NULL CONSTRAINT [DF__TBPROD174__HORA1__42D898B4] DEFAULT (16777215),
+	[HORA20] [int] NULL CONSTRAINT [DF__TBPROD174__HORA2__43CCBCED] DEFAULT (16777215),
+	[HORA21] [int] NULL CONSTRAINT [DF__TBPROD174__HORA2__44C0E126] DEFAULT (16777215),
+	[HORA22] [int] NULL CONSTRAINT [DF__TBPROD174__HORA2__45B5055F] DEFAULT (16777215),
+	[HORA23] [int] NULL CONSTRAINT [DF__TBPROD174__HORA2__46A92998] DEFAULT (16777215),
+	[CODORDEM0] [char](20) NULL,
+	[CODORDEM1] [char](20) NULL,
+	[CODORDEM2] [char](20) NULL,
+	[CODORDEM3] [char](20) NULL,
+	[CODORDEM4] [char](20) NULL,
+	[CODORDEM5] [char](20) NULL,
+	[CODORDEM6] [char](20) NULL,
+	[CODORDEM7] [char](20) NULL,
+	[CODORDEM8] [char](20) NULL,
+	[CODORDEM9] [char](20) NULL,
+	[CODORDEM10] [char](20) NULL,
+	[CODORDEM11] [char](20) NULL,
+	[CODORDEM12] [char](20) NULL,
+	[CODORDEM13] [char](20) NULL,
+	[CODORDEM14] [char](20) NULL,
+	[CODORDEM15] [char](20) NULL,
+	[CODORDEM16] [char](20) NULL,
+	[CODORDEM17] [char](20) NULL,
+	[CODORDEM18] [char](20) NULL,
+	[CODORDEM19] [char](20) NULL,
+	[CODORDEM20] [char](20) NULL,
+	[CODORDEM21] [char](20) NULL,
+	[CODORDEM22] [char](20) NULL,
+	[CODORDEM23] [char](20) NULL,
+	[SEQORDEM0] [char](20) NULL,
+	[SEQORDEM1] [char](20) NULL,
+	[SEQORDEM2] [char](20) NULL,
+	[SEQORDEM3] [char](20) NULL,
+	[SEQORDEM4] [char](20) NULL,
+	[SEQORDEM5] [char](20) NULL,
+	[SEQORDEM6] [char](20) NULL,
+	[SEQORDEM7] [char](20) NULL,
+	[SEQORDEM8] [char](20) NULL,
+	[SEQORDEM9] [char](20) NULL,
+	[SEQORDEM10] [char](20) NULL,
+	[SEQORDEM11] [char](20) NULL,
+	[SEQORDEM12] [char](20) NULL,
+	[SEQORDEM13] [char](20) NULL,
+	[SEQORDEM14] [char](20) NULL,
+	[SEQORDEM15] [char](20) NULL,
+	[SEQORDEM16] [char](20) NULL,
+	[SEQORDEM17] [char](20) NULL,
+	[SEQORDEM18] [char](20) NULL,
+	[SEQORDEM19] [char](20) NULL,
+	[SEQORDEM20] [char](20) NULL,
+	[SEQORDEM21] [char](20) NULL,
+	[SEQORDEM22] [char](20) NULL,
+	[SEQORDEM23] [char](20) NULL);
+GO
+
+--Table dbo.TBPROD175
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD175] (
+	[CODEMP] [char](2) NOT NULL,
+	[TIPCALENDARIO] [char](1) NOT NULL,
+	[DATTRABALHO] [datetime] NOT NULL,
+	[CODORDEM] [char](20) NOT NULL,
+	[HORA0] [int] NULL CONSTRAINT [DF__TBPROD175__HORA0__49859643] DEFAULT (16777215),
+	[HORA1] [int] NULL CONSTRAINT [DF__TBPROD175__HORA1__4A79BA7C] DEFAULT (16777215),
+	[HORA2] [int] NULL CONSTRAINT [DF__TBPROD175__HORA2__4B6DDEB5] DEFAULT (16777215),
+	[HORA3] [int] NULL CONSTRAINT [DF__TBPROD175__HORA3__4C6202EE] DEFAULT (16777215),
+	[HORA4] [int] NULL CONSTRAINT [DF__TBPROD175__HORA4__4D562727] DEFAULT (16777215),
+	[HORA5] [int] NULL CONSTRAINT [DF__TBPROD175__HORA5__4E4A4B60] DEFAULT (16777215),
+	[HORA6] [int] NULL CONSTRAINT [DF__TBPROD175__HORA6__4F3E6F99] DEFAULT (16777215),
+	[HORA7] [int] NULL CONSTRAINT [DF__TBPROD175__HORA7__503293D2] DEFAULT (16777215),
+	[HORA8] [int] NULL CONSTRAINT [DF__TBPROD175__HORA8__5126B80B] DEFAULT (16777215),
+	[HORA9] [int] NULL CONSTRAINT [DF__TBPROD175__HORA9__521ADC44] DEFAULT (16777215),
+	[HORA10] [int] NULL CONSTRAINT [DF__TBPROD175__HORA1__530F007D] DEFAULT (16777215),
+	[HORA11] [int] NULL CONSTRAINT [DF__TBPROD175__HORA1__540324B6] DEFAULT (16777215),
+	[HORA12] [int] NULL CONSTRAINT [DF__TBPROD175__HORA1__54F748EF] DEFAULT (16777215),
+	[HORA13] [int] NULL CONSTRAINT [DF__TBPROD175__HORA1__55EB6D28] DEFAULT (16777215),
+	[HORA14] [int] NULL CONSTRAINT [DF__TBPROD175__HORA1__56DF9161] DEFAULT (16777215),
+	[HORA15] [int] NULL CONSTRAINT [DF__TBPROD175__HORA1__57D3B59A] DEFAULT (16777215),
+	[HORA16] [int] NULL CONSTRAINT [DF__TBPROD175__HORA1__58C7D9D3] DEFAULT (16777215),
+	[HORA17] [int] NULL CONSTRAINT [DF__TBPROD175__HORA1__59BBFE0C] DEFAULT (16777215),
+	[HORA18] [int] NULL CONSTRAINT [DF__TBPROD175__HORA1__5AB02245] DEFAULT (16777215),
+	[HORA19] [int] NULL CONSTRAINT [DF__TBPROD175__HORA1__5BA4467E] DEFAULT (16777215),
+	[HORA20] [int] NULL CONSTRAINT [DF__TBPROD175__HORA2__5C986AB7] DEFAULT (16777215),
+	[HORA21] [int] NULL CONSTRAINT [DF__TBPROD175__HORA2__5D8C8EF0] DEFAULT (16777215),
+	[HORA22] [int] NULL CONSTRAINT [DF__TBPROD175__HORA2__5E80B329] DEFAULT (16777215),
+	[HORA23] [int] NULL CONSTRAINT [DF__TBPROD175__HORA2__5F74D762] DEFAULT (16777215));
+GO
+
+--Table dbo.TBPROD176
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD176] (
+	[CODEMP] [char](2) NOT NULL,
+	[NUMCONTINDUSTR] [char](9) NOT NULL,
+	[NUMITEMCONTINDUSTR] [char](3) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[QTDEPRODUZIDA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD177
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD177] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[SEQRELACIONAMENTO] [char](2) NOT NULL,
+	[QTDERESERVADA] [decimal](28, 14) NULL,
+	[QTDEINFORMADA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD178
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD178] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[NUMLANC] [char](9) NOT NULL,
+	[CODFORN] [char](6) NOT NULL,
+	[NUMNF] [char](6) NOT NULL,
+	[SERNF] [char](5) NOT NULL,
+	[NUMITEMNF] [char](2) NOT NULL,
+	[SEQRELACIONAMENTO] [char](2) NOT NULL,
+	[QTDEAPONTADA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD179
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD179] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[SEQNAOCONFORM] [char](3) NOT NULL,
+	[CODNAOCONFORM] [char](5) NULL,
+	[DESDETNAOCONFORM] [text] NULL,
+	[DATAPONT] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[STAOPERESPECIFIC] [char](1) NULL,
+	[CODMAT] [char](15) NULL,
+	[CODOPE] [char](6) NULL,
+	[DATHORINC] [char](19) NULL,
+	[QTDEINFORMADA] [decimal](28, 14) NULL,
+	[CODUNIMEDQTDEINF] [char](2) NULL,
+	[QTDESEQVOLUME] [int] NULL,
+	[CODFUNC] [char](6) NULL,
+	[CODPLANREAC] [char](3) NULL);
+GO
+
+--Table dbo.TBPROD180
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD180] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOCOMPETPREMIO] [char](4) NOT NULL,
+	[MESCOMPETPREMIO] [char](2) NOT NULL,
+	[DATINICIOCOMPET] [datetime] NULL,
+	[DATFIMCOMPET] [datetime] NULL,
+	[PERCDSR] [decimal](28, 14) NULL,
+	[STAFECHADO] [char](1) NULL,
+	[DATFECH] [datetime] NULL,
+	[USER_ID] [char](10) NULL);
+GO
+
+--Table dbo.TBPROD182
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD182] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[NUMLANC] [char](9) NOT NULL,
+	[DATHORINC] [datetime] NOT NULL,
+	[CODOPER] [char](6) NOT NULL,
+	[REVISAO] [char](3) NULL,
+	[SEQ] [char](3) NULL,
+	[STAREGRESULT] [char](1) NOT NULL,
+	[STAIMPRIMERESULT] [char](1) NOT NULL,
+	[TIPREGRESULTOPER] [char](1) NOT NULL,
+	[VALINIRESULT] [decimal](28, 14) NOT NULL,
+	[VALFIMRESULT] [decimal](28, 14) NOT NULL,
+	[RESULTADO] [char](50) NOT NULL);
+GO
+
+--Table dbo.TBPROD183
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD183] (
+	[NUMSEQ] [char](4) NOT NULL,
+	[NUMLINHA] [char](3) NOT NULL,
+	[DEMANDAINI] [decimal](28, 14) NOT NULL,
+	[DEMANDAFIM] [decimal](28, 14) NOT NULL,
+	[NIVELPROD] [decimal](28, 14) NOT NULL,
+	[PERCPERDA] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBPROD184
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD184] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSTDDESP] [char](5) NOT NULL,
+	[DESCRICAO] [char](30) NOT NULL,
+	[CODINDICE] [char](3) NOT NULL,
+	[DATBASE] [datetime] NULL);
+GO
+
+--Table dbo.TBPROD185
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD185] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODSTDDESP] [char](5) NOT NULL,
+	[CCONTABIL] [char](12) NOT NULL,
+	[SEQ] [char](2) NOT NULL,
+	[CENTRAB] [char](12) NULL,
+	[VALDESPESA] [decimal](28, 14) NULL,
+	[CRITERIO] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBPROD186
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD186] (
+	[CODFAMILIA] [char](3) NOT NULL,
+	[DESCRFAMILIA] [char](150) NULL);
+GO
+
+--Table dbo.TBPROD187
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD187] (
+	[CODCOMPONENTE] [char](5) NOT NULL,
+	[DESCCOMPONENTE] [char](150) NULL);
+GO
+
+--Table dbo.TBPROD188
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD188] (
+	[CODAREA] [char](5) NOT NULL,
+	[DESCRICAO] [char](150) NULL,
+	[VALHORA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD189
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD189] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODAFE] [char](3) NOT NULL,
+	[CODINST] [char](10) NOT NULL,
+	[DENOMINACAO] [char](70) NULL,
+	[DATCADASTRO] [datetime] NULL,
+	[USER_ID] [char](10) NULL,
+	[STATUS] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD190
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD190] (
+	[CODEQUIP] [char](15) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[SEQCOMP] [char](3) NOT NULL,
+	[CODCOMPONENTE] [char](5) NULL);
+GO
+
+--Table dbo.TBPROD191
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD191] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODAREA] [char](5) NOT NULL,
+	[DESAREA] [char](50) NOT NULL);
+GO
+
+--Table dbo.TBPROD192
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD192] (
+	[CODCAUSA] [char](5) NULL,
+	[DESCAUSA] [char](1000) NULL);
+GO
+
+--Table dbo.TBPROD193
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD193] (
+	[CODPROBLEMA] [char](5) NULL,
+	[DESPROBLEMA] [char](1000) NULL);
+GO
+
+--Table dbo.TBPROD194
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD194] (
+	[IDPLANO] [char](5) NOT NULL,
+	[TIPO] [char](1) NOT NULL,
+	[CODFAMILIA] [char](3) NOT NULL,
+	[CODEQUIP] [char](15) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[SEQCOMP] [char](3) NOT NULL,
+	[PERIODOMANUT] [char](1) NULL,
+	[DIASEMAINI] [char](1) NULL,
+	[DATPROXMANUT] [datetime] NULL,
+	[STAPLANO] [char](1) NULL,
+	[DATATIV] [datetime] NULL,
+	[NUMDIASENTREMANUT] [int] NULL,
+	[HORASPARAMANUT] [decimal](28, 14) NULL,
+	[DATPREVMANANT] [datetime] NULL);
+GO
+
+--Table dbo.TBPROD195
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD195] (
+	[IDPLANO] [char](5) NOT NULL,
+	[TIPO] [char](1) NOT NULL,
+	[CODFAMILIA] [char](3) NOT NULL,
+	[CODEQUIP] [char](15) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[SEQCOMP] [char](3) NOT NULL,
+	[CODATIV] [char](3) NOT NULL,
+	[DESATIVIDADE] [char](150) NULL,
+	[CODAREA] [char](5) NULL,
+	[QTDEFUNC] [int] NULL,
+	[NUMHORASPREV] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD196
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD196] (
+	[IDPLANO] [char](5) NOT NULL,
+	[TIPO] [char](1) NOT NULL,
+	[CODFAMILIA] [char](3) NOT NULL,
+	[CODEQUIP] [char](15) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[SEQCOMP] [char](3) NOT NULL,
+	[CODPECA] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODUNIMED] [char](2) NULL,
+	[QTDMAT] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD197
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD197] (
+	[CODOM] [char](6) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[TIPOMANU] [char](1) NULL,
+	[CORRSUBSPREV] [char](1) NULL,
+	[CODAREA] [char](5) NULL,
+	[CODFUNC] [char](5) NULL,
+	[NUMHORASPREV] [decimal](28, 14) NULL,
+	[QTDEFUNC] [int] NULL,
+	[PRIORIDADE] [char](1) NULL,
+	[CODPROBLEMA] [char](5) NULL,
+	[OBSERV] [text] NULL,
+	[DATABERTURA] [datetime] NULL,
+	[HORAABERTURA] [char](6) NULL,
+	[SITUACAO] [char](1) NULL,
+	[DATAENCERRA] [datetime] NULL,
+	[HORAENCERRA] [char](6) NULL,
+	[CCUSTO] [char](10) NULL,
+	[AVALIACAO] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD199
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD199] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODFUNC] [char](6) NOT NULL,
+	[DATINIVIGENCIA] [datetime] NOT NULL,
+	[DATFIMVIGENCIA] [datetime] NULL,
+	[VALORHORA] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD200
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD200] (
+	[CODOM] [char](6) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[SEQAPONTMAT] [char](4) NOT NULL,
+	[CODMAT] [char](15) NULL,
+	[QTDEMAT] [decimal](28, 14) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[CODALMOX] [char](3) NULL,
+	[CODLOTE] [char](15) NULL,
+	[CODFORN] [char](6) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMITEMNF] [char](2) NULL,
+	[CUSTOCALCULADO] [decimal](28, 14) NULL,
+	[DATUSOMATERIAL] [datetime] NULL,
+	[NUMLANC] [char](9) NULL,
+	[DATMOVTO] [datetime] NULL);
+GO
+
+--Table dbo.TBPROD201
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD201] (
+	[CODOM] [char](6) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[SEQATIV] [char](3) NOT NULL,
+	[CODAREA] [char](5) NULL,
+	[CODATIV] [char](3) NULL,
+	[DESATIVIDADE] [char](150) NULL);
+GO
+
+--Table dbo.TBPROD202
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD202] (
+	[CODOM] [char](6) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[SEQATIV] [char](3) NOT NULL,
+	[SEQAPONTMO] [char](6) NOT NULL,
+	[IDHORASAPONT] [char](6) NULL,
+	[DATINI] [datetime] NULL,
+	[DATFIM] [datetime] NULL,
+	[HORAINI] [char](6) NULL,
+	[HORAFIM] [char](6) NULL,
+	[CODFUNC] [char](6) NULL,
+	[CODFORN] [char](6) NULL,
+	[VALSERVICO] [decimal](28, 14) NULL,
+	[TIPCALCTEMPO] [char](1) NULL,
+	[QTDEHORASTRAB] [decimal](28, 14) NULL,
+	[PONTUACAO] [decimal](28, 14) NULL,
+	[CUSTOCALCULADO] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBPROD203
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD203] (
+	[CODOM] [char](6) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[CODCAUSA] [char](5) NOT NULL,
+	[OBSCAUSA] [text] NULL);
+GO
+
+--Table dbo.TBPROD204
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD204] (
+	[CODOM] [char](6) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[SEQPARADA] [char](3) NOT NULL,
+	[DATINIPARADA] [datetime] NULL,
+	[HINIPARADA] [char](6) NULL,
+	[DATFIMPARADA] [datetime] NULL,
+	[HFIMPARADA] [char](6) NULL,
+	[CODFUNCRESPONS] [char](6) NULL,
+	[MOTIVOPARADA] [text] NULL);
+GO
+
+--Table dbo.TBPROD205
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD205] (
+	[CODOM] [char](6) NOT NULL,
+	[CODEQUIP] [char](15) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[SEQCOMP] [char](3) NOT NULL,
+	[SEQSOLUCAO] [char](5) NOT NULL,
+	[DESCSOLUCAO] [text] NULL);
+GO
+
+--Table dbo.TBPROD206
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD206] (
+	[CODEQUIP] [char](15) NULL,
+	[CODEMP] [char](2) NULL,
+	[SEQ] [char](3) NULL,
+	[SEQMAT] [char](3) NULL,
+	[CODMAT] [char](15) NULL,
+	[QTDEMAT] [decimal](28, 14) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[INSUMO] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD207
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD207] (
+	[CODCOMPONENTE] [char](5) NULL,
+	[SEQMAT] [char](3) NULL,
+	[CODMAT] [char](15) NULL,
+	[QTDEMAT] [decimal](28, 14) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[INSUMO] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD208
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD208] (
+	[CODOM] [char](6) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[NUMSC] [char](10) NOT NULL);
+GO
+
+--Table dbo.TBPROD209
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD209] (
+	[CODOM] [char](6) NOT NULL,
+	[CODEQUIP] [char](15) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[SEQCOMP] [char](3) NOT NULL,
+	[CODATIV] [char](3) NOT NULL,
+	[SEQJUST] [char](3) NOT NULL,
+	[DESCJUST] [text] NOT NULL);
+GO
+
+--Table dbo.TBPROD210
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD210] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[NUMSEQVOLUME] [char](3) NOT NULL,
+	[NUMCORRIDA] [int] NULL,
+	[DATCADAST] [datetime] NULL,
+	[QTDEVOLUME] [decimal](28, 14) NULL,
+	[CODUNIMEDVOLUME] [char](2) NULL,
+	[NUMSEQRETRAB] [int] NULL,
+	[STALIBIMPRETRAB] [char](1) NULL,
+	[DATLIBIMPRETRAB] [datetime] NULL,
+	[USER_IDLIBIMPRETRAB] [char](10) NULL,
+	[STAVOLRETRAB] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD211
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD211] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](3) NOT NULL,
+	[NUMLANC] [char](9) NOT NULL,
+	[DATHORINC] [datetime] NOT NULL,
+	[NUMSEQVOLUME] [char](3) NOT NULL,
+	[NUMCORRIDA] [int] NULL,
+	[QTDEVOLUME] [decimal](28, 14) NULL,
+	[CODUNIMEDVOLUME] [char](2) NULL,
+	[STAEXIGERETRAB] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD212
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD212] (
+	[CODPROD] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[CODCLI] [char](9) NULL,
+	[RESPAPROV] [char](20) NULL,
+	[RESPPLANO] [char](20) NULL,
+	[DATPLANO] [datetime] NULL,
+	[DATATIV] [datetime] NULL,
+	[NORMASINSP] [char](35) NULL,
+	[STAPLANO] [char](1) NULL,
+	[REVLISTPECA] [char](3) NULL,
+	[TABELA] [char](20) NULL);
+GO
+
+--Table dbo.TBPROD213
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD213] (
+	[CODPROD] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[CODMPRIMA] [char](15) NOT NULL);
+GO
+
+--Table dbo.TBPROD214
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD214] (
+	[CODPROD] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[CODMPRIMA] [char](15) NOT NULL,
+	[ID] [int] NOT NULL,
+	[ITEM] [char](3) NULL,
+	[SEQ] [char](3) NULL,
+	[CODINSP] [char](6) NULL,
+	[SECAO] [char](12) NULL,
+	[CODOPER] [char](6) NULL,
+	[PRELANC] [char](5) NULL,
+	[PRODUCAO] [char](5) NULL,
+	[IMPRELAT] [char](1) NULL,
+	[INSTRUMENTOS] [char](25) NULL,
+	[COLUNA1] [char](11) NULL,
+	[COLUNA2] [char](11) NULL,
+	[COLUNA3] [char](11) NULL,
+	[COLUNA4] [char](11) NULL,
+	[COLUNA5] [char](11) NULL,
+	[COLUNA6] [char](11) NULL,
+	[COLUNA7] [char](11) NULL,
+	[COLUNA8] [char](11) NULL,
+	[COLUNA9] [char](11) NULL,
+	[IMPRELMOT] [char](1) NULL,
+	[IMPRELSET] [char](1) NULL,
+	[PLANCONT] [char](1) NULL,
+	[IMPRELCOMP] [char](1) NULL,
+	[IMPRELTRATGALV] [char](1) NULL,
+	[IMPRELMAPEAM] [char](1) NULL);
+GO
+
+--Table dbo.TBPROD215
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD215] (
+	[CODPLANREAC] [char](3) NOT NULL,
+	[DESCPLANREAC] [char](70) NULL,
+	[USER_ID] [char](10) NULL,
+	[DATCAD] [datetime] NULL);
+GO
+
+--Table dbo.TBPROD216
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD216] (
+	[CODPROD] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[CODCLI] [char](9) NULL,
+	[CODMPRIMA] [char](15) NULL,
+	[REVLISTPECA] [char](3) NULL,
+	[RESPAPROV] [char](20) NULL,
+	[RESPPLANO] [char](20) NULL,
+	[CONTATO] [char](80) NULL,
+	[EQUIPE] [char](80) NULL,
+	[APROVACENG] [char](30) NULL,
+	[DATAPROVENG] [datetime] NULL,
+	[APROVQUALI] [char](30) NULL,
+	[DATAPROVQUALI] [datetime] NULL,
+	[APROVFABRICA] [char](30) NULL,
+	[DATAPROVFABR] [datetime] NULL,
+	[APROVOUTROS] [char](30) NULL,
+	[DATAPROUTROS] [datetime] NULL,
+	[DATINCLUSAO] [datetime] NULL,
+	[DATREVISAO] [datetime] NULL,
+	[STAPLANO] [char](1) NULL,
+	[DATATIV] [datetime] NULL,
+	[LEGENDA] [text] NULL,
+	[RAZSOCFORNPCONT] [varchar](50) NULL);
+GO
+
+--Table dbo.TBPROD217
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD217] (
+	[CODPROD] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[ID] [int] NOT NULL,
+	[ITEM] [char](3) NULL,
+	[DESCARACTER] [char](25) NULL,
+	[CLASSESPEC] [char](10) NULL,
+	[ESPECIFIC] [text] NULL,
+	[TECAVAL] [char](30) NULL,
+	[AMOSTRA] [char](50) NULL,
+	[METCONTROL] [char](20) NULL,
+	[CODOPER] [char](6) NULL,
+	[CODPLANREAC] [char](3) NULL,
+	[TEMPOSETUP] [char](8) NULL);
+GO
+
+--Table dbo.TBPROD218
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD218] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[REVFORM] [char](2) NOT NULL,
+	[CODMPRIMA] [char](15) NULL,
+	[REVMPRIMA] [char](10) NULL,
+	[PLANEJADOR] [char](40) NULL,
+	[APROVADO] [char](40) NULL,
+	[DATPLAN] [datetime] NULL,
+	[DATEMI] [datetime] NULL,
+	[OBSERVACAO] [text] NULL,
+	[CODFORN] [char](6) NULL,
+	[ATIVO] [char](1) NULL,
+	[DATATIVACAO] [datetime] NULL,
+	[DATDESATIVACAO] [datetime] NULL);
+GO
+
+--Table dbo.TBPROD219
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD219] (
+	[CODEMP] [char](2) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[CODCLI] [char](9) NOT NULL,
+	[REVFORM] [char](2) NOT NULL,
+	[NUMITEM] [char](2) NOT NULL,
+	[TIPOITEM] [char](1) NOT NULL,
+	[INFORMACAO] [text] NULL,
+	[CODTRAT] [char](4) NULL);
+GO
+
+--Table dbo.TBPROD220
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD220] (
+	[CODPROD] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[IDLINHA] [int] NOT NULL,
+	[SEQUENCIA] [char](2) NULL,
+	[COLUNA1] [char](11) NULL,
+	[COLUNA2] [char](11) NULL,
+	[COLUNA3] [char](11) NULL,
+	[COLUNA4] [char](11) NULL,
+	[COLUNA5] [char](11) NULL,
+	[COLUNA6] [char](11) NULL,
+	[COLUNA7] [char](11) NULL,
+	[COLUNA8] [char](11) NULL,
+	[COLUNA9] [char](11) NULL);
+GO
+
+--Table dbo.TBPROD221
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD221] (
+	[NUMSEQ] [char](4) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[REVISAO] [char](3) NOT NULL,
+	[QTDEINICIALPROD] [decimal](28, 14) NOT NULL,
+	[QTDEFINALPROD] [decimal](28, 14) NOT NULL,
+	[QTDEAMAISPRODACABADO] [decimal](28, 14) NOT NULL);
+GO
+
+--Table dbo.TBPROD997
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD997] (
+	[CODEMP] [char](2) NOT NULL,
+	[TIPOITEM] [char](1) NOT NULL,
+	[INFORMACAO] [text] NULL);
+GO
+
+--Table dbo.TBPROD998
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBPROD998] (
+	[CODEMP] [char](2) NOT NULL,
+	[ANOCOMPPROD] [char](4) NOT NULL,
+	[MESCOMPPROD] [char](2) NOT NULL,
+	[NUMHORASTURNO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD998__NUMHO__40457975] DEFAULT (8),
+	[CCONTABILCMV] [char](12) NULL,
+	[CCONTABILPROC] [char](12) NULL,
+	[STAESTOQUEAUTOMATICO] [char](1) NULL CONSTRAINT [DF__TBPROD998__STAES__41399DAE] DEFAULT ('N'),
+	[CODALMOXPRODUCAO] [char](3) NULL,
+	[CODALMOXPROCESSO] [char](3) NULL,
+	[CCUSTOPRODUCAO] [char](10) NULL,
+	[CCUSTOSIMULACAO] [char](10) NULL,
+	[TIPPERCDESPSTD] [char](1) NULL,
+	[VALPERCDESPSTD] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD998__VALPE__422DC1E7] DEFAULT (0),
+	[CODSTDMAT] [char](5) NULL,
+	[CODSTDMO] [char](5) NULL,
+	[STAPREPINTERFACE] [char](1) NULL CONSTRAINT [DF__TBPROD998__STAPR__4321E620] DEFAULT ('N'),
+	[CODPERCRATDISTR] [char](5) NULL,
+	[CODALMOXREQUISICAO] [char](3) NULL,
+	[CODPERCRATPAR] [char](5) NULL,
+	[STARATEIAOCIO] [char](1) NULL CONSTRAINT [DF__TBPROD998__STARA__44160A59] DEFAULT ('N'),
+	[TIPORDEM] [char](1) NULL CONSTRAINT [DF__TBPROD998__TIPOR__450A2E92] DEFAULT ('P'),
+	[CODORDEM] [char](12) NULL,
+	[INDICEGERENCIAL] [char](3) NULL,
+	[MODULOFECHAMENTO] [char](30) NULL,
+	[HISTORICOCREDITO] [char](5) NULL,
+	[HISTORICOCREDITOCOMPL] [char](30) NULL,
+	[HISTORICODEBITO] [char](5) NULL,
+	[HISTORICODEBITOCOMPL] [char](30) NULL,
+	[STAETIQAUTOMATICA] [char](1) NULL CONSTRAINT [DF__TBPROD998__STAET__45FE52CB] DEFAULT ('N'),
+	[CRITERIOAPONTHOR] [char](1) NULL CONSTRAINT [DF__TBPROD998__CRITE__46F27704] DEFAULT ('N'),
+	[STAINTERMAT] [char](1) NULL,
+	[STAINTERMOB] [char](1) NULL,
+	[STAINTERDESP] [char](1) NULL,
+	[CENTRABPADRAO] [char](12) NULL,
+	[QTDHORASSABADO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD998__QTDHO__2DDCB077] DEFAULT (0),
+	[QTDHORASDOMINGO] [decimal](28, 14) NULL CONSTRAINT [DF__TBPROD998__QTDHO__2ED0D4B0] DEFAULT (0),
+	[STAIMPQTDEPADRAOORDEM] [char](1) NULL,
+	[NUMINICIOSEQORDEM] [char](3) NULL,
+	[STAAPONTAMPBACKFLUSH] [char](1) NULL,
+	[STAABREORDEMSEMMP] [char](1) NULL CONSTRAINT [DF__TBPROD998__STAAB__012A0591] DEFAULT ('S'),
+	[STABLOQUEIAORDEMSEMCQ] [char](1) NULL CONSTRAINT [DF__TBPROD998__STABL__12549193] DEFAULT ('N'),
+	[STAABREORDEMPROCESSO] [char](1) NULL CONSTRAINT [DF__TBPROD998__STAAB__49C4C20E] DEFAULT ('S'),
+	[STAULTTABSTANDARD] [char](1) NULL CONSTRAINT [DF__TBPROD998__STAUL__4F7D9B64] DEFAULT ('N'),
+	[RELCUSTPADASS1] [char](30) NULL,
+	[RELCUSTPADASS2] [char](30) NULL,
+	[RELCUSTPADASS3] [char](30) NULL,
+	[RELCUSTPADASS4] [char](30) NULL,
+	[OBSPLANOFABRICACAO] [text] NULL,
+	[RELFICPESAGEMASS1] [char](30) NULL,
+	[RELFICPESAGEMASS2] [char](30) NULL,
+	[RELFICEMBALAGEMASS1] [char](30) NULL,
+	[RELFICEMBALAGEMASS2] [char](30) NULL,
+	[RELFICEMBALAGEMASS3] [char](30) NULL,
+	[RELFICEMBALAGEMASS4] [char](30) NULL,
+	[PERCDIFQTDPENDQTDAPONT] [decimal](28, 14) NULL,
+	[CODSIMULA] [char](6) NULL,
+	[FONTEPLANOFAB] [int] NULL CONSTRAINT [DF__TBPROD998__FONTE__64B8AF6C] DEFAULT (8),
+	[VALORPRODAUTOMATICO] [char](1) NULL,
+	[SEQVALORPRODAUTOMATICO] [char](9) NULL,
+	[VALORCUSTOFIXOAUTOMATICO] [decimal](28, 14) NULL,
+	[STAUSANUMPARTIDA] [char](1) NULL CONSTRAINT [DF__TBPROD998__STAUS__49659AB2] DEFAULT ('N'),
+	[CODALMOXAMOSTRA] [char](3) NULL,
+	[STAQTDPRODMULTIPLOCAPACMIN] [char](1) NULL,
+	[UTILIZAIMPRESSAOROTULO] [char](1) NULL,
+	[LOCALARQUIVOROTULO] [char](80) NULL,
+	[STAUSACALCTEOR] [char](1) NULL,
+	[STACOPIADATNECDATPREV] [char](1) NULL CONSTRAINT [DF__TBPROD998__STACO__6F763501] DEFAULT ('N'),
+	[STACONFIRMAATUDATPREV] [char](1) NULL CONSTRAINT [DF__TBPROD998__STACO__706A593A] DEFAULT ('N'),
+	[CAMINHOLOGOOP] [char](250) NULL,
+	[CAMINHOSIMBOLOISO] [char](250) NULL,
+	[DATINIAPONTNAOCONFORM] [datetime] NULL,
+	[QTDEAPONTNAOCONFORM] [int] NULL,
+	[NUMRELEVANCIAOP] [int] NULL,
+	[MODELOOPIMPRESSA] [char](2) NULL,
+	[STAAPONTARESERVAINDUSTR] [char](1) NULL,
+	[STACONSISTEMATSEMMO] [char](1) NULL,
+	[TIPRATEIODESPPADRAO] [char](1) NULL,
+	[CODSTDDESP] [char](5) NULL,
+	[STAUSAVOLUMESPROC] [char](1) NULL,
+	[CODALMOXRETRAB] [char](3) NULL,
+	[STAUSAOPDINAMICA] [char](1) NULL,
+	[STAAPONTMODIF] [char](1) NULL,
+	[QTDEPERDA] [decimal](28, 14) NULL,
+	[STASUGEREPECASHORA] [char](1) NULL,
+	[STAAPONTASOBRA] [char](1) NULL,
+	[VALAPONTSOBRA] [decimal](28, 14) NULL,
+	[CODUNIMEDM3] [char](2) NULL,
+	[STACONTROLADATINIOP] [char](1) NULL);
+GO
+
+--Table dbo.TBRELCB003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBRELCB003] (
+	[NUMSEQ] [int] NOT NULL,
+	[CODCONTAPLANO] [char](30) NULL,
+	[TIPORIGEMCONTA] [char](1) NULL,
+	[TIPCONTA] [char](1) NULL,
+	[CODREALCONTA] [char](30) NULL,
+	[DESCCONTA] [char](60) NULL,
+	[TEMANALIT] [char](1) NULL,
+	[SALDOANT] [decimal](28, 14) NULL,
+	[TOTDEB] [decimal](28, 14) NULL,
+	[TOTCRED] [decimal](28, 14) NULL,
+	[SALDOATU] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBRELCB012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBRELCB012] (
+	[NUMSEQ] [int] NOT NULL,
+	[CODCONTAPLANO] [char](30) NULL,
+	[TIPORIGEMCONTA] [char](1) NULL,
+	[TIPCONTA] [char](1) NULL,
+	[TEMANALIT] [char](1) NULL,
+	[CODREALCONTA] [char](30) NULL,
+	[DESCCONTA] [char](60) NULL,
+	[SALDOANT] [decimal](28, 14) NULL,
+	[PERIODO_0] [decimal](28, 14) NULL,
+	[PERIODO_1] [decimal](28, 14) NULL,
+	[PERIODO_2] [decimal](28, 14) NULL,
+	[PERIODO_3] [decimal](28, 14) NULL,
+	[SALDOATU] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBRELCB013
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBRELCB013] (
+	[NUMSEQ] [int] NOT NULL,
+	[CODCONTAPLANO] [char](30) NULL,
+	[TIPORIGEMCONTA] [char](1) NULL,
+	[TIPCONTA] [char](1) NULL,
+	[CODREALCONTA] [char](30) NULL,
+	[DESCCONTA] [char](60) NULL,
+	[TEMANALIT] [char](1) NULL,
+	[SALDOANT] [decimal](28, 14) NULL,
+	[PERIODO_0] [decimal](28, 14) NULL,
+	[PERIODO_1] [decimal](28, 14) NULL,
+	[PERIODO_2] [decimal](28, 14) NULL,
+	[PERIODO_3] [decimal](28, 14) NULL,
+	[SALDOATU] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBROT001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE TBROT001(
+				IDROT int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+				CODMAT char(15) NOT NULL,
+				NOMEROTULO varchar(65) NULL,
+				NOMEPRODUTO varbinary(100) NULL,
+				MSGALERTA varchar(100) NULL,
+				MSGAVISO varbinary(250) NULL,
+				INFORMACOES varbinary(1200) NULL,
+				NOMEEMPRESA varbinary(100) NULL,
+				ENDERECOEMPRESA varbinary(250) NULL,
+				SITEEMPRESA varchar(100) NULL,
+				VOLUME varchar(100) NULL,
+				MSGANVISA varchar(100) NULL,
+				MSGCLASSIFICACAO varbinary(250) NULL,
+				MSGVALIDADE varchar(100) NULL,
+				CODBARRAS varchar(22) NULL,
+				IMAGEM varchar(5000) NULL,
+				USACAVEIRA int NULL,
+				BASEROTULO VARCHAR(16) NULL,
+				ATIVO int NULL )
+GO
+
+--Table dbo.TBROT002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBROT002] (
+	[IDQRCODE] [int] NOT NULL IDENTITY (1, 1),
+	[IDROT] [int] NOT NULL,
+	[GERAR] [int] NULL,
+	[NOMECAMPO] [varchar](50) NOT NULL,
+	[DESCCAMPO] [varchar](50) NOT NULL,
+	[ORDEM] [int] NOT NULL,
+	[MASCARA] [varchar](50) NULL,
+	[TAMANHO] [int] NULL);
+GO
+
+--Table dbo.TBSCEXPL
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSCEXPL] (
+	[CODEMP] [char](2) NULL,
+	[CODSIMULA] [char](6) NULL,
+	[NUMPED] [char](9) NULL,
+	[ITEMPED] [char](3) NULL,
+	[CODMAT] [char](15) NULL,
+	[DATNEC] [datetime] NULL,
+	[TEMPOSTR] [char](8) NULL,
+	[QTDNEC] [decimal](28, 14) NULL,
+	[TEMPOFAB] [decimal](28, 14) NULL,
+	[DATINICIO] [datetime] NULL,
+	[SEQ] [char](6) NOT NULL,
+	[CODMATPAI] [char](15) NULL,
+	[CODSEQPAI] [char](6) NULL,
+	[NIVEL] [char](3) NULL,
+	[STAEXP] [char](1) NULL,
+	[STAORIGEM] [char](1) NULL,
+	[ORIGEM] [char](1) NULL,
+	[CODORDEM] [char](15) NULL,
+	[STAORD] [char](1) NULL,
+	[SEQORDEM] [char](3) NULL,
+	[REVPROD010] [char](3) NULL,
+	[REVPROD020] [char](3) NULL,
+	[CODMATPED] [char](15) NULL,
+	[QTDEMATPED] [decimal](28, 14) NULL,
+	[CODSTDMAT] [char](5) NULL,
+	[CODSTDMO] [char](5) NULL,
+	[TIPORDEM] [char](1) NULL,
+	[CCUSTO] [char](10) NULL,
+	[PERCCUSTO] [decimal](28, 14) NULL,
+	[CONTPROC] [char](12) NULL,
+	[CONTREC] [char](12) NULL,
+	[PERCENC] [decimal](28, 14) NULL,
+	[PERCEFI] [decimal](28, 14) NULL,
+	[QTDATUAL] [decimal](28, 14) NULL,
+	[QTDMIN] [decimal](28, 14) NULL,
+	[CODEQUIP] [char](15) NULL,
+	[SEQEQUIP] [char](3) NULL,
+	[CODDISP] [char](15) NULL,
+	[SEQDISP] [char](3) NULL,
+	[STAMATACAB] [char](1) NULL,
+	[TIPCUST] [char](1) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[STAAPONAUT] [char](1) NULL,
+	[QTDSTD] [decimal](28, 14) NULL,
+	[STAIGNDISP] [char](1) NULL,
+	[TIPAPLIC] [char](1) NULL,
+	[DATPREV] [datetime] NULL,
+	[HORAPREV] [char](4) NULL);
+GO
+
+--Table dbo.TBSCEXPLDISP
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSCEXPLDISP] (
+	[CODMAT] [char](15) NULL,
+	[QTDORIG] [decimal](28, 14) NULL,
+	[QTDDISP] [decimal](28, 14) NULL);
+GO
+
+--Table dbo.TBSCRIPT0
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSCRIPT0] (
+	[CODSCRI] [char](6) NOT NULL,
+	[DESSCRI] [char](100) NULL,
+	[TEXSCRI] [text] NULL,
+	[DATCADAST] [datetime] NULL,
+	[DATATU] [datetime] NULL,
+	[ORDEXEC] [char](6) NULL,
+	[NOMPROG] [char](15) NULL,
+	[DATEXECUCAO] [datetime] NULL);
+GO
+
+--Table dbo.TBSENH001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSENH001] (
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[DESSISTEMA] [char](50) NOT NULL,
+	[PROCATU] [char](1) NULL CONSTRAINT [DF__TBSENH001__PROCA__09F455BC] DEFAULT ('A'),
+	[CAMINHOARQIN86] [char](150) NULL);
+GO
+
+--Table dbo.TBSENH002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSENH002] (
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[PROCATU] [char](1) NULL CONSTRAINT [DF__TBSENH002__PROCA__0AE879F5] DEFAULT ('A'));
+GO
+
+--Table dbo.TBSENH003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSENH003] (
+	[MODULO_ID] [char](10) NOT NULL,
+	[TIPO] [char](1) NOT NULL,
+	[DESMODULO] [char](100) NOT NULL,
+	[PROCATU] [char](1) NULL CONSTRAINT [DF__TBSENH003__PROCA__0BDC9E2E] DEFAULT ('A'),
+	[PROPOSCOMERCIAL] [char](1) NULL);
+GO
+
+--Table dbo.TBSENH004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSENH004] (
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[MODULO_ID] [char](10) NOT NULL,
+	[TIPO] [char](1) NOT NULL,
+	[CODMENU] [char](5) NOT NULL,
+	[PROCATU] [char](1) NULL CONSTRAINT [DF__TBSENH004__PROCA__0CD0C267] DEFAULT ('A'));
+GO
+
+--Table dbo.TBSENH005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSENH005] (
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBSENH005__CODEM__53584DE9] DEFAULT ('01'),
+	[USER_ID] [char](10) NOT NULL,
+	[MODULO_ID] [char](10) NOT NULL,
+	[INCLUSAO] [char](1) NOT NULL,
+	[ALTERACAO] [char](1) NOT NULL,
+	[CONSULTA] [char](1) NOT NULL,
+	[EXCLUSAO] [char](1) NOT NULL,
+	[IMPRESSAO] [char](1) NOT NULL,
+	[TIPO] [char](1) NOT NULL,
+	[CODMENU] [char](5) NOT NULL,
+	[PROCATU] [char](1) NULL CONSTRAINT [DF__TBSENH005__PROCA__0DC4E6A0] DEFAULT ('A'),
+	[INCLUSAOTMP] [char](1) NULL CONSTRAINT [DF_TBSENH005_INCLUSAOTMP] DEFAULT ('N'),
+	[ALTERACAOTMP] [char](1) NULL CONSTRAINT [DF_TBSENH005_ALTERACAOTMP] DEFAULT ('N'),
+	[CONSULTATMP] [char](1) NULL CONSTRAINT [DF_TBSENH005_CONSULTATMP] DEFAULT ('N'),
+	[IMPRESSAOTMP] [char](1) NULL CONSTRAINT [DF_TBSENH005_IMPRESSAOTMP] DEFAULT ('N'),
+	[EXCLUSAOTMP] [char](1) NULL CONSTRAINT [DF_TBSENH005_EXCLUSAOTMP] DEFAULT ('N'),
+	[STAAPROVACAO] [char](1) NULL,
+	[USER_ID_ADM1] [char](10) NULL,
+	[USER_ID_ADM2] [char](10) NULL);
+GO
+
+--Table dbo.TBSENH006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSENH006] (
+	[USER_ID] [char](10) NOT NULL,
+	[NOMUSUARIO] [char](30) NOT NULL,
+	[SENHA] [char](14) NOT NULL,
+	[TIPUSUARIO] [char](1) NOT NULL,
+	[SUSPENSAO] [char](1) NOT NULL,
+	[BLOQUEIO] [char](1) NOT NULL,
+	[NUMNIVELCOMPRA] [int] NULL CONSTRAINT [DF__TBSENH006__NUMNI__5634BA94] DEFAULT (1),
+	[STALIBTODAREA] [char](1) NULL CONSTRAINT [DF__TBSENH006__STALI__5728DECD] DEFAULT ('S'),
+	[STALIBERAPEDVENDA] [char](1) NULL CONSTRAINT [DF__TBSENH006__STALI__581D0306] DEFAULT ('S'),
+	[CCUSTO] [char](10) NULL,
+	[PROCATU] [char](1) NULL CONSTRAINT [DF__TBSENH006__PROCA__0EB90AD9] DEFAULT ('A'),
+	[DATULTALT] [datetime] NULL,
+	[ALTSENPROXLOG] [char](1) NULL,
+	[EMAIL] [char](70) NULL,
+	[FONE] [char](12) NULL,
+	[FAX] [char](12) NULL,
+	[DEPARTAMENTO] [char](30) NULL,
+	[STARECEMAILRESERVAPARCIAL] [char](1) NULL CONSTRAINT [DF__TBSENH006__STARE__0CDC7AB6] DEFAULT ('N'));
+GO
+
+--Table dbo.TBSENH007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSENH007] (
+	[NOMEXEC] [char](20) NOT NULL,
+	[DESEXEC] [char](50) NOT NULL,
+	[CODTIPEXEC] [char](1) NOT NULL,
+	[TAMEXEC] [int] NOT NULL,
+	[DATEXEC] [datetime] NOT NULL,
+	[HORAEXEC] [char](6) NOT NULL,
+	[STAVERIFICACAO] [char](1) NOT NULL,
+	[STATIPATU] [char](1) NOT NULL,
+	[DATATU] [datetime] NOT NULL);
+GO
+
+--Table dbo.TBSENH008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSENH008] (
+	[SISTEMA_ID] [char](10) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[USER_ID] [char](10) NOT NULL,
+	[MODULO_ID] [char](10) NOT NULL,
+	[SEQOPERACAO] [char](2) NOT NULL,
+	[USER_ID_OPERACAO] [char](10) NOT NULL,
+	[DATOPERACAO] [datetime] NOT NULL,
+	[INCLUSAO] [char](1) NOT NULL,
+	[EXCLUSAO] [char](1) NOT NULL,
+	[ALTERACAO] [char](1) NOT NULL,
+	[CONSULTA] [char](1) NOT NULL,
+	[IMPRESSAO] [char](1) NOT NULL,
+	[STAOPERACAO] [char](1) NOT NULL);
+GO
+
+--Table dbo.TBSINT001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT001] (
+	[CODFINALIDADE] [char](2) NOT NULL,
+	[DESFINALIDADE] [char](250) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT001__STATU__2280D7BB] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT002] (
+	[CODBLOCO] [char](1) NOT NULL,
+	[DESBLOCO] [char](150) NOT NULL,
+	[ORDEMEXIB] [int] NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT002__STATU__255D4466] DEFAULT ('S'),
+	[STAGERARARQ] [char](1) NULL CONSTRAINT [DF__TBSINT002__STAGE__2651689F] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT003] (
+	[CODBLOCO] [char](1) NOT NULL,
+	[CODREGISTRO] [char](4) NOT NULL,
+	[DESREGISTRO] [char](250) NOT NULL,
+	[STAREGOBRIG] [char](1) NOT NULL CONSTRAINT [DF__TBSINT003__STARE__292DD54A] DEFAULT ('N'),
+	[SISTEMA_ID] [char](10) NULL,
+	[SISTEMA_ID2] [char](10) NULL,
+	[NIVELREG] [char](1) NOT NULL,
+	[OCORRENCIAREG] [char](1) NOT NULL,
+	[DATACADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT003__STATU__2A21F983] DEFAULT ('S'),
+	[STAGERARARQ] [char](1) NULL CONSTRAINT [DF__TBSINT003__STAGE__2B161DBC] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT004] (
+	[CODLAYOUT] [char](3) NOT NULL,
+	[VERSAOLAYOUT] [char](20) NOT NULL,
+	[LAYOUTINSTITUIDO] [char](250) NULL,
+	[OBRIGALAYOUT] [char](250) NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT004__STATU__30CEF712] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT005
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT005] (
+	[CODRESUMO] [char](3) NOT NULL,
+	[DESRESUMO] [text] NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT005__STATU__33AB63BD] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT006
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT006] (
+	[CODDOCTOICMS] [char](2) NOT NULL,
+	[DESDOCTOICMS] [char](100) NOT NULL,
+	[MODELODOCTO] [char](10) NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT006__STATU__3687D068] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT007
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT007] (
+	[CODDOCTOISS] [char](2) NOT NULL,
+	[DESDOCTOISS] [char](100) NOT NULL,
+	[MODELODOCTO] [char](10) NULL,
+	[CODUFDOCTOISS] [char](2) NULL,
+	[CODMUNICIPIODOCTOISS] [char](7) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT007__STATU__39643D13] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT008
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT008] (
+	[CODGENERO] [char](2) NOT NULL,
+	[DESGENERO] [text] NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT008__STATU__3E28F230] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT009
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT009] (
+	[CODCFPS] [char](4) NOT NULL,
+	[DESCFPS] [text] NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT009__STATU__41055EDB] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT010
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT010] (
+	[CODCTIPI] [char](2) NOT NULL,
+	[DESCTIPI] [char](150) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT010__STATU__43E1CB86] DEFAULT ('S'),
+	[TIPSITUACAOTRIBIPI] [char](1) NULL);
+GO
+
+--Table dbo.TBSINT011
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT011] (
+	[CODCTISS] [char](2) NOT NULL,
+	[DESCTISS] [char](150) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT011__STATU__46BE3831] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT012
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT012] (
+	[CODCLASSEENERG] [char](2) NOT NULL,
+	[DESCLASSEENERG] [char](150) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT012__STATU__499AA4DC] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT013
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT013] (
+	[CODCLASSIFICENERG] [char](2) NOT NULL,
+	[DESCLASSIFICENERG] [char](150) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT013__STATU__4C771187] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT014
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT014] (
+	[CODCLASSEAGUA] [char](2) NOT NULL,
+	[DESCLASSEAGUA] [char](150) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT014__STATU__4F537E32] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT015
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT015] (
+	[CODCLASSEGAS] [char](2) NOT NULL,
+	[DESCLASSEGAS] [char](150) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT015__STATU__522FEADD] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT016
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT016] (
+	[CODCLASSETELECOM] [char](2) NOT NULL,
+	[DESCLASSETELECOM] [char](150) NOT NULL,
+	[CODDOCTOICMS1] [char](2) NULL,
+	[CODDOCTOICMS2] [char](2) NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT016__STATU__550C5788] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT017
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT017] (
+	[CODCLASSIFICTELECOM] [char](3) NOT NULL,
+	[DESCLASSIFICTELECOM] [char](150) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT017__STATU__59D10CA5] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT018
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT018] (
+	[CODLIVROICMS] [char](2) NOT NULL,
+	[DESLIVROICMS] [char](150) NOT NULL,
+	[MODELOLIVROICMS] [char](1) NULL,
+	[TIPTRIBUTO] [char](1) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT018__STATU__5CAD7950] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT019
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT019] (
+	[CODLIVROISS] [char](2) NOT NULL,
+	[DESLIVROISS] [char](150) NOT NULL,
+	[MODELOLIVROISS] [char](1) NULL,
+	[TIPTRIBUTO] [char](1) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT019__STATU__5F89E5FB] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT020
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT020] (
+	[CODAJUSTEAPURAICMS] [char](3) NOT NULL,
+	[DESAJUSTEAPURAICMS] [char](150) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT020__STATU__626652A6] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT021
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT021] (
+	[CODOBRIGRECOLHERICMS] [char](3) NOT NULL,
+	[DESOBRIGRECOLHERICMS] [char](150) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT021__STATU__6542BF51] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT022
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT022] (
+	[CODOBRIGRECOLHERISS] [char](2) NOT NULL,
+	[DESOBRIGRECOLHERISS] [char](150) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT022__STATU__681F2BFC] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT023
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT023] (
+	[CODBENEFICICMS] [char](5) NOT NULL,
+	[DESBENEFICICMS] [char](150) NOT NULL,
+	[CODUFBENEFIC] [char](2) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT023__STATU__6AFB98A7] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT024
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT024] (
+	[CODBENEFICISS] [char](5) NOT NULL,
+	[DESBENEFICISS] [char](150) NOT NULL,
+	[CODUFBENEFIC] [char](2) NOT NULL,
+	[CODMUNICIPIOBENEFIC] [char](7) NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT024__STATU__6ECC298B] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT025
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT025] (
+	[CODCLASSIFICSERV] [char](4) NOT NULL,
+	[DESCLASSIFICSERV] [text] NOT NULL,
+	[DATCADAST] [datetime] NOT NULL,
+	[STATUS] [char](1) NOT NULL CONSTRAINT [DF__TBSINT025__STATU__7390DEA8] DEFAULT ('S'));
+GO
+
+--Table dbo.TBSINT026
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBSINT026] (
+	[CODUF] [char](2) NOT NULL,
+	[TIPIMPOSTO] [char](1) NOT NULL,
+	[TIPUTILIZACAO] [char](1) NOT NULL,
+	[NUMSEQ] [char](4) NOT NULL,
+	[CODAJUSTE] [char](8) NULL,
+	[DESAJUSTE] [char](250) NULL,
+	[DATCADAST] [datetime] NULL,
+	[STATUS] [char](1) NULL);
+GO
+
+--Table dbo.TBTABELAS
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBTABELAS] (
+	[NOMTABELA] [char](15) NOT NULL,
+	[DESTABELA] [char](100) NOT NULL,
+	[COMENTARIOSTABELA] [text] NULL,
+	[DDLTABELA] [text] NULL,
+	[STAPERMITEEXPORTAR] [char](1) NOT NULL,
+	[NUMORDEMDEPEND] [char](6) NOT NULL,
+	[STASELECAO] [char](1) NOT NULL,
+	[NOMARQUIVOLAYOUT] [char](15) NULL,
+	[NUMORDEMIMPORTACAO] [int] NULL,
+	[STAIMPORTAPARCIAL] [char](1) NULL CONSTRAINT [DF__TBTABELAS__STAIM__5AF96FB1] DEFAULT ('N'));
+GO
+
+--Table dbo.TBTABELASCAMPOS
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBTABELASCAMPOS] (
+	[NOMTABELA] [char](15) NOT NULL,
+	[NOMCAMPO] [char](30) NOT NULL,
+	[COMENTARIOSTABELACAMPO] [text] NULL,
+	[STANOTNULL] [char](1) NOT NULL,
+	[STAPERMITEEXPORTAR] [char](1) NOT NULL,
+	[STASELECAO] [char](1) NOT NULL,
+	[NUMORDEMCAMPO] [int] NULL,
+	[DESLAYOUT] [char](100) NULL,
+	[NUMPOSICINICIAL] [int] NULL,
+	[NUMPOSICFINAL] [int] NULL,
+	[DESSENAODISPONIVEL] [char](50) NULL,
+	[OBSLAYOUT] [text] NULL,
+	[NOMROTINATRATAMENTO] [char](25) NULL,
+	[STACHAVE] [char](1) NULL CONSTRAINT [DF__TBTABELAS__STACH__5DD5DC5C] DEFAULT ('N'),
+	[STACONSISTE] [char](1) NULL CONSTRAINT [DF__TBTABELAS__STACO__5ECA0095] DEFAULT ('N'),
+	[NOMTABELACONSISTE] [char](15) NULL,
+	[NOMCAMPOCONSISTE] [char](30) NULL);
+GO
+
+--Table dbo.TBTEMPVALORIZ
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBTEMPVALORIZ] (
+	[CODALMOX] [char](3) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[DATULTVALORIZ] [datetime] NULL,
+	[QTDULTVALORIZ] [decimal](28, 14) NULL,
+	[VALULTVALORIZ] [decimal](28, 14) NULL,
+	[STAIMPRIME] [char](1) NULL CONSTRAINT [DF__TBTEMPVAL__STAIM__61A66D40] DEFAULT ('N'),
+	[DATCOMPERRO] [datetime] NULL,
+	[NUMLANCERRO] [char](9) NULL,
+	[CODEMP] [char](2) NOT NULL CONSTRAINT [DF__TBTEMPVAL__CODEM__56B5742F] DEFAULT ('01'));
+GO
+
+--Table dbo.TBTMP790
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBTMP790] (
+	[SEQ] [char](6) NULL,
+	[CODMAT] [char](15) NULL,
+	[QTDNEC] [decimal](28, 14) NULL,
+	[REVISAO] [char](3) NULL,
+	[CODMATPAI] [char](15) NULL,
+	[SEQ_PAI] [char](6) NULL,
+	[VALUNISTD] [decimal](28, 14) NULL,
+	[VALUNIMED] [decimal](28, 14) NULL,
+	[VALUNIULTC] [decimal](28, 14) NULL,
+	[VALSTD] [decimal](28, 14) NULL,
+	[VALMED] [decimal](28, 14) NULL,
+	[VALULTC] [decimal](28, 14) NULL,
+	[DISTORCSTD] [char](1) NULL,
+	[DISTORCMED] [char](1) NULL,
+	[DISTORCUC] [char](1) NULL,
+	[NIVEL] [decimal](28, 14) NULL,
+	[ORDIMPR] [char](254) NULL,
+	[STAVALORIZ] [char](1) NULL,
+	[STAORIGEM] [char](1) NULL,
+	[DESMAT] [char](70) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[CODALMOX] [char](3) NULL);
+GO
+
+--Table dbo.TBTMPAPMTOPORQTD
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBTMPAPMTOPORQTD] (
+	[USER_ID] [char](10) NOT NULL,
+	[CODEMP] [char](2) NOT NULL,
+	[CODORDEM] [char](12) NOT NULL,
+	[SEQORDEM] [char](12) NOT NULL,
+	[CODMAT] [char](15) NOT NULL,
+	[SEQ] [char](3) NOT NULL,
+	[SEQTMP] [char](3) NOT NULL,
+	[DATINICIO] [datetime] NULL,
+	[DATFINAL] [datetime] NULL,
+	[HORINICIO] [decimal](28, 14) NULL,
+	[HORFINAL] [decimal](28, 14) NULL,
+	[TEMPOTOTAL] [decimal](28, 14) NULL,
+	[TIPAPONTAMENTO] [char](1) NOT NULL,
+	[CODMOTIVO] [char](6) NULL);
+GO
+
+--Table dbo.TBTMPApontDeMatNaOM_ListaDePecasSubs
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBTMPApontDeMatNaOM_ListaDePecasSubs] (
+	[ID] [char](29) NULL,
+	[CODOM] [char](6) NULL,
+	[CODEMP] [char](2) NULL,
+	[SEQAPONTMAT] [char](4) NULL,
+	[CODMAT] [char](15) NULL,
+	[QTDEMAT] [decimal](28, 14) NULL,
+	[CODUNIMED] [char](2) NULL,
+	[CODALMOX] [char](3) NULL,
+	[CODLOTE] [char](15) NULL,
+	[CODFORN] [char](6) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMITEMNF] [char](2) NULL,
+	[CUSTOCALCULADO] [decimal](28, 14) NULL,
+	[DATUSOMATERIAL] [datetime] NULL,
+	[NUMLANC] [char](9) NULL,
+	[DATMOVTO] [datetime] NULL);
+GO
+
+--Table dbo.TBTMPCID
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TBTMPCID] (
+	[CODMUNICIP] [char](7) NOT NULL,
+	[NOMEAGIW] [char](60) NOT NULL,
+	[NOMEMUNICI] [char](60) NULL);
+GO
+
+--Table dbo.tmpCTRC003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[tmpCTRC003] (
+	[IDREG] [char](7) NULL,
+	[CODEMP] [char](2) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMCGCCPF] [char](14) NULL,
+	[CCUSTO] [char](10) NULL,
+	[CONTESTO] [char](12) NULL,
+	[VALRECEITA] [decimal](28, 14) NULL CONSTRAINT [DF__tmpCTRC00__VALRE__73DAF76B] DEFAULT (0));
+GO
+
+--Table dbo.tmpLFIS001
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[tmpLFIS001] (
+	[IDREG] [char](7) NULL,
+	[CODEMP] [char](2) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMCGCCPF] [char](14) NULL,
+	[DATEMISSAO] [datetime] NULL,
+	[DATCOMPET] [datetime] NULL,
+	[STACANCELADO] [char](1) NULL,
+	[STADEVOLUCAO] [char](1) NULL,
+	[TIPMODALIDADEFRETE] [char](1) NULL,
+	[VALTOTNF] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALTO__5927012F] DEFAULT (0),
+	[VALTOTPIS] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALTO__5A1B2568] DEFAULT (0),
+	[VALTOTCOFINS] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALTO__5B0F49A1] DEFAULT (0),
+	[CODEVENTO] [char](5) NULL,
+	[OBSNF] [text] NULL,
+	[TIPOES] [char](1) NULL);
+GO
+
+--Table dbo.tmpLFIS002
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[tmpLFIS002] (
+	[IDREG] [char](7) NULL,
+	[CODEMP] [char](2) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMCGCCPF] [char](14) NULL,
+	[CODNATUOPER] [char](6) NULL,
+	[CODSITUACAOTRIB] [char](5) NULL,
+	[NUMSEQ] [char](2) NULL,
+	[VALCONTAB] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALCO__5CF79213] DEFAULT (0),
+	[VALPERICMS] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALPE__5DEBB64C] DEFAULT (0),
+	[VALBASECALCICMS] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALBA__5EDFDA85] DEFAULT (0),
+	[VALICMS] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALIC__5FD3FEBE] DEFAULT (0),
+	[VALOUTROSICMS] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALOU__60C822F7] DEFAULT (0),
+	[VALISENTOICMS] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALIS__61BC4730] DEFAULT (0),
+	[VALBASECALCIPI] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALBA__62B06B69] DEFAULT (0),
+	[VALIPI] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALIP__63A48FA2] DEFAULT (0),
+	[VALOUTROSIPI] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALOU__6498B3DB] DEFAULT (0),
+	[VALISENTOIPI] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALIS__658CD814] DEFAULT (0),
+	[VALBASECALCICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALBA__6680FC4D] DEFAULT (0),
+	[VALICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALIC__67752086] DEFAULT (0),
+	[VALPERCICMSSUBST] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALPE__686944BF] DEFAULT (0),
+	[TIPDIFERENCA] [char](1) NULL,
+	[VALDIFERENCA] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALDI__695D68F8] DEFAULT (0));
+GO
+
+--Table dbo.tmpLFIS003
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[tmpLFIS003] (
+	[IDREG] [char](7) NULL,
+	[CODEMP] [char](2) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMCGCCPF] [char](14) NULL,
+	[CODNATUOPER] [char](6) NULL,
+	[CODSITUACAOTRIB] [char](5) NULL,
+	[NUMSEQ] [char](2) NULL,
+	[NUMITEM] [char](3) NULL,
+	[CODMAT] [char](15) NULL,
+	[QTDETOTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__QTDET__6B45B16A] DEFAULT (0),
+	[VALBASECALCIPI] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALBA__6C39D5A3] DEFAULT (0),
+	[VALPERCIPI] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALPE__6D2DF9DC] DEFAULT (0),
+	[VALIPI] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALIP__6E221E15] DEFAULT (0),
+	[SITUACAOIPI] [char](1) NULL,
+	[CODCLASSFISCAL] [char](10) NULL,
+	[VALBASECALCICMSITEM] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALBA__6F16424E] DEFAULT (0),
+	[VALBASECALCICMSSUBSTITEM] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALBA__700A6687] DEFAULT (0));
+GO
+
+--Table dbo.tmpLFIS004
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[tmpLFIS004] (
+	[IDREG] [char](7) NULL,
+	[CODEMP] [char](2) NULL,
+	[CODDOCUM] [char](3) NULL,
+	[NUMNF] [char](6) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMCGCCPF] [char](14) NULL,
+	[NUMSEQDUP] [char](2) NULL,
+	[DATVENCDUP] [datetime] NULL,
+	[VALDUP] [decimal](28, 14) NULL CONSTRAINT [DF__tmpLFIS00__VALDU__71F2AEF9] DEFAULT (0));
+GO
+
+--Table dbo.TMPRELNAOCONFORM
+
+USE [BDSCRIPT]
+GO
+
+--Create table and its columns
+CREATE TABLE [dbo].[TMPRELNAOCONFORM] (
+	[IDREL] [char](25) NOT NULL,
+	[CODEMP] [char](2) NULL,
+	[CODFORN] [char](6) NULL,
+	[NUMNF] [char](9) NULL,
+	[SERNF] [char](5) NULL,
+	[NUMITEMNF] [char](3) NULL,
+	[CODLOTE] [char](15) NULL,
+	[CODMAT] [char](15) NULL,
+	[DESCR] [char](70) NULL,
+	[OBS] [text] NULL,
+	[IDOCORR] [int] NULL,
+	[TIPO] [char](3) NULL,
+	[DATEMISSAO] [datetime] NULL);
+GO
+
+--Computed Columns
+
+USE [BDSCRIPT]
+GO
+ALTER TABLE [dbo].[TBCONB001] DROP COLUMN [SINAL]
+GO
+ALTER TABLE [dbo].[TBCONB001] ADD [SINAL] AS (case [TIPOMOVTO] when 'S' then (-1) else (1) end) 
+GO
+
+--Indexes of table dbo.TBADIG001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG001] ADD CONSTRAINT [PKTBADIG001] PRIMARY KEY CLUSTERED ([CODESCRIT], [CODVERLC]) 
+GO
+
+--Indexes of table dbo.TBADIG002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG002] ADD CONSTRAINT [PKTBADIG002] PRIMARY KEY CLUSTERED ([CODCTAREF], [CODVERSAOPLANOREF]) 
+GO
+
+--Indexes of table dbo.TBADIG003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG003] ADD CONSTRAINT [PKTBADIG003] PRIMARY KEY CLUSTERED ([CODESCRIT], [CODVERLC], [NUMORD], [CODFORMESCRIT], [CODEMP]) 
+GO
+
+--Indexes of table dbo.TBADIG005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG005] ADD CONSTRAINT [PKTBADIG005] PRIMARY KEY CLUSTERED ([CODENTREF]) 
+GO
+
+--Indexes of table dbo.TBADIG006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG006] ADD CONSTRAINT [PKTBADIG006] PRIMARY KEY CLUSTERED ([CODEMP], [CODENTREF]) 
+GO
+
+--Indexes of table dbo.TBADIG007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG007] ADD CONSTRAINT [PKTBADIG007] PRIMARY KEY CLUSTERED ([SEQSIT]) 
+GO
+
+--Indexes of table dbo.TBADIG008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG008] ADD CONSTRAINT [PKTBADIG008] PRIMARY KEY CLUSTERED ([SEQSIT], [SEQEMP]) 
+GO
+
+--Indexes of table dbo.TBADIG009
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG009] ADD CONSTRAINT [PKTBADIG009] PRIMARY KEY CLUSTERED ([CODVERLC]) 
+GO
+
+--Indexes of table dbo.TBADIG010
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG010] ADD CONSTRAINT [PKTBADIG010] PRIMARY KEY CLUSTERED ([CODREL]) 
+GO
+
+--Indexes of table dbo.TBADIG011
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG011] ADD CONSTRAINT [PKTBADIG011] PRIMARY KEY CLUSTERED ([ORIGEMPART], [CODPART], [CODREL], [DATINIRELAC]) 
+GO
+
+--Indexes of table dbo.TBADIG012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG012] ADD CONSTRAINT [PKTBADIG012] PRIMARY KEY CLUSTERED ([CODASSIN]) 
+GO
+
+--Indexes of table dbo.TBADIG013
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG013] ADD CONSTRAINT [PKTBADIG013] PRIMARY KEY CLUSTERED ([CODSIGN]) 
+GO
+
+--Indexes of table dbo.TBADIG014
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG014] ADD CONSTRAINT [PKTBADIG014] PRIMARY KEY CLUSTERED ([CODSIGN], [CODESCRIT], [CODVERLC], [NUMORD], [CODFORMESCRIT], [CODEMP]) 
+GO
+
+--Indexes of table dbo.TBADIG015
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG015] ADD CONSTRAINT [PKTBADIG015] PRIMARY KEY CLUSTERED ([NOMECAMPO]) 
+GO
+
+--Indexes of table dbo.TBADIG016
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG016] ADD CONSTRAINT [PKTBADIG016] PRIMARY KEY CLUSTERED ([CODVERSAOLAYOUT]) 
+GO
+
+--Indexes of table dbo.TBADIG017
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG017] ADD CONSTRAINT [PKTBADIG017] PRIMARY KEY CLUSTERED ([CODEMP], [DATAINV]) 
+GO
+
+--Indexes of table dbo.TBADIG018
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG018] ADD CONSTRAINT [PKTBADIG018] PRIMARY KEY CLUSTERED ([CODVERSAOPLANOREF]) 
+GO
+
+--Indexes of table dbo.TBADIG019
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG019] ADD CONSTRAINT [PK_TBADIG019] PRIMARY KEY CLUSTERED ([CODEMP], [CODCONTA], [CODCONTAREFSPED], [CODVERSAOPLANOREF]) 
+GO
+
+--Indexes of table dbo.TBADIG020
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG020] ADD CONSTRAINT [PK_TBADIG020] PRIMARY KEY CLUSTERED ([CODEMP], [CODCONTASINTETICA], [CODCONTAREFSPED], [CODVERSAOPLANOREF]) 
+GO
+
+--Indexes of table dbo.TBADIG021
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG021] ADD CONSTRAINT [PK_TBADIG021] PRIMARY KEY CLUSTERED ([CODEMP], [IDFORMNF]) 
+GO
+
+--Indexes of table dbo.TBADIG022
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG022] ADD CONSTRAINT [PK_TBADIG022] PRIMARY KEY CLUSTERED ([CODEMP], [IDFORMNF], [NUMDOCINI], [NUMDOCFIN]) 
+GO
+
+--Indexes of table dbo.TBADIG023
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG023] ADD CONSTRAINT [PKTBADIG023] PRIMARY KEY CLUSTERED ([CODFILIALLOGON], [CODFILIALMOVIMENTACAO]) 
+GO
+
+--Indexes of table dbo.TBADIG024
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG024] ADD CONSTRAINT [PK_TBADIG024] PRIMARY KEY CLUSTERED ([TIPLANCTOFCONT]) 
+GO
+
+--Indexes of table dbo.TBADIG025
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG025] ADD CONSTRAINT [PKTBADIG025] PRIMARY KEY CLUSTERED ([CODEMP], [DATAINV], [CODMAT], [CODSITUACAOTRIB]) 
+GO
+
+--Indexes of table dbo.TBADIG026
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG026] ADD CONSTRAINT [PK_TBADIG026] PRIMARY KEY CLUSTERED ([IDESCRIT]) 
+GO
+
+--Indexes of table dbo.TBADIG027
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG027] ADD CONSTRAINT [PK_TBADIG027] PRIMARY KEY CLUSTERED ([IDESCRIT], [IDREDZ]) 
+GO
+
+--Indexes of table dbo.TBADIG028
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG028] ADD CONSTRAINT [PK_TBADIG028] PRIMARY KEY CLUSTERED ([IDESCRIT], [IDREDZ], [IDTOTPISCOFINS]) 
+GO
+
+--Indexes of table dbo.TBADIG029
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG029] ADD CONSTRAINT [PK_TBADIG029] PRIMARY KEY CLUSTERED ([IDESCRIT], [IDREDZ], [IDTOTPARCZ]) 
+GO
+
+--Indexes of table dbo.TBADIG030
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG030] ADD CONSTRAINT [PK_TBADIG030] PRIMARY KEY CLUSTERED ([IDESCRIT], [IDREDZ], [IDTOTPARCZ], [IDRESUMITENS]) 
+GO
+
+--Indexes of table dbo.TBADIG031
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG031] ADD CONSTRAINT [PK_TBADIG031] PRIMARY KEY CLUSTERED ([IDESCRIT], [IDREDZ], [IDDOCUM]) 
+GO
+
+--Indexes of table dbo.TBADIG032
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG032] ADD CONSTRAINT [PK_TBADIG032] PRIMARY KEY CLUSTERED ([IDESCRIT], [IDREDZ], [IDDOCUM], [IDITEM]) 
+GO
+
+--Indexes of table dbo.TBADIG033
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBADIG033] ADD CONSTRAINT [PK_TBADIG033] PRIMARY KEY CLUSTERED ([IDESCRIT], [IDREDZ], [IDREGANALIT]) 
+GO
+
+--Indexes of table dbo.TBATIV001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBATIV001_NUMBEMPRINCIPAL] ON [dbo].[TBATIV001]  ([CODEMP], [NUMBEMPRINCIPAL], [NUMINCORPBEMPRINCIPAL], [DATCONCLUSAOBEM]) 
+GO
+
+ALTER TABLE [dbo].[TBATIV001] ADD CONSTRAINT [PKTBATIV001] PRIMARY KEY CLUSTERED ([CODEMP], [NUMBEM], [NUMINCORPBEM]) 
+GO
+
+--Indexes of table dbo.TBATIV002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV002] ADD CONSTRAINT [PKTBTIV002] PRIMARY KEY CLUSTERED ([CODEMP], [CODSETOR]) 
+GO
+
+--Indexes of table dbo.TBATIV003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV003] ADD CONSTRAINT [PKTBATIV003] PRIMARY KEY CLUSTERED ([CODTIPAQUIS]) 
+GO
+
+--Indexes of table dbo.TBATIV004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV004] ADD CONSTRAINT [PKTBATIV004] PRIMARY KEY CLUSTERED ([CODTIPBAIXA]) 
+GO
+
+--Indexes of table dbo.TBATIV005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV005] ADD CONSTRAINT [PKTBATIV005] PRIMARY KEY CLUSTERED ([CODEMP], [NUMBEM], [NUMINCORPBEM]) 
+GO
+
+--Indexes of table dbo.TBATIV006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV006] ADD CONSTRAINT [PKTBATIV006] PRIMARY KEY CLUSTERED ([CODEMP], [NUMBEM], [NUMINCORPBEM], [NUMSEQTRANSF]) 
+GO
+
+--Indexes of table dbo.TBATIV007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV007] ADD CONSTRAINT [PKTBATIV007] PRIMARY KEY CLUSTERED ([CODEMP], [NUMBEM], [NUMINCORPBEM], [NUMSEQMOVTO]) 
+GO
+
+--Indexes of table dbo.TBATIV008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV008] ADD CONSTRAINT [PKTBATIV008] PRIMARY KEY CLUSTERED ([CODEMP], [NUMBEM], [NUMINCORPBEM], [ANOCALCULO], [MESCALCULO]) 
+GO
+
+--Indexes of table dbo.TBATIV009
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV009] ADD CONSTRAINT [PKTBATIV009] PRIMARY KEY CLUSTERED ([CODEMP], [CTAATIVO], [CCUSTO], [ANOSALDO], [MESSALDO]) 
+GO
+
+--Indexes of table dbo.TBATIV010
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV010] ADD CONSTRAINT [PK_TBATIV010] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMSEQITEMNF], [NUMBEM], [NUMINCORPBEM]) 
+GO
+
+--Indexes of table dbo.TBATIV011
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV011] ADD CONSTRAINT [PK_TBATIV011] PRIMARY KEY CLUSTERED ([CODEMP], [ANOCALCULO], [MESCALCULO], [QTDEPARCCIAP]) 
+GO
+
+--Indexes of table dbo.TBATIV012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV012] ADD CONSTRAINT [PK_TBATIV012] PRIMARY KEY CLUSTERED ([CODEMP], [ANOCALCULO], [MESCALCULO], [NUMBEM], [NUMINCORPBEM]) 
+GO
+
+--Indexes of table dbo.TBATIV013
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV013] ADD CONSTRAINT [PK_TBATIV013] PRIMARY KEY CLUSTERED ([CODEMP], [ANOCALCULO], [MESCALCULO], [NUMBEM], [NUMINCORPBEM]) 
+GO
+
+--Indexes of table dbo.TBATIV014
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV014] ADD CONSTRAINT [PK__TBATIV014__5F2ABE9F] PRIMARY KEY CLUSTERED ([CODEMP], [ANOCALCULO], [MESCALCULO], [NUMBEM], [NUMINCORPBEM]) 
+GO
+
+--Indexes of table dbo.TBATIV015
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV015] ADD CONSTRAINT [PK__TBATIV015__61130711] PRIMARY KEY CLUSTERED ([CODEMP], [NUMBEM], [NUMINCORPBEM], [NUMPROC]) 
+GO
+
+--Indexes of table dbo.TBATIV016
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV016] ADD CONSTRAINT [PK_TBATIV016] PRIMARY KEY CLUSTERED ([CODEMP], [NUMBEM], [NUMINCORPBEM], [SEQALT]) 
+GO
+
+--Indexes of table dbo.TBATIV999
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBATIV999] ADD CONSTRAINT [PKTBATIV999] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBBALANCETE
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBBALANCETE_CODCONTA] ON [dbo].[TBBALANCETE]  ([USER_ID], [CODCONTA], [CODORDEMNO], [TIPMOVTO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBBALANCETE_CODORDEMNO] ON [dbo].[TBBALANCETE]  ([USER_ID], [CODORDEMNO]) 
+GO
+
+ALTER TABLE [dbo].[TBBALANCETE] ADD CONSTRAINT [PKTBBALANCETE] PRIMARY KEY CLUSTERED ([USER_ID], [NUMREG]) 
+GO
+
+--Indexes of table dbo.TBCAMPOS
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCAMPOS] ADD CONSTRAINT [PKTBCAMPOS] PRIMARY KEY CLUSTERED ([NOMCAMPO]) 
+GO
+
+--Indexes of table dbo.TBCOMP001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP001_NOMFANTAS] ON [dbo].[TBCOMP001]  ([NOMFANTAS]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCOMP001_NUMCGCCPF] ON [dbo].[TBCOMP001]  ([NUMCGCCPF]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCOMP001_RAZSOCFORN] ON [dbo].[TBCOMP001]  ([RAZSOCFORN]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP001] ADD CONSTRAINT [PKTBCOMP001] PRIMARY KEY CLUSTERED ([CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP002_CODMAT_DESTMAT] ON [dbo].[TBCOMP002]  ([CODMAT], [DESMAT]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCOMP002_DESMAT] ON [dbo].[TBCOMP002]  ([DESMAT]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCOMP002_TIPITEM] ON [dbo].[TBCOMP002]  ([CODMAT], [TIPITEM]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP002] ADD CONSTRAINT [PKTBCOMP002] PRIMARY KEY CLUSTERED ([CODMAT]) 
+GO
+
+--Indexes of table dbo.TBCOMP003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP003] ADD CONSTRAINT [PKTBCOMP003] PRIMARY KEY CLUSTERED ([CODMAT], [CODCLI], [CODMATCLI]) 
+GO
+
+--Indexes of table dbo.TBCOMP004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP004_DATCADAST] ON [dbo].[TBCOMP004]  ([CODEMP], [NUMSC], [DATCADAST]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP004] ADD CONSTRAINT [PKTBCOMP004] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSC]) 
+GO
+
+--Indexes of table dbo.TBCOMP005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP005_CODMAT] ON [dbo].[TBCOMP005]  ([CODEMP], [CODMAT], [STAITEM]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP005] ADD CONSTRAINT [PKTBCOMP005] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSC], [NUMITEM]) 
+GO
+
+--Indexes of table dbo.TBCOMP006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP006] ADD CONSTRAINT [PKTBCOMP006] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSC], [NUMITEM]) 
+GO
+
+--Indexes of table dbo.TBCOMP007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP007] ADD CONSTRAINT [PKTBCOMP007] PRIMARY KEY CLUSTERED ([CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP008_CODALMOX] ON [dbo].[TBCOMP008]  ([CODEMP], [CODALMOX]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP008] ADD CONSTRAINT [PKTBCOMP008] PRIMARY KEY CLUSTERED ([CODEMP], [CCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCOMP009
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP009] ADD CONSTRAINT [PKTBCOMP009] PRIMARY KEY CLUSTERED ([CODCPAGTO]) 
+GO
+
+--Indexes of table dbo.TBCOMP012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP012] ADD CONSTRAINT [PKTBCOMP012] PRIMARY KEY CLUSTERED ([CODTIPIMP], [CODALIQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP013
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP013_DATPEDIDO] ON [dbo].[TBCOMP013]  ([CODEMP], [NUMPEDIDO], [SERPEDIDO], [DATPEDIDO], [CODFORN]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP013] ADD CONSTRAINT [PKTBCOMP013] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPEDIDO], [SERPEDIDO]) 
+GO
+
+--Indexes of table dbo.TBCOMP014
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP014_CODMAT] ON [dbo].[TBCOMP014]  ([CODEMP], [NUMPEDIDO], [SERPEDIDO], [CODMAT]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCOMP014_QTDESALDO] ON [dbo].[TBCOMP014]  ([CODEMP], [CODMAT], [QTDESALDO], [DATENCER]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCOMP014_STAITEM] ON [dbo].[TBCOMP014]  ([CODEMP], [NUMPEDIDO], [SERPEDIDO], [NUMITEM], [STAITEM]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP014] ADD CONSTRAINT [PKTBCOMP014] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPEDIDO], [SERPEDIDO], [NUMITEM]) 
+GO
+
+--Indexes of table dbo.TBCOMP015
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP015_CCUSTO] ON [dbo].[TBCOMP015]  ([CODEMP], [NUMSC], [NUMITEMSC], [CCUSTO]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP015] ADD CONSTRAINT [PKTBCOMP015] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSC], [NUMITEMSC], [CCUSTO], [CODORDEM], [SEQORDEM]) 
+GO
+
+--Indexes of table dbo.TBCOMP016
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP016] ADD CONSTRAINT [PKTBCOMP016] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQCOMSEMPED]) 
+GO
+
+--Indexes of table dbo.TBCOMP017
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP017_NUMCOLETA] ON [dbo].[TBCOMP017]  ([CODEMP], [NUMPEDIDO], [SERPEDIDO], [NUMITEMPED], [NUMCOLETA], [NUMITEMCOL]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCOMP017_NUMSC] ON [dbo].[TBCOMP017]  ([CODEMP], [NUMSC], [NUMITEM], [STATUS]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP017] ADD CONSTRAINT [PKTBCOMP017] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPEDIDO], [SERPEDIDO], [NUMITEMPED], [NUMSC], [NUMITEM]) 
+GO
+
+--Indexes of table dbo.TBCOMP018
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP018_DATCOMPET] ON [dbo].[TBCOMP018]  ([CODEMP], [DATCOMPET], [CONSOLIDADO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCOMP018_DATCONSOLID] ON [dbo].[TBCOMP018]  ([DATCONSOLID]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP018] ADD CONSTRAINT [PKTBCOMP018] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP019
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP019] ADD CONSTRAINT [PKTBCOMP019] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMITEMNF]) 
+GO
+
+--Indexes of table dbo.TBCOMP020
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP020] ADD CONSTRAINT [PKTBCOMP020] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMDUP], [NUMPARCDUP]) 
+GO
+
+--Indexes of table dbo.TBCOMP021
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP021] ADD CONSTRAINT [PKTBCOMP021] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP022
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP022_DATCOMPET] ON [dbo].[TBCOMP022]  ([CODEMP], [DATCOMPET], [CONSOLIDADO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCOMP022_DATCONSOLID] ON [dbo].[TBCOMP022]  ([DATCONSOLID]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP022] ADD CONSTRAINT [PKTBCOMP022] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP023
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP023] ADD CONSTRAINT [PKTBCOMP023] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMITEMNF]) 
+GO
+
+--Indexes of table dbo.TBCOMP024
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP024] ADD CONSTRAINT [PKTBCOMP024] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMDUP], [NUMPARCDUP]) 
+GO
+
+--Indexes of table dbo.TBCOMP025
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP025] ADD CONSTRAINT [PKTBCOMP025] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP026
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP026] ADD CONSTRAINT [PKTBCOMP026] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMITEMNF], [CCUSTO], [CODORDEM], [SEQORDEM]) 
+GO
+
+--Indexes of table dbo.TBCOMP027
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP027_QTDERECEB] ON [dbo].[TBCOMP027]  ([CODEMP], [CODMAT], [QTDERECEB]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP027] ADD CONSTRAINT [PKTBCOMP027] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMITEMNF], [CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP028
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP028] ADD CONSTRAINT [PKTBCOMP028] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCOLETA]) 
+GO
+
+--Indexes of table dbo.TBCOMP029
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP029] ADD CONSTRAINT [PKTBCOMP029] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCOLETA]) 
+GO
+
+--Indexes of table dbo.TBCOMP030
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP030] ADD CONSTRAINT [PKTBCOMP030] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCOLETA], [CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP031
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP031] ADD CONSTRAINT [PKTBCOMP031] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCOLETA], [NUMITEMCOL]) 
+GO
+
+--Indexes of table dbo.TBCOMP032
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP032_VALUNITCOMIPICOMDESC] ON [dbo].[TBCOMP032]  ([CODEMP], [NUMCOLETA], [NUMITEMCOL], [CODFORN], [VALUNITCOMIPICOMDESC]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP032] ADD CONSTRAINT [PKTBCOMP032] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCOLETA], [NUMITEMCOL], [CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP033
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP033] ADD CONSTRAINT [PKTBCOMP033] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPEDIDO], [SERPEDIDO]) 
+GO
+
+--Indexes of table dbo.TBCOMP034
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP034] ADD CONSTRAINT [PKTBCOMP034] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPEDIDO], [SERPEDIDO], [NUMITEM]) 
+GO
+
+--Indexes of table dbo.TBCOMP035
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP035] ADD CONSTRAINT [PKTBCOMP035] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMITEMNF], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP036
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP036] ADD CONSTRAINT [PKTBCOMP036] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMITEMNF], [NUMSEQ], [NUMSC], [NUMITEMSC], [CCUSTO], [CODORDEM], [SEQORDEM]) 
+GO
+
+--Indexes of table dbo.TBCOMP037
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP037] ADD CONSTRAINT [PKTBCOMP037] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPEDIDO], [SERPEDIDO], [NUMITEM]) 
+GO
+
+--Indexes of table dbo.TBCOMP038
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP038] ADD CONSTRAINT [PKTBCOMP038] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQCOMSEMPED]) 
+GO
+
+--Indexes of table dbo.TBCOMP039
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP039] ADD CONSTRAINT [PKTBCOMP039] PRIMARY KEY CLUSTERED ([CODCPAGTO], [NUMDIAS], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP040
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP040] ADD CONSTRAINT [PKTBCOMP040] PRIMARY KEY CLUSTERED ([CODGRCOMPRA]) 
+GO
+
+--Indexes of table dbo.TBCOMP045
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP045] ADD CONSTRAINT [PKTBCOMP045] PRIMARY KEY CLUSTERED ([NUMNIVELCOMPRA]) 
+GO
+
+--Indexes of table dbo.TBCOMP046
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP046] ADD CONSTRAINT [PKTBCOMP046] PRIMARY KEY CLUSTERED ([CODEMP], [CODAREA]) 
+GO
+
+--Indexes of table dbo.TBCOMP047
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP047_ACAO] ON [dbo].[TBCOMP047]  ([CODEMP], [NUMPEDIDO], [SERPEDIDO], [ACAO]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP047] ADD CONSTRAINT [PKTBCOMP047] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPEDIDO], [SERPEDIDO], [NUMNIVELCOMPRA], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP048
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP048] ADD CONSTRAINT [PKTBCOMP048] PRIMARY KEY CLUSTERED ([CODEMP], [USER_ID], [CODAREA]) 
+GO
+
+--Indexes of table dbo.TBCOMP049
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP049] ADD CONSTRAINT [PKTBCOMP049] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMITEMNF], [NUMNFSAIDA], [SERNFSAIDA], [NUMITEMNFSAIDA]) 
+GO
+
+--Indexes of table dbo.TBCOMP050
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP050] ADD CONSTRAINT [PKTBCOMP050] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMITEMNF], [NUMNFSAIDA], [SERNFSAIDA], [CODORDEM], [SEQORDEM], [SEQOPER], [CODMATPROD]) 
+GO
+
+--Indexes of table dbo.TBCOMP051
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP051] ADD CONSTRAINT [PKTBCOMP051] PRIMARY KEY CLUSTERED ([CODMAT], [CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP052
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP052] ADD CONSTRAINT [PKTBCOMP052] PRIMARY KEY CLUSTERED ([CODEMPNFDEV], [NUMNFDEV], [SERNFDEV], [CODFORNNFDEV], [CODEMPTITULO], [CODDOCUMTITULO], [NUMTITULO], [SERIE], [CODCLITITULO], [DESDOBROTITULO], [NUMSEQRECEBTITULO]) 
+GO
+
+--Indexes of table dbo.TBCOMP053
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP053] ADD CONSTRAINT [PKTBCOMP053_01] PRIMARY KEY CLUSTERED ([CODEMP], [CODAREA], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBCOMP054
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP054] ADD CONSTRAINT [PKTBCOMP054_01] PRIMARY KEY CLUSTERED ([CODEMP], [CODAREA], [CODMAT], [ANOCONSUMO], [MESCONSUMO]) 
+GO
+
+--Indexes of table dbo.TBCOMP055
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP055] ADD CONSTRAINT [PKTBCOMP055] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPEDIDO], [SERPEDIDO], [NUMITEM], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP056
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP056] ADD CONSTRAINT [PKTBCOMP056] PRIMARY KEY CLUSTERED ([CODTPPEDIDO]) 
+GO
+
+--Indexes of table dbo.TBCOMP057
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCOMP057_CONTACONTABIL] ON [dbo].[TBCOMP057]  ([CONTACONTABIL]) 
+GO
+
+ALTER TABLE [dbo].[TBCOMP057] ADD CONSTRAINT [PK_TBCOMP057] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP058
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP058] ADD CONSTRAINT [PK_TBCOMP058] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBCOMP059
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP059] ADD CONSTRAINT [PK_TBCOMP059] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [NUMITEMNF], [NUMINSPECAOQUALID], [NUMSEQIQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP060
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP060] ADD CONSTRAINT [PK_TBCOMP060] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSC], [NUMITEM], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP061
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP061] ADD CONSTRAINT [PK_TBCOMP061] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCOLETA], [NUMITEMCOL], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP062
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP062] ADD CONSTRAINT [PK_TBCOMP062] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPEDIDO], [SERPEDIDO], [NUMITEM], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP063
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP063] ADD CONSTRAINT [PKTBCOMP063] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [TIPONF], [NUMSEQSUB]) 
+GO
+
+--Indexes of table dbo.TBCOMP064
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP064] ADD CONSTRAINT [PKTBCOMP064] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [TIPONF]) 
+GO
+
+--Indexes of table dbo.TBCOMP065
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP065] ADD CONSTRAINT [PKTBCOMP065] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [TIPONF], [NUMSEQVEIC]) 
+GO
+
+--Indexes of table dbo.TBCOMP066
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP066] ADD CONSTRAINT [PKTBCOMP066] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [TIPONF]) 
+GO
+
+--Indexes of table dbo.TBCOMP067
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP067] ADD CONSTRAINT [PKTBCOMP067] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [TIPONF]) 
+GO
+
+--Indexes of table dbo.TBCOMP068
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP068] ADD CONSTRAINT [PKTBCOMP068] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [TIPONF], [NUMITEMNF]) 
+GO
+
+--Indexes of table dbo.TBCOMP069
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP069] ADD CONSTRAINT [PKTBCOMP069] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [TIPONF], [NUMITEMNF]) 
+GO
+
+--Indexes of table dbo.TBCOMP070
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP070] ADD CONSTRAINT [PKTBCOMP070] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [TIPONF], [NUMSEQMODAL]) 
+GO
+
+--Indexes of table dbo.TBCOMP071
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP071] ADD CONSTRAINT [PKTBCOMP071] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [TIPONF]) 
+GO
+
+--Indexes of table dbo.TBCOMP072
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP072] ADD CONSTRAINT [PKTBCOMP072] PRIMARY KEY CLUSTERED ([CODFORN], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP073
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP073] ADD CONSTRAINT [PK_TBCOMP073] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMITEMNF], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP074
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP074] ADD CONSTRAINT [PK_TBCOMP074] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMITEMNF], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP076
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP076] ADD CONSTRAINT [PK_TBCOMP076] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF]) 
+GO
+
+--Indexes of table dbo.TBCOMP077
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP077] ADD CONSTRAINT [PK_TBCOMP077] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [NUMDUP], [NUMPARCDUP]) 
+GO
+
+--Indexes of table dbo.TBCOMP078
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP078] ADD CONSTRAINT [PK_TBCOMP078] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [NUMITEMNF]) 
+GO
+
+--Indexes of table dbo.TBCOMP079
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP079] ADD CONSTRAINT [PK_TBCOMP079] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [NUMITEMNF], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP080
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP080] ADD CONSTRAINT [PK_TBCOMP080] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [NUMITEMNF], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP094
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP094] ADD CONSTRAINT [PKTBCOMP094] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [TIPONF], [NUMPROC]) 
+GO
+
+--Indexes of table dbo.TBCOMP095
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP095] ADD CONSTRAINT [PKTBCOMP095] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [TIPONF], [SEQDOCARREC]) 
+GO
+
+--Indexes of table dbo.TBCOMP096
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP096] ADD CONSTRAINT [PKTBCOMP096] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATOFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP097
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP097] ADD CONSTRAINT [PKTBCOMP097] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATOFORN], [NUMITEMCONTRATOFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP098
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP098] ADD CONSTRAINT [PKTBCOMP098] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATOFORN], [NUMITEMCONTRATOFORN], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP099
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP099] ADD CONSTRAINT [PKTBCOMP099] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATOFORN], [NUMITEMCONTRATOFORN], [CCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCOMP100
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP100] ADD CONSTRAINT [PKTBCOMP100] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATOFORN], [NUMITEMCONTRATOFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP101
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP101] ADD CONSTRAINT [PKTBCOMP101] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATOFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP102
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP102] ADD CONSTRAINT [PKTBCOMP102] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATOFORN], [NUMNIVELCOMPRA]) 
+GO
+
+--Indexes of table dbo.TBCOMP103
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP103] ADD CONSTRAINT [PKTBCOMP103] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODFORN], [TIPO]) 
+GO
+
+--Indexes of table dbo.TBCOMP104
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP104] ADD CONSTRAINT [PK_TBCOMP104] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [ITEM]) 
+GO
+
+--Indexes of table dbo.TBCOMP105
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP105] ADD CONSTRAINT [PK_TBCOMP105] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [TIPONF], [NUMITEMNF], [CODMAT], [ITEM]) 
+GO
+
+--Indexes of table dbo.TBCOMP106
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP106] ADD CONSTRAINT [PK_TBCOMP106] PRIMARY KEY CLUSTERED ([CODEMP], [CCUSTO], [ID]) 
+GO
+
+--Indexes of table dbo.TBCOMP107
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP107] ADD CONSTRAINT [PK_TBCOMP107] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSC], [ID]) 
+GO
+
+--Indexes of table dbo.TBCOMP108
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP108] ADD CONSTRAINT [PK_TBCOMP108] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSC], [IDOCORR]) 
+GO
+
+--Indexes of table dbo.TBCOMP109
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP109] ADD CONSTRAINT [PK__TBCOMP10__3B0A112A5868B277] PRIMARY KEY CLUSTERED ([CODEMP], [CODGRCOMPRA], [REVISAO]) 
+GO
+
+--Indexes of table dbo.TBCOMP110
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP110] ADD CONSTRAINT [PK__TBCOMP11__B716B0B95F15B006] PRIMARY KEY CLUSTERED ([CODEMP], [CODGRCOMPRA], [REVISAO], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBCOMP111
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP111] ADD CONSTRAINT [PK__TBCOMP11__55D41D6D63DA6523] PRIMARY KEY CLUSTERED ([CODEMP], [CODGRCOMPRA], [REVISAO], [SEQ], [SEQNIVEL]) 
+GO
+
+--Indexes of table dbo.TBCOMP996
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP996] ADD CONSTRAINT [PKTBCOMP996] PRIMARY KEY CLUSTERED ([CODEMP], [NOMPARAM]) 
+GO
+
+--Indexes of table dbo.TBCOMP997
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP997] ADD CONSTRAINT [PKTBCOMP997] PRIMARY KEY CLUSTERED ([CODEMP], [CABECALHO]) 
+GO
+
+--Indexes of table dbo.TBCOMP998
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP998] ADD CONSTRAINT [PKTBCOMP998] PRIMARY KEY CLUSTERED ([CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCOMP999
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCOMP999] ADD CONSTRAINT [PKTBCOMP999] PRIMARY KEY CLUSTERED ([NOMCAMPO]) 
+GO
+
+--Indexes of table dbo.TBCONB001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCONB001_CODBANCO] ON [dbo].[TBCONB001]  ([CODEMP], [CODBANCO], [CODAGENCIA], [NUMCTACORRENTE], [DATSALDO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONB001_CODBANCO_DATBAIXA] ON [dbo].[TBCONB001]  ([CODEMP], [CODBANCO], [CODAGENCIA], [NUMCTACORRENTE], [DATBAIXA]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONB001_CODBANCO_DATBAIXA_DATMOVTO] ON [dbo].[TBCONB001]  ([CODEMP], [CODBANCO], [CODAGENCIA], [NUMCTACORRENTE], [DATBAIXA], [DATMOVTO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONB001_CODBANCO_DATMOVTO] ON [dbo].[TBCONB001]  ([CODEMP], [CODBANCO], [CODAGENCIA], [NUMCTACORRENTE], [DATMOVTO])
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONB001_DATBAIXA] ON [dbo].[TBCONB001]  ([DATBAIXA]) 
+GO
+
+ALTER TABLE [dbo].[TBCONB001] ADD CONSTRAINT [PKTBCONB001] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODEMITENTE], [DESDOBRO], [NUMSEQPAGTO], [SEQMOVTOCONB]) 
+GO
+
+--Indexes of table dbo.TBCONB002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONB002] ADD CONSTRAINT [PKTBCONB002] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBCONB003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONB003] ADD CONSTRAINT [PKTBCONB003] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODEMITENTE], [DESDOBRO], [NUMSEQPAGTO], [SEQMOVTOCONB], [CODORDEM], [SEQORDEM], [SEQCCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCONB004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONB004] ADD CONSTRAINT [PKTBCONB004] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODEMITENTE], [DESDOBRO], [NUMSEQPAGTO], [SEQMOVTOCONB], [CODEMPTIT], [CODDOCUMTIT], [NUMDOCTOTIT], [SERIETIT], [CODCLI]) 
+GO
+
+--Indexes of table dbo.TBCONB005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONB005] ADD CONSTRAINT [PKTBCONB005] PRIMARY KEY CLUSTERED ([CODEMP], [CODBANCO], [SEQCAMPO]) 
+GO
+
+--Indexes of table dbo.TBCONB006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONB006] ADD CONSTRAINT [PKTBCONB006] PRIMARY KEY CLUSTERED ([CODEMP], [CODBANCO], [CODAGENCIA], [NUMSEQMOVTO], [CODCTACORRENTE]) 
+GO
+
+--Indexes of table dbo.TBCONB007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONB007] ADD CONSTRAINT [PKTBCONB007] PRIMARY KEY CLUSTERED ([CODEMP], [CODBANCO], [PALAVRACHAVE]) 
+GO
+
+--Indexes of table dbo.TBCONT001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT001] ADD CONSTRAINT [PKTBCONT001] PRIMARY KEY CLUSTERED ([CODEMP], [CODEVENTO]) 
+GO
+
+--Indexes of table dbo.TBCONT002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT002] ADD CONSTRAINT [PKTBCONT002] PRIMARY KEY CLUSTERED ([CODEMP], [CODMOVTO]) 
+GO
+
+--Indexes of table dbo.TBCONT003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT003] ADD CONSTRAINT [PKTBCONT003] PRIMARY KEY CLUSTERED ([CODEMP], [CODEVENTO], [CODMOVTO], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBCONT004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT004] ADD CONSTRAINT [PKTBCONT004] PRIMARY KEY CLUSTERED ([CODEMP], [CODPLANO]) 
+GO
+
+--Indexes of table dbo.TBCONT005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT005] ADD CONSTRAINT [PKTBCONT005] PRIMARY KEY CLUSTERED ([CODEMP], [CODCONTASINTETICA]) 
+GO
+
+--Indexes of table dbo.TBCONT006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCONT006_CODFILIALCTA] ON [dbo].[TBCONT006]  ([CODFILIALCTA], [CODCONTA]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONT006_TIPCODCONTA] ON [dbo].[TBCONT006]  ([CODEMP], [TIPORIGEMCONTA], [CODCONTA], [CODFILIALCTA]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONT006_TIPORIGEMCONTA] ON [dbo].[TBCONT006]  ([CODEMP], [CODPLANO], [TIPORIGEMCONTA]) 
+GO
+
+ALTER TABLE [dbo].[TBCONT006] ADD CONSTRAINT [PKTBCONT006] PRIMARY KEY CLUSTERED ([CODEMP], [CODPLANO], [CODCONTA], [CODFILIALCTA], [TIPORIGEMCONTA]) 
+GO
+
+--Indexes of table dbo.TBCONT007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT007] ADD CONSTRAINT [PKTBCONT007] PRIMARY KEY CLUSTERED ([CODORIGEM]) 
+GO
+
+--Indexes of table dbo.TBCONT008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT008] ADD CONSTRAINT [PKTBCONT008] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE]) 
+GO
+
+--Indexes of table dbo.TBCONT009
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT009] ADD CONSTRAINT [PKTBCONT009] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE], [NUMLANC], [NUMMOVTO], [NUMSEQMOV]) 
+GO
+
+--Indexes of table dbo.TBCONT010
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT010] ADD CONSTRAINT [PKTBCONT010] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE], [NUMLANC], [NUMMOVTO], [NUMSEQMOV], [CCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCONT011
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT011] ADD CONSTRAINT [PKTBCONT011] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [CODCONTA]) 
+GO
+
+--Indexes of table dbo.TBCONT012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCONT012_CODORIGEM] ON [dbo].[TBCONT012]  ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE], [CODORIGEM]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONT012_CODORIGEM_CODEMP] ON [dbo].[TBCONT012]  ([CODORIGEM], [CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE]) 
+GO
+
+ALTER TABLE [dbo].[TBCONT012] ADD CONSTRAINT [PKTBCONT012] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE]) 
+GO
+
+--Indexes of table dbo.TBCONT013
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCONT013_ANOLOTE] ON [dbo].[TBCONT013]  ([CODEMP], [CODCONTA], [ANOLOTE], [MESLOTE]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONT013_CODCONTA] ON [dbo].[TBCONT013]  ([CODEMP], [CODCONTA], [DATLANC]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONT013_COV] ON [dbo].[TBCONT013]  ([CODEMP], [DATCOMPET], [CODCONTA], [TIPMOVTO], [ANOLOTE], [MESLOTE], [NUMLOTE], [NUMLANC], [NUMMOVTO], [NUMSEQMOV]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONT013_DATCOMPET] ON [dbo].[TBCONT013]  ([CODEMP], [CODCONTA], [DATCOMPET]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONT013_DATCOMPET_CODEMP] ON [dbo].[TBCONT013]  ([DATCOMPET], [CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE], [CODCONTA], [TIPMOVTO], [VALMOVTO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONT013_DATCOMPET2] ON [dbo].[TBCONT013]  ([DATCOMPET]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCONT013_DATCOMPET3] ON [dbo].[TBCONT013]  ([CODEMP], [DATCOMPET]) 
+GO
+
+ALTER TABLE [dbo].[TBCONT013] ADD CONSTRAINT [PKTBCONT013] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE], [NUMLANC], [NUMMOVTO], [NUMSEQMOV]) 
+GO
+
+CREATE NONCLUSTERED INDEX [TBCONT0013ENC] ON [dbo].[TBCONT013]  ([CODEMP], [DATCOMPET], [CODCONTA], [ANOLOTE], [MESLOTE], [NUMLOTE]) 
+GO
+
+CREATE NONCLUSTERED INDEX [TBCONT013_BALANCETE] ON [dbo].[TBCONT013]  ([TIPMOVTO], [DATCOMPET], [CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE], [NUMLANC], [NUMMOVTO], [NUMSEQMOV], [CODCONTA]) 
+GO
+
+--Indexes of table dbo.TBCONT014
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT014] ADD CONSTRAINT [PKTBCONT014] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE], [NUMLANC], [NUMMOVTO], [NUMSEQMOV], [CCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCONT015
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT015] ADD CONSTRAINT [PKTBCONT015] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE]) 
+GO
+
+--Indexes of table dbo.TBCONT016
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCONT016_DATCOMPET] ON [dbo].[TBCONT016]  ([CODEMP], [CODCONTA], [DATCOMPET]) 
+GO
+
+ALTER TABLE [dbo].[TBCONT016] ADD CONSTRAINT [PKTBCONT016] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE], [NUMLANC], [NUMMOVTO], [NUMSEQMOV]) 
+GO
+
+--Indexes of table dbo.TBCONT017
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT017] ADD CONSTRAINT [PKTBCONT017] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE], [NUMLANC], [NUMMOVTO], [NUMSEQMOV], [CCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCONT018
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT018] ADD CONSTRAINT [PKTBCONT018] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [CODCONTA], [CCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCONT019
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT019] ADD CONSTRAINT [PKTBCONT019] PRIMARY KEY CLUSTERED ([CODEMP], [CODPLANOCC]) 
+GO
+
+--Indexes of table dbo.TBCONT020
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT020] ADD CONSTRAINT [PKTBCONT020] PRIMARY KEY CLUSTERED ([CODEMP], [CODGRUPOCC]) 
+GO
+
+--Indexes of table dbo.TBCONT021
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT021] ADD CONSTRAINT [PKTBCONT021] PRIMARY KEY CLUSTERED ([CODEMP], [CODPLANOCC], [CODGRCC], [CODFILIALCTA], [TIPORIGEMCODGRCC]) 
+GO
+
+--Indexes of table dbo.TBCONT022
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT022] ADD CONSTRAINT [PKTBCONT022] PRIMARY KEY CLUSTERED ([CODEMP], [CODCONTASINTETICA]) 
+GO
+
+--Indexes of table dbo.TBCONT023
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT023] ADD CONSTRAINT [PKTBCONT023] PRIMARY KEY CLUSTERED ([CODEMP], [CODPLANO]) 
+GO
+
+--Indexes of table dbo.TBCONT024
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT024] ADD CONSTRAINT [PKTBCONT024] PRIMARY KEY CLUSTERED ([CODEMP], [CODPLANO], [CODCONTA], [CODFILIALCTA]) 
+GO
+
+--Indexes of table dbo.TBCONT025
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT025] ADD CONSTRAINT [PKTBCONT025] PRIMARY KEY CLUSTERED ([CODEMP], [CODRATEIOCONT]) 
+GO
+
+--Indexes of table dbo.TBCONT026
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT026] ADD CONSTRAINT [PKTBCONT026] PRIMARY KEY CLUSTERED ([CODEMP], [CODRATEIOCONT], [CCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCONT027
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT027] ADD CONSTRAINT [PKTBCONT027] PRIMARY KEY CLUSTERED ([CODEMP], [ANOCOMPET], [MESCOMPET]) 
+GO
+
+--Indexes of table dbo.TBCONT028
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT028] ADD CONSTRAINT [PKTBCONT028] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODFORN], [DESDOBRO], [NUMSEQPAGTO], [ANOLOTECONTAB], [MESLOTECONTAB]) 
+GO
+
+--Indexes of table dbo.TBCONT029
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT029] ADD CONSTRAINT [PKTBCONT029] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE]) 
+GO
+
+--Indexes of table dbo.TBCONT030
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT030] ADD CONSTRAINT [PKTBCONT030] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODCLI], [DESDOBRO], [NUMSEQRECEB], [ANOLOTECONTAB], [MESLOTECONTAB]) 
+GO
+
+--Indexes of table dbo.TBCONT031
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT031] ADD CONSTRAINT [PKTBCONT031] PRIMARY KEY CLUSTERED ([CODEMP], [CODPLANO], [ANOORCADO], [MESORCADO], [CODCONTA], [CODFILIALCTA], [TIPORIGEMCONTA]) 
+GO
+
+--Indexes of table dbo.TBCONT032
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT032] ADD CONSTRAINT [PKTBCONT032] PRIMARY KEY CLUSTERED ([CODEMP], [CODPLANO], [ANOORCADO], [MESORCADO], [CODCONTA], [CODFILIALCTA], [TIPORIGEMCONTA], [CCUSTOORCADO]) 
+GO
+
+--Indexes of table dbo.TBCONT033
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT033] ADD CONSTRAINT [PKTBCONT033] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE]) 
+GO
+
+--Indexes of table dbo.TBCONT034
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT034] ADD CONSTRAINT [PKTBCONT034] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE], [NUMLANC], [NUMMOVTO], [NUMSEQMOV]) 
+GO
+
+--Indexes of table dbo.TBCONT035
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT035] ADD CONSTRAINT [PKTBCONT035] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [NUMLOTE], [NUMLANC], [NUMMOVTO], [NUMSEQMOV], [CCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCONT036
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT036] ADD CONSTRAINT [PK_TBCONT036] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [CODCONTA]) 
+GO
+
+--Indexes of table dbo.TBCONT037
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT037] ADD CONSTRAINT [PK_TBCONT037] PRIMARY KEY CLUSTERED ([CODEMP], [ANOLOTE], [MESLOTE], [CODCONTA], [CCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCONT997
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT997] ADD CONSTRAINT [PKTBCONT997] PRIMARY KEY CLUSTERED ([CODEMP], [CODRESPONSAVEL]) 
+GO
+
+--Indexes of table dbo.TBCONT998
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT998] ADD CONSTRAINT [PKTBCONT998] PRIMARY KEY CLUSTERED ([CODEMP], [CODCONTAB]) 
+GO
+
+--Indexes of table dbo.TBCONT999
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONT999] ADD CONSTRAINT [PKTBCONT999] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBCONTIMPFOLHA
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCONTIMPFOLHA] ADD CONSTRAINT [PKTBCONTIMPFOLHA] PRIMARY KEY CLUSTERED ([NUMLINHA], [USUARIO]) 
+GO
+
+--Indexes of table dbo.TBCTALU001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTALU001] ADD CONSTRAINT [PKTBCTALU001] PRIMARY KEY CLUSTERED ([CODEMP], [CCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCTALU002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTALU002] ADD CONSTRAINT [PKTBCTALU002] PRIMARY KEY CLUSTERED ([CODEMP], [NUMMATRICULA]) 
+GO
+
+--Indexes of table dbo.TBCTALU003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTALU003] ADD CONSTRAINT [PK_TBCTALU003] PRIMARY KEY CLUSTERED ([CODCLI], [ANO]) 
+GO
+
+--Indexes of table dbo.TBCTALU004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTALU004] ADD CONSTRAINT [PK_TBCTALU004] PRIMARY KEY CLUSTERED ([CODCLI], [ANO], [SEQCOMPFAMILIAR]) 
+GO
+
+--Indexes of table dbo.TBCTALU005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTALU005] ADD CONSTRAINT [PK_TBCTALU005] PRIMARY KEY CLUSTERED ([CODEMP], [CCUSTO], [CODFAIXA]) 
+GO
+
+--Indexes of table dbo.TBCTPG001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCTPG001_DATCOMPET] ON [dbo].[TBCTPG001]  ([CODEMP], [DATCOMPET]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCTPG001_DATEMISSAO] ON [dbo].[TBCTPG001]  ([CODEMP], [DATEMISSAO]) 
+GO
+
+ALTER TABLE [dbo].[TBCTPG001] ADD CONSTRAINT [PKTBCTPG001] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODFORN]) 
+GO
+
+--Indexes of table dbo.TBCTPG002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCTPG002_CODFILIALBORDERO] ON [dbo].[TBCTPG002]  ([CODFILIALBORDERO], [NUMBORDERO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCTPG002_DIARIO] ON [dbo].[TBCTPG002]  ([DATPAGTO], [CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODFORN], [DESDOBRO], [VALDESDOBRO], [VALPAGO], [CODBANCO], [NUMCHEQUE], [CODTPBAIXA]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCTPG002_NUMBORDERO] ON [dbo].[TBCTPG002]  ([CODEMP], [NUMBORDERO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCTPG002_NUMDOCTODEV] ON [dbo].[TBCTPG002]  ([FILIALDOCTODEV], [CODDOCUMDEV], [NUMDOCTODEV], [CODFORNDEV], [DESDOBRODEV], [NUMSEQDEV], [ORIGEMDOCTODEV]) 
+GO
+
+ALTER TABLE [dbo].[TBCTPG002] ADD CONSTRAINT [PKTBCTPG002] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODFORN], [DESDOBRO], [NUMSEQPAGTO]) 
+GO
+
+--Indexes of table dbo.TBCTPG003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG003] ADD CONSTRAINT [PKTBCTPG003] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODFORN], [DESDOBRO], [NUMSEQPAGTO], [SEQCCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCTPG004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG004] ADD CONSTRAINT [PKTBCTPG004] PRIMARY KEY CLUSTERED ([CODMODCHEQUE], [NOMCAMPO]) 
+GO
+
+--Indexes of table dbo.TBCTPG005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG005] ADD CONSTRAINT [PKTBCTPG005] PRIMARY KEY CLUSTERED ([CODMODDOC]) 
+GO
+
+--Indexes of table dbo.TBCTPG006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG006] ADD CONSTRAINT [PKTBCTPG006] PRIMARY KEY CLUSTERED ([CODMODDOC], [NOMCAMPO]) 
+GO
+
+--Indexes of table dbo.TBCTPG007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG007] ADD CONSTRAINT [PKTBCTPG007] PRIMARY KEY CLUSTERED ([CODEMP], [NUMBORDERO]) 
+GO
+
+--Indexes of table dbo.TBCTPG008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG008] ADD CONSTRAINT [PKTBCTPG008] PRIMARY KEY CLUSTERED ([CODEMP], [MODULO], [CODTPBAIXA]) 
+GO
+
+--Indexes of table dbo.TBCTPG009
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG009] ADD CONSTRAINT [PKTBCTPG009] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [TPEMITENTE], [CTAEMITENTE]) 
+GO
+
+--Indexes of table dbo.TBCTPG010
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG010] ADD CONSTRAINT [PKTBCTPG010] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [TPEMITENTE], [CTAEMITENTE], [SEQCCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCTPG011
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG011] ADD CONSTRAINT [PKTBCTPG011] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMDOCADIANTA]) 
+GO
+
+--Indexes of table dbo.TBCTPG012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG012] ADD CONSTRAINT [PKTBCTPG012] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMDOCADIANTA], [NUMSEQBAIXA]) 
+GO
+
+--Indexes of table dbo.TBCTPG013
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG013] ADD CONSTRAINT [PKTBCTPG013] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMDOCADIANTA], [NUMSEQBAIXA], [CODDOCUM], [NUMDOCTO], [SERIE], [DESDOBRO], [NUMSEQPAGTO]) 
+GO
+
+--Indexes of table dbo.TBCTPG014
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG014] ADD CONSTRAINT [PKTBCTPG014] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO], [TPEMITENTE], [CODEMITENTE]) 
+GO
+
+--Indexes of table dbo.TBCTPG015
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG015] ADD CONSTRAINT [PKTBCTPG015] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO], [TPEMITENTE], [CODEMITENTE], [NUMDOCTO], [SERIE]) 
+GO
+
+--Indexes of table dbo.TBCTPG016
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG016] ADD CONSTRAINT [PKTBCTPG016] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO], [TPEMITENTE], [CODEMITENTE], [CODDOCUM], [NUMDOCTO], [SERIE], [DESDOBRO], [NUMSEQPAGTO]) 
+GO
+
+--Indexes of table dbo.TBCTPG017
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG017] ADD CONSTRAINT [PKTBCTPG017] PRIMARY KEY CLUSTERED ([CODTPCONTRATO]) 
+GO
+
+--Indexes of table dbo.TBCTPG018
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG018] ADD CONSTRAINT [PKTBCTPG018] PRIMARY KEY CLUSTERED ([CODEMP], [MESFECH], [ANOFECH], [CCUSTOORIGEM], [CCUSTORATEADO]) 
+GO
+
+--Indexes of table dbo.TBCTPG020
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG020] ADD CONSTRAINT [PK_TBCTPG020] PRIMARY KEY CLUSTERED ([CODEMP], [NUMBORDERO], [NUMHISTORICO]) 
+GO
+
+--Indexes of table dbo.TBCTPG990
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG990] ADD CONSTRAINT [PKTBCTPG990] PRIMARY KEY CLUSTERED ([DATATROCA], [TROCADOR]) 
+GO
+
+--Indexes of table dbo.TBCTPG991
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG991] ADD CONSTRAINT [PKTBCTPG991] PRIMARY KEY CLUSTERED ([TPARQUIVO], [CODREGISTRO]) 
+GO
+
+--Indexes of table dbo.TBCTPG992
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG992] ADD CONSTRAINT [PKTBCTPG992] PRIMARY KEY CLUSTERED ([TPARQUIVO], [CODREGISTRO], [NOMECAMPO]) 
+GO
+
+--Indexes of table dbo.TBCTPG993
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG993] ADD CONSTRAINT [PKTBCTPG993] PRIMARY KEY CLUSTERED ([TPARQUIVO], [CODBANCO], [CODREGISTRO], [SEQREGISTRO]) 
+GO
+
+--Indexes of table dbo.TBCTPG994
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG994] ADD CONSTRAINT [PKTBCTPG994] PRIMARY KEY CLUSTERED ([TPARQUIVO], [CODBANCO], [CODREGISTRO], [SEQREGISTRO], [NOMECAMPO], [SEQCAMPO]) 
+GO
+
+--Indexes of table dbo.TBCTPG995
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG995] ADD CONSTRAINT [PKTBCTPG995] PRIMARY KEY CLUSTERED ([CODBANCO], [NUMCARTEIRA]) 
+GO
+
+--Indexes of table dbo.TBCTPG996
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG996] ADD CONSTRAINT [PKTBCTPG996] PRIMARY KEY CLUSTERED ([CODBANCO], [INSTRUBANC]) 
+GO
+
+--Indexes of table dbo.TBCTPG997
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG997] ADD CONSTRAINT [PKTBCTPG997] PRIMARY KEY CLUSTERED ([CODBANCO], [CODOCORREM]) 
+GO
+
+--Indexes of table dbo.TBCTPG998
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTPG998] ADD CONSTRAINT [PKTBCTPG998] PRIMARY KEY CLUSTERED ([CODBANCO], [CODOCORRET]) 
+GO
+
+--Indexes of table dbo.TBCTRC001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCTRC001_STATITULO] ON [dbo].[TBCTRC001]  ([CODEMP], [STATITULO]) 
+GO
+
+ALTER TABLE [dbo].[TBCTRC001] ADD CONSTRAINT [PKTBCTRC001] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODCLI]) 
+GO
+
+--Indexes of table dbo.TBCTRC002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBCTRC002_CODCLI] ON [dbo].[TBCTRC002]  ([CODEMP], [CODCLI], [DTRECEBI], [DATPRORROGA]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCTRC002_CODFILIALBORDERO] ON [dbo].[TBCTRC002]  ([CODFILIALBORDERO], [NUMBORDERO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCTRC002_DTRECEBI] ON [dbo].[TBCTRC002]  ([CODEMP], [DTRECEBI]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBCTRC002_NOSSONUM] ON [dbo].[TBCTRC002]  ([CODEMP], [NOSSONUM]) 
+GO
+
+ALTER TABLE [dbo].[TBCTRC002] ADD CONSTRAINT [PKTBCTRC002] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODCLI], [DESDOBRO], [NUMSEQRECEB]) 
+GO
+
+--Indexes of table dbo.TBCTRC003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC003] ADD CONSTRAINT [PKTBCTRC003] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODCLI], [DESDOBRO], [NUMSEQRECEB], [SEQCCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCTRC004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC004] ADD CONSTRAINT [PKTBCTRC004] PRIMARY KEY CLUSTERED ([CODEMP], [NUMBORDERO]) 
+GO
+
+--Indexes of table dbo.TBCTRC009
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC009] ADD CONSTRAINT [PKTBCTRC009] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [TPEMITENTE], [CTAEMITENTE]) 
+GO
+
+--Indexes of table dbo.TBCTRC010
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC010] ADD CONSTRAINT [PKTBCTRC010] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [TPEMITENTE], [CTAEMITENTE], [SEQCCUSTO]) 
+GO
+
+--Indexes of table dbo.TBCTRC011
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC011] ADD CONSTRAINT [PKTBCTRC011] PRIMARY KEY CLUSTERED ([CODEMP], [CODCLI], [NUMDOCADIANTA]) 
+GO
+
+--Indexes of table dbo.TBCTRC012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC012] ADD CONSTRAINT [PKTBCTRC012] PRIMARY KEY CLUSTERED ([CODEMP], [CODCLI], [NUMDOCADIANTA], [NUMSEQBAIXA]) 
+GO
+
+--Indexes of table dbo.TBCTRC013
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC013] ADD CONSTRAINT [PKTBCTRC013] PRIMARY KEY CLUSTERED ([CODEMP], [CODCLI], [NUMDOCADIANTA], [NUMSEQBAIXA], [CODDOCUM], [NUMDOCTO], [SERIE], [DESDOBRO], [NUMSEQRECEB]) 
+GO
+
+--Indexes of table dbo.TBCTRC014
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC014] ADD CONSTRAINT [PKTBCTRC014] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO], [TPEMITENTE], [CODEMITENTE]) 
+GO
+
+--Indexes of table dbo.TBCTRC015
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC015] ADD CONSTRAINT [PKTBCTRC015] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO], [TPEMITENTE], [CODEMITENTE], [NUMDOCTO], [SERIE]) 
+GO
+
+--Indexes of table dbo.TBCTRC016
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC016] ADD CONSTRAINT [PKTBCTRC016] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO], [TPEMITENTE], [CODEMITENTE], [CODDOCUM], [NUMDOCTO], [SERIE], [DESDOBRO], [NUMSEQRECEB]) 
+GO
+
+--Indexes of table dbo.TBCTRC017
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC017] ADD CONSTRAINT [PKTBCTRC017] PRIMARY KEY CLUSTERED ([CODTPCONTRATO]) 
+GO
+
+--Indexes of table dbo.TBCTRC018
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC018] ADD CONSTRAINT [PKTBCTRC018] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODCLI], [NUMNF], [SERNF], [TIPONF], [NUMDUP]) 
+GO
+
+--Indexes of table dbo.TBCTRC019
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC019] ADD CONSTRAINT [PK_TBCTRC019] PRIMARY KEY CLUSTERED ([CODOPERADORA]) 
+GO
+
+--Indexes of table dbo.TBCTRC987
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC987] ADD CONSTRAINT [PKTBCTRC987] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [CODCLI], [DESDOBRO], [NUMSEQRECEB], [NUMSEQOCORR]) 
+GO
+
+--Indexes of table dbo.TBCTRC989
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC989] ADD CONSTRAINT [PKTBCTRC989] PRIMARY KEY CLUSTERED ([CODBANCO], [NUMESPECIETITULO]) 
+GO
+
+--Indexes of table dbo.TBCTRC990
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC990] ADD CONSTRAINT [PKTBCTRC990] PRIMARY KEY CLUSTERED ([CODBANCO]) 
+GO
+
+--Indexes of table dbo.TBCTRC991
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC991] ADD CONSTRAINT [PKTBCTRC991] PRIMARY KEY CLUSTERED ([TPARQUIVO], [CODREGISTRO]) 
+GO
+
+--Indexes of table dbo.TBCTRC992
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC992] ADD CONSTRAINT [PKTBCTRC992] PRIMARY KEY CLUSTERED ([TPARQUIVO], [CODREGISTRO], [NOMECAMPO]) 
+GO
+
+--Indexes of table dbo.TBCTRC993
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC993] ADD CONSTRAINT [PKTBCTRC993] PRIMARY KEY CLUSTERED ([TPARQUIVO], [CODBANCO], [CODREGISTRO], [SEQREGISTRO]) 
+GO
+
+--Indexes of table dbo.TBCTRC994
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC994] ADD CONSTRAINT [PKTBCTRC994] PRIMARY KEY CLUSTERED ([TPARQUIVO], [CODBANCO], [CODREGISTRO], [SEQREGISTRO], [NOMECAMPO], [SEQCAMPO]) 
+GO
+
+--Indexes of table dbo.TBCTRC995
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC995] ADD CONSTRAINT [PKTBCTRC995] PRIMARY KEY CLUSTERED ([CODBANCO], [NUMCARTEIRA]) 
+GO
+
+--Indexes of table dbo.TBCTRC996
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC996] ADD CONSTRAINT [PKTBCTRC996] PRIMARY KEY CLUSTERED ([CODBANCO], [INSTRUBANC]) 
+GO
+
+--Indexes of table dbo.TBCTRC997
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC997] ADD CONSTRAINT [PKTBCTRC997] PRIMARY KEY CLUSTERED ([CODBANCO], [CODOCORREM]) 
+GO
+
+--Indexes of table dbo.TBCTRC998
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBCTRC998] ADD CONSTRAINT [PKTBCTRC998] PRIMARY KEY CLUSTERED ([CODBANCO], [CODOCORRET]) 
+GO
+
+--Indexes of table dbo.TBDIMP003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBDIMP003] ADD CONSTRAINT [PK__TBDIMP003__7E3955A4] PRIMARY KEY CLUSTERED ([CODEMP], [SEQIMPORT]) 
+GO
+
+--Indexes of table dbo.TBDIMP004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBDIMP004] ADD CONSTRAINT [PK__TBDIMP004__00219E16] PRIMARY KEY CLUSTERED ([CODEMP], [SEQIMPORT], [NUMSEQITEM]) 
+GO
+
+--Indexes of table dbo.TBDIMP005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBDIMP005] ADD CONSTRAINT [PK__TBDIMP005__02FE0AC1] PRIMARY KEY CLUSTERED ([CODEMP], [SEQIMPORT], [NUMSEQITEM], [NUMDI]) 
+GO
+
+--Indexes of table dbo.TBDIMP006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBDIMP006] ADD CONSTRAINT [PK__TBDIMP006__05DA776C] PRIMARY KEY CLUSTERED ([CODEMP], [SEQIMPORT], [NUMSEQITEM], [NUMDI], [NUMAD], [NUMSEQAD]) 
+GO
+
+--Indexes of table dbo.TBESPE001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESPE001] ADD CONSTRAINT [PKTBESPE001] PRIMARY KEY CLUSTERED ([INVOICE], [PARTNUMBER], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBESTO001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO001] ADD CONSTRAINT [PKTBESTO001] PRIMARY KEY CLUSTERED ([CODEMP], [CODALMOX]) 
+GO
+
+--Indexes of table dbo.TBESTO002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO002] ADD CONSTRAINT [PKTBESTO002] PRIMARY KEY CLUSTERED ([CODMOVESTOQ]) 
+GO
+
+--Indexes of table dbo.TBESTO003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBESTO003_CODMAT] ON [dbo].[TBESTO003]  ([CODEMP], [CODMAT]) 
+GO
+
+ALTER TABLE [dbo].[TBESTO003] ADD CONSTRAINT [PKTBESTO003] PRIMARY KEY CLUSTERED ([CODEMP], [CODALMOX], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBESTO004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBESTO004_CODALMOX] ON [dbo].[TBESTO004]  ([CODALMOX], [CODMAT], [ID_OPER]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO004_CODAREA] ON [dbo].[TBESTO004]  ([CODEMP], [CODMAT], [CODALMOX], [CODAREA], [MESCOMPETEN], [ANOCOMPETEN]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO004_CODMAT] ON [dbo].[TBESTO004]  ([CODEMP], [CODMAT], [DATCOMPETEN], [CODALMOX], [ID_OPER]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO004_CODMAT_CODALMOX] ON [dbo].[TBESTO004]  ([CODEMP], [CODMAT], [CODALMOX], [NUMLANC]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO004_CODMOVESTOQ] ON [dbo].[TBESTO004]  ([CODEMP], [DATCOMPETEN], [CODMOVESTOQ], [TIPOEMITENTE], [TIPMOVVALORIZACAO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO004_DATCOMPETEN_CODMAT] ON [dbo].[TBESTO004]  ([CODEMP], [DATCOMPETEN], [CODMAT]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO004_NUMDOCUM1] ON [dbo].[TBESTO004]  ([CODEMP], [CODDOCUM], [NUMDOCUM], [SERIEDOCUM], [CODEMITENTE], [TIPOEMITENTE], [SISTEMA_ID], [NUMITEM]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO004_NUMLANCRELAC] ON [dbo].[TBESTO004]  ([CODEMP], [NUMLANCRELAC]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO004_NUMLOTECONTAB] ON [dbo].[TBESTO004]  ([CODEMP], [ANOLOTECONTAB], [MESLOTECONTAB], [NUMLOTECONTAB]) 
+GO
+
+ALTER TABLE [dbo].[TBESTO004] ADD CONSTRAINT [PKTBESTO004] PRIMARY KEY CLUSTERED ([CODEMP], [NUMLANC]) 
+GO
+
+CREATE NONCLUSTERED INDEX [TBESTO004_DATA] ON [dbo].[TBESTO004]  ([DATCOMPETEN]) 
+GO
+
+CREATE NONCLUSTERED INDEX [TBESTO004_VALORIZACAO] ON [dbo].[TBESTO004]  ([CODMAT], [DATCOMPETEN], [HORALANC], [ID_OPER]) 
+GO
+
+--Indexes of table dbo.TBESTO005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO005] ADD CONSTRAINT [PKTBESTO005] PRIMARY KEY CLUSTERED ([CODEMP], [USER_ID], [NUMSEQDOCESTOQUE]) 
+GO
+
+--Indexes of table dbo.TBESTO006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO006] ADD CONSTRAINT [PK_TBESTO006] PRIMARY KEY CLUSTERED ([CODEMP], [USER_ID], [NUMSEQDOCESTOQUE], [NUMITEM]) 
+GO
+
+--Indexes of table dbo.TBESTO007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBESTO007_DAPOSIC] ON [dbo].[TBESTO007]  ([CODEMP], [DATPOSIC]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO007_DAPOSIC2] ON [dbo].[TBESTO007]  ([CODEMP], [DATPOSIC], [CODALMOX], [CODMAT])
+GO
+
+ALTER TABLE [dbo].[TBESTO007] ADD CONSTRAINT [PKTBESTO007] PRIMARY KEY CLUSTERED ([CODEMP], [CODALMOX], [CODMAT], [DATPOSIC]) 
+GO
+
+--Indexes of table dbo.TBESTO008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO008] ADD CONSTRAINT [PKTBESTO008] PRIMARY KEY CLUSTERED ([CODEMP], [NUMLANC]) 
+GO
+
+--Indexes of table dbo.TBESTO009
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO009] ADD CONSTRAINT [PKTBESTO009] PRIMARY KEY CLUSTERED ([CODEMP], [CODALMOX], [CODMAT], [DATPOSIC]) 
+GO
+
+--Indexes of table dbo.TBESTO010
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO010] ADD CONSTRAINT [PKTBESTO010] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBESTO011
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBESTO011_CODEMITENTE] ON [dbo].[TBESTO011]  ([CODEMP], [NUMNF], [SERNF], [NUMITEMNF], [CODEMITENTE], [TIPOEMITENTE], [CODMAT]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO011_CODLOTE] ON [dbo].[TBESTO011]  ([CODEMP], [CODLOTE], [CODMAT]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO011_DATVALIDADE] ON [dbo].[TBESTO011]  ([CODEMP], [CODMAT], [CODLOTE], [DATVALIDADE]) 
+GO
+
+ALTER TABLE [dbo].[TBESTO011] ADD CONSTRAINT [PKTBESTO011] PRIMARY KEY CLUSTERED ([CODEMP], [NUMLANC]) 
+GO
+
+--Indexes of table dbo.TBESTO012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBESTO012_DATCOMPETEN] ON [dbo].[TBESTO012]  ([CODEMP], [ID_OPER], [DATCOMPETEN]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO012_ENTRADAS_SAIDAS] ON [dbo].[TBESTO012]  ([CODEMP], [CODMAT], [CODLOTE], [ID_OPER]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO012_PESQLOTE] ON [dbo].[TBESTO012]  ([CODMAT], [CODALMOX], [CODEMP], [CODLOTE], [ID_OPER], [QTDMOVTO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO012_QTDSALDO] ON [dbo].[TBESTO012]  ([CODEMP], [CODALMOX], [CODMAT], [CODLOTE]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBESTO012_SALDOLOTE] ON [dbo].[TBESTO012]  ([CODEMP], [CODMAT], [CODLOTE], [CODALMOX], [DATCOMPETEN]) 
+GO
+
+ALTER TABLE [dbo].[TBESTO012] ADD CONSTRAINT [PKTBESTO012] PRIMARY KEY CLUSTERED ([CODEMP], [NUMLANC]) 
+GO
+
+--Indexes of table dbo.TBESTO013
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO013] ADD CONSTRAINT [PKTBESTO013] PRIMARY KEY CLUSTERED ([CODEMP], [DATCOMPETEN], [TIPINV], [NUMSEQINV]) 
+GO
+
+--Indexes of table dbo.TBESTO014
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBESTO014_NUMSEQINV] ON [dbo].[TBESTO014]  ([CODEMP], [DATCOMPETEN], [NUMSEQINV], [CODMAT]) 
+GO
+
+ALTER TABLE [dbo].[TBESTO014] ADD CONSTRAINT [PKTBESTO014] PRIMARY KEY CLUSTERED ([CODEMP], [DATCOMPETEN], [TIPINV], [NUMSEQINV], [CODALMOX], [CODMAT], [TIPOEMITENTE], [CODEMITENTE], [CODLOTE]) 
+GO
+
+--Indexes of table dbo.TBESTO015
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO015] ADD CONSTRAINT [PKTBESTO015] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSM]) 
+GO
+
+--Indexes of table dbo.TBESTO016
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO016] ADD CONSTRAINT [PKTBESTO016] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSM], [NUMITEMSM]) 
+GO
+
+--Indexes of table dbo.TBESTO018
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO018] ADD CONSTRAINT [PKTBESTO018] PRIMARY KEY CLUSTERED ([CODEMP], [CODALMOX], [CODEMITENTE], [TIPOEMITENTE], [CODMAT], [DATPOSIC]) 
+GO
+
+--Indexes of table dbo.TBESTO019
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO019] ADD CONSTRAINT [PK_TBESTO019] PRIMARY KEY CLUSTERED ([CODEMP], [CODALMOX], [CODEMITENTE], [TIPOEMITENTE], [CODMAT], [DATPOSIC]) 
+GO
+
+--Indexes of table dbo.TBESTO020
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO020] ADD CONSTRAINT [PKTBESTO020] PRIMARY KEY CLUSTERED ([CODEMP], [USER_ID], [CODALMOX], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBESTO021
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO021] ADD CONSTRAINT [PKTBESTO021] PRIMARY KEY CLUSTERED ([CODEMP], [CODALMOX], [CODLOCAL]) 
+GO
+
+--Indexes of table dbo.TBESTO023
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBESTO023_CODLOTE] ON [dbo].[TBESTO023]  ([CODEMP], [CODALMOX], [CODLOCAL], [CODMAT], [CODLOTE], [DATCOMPETEN]) 
+GO
+
+ALTER TABLE [dbo].[TBESTO023] ADD CONSTRAINT [PKTBESTO023] PRIMARY KEY CLUSTERED ([CODEMP], [CODALMOX], [CODLOCAL], [CODMAT], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBESTO024
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO024] ADD CONSTRAINT [PKTBESTO024] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [TIPALMOXLOCALPADRAO]) 
+GO
+
+--Indexes of table dbo.TBESTO025
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO025] ADD CONSTRAINT [PKTBESTO025] PRIMARY KEY CLUSTERED ([CODEMP], [DATCOMPETEN], [TIPINV], [NUMSEQINV], [CODALMOX], [CODMAT], [TIPOEMITENTE], [CODEMITENTE], [CODLOTE], [CODLOCAL]) 
+GO
+
+--Indexes of table dbo.TBESTO026
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO026] ADD CONSTRAINT [PKTBESTO026] PRIMARY KEY CLUSTERED ([CODEMP], [NUMLANC]) 
+GO
+
+--Indexes of table dbo.TBESTO027
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBESTO027] ADD CONSTRAINT [PKTBESTO027] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSM], [NUMITEMSM], [CODORDEM], [SEQORDEM], [CODMAT], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBFATU001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU001] ADD CONSTRAINT [PKTBFATU001] PRIMARY KEY CLUSTERED ([CODREGVENDA]) 
+GO
+
+--Indexes of table dbo.TBFATU002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU002] ADD CONSTRAINT [PKTBFATU002] PRIMARY KEY CLUSTERED ([CODREGCOB]) 
+GO
+
+--Indexes of table dbo.TBFATU003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU003] ADD CONSTRAINT [PKTBFATU003] PRIMARY KEY CLUSTERED ([CODTIPCLI]) 
+GO
+
+--Indexes of table dbo.TBFATU004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU004] ADD CONSTRAINT [PKTBFATU004] PRIMARY KEY CLUSTERED ([CODLIMCRED]) 
+GO
+
+--Indexes of table dbo.TBFATU005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU005] ADD CONSTRAINT [PKTBFATU005] PRIMARY KEY CLUSTERED ([CODMEIOTRANSP]) 
+GO
+
+--Indexes of table dbo.TBFATU006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU006_NUMCGCCPFCLI] ON [dbo].[TBFATU006]  ([NUMCGCCPFCLI]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU006_RAZSOCCLI] ON [dbo].[TBFATU006]  ([RAZSOCCLI]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU006] ADD CONSTRAINT [PKTBFATU006] PRIMARY KEY CLUSTERED ([CODCLI]) 
+GO
+
+--Indexes of table dbo.TBFATU007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU007] ADD CONSTRAINT [PKTBFATU007] PRIMARY KEY CLUSTERED ([CODCLI]) 
+GO
+
+--Indexes of table dbo.TBFATU008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU008] ADD CONSTRAINT [PKTBFATU008] PRIMARY KEY CLUSTERED ([CODCLI], [SEQENDCOBCLI]) 
+GO
+
+--Indexes of table dbo.TBFATU009
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU009] ADD CONSTRAINT [PKTBFATU009] PRIMARY KEY CLUSTERED ([CODCLI], [SEQENDENTCLI]) 
+GO
+
+--Indexes of table dbo.TBFATU010
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU010_CODCLI] ON [dbo].[TBFATU010]  ([CODEMP], [CODCLI], [STAPED], [TIPPED]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU010_DATCADAST] ON [dbo].[TBFATU010]  ([CODEMP], [DATCADAST]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU010_NUMPED_CODCLI] ON [dbo].[TBFATU010]  ([CODEMP], [NUMPED], [CODCLI]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU010] ADD CONSTRAINT [PKTBFATU010] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED]) 
+GO
+
+--Indexes of table dbo.TBFATU011
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU011] ADD CONSTRAINT [PKTBFATU011] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED]) 
+GO
+
+--Indexes of table dbo.TBFATU012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU012] ADD CONSTRAINT [PKTBFATU012] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED]) 
+GO
+
+--Indexes of table dbo.TBFATU013
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU013_CODLOTE] ON [dbo].[TBFATU013]  ([CODEMP], [CODMAT], [CODLOTE], [CCUSTO], [QTDERESERVADA]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU013_CODMAT] ON [dbo].[TBFATU013]  ([CODEMP], [CODMAT], [QTDEAFATURAR], [STAITEMPED]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU013_CODMAT2] ON [dbo].[TBFATU013]  ([CODMAT], [CODEMP], [STAITEMPED], [QTDERESERVADA], [NUMPED], [NUMITEMPED], [CCUSTO], [CODUNIMEDITEM]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU013_DATNEC] ON [dbo].[TBFATU013]  ([CODEMP], [DATNEC]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU013_QTDRESERVADA] ON [dbo].[TBFATU013]  ([CODMAT], [CODLOTE], [STAITEMPED], [QTDERESERVADA]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU013_STAITEMPED] ON [dbo].[TBFATU013]  ([CODEMP], [NUMPED], [STAITEMPED], [QTDERESERVADA], [QTDEAFATURAR]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU013_STAITEMPED2] ON [dbo].[TBFATU013]  ([STAITEMPED], [CODEMP], [NUMPED], [NUMITEMPED]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU013] ADD CONSTRAINT [PKTBFATU013] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED], [NUMITEMPED]) 
+GO
+
+--Indexes of table dbo.TBFATU014
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU014] ADD CONSTRAINT [PKTBFATU014] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED], [NUMITEMPED]) 
+GO
+
+--Indexes of table dbo.TBFATU015
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU015] ADD CONSTRAINT [PKTBFATU015] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED], [NUMITEMPED]) 
+GO
+
+--Indexes of table dbo.TBFATU016
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU016] ADD CONSTRAINT [PKTBFATU016] PRIMARY KEY CLUSTERED ([CODTRANSP]) 
+GO
+
+--Indexes of table dbo.TBFATU017
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU017_CODREGVENDA] ON [dbo].[TBFATU017]  ([CODREGVENDA]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU017] ADD CONSTRAINT [PKTBFATU017] PRIMARY KEY CLUSTERED ([CODVEND]) 
+GO
+
+--Indexes of table dbo.TBFATU018
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU018_GERAMOVTODERECEITA] ON [dbo].[TBFATU018]  ([CODMOVFISC], [GERAMOVTODERECEITA], [STADEVOLUCAO]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU018] ADD CONSTRAINT [PKTBFATU018] PRIMARY KEY CLUSTERED ([CODMOVFISC]) 
+GO
+
+--Indexes of table dbo.TBFATU019
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU019] ADD CONSTRAINT [PKTBFATU019] PRIMARY KEY CLUSTERED ([CODOBSMOVFISC]) 
+GO
+
+--Indexes of table dbo.TBFATU020
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU020_DATEMISSAO] ON [dbo].[TBFATU020]  ([DATEMISSAO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU020_NUMNF] ON [dbo].[TBFATU020]  ([CODEMP], [NUMNF], [SERNF]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU020_NUMSEQNF_STAIMP] ON [dbo].[TBFATU020]  ([STAIMP], [CODEMP], [NUMSEQNF]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU020_STAIMP] ON [dbo].[TBFATU020]  ([CODEMP], [STAIMP], [USER_ID]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU020] ADD CONSTRAINT [PKTBFATU020] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF]) 
+GO
+
+--Indexes of table dbo.TBFATU021
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU021_NUMPED_CODMAT] ON [dbo].[TBFATU021]  ([CODEMP], [NUMPED], [CODMAT]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU021_NUMSEQNF_NUMPED] ON [dbo].[TBFATU021]  ([NUMPED], [CODEMP], [NUMSEQNF]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU021_PEDIDO] ON [dbo].[TBFATU021]  ([NUMPED], [NUMITEMPED], [CODEMP], [NUMSEQNF]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU021] ADD CONSTRAINT [PKTBFATU021] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMSEQITEMNF]) 
+GO
+
+--Indexes of table dbo.TBFATU022
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU022_NUMNF] ON [dbo].[TBFATU022]  ([CODEMP], [NUMNF], [SERNF]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU022] ADD CONSTRAINT [PKTBFATU022] PRIMARY KEY CLUSTERED ([CODEMP], [NUMDUP], [NUMNF], [SERNF]) 
+GO
+
+--Indexes of table dbo.TBFATU023
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU023] ADD CONSTRAINT [PKTBFATU023] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF]) 
+GO
+
+--Indexes of table dbo.TBFATU024
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU024_CHAVENFE] ON [dbo].[TBFATU024]  ([CODEMP], [CHAVENFE]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU024_CODCLI] ON [dbo].[TBFATU024]  ([CODCLI], [CODEMP]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU024_DATEMISSAO] ON [dbo].[TBFATU024]  ([CODEMP], [DATEMISSAO], [TIPOES]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU024_STANF] ON [dbo].[TBFATU024]  ([CODEMP], [STANF], [STANFE]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU025_DATEMISSAO_CODCLI] ON [dbo].[TBFATU024]  ([DATEMISSAO] DESC, [CODCLI], [CODEMP], [NUMNF], [SERNF]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU024] ADD CONSTRAINT [PKTBFATU024] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF]) 
+GO
+
+--Indexes of table dbo.TBFATU025
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU025_CODMAT] ON [dbo].[TBFATU025]  ([CODMAT], [CODEMP]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU025_CODMOVFISC] ON [dbo].[TBFATU025]  ([CODEMP], [NUMNF], [SERNF], [CODMOVFISC], [CODNATUOPER2]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU025_NUMPED] ON [dbo].[TBFATU025]  ([CODEMP], [NUMPED], [NUMITEMPED]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU025_PEDIDO] ON [dbo].[TBFATU025]  ([CODEMP], [NUMPED], [NUMITEMPED]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU025_QTDETOTITEM] ON [dbo].[TBFATU025]  ([CODEMP], [CODMAT], [QTDETOTITEM]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU025_SERNF_CODMAT] ON [dbo].[TBFATU025]  ([CODEMP], [NUMNF], [SERNF], [CODMAT]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU025] ADD CONSTRAINT [PKTBFATU025] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMITEMNF]) 
+GO
+
+--Indexes of table dbo.TBFATU026
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU026_CODTRANSP] ON [dbo].[TBFATU026]  ([CODEMP], [CODTRANSP], [PAGFRETE]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBFATU026_CODTRANSPREDESPACHO] ON [dbo].[TBFATU026]  ([CODEMP], [CODTRANSPREDESPACHO], [PAGFRETEREDESPACHO]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU026] ADD CONSTRAINT [PKTBFATU026] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF]) 
+GO
+
+--Indexes of table dbo.TBFATU027
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU027] ADD CONSTRAINT [PKTBFATU027] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF]) 
+GO
+
+--Indexes of table dbo.TBFATU028
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU028] ADD CONSTRAINT [PKTBFATU028] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF]) 
+GO
+
+--Indexes of table dbo.TBFATU029
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU029] ADD CONSTRAINT [PKTBFATU029] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMSEQITEMNF]) 
+GO
+
+--Indexes of table dbo.TBFATU030
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU030] ADD CONSTRAINT [PKTBFATU030] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMITEMNF]) 
+GO
+
+--Indexes of table dbo.TBFATU031
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU031] ADD CONSTRAINT [PKTBFATU031] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMSEQDUP]) 
+GO
+
+--Indexes of table dbo.TBFATU032
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU032] ADD CONSTRAINT [PKTBFATU032] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO]) 
+GO
+
+--Indexes of table dbo.TBFATU033
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU033] ADD CONSTRAINT [PKTBFATU033] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO]) 
+GO
+
+--Indexes of table dbo.TBFATU034
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU034] ADD CONSTRAINT [PKTBFATU034] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO], [NUMITEMCONTRATO]) 
+GO
+
+--Indexes of table dbo.TBFATU035
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU035] ADD CONSTRAINT [PKTBFATU035] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO], [NUMITEMCONTRATO]) 
+GO
+
+--Indexes of table dbo.TBFATU036
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU036] ADD CONSTRAINT [PKTBFATU036] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO]) 
+GO
+
+--Indexes of table dbo.TBFATU037
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU037] ADD CONSTRAINT [PKTBFATU037] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO], [NUMITEMCONTRATO]) 
+GO
+
+--Indexes of table dbo.TBFATU038
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU038] ADD CONSTRAINT [PKTBFATU038] PRIMARY KEY CLUSTERED ([CODSERVICO]) 
+GO
+
+--Indexes of table dbo.TBFATU039
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU039] ADD CONSTRAINT [PKTBFATU039] PRIMARY KEY CLUSTERED ([CODCIDADE]) 
+GO
+
+--Indexes of table dbo.TBFATU040
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU040] ADD CONSTRAINT [PKTBFATU040] PRIMARY KEY CLUSTERED ([CODCIDADE], [CODSERVICO]) 
+GO
+
+--Indexes of table dbo.TBFATU041
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU041_DATEMISSAO] ON [dbo].[TBFATU041]  ([DATEMISSAO]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU041] ADD CONSTRAINT [PKTBFATU041] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU042
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU042] ADD CONSTRAINT [PKTBFATU042] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNFSERV], [NUMSEQITEMNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU043
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU043] ADD CONSTRAINT [PKTBFATU043] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNFSERV], [NUMSEQDUP]) 
+GO
+
+--Indexes of table dbo.TBFATU044
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU044] ADD CONSTRAINT [PKTBFATU044] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU045
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU045] ADD CONSTRAINT [PKTBFATU045] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU046
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU046] ADD CONSTRAINT [PKTBFATU046] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNFSERV], [NUMSEQITEMNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU047
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU047] ADD CONSTRAINT [PKTBFATU047] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNFSERV], [NUMSEQITEMNFSERV], [NUMNF], [SERNF]) 
+GO
+
+--Indexes of table dbo.TBFATU048
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU048] ADD CONSTRAINT [PKTBFATU048] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFSERV], [SERNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU049
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU049] ADD CONSTRAINT [PKTBFATU049] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFSERV], [SERNFSERV], [NUMITEMNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU050
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU050] ADD CONSTRAINT [PKTBFATU050] PRIMARY KEY CLUSTERED ([CODEMP], [NUMDUPSERV], [NUMNFSERV], [SERNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU051
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU051] ADD CONSTRAINT [PKTBFATU051] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFSERV], [SERNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU052
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU052] ADD CONSTRAINT [PKTBFATU052] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFSERV], [SERNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU053
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU053] ADD CONSTRAINT [PKTBFATU053] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFSERV], [SERNFSERV], [NUMITEMNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU054
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU054] ADD CONSTRAINT [PKTBFATU054] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFSERV], [SERNFSERV], [NUMITEMNFSERV], [NUMNF], [SERNF]) 
+GO
+
+--Indexes of table dbo.TBFATU055
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU055] ADD CONSTRAINT [PKTBFATU055] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF]) 
+GO
+
+--Indexes of table dbo.TBFATU056
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU056] ADD CONSTRAINT [PKTBFATU056] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFSERV], [SERNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU057
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU057] ADD CONSTRAINT [PKTBFATU057] PRIMARY KEY CLUSTERED ([CODMAT], [CODTABPRECO], [CODFAIXATABPRECO], [CODUNIMED]) 
+GO
+
+--Indexes of table dbo.TBFATU058
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU058] ADD CONSTRAINT [PKTBFATU058] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTRATO], [NUMITEMCONTRATO], [NUMEVENTO]) 
+GO
+
+--Indexes of table dbo.TBFATU059
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU059] ADD CONSTRAINT [PKTBFATU059] PRIMARY KEY CLUSTERED ([CODTRIBSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU060
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU060] ADD CONSTRAINT [PKTBFATU060] PRIMARY KEY CLUSTERED ([CODTABPRECO]) 
+GO
+
+--Indexes of table dbo.TBFATU061
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU061] ADD CONSTRAINT [PKTBFATU061] PRIMARY KEY CLUSTERED ([ANO], [MES], [CODEMITENTE], [TIPCODIGO], [TIPCOTA]) 
+GO
+
+--Indexes of table dbo.TBFATU062
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU062] ADD CONSTRAINT [PKTBFATU062] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFSERV], [SERNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU064
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU064] ADD CONSTRAINT [PKTBFATU064] PRIMARY KEY CLUSTERED ([CODTRANSP], [PLACA]) 
+GO
+
+--Indexes of table dbo.TBFATU065
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU065] ADD CONSTRAINT [PKTBFATU065] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQCONHEC], [CODEMPEMIT]) 
+GO
+
+--Indexes of table dbo.TBFATU066
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU066] ADD CONSTRAINT [PKTBFAT066] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQCONHEC], [CODEMPEMIT], [NUMNFCARGA], [SERNFCARGA]) 
+GO
+
+--Indexes of table dbo.TBFATU067
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU067] ADD CONSTRAINT [PKTBFATU067] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQCONHEC], [CODEMPEMIT], [NUMSEQDUPCONHEC]) 
+GO
+
+--Indexes of table dbo.TBFATU068
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU068] ADD CONSTRAINT [PKTBFATU068] PRIMARY KEY CLUSTERED ([CODEMP], [CODEMPEMIT], [NUMNFCONHEC], [SERNFCONHEC]) 
+GO
+
+--Indexes of table dbo.TBFATU069
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU069] ADD CONSTRAINT [PKTBFAT069] PRIMARY KEY CLUSTERED ([CODEMP], [CODEMPEMIT], [NUMNFCONHEC], [SERNFCONHEC], [NUMNFCARGA], [SERNFCARGA]) 
+GO
+
+--Indexes of table dbo.TBFATU070
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU070] ADD CONSTRAINT [PKTBFATU070] PRIMARY KEY CLUSTERED ([CODEMP], [CODEMPEMIT], [NUMNFCONHEC], [SERNFCONHEC], [NUMDUPCONHEC]) 
+GO
+
+--Indexes of table dbo.TBFATU071
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU071] ADD CONSTRAINT [PKTBFATU071] PRIMARY KEY CLUSTERED ([CODEMP], [NUMORCAM]) 
+GO
+
+--Indexes of table dbo.TBFATU072
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU072] ADD CONSTRAINT [PKTBFATU072] PRIMARY KEY CLUSTERED ([CODEMP], [NUMORCAM], [NUMITEMORCAM]) 
+GO
+
+--Indexes of table dbo.TBFATU073
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU073] ADD CONSTRAINT [PKTBFATU073] PRIMARY KEY CLUSTERED ([CODEMP], [NUMORCAM]) 
+GO
+
+--Indexes of table dbo.TBFATU074
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU074] ADD CONSTRAINT [PKTBFATU074] PRIMARY KEY CLUSTERED ([CODEMP], [NUMORCAM]) 
+GO
+
+--Indexes of table dbo.TBFATU075
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU075] ADD CONSTRAINT [PKTBFATU075] PRIMARY KEY CLUSTERED ([CODEMP], [NUMORCAM], [NUMITEMORCAM]) 
+GO
+
+--Indexes of table dbo.TBFATU076
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU076] ADD CONSTRAINT [PKTBFATU076] PRIMARY KEY CLUSTERED ([CODEMP], [NUMORCAM], [NUMITEMORCAM]) 
+GO
+
+--Indexes of table dbo.TBFATU077
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU077] ADD CONSTRAINT [PKTBFATU077] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMSEQITEMNF], [CODFORN], [NUMNFENT], [SERNFENT], [NUMITEMNFENT], [CODLOTE]) 
+GO
+
+--Indexes of table dbo.TBFATU078
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU078_NUMNFENT] ON [dbo].[TBFATU078]  ([CODEMP], [CODFORN], [NUMNFENT], [SERNFENT], [NUMITEMNFENT], [NUMNF], [SERNF], [NUMITEMNF]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU078] ADD CONSTRAINT [PKTBFATU078] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMITEMNF], [CODFORN], [NUMNFENT], [SERNFENT], [NUMITEMNFENT], [CODLOTE]) 
+GO
+
+--Indexes of table dbo.TBFATU079
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU079_CODCLI] ON [dbo].[TBFATU079]  ([CODEMP], [CODCLI], [NUMNF]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU079] ADD CONSTRAINT [PKTBFATU079] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPROTOCOLO], [CODCLI], [NUMNFENT], [SERNFENT], [NUMITEMNFENT], [CODLOTE]) 
+GO
+
+--Indexes of table dbo.TBFATU080
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU080] ADD CONSTRAINT [PKTBFATU080] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFPRODSERV], [SERNFPRODSERV], [TIPONF], [CODESPECIFIC], [SEQEVENTO]) 
+GO
+
+--Indexes of table dbo.TBFATU081
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU081] ADD CONSTRAINT [PKTBFATU081] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [CODORDEM], [SEQORDEM], [SEQOPER], [CODMATPROD]) 
+GO
+
+--Indexes of table dbo.TBFATU082
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU082] ADD CONSTRAINT [PKTBFATU082] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [CODORDEM], [SEQORDEM], [SEQOPER], [CODMATPROD]) 
+GO
+
+--Indexes of table dbo.TBFATU083
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU083] ADD CONSTRAINT [PKTBFATU083] PRIMARY KEY CLUSTERED ([CODTABPRECO], [CODFAIXATABPRECO]) 
+GO
+
+--Indexes of table dbo.TBFATU084
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU084] ADD CONSTRAINT [PKTBFATU084] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED], [NUMITEMPED]) 
+GO
+
+--Indexes of table dbo.TBFATU085
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU085] ADD CONSTRAINT [PK_TBFATU085] PRIMARY KEY CLUSTERED ([CODMAT], [CODESCALA]) 
+GO
+
+--Indexes of table dbo.TBFATU086
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU086] ADD CONSTRAINT [PK_TBFATU086] PRIMARY KEY CLUSTERED ([CODTIPOVENDA]) 
+GO
+
+--Indexes of table dbo.TBFATU087
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU087] ADD CONSTRAINT [PKTBFATU087] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED], [CODMOTIVOBLOQ], [NUMITEMPED]) 
+GO
+
+--Indexes of table dbo.TBFATU088
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU088] ADD CONSTRAINT [PKTBFATU088] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCOMODATO]) 
+GO
+
+--Indexes of table dbo.TBFATU089
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU089] ADD CONSTRAINT [PKTBFATU089] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCOMODATO], [NUMITEMCOMODATO]) 
+GO
+
+--Indexes of table dbo.TBFATU090
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU090] ADD CONSTRAINT [PKTBGATU090] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCOMODATO], [NUMITEMCOMODATO], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBFATU091
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU091] ADD CONSTRAINT [PKTBFATU091] PRIMARY KEY CLUSTERED ([CODEMP], [TIPONF], [CODSEQNUMERACAO]) 
+GO
+
+--Indexes of table dbo.TBFATU092
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU092] ADD CONSTRAINT [PKTBFATU092] PRIMARY KEY CLUSTERED ([CODEMPNFDEV], [NUMSEQNFDEV], [CODCLINFDEV], [ORIGEMTITULO], [CODEMPTITULO], [CODDOCUMTITULO], [NUMTITULO], [SERIE], [CODFORNTITULO], [DESDOBROTITULO], [NUMSEQPAGTOTITULO]) 
+GO
+
+--Indexes of table dbo.TBFATU093
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU093] ADD CONSTRAINT [PKTBFATU093] PRIMARY KEY CLUSTERED ([CODEMPNFDEV], [NUMNFDEV], [SERNFDEV], [CODCLINFDEV], [ORIGEMTITULO], [CODEMPTITULO], [CODDOCUMTITULO], [NUMTITULO], [SERIE], [CODFORNTITULO], [DESDOBROTITULO], [NUMSEQPAGTOTITULO]) 
+GO
+
+--Indexes of table dbo.TBFATU094
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU094] ADD CONSTRAINT [PKTBFATU094] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMSEQITEMNF], [CODMATCOMP], [CODLOTE]) 
+GO
+
+--Indexes of table dbo.TBFATU095
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU095_SERNF_CODMATCOMP] ON [dbo].[TBFATU095]  ([CODEMP], [NUMNF], [SERNF], [CODMATCOMP]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU095] ADD CONSTRAINT [PKTBFATU095] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMITEMNF], [CODMATCOMP], [CODLOTE]) 
+GO
+
+--Indexes of table dbo.TBFATU096
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU096] ADD CONSTRAINT [PKTBFATU096] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBFATU097
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU097] ADD CONSTRAINT [PKTBFATU097] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBFATU098
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU098] ADD CONSTRAINT [PKTBFATU098] PRIMARY KEY CLUSTERED ([CODREGFRETE]) 
+GO
+
+--Indexes of table dbo.TBFATU099
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU099] ADD CONSTRAINT [PKTBFATU099] PRIMARY KEY CLUSTERED ([CODTRANSP], [NUMSEQTRANSP]) 
+GO
+
+--Indexes of table dbo.TBFATU100
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU100] ADD CONSTRAINT [PKTBFATU100] PRIMARY KEY CLUSTERED ([CODTRANSP], [NUMSEQTRANSP], [CODFAIXA]) 
+GO
+
+--Indexes of table dbo.TBFATU101
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU101] ADD CONSTRAINT [PKTBFATU101] PRIMARY KEY CLUSTERED ([CODTRANSP], [SEQEND]) 
+GO
+
+--Indexes of table dbo.TBFATU102
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU102] ADD CONSTRAINT [PKTBFATU102] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBFATU103
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU103] ADD CONSTRAINT [PKTBFATU103] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED]) 
+GO
+
+--Indexes of table dbo.TBFATU104
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU104_NUMSEQNF] ON [dbo].[TBFATU104]  ([CODEMP], [NUMSEQNF], [NUMPEDIDO], [SERPEDIDO], [NUMITEMPED]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU104] ADD CONSTRAINT [PKTBFATU104] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMSEQITEMNF], [NUMPEDIDO], [SERPEDIDO], [NUMITEMPED], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBFATU105
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU105] ADD CONSTRAINT [PKTBFATU105] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMSEQITEMNF], [NUMSEQ], [NUMSC], [NUMITEMSC], [CCUSTO]) 
+GO
+
+--Indexes of table dbo.TBFATU106
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU106] ADD CONSTRAINT [PK_TBFATU106] PRIMARY KEY CLUSTERED ([CODEMP], [MODULO_ID]) 
+GO
+
+--Indexes of table dbo.TBFATU107
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU107] ADD CONSTRAINT [PK_TBFATU107] PRIMARY KEY CLUSTERED ([CODEMP], [MODULO_ID], [NIVEL]) 
+GO
+
+--Indexes of table dbo.TBFATU108
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU108] ADD CONSTRAINT [PK_TBFATU108] PRIMARY KEY CLUSTERED ([CODEMP], [NUMERO]) 
+GO
+
+--Indexes of table dbo.TBFATU109
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU109] ADD CONSTRAINT [PK_TBFATU109] PRIMARY KEY CLUSTERED ([CODEMP], [NUMERO], [NUMITEM]) 
+GO
+
+--Indexes of table dbo.TBFATU110
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU110] ADD CONSTRAINT [PK_TBFATU110] PRIMARY KEY CLUSTERED ([CODEMP], [NUMERO], [NUMITEM], [MODULO_ID], [REVISAO]) 
+GO
+
+--Indexes of table dbo.TBFATU111
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU111] ADD CONSTRAINT [PK_TBFATU111] PRIMARY KEY CLUSTERED ([CODEMP], [NUMERO], [NUMITEM], [MODULO_ID], [REVISAO], [NIVEL]) 
+GO
+
+--Indexes of table dbo.TBFATU112
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU112] ADD CONSTRAINT [PKTBFATU112] PRIMARY KEY CLUSTERED ([CODEMP], [PERCMARGEM], [PERCPIS], [PERCCOFINS], [PERCICMS], [PERCTAXAFINANC], [PERCCOMISSAO]) 
+GO
+
+--Indexes of table dbo.TBFATU113
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU113] ADD CONSTRAINT [PKTBFATU113] PRIMARY KEY CLUSTERED ([USER_ID], [CODEMP], [NUMERO], [NUMITEM], [USUARIOAPROV], [STAAPROVACAO], [DATAPROVACAO], [MODULO_ID]) 
+GO
+
+--Indexes of table dbo.TBFATU114
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU114] ADD CONSTRAINT [PK_TBFATU114] PRIMARY KEY CLUSTERED ([CODEMP], [NUMERO], [NUMITEM], [VALCOMIMP], [VALSEMIMP], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBFATU115
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU115] ADD CONSTRAINT [PK_TBFATU115] PRIMARY KEY CLUSTERED ([CODEMP], [CODCLI]) 
+GO
+
+--Indexes of table dbo.TBFATU116
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU116] ADD CONSTRAINT [PKTBFATU116] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQARQRPS]) 
+GO
+
+--Indexes of table dbo.TBFATU117
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU117] ADD CONSTRAINT [PKTBFATU117] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQARQRPS], [NUMSEQNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU118
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU118] ADD CONSTRAINT [PKTBFATU118] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF]) 
+GO
+
+--Indexes of table dbo.TBFATU119
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU119] ADD CONSTRAINT [PKTBFATU119] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMSEQVEIC]) 
+GO
+
+--Indexes of table dbo.TBFATU120
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU120] ADD CONSTRAINT [PKTBFATU120] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF]) 
+GO
+
+--Indexes of table dbo.TBFATU121
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU121] ADD CONSTRAINT [PKTBFATU121] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMSEQVEIC]) 
+GO
+
+--Indexes of table dbo.TBFATU122
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU122] ADD CONSTRAINT [PKTBFATU122] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNFSERV], [NUMSEQSUB]) 
+GO
+
+--Indexes of table dbo.TBFATU123
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU123] ADD CONSTRAINT [PKTBFATU123] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU124
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU124] ADD CONSTRAINT [PKTBFATU124] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFSERV], [SERNFSERV], [NUMSEQSUB]) 
+GO
+
+--Indexes of table dbo.TBFATU125
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU125] ADD CONSTRAINT [PKTBFATU125] PRIMARY KEY CLUSTERED ([CODTABCOMIS]) 
+GO
+
+--Indexes of table dbo.TBFATU126
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU126] ADD CONSTRAINT [PKTBFATU126] PRIMARY KEY CLUSTERED ([CODTABCOMIS], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBFATU127
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU127] ADD CONSTRAINT [PKTTBFATU127] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMSEQITEMNF]) 
+GO
+
+--Indexes of table dbo.TBFATU128
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU128] ADD CONSTRAINT [PKTBFATU128] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFSERV], [SERNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU129
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU129] ADD CONSTRAINT [PKTBFATU129] PRIMARY KEY CLUSTERED ([CODOBSCOMERC]) 
+GO
+
+--Indexes of table dbo.TBFATU130
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU130] ADD CONSTRAINT [PKTBFATU130] PRIMARY KEY CLUSTERED ([CODCLI], [CODCLASSFISCAL]) 
+GO
+
+--Indexes of table dbo.TBFATU131
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU131] ADD CONSTRAINT [PKTBFATU131] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMPROC]) 
+GO
+
+--Indexes of table dbo.TBFATU132
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU132] ADD CONSTRAINT [PKTBFATU132] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMPROC]) 
+GO
+
+--Indexes of table dbo.TBFATU133
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU133] ADD CONSTRAINT [PKTBFATU133] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [SEQDOCARREC]) 
+GO
+
+--Indexes of table dbo.TBFATU134
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU134] ADD CONSTRAINT [PKTBFATU134] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [SEQDOCARREC]) 
+GO
+
+--Indexes of table dbo.TBFATU138
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU138] ADD CONSTRAINT [PKTBFATU138] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREF], [CODQUINZENA], [CODVEND]) 
+GO
+
+--Indexes of table dbo.TBFATU139
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU139] ADD CONSTRAINT [PKTBFATU139] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREF], [CODQUINZENA], [CODVEND], [CODCOLUNA], [NUMNF], [SERNF]) 
+GO
+
+--Indexes of table dbo.TBFATU140
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU140] ADD CONSTRAINT [PKTBFATU140] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTINDUSTR]) 
+GO
+
+--Indexes of table dbo.TBFATU141
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFATU141_STAITEMCONT] ON [dbo].[TBFATU141]  ([CODEMP], [NUMCONTINDUSTR], [NUMITEMCONTINDUSTR], [STAITEMCONT]) 
+GO
+
+ALTER TABLE [dbo].[TBFATU141] ADD CONSTRAINT [PKTBFATU141] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTINDUSTR], [NUMITEMCONTINDUSTR]) 
+GO
+
+--Indexes of table dbo.TBFATU142
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU142] ADD CONSTRAINT [PKTBFATU142] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTINDUSTR]) 
+GO
+
+--Indexes of table dbo.TBFATU143
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU143] ADD CONSTRAINT [PKTBFATU143] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTINDUSTR]) 
+GO
+
+--Indexes of table dbo.TBFATU144
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU144] ADD CONSTRAINT [PKTBFATU144] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTINDUSTR], [NUMITEMCONTINDUSTR]) 
+GO
+
+--Indexes of table dbo.TBFATU145
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU145] ADD CONSTRAINT [PKTBFATU145] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTINDUSTR], [NUMITEMCONTINDUSTR]) 
+GO
+
+--Indexes of table dbo.TBFATU146
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU146] ADD CONSTRAINT [PKTBFATU146] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTINDUSTR], [CODMOTIVOBLOQ], [NUMITEMCONTINDUSTR]) 
+GO
+
+--Indexes of table dbo.TBFATU150
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU150] ADD CONSTRAINT [PKTBFATU150] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREF], [CODQUINZENA], [CODVEND], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBFATU151
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU151] ADD CONSTRAINT [PKTBFATU151] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREF], [CODQUINZENA], [CODVEND], [CODCOLUNA], [NUMNF], [SERNF], [NUMITEMNF]) 
+GO
+
+--Indexes of table dbo.TBFATU152
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU152] ADD CONSTRAINT [PKTBFATU152] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF]) 
+GO
+
+--Indexes of table dbo.TBFATU153
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU153] ADD CONSTRAINT [PK_TBFATU153] PRIMARY KEY CLUSTERED ([CODMOTIVO]) 
+GO
+
+--Indexes of table dbo.TBFATU154
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU154] ADD CONSTRAINT [PK_TBFATU154] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMNFREF], [SERNFREF], [CODEMIS]) 
+GO
+
+--Indexes of table dbo.TBFATU155
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU155] ADD CONSTRAINT [PK_TBFATU155] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMITEMNF], [NUMDI]) 
+GO
+
+--Indexes of table dbo.TBFATU156
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU156] ADD CONSTRAINT [PK_TBFATU156] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMITEMNF], [NUMDI], [NUMADI], [NUMSEQITEMADI]) 
+GO
+
+--Indexes of table dbo.TBFATU157
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU157] ADD CONSTRAINT [PKTBFATU157] PRIMARY KEY CLUSTERED ([CODGRUPODESC]) 
+GO
+
+--Indexes of table dbo.TBFATU158
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU158] ADD CONSTRAINT [PKTBFATU158] PRIMARY KEY CLUSTERED ([CODGRUPODESC], [VALLIMITEVENDA]) 
+GO
+
+--Indexes of table dbo.TBFATU159
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU159] ADD CONSTRAINT [PKTBFATU159] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBFATU160
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU160] ADD CONSTRAINT [PKTBFATU160] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMSEQITEMNF], [NUMCONTINDUSTR], [NUMITEMCONTINDUSTR]) 
+GO
+
+--Indexes of table dbo.TBFATU161
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU161] ADD CONSTRAINT [PKTBFATU161] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMITEMNF], [NUMCONTINDUSTR], [NUMITEMCONTINDUSTR]) 
+GO
+
+--Indexes of table dbo.TBFATU162
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU162] ADD CONSTRAINT [PKTBFATU162] PRIMARY KEY CLUSTERED ([CODEMP], [TAGCONFIG], [CAMPOAIMPRIMIR]) 
+GO
+
+--Indexes of table dbo.TBFATU163
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU163] ADD CONSTRAINT [PKTBFATU163] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMITEMNF]) 
+GO
+
+--Indexes of table dbo.TBFATU164
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU164] ADD CONSTRAINT [PKTBFATU164] PRIMARY KEY CLUSTERED ([CODDIVMAT], [CODESCALA]) 
+GO
+
+--Indexes of table dbo.TBFATU165
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU165] ADD CONSTRAINT [PK__TBFATU165__56FF8CF2] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMSEQOCORR]) 
+GO
+
+--Indexes of table dbo.TBFATU166
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU166] ADD CONSTRAINT [PKTBFATU166] PRIMARY KEY CLUSTERED ([CODCANALVENDA]) 
+GO
+
+--Indexes of table dbo.TBFATU167
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU167] ADD CONSTRAINT [PKTBFATU167] PRIMARY KEY CLUSTERED ([CODREGRADESC]) 
+GO
+
+--Indexes of table dbo.TBFATU168
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU168] ADD CONSTRAINT [PKTBFATU168] PRIMARY KEY CLUSTERED ([CODREGRADESC], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBFATU169
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU169] ADD CONSTRAINT [PKTBFATU169] PRIMARY KEY CLUSTERED ([CODEMP], [NUMORCAM], [NUMITEMORCAM], [SEQDESCONTO], [TIPDESCONTO]) 
+GO
+
+--Indexes of table dbo.TBFATU170
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU170] ADD CONSTRAINT [PKTBFATU170] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED], [NUMITEMPED], [SEQDESCONTO], [TIPDESCONTO]) 
+GO
+
+--Indexes of table dbo.TBFATU171
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU171] ADD CONSTRAINT [PK__TBFATU171__112C2E87] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNF], [NUMPROC]) 
+GO
+
+--Indexes of table dbo.TBFATU172
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU172] ADD CONSTRAINT [PK__TBFATU172__131476F9] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMPROC]) 
+GO
+
+--Indexes of table dbo.TBFATU173
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU173] ADD CONSTRAINT [PK__TBFATU173__06AEA014] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQNFSERV], [SEQDEDUC]) 
+GO
+
+--Indexes of table dbo.TBFATU174
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU174] ADD CONSTRAINT [PK__TBFATU174__0896E886] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFSERV], [SERNFSERV], [SEQDEDUC]) 
+GO
+
+--Indexes of table dbo.TBFATU175
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU175] ADD CONSTRAINT [PK_TBFATU175] PRIMARY KEY CLUSTERED ([CODEMP], [IDLOTENFSE]) 
+GO
+
+--Indexes of table dbo.TBFATU176
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU176] ADD CONSTRAINT [PK_TBFATU176] PRIMARY KEY CLUSTERED ([CODEMP], [IDLOTENFSE], [NUMSEQNFSERV]) 
+GO
+
+--Indexes of table dbo.TBFATU177
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU177] ADD CONSTRAINT [PK_TBFATU177] PRIMARY KEY CLUSTERED ([NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBFATU178
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU178] ADD CONSTRAINT [PK__TBFATU17__1CD8E1B0169AEF1A] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNF], [SERNF], [NUMITEMNF], [CODPROD], [REVISAO], [CODMPRIMA], [ID]) 
+GO
+
+--Indexes of table dbo.TBFATU179
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU179] ADD CONSTRAINT [PKTBFATU179] PRIMARY KEY CLUSTERED ([CODTRANSP], [CODMUNICIPIO]) 
+GO
+
+--Indexes of table dbo.TBFATU180
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU180] ADD CONSTRAINT [PKTBFATU180] PRIMARY KEY CLUSTERED ([CODTRANSP], [NUMSEQTRANSP], [NUMSEQUF]) 
+GO
+
+--Indexes of table dbo.TBFATU181
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU181] ADD CONSTRAINT [PKTBFATU181] PRIMARY KEY CLUSTERED ([CODTRANSP], [NUMSEQTRANSP], [NUMSEQDESP]) 
+GO
+
+--Indexes of table dbo.TBFATU182
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU182] ADD CONSTRAINT [PKTBFATU182] PRIMARY KEY CLUSTERED ([CODREGENTREGA]) 
+GO
+
+--Indexes of table dbo.TBFATU183
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU183] ADD CONSTRAINT [PKTBFATU183] PRIMARY KEY CLUSTERED ([CODREGENTREGA], [CODMUNICIPIO]) 
+GO
+
+--Indexes of table dbo.TBFATU184
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU184] ADD CONSTRAINT [PKTBFATU184] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCARREGAMENTO]) 
+GO
+
+--Indexes of table dbo.TBFATU185
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU185] ADD CONSTRAINT [PKTBFATU185] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCARREGAMENTO], [NUMPED], [NUMITEMPED]) 
+GO
+
+--Indexes of table dbo.TBFATU186
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU186] ADD CONSTRAINT [PKTBFATU186] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCARREGAMENTO], [CODCLI], [NUMSEQFRETE]) 
+GO
+
+--Indexes of table dbo.TBFATU187
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU187] ADD CONSTRAINT [PKTBFATU187] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBFATU189
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU189] ADD CONSTRAINT [PK__TBFATU18__3B1DBF916681C7A4] PRIMARY KEY CLUSTERED ([CODVEND], [CODCLI]) 
+GO
+
+--Indexes of table dbo.TBFATU190
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU190] ADD CONSTRAINT [PK__TBFATU19__6C3258346E22E96C] PRIMARY KEY CLUSTERED ([CODEMP], [CODITEM]) 
+GO
+
+--Indexes of table dbo.TBFATU191
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU191] ADD CONSTRAINT [PK__TBFATU19__CF7F43F472E79E89] PRIMARY KEY CLUSTERED ([CODEMP], [CODPESQ]) 
+GO
+
+--Indexes of table dbo.TBFATU192
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU192] ADD CONSTRAINT [PK__TBFATU19__7545805177AC53A6] PRIMARY KEY CLUSTERED ([CODEMP], [CODPESQ], [CODITEM]) 
+GO
+
+--Indexes of table dbo.TBFATU193
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFATU193] ADD CONSTRAINT [PK__TBFATU19__2C2936BC7D652CFC] PRIMARY KEY CLUSTERED ([CODEMP], [CODPESQ], [CODITEM], [CODCLI]) 
+GO
+
+--Indexes of table dbo.TBFLCX001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFLCX001] ADD CONSTRAINT [PKTBFLCX001] PRIMARY KEY CLUSTERED ([CATEGORIA], [CODGRUPO]) 
+GO
+
+--Indexes of table dbo.TBFLCX002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBFLCX002_SUBGRUPO] ON [dbo].[TBFLCX002]  ([SUBGRUPO], [CATEGORIA]) 
+GO
+
+ALTER TABLE [dbo].[TBFLCX002] ADD CONSTRAINT [PKTBFLCX002] PRIMARY KEY CLUSTERED ([CATEGORIA], [CODGRUPO], [SUBGRUPO]) 
+GO
+
+--Indexes of table dbo.TBFLCX003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFLCX003] ADD CONSTRAINT [PKTBFLCX003] PRIMARY KEY CLUSTERED ([CODEMITENTE]) 
+GO
+
+--Indexes of table dbo.TBFLCX004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFLCX004] ADD CONSTRAINT [PKTBFLCX004] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMDOCTO], [SERIE], [NUMPARCELA], [TPEMITENTE], [CODEMITENTE]) 
+GO
+
+--Indexes of table dbo.TBFLCX005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFLCX005] ADD CONSTRAINT [PKTBFLCX005] PRIMARY KEY CLUSTERED ([CODEMP], [CATEGORIA], [CODGRUPO], [SUBGRUPO], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBFLCX006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFLCX006] ADD CONSTRAINT [PKTBFLCX006] PRIMARY KEY CLUSTERED ([CODEMP], [CATEGORIA], [CODGRUPO], [SUBGRUPO], [NUMSEQ], [DTSALDO]) 
+GO
+
+--Indexes of table dbo.TBFLCX008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFLCX008] ADD CONSTRAINT [PKTBFLCX008] PRIMARY KEY CLUSTERED ([CODORIGEM]) 
+GO
+
+--Indexes of table dbo.TBFLCX010
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBFLCX010] ADD CONSTRAINT [PKTBFLCX010] PRIMARY KEY CLUSTERED ([CODEMP], [CCUSTO], [CATEGORIA], [CODGRUPO], [SUBGRUPO]) 
+GO
+
+--Indexes of table dbo.TBGENE001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE001] ADD CONSTRAINT [PKTBGENE001] PRIMARY KEY CLUSTERED ([CODUNIMED]) 
+GO
+
+--Indexes of table dbo.TBGENE002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE002] ADD CONSTRAINT [PKTBGENE002] PRIMARY KEY CLUSTERED ([CODUF]) 
+GO
+
+--Indexes of table dbo.TBGENE003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE003] ADD CONSTRAINT [PKTBGENE003] PRIMARY KEY CLUSTERED ([CODRAMO]) 
+GO
+
+--Indexes of table dbo.TBGENE004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE004] ADD CONSTRAINT [PKTBGENE004] PRIMARY KEY CLUSTERED ([CODNATUOPER2]) 
+GO
+
+--Indexes of table dbo.TBGENE005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE005] ADD CONSTRAINT [PKTBGENE005] PRIMARY KEY CLUSTERED ([CODSITUACAOTRIB2]) 
+GO
+
+--Indexes of table dbo.TBGENE006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE006] ADD CONSTRAINT [PKTBGENE006] PRIMARY KEY CLUSTERED ([CODGRPAGTO]) 
+GO
+
+--Indexes of table dbo.TBGENE007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE007] ADD CONSTRAINT [PKTBGENE007] PRIMARY KEY CLUSTERED ([CODGRPAGTO], [CODPAGTO]) 
+GO
+
+--Indexes of table dbo.TBGENE008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBGENE008_NUMLANC] ON [dbo].[TBGENE008]  ([CODEMP], [NUMLANC]) 
+GO
+
+ALTER TABLE [dbo].[TBGENE008] ADD CONSTRAINT [PKTBGENE008] PRIMARY KEY CLUSTERED ([CODEMP], [NUMLANCCCUSTO]) 
+GO
+
+--Indexes of table dbo.TBGENE009
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBGENE009_CODDOCTOICMS] ON [dbo].[TBGENE009]  ([CODDOCUM], [CODDOCTOICMS]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBGENE009_CODDOCTOICMS2] ON [dbo].[TBGENE009]  ([CODDOCTOICMS]) 
+GO
+
+ALTER TABLE [dbo].[TBGENE009] ADD CONSTRAINT [PK] PRIMARY KEY CLUSTERED ([CODDOCUM]) 
+GO
+
+--Indexes of table dbo.TBGENE010
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE010] ADD CONSTRAINT [PKTBGENE010] PRIMARY KEY CLUSTERED ([CODINDICE]) 
+GO
+
+--Indexes of table dbo.TBGENE011
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE011] ADD CONSTRAINT [PKTBGENE011] PRIMARY KEY CLUSTERED ([CODINDICE], [DATCOTACAO]) 
+GO
+
+--Indexes of table dbo.TBGENE012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE012] ADD CONSTRAINT [PKTBGENE012] PRIMARY KEY CLUSTERED ([CODDIVMAT]) 
+GO
+
+--Indexes of table dbo.TBGENE013
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE013] ADD CONSTRAINT [PKTBGENE013] PRIMARY KEY CLUSTERED ([CODDIVMAT]) 
+GO
+
+--Indexes of table dbo.TBGENE014
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE014] ADD CONSTRAINT [PKTBGENE014] PRIMARY KEY CLUSTERED ([CODDIVMAT]) 
+GO
+
+--Indexes of table dbo.TBGENE015
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE015] ADD CONSTRAINT [PKTBGENE015] PRIMARY KEY CLUSTERED ([CODEMP], [CODBANCO]) 
+GO
+
+--Indexes of table dbo.TBGENE016
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE016] ADD CONSTRAINT [PKTBGENE016] PRIMARY KEY CLUSTERED ([CODEMP], [CODBANCO], [CODAGENCIA]) 
+GO
+
+--Indexes of table dbo.TBGENE018
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE018] ADD CONSTRAINT [PKTBGENE018] PRIMARY KEY CLUSTERED ([NOMDOC]) 
+GO
+
+--Indexes of table dbo.TBGENE019
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBGENE019_SECAOFORM] ON [dbo].[TBGENE019]  ([NOMDOC], [SECAOFORM]) 
+GO
+
+ALTER TABLE [dbo].[TBGENE019] ADD CONSTRAINT [PKTBGENE019] PRIMARY KEY CLUSTERED ([NOMDOC], [NOMCAMPO], [NUMLINHA], [NUMCOLUNA]) 
+GO
+
+--Indexes of table dbo.TBGENE020
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE020] ADD CONSTRAINT [PKTBGENE020] PRIMARY KEY CLUSTERED ([DATFERIADO]) 
+GO
+
+--Indexes of table dbo.TBGENE021
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE021] ADD CONSTRAINT [PKTBGENE021] PRIMARY KEY CLUSTERED ([CODCFOP2], [CODUF]) 
+GO
+
+--Indexes of table dbo.TBGENE022
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE022] ADD CONSTRAINT [PKTBGENE022] PRIMARY KEY CLUSTERED ([CODEMP], [NUMLANCCCUSTO]) 
+GO
+
+--Indexes of table dbo.TBGENE023
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBGENE023_ACEITACC] ON [dbo].[TBGENE023]  ([CODEMP], [CONTESTO], [ACEITACC]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBGENE023_CODEMP_TIPCONT] ON [dbo].[TBGENE023]  ([CODEMP], [CONTESTO], [TIPCONT]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBGENE023_STAOBRIGAPLANO] ON [dbo].[TBGENE023]  ([CODEMP], [STAOBRIGAPLANO]) 
+GO
+
+ALTER TABLE [dbo].[TBGENE023] ADD CONSTRAINT [PKTBGENE023] PRIMARY KEY CLUSTERED ([CODEMP], [CONTESTO]) 
+GO
+
+--Indexes of table dbo.TBGENE024
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE024] ADD CONSTRAINT [PKTBGENE024] PRIMARY KEY CLUSTERED ([CODREDCLASSFISC]) 
+GO
+
+--Indexes of table dbo.TBGENE025
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE025] ADD CONSTRAINT [PKTBGENE025] PRIMARY KEY CLUSTERED ([NOMTABELA], [NOMCAMPO]) 
+GO
+
+--Indexes of table dbo.TBGENE026
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE026] ADD CONSTRAINT [PKTBGENE026] PRIMARY KEY CLUSTERED ([NOMTABELA], [NOMCAMPO], [CODCLASSIFIC]) 
+GO
+
+--Indexes of table dbo.TBGENE030
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE030] ADD CONSTRAINT [PKTBGENE030] PRIMARY KEY CLUSTERED ([CODCNO]) 
+GO
+
+--Indexes of table dbo.TBGENE031
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE031] ADD CONSTRAINT [PKTBGENE031] PRIMARY KEY CLUSTERED ([CODCNO], [CFOP2]) 
+GO
+
+--Indexes of table dbo.TBGENE032
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE032] ADD CONSTRAINT [PKTBGENE032] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBGENE033
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE033] ADD CONSTRAINT [PKTBGENE033] PRIMARY KEY CLUSTERED ([CODEMP], [SEQENDCOBEMP]) 
+GO
+
+--Indexes of table dbo.TBGENE034
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE034] ADD CONSTRAINT [PKTBGENE034] PRIMARY KEY CLUSTERED ([CODEMP], [SEQENDENTEMP]) 
+GO
+
+--Indexes of table dbo.TBGENE035
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE035] ADD CONSTRAINT [PKTBGENE035] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBGENE036
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBGENE036_CODMAT] ON [dbo].[TBGENE036]  ([CODMAT], [CODUNIMED]) 
+GO
+
+ALTER TABLE [dbo].[TBGENE036] ADD CONSTRAINT [PKTBGENE036] PRIMARY KEY CLUSTERED ([CODMAT], [CODUNIMED]) 
+GO
+
+--Indexes of table dbo.TBGENE037
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE037] ADD CONSTRAINT [PKTBGENE037] PRIMARY KEY CLUSTERED ([NOMTABELA]) 
+GO
+
+--Indexes of table dbo.TBGENE038
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBGENE038_NOMTABELA] ON [dbo].[TBGENE038]  ([NOMTABELA]) 
+GO
+
+ALTER TABLE [dbo].[TBGENE038] ADD CONSTRAINT [PKTBGENE038] PRIMARY KEY CLUSTERED ([CODEMP], [NOMTABELA], [CODCAMPOVAR]) 
+GO
+
+--Indexes of table dbo.TBGENE039
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBGENE039_01] ON [dbo].[TBGENE039]  ([NOMTABELA], [CODCAMPOVAR], [VALCAMPOCHAVE01], [VALCAMPOCHAVE02], [VALCAMPOCHAVE03], [VALCAMPOCHAVE04], [VALCAMPOCHAVE05]) 
+GO
+
+ALTER TABLE [dbo].[TBGENE039] ADD CONSTRAINT [PKTBGENE039] PRIMARY KEY CLUSTERED ([CODEMP], [NOMTABELA], [CODCAMPOVAR], [VALCAMPOCHAVE01], [VALCAMPOCHAVE02], [VALCAMPOCHAVE03], [VALCAMPOCHAVE04], [VALCAMPOCHAVE05]) 
+GO
+
+--Indexes of table dbo.TBGENE040
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE040] ADD CONSTRAINT [PKTBGENE040] PRIMARY KEY CLUSTERED ([CODHIST]) 
+GO
+
+--Indexes of table dbo.TBGENE041
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE041] ADD CONSTRAINT [PKTBGENE041] PRIMARY KEY CLUSTERED ([CODGRUPODOCTO]) 
+GO
+
+--Indexes of table dbo.TBGENE042
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE042] ADD CONSTRAINT [PKTBGENE042] PRIMARY KEY CLUSTERED ([CODEMP], [CCUSTO], [USER_ID]) 
+GO
+
+--Indexes of table dbo.TBGENE043
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE043] ADD CONSTRAINT [PKTBGENE043] PRIMARY KEY CLUSTERED ([CODMOTIVOBLOQ]) 
+GO
+
+--Indexes of table dbo.TBGENE044
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE044] ADD CONSTRAINT [PKTBGENE044] PRIMARY KEY CLUSTERED ([CODEMP], [CODCATEGORIACONTA]) 
+GO
+
+--Indexes of table dbo.TBGENE045
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE045] ADD CONSTRAINT [PKTBGENE045] PRIMARY KEY CLUSTERED ([CODCLASSFISCAL]) 
+GO
+
+--Indexes of table dbo.TBGENE046
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE046] ADD CONSTRAINT [PKTBGENE046] PRIMARY KEY CLUSTERED ([CODCLASSFISCAL], [PERCICMS]) 
+GO
+
+--Indexes of table dbo.TBGENE047
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE047] ADD CONSTRAINT [PKTBGENE047] PRIMARY KEY CLUSTERED ([CODEMP], [NUMNFDOCTO], [SERNF], [CODEMITENTE], [CODDOCUMIMP], [TABELAORIGEM], [TIPIMPOSTO]) 
+GO
+
+--Indexes of table dbo.TBGENE048
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE048] ADD CONSTRAINT [PKTBGENE048] PRIMARY KEY CLUSTERED ([CODFILIALLOGON], [CODFILIALMOVIMENTACAO]) 
+GO
+
+--Indexes of table dbo.TBGENE049
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE049] ADD CONSTRAINT [PKTBGENE049] PRIMARY KEY CLUSTERED ([CODMOTIVOBLOQMANUAL]) 
+GO
+
+--Indexes of table dbo.TBGENE050
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE050] ADD CONSTRAINT [PKTBGENE050] PRIMARY KEY CLUSTERED ([CODTIPGARANTIACLI]) 
+GO
+
+--Indexes of table dbo.TBGENE051
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE051] ADD CONSTRAINT [PKTBGENE051] PRIMARY KEY CLUSTERED ([CODEMP], [CODVEND], [DATPAGTO]) 
+GO
+
+--Indexes of table dbo.TBGENE052
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE052] ADD CONSTRAINT [PKTBGENE052] PRIMARY KEY CLUSTERED ([VALFAIXAIRINI]) 
+GO
+
+--Indexes of table dbo.TBGENE053
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE053] ADD CONSTRAINT [PKTBGENE053] PRIMARY KEY CLUSTERED ([CODTIPEMBALAGEM]) 
+GO
+
+--Indexes of table dbo.TBGENE054
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE054] ADD CONSTRAINT [PKTBGENE054] PRIMARY KEY CLUSTERED ([CODDOCUM]) 
+GO
+
+--Indexes of table dbo.TBGENE055
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBGENE055_NUMNFDEV] ON [dbo].[TBGENE055]  ([CODEMPNFDEV], [NUMNFDEV], [NUMITEMNFDEV]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBGENE055_NUMNFORIGEM] ON [dbo].[TBGENE055]  ([CODEMPNFORIGEM], [NUMNFORIGEM], [SERNFORIGEM]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBGENE055_SERNFDEV] ON [dbo].[TBGENE055]  ([CODEMPNFDEV], [NUMNFDEV], [SERNFDEV], [CODEMITENTEDEV], [NUMITEMNFDEV], [TIPEMITENTEDEV]) 
+GO
+
+ALTER TABLE [dbo].[TBGENE055] ADD CONSTRAINT [PKTBGENE055] PRIMARY KEY CLUSTERED ([CODEMPNFORIGEM], [NUMNFORIGEM], [SERNFORIGEM], [CODEMITENTE], [TIPEMITENTE], [NUMITEMNFORIGEM], [CODEMPNFDEV], [NUMNFDEV], [SERNFDEV], [CODEMITENTEDEV], [TIPEMITENTEDEV], [NUMITEMNFDEV]) 
+GO
+
+--Indexes of table dbo.TBGENE056
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE056] ADD CONSTRAINT [PKTBGENE056] PRIMARY KEY CLUSTERED ([CODTABRATEIOPPB]) 
+GO
+
+--Indexes of table dbo.TBGENE057
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE057] ADD CONSTRAINT [PKTBGENE057] PRIMARY KEY CLUSTERED ([CODTABRATEIOPPB], [SEQRATEIOPPB]) 
+GO
+
+--Indexes of table dbo.TBGENE059
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE059] ADD CONSTRAINT [PK_TBGENE059] PRIMARY KEY CLUSTERED ([CODMUNICIPIO]) 
+GO
+
+--Indexes of table dbo.TBGENE060
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE060] ADD CONSTRAINT [PK_TBGENE060] PRIMARY KEY CLUSTERED ([CODPAIS]) 
+GO
+
+--Indexes of table dbo.TBGENE061
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE061] ADD CONSTRAINT [PKTBGENE061] PRIMARY KEY CLUSTERED ([CODFILIALLOGON], [CODFILIALMOVIMENTACAO]) 
+GO
+
+--Indexes of table dbo.TBGENE062
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBGENE062_NUMNFRET] ON [dbo].[TBGENE062]  ([CODEMPNFRET], [NUMNFRET], [SERNFRET], [CODEMITENTERET], [TIPEMITENTERET], [NUMITEMNFRET]) 
+GO
+
+ALTER TABLE [dbo].[TBGENE062] ADD CONSTRAINT [PKTBGENE062] PRIMARY KEY CLUSTERED ([CODEMPNFREM], [NUMNFREM], [SERNFREM], [CODEMITENTEREM], [TIPEMITENTEREM], [NUMITEMNFREM], [CODEMPNFRET], [NUMNFRET], [SERNFRET], [CODEMITENTERET], [TIPEMITENTERET], [NUMITEMNFRET]) 
+GO
+
+--Indexes of table dbo.TBGENE063
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE063] ADD CONSTRAINT [PK_TBGENE063] PRIMARY KEY CLUSTERED ([CODCLI], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBGENE064
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE064] ADD CONSTRAINT [PKTBGENE064] PRIMARY KEY CLUSTERED ([CODMAT], [CODROTULO]) 
+GO
+
+--Indexes of table dbo.TBGENE065
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE065] ADD CONSTRAINT [PKTBTBGENE065] PRIMARY KEY CLUSTERED ([CODOCORRENCIA]) 
+GO
+
+--Indexes of table dbo.TBGENE066
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBGENE066_CODOCORRENCIA] ON [dbo].[TBGENE066]  ([CODEMP], [CODOCORRENCIA], [DATOCORRENCIA], [VALORANTCAMPO]) 
+GO
+
+ALTER TABLE [dbo].[TBGENE066] ADD CONSTRAINT [PKTBGENE066] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQOCORRENCIA], [CODOCORRENCIA]) 
+GO
+
+--Indexes of table dbo.TBGENE067
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE067] ADD CONSTRAINT [PKTBTBGENE067] PRIMARY KEY CLUSTERED ([CODTABIRRF]) 
+GO
+
+--Indexes of table dbo.TBGENE068
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE068] ADD CONSTRAINT [PKTBTBGENE068] PRIMARY KEY CLUSTERED ([CODTABIRRF], [VALFAIXAIRRFINI]) 
+GO
+
+--Indexes of table dbo.TBGENE069
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE069] ADD CONSTRAINT [PKTBGENE069] PRIMARY KEY CLUSTERED ([CODEMP], [NOMEARQ]) 
+GO
+
+--Indexes of table dbo.TBGENE070
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE070] ADD CONSTRAINT [PKTBGENE070] PRIMARY KEY CLUSTERED ([CODEMP], [NOMEARQ], [CODDOCUM], [NUMDOCTO], [SERIE], [CODCLI], [DESDOBRO], [NUMSEQRECEB]) 
+GO
+
+--Indexes of table dbo.TBGENE071
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE071] ADD CONSTRAINT [PKTBGENE071] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBGENE072
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE072] ADD CONSTRAINT [PKTBGENE072] PRIMARY KEY CLUSTERED ([CODOCORRENCIA]) 
+GO
+
+--Indexes of table dbo.TBGENE073
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE073] ADD CONSTRAINT [PKTBGENE073] PRIMARY KEY CLUSTERED ([SITTRIBPIS]) 
+GO
+
+--Indexes of table dbo.TBGENE074
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE074] ADD CONSTRAINT [PKTBGENE074] PRIMARY KEY CLUSTERED ([SITTRIBCOFINS]) 
+GO
+
+--Indexes of table dbo.TBGENE075
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE075] ADD CONSTRAINT [PKTBGENE075] PRIMARY KEY CLUSTERED ([SITTRIBIPI]) 
+GO
+
+--Indexes of table dbo.TBGENE076
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE076] ADD CONSTRAINT [PKTBGENE076] PRIMARY KEY CLUSTERED ([CODEMP], [CODUF]) 
+GO
+
+--Indexes of table dbo.TBGENE077
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE077] ADD CONSTRAINT [PKTBGENE077] PRIMARY KEY CLUSTERED ([CODMAT], [CODMATSIMILAR]) 
+GO
+
+--Indexes of table dbo.TBGENE078
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE078] ADD CONSTRAINT [PK_TBGENE078_01] PRIMARY KEY CLUSTERED ([CODLAYOUTCONV]) 
+GO
+
+--Indexes of table dbo.TBGENE079
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE079] ADD CONSTRAINT [PK_TBGENE079_01] PRIMARY KEY CLUSTERED ([CODLAYOUTCONV], [NUMSEQCAMPO]) 
+GO
+
+--Indexes of table dbo.TBGENE080
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE080] ADD CONSTRAINT [PK__TBGENE080__6641D082] PRIMARY KEY CLUSTERED ([CODEMP], [TIPEMISNFE], [DHCONT]) 
+GO
+
+--Indexes of table dbo.TBGENE081
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE081] ADD CONSTRAINT [PKTBGENE081] PRIMARY KEY CLUSTERED ([CODTIPO]) 
+GO
+
+--Indexes of table dbo.TBGENE082
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE082] ADD CONSTRAINT [PKTBGENE082] PRIMARY KEY CLUSTERED ([CODTIPO], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBGENE083
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE083] ADD CONSTRAINT [PKTBGENE083] PRIMARY KEY CLUSTERED ([CODEMP], [NUMETIQUETA]) 
+GO
+
+--Indexes of table dbo.TBGENE084
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE084] ADD CONSTRAINT [PKTBGENE084] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED], [NUMITEMPED], [NUMETIQUETA]) 
+GO
+
+--Indexes of table dbo.TBGENE085
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE085] ADD CONSTRAINT [PK__TBGENE085__0D5B9DA3] PRIMARY KEY CLUSTERED ([CODBASECALCREDITO]) 
+GO
+
+--Indexes of table dbo.TBGENE090
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE090] ADD CONSTRAINT [PK__TBGENE090__21629650] PRIMARY KEY CLUSTERED ([CODCONTRIBAPURADA]) 
+GO
+
+--Indexes of table dbo.TBGENE091
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE091] ADD CONSTRAINT [PK__TBGENE091__243F02FB] PRIMARY KEY CLUSTERED ([CODTIPCREDITO]) 
+GO
+
+--Indexes of table dbo.TBGENE092
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE092] ADD CONSTRAINT [PK__TBGENE092__271B6FA6] PRIMARY KEY CLUSTERED ([CODALIQCREDPRESUMAGRO]) 
+GO
+
+--Indexes of table dbo.TBGENE093
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE093] ADD CONSTRAINT [PK__TBGENE093__29F7DC51] PRIMARY KEY CLUSTERED ([CODPRODMONOFASALIQDIF]) 
+GO
+
+--Indexes of table dbo.TBGENE094
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE094] ADD CONSTRAINT [PK__TBGENE094__2CD448FC] PRIMARY KEY CLUSTERED ([CODPRODMONOFASALIQUM]) 
+GO
+
+--Indexes of table dbo.TBGENE095
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE095] ADD CONSTRAINT [PK__TBGENE095__2FB0B5A7] PRIMARY KEY CLUSTERED ([CODPRODSUBSTRIBCS]) 
+GO
+
+--Indexes of table dbo.TBGENE096
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE096] ADD CONSTRAINT [PK__TBGENE096__328D2252] PRIMARY KEY CLUSTERED ([CODPRODALIQZEROCS]) 
+GO
+
+--Indexes of table dbo.TBGENE097
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE097] ADD CONSTRAINT [PK__TBGENE097__35698EFD] PRIMARY KEY CLUSTERED ([CODOPERISENCAOCS]) 
+GO
+
+--Indexes of table dbo.TBGENE098
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE098] ADD CONSTRAINT [PK__TBGENE098__3845FBA8] PRIMARY KEY CLUSTERED ([CODOPERSEMINCIDENCIACS]) 
+GO
+
+--Indexes of table dbo.TBGENE099
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE099] ADD CONSTRAINT [PK__TBGENE099__3B226853] PRIMARY KEY CLUSTERED ([CODOPERSUSPENSAOCS]) 
+GO
+
+--Indexes of table dbo.TBGENE100
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE100] ADD CONSTRAINT [PK__TBGENE100__3DFED4FE] PRIMARY KEY CLUSTERED ([CODOPEROUTRASALIQCS]) 
+GO
+
+--Indexes of table dbo.TBGENE101
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE101] ADD CONSTRAINT [PK__TBGENE101__4A2FA1B9] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFERPISFOLHA]) 
+GO
+
+--Indexes of table dbo.TBGENE102
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE102] ADD CONSTRAINT [PK__TBGENE102__684A1485] PRIMARY KEY CLUSTERED ([CODEMP], [CODTIPCONTRIB], [MESANOREFERDIFANT], [CODCONTRIBAPURADA], [ALIQPIS], [ALIQCOFINS]) 
+GO
+
+--Indexes of table dbo.TBGENE103
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE103] ADD CONSTRAINT [PK_TBGENE103] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [CODTIPCONTRIB], [CODCONTRIBAPURADA], [MESANOREFERVENDAS], [CODCLIDIFERIMENTO], [NUMSEQDIFER], [ALIQPIS], [ALIQCOFINS]) 
+GO
+
+--Indexes of table dbo.TBGENE104
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE104] ADD CONSTRAINT [PK__TBGENE104__73BBC731] PRIMARY KEY CLUSTERED ([CODEMP], [CODTIPCONTRIB], [CODTIPAJUSTE], [NUMSEQLANC], [ALIQPIS], [ALIQCOFINS]) 
+GO
+
+--Indexes of table dbo.TBGENE105
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE105] ADD CONSTRAINT [PK_TBGENE105] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER]) 
+GO
+
+--Indexes of table dbo.TBGENE106
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE106] ADD CONSTRAINT [PK_TBGENE106] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [CODCONTRIBAPURADA], [VALPERCPIS]) 
+GO
+
+--Indexes of table dbo.TBGENE107
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE107] ADD CONSTRAINT [PK_TBGENE107] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [CODTIPCREDITO]) 
+GO
+
+--Indexes of table dbo.TBGENE108
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE108] ADD CONSTRAINT [PK_TBGENE108] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [CODBASECALCCREDITOPIS], [SITTRIBPIS], [PERCPIS]) 
+GO
+
+--Indexes of table dbo.TBGENE109
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE109] ADD CONSTRAINT [PK_TBGENE109] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [SITTRIBPIS]) 
+GO
+
+--Indexes of table dbo.TBGENE110
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE110] ADD CONSTRAINT [PK_TBGENE110] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [SITTRIBPIS], [CODNATUREZARECEITA]) 
+GO
+
+--Indexes of table dbo.TBGENE111
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE111] ADD CONSTRAINT [PK_TBGENE111] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER]) 
+GO
+
+--Indexes of table dbo.TBGENE112
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE112] ADD CONSTRAINT [PK_TBGENE112] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [CODCONTRIBAPURADA], [VALPERCCOFINS]) 
+GO
+
+--Indexes of table dbo.TBGENE113
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE113] ADD CONSTRAINT [PK_TBGENE113] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [CODTIPCREDITO]) 
+GO
+
+--Indexes of table dbo.TBGENE114
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE114] ADD CONSTRAINT [PK_TBGENE114] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [CODBASECALCCREDITOCOFINS], [SITTRIBCOFINS], [PERCCOFINS]) 
+GO
+
+--Indexes of table dbo.TBGENE115
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE115] ADD CONSTRAINT [PK_TBGENE115] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [CODBASECALCCREDITOCOFINS], [SITTRIBCOFINS], [PERCCOFINS], [CODTIPCREDITO]) 
+GO
+
+--Indexes of table dbo.TBGENE116
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE116] ADD CONSTRAINT [PK_TBGENE116] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [SITTRIBCOFINS]) 
+GO
+
+--Indexes of table dbo.TBGENE117
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE117] ADD CONSTRAINT [PK__TBGENE117__176F17C2] PRIMARY KEY CLUSTERED ([CODCMPISCOFINS]) 
+GO
+
+--Indexes of table dbo.TBGENE118
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE118] ADD CONSTRAINT [PK_TBGENE118] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [CODBASECALCCREDITOPIS], [SITTRIBPIS], [PERCPIS], [CODTIPCREDITO]) 
+GO
+
+--Indexes of table dbo.TBGENE119
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE119] ADD CONSTRAINT [PK_TBGENE119] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER], [SITTRIBCOFINS], [CODNATUREZARECEITA]) 
+GO
+
+--Indexes of table dbo.TBGENE120
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE120] ADD CONSTRAINT [PK__TBGENE12__5068B2093FD20ED7] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREFER]) 
+GO
+
+--Indexes of table dbo.TBGENE139
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE139] ADD CONSTRAINT [PK__TBGENE139__636563D7] PRIMARY KEY CLUSTERED ([CSOSN]) 
+GO
+
+--Indexes of table dbo.TBGENE142
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE142] ADD CONSTRAINT [PKTBGENE142] PRIMARY KEY CLUSTERED ([CODCLASSFISCAL], [SEQVIGENCIA]) 
+GO
+
+--Indexes of table dbo.TBGENE143
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE143] ADD CONSTRAINT [PKTBGENE143] PRIMARY KEY CLUSTERED ([CODMAT], [SEQVIGENCIA]) 
+GO
+
+--Indexes of table dbo.TBGENE144
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE144] ADD CONSTRAINT [PKTBGENE144] PRIMARY KEY CLUSTERED ([CODCLASSMAT]) 
+GO
+
+--Indexes of table dbo.TBGENE145
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE145] ADD CONSTRAINT [PK__TBGENE14__D8E0DFBD495B7911] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [CODMOVFISC], [OPERACAO], [TIPO], [CONTRIBICMS], [SIMPLESNC]) 
+GO
+
+--Indexes of table dbo.TBGENE146
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE146] ADD CONSTRAINT [PK__TBGENE14__AD4F793F10780170] PRIMARY KEY CLUSTERED ([CODMAT], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBGENE147
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE147] ADD CONSTRAINT [PKTBGENE147] PRIMARY KEY CLUSTERED ([CODUNIMEDFCI]) 
+GO
+
+--Indexes of table dbo.TBGENE910
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE910] ADD CONSTRAINT [PKTBGENE910] PRIMARY KEY CLUSTERED ([NOMPESQUISA]) 
+GO
+
+--Indexes of table dbo.TBGENE911
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE911] ADD CONSTRAINT [PKTBGENE911] PRIMARY KEY CLUSTERED ([NOMPESQUISA], [NOMCAMPO]) 
+GO
+
+--Indexes of table dbo.TBGENE930
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE930] ADD CONSTRAINT [PKTBGENE930] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBGENE931
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE931] ADD CONSTRAINT [PKTBGENE931] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQARQ]) 
+GO
+
+--Indexes of table dbo.TBGENE932
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE932] ADD CONSTRAINT [PKTBGENE932] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQARQ], [NUMSEQNF]) 
+GO
+
+--Indexes of table dbo.TBGENE970
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE970] ADD CONSTRAINT [PKTBGENE970] PRIMARY KEY CLUSTERED ([NOMARQUIVO]) 
+GO
+
+--Indexes of table dbo.TBGENE971
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE971] ADD CONSTRAINT [PKTBCONT971] PRIMARY KEY CLUSTERED ([NOMARQUIVO], [NUMREGISTRO]) 
+GO
+
+--Indexes of table dbo.TBGENE972
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE972] ADD CONSTRAINT [PKTBGENE972] PRIMARY KEY CLUSTERED ([NOMARQUIVO], [NUMREGISTRO], [NOMECAMPO]) 
+GO
+
+--Indexes of table dbo.TBGENE980
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE980] ADD CONSTRAINT [PKTBGENE980] PRIMARY KEY CLUSTERED ([NOMARQUIVO]) 
+GO
+
+--Indexes of table dbo.TBGENE981
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE981] ADD CONSTRAINT [PKTBGENE981] PRIMARY KEY CLUSTERED ([NOMARQUIVO], [NOMCAMPO]) 
+GO
+
+--Indexes of table dbo.TBGENE982
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE982] ADD CONSTRAINT [PKTBGENE982] PRIMARY KEY CLUSTERED ([SISTEMA_ID], [NOMARQUIVO]) 
+GO
+
+--Indexes of table dbo.TBGENE998
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE998] ADD CONSTRAINT [PKTBGENE998] PRIMARY KEY CLUSTERED ([USER_ID], [NOMCOMPUTADOR], [SISTEMA_ID]) 
+GO
+
+--Indexes of table dbo.TBGENE999
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBGENE999] ADD CONSTRAINT [PKTBGENE999] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBHELPMODULO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBHELPMODULO] ADD CONSTRAINT [PKTBHELPMODULO] PRIMARY KEY CLUSTERED ([MODULO_ID]) 
+GO
+
+--Indexes of table dbo.TBICQ001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBICQ001] ADD CONSTRAINT [PK_TBICQ001] PRIMARY KEY CLUSTERED ([CODFORN], [IDDOCUMENTO]) 
+GO
+
+--Indexes of table dbo.TBICQ002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBICQ002] ADD CONSTRAINT [PK_TBICQ002] PRIMARY KEY CLUSTERED ([CODEMP], [IDIQF]) 
+GO
+
+--Indexes of table dbo.TBICQ003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBICQ003] ADD CONSTRAINT [PK_TBICQ003] PRIMARY KEY CLUSTERED ([CODEMP], [CODLOTE], [CODMAT], [IDOCORR]) 
+GO
+
+--Indexes of table dbo.TBICQ004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBICQ004] ADD CONSTRAINT [PK_TBICQ004] PRIMARY KEY CLUSTERED ([CODEMP], [CODFORN], [NUMNF], [SERNF], [NUMITEMNF], [IDOCORR]) 
+GO
+
+--Indexes of table dbo.TBICQ005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBICQ005] ADD CONSTRAINT [PK_TBICQ005] PRIMARY KEY CLUSTERED ([CODEMP], [IDIQF], [CODFORN], [IDOCORR]) 
+GO
+
+--Indexes of table dbo.TBICQ006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBICQ006] ADD CONSTRAINT [PK_TBICQ006] PRIMARY KEY CLUSTERED ([CODEMP], [IDIQF], [CODFORN], [IDOCORR]) 
+GO
+
+--Indexes of table dbo.TBICQ007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBICQ007] ADD CONSTRAINT [PK_TBICQ007] PRIMARY KEY CLUSTERED ([CODEMP], [IDIQF], [CODFORN], [NUMNF], [SERNF], [NUMITEMNF], [IDOCORR]) 
+GO
+
+--Indexes of table dbo.TBICQ008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBICQ008] ADD CONSTRAINT [PK_TBICQ008] PRIMARY KEY CLUSTERED ([CODEMP], [IDIQF], [CODFORN], [CODLOTE], [CODMAT], [IDOCORR]) 
+GO
+
+--Indexes of table dbo.TBICQ009
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBICQ009] ADD CONSTRAINT [PK_TBICQ009] PRIMARY KEY CLUSTERED ([TIPONAOCONFORM]) 
+GO
+
+--Indexes of table dbo.TBIMPFIN001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBIMPFIN001] ADD CONSTRAINT [PKTBIMPFIN001] PRIMARY KEY CLUSTERED ([INVNBR]) 
+GO
+
+--Indexes of table dbo.TBIMPRES1
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBIMPRES1] ADD CONSTRAINT [PKTBIMPRES1] PRIMARY KEY CLUSTERED ([NOMIMP]) 
+GO
+
+--Indexes of table dbo.TBIMPRES2
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBIMPRES2] ADD CONSTRAINT [PKTBIMPRES2] PRIMARY KEY CLUSTERED ([NOMIMP], [CODCOMANDO]) 
+GO
+
+--Indexes of table dbo.TBINDICES
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBINDICES] ADD CONSTRAINT [PKTBINDICES] PRIMARY KEY CLUSTERED ([NOMTABELA], [NOMINDICE]) 
+GO
+
+--Indexes of table dbo.TBINTEGREF
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBINTEGREF] ADD CONSTRAINT [PKTBINTEGREF] PRIMARY KEY CLUSTERED ([NOMFOREIGNKEY]) 
+GO
+
+--Indexes of table dbo.TBINTER997
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBINTER997] ADD CONSTRAINT [PKTBINTER997] PRIMARY KEY CLUSTERED ([CODOCORRENCIA]) 
+GO
+
+--Indexes of table dbo.TBINTER998
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBINTER998] ADD CONSTRAINT [PKTBINTER998] PRIMARY KEY CLUSTERED ([SEQOCORRENCIA]) 
+GO
+
+--Indexes of table dbo.TBINTER999
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBINTER999] ADD CONSTRAINT [PKTBINTER999] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBLFIS001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBLFIS001_DATCOMPET] ON [dbo].[TBLFIS001]  ([CODEMP], [DATCOMPET], [STACANCELADO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBLFIS001_SERIENFORIGEM] ON [dbo].[TBLFIS001]  ([CODEMP], [NUMNF], [SERIENFORIGEM], [CODCLI]) 
+GO
+
+ALTER TABLE [dbo].[TBLFIS001] ADD CONSTRAINT [PKTBLFIS001] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNF], [SERNF], [CODCLI]) 
+GO
+
+--Indexes of table dbo.TBLFIS002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBLFIS002_CODNATUOPER] ON [dbo].[TBLFIS002]  ([CODNATUOPER]) 
+GO
+
+ALTER TABLE [dbo].[TBLFIS002] ADD CONSTRAINT [PKTBLFIS002] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNF], [SERNF], [CODCLI], [CODNATUOPER], [CODSITUACAOTRIB], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBLFIS003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBLFIS003_CODNATUOPER_NUMITEM] ON [dbo].[TBLFIS003]  ([CODEMP], [NUMNF], [SERNF], [CODCLI], [CODNATUOPER], [CODSITUACAOTRIB], [NUMITEM]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBLFIS003_NUMITEM] ON [dbo].[TBLFIS003]  ([CODEMP], [NUMNF], [SERNF], [CODCLI], [NUMITEM]) 
+GO
+
+ALTER TABLE [dbo].[TBLFIS003] ADD CONSTRAINT [PKTBLFIS003] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNF], [SERNF], [CODCLI], [CODNATUOPER], [CODSITUACAOTRIB], [NUMSEQ], [NUMITEM]) 
+GO
+
+--Indexes of table dbo.TBLFIS004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS004] ADD CONSTRAINT [PKTBLFIS004] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNF], [SERNF], [CODCLI], [NUMSEQDUP]) 
+GO
+
+--Indexes of table dbo.TBLFIS005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBLFIS005_CODEMITORIG] ON [dbo].[TBLFIS005]  ([CODEMP], [NUMNF], [SERIENFORIGEM], [CODEMITORIG]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBLFIS005_DATCOMPET] ON [dbo].[TBLFIS005]  ([CODEMP], [DATCOMPET], [STACANCELADO]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBLFIS005_SERIENFORIGEM] ON [dbo].[TBLFIS005]  ([CODEMP], [NUMNF], [SERIENFORIGEM], [CODFORN]) 
+GO
+
+ALTER TABLE [dbo].[TBLFIS005] ADD CONSTRAINT [PKTBLFIS005] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNF], [SERNF], [CODFORN]) 
+GO
+
+--Indexes of table dbo.TBLFIS006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBLFIS006_CODNATUOPER] ON [dbo].[TBLFIS006]  ([CODNATUOPER]) 
+GO
+
+ALTER TABLE [dbo].[TBLFIS006] ADD CONSTRAINT [PKTBLFIS006] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNF], [SERNF], [CODFORN], [CODNATUOPER], [CODSITUACAOTRIB], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBLFIS007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBLFIS007_CODNATUOPER_NUMITEM] ON [dbo].[TBLFIS007]  ([CODEMP], [NUMNF], [SERNF], [CODFORN], [CODNATUOPER], [CODSITUACAOTRIB], [NUMITEM]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBLFIS007_NUMITEM] ON [dbo].[TBLFIS007]  ([CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMITEM]) 
+GO
+
+ALTER TABLE [dbo].[TBLFIS007] ADD CONSTRAINT [PKTBLFIS007] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNF], [SERNF], [CODFORN], [CODNATUOPER], [CODSITUACAOTRIB], [NUMSEQ], [NUMITEM]) 
+GO
+
+--Indexes of table dbo.TBLFIS008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS008] ADD CONSTRAINT [PKTBLFIS008] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNF], [SERNF], [CODFORN], [NUMSEQDUP]) 
+GO
+
+--Indexes of table dbo.TBLFIS009
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS009] ADD CONSTRAINT [PKTBLFIS009] PRIMARY KEY CLUSTERED ([CODEMP], [TIPIMPOSTO], [MESANOREF], [TIPREF], [PERIODOREF], [TIPMOVTO], [TIPVALOR], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBLFIS010
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS010] ADD CONSTRAINT [PKTBLFIS010] PRIMARY KEY CLUSTERED ([CODMUNICIPIODEST]) 
+GO
+
+--Indexes of table dbo.TBLFIS011
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS011] ADD CONSTRAINT [PKTBLFIS011] PRIMARY KEY CLUSTERED ([CODSUBITEM], [TIPOPERACAO]) 
+GO
+
+--Indexes of table dbo.TBLFIS012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS012] ADD CONSTRAINT [PKTBLFIS012] PRIMARY KEY CLUSTERED ([CODEMP], [DATAINICIAL], [DATAFINAL], [FINALIDADE], [NATUOPER], [TIPONF], [CODUF]) 
+GO
+
+--Indexes of table dbo.TBLFIS013
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS013] ADD CONSTRAINT [PKTBLFIS013] PRIMARY KEY CLUSTERED ([CODEMP], [DATAINICIAL], [DATAFINAL], [FINALIDADE], [NATUOPER], [TIPONF], [CODUF], [SEQUENCIA]) 
+GO
+
+--Indexes of table dbo.TBLFIS014
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS014] ADD CONSTRAINT [PKTBLFIS014] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNF], [SERNF], [CODCLI], [SEQCCUSTO]) 
+GO
+
+--Indexes of table dbo.TBLFIS015
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS015] ADD CONSTRAINT [PKTBLFIS015] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNF], [SERNF], [CODFORN], [SEQCCUSTO]) 
+GO
+
+--Indexes of table dbo.TBLFIS016
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS016] ADD CONSTRAINT [PKTBLFIS016] PRIMARY KEY CLUSTERED ([CODEMP], [ANOMESAPURACAO]) 
+GO
+
+--Indexes of table dbo.TBLFIS017
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS017] ADD CONSTRAINT [PKTBLFIS017] PRIMARY KEY CLUSTERED ([CODEMP], [ANOMESAPURACAO]) 
+GO
+
+--Indexes of table dbo.TBLFIS018
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS018] ADD CONSTRAINT [PKTBLFIS018] PRIMARY KEY CLUSTERED ([CODEMP], [ANOMESAPURACAO], [CODUFAPURACAO]) 
+GO
+
+--Indexes of table dbo.TBLFIS019
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS019] ADD CONSTRAINT [PKTBLFIS019] PRIMARY KEY CLUSTERED ([CODEMP], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBLFIS020
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS020] ADD CONSTRAINT [PKTBLFIS020] PRIMARY KEY CLUSTERED ([CODEMP], [TIPIMPOSTO], [MESANOREF], [TIPREF], [PERIODOREF], [TIPMOVTO], [TIPVALOR], [NUMSEQ], [SEQINFADIC]) 
+GO
+
+--Indexes of table dbo.TBLFIS021
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS021] ADD CONSTRAINT [PKTBLFIS021] PRIMARY KEY CLUSTERED ([CODEMP], [TIPIMPOSTO], [MESANOREF], [TIPREF], [PERIODOREF], [TIPMOVTO], [TIPVALOR], [NUMSEQ], [NUMSEQDOCTO]) 
+GO
+
+--Indexes of table dbo.TBLFIS022
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS022] ADD CONSTRAINT [PKTBLFIS022] PRIMARY KEY CLUSTERED ([CODEMP], [ANOMESAPURACAO], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBLFIS023
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS023] ADD CONSTRAINT [PK_TBLFIS023] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOAPURACAO], [NUMSEQOBRIG]) 
+GO
+
+--Indexes of table dbo.TBLFIS024
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS024] ADD CONSTRAINT [PK_TBLFIS024] PRIMARY KEY CLUSTERED ([CODCOMBSEFAZ]) 
+GO
+
+--Indexes of table dbo.TBLFIS025
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS025] ADD CONSTRAINT [PKTBLFIS025] PRIMARY KEY CLUSTERED ([CODEMP], [NUMDE]) 
+GO
+
+--Indexes of table dbo.TBLFIS026
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS026] ADD CONSTRAINT [PKTBLFIS026] PRIMARY KEY CLUSTERED ([CODEMP], [CODUF], [ANOMESAPUR]) 
+GO
+
+--Indexes of table dbo.TBLFIS027
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS027] ADD CONSTRAINT [PKTBLFIS027] PRIMARY KEY CLUSTERED ([CODEMP], [CODUF], [ANOMESAPUR], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBLFIS028
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS028] ADD CONSTRAINT [PKTBLFIS028] PRIMARY KEY CLUSTERED ([CODEMP], [ANOMESAPURACAO], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBLFIS029
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS029] ADD CONSTRAINT [PKTBLFIS029] PRIMARY KEY CLUSTERED ([CODENQUADRAMENTO]) 
+GO
+
+--Indexes of table dbo.TBLFIS030
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS030] ADD CONSTRAINT [PKTBLFIS030] PRIMARY KEY CLUSTERED ([CODEMP], [ANOREF], [MESREF]) 
+GO
+
+--Indexes of table dbo.TBLFIS031
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS031] ADD CONSTRAINT [PKTBLFIS031] PRIMARY KEY CLUSTERED ([CODEMP], [ANOREF], [MESREF], [CODENQUADRAMENTO]) 
+GO
+
+--Indexes of table dbo.TBLFIS032
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS032] ADD CONSTRAINT [PKTBLFIS032] PRIMARY KEY CLUSTERED ([CODEMP], [ANOREF], [MESREF], [CODPARTICIPANTE]) 
+GO
+
+--Indexes of table dbo.TBLFIS033
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS033] ADD CONSTRAINT [PKTBLFIS033] PRIMARY KEY CLUSTERED ([CODEMP], [ANOREF], [MESREF], [NUMNF], [SERNF], [CODCLI], [CODDOCUM]) 
+GO
+
+--Indexes of table dbo.TBLFIS034
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS034] ADD CONSTRAINT [PKTBLFIS034] PRIMARY KEY CLUSTERED ([CODEMP], [ANOREF], [MESREF], [NUMNF], [SERNF], [CODCLI], [CODDOCUM], [NUMSEQREG]) 
+GO
+
+--Indexes of table dbo.TBLFIS035
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS035] ADD CONSTRAINT [PKTBLFIS035] PRIMARY KEY CLUSTERED ([CODEMP], [ANOREF], [MESREF], [NUMNF], [SERNF], [CODCLI], [CODDOCUM], [NUMSEQREG], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBLFIS036
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS036] ADD CONSTRAINT [PK_TBLFIS036] PRIMARY KEY CLUSTERED ([CODEMP], [ANOREF]) 
+GO
+
+--Indexes of table dbo.TBLFIS037
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS037] ADD CONSTRAINT [PK__TBLFIS037__64E397F5] PRIMARY KEY CLUSTERED ([CODEMP], [IDOPER]) 
+GO
+
+--Indexes of table dbo.TBLFIS038
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS038] ADD CONSTRAINT [PK__TBLFIS038__68B428D9] PRIMARY KEY CLUSTERED ([CODEMP], [IDOPER], [PERIODOOCOR]) 
+GO
+
+--Indexes of table dbo.TBLFIS039
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS039] ADD CONSTRAINT [PK__TBLFIS039__6C84B9BD] PRIMARY KEY CLUSTERED ([CODEMP], [IDOPER]) 
+GO
+
+--Indexes of table dbo.TBLFIS040
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS040] ADD CONSTRAINT [PK__TBLFIS040__70554AA1] PRIMARY KEY CLUSTERED ([CODEMP], [IDOPER], [PERIODOOPER]) 
+GO
+
+--Indexes of table dbo.TBLFIS041
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS041] ADD CONSTRAINT [PK__TBLFIS041__7425DB85] PRIMARY KEY CLUSTERED ([CODEMP], [IDOPER], [SEQCUSTOORC]) 
+GO
+
+--Indexes of table dbo.TBLFIS042
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS042] ADD CONSTRAINT [PK__TBLFIS042__77F66C69] PRIMARY KEY CLUSTERED ([CODEMP], [IDOPER], [PERIODOOPER]) 
+GO
+
+--Indexes of table dbo.TBLFIS043
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS043] ADD CONSTRAINT [PK__TBLFIS043__79DEB4DB] PRIMARY KEY CLUSTERED ([CODEMP], [IDOPER], [PERIODOOPER]) 
+GO
+
+--Indexes of table dbo.TBLFIS044
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS044] ADD CONSTRAINT [PK__TBLFIS044__7BC6FD4D] PRIMARY KEY CLUSTERED ([CODEMP], [IDOPER]) 
+GO
+
+--Indexes of table dbo.TBLFIS045
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS045] ADD CONSTRAINT [PK__TBLFIS045__7DAF45BF] PRIMARY KEY CLUSTERED ([CODEMP], [IDOPER], [NUMPROC]) 
+GO
+
+--Indexes of table dbo.TBLFIS046
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS046] ADD CONSTRAINT [PK__TBLFIS046__7F978E31] PRIMARY KEY CLUSTERED ([CODEMP], [IDOPER], [NUMPROC]) 
+GO
+
+--Indexes of table dbo.TBLFIS047
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS047] ADD CONSTRAINT [PK__TBLFIS047__0273FADC] PRIMARY KEY CLUSTERED ([CODEMP], [PERAPUCRED]) 
+GO
+
+--Indexes of table dbo.TBLFIS048
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS048] ADD CONSTRAINT [PK__TBLFIS048__045C434E] PRIMARY KEY CLUSTERED ([CODEMP], [SEQ], [PERAPUCRED]) 
+GO
+
+--Indexes of table dbo.TBLFIS049
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS049] ADD CONSTRAINT [PK__TBLFIS049__0738AFF9] PRIMARY KEY CLUSTERED ([CODEMP], [PERAPUCRED], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBLFIS050
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS050] ADD CONSTRAINT [PK__TBLFIS050__0A151CA4] PRIMARY KEY CLUSTERED ([CODEMP], [PERAPURANT], [CODTIPCONTRIB], [NATCONTREC], [DATRECOLHIMENTO]) 
+GO
+
+--Indexes of table dbo.TBLFIS051
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS051] ADD CONSTRAINT [PK__TBLFIS051__0BFD6516] PRIMARY KEY CLUSTERED ([CODEMP], [CSTRIB]) 
+GO
+
+--Indexes of table dbo.TBLFIS052
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS052] ADD CONSTRAINT [PKTBLFIS052_01] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBLFIS053
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS053] ADD CONSTRAINT [PK__TBLFIS053__11B63E6C] PRIMARY KEY CLUSTERED ([CODEMP], [PERRECRET]) 
+GO
+
+--Indexes of table dbo.TBLFIS054
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS054] ADD CONSTRAINT [PK__TBLFIS054__139E86DE] PRIMARY KEY CLUSTERED ([CODEMP], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBLFIS055
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS055] ADD CONSTRAINT [PK__TBLFIS055__1586CF50] PRIMARY KEY CLUSTERED ([CODEMP], [SEQ], [NUMPROC]) 
+GO
+
+--Indexes of table dbo.TBLFIS056
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS056] ADD CONSTRAINT [PK__TBLFIS05__0937D3C3409128E6] PRIMARY KEY CLUSTERED ([ANOMESREFER]) 
+GO
+
+--Indexes of table dbo.TBLFIS057
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS057] ADD CONSTRAINT [PK__TBLFIS05__EF0D1F534461B9CA] PRIMARY KEY CLUSTERED ([CODEMP], [ANOMESREFER]) 
+GO
+
+--Indexes of table dbo.TBLFIS058
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS058] ADD CONSTRAINT [PK__TBLFIS05__55F688E349266EE7] PRIMARY KEY CLUSTERED ([CODEMP], [ANOMESREFER], [CODATIVECON]) 
+GO
+
+--Indexes of table dbo.TBLFIS059
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS059] ADD CONSTRAINT [PK__TBLFIS05__D9EA29704DEB2404] PRIMARY KEY CLUSTERED ([CODEMP], [ANOMESREFER], [CODATIVECON], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBLFIS060
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS060] ADD CONSTRAINT [PK__TBLFIS06__437D088252AFD921] PRIMARY KEY CLUSTERED ([ANOMESREFER], [CODRECEITA]) 
+GO
+
+--Indexes of table dbo.TBLFIS999
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLFIS999] ADD CONSTRAINT [PKTBLFIS999] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBLISS001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLISS001] ADD CONSTRAINT [PKTBLISS001] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNFSERV], [SERNFSERV], [CODCLI]) 
+GO
+
+--Indexes of table dbo.TBLISS002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLISS002] ADD CONSTRAINT [PKTBLISS002] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNFSERV], [SERNFSERV], [CODCLI], [NUMITEMNFSERV]) 
+GO
+
+--Indexes of table dbo.TBLISS003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLISS003] ADD CONSTRAINT [PKTBLISS003] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNFSERV], [SERNFSERV], [CODFORN]) 
+GO
+
+--Indexes of table dbo.TBLISS004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLISS004] ADD CONSTRAINT [PKTBLISS004] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNFSERV], [SERNFSERV], [CODFORN], [NUMITEMNFSERV]) 
+GO
+
+--Indexes of table dbo.TBLISS005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLISS005] ADD CONSTRAINT [PKTBLISS005] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREF], [NUMSEQDED]) 
+GO
+
+--Indexes of table dbo.TBLISS006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLISS006] ADD CONSTRAINT [PKTBLISS006] PRIMARY KEY CLUSTERED ([CODEMP], [MESANOREF], [NUMSEQDED], [NUMSEQCOMPEN]) 
+GO
+
+--Indexes of table dbo.TBLISS007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLISS007] ADD CONSTRAINT [PKTBLISS007] PRIMARY KEY CLUSTERED ([CODEMP], [CODDOCUM], [NUMNFSERV], [SERNFSERV], [CODFORN], [NUMSEQOBRA]) 
+GO
+
+--Indexes of table dbo.TBLISS008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLISS008] ADD CONSTRAINT [PK__TBLISS00__5A95F16837FBE2E5] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [CODTRIBSERV]) 
+GO
+
+--Indexes of table dbo.TBLISS999
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBLISS999] ADD CONSTRAINT [PKTBLISS999] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBMATACABADO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBMATACABADO] ADD CONSTRAINT [PKTBMATACABADO] PRIMARY KEY CLUSTERED ([NUMID], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBNFEE002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBNFEE002] ADD CONSTRAINT [PKTBNFEE002] PRIMARY KEY CLUSTERED ([USER_ID], [CODEMP], [NUMCNPJ], [NUMNF], [SERNF], [NUMITEMNF]) 
+GO
+
+--Indexes of table dbo.TBNFEE008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBNFEE008] ADD CONSTRAINT [PKTBNFEE008] PRIMARY KEY CLUSTERED ([USER_ID], [CODEMP], [NUMNF], [SERNF], [CODFORN], [NUMITEMNF], [NUMNFSAIDA], [SERNFSAIDA], [NUMITEMNFSAIDA]) 
+GO
+
+--Indexes of table dbo.TBNFSEF001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBNFSEF001] ADD CONSTRAINT [PK__TBNFSEF0__B87DC942573F8414] PRIMARY KEY CLUSTERED ([IDNF]) 
+GO
+
+--Indexes of table dbo.TBNFSEF002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBNFSEF002] ADD CONSTRAINT [PK__TBNFSEF0__0C47B7685B1014F8] PRIMARY KEY CLUSTERED ([IDCONF]) 
+GO
+
+--Indexes of table dbo.TBORCA001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORCA001] ADD CONSTRAINT [PKTBORCA001] PRIMARY KEY CLUSTERED ([CODENG]) 
+GO
+
+--Indexes of table dbo.TBORCA003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORCA003] ADD CONSTRAINT [PKTBORCA003] PRIMARY KEY CLUSTERED ([CODSERV]) 
+GO
+
+--Indexes of table dbo.TBORCA004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORCA004] ADD CONSTRAINT [PKTBORCA004] PRIMARY KEY CLUSTERED ([NUMORCAM]) 
+GO
+
+--Indexes of table dbo.TBORCA005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORCA005] ADD CONSTRAINT [PKTBORCA005] PRIMARY KEY CLUSTERED ([NUMORCAM], [CODSERV]) 
+GO
+
+--Indexes of table dbo.TBORCA006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORCA006] ADD CONSTRAINT [PKTBORCA006] PRIMARY KEY CLUSTERED ([NUMORCAM], [CODSERV], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBORCA007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORCA007] ADD CONSTRAINT [PKTBORCA007] PRIMARY KEY CLUSTERED ([CODSERV], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBORCA008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORCA008] ADD CONSTRAINT [PKTBORCA008] PRIMARY KEY CLUSTERED ([NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBORDS001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORDS001] ADD CONSTRAINT [PKTBORDS001] PRIMARY KEY CLUSTERED ([CODEMP], [CODTIPOHORA]) 
+GO
+
+--Indexes of table dbo.TBORDS002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORDS002] ADD CONSTRAINT [PKTBORDS002] PRIMARY KEY CLUSTERED ([CODEMP], [CODOS]) 
+GO
+
+--Indexes of table dbo.TBORDS003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORDS003] ADD CONSTRAINT [PKTBORDS003] PRIMARY KEY CLUSTERED ([CODEMP], [CODOS], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBORDS004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORDS004] ADD CONSTRAINT [PKTBORDS004] PRIMARY KEY CLUSTERED ([CODEMP], [CODOS], [CODMAT], [CODDESP]) 
+GO
+
+--Indexes of table dbo.TBORDS005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORDS005] ADD CONSTRAINT [PKTBORDS005] PRIMARY KEY CLUSTERED ([CODEMP], [CODOS], [CODEQUIPAMENTO]) 
+GO
+
+--Indexes of table dbo.TBORDS006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORDS006] ADD CONSTRAINT [PKTBORDS006] PRIMARY KEY CLUSTERED ([CODEMP], [CODOS], [CODMAT], [CODTIPOHORA]) 
+GO
+
+--Indexes of table dbo.TBORDS999
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBORDS999] ADD CONSTRAINT [PKTBORDS999] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBPROD010
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD010] ADD CONSTRAINT [PKTBPROD010] PRIMARY KEY CLUSTERED ([CODMAT], [REVISAO]) 
+GO
+
+--Indexes of table dbo.TBPROD011
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD011] ADD CONSTRAINT [PKTBPROD011] PRIMARY KEY CLUSTERED ([CODMAT], [REVISAO], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD012] ADD CONSTRAINT [PKTBPROD012] PRIMARY KEY CLUSTERED ([CODMAT], [REVISAO], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD020
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD020] ADD CONSTRAINT [PKTBPROD020] PRIMARY KEY CLUSTERED ([CODMAT], [REVISAO]) 
+GO
+
+--Indexes of table dbo.TBPROD021
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD021] ADD CONSTRAINT [PKTBPROD021] PRIMARY KEY CLUSTERED ([CODMAT], [REVISAO], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD022
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD022] ADD CONSTRAINT [PKTBPROD022] PRIMARY KEY CLUSTERED ([CODMAT], [REVISAO], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD023
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD023] ADD CONSTRAINT [PKTBPROD023] PRIMARY KEY CLUSTERED ([CODMAT], [REVISAO], [SEQ], [CODDIM]) 
+GO
+
+ALTER TABLE [dbo].[TBPROD023] ADD CONSTRAINT [UNTBPROD023] UNIQUE NONCLUSTERED ([CODMAT], [REVISAO], [SEQ], [CODDIMPROC]) 
+GO
+
+--Indexes of table dbo.TBPROD024
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD024] ADD CONSTRAINT [PKTBPROD024] PRIMARY KEY CLUSTERED ([CODMAT], [REVISAO], [SEQ], [CODDIM]) 
+GO
+
+ALTER TABLE [dbo].[TBPROD024] ADD CONSTRAINT [UNTBPROD024] UNIQUE NONCLUSTERED ([CODMAT], [REVISAO], [SEQ], [CODDIMPROC]) 
+GO
+
+--Indexes of table dbo.TBPROD025
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD025] ADD CONSTRAINT [PKTBPROD025] PRIMARY KEY CLUSTERED ([CODMAQ]) 
+GO
+
+--Indexes of table dbo.TBPROD026
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD026] ADD CONSTRAINT [PK_TBPROD026] PRIMARY KEY CLUSTERED ([CODEPI]) 
+GO
+
+--Indexes of table dbo.TBPROD027
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD027] ADD CONSTRAINT [PKTBPROD027] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO]) 
+GO
+
+--Indexes of table dbo.TBPROD028
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD028] ADD CONSTRAINT [PKTBPROD028] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO], [SEQOPERACAO]) 
+GO
+
+--Indexes of table dbo.TBPROD029
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD029] ADD CONSTRAINT [PKTBPROD029] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO], [SEQOPERACAO]) 
+GO
+
+--Indexes of table dbo.TBPROD030
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD030] ADD CONSTRAINT [PKTBPROD030] PRIMARY KEY CLUSTERED ([CODOPER]) 
+GO
+
+--Indexes of table dbo.TBPROD031
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD031] ADD CONSTRAINT [PKTBPROD031] PRIMARY KEY CLUSTERED ([CODEMP], [CODOPER]) 
+GO
+
+--Indexes of table dbo.TBPROD032
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD032] ADD CONSTRAINT [PKTBPROD032] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO], [SEQOPERACAO], [CODEPI]) 
+GO
+
+--Indexes of table dbo.TBPROD033
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD033] ADD CONSTRAINT [PKTBPROD033] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO], [SEQOPERACAO], [CODEPI]) 
+GO
+
+--Indexes of table dbo.TBPROD035
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD035] ADD CONSTRAINT [PKTBPROD035] PRIMARY KEY CLUSTERED ([CODMOTIVO]) 
+GO
+
+--Indexes of table dbo.TBPROD036
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD036] ADD CONSTRAINT [PKTBPROD036] PRIMARY KEY CLUSTERED ([CODLAUDO]) 
+GO
+
+--Indexes of table dbo.TBPROD037
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD037] ADD CONSTRAINT [PKTBPROD037] PRIMARY KEY CLUSTERED ([CODDIM]) 
+GO
+
+--Indexes of table dbo.TBPROD038
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD038] ADD CONSTRAINT [PKTBPROD038] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO], [SEQOPERACAO], [CODDIM]) 
+GO
+
+--Indexes of table dbo.TBPROD039
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD039] ADD CONSTRAINT [PKTBPROD039] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO], [SEQOPERACAO], [CODDIM]) 
+GO
+
+--Indexes of table dbo.TBPROD040
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD040] ADD CONSTRAINT [PKTBPROD040] PRIMARY KEY CLUSTERED ([CODEQUIP], [CODEMP], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD041
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD041] ADD CONSTRAINT [PKTBPROD041] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO], [SEQOPERACAO], [CODEQUIP], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD042
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD042] ADD CONSTRAINT [PKTBPROD042] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO], [SEQOPERACAO], [CODEQUIP], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD043
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD043] ADD CONSTRAINT [PKTBPROD043] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO], [SEQOPERACAO], [CODDISP], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD044
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD044] ADD CONSTRAINT [PKTBPROD044] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO], [SEQOPERACAO], [CODDISP], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD045
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD045] ADD CONSTRAINT [PKTBPROD045] PRIMARY KEY CLUSTERED ([CODDISP], [CODEMP], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD046
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD046] ADD CONSTRAINT [PKTBPROD046] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO], [SEQOPERACAO], [CODMATCOMP]) 
+GO
+
+--Indexes of table dbo.TBPROD047
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD047] ADD CONSTRAINT [PKTBPROD047] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [REVISAO], [SEQOPERACAO], [CODMATCOMP]) 
+GO
+
+--Indexes of table dbo.TBPROD050
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD050] ADD CONSTRAINT [PKTBPROD050] PRIMARY KEY CLUSTERED ([CODEMP], [CENTRAB]) 
+GO
+
+--Indexes of table dbo.TBPROD051
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD051] ADD CONSTRAINT [PKTBPROD051] PRIMARY KEY CLUSTERED ([CODEMP], [CENTRAB], [TIPCALENDARIO], [DATCALENDARIO]) 
+GO
+
+--Indexes of table dbo.TBPROD055
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD055] ADD CONSTRAINT [PKTBPROD055] PRIMARY KEY CLUSTERED ([CODHOR]) 
+GO
+
+--Indexes of table dbo.TBPROD057
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD057] ADD CONSTRAINT [PKTBPROD057] PRIMARY KEY CLUSTERED ([CODHOR], [DATCALEN]) 
+GO
+
+--Indexes of table dbo.TBPROD059
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD059] ADD CONSTRAINT [PKTBPROD059] PRIMARY KEY CLUSTERED ([CODEMP], [CENTRAB], [CODHOR]) 
+GO
+
+--Indexes of table dbo.TBPROD060
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD060] ADD CONSTRAINT [PKTBPROD060] PRIMARY KEY CLUSTERED ([CODSTDMAT]) 
+GO
+
+--Indexes of table dbo.TBPROD061
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD061] ADD CONSTRAINT [PKTBPROD061] PRIMARY KEY CLUSTERED ([CODSTDMAT], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBPROD070
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD070] ADD CONSTRAINT [PKTBPROD070] PRIMARY KEY CLUSTERED ([CODEMP], [CODSTDMO]) 
+GO
+
+--Indexes of table dbo.TBPROD071
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD071] ADD CONSTRAINT [PKTBPROD071] PRIMARY KEY CLUSTERED ([CODEMP], [CODSTDMO], [CENTRAB]) 
+GO
+
+--Indexes of table dbo.TBPROD080
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD080] ADD CONSTRAINT [PKTBPROD080] PRIMARY KEY CLUSTERED ([CODEMP], [CODSTDMAQ]) 
+GO
+
+--Indexes of table dbo.TBPROD081
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD081] ADD CONSTRAINT [PKTBPROD081] PRIMARY KEY CLUSTERED ([CODEMP], [CODSTDMAQ], [CODEQUIP]) 
+GO
+
+--Indexes of table dbo.TBPROD082
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD082] ADD CONSTRAINT [PKTBPROD082] PRIMARY KEY CLUSTERED ([CODEMP], [CODSTDMOEXT]) 
+GO
+
+--Indexes of table dbo.TBPROD083
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD083] ADD CONSTRAINT [PKTBPROD083] PRIMARY KEY CLUSTERED ([CODEMP], [CODSTDMOEXT], [CODOPER], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBPROD090
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD090] ADD CONSTRAINT [PKTBPROD090] PRIMARY KEY CLUSTERED ([CODEMP], [CODFUNC]) 
+GO
+
+--Indexes of table dbo.TBPROD091
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD091] ADD CONSTRAINT [PKTBPROD091] PRIMARY KEY CLUSTERED ([CODEMP], [CODEQUIPE]) 
+GO
+
+--Indexes of table dbo.TBPROD092
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD092] ADD CONSTRAINT [PKTBPROD092] PRIMARY KEY CLUSTERED ([CODEMP], [CODEQUIPE], [CODFUNC]) 
+GO
+
+--Indexes of table dbo.TBPROD093
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD093] ADD CONSTRAINT [PK_TBPROD093] PRIMARY KEY CLUSTERED ([CODTIPNAOCONFORM]) 
+GO
+
+--Indexes of table dbo.TBPROD094
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD094] ADD CONSTRAINT [PK_TBPROD094] PRIMARY KEY CLUSTERED ([CODNAOCONFORM]) 
+GO
+
+--Indexes of table dbo.TBPROD095
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD095] ADD CONSTRAINT [PKTBPROD095] PRIMARY KEY CLUSTERED ([CODEMP], [CODPERCRAT]) 
+GO
+
+--Indexes of table dbo.TBPROD096
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD096] ADD CONSTRAINT [PKTBPROD096] PRIMARY KEY CLUSTERED ([CODEMP], [CODPERCRAT], [CENTRAB]) 
+GO
+
+--Indexes of table dbo.TBPROD097
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD097] ADD CONSTRAINT [PKTBPROD097] PRIMARY KEY CLUSTERED ([TIPDESP]) 
+GO
+
+--Indexes of table dbo.TBPROD098
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD098] ADD CONSTRAINT [PK_TBPROD098] PRIMARY KEY CLUSTERED ([CODEMP], [CODPERCRAT], [CONTACONTABIL], [CCUSTO]) 
+GO
+
+--Indexes of table dbo.TBPROD100
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBPROD100_CODMAT_CODEMP] ON [dbo].[TBPROD100]  ([CODMAT], [CODEMP], [CODORDEM], [SEQORDEM], [DATFIM], [DATABERT], [STAORD], [TIPORDEM], [CONTPROC]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD100_DATFIM] ON [dbo].[TBPROD100]  ([CODEMP], [CODORDEM], [SEQORDEM], [DATFIM], [DATABERT], [STAORD], [QTDEPROG], [STAVALORIZ]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD100_QTDEPROG] ON [dbo].[TBPROD100]  ([CODEMP], [CODMAT], [STAORD], [QTDEPROG]) 
+GO
+
+ALTER TABLE [dbo].[TBPROD100] ADD CONSTRAINT [PKTBPROD100] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM]) 
+GO
+
+--Indexes of table dbo.TBPROD101
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBPROD101_CODEMP] ON [dbo].[TBPROD101]  ([CODEMP]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD101_CODMAT] ON [dbo].[TBPROD101]  ([CODMAT], [CODEMP], [NUMLANC], [DATMOV], [NUMNF], [NUMITEMNF], [SERNF]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD101_CODORDEM] ON [dbo].[TBPROD101]  ([CODORDEM]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD101_DATMOV] ON [dbo].[TBPROD101]  ([CODEMP], [DATMOV], [NUMNF], [SERNF], [NUMITEMNF]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD101_ID_OPER_DATMOV] ON [dbo].[TBPROD101]  ([CODEMP], [CODORDEM], [SEQORDEM], [ID_OPER], [DATMOV]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD101_NUMLANC] ON [dbo].[TBPROD101]  ([NUMLANC], [CODEMP], [CODMAT], [DATMOV]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD101_SEQORDEM] ON [dbo].[TBPROD101]  ([SEQORDEM]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD101_VALMOV] ON [dbo].[TBPROD101]  ([VALMOV]) 
+GO
+
+ALTER TABLE [dbo].[TBPROD101] ADD CONSTRAINT [PKTBPROD101] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [NUMLANC]) 
+GO
+
+--Indexes of table dbo.TBPROD101B
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD101B] ADD CONSTRAINT [PK_TBPROD101B] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [NUMLANC]) 
+GO
+
+--Indexes of table dbo.TBPROD102
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD102] ADD CONSTRAINT [PKTBPROD102] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [CODOPE], [DATHORINC]) 
+GO
+
+--Indexes of table dbo.TBPROD102B
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD102B] ADD CONSTRAINT [PK_TBPROD102B] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [CODOPE], [DATHORINC]) 
+GO
+
+--Indexes of table dbo.TBPROD103
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBPROD103_TIPREC_DATMOV] ON [dbo].[TBPROD103]  ([CODEMP], [CODORDEM], [SEQORDEM], [TIPREC], [DATMOV]) 
+GO
+
+ALTER TABLE [dbo].[TBPROD103] ADD CONSTRAINT [PKTBPROD103] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [DATHORINC]) 
+GO
+
+--Indexes of table dbo.TBPROD104
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBPROD104_ANOMES] ON [dbo].[TBPROD104]  ([CODEMP], [CODORDEM], [SEQORDEM], [ANOMES]) 
+GO
+
+ALTER TABLE [dbo].[TBPROD104] ADD CONSTRAINT [PK__TBPROD104__59F03CDF] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [ANOMES], [CENTRAB], [CCONTABIL], [DATHORINC]) 
+GO
+
+--Indexes of table dbo.TBPROD105
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBPROD105_CODMAT] ON [dbo].[TBPROD105]  ([CODEMP], [CODMAT], [CODORDEM], [SEQORDEM], [QTDEMOV], [DATMOV], [TIPVAL]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD105_CODMAT2] ON [dbo].[TBPROD105]  ([CODMAT]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD105_CODORDEM] ON [dbo].[TBPROD105]  ([CODORDEM]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD105_DATMOV] ON [dbo].[TBPROD105]  ([CODEMP], [CODORDEM], [SEQORDEM], [DATMOV]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD105_NUMLANC] ON [dbo].[TBPROD105]  ([NUMLANC], [CODEMP]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD105_NUMLANC_CODORDEM] ON [dbo].[TBPROD105]  ([CODEMP], [NUMLANC], [CODORDEM], [SEQORDEM], [TIPVAL], [DATMOV], [VALMOV]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD105_NUMLANC2] ON [dbo].[TBPROD105]  ([NUMLANC]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD105_TIPVAL] ON [dbo].[TBPROD105]  ([TIPVAL]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBPROD105_VALMOV] ON [dbo].[TBPROD105]  ([VALMOV]) 
+GO
+
+ALTER TABLE [dbo].[TBPROD105] ADD CONSTRAINT [PKTBPROD105] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [NUMLANC], [DATHORINC]) 
+GO
+
+--Indexes of table dbo.TBPROD105A
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD105A] ADD CONSTRAINT [PKTBPROD105A] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [DATHORINC]) 
+GO
+
+--Indexes of table dbo.TBPROD105B
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD105B] ADD CONSTRAINT [PK_TBPROD105B] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [NUMLANC], [DATHORINC]) 
+GO
+
+--Indexes of table dbo.TBPROD106
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBPROD106_LANCCONTABIL] ON [dbo].[TBPROD106]  ([CODEMP], [CODORDEM], [SEQORDEM], [LANCCONTABIL], [DATINTER]) 
+GO
+
+ALTER TABLE [dbo].[TBPROD106] ADD CONSTRAINT [PKTBPROD106] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CCONTABIL], [LANCCONTABIL], [ANOMES], [DATINTER]) 
+GO
+
+--Indexes of table dbo.TBPROD107
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD107] ADD CONSTRAINT [PKTBPROD107] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [ANOMES]) 
+GO
+
+--Indexes of table dbo.TBPROD108
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD108] ADD CONSTRAINT [PKTBPROD108] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [SEQ], [SEQENVIO])  WITH FILLFACTOR = 90
+GO
+
+--Indexes of table dbo.TBPROD109
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD109] ADD CONSTRAINT [PKTBPROD109] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBPROD110
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD110] ADD CONSTRAINT [PKTBPROD110] PRIMARY KEY CLUSTERED ([CODEMP], [ANO], [MES], [CENTRAB]) 
+GO
+
+--Indexes of table dbo.TBPROD111
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD111] ADD CONSTRAINT [PKTBPROD111] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [NUMNF], [SERNF], [NUMITEMNF], [DATHORINC]) 
+GO
+
+--Indexes of table dbo.TBPROD112
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD112] ADD CONSTRAINT [PKTBPROD112] PRIMARY KEY CLUSTERED ([CODEMP], [ANOMES], [CCONTABIL], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD113
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD113] ADD CONSTRAINT [PKTBPROD113] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [SEQOPER], [CODDIM], [SEQCICLO], [SEQAMOSTRA]) 
+GO
+
+--Indexes of table dbo.TBPROD115
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBPROD115_QTDEMAT] ON [dbo].[TBPROD115]  ([CODEMP], [CODMAT], [QTDEMAT]) 
+GO
+
+ALTER TABLE [dbo].[TBPROD115] ADD CONSTRAINT [PKTBPROD115] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD116
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD116] ADD CONSTRAINT [PKTBPROD116] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD117
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD117] ADD CONSTRAINT [PKTBPROD117] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [SEQ], [SEQENVIO])  WITH FILLFACTOR = 90
+GO
+
+--Indexes of table dbo.TBPROD118
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD118] ADD CONSTRAINT [PKTBPROD118] PRIMARY KEY CLUSTERED ([CODEMP], [ANO], [MES], [CCUSTO], [CCONTABIL]) 
+GO
+
+--Indexes of table dbo.TBPROD119
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD119] ADD CONSTRAINT [PKTBPROD119] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [SEQOPER], [CODDIM], [SEQCICLO], [SEQAMOSTRA]) 
+GO
+
+--Indexes of table dbo.TBPROD120
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD120] ADD CONSTRAINT [PKTBPROD120] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [CODROTULO]) 
+GO
+
+--Indexes of table dbo.TBPROD121
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD121] ADD CONSTRAINT [PKTBPROD121] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [CODROTULO], [CODSEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD122
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD122] ADD CONSTRAINT [PKTBPROD122] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [SEQ], [CODFUNC]) 
+GO
+
+--Indexes of table dbo.TBPROD123
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD123] ADD CONSTRAINT [PKTBPROD123] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [SEQ], [CODFORN], [NUMNF], [SERNF], [NUMITEMNF]) 
+GO
+
+--Indexes of table dbo.TBPROD124
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD124] ADD CONSTRAINT [PKTBPROD124] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [NUMLANC], [CODFORN], [NUMNF], [SERNF], [NUMITEMNF]) 
+GO
+
+--Indexes of table dbo.TBPROD130
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD130] ADD CONSTRAINT [PKTBPROD130] PRIMARY KEY CLUSTERED ([CODEMP], [ANOMES], [NUMPED], [ITEMPED]) 
+GO
+
+--Indexes of table dbo.TBPROD135
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD135] ADD CONSTRAINT [PKTBPROD135] PRIMARY KEY CLUSTERED ([CODEMP], [CODSIMULA], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD140
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD140] ADD CONSTRAINT [PKTBPROD140] PRIMARY KEY CLUSTERED ([CODEMP], [CODSIMULA], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD143
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD143] ADD CONSTRAINT [PKTBPROD143] PRIMARY KEY CLUSTERED ([CODEMP], [CODSIMULA], [SEQ], [NUMPED], [ITEMPED]) 
+GO
+
+--Indexes of table dbo.TBPROD145
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD145] ADD CONSTRAINT [PKTBPROD145] PRIMARY KEY CLUSTERED ([CODEMP], [CODSIMULA], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD146
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD146] ADD CONSTRAINT [PK_TBPROD146] PRIMARY KEY CLUSTERED ([CODEMP], [CODSIMULA], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD150
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBPROD150_STAMATPED] ON [dbo].[TBPROD150]  ([CODEMP], [NUMPED], [NUMITEMPED], [STAMATPED]) 
+GO
+
+ALTER TABLE [dbo].[TBPROD150] ADD CONSTRAINT [PKTBPROD150] PRIMARY KEY CLUSTERED ([CODEMP], [NUMPED], [NUMITEMPED], [CODORDEM], [SEQORDEM]) 
+GO
+
+--Indexes of table dbo.TBPROD151
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD151] ADD CONSTRAINT [PKTBPROD151] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [SEQHORARIO], [SEQPROD116]) 
+GO
+
+--Indexes of table dbo.TBPROD152
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD152] ADD CONSTRAINT [PKTBPROD152] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBPROD153
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD153] ADD CONSTRAINT [PKTBPROD153] PRIMARY KEY CLUSTERED ([CODMAT], [ANOPARTIDA]) 
+GO
+
+--Indexes of table dbo.TBPROD154
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD154] ADD CONSTRAINT [PKTBPROD154] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [NUMPARTIDA], [SEQUENCIA]) 
+GO
+
+--Indexes of table dbo.TBPROD155
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD155] ADD CONSTRAINT [PK_TBPROD155] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM]) 
+GO
+
+--Indexes of table dbo.TBPROD156
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD156] ADD CONSTRAINT [PKTBPROD156] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [CODOPE], [DATHORINC], [SEQ], [CODFUNC]) 
+GO
+
+--Indexes of table dbo.TBPROD157
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD157] ADD CONSTRAINT [PKTBPROD157] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTINDUSTR], [NUMITEMCONTINDUSTR], [CODORDEM], [SEQORDEM]) 
+GO
+
+--Indexes of table dbo.TBPROD170
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD170] ADD CONSTRAINT [PKTBPROD170] PRIMARY KEY CLUSTERED ([CODEMP], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD171
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD171] ADD CONSTRAINT [PKTBPROD171] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [SEQOPER]) 
+GO
+
+--Indexes of table dbo.TBPROD172
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD172] ADD CONSTRAINT [PKTBPROD172] PRIMARY KEY CLUSTERED ([CODEMP], [CENTRAB]) 
+GO
+
+--Indexes of table dbo.TBPROD173
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD173] ADD CONSTRAINT [PKTBPROD173] PRIMARY KEY CLUSTERED ([CODEMP], [CENTRAB], [DATTRABALHO]) 
+GO
+
+--Indexes of table dbo.TBPROD174
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD174] ADD CONSTRAINT [PKTBSIST174] PRIMARY KEY CLUSTERED ([CODEMP], [TIPCALENDARIO], [DATTRABALHO], [CENTRAB]) 
+GO
+
+--Indexes of table dbo.TBPROD175
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD175] ADD CONSTRAINT [PKTBSIST175] PRIMARY KEY CLUSTERED ([CODEMP], [TIPCALENDARIO], [DATTRABALHO], [CODORDEM]) 
+GO
+
+--Indexes of table dbo.TBPROD176
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBPROD176_CODORDEM] ON [dbo].[TBPROD176]  ([CODEMP], [CODORDEM], [SEQORDEM]) 
+GO
+
+ALTER TABLE [dbo].[TBPROD176] ADD CONSTRAINT [PKTBPROD176] PRIMARY KEY CLUSTERED ([CODEMP], [NUMCONTINDUSTR], [NUMITEMCONTINDUSTR], [CODORDEM], [SEQORDEM]) 
+GO
+
+--Indexes of table dbo.TBPROD177
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD177] ADD CONSTRAINT [PKTBPROD177] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [SEQ], [NUMNF], [SERNF], [CODFORN], [NUMITEMNF], [SEQRELACIONAMENTO]) 
+GO
+
+--Indexes of table dbo.TBPROD178
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD178] ADD CONSTRAINT [PKTBPROD178] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [NUMLANC], [NUMNF], [SERNF], [CODFORN], [NUMITEMNF], [SEQRELACIONAMENTO]) 
+GO
+
+--Indexes of table dbo.TBPROD179
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD179] ADD CONSTRAINT [PK_TBPROD179] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [SEQNAOCONFORM]) 
+GO
+
+--Indexes of table dbo.TBPROD180
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD180] ADD CONSTRAINT [PKTBPROD180_01] PRIMARY KEY CLUSTERED ([CODEMP], [ANOCOMPETPREMIO], [MESCOMPETPREMIO]) 
+GO
+
+--Indexes of table dbo.TBPROD182
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD182] ADD CONSTRAINT [PK_TBPROD182] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [NUMLANC], [DATHORINC], [CODOPER]) 
+GO
+
+--Indexes of table dbo.TBPROD183
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD183] ADD CONSTRAINT [PK_TBPROD183] PRIMARY KEY CLUSTERED ([NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD184
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD184] ADD CONSTRAINT [PK_TBPROD184] PRIMARY KEY CLUSTERED ([CODEMP], [CODSTDDESP]) 
+GO
+
+--Indexes of table dbo.TBPROD185
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD185] ADD CONSTRAINT [PK_TBPROD185] PRIMARY KEY CLUSTERED ([CODEMP], [CODSTDDESP], [CCONTABIL], [SEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD186
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD186] ADD CONSTRAINT [PKTBPROD186] PRIMARY KEY CLUSTERED ([CODFAMILIA]) 
+GO
+
+--Indexes of table dbo.TBPROD187
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD187] ADD CONSTRAINT [PKTBPROD187] PRIMARY KEY CLUSTERED ([CODCOMPONENTE]) 
+GO
+
+--Indexes of table dbo.TBPROD189
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD189] ADD CONSTRAINT [PKTBPROD189] PRIMARY KEY CLUSTERED ([CODEMP], [CODAFE]) 
+GO
+
+--Indexes of table dbo.TBPROD190
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD190] ADD CONSTRAINT [PK_TBPROD190] PRIMARY KEY CLUSTERED ([CODEQUIP], [CODEMP], [SEQ], [SEQCOMP]) 
+GO
+
+--Indexes of table dbo.TBPROD191
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD191] ADD CONSTRAINT [PKTBPROD191] PRIMARY KEY CLUSTERED ([CODEMP], [CODAREA]) 
+GO
+
+--Indexes of table dbo.TBPROD194
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD194] ADD CONSTRAINT [PK_TBPROD194] PRIMARY KEY CLUSTERED ([IDPLANO], [TIPO], [CODFAMILIA], [CODEQUIP], [CODEMP], [SEQ], [SEQCOMP]) 
+GO
+
+--Indexes of table dbo.TBPROD195
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD195] ADD CONSTRAINT [PK_TBPROD195] PRIMARY KEY CLUSTERED ([IDPLANO], [TIPO], [CODFAMILIA], [CODEQUIP], [CODEMP], [SEQ], [SEQCOMP], [CODATIV]) 
+GO
+
+--Indexes of table dbo.TBPROD196
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD196] ADD CONSTRAINT [PK_TBPROD196] PRIMARY KEY CLUSTERED ([IDPLANO], [TIPO], [CODFAMILIA], [CODEQUIP], [CODEMP], [SEQ], [SEQCOMP], [CODPECA]) 
+GO
+
+--Indexes of table dbo.TBPROD197
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD197] ADD CONSTRAINT [PK_TBPROD197] PRIMARY KEY CLUSTERED ([CODOM], [CODEMP]) 
+GO
+
+--Indexes of table dbo.TBPROD199
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD199] ADD CONSTRAINT [PKTBPROD199] PRIMARY KEY CLUSTERED ([CODEMP], [CODFUNC], [DATINIVIGENCIA]) 
+GO
+
+--Indexes of table dbo.TBPROD200
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD200] ADD CONSTRAINT [PK_TBPROD200] PRIMARY KEY CLUSTERED ([CODOM], [CODEMP], [SEQAPONTMAT]) 
+GO
+
+--Indexes of table dbo.TBPROD201
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD201] ADD CONSTRAINT [PK_TBPROD201] PRIMARY KEY CLUSTERED ([CODOM], [CODEMP], [SEQATIV]) 
+GO
+
+--Indexes of table dbo.TBPROD202
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD202] ADD CONSTRAINT [PK_TBPROD202] PRIMARY KEY CLUSTERED ([CODOM], [CODEMP], [SEQATIV], [SEQAPONTMO]) 
+GO
+
+--Indexes of table dbo.TBPROD203
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD203] ADD CONSTRAINT [PK_TBPROD203] PRIMARY KEY CLUSTERED ([CODOM], [CODEMP], [CODCAUSA]) 
+GO
+
+--Indexes of table dbo.TBPROD204
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD204] ADD CONSTRAINT [PK_TBPROD204] PRIMARY KEY CLUSTERED ([CODOM], [CODEMP], [SEQPARADA]) 
+GO
+
+--Indexes of table dbo.TBPROD205
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD205] ADD CONSTRAINT [PK_TBPROD205] PRIMARY KEY CLUSTERED ([CODOM], [CODEQUIP], [CODEMP], [SEQ], [SEQCOMP], [SEQSOLUCAO]) 
+GO
+
+--Indexes of table dbo.TBPROD208
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD208] ADD CONSTRAINT [PK_TBPROD208] PRIMARY KEY CLUSTERED ([CODOM], [CODEMP], [NUMSC]) 
+GO
+
+--Indexes of table dbo.TBPROD209
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD209] ADD CONSTRAINT [PK_TBPROD209] PRIMARY KEY CLUSTERED ([CODOM], [CODEQUIP], [CODEMP], [SEQ], [SEQCOMP], [SEQJUST]) 
+GO
+
+--Indexes of table dbo.TBPROD210
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD210] ADD CONSTRAINT [PK_TBPROD210] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [NUMSEQVOLUME]) 
+GO
+
+--Indexes of table dbo.TBPROD211
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD211] ADD CONSTRAINT [PK_TBPROD211] PRIMARY KEY CLUSTERED ([CODEMP], [CODORDEM], [SEQORDEM], [NUMLANC], [DATHORINC], [NUMSEQVOLUME]) 
+GO
+
+--Indexes of table dbo.TBPROD212
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD212] ADD CONSTRAINT [PK__TBPROD212__0975FE26] PRIMARY KEY CLUSTERED ([CODPROD], [REVISAO]) 
+GO
+
+--Indexes of table dbo.TBPROD213
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD213] ADD CONSTRAINT [PK__TBPROD213__0C526AD1] PRIMARY KEY CLUSTERED ([CODPROD], [REVISAO], [CODMPRIMA]) 
+GO
+
+--Indexes of table dbo.TBPROD214
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD214] ADD CONSTRAINT [PK__TBPROD214__0F2ED77C] PRIMARY KEY CLUSTERED ([CODPROD], [REVISAO], [CODMPRIMA], [ID]) 
+GO
+
+--Indexes of table dbo.TBPROD215
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD215] ADD CONSTRAINT [PK__TBPROD215__1E711B0C] PRIMARY KEY CLUSTERED ([CODPLANREAC]) 
+GO
+
+--Indexes of table dbo.TBPROD216
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD216] ADD CONSTRAINT [PK__TBPROD216__2059637E] PRIMARY KEY CLUSTERED ([CODPROD], [REVISAO]) 
+GO
+
+--Indexes of table dbo.TBPROD217
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD217] ADD CONSTRAINT [PK__TBPROD217__2429F462] PRIMARY KEY CLUSTERED ([CODPROD], [REVISAO], [ID]) 
+GO
+
+--Indexes of table dbo.TBPROD218
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD218] ADD CONSTRAINT [PK_TBPROD218] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [CODCLI], [REVFORM]) 
+GO
+
+--Indexes of table dbo.TBPROD219
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD219] ADD CONSTRAINT [PK_TBPROD219] PRIMARY KEY CLUSTERED ([CODEMP], [CODMAT], [CODCLI], [REVFORM], [NUMITEM], [TIPOITEM]) 
+GO
+
+--Indexes of table dbo.TBPROD220
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD220] ADD CONSTRAINT [PK_TBPROD220] PRIMARY KEY CLUSTERED ([CODPROD], [REVISAO], [IDLINHA]) 
+GO
+
+--Indexes of table dbo.TBPROD221
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD221] ADD CONSTRAINT [PK_TBPROD221] PRIMARY KEY CLUSTERED ([CODMAT], [REVISAO], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBPROD997
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD997] ADD CONSTRAINT [PKTBPROD997] PRIMARY KEY CLUSTERED ([CODEMP], [TIPOITEM]) 
+GO
+
+--Indexes of table dbo.TBPROD998
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBPROD998] ADD CONSTRAINT [PKTBPROD998] PRIMARY KEY CLUSTERED ([CODEMP]) 
+GO
+
+--Indexes of table dbo.TBRELCB003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBRELCB003] ADD CONSTRAINT [PKTBRELCB003] PRIMARY KEY CLUSTERED ([NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBRELCB012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBRELCB012] ADD CONSTRAINT [PKTBRELCB012] PRIMARY KEY CLUSTERED ([NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBRELCB013
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBRELCB013] ADD CONSTRAINT [PKTBRELCB013] PRIMARY KEY CLUSTERED ([NUMSEQ]) 
+GO
+
+
+--Indexes of table dbo.TBROT002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBROT002] ADD CONSTRAINT [PK__TBROT002__311976E607E2BB6F] PRIMARY KEY CLUSTERED ([IDQRCODE]) 
+GO
+
+--Indexes of table dbo.TBSCEXPL
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSCEXPL] ADD CONSTRAINT [PKTBSCEXPL_TBFLCX002_01] PRIMARY KEY CLUSTERED ([SEQ]) 
+GO
+
+--Indexes of table dbo.TBSCRIPT0
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [IND_DATEXECUCAO] ON [dbo].[TBSCRIPT0]  ([DATEXECUCAO] DESC, [CODSCRI] DESC) 
+GO
+
+ALTER TABLE [dbo].[TBSCRIPT0] ADD CONSTRAINT [PKTBSCRIPT0] PRIMARY KEY CLUSTERED ([CODSCRI]) 
+GO
+
+--Indexes of table dbo.TBSENH001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSENH001] ADD CONSTRAINT [PKTBSENH001] PRIMARY KEY CLUSTERED ([SISTEMA_ID]) 
+GO
+
+--Indexes of table dbo.TBSENH002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSENH002] ADD CONSTRAINT [PKTBSENH002] PRIMARY KEY CLUSTERED ([SISTEMA_ID], [CODEMP], [USER_ID]) 
+GO
+
+--Indexes of table dbo.TBSENH003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSENH003] ADD CONSTRAINT [PKTBSENH003] PRIMARY KEY CLUSTERED ([MODULO_ID]) 
+GO
+
+--Indexes of table dbo.TBSENH004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSENH004] ADD CONSTRAINT [PKTBSENH004] PRIMARY KEY CLUSTERED ([SISTEMA_ID], [MODULO_ID]) 
+GO
+
+--Indexes of table dbo.TBSENH005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE NONCLUSTERED INDEX [INDTBSENH005_SISTEMAID_USERID] ON [dbo].[TBSENH005]  ([SISTEMA_ID], [USER_ID], [MODULO_ID]) 
+GO
+
+CREATE NONCLUSTERED INDEX [INDTBSENH005_USER_ID] ON [dbo].[TBSENH005]  ([USER_ID], [TIPO], [MODULO_ID]) 
+GO
+
+ALTER TABLE [dbo].[TBSENH005] ADD CONSTRAINT [PKTBSENH005] PRIMARY KEY CLUSTERED ([SISTEMA_ID], [CODEMP], [USER_ID], [MODULO_ID]) 
+GO
+
+--Indexes of table dbo.TBSENH006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSENH006] ADD CONSTRAINT [PKTBSENH006] PRIMARY KEY CLUSTERED ([USER_ID]) 
+GO
+
+--Indexes of table dbo.TBSENH007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSENH007] ADD CONSTRAINT [PKTBSENH007] PRIMARY KEY CLUSTERED ([NOMEXEC]) 
+GO
+
+--Indexes of table dbo.TBSENH008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSENH008] ADD CONSTRAINT [PKTBSENH008] PRIMARY KEY CLUSTERED ([SISTEMA_ID], [CODEMP], [USER_ID], [MODULO_ID], [SEQOPERACAO]) 
+GO
+
+--Indexes of table dbo.TBSINT001
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT001] ADD CONSTRAINT [PK_TBSINT001] PRIMARY KEY CLUSTERED ([CODFINALIDADE]) 
+GO
+
+--Indexes of table dbo.TBSINT002
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT002] ADD CONSTRAINT [PK_TBSINT002] PRIMARY KEY CLUSTERED ([CODBLOCO]) 
+GO
+
+--Indexes of table dbo.TBSINT003
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT003] ADD CONSTRAINT [PK_TBSINT003] PRIMARY KEY CLUSTERED ([CODBLOCO], [CODREGISTRO]) 
+GO
+
+--Indexes of table dbo.TBSINT004
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT004] ADD CONSTRAINT [PK_TBSINT004] PRIMARY KEY CLUSTERED ([CODLAYOUT]) 
+GO
+
+--Indexes of table dbo.TBSINT005
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT005] ADD CONSTRAINT [PK_TBSINT005] PRIMARY KEY CLUSTERED ([CODRESUMO]) 
+GO
+
+--Indexes of table dbo.TBSINT006
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT006] ADD CONSTRAINT [PK_TBSINT006] PRIMARY KEY CLUSTERED ([CODDOCTOICMS]) 
+GO
+
+--Indexes of table dbo.TBSINT007
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT007] ADD CONSTRAINT [PK_TBSINT007] PRIMARY KEY CLUSTERED ([CODDOCTOISS]) 
+GO
+
+--Indexes of table dbo.TBSINT008
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT008] ADD CONSTRAINT [PK_TBSINT008] PRIMARY KEY CLUSTERED ([CODGENERO]) 
+GO
+
+--Indexes of table dbo.TBSINT009
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT009] ADD CONSTRAINT [PK_TBSINT009] PRIMARY KEY CLUSTERED ([CODCFPS]) 
+GO
+
+--Indexes of table dbo.TBSINT010
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT010] ADD CONSTRAINT [PK_TBSINT010] PRIMARY KEY CLUSTERED ([CODCTIPI]) 
+GO
+
+--Indexes of table dbo.TBSINT011
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT011] ADD CONSTRAINT [PK_TBSINT011] PRIMARY KEY CLUSTERED ([CODCTISS]) 
+GO
+
+--Indexes of table dbo.TBSINT012
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT012] ADD CONSTRAINT [PK_TBSINT012] PRIMARY KEY CLUSTERED ([CODCLASSEENERG]) 
+GO
+
+--Indexes of table dbo.TBSINT013
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT013] ADD CONSTRAINT [PK_TBSINT013] PRIMARY KEY CLUSTERED ([CODCLASSIFICENERG]) 
+GO
+
+--Indexes of table dbo.TBSINT014
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT014] ADD CONSTRAINT [PK_TBSINT014] PRIMARY KEY CLUSTERED ([CODCLASSEAGUA]) 
+GO
+
+--Indexes of table dbo.TBSINT015
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT015] ADD CONSTRAINT [PK_TBSINT015] PRIMARY KEY CLUSTERED ([CODCLASSEGAS]) 
+GO
+
+--Indexes of table dbo.TBSINT016
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT016] ADD CONSTRAINT [PK_TBSINT016] PRIMARY KEY CLUSTERED ([CODCLASSETELECOM]) 
+GO
+
+--Indexes of table dbo.TBSINT017
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT017] ADD CONSTRAINT [PK_TBSINT017] PRIMARY KEY CLUSTERED ([CODCLASSIFICTELECOM]) 
+GO
+
+--Indexes of table dbo.TBSINT018
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT018] ADD CONSTRAINT [PK_TBSINT018] PRIMARY KEY CLUSTERED ([CODLIVROICMS]) 
+GO
+
+--Indexes of table dbo.TBSINT019
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT019] ADD CONSTRAINT [PK_TBSINT019] PRIMARY KEY CLUSTERED ([CODLIVROISS]) 
+GO
+
+--Indexes of table dbo.TBSINT020
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT020] ADD CONSTRAINT [PK_TBSINT020] PRIMARY KEY CLUSTERED ([CODAJUSTEAPURAICMS]) 
+GO
+
+--Indexes of table dbo.TBSINT021
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT021] ADD CONSTRAINT [PK_TBSINT021] PRIMARY KEY CLUSTERED ([CODOBRIGRECOLHERICMS]) 
+GO
+
+--Indexes of table dbo.TBSINT022
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT022] ADD CONSTRAINT [PK_TBSINT022] PRIMARY KEY CLUSTERED ([CODOBRIGRECOLHERISS]) 
+GO
+
+--Indexes of table dbo.TBSINT023
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT023] ADD CONSTRAINT [PK_TBSINT023] PRIMARY KEY CLUSTERED ([CODBENEFICICMS]) 
+GO
+
+--Indexes of table dbo.TBSINT024
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT024] ADD CONSTRAINT [PK_TBSINT024] PRIMARY KEY CLUSTERED ([CODBENEFICISS]) 
+GO
+
+--Indexes of table dbo.TBSINT025
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT025] ADD CONSTRAINT [PK_TBSINT025] PRIMARY KEY CLUSTERED ([CODCLASSIFICSERV]) 
+GO
+
+--Indexes of table dbo.TBSINT026
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBSINT026] ADD CONSTRAINT [PKTBSINT026] PRIMARY KEY CLUSTERED ([CODUF], [TIPIMPOSTO], [TIPUTILIZACAO], [NUMSEQ]) 
+GO
+
+--Indexes of table dbo.TBTABELAS
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBTABELAS] ADD CONSTRAINT [PKTBTABELAS] PRIMARY KEY CLUSTERED ([NOMTABELA]) 
+GO
+
+--Indexes of table dbo.TBTABELASCAMPOS
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBTABELASCAMPOS] ADD CONSTRAINT [PKTBTABELASCAMPOS] PRIMARY KEY CLUSTERED ([NOMTABELA], [NOMCAMPO]) 
+GO
+
+--Indexes of table dbo.TBTEMPVALORIZ
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBTEMPVALORIZ] ADD CONSTRAINT [PKTBTEMPVALORIZ] PRIMARY KEY CLUSTERED ([CODEMP], [CODALMOX], [CODMAT]) 
+GO
+
+--Indexes of table dbo.TBTMPAPMTOPORQTD
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBTMPAPMTOPORQTD] ADD CONSTRAINT [PKTBTMPAPMTOPORQTD] PRIMARY KEY CLUSTERED ([USER_ID], [CODEMP], [CODORDEM], [SEQORDEM], [CODMAT], [SEQ], [SEQTMP]) 
+GO
+
+--Indexes of table dbo.TBTMPCID
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER TABLE [dbo].[TBTMPCID] ADD CONSTRAINT [PKTBTMPCID] PRIMARY KEY CLUSTERED ([CODMUNICIP], [NOMEAGIW]) 
+GO
+
+--Create Check Constraints
+USE [BDSCRIPT]
+ALTER TABLE [dbo].[TBGENE035] WITH CHECK ADD CONSTRAINT [CK__TBGENE035__PERMI__2F90BA16] CHECK (([PERMITEMOVRETROAT] = 'N' or [PERMITEMOVRETROAT] = 'S'))
+GO
+ALTER TABLE [dbo].[TBGENE035] CHECK CONSTRAINT [CK__TBGENE035__PERMI__2F90BA16]
+GO
+ALTER TABLE [dbo].[TBGENE035] WITH CHECK ADD CONSTRAINT [CK__TBGENE035__STAES__3084DE4F] CHECK (([STAESTOQUENEGATIVO] = 'N' or [STAESTOQUENEGATIVO] = 'S'))
+GO
+ALTER TABLE [dbo].[TBGENE035] CHECK CONSTRAINT [CK__TBGENE035__STAES__3084DE4F]
+GO
+ALTER TABLE [dbo].[TBGENE078] WITH CHECK ADD CONSTRAINT [CK__TBGENE078__TIPLA__33614AFA] CHECK (([TIPLAYOUTCONV] = '2' or [TIPLAYOUTCONV] = '1'))
+GO
+ALTER TABLE [dbo].[TBGENE078] CHECK CONSTRAINT [CK__TBGENE078__TIPLA__33614AFA]
+GO
+ALTER TABLE [dbo].[TBGENE078] WITH CHECK ADD CONSTRAINT [CK__TBGENE078__STADE__34556F33] CHECK (([STADEBCREDJUNTOS] = 'N' or [STADEBCREDJUNTOS] = 'S'))
+GO
+ALTER TABLE [dbo].[TBGENE078] CHECK CONSTRAINT [CK__TBGENE078__STADE__34556F33]
+GO
+ALTER TABLE [dbo].[TBGENE079] WITH CHECK ADD CONSTRAINT [CK__TBGENE079__TIPOC__3731DBDE] CHECK (([TIPOCAMPO] = 'A' or ([TIPOCAMPO] = 'M' or ([TIPOCAMPO] = 'I' or ([TIPOCAMPO] = 'V' or ([TIPOCAMPO] = 'D' or ([TIPOCAMPO] = 'N' or [TIPOCAMPO] = 'C')))))))
+GO
+ALTER TABLE [dbo].[TBGENE079] CHECK CONSTRAINT [CK__TBGENE079__TIPOC__3731DBDE]
+GO
+ALTER TABLE [dbo].[TBGENE035] WITH CHECK ADD CONSTRAINT [CK__TBGENE035__STARE__6EEC251C] CHECK (([STAREPETENUMPEDCLIREP] = 'N' or [STAREPETENUMPEDCLIREP] = 'S'))
+GO
+ALTER TABLE [dbo].[TBGENE035] CHECK CONSTRAINT [CK__TBGENE035__STARE__6EEC251C]
+GO
+ALTER TABLE [dbo].[TBESTO003] WITH CHECK ADD CONSTRAINT [CK_QTDERESERVADA_TBESTO003] CHECK (([QTDERESERVADA] >= 0))
+GO
+ALTER TABLE [dbo].[TBESTO003] CHECK CONSTRAINT [CK_QTDERESERVADA_TBESTO003]
+GO
+
+

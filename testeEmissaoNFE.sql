@@ -1,0 +1,25 @@
+
+update TBGENE035
+set TIPAMBNFE = '2',
+CAMINHOXMLENVIO = '\\CORVUS\c$\unimake\UniNFe4\46256772000190\Envio',
+CAMINHOXMLRETORNO= '\\CORVUS\c$\unimake\UniNFe4\46256772000190\Retorno',
+CAMINHOLOGNFE= '\\CORVUS\c$\unimake\UniNFe4\46256772000190\Log',
+CAMINHOUNIDANFE= '\\CORVUS\c$\unimake\UniDanfe',
+CAMINHOLOGONFE= '\\server\E\clientes\Logo\AGIW.bmp',
+CAMINHOXMLVALIDA= '\\CORVUS\c$\unimake\UniNFe4\46256772000190\Validar',
+CAMINHOXMLBAK= '\\CORVUS\c$\unimake\UniNFe4\46256772000190\Bak',
+EMAILXMLNFE = 'teste@teste.com'
+where CODEMP = '01'
+
+update tbgene032
+set RAZSOCEMP = 'NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALO',
+NUMCGCCPFEMP = '46256772000190',
+INSCRESTA = '244108350112'
+where CODEMP = '01'
+
+update tbfatu006
+set EMAILENVIONFE = 'ronaldo@agiw.com.br'
+
+update TBFATU016
+set EMAILXMLTRANSP = 'ronaldo@agiw.com.br'
+where not EMAILXMLTRANSP is null
