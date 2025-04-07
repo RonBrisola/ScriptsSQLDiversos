@@ -1,11 +1,11 @@
---Configurações da Conta de e-mail que será responsável pelo envio dos e-mail
+--Configuraï¿½ï¿½es da Conta de e-mail que serï¿½ responsï¿½vel pelo envio dos e-mail
 EXECUTE msdb.dbo.sysmail_add_account_sp
 @account_name = 'Email', --Nome da Conta
-@description = 'Envio de Email', --Descrição da Conta
-@email_address = 'compras@soropack.com.br', --Endereço de e-mail
-@display_name = 'Liberacao Pedido de Compras', -- Nome de Excibição
+@description = 'Envio de Email', --Descriï¿½ï¿½o da Conta
+@email_address = 'compras@soropack.com.br', --Endereï¿½o de e-mail
+@display_name = 'Liberacao Pedido de Compras', -- Nome de Excibiï¿½ï¿½o
 @username='compras@soropack.com.br', --User name da conta
-@password='cp@2015', --Senha da conta
+@password='######', --Senha da conta
 @mailserver_name = 'smtp.soropack.com.br', --Servidor SMTP
 @port = '587' --Porta SMTP
 
@@ -13,7 +13,7 @@ EXECUTE msdb.dbo.sysmail_add_account_sp
 --Criando o Perfil de envio:
 EXECUTE msdb.dbo.sysmail_add_profile_sp
 @profile_name = 'Email', --Nome do Perfil de Envio
-@description = 'Liberacao Pedido de Compras' --Descrição do Perfil de Envio
+@description = 'Liberacao Pedido de Compras' --Descriï¿½ï¿½o do Perfil de Envio
 
 
 --Vinculando o Perfil de envio com a conta 
@@ -29,14 +29,14 @@ EXECUTE msdb.dbo.sysmail_add_principalprofile_sp
 @principal_name = 'public',
 @is_default = 1 ;
 
---Habilitando ou não o O SSL da conta
+--Habilitando ou nï¿½o o O SSL da conta
 --Ensure SSL is enable, otherwise Gmail will complain.
 use msdb
 UPDATE sysmail_server 
 SET enable_ssl = 0
 --And send a mail with:
 
-----habilitando serviço do database mail
+----habilitando serviï¿½o do database mail
 USE MASTER
 GO
 SP_CONFIGURE 'show advanced options', 1
@@ -51,7 +51,7 @@ RECONFIGURE WITH OVERRIDE
 GO
 
 
---Iniciando o serviço de envio de e-mail
+--Iniciando o serviï¿½o de envio de e-mail
 USE msdb;
 GO
 EXEC dbo.sysmail_start_sp;
@@ -62,11 +62,11 @@ declare @body1 varchar(100)
 set @body1 = 'Server :'+@@servername+ 'Liberacao Pedido de Compras' --corpo do e-mail
 
 --enviando e-mail
-EXEC msdb.dbo.sp_send_dbmail @recipients='ssouza@soropack.com.br;inunes@soropack.com.br', --destinatários separados por ponto e virgula
+EXEC msdb.dbo.sp_send_dbmail @recipients='ssouza@soropack.com.br;inunes@soropack.com.br', --destinatï¿½rios separados por ponto e virgula
 @subject = 'Liberacao Pedido de Compras', --assunto
 @body = @body1,
-@body_format = 'HTML';  --formato do email, text (padrão) ou html
---@file_attachments = 'C:\SISINFOR\Boleto'; --anexos separados por ponto e virgula, com no mmáximo 1mb e em um diretório sem restrições de acesso
+@body_format = 'HTML';  --formato do email, text (padrï¿½o) ou html
+--@file_attachments = 'C:\SISINFOR\Boleto'; --anexos separados por ponto e virgula, com no mmï¿½ximo 1mb e em um diretï¿½rio sem restriï¿½ï¿½es de acesso
 
 
 --verificando log do database mail
